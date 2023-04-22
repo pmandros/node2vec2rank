@@ -1,0 +1,19 @@
+pathway	freq	mean_padj
+5-phosphoribose 1-diphosphate biosynthetic process (GO:0006015)	1.0	0.048719814462789036
+5-phosphoribose 1-diphosphate metabolic process (GO:0046391)	1.0	0.048719814462789036
+cellular amide metabolic process (GO:0043603)	1.0	0.07445303187024076
+cellular protein catabolic process (GO:0044257)	1.0	0.07451820830325304
+cellular response to osmotic stress (GO:0071470)	1.0	0.07445303187024076
+cellular response to oxidative stress (GO:0034599)	1.0	0.04077466598218876
+ceramide metabolic process (GO:0006672)	1.0	0.07445303187024076
+galactose catabolic process (GO:0019388)	1.0	0.07445303187024076
+galactose metabolic process (GO:0006012)	1.0	0.07445303187024076
+glucan biosynthetic process (GO:0009250)	1.0	0.07445303187024076
+glycogen biosynthetic process (GO:0005978)	1.0	0.07445303187024076
+hexose catabolic process (GO:0019320)	1.0	0.05103575522949201
+nucleoside phosphate biosynthetic process (GO:1901293)	1.0	0.015744284774335544
+nucleotide metabolic process (GO:0009117)	1.0	0.04077466598218876
+pentose catabolic process (GO:0019323)	1.0	0.06307044477254246
+purine-containing compound biosynthetic process (GO:0072522)	1.0	0.048719814462789036
+ribose phosphate biosynthetic process (GO:0046390)	1.0	0.05103575522949201
+trehalose metabolic process (GO:0005991)	1.0	0.08032758749228798

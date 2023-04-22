@@ -1,0 +1,11 @@
+pathway	freq	mean_padj
+Alanine, aspartate and glutamate metabolism  sce00250	0.1	0.01673192750754921
+Butanoate metabolism  sce00650	0.2	0.011008216513033601
+beta-Alanine metabolism  sce00410	0.1	0.01673192750754921
+Glutathione metabolism  sce00480	0.3	0.08865507467909484
+Pyruvate metabolism  sce00620	0.3	0.06791975405245
+Starch and sucrose metabolism  sce00500	0.3	0.07813638075287775
+Glycine, serine and threonine metabolism  sce00260	0.35	0.056635191377474206
+Lysine biosynthesis  sce00300	0.1	0.02312781846764049
+Purine metabolism  sce00230	0.05	0.09986422221965714
+Translation factors  sce03012	0.05	0.05317990122785036
