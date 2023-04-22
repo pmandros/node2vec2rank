@@ -1,6 +1,6 @@
 {
     "data_etl": {
-        "save_dir": null,
+        "save_dir": "../output",
         "network_filenames": ["sbm1.txt", "sbm2.txt"],
         "seperator": ",",
         "bipartite_to_unipartite": true,
@@ -13,8 +13,8 @@
         "verbose": 0
     },
     "training": {
-        "embed_dimensions": [4],
-        "distance_metrics": ["euclidean"],
+        "embed_dimensions": [2,4,6,8,10,12,14,16],
+        "distance_metrics": ["euclidean","cosine","cityblock","correlation","chebyshev"],
         "seed": null
     }
 }
