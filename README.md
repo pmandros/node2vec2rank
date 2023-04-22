@@ -5,5 +5,5 @@
 
 2. To install the dependencies, use the following commands: <br>
 `cd n2v2r` <br>
- `pip install -r requirements` <br>
+ `pip install -r requirements.txt` <br>
  `conda_install.sh`
