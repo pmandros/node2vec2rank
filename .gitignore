@@ -1,3 +1,4 @@
 node2vec2rank/__pycache__/
 output
-data/networks
+data/networks/en_lung_mf
+data/networks/TCGA_mf_contrast
