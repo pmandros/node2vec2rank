@@ -1,11 +1,5 @@
-graspologic
 typing_extensions
 chardet
 git+https://github.com/iggallagher/Spectral-Embedding
-csrgraph
-karateclub
-#tune-sklearn 
-mittens
-#ray[tune]
-#pybind11
-#graph-walker
+git+https://github.com/djcunningham0/rankaggregation.git
+
