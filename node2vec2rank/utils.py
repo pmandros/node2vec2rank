@@ -64,7 +64,7 @@ def symmetrize_matrix(matrix):
 """
 Computes various matrix transformations for pre-processing in a certain sequence. Use with caution.
 threshold: below this everything is set to 0 (second operation to be applied)
-top_percent_keep: keep the top percent of edges according to their weight
+top_percent_keep: keep the top percent of edges according to their weisght (fourth operation to be applied)
 binarize: turn all non-zero elements into 1 (last operation to be applied)
 symmetrize: represent bipartite graph as symmetric adjacency matrix by zero padding (third oprtation to be applied)
 absolute: compute the absolute of the matrix (first operation to be applied)
