@@ -1,0 +1,64 @@
+pathway	freq	mean_padj
+'de novo' cotranslational protein folding (GO:0051083)	1.0	0.06484143756696585
+'de novo' posttranslational protein folding (GO:0051084)	1.0	0.0036841709573876592
+ATP biosynthetic process (GO:0006754)	0.325	0.059471645599268944
+ATP generation from ADP (GO:0006757)	1.0	0.0014501619711568985
+ATP synthesis coupled proton transport (GO:0015986)	0.25	0.04436394136294399
+carbohydrate catabolic process (GO:0016052)	0.975	0.04703894604047086
+cellular divalent inorganic cation homeostasis (GO:0072503)	0.925	0.06761502958970217
+cellular macromolecule biosynthetic process (GO:0034645)	0.95	0.02647927684861795
+cellular protein metabolic process (GO:0044267)	0.75	0.06146943584044581
+cellular response to oxidative stress (GO:0034599)	1.0	0.0031318540637539014
+cellular response to unfolded protein (GO:0034620)	0.925	0.04249979316116439
+cellular response to water deprivation (GO:0042631)	1.0	0.06484143756696585
+cellular zinc ion homeostasis (GO:0006882)	0.925	0.042240904129269084
+chaperone mediated protein folding requiring cofactor (GO:0051085)	1.0	0.0036841709573876592
+cytoplasmic translation (GO:0002181)	1.0	1.8258102360201977e-14
+cytoplasmic translational initiation (GO:0002183)	1.0	0.0645417257172403
+dicarboxylic acid biosynthetic process (GO:0043650)	1.0	0.03672307283234824
+energy coupled proton transport, down electrochemical gradient (GO:0015985)	0.325	0.059471645599268944
+gluconeogenesis (GO:0006094)	1.0	0.00210667563792692
+glucose metabolic process (GO:0006006)	1.0	0.010174885791715636
+glutamate biosynthetic process (GO:0006537)	0.95	0.029319400197056162
+glutamate metabolic process (GO:0006536)	1.0	0.006388595541432463
+glutamine family amino acid biosynthetic process (GO:0009084)	0.2	0.049170100324794255
+glutathione metabolic process (GO:0006749)	1.0	0.02657086816630655
+glycolytic process (GO:0006096)	1.0	0.0014501619711568985
+hexose biosynthetic process (GO:0019319)	1.0	0.00210667563792692
+hydrogen peroxide metabolic process (GO:0042743)	0.675	0.06566644161641709
+inositolphosphoceramide metabolic process (GO:0006673)	0.925	0.06911200974863523
+methionine metabolic process (GO:0006555)	0.625	0.055076323894236764
+mitochondrial ATP synthesis coupled electron transport (GO:0042775)	0.75	0.049335182141920245
+mitochondrial electron transport, ubiquinol to cytochrome c (GO:0006122)	0.525	0.046603106304919276
+nicotinamide nucleotide metabolic process (GO:0046496)	1.0	0.011135133501926239
+peptide biosynthetic process (GO:0043043)	0.95	0.008242683363644207
+posttranslational protein targeting to endoplasmic reticulum membrane (GO:0006620)	1.0	0.04194086317196472
+proteasomal protein catabolic process (GO:0010498)	1.0	0.005762172659086758
+proteasomal ubiquitin-independent protein catabolic process (GO:0010499)	0.7	0.019395124607891587
+proteasome assembly (GO:0043248)	0.45	0.026165286245773984
+proteasome-mediated ubiquitin-dependent protein catabolic process (GO:0043161)	0.225	0.05849511261611705
+proteolysis involved in cellular protein catabolic process (GO:0051603)	0.7	0.033794505305189036
+pyruvate metabolic process (GO:0006090)	1.0	0.0011629493515500776
+rRNA export from nucleus (GO:0006407)	1.0	0.002503114829835889
+rRNA transport (GO:0051029)	1.0	0.002503114829835889
+rRNA-containing ribonucleoprotein complex export from nucleus (GO:0071428)	1.0	0.00016178196886223407
+respiratory electron transport chain (GO:0022904)	0.9	0.015336221703751544
+response to unfolded protein (GO:0006986)	1.0	0.03615067899984521
+ribosomal small subunit assembly (GO:0000028)	1.0	0.0025824463437298514
+ribosome assembly (GO:0042255)	1.0	0.0016748899253781284
+serine family amino acid biosynthetic process (GO:0009070)	0.675	0.06849438535916089
+translation (GO:0006412)	1.0	1.635913584385626e-09
+translational elongation (GO:0006414)	1.0	0.01322481117072046
+translational frameshifting (GO:0006452)	0.95	0.06915016492200954
+tricarboxylic acid metabolic process (GO:0072350)	0.8	0.03617451513552301
+ubiquitin-dependent protein catabolic process (GO:0006511)	0.5	0.040804678976497345
+zinc ion homeostasis (GO:0055069)	0.925	0.042240904129269084
+aerobic respiration (GO:0009060)	0.05	0.09534157169462813
+cellular respiration (GO:0045333)	0.05	0.05728310984898919
+maturation of SSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000462)	0.525	0.05555189592316098
+ribonucleoprotein complex assembly (GO:0022618)	0.825	0.008767881650339858
+ribosomal large subunit biogenesis (GO:0042273)	0.725	0.04571074904218249
+ribosomal small subunit biogenesis (GO:0042274)	0.825	0.022607995919845063
+ribosome biogenesis (GO:0042254)	0.725	0.04595529505960747
+ribosome localization (GO:0033750)	0.8	0.06916347145257788
+monocarboxylic acid metabolic process (GO:0032787)	0.2	0.06653844759869365

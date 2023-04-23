@@ -1,0 +1,32 @@
+pathway	freq	mean_padj	mean_NES
+cytoplasmic translational initiation (GO:0002183)	1.0	0.018038898119319215	2.494996272997154
+translation (GO:0006412)	1.0	0.09480645025708562	-2.3108896087714874
+cytoplasmic translation (GO:0002181)	1.0	0.09762227217513927	2.2330606271597278
+nucleotide metabolic process (GO:0009117)	1.0	0.07887596628643499	2.202042504299916
+RNA polymerase II transcriptional preinitiation complex assembly (GO:0051123)	1.0	0.19336761141544195	-2.070212315402968
+replicative cell aging (GO:0001302)	1.0	0.15598341314940734	2.0681348604459515
+cation transport (GO:0006812)	1.0	0.17694075122238256	-2.039952728698765
+transcription initiation from RNA polymerase II promoter (GO:0006367)	1.0	0.14211580761309664	-2.038901003052769
+negative regulation of transcription from RNA polymerase II promoter (GO:0000122)	1.0	0.11842983967758054	-2.0388660507011354
+cellular respiration (GO:0045333)	1.0	0.17741786856177486	2.0170506389557348
+protein maturation (GO:0051604)	1.0	0.2388827611242199	1.8986367046536534
+cellular protein modification process (GO:0006464)	1.0	0.22872851210117173	1.8870943148363197
+regulation of transcription, DNA-templated (GO:0006355)	1.0	0.24276552671028484	-1.8803733944977459
+DNA-templated transcriptional preinitiation complex assembly (GO:0070897)	1.0	0.24217885313196127	-1.860384818290132
+RNA splicing, via transesterification reactions with bulged adenosine as nucleophile (GO:0000377)	1.0	0.24490955196924905	-1.8236772713263245
+mRNA splicing, via spliceosome (GO:0000398)	1.0	0.24490955196924905	-1.8236772713263245
+proteasome-mediated ubiquitin-dependent protein catabolic process (GO:0043161)	1.0	0.23552988591096105	-1.8165777966605356
+maturation of SSU-rRNA (GO:0030490)	1.0	0.23900179006165528	-1.8007900303325672
+iron ion transport (GO:0006826)	1.0	0.2269588643000246	-1.7966989288728994
+carbon catabolite activation of transcription (GO:0045991)	1.0	0.23022635676291617	-1.7824682763287685
+branched-chain amino acid biosynthetic process (GO:0009082)	1.0	0.22786401782086665	-1.772946864292743
+maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000463)	1.0	0.23980455065027537	-1.7510017670413014
+maturation of SSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000462)	1.0	0.2275771996270196	-1.7503101405565331
+regulation of transcription from RNA polymerase II promoter (GO:0006357)	1.0	0.23995566904568255	-1.7331248392743068
+monocarboxylic acid catabolic process (GO:0072329)	1.0	0.24907813441304621	-1.7170177993358011
+ubiquitin-dependent protein catabolic process (GO:0006511)	1.0	0.24705103751575305	-1.7089108388611232
+nitrogen compound transport (GO:0071705)	1.0	0.23710145998137927	-1.7078643604213617
+ribosomal small subunit assembly (GO:0000028)	1.0	0.24030149768132592	-1.6969452613604032
+negative regulation of transcription, DNA-templated (GO:0045892)	1.0	0.23850236537446703	-1.689928078278486
+mitochondrion disassembly (GO:0061726)	1.0	0.24840193879240072	-1.6575481730334045
+autophagy of mitochondrion (GO:0000422)	1.0	0.24840193879240072	-1.6575481730334045

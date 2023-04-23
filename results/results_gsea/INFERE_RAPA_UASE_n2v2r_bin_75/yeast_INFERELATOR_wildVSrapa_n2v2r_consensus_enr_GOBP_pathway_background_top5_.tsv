@@ -1,0 +1,100 @@
+pathway	freq	mean_padj
+'de novo' IMP biosynthetic process (GO:0006189)	1.0	0.00868479351140545
+'de novo' cotranslational protein folding (GO:0051083)	0.95	0.08432574363997214
+'de novo' posttranslational protein folding (GO:0051084)	0.925	0.04914626084007228
+ATP biosynthetic process (GO:0006754)	0.675	0.045043764546145976
+ATP generation from ADP (GO:0006757)	1.0	2.370184582799723e-05
+ATP synthesis coupled proton transport (GO:0015986)	0.85	0.019026702661358457
+IMP biosynthetic process (GO:0006188)	1.0	0.009004819946067168
+acetyl-CoA biosynthetic process (GO:0006085)	1.0	0.0169065729771202
+acetyl-CoA metabolic process (GO:0006084)	0.875	0.03499081684476582
+actin filament organization (GO:0007015)	0.95	0.043653746958771535
+actin polymerization or depolymerization (GO:0008154)	0.85	0.08442484231376238
+alpha-amino acid biosynthetic process (GO:1901607)	1.0	0.013086884391839259
+amide biosynthetic process (GO:0043604)	0.65	0.040063715376611714
+amino acid catabolic process via Ehrlich pathway (GO:0000955)	0.9	0.08570629676700552
+ammonium transport (GO:0015696)	0.575	0.0844333572329123
+aspartate family amino acid biosynthetic process (GO:0009067)	0.725	0.014230155061698729
+aspartate family amino acid metabolic process (GO:0009066)	0.65	0.034658596776197724
+branched-chain amino acid biosynthetic process (GO:0009082)	0.975	0.016723415149708824
+branched-chain amino acid metabolic process (GO:0009081)	0.65	0.0347450348412189
+carbohydrate catabolic process (GO:0016052)	1.0	0.005588947553327943
+cellular alcohol biosynthetic process (GO:0044108)	1.0	0.0004744825219935107
+cellular amino acid biosynthetic process (GO:0008652)	1.0	0.010795822480367912
+cellular lipid biosynthetic process (GO:0097384)	1.0	0.0004744825219935107
+cellular macromolecule biosynthetic process (GO:0034645)	0.75	0.058248543434044946
+cellular modified amino acid biosynthetic process (GO:0042398)	0.925	0.08445915723821407
+cellular response to oxidative stress (GO:0034599)	1.0	0.0015583398526101701
+chaperone mediated protein folding requiring cofactor (GO:0051085)	0.925	0.04914626084007228
+chronological cell aging (GO:0001300)	0.775	0.08620433644360027
+cytoplasmic translation (GO:0002181)	1.0	1.3961103013900898e-37
+dicarboxylic acid biosynthetic process (GO:0043650)	1.0	7.145560128180119e-05
+disaccharide biosynthetic process (GO:0046351)	0.8	0.08437606951662222
+energy coupled proton transport, down electrochemical gradient (GO:0015985)	0.675	0.045043764546145976
+ergosterol biosynthetic process (GO:0006696)	1.0	0.0004744825219935107
+ergosterol metabolic process (GO:0008204)	1.0	0.0006140473372438933
+folic acid-containing compound metabolic process (GO:0006760)	0.7	0.07971276013938851
+gluconeogenesis (GO:0006094)	1.0	0.01338133769129661
+glucose 6-phosphate metabolic process (GO:0051156)	0.975	0.041911240050857744
+glucose metabolic process (GO:0006006)	1.0	0.0033652599226463185
+glutamate biosynthetic process (GO:0006537)	1.0	0.0014292727685236047
+glutamate metabolic process (GO:0006536)	1.0	0.00023565950289338605
+glutamine family amino acid biosynthetic process (GO:0009084)	1.0	0.00019509307351434936
+glycogen metabolic process (GO:0005977)	0.55	0.05123413501461926
+glycolytic process (GO:0006096)	1.0	2.370184582799723e-05
+heterocycle biosynthetic process (GO:0018130)	0.5	0.06602353163906259
+hexose biosynthetic process (GO:0019319)	1.0	0.01338133769129661
+hydrogen peroxide metabolic process (GO:0042743)	0.75	0.08404163180483781
+intracellular pH reduction (GO:0051452)	0.9	0.04669925928279409
+isoleucine metabolic process (GO:0006549)	0.65	0.08315257195280892
+maintenance of translational fidelity (GO:1990145)	0.9	0.08432222092762866
+methionine metabolic process (GO:0006555)	1.0	0.03257894038524938
+mitochondrial ATP synthesis coupled electron transport (GO:0042775)	0.85	0.0021665535980309666
+mitochondrial electron transport, ubiquinol to cytochrome c (GO:0006122)	1.0	0.0019150751367763516
+mitochondrion distribution (GO:0048311)	0.95	0.021653368429185995
+mitochondrion inheritance (GO:0000001)	0.95	0.021653368429185995
+nicotinamide nucleotide metabolic process (GO:0046496)	1.0	0.000560239344063519
+nucleobase metabolic process (GO:0009112)	0.65	0.08203253807282919
+nucleotide biosynthetic process (GO:0009165)	1.0	0.02646117371237274
+organic cyclic compound biosynthetic process (GO:1901362)	0.7	0.03507992245084962
+pentose-phosphate shunt (GO:0006098)	0.575	0.09579836356363082
+peptide biosynthetic process (GO:0043043)	1.0	0.041563222710600575
+phytosteroid biosynthetic process (GO:0016129)	1.0	0.0004744825219935107
+proteasomal protein catabolic process (GO:0010498)	0.975	0.002007737174714227
+proteasomal ubiquitin-independent protein catabolic process (GO:0010499)	1.0	0.0007045619136441438
+proteasome assembly (GO:0043248)	1.0	0.00552392105156195
+protein catabolic process (GO:0030163)	0.925	0.04860665476020906
+proteolysis involved in cellular protein catabolic process (GO:0051603)	1.0	0.000688243745077829
+purine nucleotide biosynthetic process (GO:0006164)	0.5	0.09561574834217504
+purine-containing compound biosynthetic process (GO:0072522)	0.875	0.08490444113129683
+pyruvate metabolic process (GO:0006090)	1.0	5.559796600796538e-06
+rRNA export from nucleus (GO:0006407)	1.0	0.00041618254999664157
+rRNA transport (GO:0051029)	1.0	0.00041618254999664157
+rRNA-containing ribonucleoprotein complex export from nucleus (GO:0071428)	1.0	0.0002404165074434032
+regulation of phosphatidylcholine biosynthetic process (GO:2001245)	0.55	0.08353773125800507
+respiratory electron transport chain (GO:0022904)	1.0	0.005514529886640202
+ribosomal small subunit assembly (GO:0000028)	1.0	0.0014325175128368439
+ribosome assembly (GO:0042255)	1.0	0.0006850549272251573
+secondary alcohol biosynthetic process (GO:1902653)	1.0	0.0002839495908320682
+serine family amino acid biosynthetic process (GO:0009070)	0.55	0.06536684772852978
+steroid biosynthetic process (GO:0006694)	0.9	0.05246161620544757
+sterol biosynthetic process (GO:0016126)	1.0	8.609690458082196e-05
+sulfate assimilation (GO:0000103)	0.825	0.07939915925491259
+sulfur amino acid metabolic process (GO:0000096)	1.0	0.016724944317141287
+threonine biosynthetic process (GO:0009088)	0.6	0.029486727948875507
+threonine metabolic process (GO:0006566)	0.475	0.03404052724054265
+translation (GO:0006412)	1.0	1.5014333474942363e-20
+translational elongation (GO:0006414)	0.95	0.015231026528416963
+translational frameshifting (GO:0006452)	0.925	0.08477855832689606
+trehalose biosynthetic process (GO:0005992)	0.8	0.08437606951662222
+tricarboxylic acid metabolic process (GO:0072350)	0.875	0.08555480327318693
+ubiquitin-dependent protein catabolic process (GO:0006511)	0.85	0.028004355315207743
+vacuolar acidification (GO:0007035)	0.9	0.04669925928279409
+mitochondrial electron transport, cytochrome c to oxygen (GO:0006123)	0.725	0.03666669781640146
+proteasome regulatory particle assembly (GO:0070682)	0.75	0.034093096504770395
+cellular respiration (GO:0045333)	0.125	0.09645198345362595
+sulfur amino acid biosynthetic process (GO:0000097)	0.325	0.06376197173274646
+organelle inheritance (GO:0048308)	0.325	0.08623923059010982
+ER to Golgi vesicle-mediated transport (GO:0006888)	0.275	0.09631188628360833
+replicative cell aging (GO:0001302)	0.2	0.0801246925527704
+proteasome-mediated ubiquitin-dependent protein catabolic process (GO:0043161)	0.4	0.07829191128036707

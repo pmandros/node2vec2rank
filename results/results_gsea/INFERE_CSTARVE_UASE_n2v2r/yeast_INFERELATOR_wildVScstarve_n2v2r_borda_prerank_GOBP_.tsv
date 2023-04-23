@@ -1,0 +1,6 @@
+pathway	freq	mean_padj	mean_NES
+cellular protein catabolic process (GO:0044257)	1.0	0.08323058240004466	2.3325646459530827
+tRNA transcription from RNA polymerase III promoter (GO:0042797)	1.0	0.1883979074481631	2.086933180183778
+tRNA transcription (GO:0009304)	1.0	0.1883979074481631	2.086933180183778
+protein catabolic process in the vacuole (GO:0007039)	1.0	0.18073617747916676	2.0540054956668765
+cytoplasmic translational initiation (GO:0002183)	1.0	0.1676225217638109	2.0295388155149285

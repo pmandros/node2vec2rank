@@ -93,7 +93,7 @@ def network_transform(network, threshold=None, top_percent_keep=100, binarize=Fa
     if binarize:
         network[network != 0] = 1
 
-    return network
+    return np.float32(network) 
 
 # # remove nodes that have no edges
 # # if two networks are passed, then their intersection of genes is used

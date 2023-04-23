@@ -24,6 +24,8 @@ class n2v2r():
         self.distance_metrics = self.config['distance_metrics']
         self.save_dir = None
 
+        
+
         self.node_embeddings = None
         self.ranks_sequence = None
         self.signed_ranks_sequence = None
@@ -59,10 +61,10 @@ class n2v2r():
         exec_time_embed = round(time.time() - start_time, 2)
 
         if self.config["verbose"] == 1:
-            print(f"    Finished UASE embedding in {exec_time_embed} seconds")
+            print(f"        Finished UASE embedding in {exec_time_embed} seconds")
 
         if self.config["verbose"] == 1:
-            print("Ranking ...")
+            print(" Ranking ...")
         start_time = time.time()
 
         #for every pair of consecutive graphs
@@ -85,7 +87,7 @@ class n2v2r():
             
         exec_time_ranking = round(time.time() - start_time, 2)
         if self.config["verbose"] == 1:
-            print(f"    Finished ranking in {exec_time_ranking} seconds")
+            print(f"        Finished ranking in {exec_time_ranking} seconds")
 
         self.ranks_sequence = ranks_sequence_list
      
@@ -168,7 +170,7 @@ class n2v2r():
                 #sign every column and add to the dataframe
                 for column_combo_index in range(ranks_pd.shape[1]):
                     combo_rank_s = ranks_pd.iloc[:, column_combo_index]
-                    combo_signed_ranks_s = self._signed_transform_single(combo_rank_s, prior_signed_ranks)
+                    combo_signed_ranks_s = signed_transform_single(combo_rank_s, prior_signed_ranks)
                     singed_ranks_pd[ranks_pd.columns[column_combo_index]] = combo_signed_ranks_s.values
 
                 singed_ranks_pd.index = combo_signed_ranks_s.index
@@ -179,7 +181,7 @@ class n2v2r():
                 #sign the aggregate
                 if self.aggregate_ranks_sequence:
                     combo_agg_rank_s = self.aggregate_ranks_sequence[i].iloc[:,0]
-                    combo_signed_agg_ranks_s = self._signed_transform_single(combo_agg_rank_s, prior_signed_ranks)
+                    combo_signed_agg_ranks_s = signed_transform_single(combo_agg_rank_s, prior_signed_ranks)
                     combo_signed_agg_ranks_pd = pd.DataFrame(combo_signed_agg_ranks_s.values,index=combo_signed_agg_ranks_s.index,columns=["signed_agg_ranks"])
                     if self.config["save_dir"]:
                         combo_signed_agg_ranks_pd.to_csv(os.path.join(self.save_dir,str(i+1)+"vs"+str(i+2)+"_agg_signed.tsv"), sep='\t', index = True)
@@ -197,7 +199,7 @@ class n2v2r():
 
         return signed_ranks_sequence_list
     
-    def _signed_transform_single(self,ranks: pd.Series, prior_signed_ranks: pd.Series):
+def signed_transform_single(ranks: pd.Series, prior_signed_ranks: pd.Series):
         node_names_list = []
         ranks_list = []
         for index, rank in ranks.iteritems():

@@ -1,0 +1,36 @@
+pathway	freq	mean_padj	mean_NES
+translation (GO:0006412)	1.0	0.0	-3.5297052198996317
+cytoplasmic translation (GO:0002181)	1.0	0.0	-3.3299432275977736
+positive regulation of cellular process (GO:0048522)	1.0	0.01186914062755984	-2.5044049141946845
+small GTPase mediated signal transduction (GO:0007264)	1.0	0.026983749395468076	-2.3485415910024603
+cell cycle G2/M phase transition (GO:0044839)	1.0	0.04154199219645944	-2.243263628082935
+G2/M transition of mitotic cell cycle (GO:0000086)	1.0	0.04154199219645944	-2.243263628082935
+energy coupled proton transport, down electrochemical gradient (GO:0015985)	1.0	0.0312955856390738	-2.2426226472965425
+ATP biosynthetic process (GO:0006754)	1.0	0.0312955856390738	-2.2426226472965425
+ATP synthesis coupled proton transport (GO:0015986)	1.0	0.02942557780582544	-2.233940930643999
+positive regulation of cell cycle (GO:0045787)	1.0	0.02959866943997735	-2.2167924823499496
+maturation of SSU-rRNA (GO:0030490)	1.0	0.030853021801753564	-2.200989287688743
+ubiquitin-dependent protein catabolic process (GO:0006511)	1.0	0.038296524056111045	-2.163501003891189
+maturation of SSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000462)	1.0	0.08268454216026062	-2.039103142603669
+ribosomal small subunit assembly (GO:0000028)	1.0	0.15109310044413787	-1.9233765603488135
+actin polymerization or depolymerization (GO:0008154)	1.0	0.17269599613099568	-1.8910382019207623
+ribosomal small subunit biogenesis (GO:0042274)	1.0	0.16746615604197712	-1.885255197054398
+arginine metabolic process (GO:0006525)	1.0	0.18772442271971482	-1.8559197313329898
+protein polyubiquitination (GO:0000209)	1.0	0.17970620731414821	-1.8538747411712835
+arginine biosynthetic process (GO:0006526)	1.0	0.17669011812507254	-1.8470574569109468
+ribosome assembly (GO:0042255)	1.0	0.18504732059655013	-1.8308863192558378
+ribonucleoprotein complex assembly (GO:0022618)	1.0	0.18217011373906578	-1.8252552596075544
+cellular glucan metabolic process (GO:0006073)	1.0	0.19472808842090364	-1.8074752871808606
+proteasomal protein catabolic process (GO:0010498)	1.0	0.19526026456317194	-1.798522873119966
+energy reserve metabolic process (GO:0006112)	1.0	0.18749533085098433	-1.7981678689104963
+negative regulation of transcription, DNA-templated (GO:0045892)	1.0	0.1890309009196749	-1.7896077634702092
+regulation of mitotic nuclear division (GO:0007088)	1.0	0.1887364549310297	-1.7835199679881641
+peptide biosynthetic process (GO:0043043)	1.0	0.19518142365320626	-1.7726531568013708
+proteasome-mediated ubiquitin-dependent protein catabolic process (GO:0043161)	1.0	0.19373457776569494	-1.767585652121364
+mitotic cell cycle phase transition (GO:0044772)	1.0	0.1969535522885711	-1.7588826638630053
+protein ubiquitination (GO:0016567)	1.0	0.19164953007063026	-1.757627482791111
+positive regulation of cytoskeleton organization (GO:0051495)	1.0	0.20319920894944432	-1.7409752930301772
+protein monoubiquitination (GO:0006513)	1.0	0.20874155621262225	-1.7298778265112946
+mRNA splicing, via spliceosome (GO:0000398)	1.0	0.23691074445805524	-1.6988296321826322
+proteolysis involved in cellular protein catabolic process (GO:0051603)	1.0	0.23285552085961841	-1.695413174062622
+regulation of cyclin-dependent protein serine/threonine kinase activity (GO:0000079)	1.0	0.2312892805325835	-1.691136662233601

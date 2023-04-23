@@ -1,20 +1,20 @@
-{
-    "data_etl": {
-        "save_dir": "../output",
-        "network_filenames": ["sbm1.txt", "sbm2.txt"],
-        "seperator": ",",
-        "bipartite_to_unipartite": true,
-        "threshold" : null, 
-        "top_percent_keep" : 100,
-        "binarize" : false, 
-        "symmetrize" : true,
-        "absolute" : false,
-        "is_edge_list": false,
-        "verbose": 0
-    },
-    "training": {
-        "embed_dimensions": [2,4,6,8,10,12,14,16],
-        "distance_metrics": ["euclidean","cosine","cityblock","correlation","chebyshev"],
-        "seed": null
-    }
+{   "data_loading": {
+    "save_dir": null,
+    "network_filenames": ["sbm1.txt", "sbm2.txt"],
+    "seperator": ",",
+    "is_edge_list": false
+},
+"data_preprocessing": {
+    "project_unipartite": false,
+    "threshold" : 0, 
+    "top_percent_keep" : 100,
+    "binarize" : false, 
+    "absolute" : false
+},
+"fitting_ranking": {
+    "embed_dimensions": [2,4,8,16],
+    "distance_metrics": ["euclidean","cosine","cityblock","correlation","chebyshev"],
+    "seed": null,
+    "verbose": 0
+}
 }

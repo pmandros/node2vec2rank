@@ -1,0 +1,19 @@
+pathway	freq	mean_padj	mean_NES
+translation (GO:0006412)	1.0	0.0	-3.282858910874415
+cytoplasmic translation (GO:0002181)	1.0	0.0	-3.1642243326822466
+positive regulation of cellular process (GO:0048522)	1.0	0.018159309868120452	-2.441010127374414
+G2/M transition of mitotic cell cycle (GO:0000086)	1.0	0.03072555229685981	-2.314441536143816
+cell cycle G2/M phase transition (GO:0044839)	1.0	0.03072555229685981	-2.314441536143816
+mitotic cytokinesis (GO:0000281)	1.0	0.04594305396634474	-2.23641634243181
+positive regulation of cell cycle (GO:0045787)	1.0	0.0776699624930752	-2.1463766537812403
+ATP synthesis coupled proton transport (GO:0015986)	1.0	0.07136608778171338	-2.1376078735779633
+mitotic cell cycle phase transition (GO:0044772)	1.0	0.07977990135394253	-2.1032668521701416
+maturation of SSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000462)	1.0	0.1002393904720249	-2.047591996952322
+negative regulation of transcription, DNA-templated (GO:0045892)	1.0	0.108163452959932	-2.022054966137647
+ubiquitin-dependent protein catabolic process (GO:0006511)	1.0	0.17096990240835405	-1.938936470078057
+energy coupled proton transport, down electrochemical gradient (GO:0015985)	1.0	0.15829729830753	-1.9242610108055491
+ATP biosynthetic process (GO:0006754)	1.0	0.15829729830753	-1.9242610108055491
+maturation of SSU-rRNA (GO:0030490)	1.0	0.16430543568675385	-1.9049997036334516
+small GTPase mediated signal transduction (GO:0007264)	1.0	0.15546639160844622	-1.9030011571685916
+negative regulation of transcription from RNA polymerase II promoter (GO:0000122)	1.0	0.1740730080064064	-1.8731203574131925
+nucleosome organization (GO:0034728)	1.0	0.18849363643109032	-1.8484482016505197
