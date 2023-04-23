@@ -5,15 +5,15 @@
         "is_edge_list": false
     },
     "data_preprocessing": {
-        "project_unipartite": true,
+        "project_unipartite": false,
         "threshold" : 0, 
-        "top_percent_keep" : [100, 75, 50],
-        "binarize" : [false], 
+        "top_percent_keep" : [100, 75],
+        "binarize" : [false,true], 
         "absolute" : true
     },
     "fitting_ranking": {
         "embed_dimensions": [2,4,8,16],
-        "distance_metrics": ["euclidean","cosine","cityblock","correlation","chebyshev"],
+        "distance_metrics": ["euclidean", "cosine", "chebyshev"],
         "seed": null,
         "verbose": 1
     }

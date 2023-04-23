@@ -13,20 +13,23 @@ for some mXn bipartite matrix W, e.g., a TFxGENE adjacency matrix.
 on_right: Whether to project right W^TW or left WW^T
 returns A symmetric matrix corresponding to the projection
 """
-def bipartite_to_unipartite_projection(grn, on_right = True):
-    [r,c] = grn.shape
 
-    assert(r!=c, 'Graph is not bipartite')
 
-    if(on_right):
-        to_return=np.matmul(np.transpose(grn),grn)
+def bipartite_to_unipartite_projection(grn, on_right=True):
+    [r, c] = grn.shape
+
+    assert (r != c, 'Graph is not bipartite')
+
+    if (on_right):
+        to_return = np.matmul(np.transpose(grn), grn)
     else:
-        to_return=np.matmul(grn, np.transpose(grn))
+        to_return = np.matmul(grn, np.transpose(grn))
 
-    [r,c] = np.shape(to_return)
-    assert(r==c, 'Graph should be square')
+    [r, c] = np.shape(to_return)
+    assert (r == c, 'Graph should be square')
 
     return to_return
+
 
 """
 Transforms a mXn bipartite matrix into a (m+n)X(m+n) symmetric matrix by zero-padding 
@@ -34,6 +37,8 @@ for representing bipartite matrices as symmetric adjacency matrices.
 matrix: An mXn bipartite matrix to symmetrize
 returns A symmetric matrix 
 """
+
+
 def symmetrize_matrix(matrix):
     [r, c] = np.shape(matrix)
     if (r == c):
@@ -72,6 +77,8 @@ project_unipartite: project the mXn matrix into a mXm (left) or nXn (right) matr
 on_right: whether to project an mXn matrix into a mXm (left) or nXn (right) matrix
 returns A transformed and preprocessed symmetric matrix 
 """
+
+
 def network_transform(network, threshold=None, top_percent_keep=100, binarize=False, symmetrize=True, absolute=False, project_unipartite=False, on_right=True):
     [r, c] = np.shape(network)
 
@@ -84,7 +91,8 @@ def network_transform(network, threshold=None, top_percent_keep=100, binarize=Fa
     if (r != c) and symmetrize and (not project_unipartite):
         network = symmetrize_matrix(network)
     elif (r != c) and project_unipartite:
-        network = bipartite_to_unipartite_projection(network, on_right=on_right)
+        network = bipartite_to_unipartite_projection(
+            network, on_right=on_right)
 
     cut_off = np.percentile(network, 100-top_percent_keep)
     network[network < cut_off] = 0
@@ -93,7 +101,7 @@ def network_transform(network, threshold=None, top_percent_keep=100, binarize=Fa
     if binarize:
         network[network != 0] = 1
 
-    return np.float32(network) 
+    return np.float32(network)
 
 # # remove nodes that have no edges
 # # if two networks are passed, then their intersection of genes is used
@@ -167,9 +175,11 @@ mat1: second embedding matrix (n_nodes,d_dimensions)
 distance: distance metric to be used
 returns Lists of nodes names and distance values sorted by similarity in decreasing order
 """
+
+
 def compute_pairwise_distances(mat1, mat2, distance='cosine'):
-    mat1 = mat1 - mat1.mean(axis = 0, keepdims=True)
-    mat2 = mat2 - mat2.mean(axis = 0, keepdims=True)
+    mat1 = mat1 - mat1.mean(axis=0, keepdims=True)
+    mat2 = mat2 - mat2.mean(axis=0, keepdims=True)
 
     if distance == "cosine":
         dists = [scipy.spatial.distance.cosine(row1, row2)
@@ -200,6 +210,8 @@ save_dir: path to save the average rankings (Optional)
 agg: aggregation operations to be done on the data (Default: average and standard deviation)
 returns Dataframe of nodes names and average distance values sorted by similarity in decreasing order
 """
+
+
 def join_aggregate_ranking(rankings, agg=None, save_dir=None):
     joined = pd.DataFrame()
     for i, df in enumerate(rankings):
@@ -227,6 +239,8 @@ def join_aggregate_ranking(rankings, agg=None, save_dir=None):
 """
 save experiment data as a pickle
 """
+
+
 def save_experiment(data, path):
     file = open(path, 'wb')
     pickle.dump(data, file)
@@ -236,6 +250,8 @@ def save_experiment(data, path):
 """
 load experiement data from pickle
 """
+
+
 def load_experiment(path):
     file = open(path, 'rb')
     data = pickle.load(file)
@@ -246,6 +262,8 @@ def load_experiment(path):
 """
 Add a message to a log file, also prettify any dictionary into user-friendly format when writing it to the log file
 """
+
+
 def logger(message, save_dir, selected_keys=None):
     with open(os.path.join(save_dir, "simulation_results.log"), "a") as file:
         if isinstance(message, str):
