@@ -4,7 +4,7 @@ import networkx as nx
 import os
 import csrgraph as cg
 
-from node2vec2rank.utils import network_transform
+from node2vec2rank.pre_utils import network_transform
 
 
 class DataLoader():

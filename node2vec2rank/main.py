@@ -1,4 +1,4 @@
-from node2vec2rank.model import Model2Rank
+from node2vec2rank.model_old import Model2Rank
 from node2vec2rank.multimodel import MultiModel2Rank
 from node2vec2rank.dataloader import DataLoader
 import json
