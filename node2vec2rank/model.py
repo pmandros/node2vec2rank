@@ -110,7 +110,7 @@ class n2v2r():
         self.ranks_sequence = ranks_sequence_list
 
         print(
-            f"n2v2r computed {len(ranks_sequence_list)}({len(ranks_sequence_list)/(len(self.config['binarize'])*len(self.config['top_percent_keep']))}) rankings in {round(time.time() - start_time, 2)} seconds")
+            f"n2v2r computed {len(ranks_sequence_list)} rankings for {int(len(ranks_sequence_list)/(len(self.config['binarize'])*len(self.config['top_percent_keep'])))}) comparison(s) in {round(time.time() - start_time, 2)} seconds")
         return ranks_sequence_list
 
     """
