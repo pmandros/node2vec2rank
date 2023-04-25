@@ -26,10 +26,10 @@ class n2v2r():
         self.save_dir = None
 
         self.node_embeddings = None
-        self.ranks_sequence = None
-        self.signed_ranks_sequence = None
-        self.aggregate_ranks_sequence = None
-        self.aggregate_signed_ranks_sequence = None
+        self.pairwise_ranks = None
+        self.pairwise_signed_ranks = None
+        self.pairwise_aggregate_ranks = None
+        self.pairwise_signed_aggregate_ranks = None
 
         if self.config["seed"]:
             random.seed(self.config["seed"])
@@ -41,7 +41,7 @@ class n2v2r():
     """
 
     def fit_transform_rank(self):
-        ranks_sequence_list = []
+        pairwise_ranks_dict = {}
 
         now = datetime.now().strftime(r"%m_%d_%Y_%H_%M_%S")
 
@@ -55,7 +55,6 @@ class n2v2r():
         print(
             f"\nRunning n2v2r with dimensions {self.embed_dimensions} and distance metrics {self.distance_metrics} ...")
         start_time = time.time()
-        ranks_pd = pd.DataFrame(index=self.node_names)
 
         for top_percent in self.config['top_percent_keep']:
             for bin in self.config['binarize']:
@@ -85,6 +84,10 @@ class n2v2r():
 
                 # for every pair of consecutive graphs
                 for i in range(1, self.num_graphs):
+                    graph_comparison_key = str(i) + "vs" + str(i+1)
+                    per_graph_comp_and_prepro_combo_ranks_pd = pd.DataFrame(
+                        index=self.node_names)
+
                     # go over all provided choices for number of latent dimensions
                     for d in self.embed_dimensions:
                         embed_one = self.node_embeddings[i-1, :, :d+1]
@@ -95,23 +98,32 @@ class n2v2r():
                                 str(d)+"_distance-"+distance_metric
                             distances = compute_pairwise_distances(
                                 embed_one, embed_two, distance_metric)
-                            ranks_pd[col_name] = distances
+                            per_graph_comp_and_prepro_combo_ranks_pd[col_name] = distances
 
                     if self.config["save_dir"]:
-                        ranks_pd.to_csv(os.path.join(self.save_dir, str(
-                            i)+"vs"+str(i+1)+".tsv"), sep='\t', index=True)
+                        per_graph_comp_and_prepro_combo_ranks_pd.to_csv(os.path.join(
+                            self.save_dir, graph_comparison_key+".tsv"), sep='\t', index=True)
 
-                    ranks_sequence_list.append(ranks_pd)
+                    if graph_comparison_key in pairwise_ranks_dict:
+                        pairwise_ranks_dict[graph_comparison_key].append(
+                            per_graph_comp_and_prepro_combo_ranks_pd)
+                    else:
+                        pairwise_ranks_dict[graph_comparison_key] = []
+                        pairwise_ranks_dict[graph_comparison_key].append(
+                            per_graph_comp_and_prepro_combo_ranks_pd)
 
                 exec_time_ranking = round(time.time() - start_time_ranking, 2)
                 if self.config["verbose"] == 1:
                     print(f"\tRanking in {exec_time_ranking} seconds")
 
-        self.ranks_sequence = ranks_sequence_list
+        self.pairwise_ranks = dict([(key, pd.concat(
+            pairwise_ranks_dict[key], axis=1)) for key in pairwise_ranks_dict])
+        assert (len(pairwise_ranks_dict) == len(self.graphs),
+                'Number of comparisons should be the same as number of graphs')
 
         print(
-            f"n2v2r computed {len(ranks_sequence_list)} rankings for {int(len(ranks_sequence_list)/(len(self.config['binarize'])*len(self.config['top_percent_keep'])))}) comparison(s) in {round(time.time() - start_time, 2)} seconds")
-        return ranks_sequence_list
+            f"n2v2r computed {len(self.pairwise_ranks)*len(self.embed_dimensions)*len(self.config['binarize'])*len(self.config['top_percent_keep'])*len(self.distance_metrics)} rankings for {len(self.pairwise_ranks)} comparison(s) in {round(time.time() - start_time, 2)} seconds")
+        return self.pairwise_ranks
 
     """
     Computes the aggregation of ranks of nodes for a given sequence of graphs.
@@ -121,18 +133,17 @@ class n2v2r():
 
     def aggregate_transform(self, method='Borda'):
         # if ranks have been computed already
-        if self.ranks_sequence:
-            aggregate_ranks_sequence_list = []
+        if self.pairwise_ranks:
+            pairwise_aggregate_ranks_dict = {}
 
             start_time = time.time()
             print("\nRank aggregation with Borda ...")
 
-            i = 0
-            for ranks in self.ranks_sequence:
-                ranks_list = []
+            for comparison_key in self.pairwise_ranks:
 
+                ranks_list = []
                 # collect the columns containing the different combo rankings
-                for (_, column_data) in ranks.iteritems():
+                for (_, column_data) in self.pairwise_ranks[comparison_key].iteritems():
                     # sort according to rank value and get the index
                     rank_series = pd.Series(column_data, index=self.node_names)
                     rank_series.sort_values(ascending=False, inplace=True)
@@ -149,24 +160,24 @@ class n2v2r():
                     # aggregate_ranking_pd = pd.DataFrame(
                     #     borda_ranks, index=borda_node_names, columns=["borda_ranks"])
                     aggregate_ranking_pd = borda_aggregate_parallel(ranks_list)
+
                     if self.config["save_dir"]:
-                        aggregate_ranking_pd.to_csv(os.path.join(self.save_dir, str(
-                            i+1)+"VS"+str(i+2)+"_agg.tsv"), sep='\t', index=True)
-                    aggregate_ranks_sequence_list.append(aggregate_ranking_pd)
+                        aggregate_ranking_pd.to_csv(os.path.join(
+                            self.save_dir, comparison_key+"_agg.tsv"), sep='\t', index=True)
+
                 else:
                     print('Aggregation method not found. Available methods: Borda')
                     return None
 
-                i += 1
+                pairwise_aggregate_ranks_dict[comparison_key] = aggregate_ranking_pd
 
+            self.pairwise_aggregate_ranks = pairwise_aggregate_ranks_dict
             exec_time_agg = round(time.time() - start_time, 2)
             print(f"\tFinished aggregation in {exec_time_agg} seconds")
-
-            self.aggregate_ranks_sequence = aggregate_ranks_sequence_list
         else:
             print("No n2v2r embeddings found")
 
-        return self.aggregate_ranks_sequence
+        return self.pairwise_aggregate_ranks
 
     """
     Computes the sign transofrmation of ranks of nodes for a given sequence of 
@@ -176,59 +187,58 @@ class n2v2r():
     """
 
     def signed_ranks_transform(self, prior_signed_ranks: pd.Series):
-        if self.ranks_sequence:
+        if self.pairwise_ranks:
             print("\nSigned ranks transformation ...")
             start_time = time.time()
 
-            signed_ranks_sequence_list = []
+            pairwise_signed_ranks_dict = {}
 
             # sign the aggregate if already computed
-            if self.aggregate_ranks_sequence:
-                aggregate_signed_ranks_sequence_list = []
+            if self.pairwise_aggregate_ranks:
+                pairwise_signed_aggregate_ranks_dict = {}
 
-            i = 0
-            for ranks_pd in self.ranks_sequence:
+            for comparison_key in self.pairwise_ranks:
                 singed_ranks_pd = pd.DataFrame()
 
                 # sign every column and add to the dataframe
-                for column_combo_index in range(ranks_pd.shape[1]):
-                    combo_rank_s = ranks_pd.iloc[:, column_combo_index]
+                for column_combo_index in range(self.pairwise_ranks[comparison_key].shape[1]):
+                    combo_rank_s = self.pairwise_ranks[comparison_key].iloc[:,
+                                                                            column_combo_index]
                     combo_signed_ranks_s = signed_transform_single(
                         combo_rank_s, prior_signed_ranks)
-                    singed_ranks_pd[ranks_pd.columns[column_combo_index]
-                                    ] = combo_signed_ranks_s.values
+                    singed_ranks_pd[self.pairwise_ranks[comparison_key]
+                                    .columns[column_combo_index]] = combo_signed_ranks_s.values
 
                 singed_ranks_pd.index = combo_signed_ranks_s.index
                 if self.config["save_dir"]:
-                    singed_ranks_pd.to_csv(os.path.join(self.save_dir, str(
-                        i+1)+"vs"+str(i+2)+"_signed.tsv"), sep='\t', index=True)
-                signed_ranks_sequence_list.append(singed_ranks_pd)
+                    singed_ranks_pd.to_csv(os.path.join(
+                        self.save_dir, comparison_key+"_signed.tsv"), sep='\t', index=True)
+
+                pairwise_signed_ranks_dict[comparison_key] = singed_ranks_pd
 
                 # sign the aggregate
-                if self.aggregate_ranks_sequence:
-                    combo_agg_rank_s = self.aggregate_ranks_sequence[i].iloc[:, 0]
+                if self.pairwise_aggregate_ranks:
+                    combo_agg_rank_s = self.pairwise_ranks[comparison_key].iloc[:, 0]
                     combo_signed_agg_ranks_s = signed_transform_single(
                         combo_agg_rank_s, prior_signed_ranks)
                     combo_signed_agg_ranks_pd = pd.DataFrame(
                         combo_signed_agg_ranks_s.values, index=combo_signed_agg_ranks_s.index, columns=["signed_agg_ranks"])
                     if self.config["save_dir"]:
-                        combo_signed_agg_ranks_pd.to_csv(os.path.join(self.save_dir, str(
-                            i+1)+"vs"+str(i+2)+"_agg_signed.tsv"), sep='\t', index=True)
-                    aggregate_signed_ranks_sequence_list.append(pd.DataFrame(
-                        combo_signed_agg_ranks_s.values, index=combo_signed_agg_ranks_s.index, columns=["signed_agg_ranks"]))
+                        combo_signed_agg_ranks_pd.to_csv(os.path.join(
+                            self.save_dir, comparison_key+"_agg_signed.tsv"), sep='\t', index=True)
+                    pairwise_signed_aggregate_ranks_dict[comparison_key] = pd.DataFrame(
+                        combo_signed_agg_ranks_s.values, index=combo_signed_agg_ranks_s.index, columns=["signed_agg_ranks"])
 
-                i += 1
+        self.pairwise_signed_ranks = pairwise_signed_ranks_dict
 
-        self.aggregate_signed_ranks_sequence = signed_ranks_sequence_list
-
-        if self.aggregate_ranks_sequence:
-            self.aggregate_signed_ranks_sequence = aggregate_signed_ranks_sequence_list
+        if self.pairwise_aggregate_ranks:
+            self.pairwise_signed_aggregate_ranks = pairwise_signed_aggregate_ranks_dict
 
         exec_time_signed = round(time.time() - start_time, 2)
         print(
             f"\tFinished signed transformation in {exec_time_signed} seconds")
 
-        return signed_ranks_sequence_list
+        return self.pairwise_signed_ranks
 
 
 def signed_transform_single(ranks: pd.Series, prior_signed_ranks: pd.Series):
@@ -253,10 +263,10 @@ def signed_transform_single(ranks: pd.Series, prior_signed_ranks: pd.Series):
 
 #     for i in range(len(rankings)):
 #         ranking = rankings[i]
-        
+
 #         ranks = [num_candidates-ranking.index(node) for node in index]
 
-#         borda_ranking[str(i)] = ranks 
+#         borda_ranking[str(i)] = ranks
 
 #     ranks = borda_ranking.sum(axis=1)
 
@@ -264,18 +274,20 @@ def signed_transform_single(ranks: pd.Series, prior_signed_ranks: pd.Series):
 #     to_return.sort_values(by='borda_ranks', ascending=False,inplace=True)
 #     return to_return
 
-def borda_aggregate_single(ranking: list, index: list):
+def get_ranking(ranking: list, index: list):
     num_candidates = len(index)
-    
+
     return [num_candidates-ranking.index(node) for node in index]
+
 
 def borda_aggregate_parallel(rankings: list):
     index = rankings[0]
 
-    results = np.asarray(Parallel(n_jobs=-2)(delayed(borda_aggregate_single)(ranking, index) for ranking in rankings))
-    borda_ranks = np.sum(results,axis=0)
+    results = np.asarray(Parallel(
+        n_jobs=-2)(delayed(get_ranking)(ranking, index) for ranking in rankings))
+    borda_ranks = np.sum(results, axis=0)
     to_return = pd.DataFrame(borda_ranks, index=index, columns=['borda_ranks'])
-    to_return.sort_values(by='borda_ranks', ascending=False,inplace=True)
+    to_return.sort_values(by='borda_ranks', ascending=False, inplace=True)
 
     return to_return
 
@@ -314,4 +326,3 @@ def compute_pairwise_distances(mat1, mat2, distance='cosine'):
         raise Exception("Distance metric unknown")
 
     return dists
-
