@@ -12,7 +12,7 @@
     "absolute" : false
 },
 "fitting_ranking": {
-    "embed_dimensions": [2,4,8,16],
+    "embed_dimensions": [2,4,16,8],
     "distance_metrics": ["euclidean", "cosine", "chebyshev"],
     "seed": null,
     "verbose": 1

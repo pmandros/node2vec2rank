@@ -41,7 +41,6 @@ class n2v2r():
     """
 
     def fit_transform_rank(self):
-        pairwise_ranks_dict = {}
 
         now = datetime.now().strftime(r"%m_%d_%Y_%H_%M_%S")
 
@@ -56,6 +55,8 @@ class n2v2r():
             f"\nRunning n2v2r with dimensions {self.embed_dimensions} and distance metrics {self.distance_metrics} ...")
         start_time = time.time()
 
+        ## go over all pairwise comparisons and preprocessing combinations
+        pairwise_ranks_dict = {}
         for top_percent in self.config['top_percent_keep']:
             for bin in self.config['binarize']:
                 # network transformation
@@ -92,6 +93,8 @@ class n2v2r():
                     for d in self.embed_dimensions:
                         embed_one = self.node_embeddings[i-1, :, :d+1]
                         embed_two = self.node_embeddings[i, :, :d+1]
+
+                        # go over all provided choices for distance metrics
                         for distance_metric in self.distance_metrics:
                             col_name = "bin-" + \
                                 str(bin)+"_top-"+str(top_percent)+"_dim-" + \
@@ -114,11 +117,11 @@ class n2v2r():
 
                 exec_time_ranking = round(time.time() - start_time_ranking, 2)
                 if self.config["verbose"] == 1:
-                    print(f"\tRanking in {exec_time_ranking} seconds")
+                    print(f"\t\tRanking in {exec_time_ranking} seconds")
 
         self.pairwise_ranks = dict([(key, pd.concat(
             pairwise_ranks_dict[key], axis=1)) for key in pairwise_ranks_dict])
-        assert (len(pairwise_ranks_dict) == len(self.graphs),
+        assert (len(pairwise_ranks_dict) == (len(self.graphs)-1),
                 'Number of comparisons should be the same as number of graphs')
 
         print(
