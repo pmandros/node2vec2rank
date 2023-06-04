@@ -55,7 +55,7 @@ class n2v2r():
             f"\nRunning n2v2r with dimensions {self.embed_dimensions} and distance metrics {self.distance_metrics} ...")
         start_time = time.time()
 
-        ## go over all pairwise comparisons and preprocessing combinations
+        # go over all pairwise comparisons and preprocessing combinations
         pairwise_ranks_dict = {}
         for top_percent in self.config['top_percent_keep']:
             for bin in self.config['binarize']:
@@ -103,9 +103,9 @@ class n2v2r():
                                 embed_one, embed_two, distance_metric)
                             per_graph_comp_and_prepro_combo_ranks_pd[col_name] = distances
 
-                    if self.config["save_dir"]:
-                        per_graph_comp_and_prepro_combo_ranks_pd.to_csv(os.path.join(
-                            self.save_dir, graph_comparison_key+".tsv"), sep='\t', index=True)
+                    # if self.config["save_dir"]:
+                    #     per_graph_comp_and_prepro_combo_ranks_pd.to_csv(os.path.join(
+                    #         self.save_dir, graph_comparison_key+".tsv"), sep='\t', index=True)
 
                     if graph_comparison_key in pairwise_ranks_dict:
                         pairwise_ranks_dict[graph_comparison_key].append(
@@ -121,11 +121,17 @@ class n2v2r():
 
         self.pairwise_ranks = dict([(key, pd.concat(
             pairwise_ranks_dict[key], axis=1)) for key in pairwise_ranks_dict])
-        assert (len(pairwise_ranks_dict) == (len(self.graphs)-1),
+        assert (len(pairwise_ranks_dict) == ((len(self.graphs)-1)),
                 'Number of comparisons should be the same as number of graphs')
 
         print(
             f"n2v2r computed {len(self.pairwise_ranks)*len(self.embed_dimensions)*len(self.config['binarize'])*len(self.config['top_percent_keep'])*len(self.distance_metrics)} rankings for {len(self.pairwise_ranks)} comparison(s) in {round(time.time() - start_time, 2)} seconds")
+
+        if self.config["save_dir"]:
+            for (i, k) in enumerate(self.pairwise_ranks.keys()):
+                self.pairwise_ranks[k].to_csv(os.path.join(
+                    self.save_dir, k + ".tsv"), sep='\t', index=True)
+
         return self.pairwise_ranks
 
     """
@@ -164,9 +170,9 @@ class n2v2r():
                     #     borda_ranks, index=borda_node_names, columns=["borda_ranks"])
                     aggregate_ranking_pd = borda_aggregate_parallel(ranks_list)
 
-                    if self.config["save_dir"]:
-                        aggregate_ranking_pd.to_csv(os.path.join(
-                            self.save_dir, comparison_key+"_agg.tsv"), sep='\t', index=True)
+                    # if self.config["save_dir"]:
+                    #     aggregate_ranking_pd.to_csv(os.path.join(
+                    #         self.save_dir, comparison_key+"_agg.tsv"), sep='\t', index=True)
 
                 else:
                     print('Aggregation method not found. Available methods: Borda')
@@ -177,6 +183,12 @@ class n2v2r():
             self.pairwise_aggregate_ranks = pairwise_aggregate_ranks_dict
             exec_time_agg = round(time.time() - start_time, 2)
             print(f"\tFinished aggregation in {exec_time_agg} seconds")
+
+            if self.config["save_dir"]:
+                for (i, k) in enumerate(self.pairwise_aggregate_ranks.keys()):
+                    self.pairwise_aggregate_ranks[k].to_csv(os.path.join(
+                        self.save_dir, k + "_agg.tsv"), sep='\t', index=True)
+
         else:
             print("No n2v2r embeddings found")
 
@@ -213,24 +225,23 @@ class n2v2r():
                                     .columns[column_combo_index]] = combo_signed_ranks_s.values
 
                 singed_ranks_pd.index = combo_signed_ranks_s.index
-                if self.config["save_dir"]:
-                    singed_ranks_pd.to_csv(os.path.join(
-                        self.save_dir, comparison_key+"_signed.tsv"), sep='\t', index=True)
+                # if self.config["save_dir"]:
+                #     singed_ranks_pd.to_csv(os.path.join(
+                #         self.save_dir, comparison_key+"_signed.tsv"), sep='\t', index=True)
 
                 pairwise_signed_ranks_dict[comparison_key] = singed_ranks_pd
 
                 # sign the aggregate
                 if self.pairwise_aggregate_ranks:
-                    combo_agg_rank_s = self.pairwise_ranks[comparison_key].iloc[:, 0]
+                    combo_agg_rank_s = self.pairwise_aggregate_ranks[comparison_key].iloc[:, 0]
                     combo_signed_agg_ranks_s = signed_transform_single(
                         combo_agg_rank_s, prior_signed_ranks)
                     combo_signed_agg_ranks_pd = pd.DataFrame(
                         combo_signed_agg_ranks_s.values, index=combo_signed_agg_ranks_s.index, columns=["signed_agg_ranks"])
-                    if self.config["save_dir"]:
-                        combo_signed_agg_ranks_pd.to_csv(os.path.join(
-                            self.save_dir, comparison_key+"_agg_signed.tsv"), sep='\t', index=True)
-                    pairwise_signed_aggregate_ranks_dict[comparison_key] = pd.DataFrame(
-                        combo_signed_agg_ranks_s.values, index=combo_signed_agg_ranks_s.index, columns=["signed_agg_ranks"])
+                    # if self.config["save_dir"]:
+                    #     combo_signed_agg_ranks_pd.to_csv(os.path.join(
+                    #         self.save_dir, comparison_key+"_agg_signed.tsv"), sep='\t', index=True)
+                    pairwise_signed_aggregate_ranks_dict[comparison_key] = combo_signed_agg_ranks_pd
 
         self.pairwise_signed_ranks = pairwise_signed_ranks_dict
 
@@ -240,6 +251,17 @@ class n2v2r():
         exec_time_signed = round(time.time() - start_time, 2)
         print(
             f"\tFinished signed transformation in {exec_time_signed} seconds")
+
+        if self.config["save_dir"]:
+            for (i, k) in enumerate(self.pairwise_signed_ranks.keys()):
+                self.pairwise_signed_ranks[k].to_csv(os.path.join(
+                    self.save_dir, k + "_signed.tsv"), sep='\t', index=True)
+
+            # sign the aggregate
+            if self.pairwise_aggregate_ranks:
+                for (i, k) in enumerate(self.pairwise_signed_aggregate_ranks.keys()):
+                    self.pairwise_signed_aggregate_ranks[k].to_csv(os.path.join(
+                        self.save_dir, k + "_agg_signed.tsv"), sep='\t', index=True)
 
         return self.pairwise_signed_ranks
 

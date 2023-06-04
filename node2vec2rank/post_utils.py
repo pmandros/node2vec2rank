@@ -561,7 +561,7 @@ def enrichr_gseapy(ranking_pd, library_fn, background, enrich_quantile_cutoff=0.
         filtered_enr = enr.res2d.loc[enr.res2d['Adjusted P-value']<=0.1][['Term', 'Adjusted P-value', 'Overlap']]
 
         if not filtered_enr.empty:
-            print(f'combo: {column_name} with {len(filtered_enr.index)} found')
+            # print(f'combo: {column_name} with {len(filtered_enr.index)} found')
             results_found += 1
 
             for _, row in filtered_enr.iterrows():
@@ -589,6 +589,10 @@ def enrichr_gseapy(ranking_pd, library_fn, background, enrich_quantile_cutoff=0.
 
 def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stability_cutoff=0.5):
     num_results = len(ranking.index)
+
+    ranking['pathway'] = ranking['pathway'].str[:15]
+
+
     if topk > num_results:
         num_results = topk
 
@@ -617,6 +621,9 @@ def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stabilit
 
 def plot_gseapy_prerank(ranking, title='GSEA', topk=20, padj_cutoff=0.25, stability_cutoff=0.5):
     num_results = len(ranking.index)
+    
+    ranking['pathway'] = ranking['pathway'].str[:15]
+
     if topk > num_results:
         num_results = topk
     ranking = ranking.loc[(ranking['padj'] <= padj_cutoff) & (
@@ -626,7 +633,13 @@ def plot_gseapy_prerank(ranking, title='GSEA', topk=20, padj_cutoff=0.25, stabil
     ranking.sort_values(by=['-log padj'],
                         ascending=True, inplace=True)
 
-    fig = px.scatter(ranking.iloc[-topk:, :], x='NES', y="pathway", color='-log padj', size='stability',
+    if  ranking['freq'].sum() != ranking['stability'].sum():
+
+        fig = px.scatter(ranking.iloc[-topk:, :], x='NES', y="pathway", color='stability', size='overlap',
+                     title=title
+                     )
+    else:
+        fig = px.scatter(ranking.iloc[-topk:, :], x='NES', y="pathway", size='overlap',
                      title=title
                      )
 
