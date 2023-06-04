@@ -590,7 +590,7 @@ def enrichr_gseapy(ranking_pd, library_fn, background, enrich_quantile_cutoff=0.
 def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stability_cutoff=0.5):
     num_results = len(ranking.index)
 
-    ranking['pathway'] = ranking['pathway'].str[:15]
+    ranking['pathway'] = ranking['pathway'].str[:30]
 
 
     if topk > num_results:
@@ -622,7 +622,7 @@ def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stabilit
 def plot_gseapy_prerank(ranking, title='GSEA', topk=20, padj_cutoff=0.25, stability_cutoff=0.5):
     num_results = len(ranking.index)
     
-    ranking['pathway'] = ranking['pathway'].str[:15]
+    ranking['pathway'] = ranking['pathway'].str[:30]
 
     if topk > num_results:
         num_results = topk
