@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from scipy.sparse import csc_matrix
 import scipy.spatial.distance
+import gc
 
 import os
 import random
@@ -75,7 +76,8 @@ class n2v2r():
                     grns_transformed, max_embed_dim)
                 exec_time_embed = round(time.time() - start_time_uase, 2)
 
-                del grns_transformed
+                grns_transformed.clear()
+
 
                 if self.config["verbose"] == 1:
                     print(
@@ -118,6 +120,8 @@ class n2v2r():
                 exec_time_ranking = round(time.time() - start_time_ranking, 2)
                 if self.config["verbose"] == 1:
                     print(f"\t\tRanking in {exec_time_ranking} seconds")
+
+                gc.collect()
 
         self.pairwise_ranks = dict([(key, pd.concat(
             pairwise_ranks_dict[key], axis=1)) for key in pairwise_ranks_dict])

@@ -588,29 +588,30 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
     return aggregate_enr_pd
 
 
-def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stability_cutoff=0.5, show_stability=False):
+def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim = 50):
     num_results = len(ranking.index)
+    ranking_copy = ranking.copy()
 
-    ranking['pathway'] = ranking['pathway'].str[:30]
+    ranking_copy['pathway'] = ranking_copy['pathway'].str[:characters_trim]
 
 
     if topk > num_results:
         num_results = topk
 
-    ranking = ranking.loc[(ranking['padj'] <= padj_cutoff) & (
-        ranking['stability'] >= stability_cutoff)]
+    ranking_copy = ranking_copy.loc[(ranking_copy['padj'] <= padj_cutoff) & (
+        ranking_copy['stability'] >= stability_cutoff)]
 
-    ranking['-log padj'] = -np.log10(ranking['padj'])
-    ranking.sort_values(by=['-log padj'],
+    ranking_copy['-log padj'] = -np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps)
+    ranking_copy.sort_values(by=['-log padj'],
                         ascending=True, inplace=True)
 
-    if show_stability:
-        fig = px.scatter(ranking.iloc[-topk:, :], x="-log padj", y="pathway", color='stability', size='overlap',
-                         title=title, range_color=[0, 1]
+    if has_stability:
+        fig = px.scatter(ranking_copy.iloc[-topk:, :], x="-log padj", y="pathway", color='stability', size='overlap',
+                         title=title, range_color=[0, 1], color_continuous_scale='BuGn'
                          )
     else:
-        fig = px.scatter(ranking.iloc[-topk:, :], x="-log padj", y="pathway", size='overlap',
-                         title=title
+        fig = px.scatter(ranking_copy.iloc[-topk:, :], x="-log padj", y="pathway", size='overlap',
+                         title=title, color_continuous_scale='BuGn'
                          )
 
     fig.update_layout(
@@ -620,28 +621,43 @@ def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stabilit
     fig.show()
 
 
-def plot_gseapy_prerank(ranking, title='GSEA', topk=20, padj_cutoff=0.25, stability_cutoff=0, show_stability=False):
+def plot_gseapy_prerank(ranking, title='GSEA', one_sided = True, topk=20, padj_cutoff=0.25, stability_cutoff=0, has_stability=False, characters_trim = 50):
     num_results = len(ranking.index)
+    ranking_copy = ranking.copy()
+
+    if one_sided:
+        ranking_copy = ranking_copy.loc[ranking_copy['NES']>=0]
     
-    ranking['pathway'] = ranking['pathway'].str[:30]
+    ranking_copy['pathway'] = ranking_copy['pathway'].str[:characters_trim]
 
     if topk > num_results:
         num_results = topk
-    ranking = ranking.loc[(ranking['padj'] < padj_cutoff) & (
-        ranking['stability'] >= stability_cutoff)]
+    ranking_copy = ranking_copy.loc[(ranking_copy['padj'] <= padj_cutoff) & (
+        ranking_copy['stability'] >= stability_cutoff)]
 
-    ranking['-log padj'] = -np.log10(ranking['padj'])
-    ranking.sort_values(by=['-log padj'],
+    ranking_copy['-log padj'] = -np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps)
+    ranking_copy.sort_values(by=['-log padj'],
                         ascending=True, inplace=True)
 
-    if show_stability:
-
-        fig = px.scatter(ranking.iloc[-topk:, :], x='NES', y="pathway", color='stability', size='overlap',
-                         title=title, range_color=[0, 1]
+    if has_stability:
+        if one_sided:
+            fig = px.scatter(ranking_copy.iloc[-topk:, :], x='NES', y="pathway", color='stability', size='overlap',
+                         title=title, range_color=[0, 1], color_continuous_scale='BuGn'
+                         )
+        else:
+            biggest_nes_value = np.max(np.abs(ranking_copy.iloc[-topk:, :]['NES']) )
+            fig = px.scatter(ranking_copy.iloc[-topk:, :], x='-log padj', y="pathway", color='NES', size='stability',
+                         title=title, color_continuous_scale='RdBu', range_color=[-biggest_nes_value, +biggest_nes_value]
                          )
     else:
-        fig = px.scatter(ranking.iloc[-topk:, :], x='NES', y="pathway", size='overlap',
-                         title=title
+        if one_sided:
+            fig = px.scatter(ranking_copy.iloc[-topk:, :], x='NES', y="pathway", color='-log padj', size='overlap',
+                         title=title, color_continuous_scale='BuGn'
+                         )
+        else:
+            biggest_nes_value = np.max(np.abs(ranking_copy.iloc[-topk:, :]['NES']) )
+            fig = px.scatter(ranking_copy.iloc[-topk:, :], x='-log padj', y="pathway", color='NES', size='overlap',
+                         title=title, color_continuous_scale='RdBu', range_color=[-biggest_nes_value, +biggest_nes_value]
                          )
 
     fig.update_layout(
