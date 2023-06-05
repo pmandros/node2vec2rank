@@ -474,7 +474,7 @@ Given a ranking (node integer IDs) and the true community membership matrices, i
 
 #     return aggregate_enr_pd
 
-def prerank_gseapy(ranking_pd, library_fn, one_sided=True, prerank_min_path_size=5, prerank_max_path_size=1500, prerank_num_perms=1000, prerank_weight=0, num_threads=4):
+def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, prerank_min_path_size=5, prerank_max_path_size=1500, prerank_num_perms=1000, prerank_weight=0, num_threads=4):
     aggregate_count_dict = defaultdict(int)
     aggregate_padj_dict = defaultdict(float)
     aggregate_NES_dict = defaultdict(float)
@@ -499,10 +499,10 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, prerank_min_path_size
                                  )
 
         if one_sided:
-            filtered_prerank = pre_res.res2d.loc[pre_res.res2d["NES"] > 0][[
+            filtered_prerank = pre_res.res2d.loc[(pre_res.res2d["NES"] > 0) & (pre_res.res2d['FDR q-val'] <= padj_cutoff)][[
                 'Term', 'NES', 'FDR q-val', 'Gene %']]
         else:
-            filtered_prerank = pre_res.res2d[[
+            filtered_prerank = pre_res.res2d.loc[pre_res.res2d['FDR q-val'] <= padj_cutoff][[
                 'Term', 'NES', 'FDR q-val', 'Gene %']]
 
         if not filtered_prerank.empty:
@@ -538,7 +538,7 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, prerank_min_path_size
     return aggregate_prerank_pd
 
 
-def enrichr_gseapy(ranking_pd, library_fn, background, enrich_quantile_cutoff=0.9, organism='human'):
+def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_quantile_cutoff=0.9, organism='human'):
     aggregate_count_dict = defaultdict(int)
     aggregate_padj_dict = defaultdict(float)
     aggregate_overlap = defaultdict(float)
@@ -558,7 +558,8 @@ def enrichr_gseapy(ranking_pd, library_fn, background, enrich_quantile_cutoff=0.
                              organism=organism,
                              no_plot=True
                              )
-        filtered_enr = enr.res2d.loc[enr.res2d['Adjusted P-value']<=0.1][['Term', 'Adjusted P-value', 'Overlap']]
+        filtered_enr = enr.res2d.loc[enr.res2d['Adjusted P-value']
+                                     <= padj_cutoff][['Term', 'Adjusted P-value', 'Overlap']]
 
         if not filtered_enr.empty:
             # print(f'combo: {column_name} with {len(filtered_enr.index)} found')
@@ -587,11 +588,10 @@ def enrichr_gseapy(ranking_pd, library_fn, background, enrich_quantile_cutoff=0.
     return aggregate_enr_pd
 
 
-def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stability_cutoff=0.5):
+def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stability_cutoff=0.5, show_stability=False):
     num_results = len(ranking.index)
 
-    ranking['pathway'] = ranking['pathway'].str[:15]
-
+    ranking['pathway'] = ranking['pathway'].str[:30]
 
     if topk > num_results:
         num_results = topk
@@ -603,14 +603,14 @@ def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stabilit
     ranking.sort_values(by=['-log padj'],
                         ascending=True, inplace=True)
 
-    if  ranking['freq'].sum() != ranking['stability'].sum():
+    if show_stability:
         fig = px.scatter(ranking.iloc[-topk:, :], x="-log padj", y="pathway", color='stability', size='overlap',
-                        title=title
-                        )
+                         title=title, range_color=[0, 1]
+                         )
     else:
         fig = px.scatter(ranking.iloc[-topk:, :], x="-log padj", y="pathway", size='overlap',
-                        title=title
-                        )
+                         title=title
+                         )
 
     fig.update_layout(
         autosize=False,
@@ -619,29 +619,29 @@ def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stabilit
     fig.show()
 
 
-def plot_gseapy_prerank(ranking, title='GSEA', topk=20, padj_cutoff=0.25, stability_cutoff=0.5):
+def plot_gseapy_prerank(ranking, title='GSEA', topk=20, padj_cutoff=0.25, stability_cutoff=0, show_stability=False):
     num_results = len(ranking.index)
-    
-    ranking['pathway'] = ranking['pathway'].str[:15]
+
+    ranking['pathway'] = ranking['pathway'].str[:30]
 
     if topk > num_results:
         num_results = topk
-    ranking = ranking.loc[(ranking['padj'] <= padj_cutoff) & (
+    ranking = ranking.loc[(ranking['padj'] < padj_cutoff) & (
         ranking['stability'] >= stability_cutoff)]
 
     ranking['-log padj'] = -np.log10(ranking['padj'])
     ranking.sort_values(by=['-log padj'],
                         ascending=True, inplace=True)
 
-    if  ranking['freq'].sum() != ranking['stability'].sum():
+    if show_stability:
 
         fig = px.scatter(ranking.iloc[-topk:, :], x='NES', y="pathway", color='stability', size='overlap',
-                     title=title
-                     )
+                         title=title, range_color=[0, 1]
+                         )
     else:
         fig = px.scatter(ranking.iloc[-topk:, :], x='NES', y="pathway", size='overlap',
-                     title=title
-                     )
+                         title=title
+                         )
 
     fig.update_layout(
         autosize=False,
