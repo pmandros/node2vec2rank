@@ -593,6 +593,7 @@ def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stabilit
 
     ranking['pathway'] = ranking['pathway'].str[:30]
 
+
     if topk > num_results:
         num_results = topk
 
@@ -621,7 +622,7 @@ def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stabilit
 
 def plot_gseapy_prerank(ranking, title='GSEA', topk=20, padj_cutoff=0.25, stability_cutoff=0, show_stability=False):
     num_results = len(ranking.index)
-
+    
     ranking['pathway'] = ranking['pathway'].str[:30]
 
     if topk > num_results:
