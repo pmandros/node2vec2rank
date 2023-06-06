@@ -5,6 +5,9 @@ from joblib import Parallel, delayed
 from scipy import stats
 from scipy.sparse import csc_matrix
 import json
+import os
+import plotly.io as pio
+
 
 import matplotlib as mpl
 from collections import defaultdict
@@ -588,12 +591,11 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
     return aggregate_enr_pd
 
 
-def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim = 50):
+def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim=50, output_dir=None):
     num_results = len(ranking.index)
     ranking_copy = ranking.copy()
 
     ranking_copy['pathway'] = ranking_copy['pathway'].str[:characters_trim]
-
 
     if topk > num_results:
         num_results = topk
@@ -601,33 +603,39 @@ def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stabilit
     ranking_copy = ranking_copy.loc[(ranking_copy['padj'] <= padj_cutoff) & (
         ranking_copy['stability'] >= stability_cutoff)]
 
-    ranking_copy['-log padj'] = -np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps)
+    ranking_copy['-log padj'] = - \
+        np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps)
     ranking_copy.sort_values(by=['-log padj'],
-                        ascending=True, inplace=True)
+                             ascending=True, inplace=True)
 
     if has_stability:
         fig = px.scatter(ranking_copy.iloc[-topk:, :], x="-log padj", y="pathway", color='stability', size='overlap',
-                         title=title, range_color=[0, 1], color_continuous_scale='BuGn'
+                         title=title, range_color=[0, 1], color_continuous_scale='Blues'
                          )
     else:
         fig = px.scatter(ranking_copy.iloc[-topk:, :], x="-log padj", y="pathway", size='overlap',
-                         title=title, color_continuous_scale='BuGn'
+                         title=title, color_continuous_scale='Blues'
                          )
 
     fig.update_layout(
-        autosize=False,
+        autosize=True,
         width=800,
         height=800,)
+
     fig.show()
 
+    if output_dir:
+        filename = '-'.join(title.split(" "))
+        pio.write_image(fig, os.path.join(output_dir, filename+".pdf"))
 
-def plot_gseapy_prerank(ranking, title='GSEA', one_sided = True, topk=20, padj_cutoff=0.25, stability_cutoff=0, has_stability=False, characters_trim = 50):
+
+def plot_gseapy_prerank(ranking, title='GSEA', one_sided=True, topk=20, padj_cutoff=0.25, stability_cutoff=0, has_stability=False, characters_trim=50, output_dir=None):
     num_results = len(ranking.index)
     ranking_copy = ranking.copy()
 
     if one_sided:
-        ranking_copy = ranking_copy.loc[ranking_copy['NES']>=0]
-    
+        ranking_copy = ranking_copy.loc[ranking_copy['NES'] >= 0]
+
     ranking_copy['pathway'] = ranking_copy['pathway'].str[:characters_trim]
 
     if topk > num_results:
@@ -635,33 +643,41 @@ def plot_gseapy_prerank(ranking, title='GSEA', one_sided = True, topk=20, padj_c
     ranking_copy = ranking_copy.loc[(ranking_copy['padj'] <= padj_cutoff) & (
         ranking_copy['stability'] >= stability_cutoff)]
 
-    ranking_copy['-log padj'] = -np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps)
+    ranking_copy['-log padj'] = - \
+        np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps)
     ranking_copy.sort_values(by=['-log padj'],
-                        ascending=True, inplace=True)
+                             ascending=True, inplace=True)
 
     if has_stability:
         if one_sided:
             fig = px.scatter(ranking_copy.iloc[-topk:, :], x='NES', y="pathway", color='stability', size='overlap',
-                         title=title, range_color=[0, 1], color_continuous_scale='BuGn'
-                         )
+                             title=title, range_color=[0, 1], color_continuous_scale='Blues'
+                             )
         else:
-            biggest_nes_value = np.max(np.abs(ranking_copy.iloc[-topk:, :]['NES']) )
+            biggest_nes_value = np.max(
+                np.abs(ranking_copy.iloc[-topk:, :]['NES']))
             fig = px.scatter(ranking_copy.iloc[-topk:, :], x='-log padj', y="pathway", color='NES', size='stability',
-                         title=title, color_continuous_scale='RdBu', range_color=[-biggest_nes_value, +biggest_nes_value]
-                         )
+                             title=title, color_continuous_scale='RdBu', range_color=[-biggest_nes_value, +biggest_nes_value]
+                             )
     else:
         if one_sided:
             fig = px.scatter(ranking_copy.iloc[-topk:, :], x='NES', y="pathway", color='-log padj', size='overlap',
-                         title=title, color_continuous_scale='BuGn'
-                         )
+                             title=title, color_continuous_scale='Blues'
+                             )
         else:
-            biggest_nes_value = np.max(np.abs(ranking_copy.iloc[-topk:, :]['NES']) )
+            biggest_nes_value = np.max(
+                np.abs(ranking_copy.iloc[-topk:, :]['NES']))
             fig = px.scatter(ranking_copy.iloc[-topk:, :], x='-log padj', y="pathway", color='NES', size='overlap',
-                         title=title, color_continuous_scale='RdBu', range_color=[-biggest_nes_value, +biggest_nes_value]
-                         )
+                             title=title, color_continuous_scale='RdBu', range_color=[-biggest_nes_value, +biggest_nes_value]
+                             )
 
     fig.update_layout(
-        autosize=False,
+        autosize=True,
         width=800,
         height=800,)
+
     fig.show()
+
+    if output_dir:
+        filename = '-'.join(title.split(" "))
+        pio.write_image(fig, os.path.join(output_dir, filename+".pdf"))
