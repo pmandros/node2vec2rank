@@ -1,0 +1,6 @@
+,node1,node2,node3,node4,node5
+node1,0,0,0,0,1
+node2,0,0,0,0,0
+node3,0,0,0,1,0
+node4,0,0,1,0,0
+node5,1,0,0,0,0
