@@ -4,8 +4,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-[![MIT License][license-shield]][license-url]
+[![MIT Liscence][liscence-shield]][liscence-url]
 
 <!-- PROJECT LOGO -->
 <br />
