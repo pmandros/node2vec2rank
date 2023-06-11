@@ -549,7 +549,7 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
     results_found = 0
     for (column_name, column_data) in ranking_pd.iteritems():
         ranking_pd = pd.DataFrame(
-            column_data, index=ranking_pd.index.to_list())
+            np.abs(column_data), index=ranking_pd.index.to_list())
         top_cutoff = ranking_pd[column_name].quantile(enrich_quantile_cutoff)
 
         ind_keep = np.where(column_data >= top_cutoff)[0]
