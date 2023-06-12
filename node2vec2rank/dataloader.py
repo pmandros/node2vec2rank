@@ -93,6 +93,6 @@ class DataLoader():
                 num_nodes = np.size(total_nodes)
                 print(f"There are {num_nodes} total genes in graph no. {i} ")
                 self.graphs.append(cg.read_edgelist(os.path.join(self.config["data_dir"], self.config[graph_name]),
-                                  sep=self.config["seperator"]))
+                                                    sep=self.config["seperator"]))
             self.id2node = total_nodes.copy()
             self.graphs_size = np.size(total_nodes)
