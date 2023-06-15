@@ -8,8 +8,6 @@ import json
 import os
 
 
-
-
 import matplotlib as mpl
 from collections import defaultdict
 import gseapy
@@ -593,32 +591,34 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
         by=['padj'], ascending=True, inplace=True)
     return aggregate_enr_pd
 
-def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim=50, remove_first_num_characters=0, output_dir=None):
-    num_results = len(ranking.index)
+
+def plot_gseapy_enrich(ranking, title='GSEA', topk=25, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None):
     ranking_copy = ranking.copy()
 
-    ranking_copy['pathway'] = ranking_copy['pathway'].str[remove_first_num_characters:]
+    ranking_copy['pathway'] = ranking_copy['pathway'].str[trim_first_num_characters:]
 
     ranking_copy['pathway'] = ranking_copy['pathway'].str[:characters_trim]
 
-    if topk > num_results:
-        num_results = topk
-
     ranking_copy = ranking_copy.loc[(ranking_copy['padj'] <= padj_cutoff) & (
         ranking_copy['stability'] >= stability_cutoff)]
+
+    num_results = len(ranking_copy.index)
+
+    if num_results == 0:
+        print("No results found")
+        return
 
     ranking_copy['-log padj'] = - \
         np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps)
     ranking_copy.sort_values(by=['-log padj'],
                              ascending=True, inplace=True)
-    
-    if ranking_copy.empty:
-        print("No results found")
-        return
+
+    if topk > num_results:
+        topk = num_results
 
     if has_stability:
         fig = px.scatter(ranking_copy.iloc[-topk:, :], x="-log padj", y="pathway", color='stability', size='overlap',
-                         title=title, color_continuous_scale='BuGn', range_color=[ranking_copy['stability'].min(),ranking_copy['stability'].max()]
+                         title=title, color_continuous_scale='BuGn', range_color=[ranking_copy['stability'].min(), ranking_copy['stability'].max()]
                          )
     else:
         fig = px.scatter(ranking_copy.iloc[-topk:, :], x="-log padj", y="pathway", size='overlap',
@@ -637,45 +637,55 @@ def plot_gseapy_enrich(ranking, title='GSEA', topk=20, padj_cutoff=0.1, stabilit
         pio.write_image(fig, os.path.join(output_dir, filename+".pdf"))
 
 
-
-def plot_gseapy_prerank(ranking, title='GSEA', one_sided=True, topk=20, padj_cutoff=0.25, stability_cutoff=0, has_stability=False, characters_trim=50, remove_first_num_characters=0, output_dir=None):
-    num_results = len(ranking.index)
+def plot_gseapy_prerank(ranking, title='GSEA', one_sided=True, topk=25, padj_cutoff=0.25, stability_cutoff=0, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None):
     ranking_copy = ranking.copy()
 
     if one_sided:
         ranking_copy['NES'] = ranking_copy['NES'].abs()
 
-    ranking_copy['pathway'] = ranking_copy['pathway'].str[remove_first_num_characters:]
+    ranking_copy['pathway'] = ranking_copy['pathway'].str[trim_first_num_characters:]
 
     ranking_copy['pathway'] = ranking_copy['pathway'].str[:characters_trim]
 
-    if topk > num_results:
-        num_results = topk
     ranking_copy = ranking_copy.loc[(ranking_copy['padj'] <= padj_cutoff) & (
         ranking_copy['stability'] >= stability_cutoff)]
+
+    num_results = len(ranking_copy.index)
+
+    if num_results == 0:
+        print("No results found")
+        return
+
+    if topk > num_results:
+        topk = num_results
 
     ranking_copy['-log padj'] = - \
         np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps)
     ranking_copy.sort_values(by=['-log padj'],
                              ascending=True, inplace=True)
-    
-    ranking_copy['-log padj'] = ranking_copy['-log padj'].round(2)
 
+    ranking_copy['-log padj'] = ranking_copy['-log padj'].round(2)
 
     if has_stability:
         if one_sided:
             fig = px.scatter(ranking_copy.iloc[-topk:, :], x='NES', y="pathway", color='stability', size='overlap',
-                             title=title, color_continuous_scale='BuGn', range_color=[ranking_copy['stability'].min(),ranking_copy['stability'].max()]
+                             title=title, color_continuous_scale='BuGn', range_color=[ranking_copy['stability'].min(), ranking_copy['stability'].max()]
                              )
             fig.add_annotation(
-                x=ranking_copy.loc[ranking_copy.index[-1], 'NES'], y=ranking_copy.loc[ranking_copy.index[-1], 'pathway'],
-                text='-log padj '+str(round(ranking_copy.loc[ranking_copy.index[-1], '-log padj'],2)),
+                x=ranking_copy.loc[ranking_copy.index[-1],
+                                   'NES'], y=ranking_copy.loc[ranking_copy.index[-1], 'pathway'],
+                text='-log padj ' +
+                str(round(
+                    ranking_copy.loc[ranking_copy.index[-1], '-log padj'], 2)),
                 showarrow=True,
                 yshift=10
             )
             fig.add_annotation(
-                x=ranking_copy.loc[ranking_copy.index[-topk], 'NES'], y=ranking_copy.loc[ranking_copy.index[-topk], 'pathway'],
-                text='-log padj '+str(round(ranking_copy.loc[ranking_copy.index[-topk], '-log padj'],2)),
+                x=ranking_copy.loc[ranking_copy.index[-topk],
+                                   'NES'], y=ranking_copy.loc[ranking_copy.index[-topk], 'pathway'],
+                text='-log padj ' +
+                str(round(
+                    ranking_copy.loc[ranking_copy.index[-topk], '-log padj'], 2)),
                 showarrow=True,
                 yshift=10
             )
@@ -683,17 +693,23 @@ def plot_gseapy_prerank(ranking, title='GSEA', one_sided=True, topk=20, padj_cut
             biggest_nes_value = ceil(np.max(
                 np.abs(ranking_copy.iloc[-topk:, :]['NES'])))
             fig = px.scatter(ranking_copy.iloc[-topk:, :], x='NES', y="pathway", color='stability', size='overlap',
-                             title=title, color_continuous_scale='BuGn', range_x = [-biggest_nes_value-0.1,biggest_nes_value+0.1], range_color=[ranking_copy['stability'].min(),ranking_copy['stability'].max()]
+                             title=title, color_continuous_scale='BuGn', range_x=[-biggest_nes_value-0.2, biggest_nes_value+0.2], range_color=[ranking_copy['stability'].min(), ranking_copy['stability'].max()]
                              )
             fig.add_annotation(
-                x=ranking_copy.loc[ranking_copy.index[-1], 'NES'], y=ranking_copy.loc[ranking_copy.index[-1], 'pathway'],
-                text='-log padj '+str(round(ranking_copy.loc[ranking_copy.index[-1], '-log padj'],2)),
+                x=ranking_copy.loc[ranking_copy.index[-1],
+                                   'NES'], y=ranking_copy.loc[ranking_copy.index[-1], 'pathway'],
+                text='-log padj ' +
+                str(round(
+                    ranking_copy.loc[ranking_copy.index[-1], '-log padj'], 2)),
                 showarrow=True,
                 yshift=10
             )
             fig.add_annotation(
-                x=ranking_copy.loc[ranking_copy.index[-topk], 'NES'], y=ranking_copy.loc[ranking_copy.index[-topk], 'pathway'],
-                text='-log padj '+str(round(ranking_copy.loc[ranking_copy.index[-topk], '-log padj'],2)),
+                x=ranking_copy.loc[ranking_copy.index[-topk],
+                                   'NES'], y=ranking_copy.loc[ranking_copy.index[-topk], 'pathway'],
+                text='-log padj ' +
+                str(round(
+                    ranking_copy.loc[ranking_copy.index[-topk], '-log padj'], 2)),
                 showarrow=True,
                 yshift=10
             )
@@ -706,7 +722,7 @@ def plot_gseapy_prerank(ranking, title='GSEA', one_sided=True, topk=20, padj_cut
             biggest_nes_value = ceil(np.max(
                 np.abs(ranking_copy.iloc[-topk:, :]['NES'])))
             fig = px.scatter(ranking_copy.iloc[-topk:, :], x='NES', y="pathway", color='-log padj', size='overlap',
-                             title=title, color_continuous_scale='BuGn', range_x = [-biggest_nes_value-0.1,biggest_nes_value+0.1]
+                             title=title, color_continuous_scale='BuGn', range_x=[-biggest_nes_value-0.2, biggest_nes_value+0.2]
                              )
 
     fig.update_layout(
@@ -719,4 +735,3 @@ def plot_gseapy_prerank(ranking, title='GSEA', one_sided=True, topk=20, padj_cut
     if output_dir:
         filename = '-'.join(title.split(" "))
         pio.write_image(fig, os.path.join(output_dir, filename+".pdf"))
-
