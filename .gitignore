@@ -4,3 +4,4 @@ data/networks/en_lung_mf
 data/networks/TCGA_mf_contrast
 __pycache__
 notebooks/.ipynb_checkpoints
+.vscode/settings.json
