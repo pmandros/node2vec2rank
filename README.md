@@ -162,7 +162,7 @@ Contributions are what make the open source community such an amazing place to b
 
 
 
-< LICENSE >
+<!--LICENSE -->
 ## License
 
 Distributed under the GPL-3 License. See `LICENSE` for more information.
