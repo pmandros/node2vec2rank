@@ -13,7 +13,7 @@ import spectral_embedding as se
 
 from datetime import datetime
 
-from node2vec2rank.pre_utils import network_transform
+from node2vec2rank.pre_utils import network_transform, match_networks
 
 
 class n2v2r():
@@ -68,7 +68,7 @@ class n2v2r():
                                                                          threshold=self.config['threshold'],
                                                                          absolute=self.config['absolute'],
                                                                          top_percent_keep=top_percent,
-                                                                         project_unipartite=self.config['project_unipartite'])))
+                                                                         project_unipartite_on=self.config['project_unipartite_on'])))
 
                 # fitting UASE
                 start_time_uase = time.time()
@@ -77,7 +77,6 @@ class n2v2r():
                 exec_time_embed = round(time.time() - start_time_uase, 2)
 
                 grns_transformed.clear()
-
 
                 if self.config["verbose"] == 1:
                     print(
@@ -104,10 +103,6 @@ class n2v2r():
                             distances = compute_pairwise_distances(
                                 embed_one, embed_two, distance_metric)
                             per_graph_comp_and_prepro_combo_ranks_pd[col_name] = distances
-
-                    # if self.config["save_dir"]:
-                    #     per_graph_comp_and_prepro_combo_ranks_pd.to_csv(os.path.join(
-                    #         self.save_dir, graph_comparison_key+".tsv"), sep='\t', index=True)
 
                     if graph_comparison_key in pairwise_ranks_dict:
                         pairwise_ranks_dict[graph_comparison_key].append(
@@ -164,23 +159,11 @@ class n2v2r():
 
                 # aggregate the rankings
                 # TODO currently it works only with Borda and rankaggregator package
-                if method.casefold() == 'borda'.casefold():
-
-                    # agg = ra.RankAggregator()
-                    # borda_ranking = agg.borda(ranks_list)
-                    # borda_node_names = [x[0] for x in borda_ranking]
-                    # borda_ranks = [x[1] for x in borda_ranking]
-                    # aggregate_ranking_pd = pd.DataFrame(
-                    #     borda_ranks, index=borda_node_names, columns=["borda_ranks"])
+                if method.casefold() == 'borda':
                     aggregate_ranking_pd = borda_aggregate_parallel(ranks_list)
-
-                    # if self.config["save_dir"]:
-                    #     aggregate_ranking_pd.to_csv(os.path.join(
-                    #         self.save_dir, comparison_key+"_agg.tsv"), sep='\t', index=True)
-
                 else:
-                    print('Aggregation method not found. Available methods: Borda')
-                    return None
+                    raise ValueError(
+                        'Aggregation method not found. Available methods: Borda')
 
                 pairwise_aggregate_ranks_dict[comparison_key] = aggregate_ranking_pd
 
@@ -216,22 +199,20 @@ class n2v2r():
             if self.pairwise_aggregate_ranks:
                 pairwise_signed_aggregate_ranks_dict = {}
 
-            for comparison_key in self.pairwise_ranks:
+            for index, comparison_key in enumerate(self.pairwise_ranks):
                 singed_ranks_pd = pd.DataFrame()
 
                 # sign every column and add to the dataframe
                 for column_combo_index in range(self.pairwise_ranks[comparison_key].shape[1]):
                     combo_rank_s = self.pairwise_ranks[comparison_key].iloc[:,
                                                                             column_combo_index]
+
                     combo_signed_ranks_s = signed_transform_single(
-                        combo_rank_s, prior_signed_ranks)
+                        combo_rank_s, prior_signed_ranks[index])
                     singed_ranks_pd[self.pairwise_ranks[comparison_key]
                                     .columns[column_combo_index]] = combo_signed_ranks_s.values
 
                 singed_ranks_pd.index = combo_signed_ranks_s.index
-                # if self.config["save_dir"]:
-                #     singed_ranks_pd.to_csv(os.path.join(
-                #         self.save_dir, comparison_key+"_signed.tsv"), sep='\t', index=True)
 
                 pairwise_signed_ranks_dict[comparison_key] = singed_ranks_pd
 
@@ -239,12 +220,10 @@ class n2v2r():
                 if self.pairwise_aggregate_ranks:
                     combo_agg_rank_s = self.pairwise_aggregate_ranks[comparison_key].iloc[:, 0]
                     combo_signed_agg_ranks_s = signed_transform_single(
-                        combo_agg_rank_s, prior_signed_ranks)
+                        combo_agg_rank_s, prior_signed_ranks[index])
                     combo_signed_agg_ranks_pd = pd.DataFrame(
                         combo_signed_agg_ranks_s.values, index=combo_signed_agg_ranks_s.index, columns=["signed_agg_ranks"])
-                    # if self.config["save_dir"]:
-                    #     combo_signed_agg_ranks_pd.to_csv(os.path.join(
-                    #         self.save_dir, comparison_key+"_agg_signed.tsv"), sep='\t', index=True)
+
                     pairwise_signed_aggregate_ranks_dict[comparison_key] = combo_signed_agg_ranks_pd
 
         self.pairwise_signed_ranks = pairwise_signed_ranks_dict
@@ -284,24 +263,6 @@ def signed_transform_single(ranks: pd.Series, prior_signed_ranks: pd.Series):
 
     return pd.Series(ranks_list, index=node_names_list)
 
-
-# def borda_aggregate(rankings: list):
-#     index = rankings[0]
-#     borda_ranking = pd.DataFrame(index=index)
-#     num_candidates = len(index)
-
-#     for i in range(len(rankings)):
-#         ranking = rankings[i]
-
-#         ranks = [num_candidates-ranking.index(node) for node in index]
-
-#         borda_ranking[str(i)] = ranks
-
-#     ranks = borda_ranking.sum(axis=1)
-
-#     to_return = pd.DataFrame(ranks, index=index, columns=['borda_ranks'])
-#     to_return.sort_values(by='borda_ranks', ascending=False,inplace=True)
-#     return to_return
 
 def get_ranking(ranking: list, index: list):
     num_candidates = len(index)
@@ -355,3 +316,34 @@ def compute_pairwise_distances(mat1, mat2, distance='cosine'):
         raise Exception("Distance metric unknown")
 
     return dists
+
+
+def degree_difference_ranking(graphs, node_names, threshold=None, top_percent_keep=100, binarize=False, absolute=False, project_unipartite_on='columns'):
+
+    pairwise_DeDi_ranking = {}
+    networks_transformed = []
+
+    graphs = match_networks(graphs)
+
+    for graph in graphs:
+        networks_transformed.append(network_transform(graph,
+                                                      binarize=binarize,
+                                                      threshold=threshold,
+                                                      absolute=absolute,
+                                                      top_percent_keep=top_percent_keep,
+                                                      project_unipartite_on=project_unipartite_on))
+
+    for i in range(1, len(graphs)):
+        graph_comparison_key = str(i) + "vs" + str(i+1)
+
+        DeDi = np.sum(
+            networks_transformed[i-1], axis=0) - np.sum(networks_transformed[i], axis=0)
+        absDeDi = np.abs(DeDi)
+
+        DeDi_data_dict = {"DeDi": DeDi, "absDeDi": absDeDi}
+        ranking = pd.DataFrame.from_dict(DeDi_data_dict)
+        ranking.index = node_names
+
+        pairwise_DeDi_ranking[graph_comparison_key] = ranking
+
+    return pairwise_DeDi_ranking

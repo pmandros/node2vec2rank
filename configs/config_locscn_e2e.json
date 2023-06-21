@@ -1,0 +1,22 @@
+{   "data_io": {
+    "save_dir": "../output",
+    "data_dir": "../data/networks/locscn",
+    "graph_filenames": ["avg_csn_ctl.csv", "avg_csn_asd.csv"],
+    "seperator": ",",
+    "is_edge_list": false,
+    "transpose": false
+},
+"data_preprocessing": {
+    "project_unipartite_on": null,
+    "threshold" : 0, 
+    "top_percent_keep" : [100, 75],
+    "binarize" : [false,true], 
+    "absolute" : true
+},
+"fitting_ranking": {
+    "embed_dimensions": [2,4,8,16],
+    "distance_metrics": ["euclidean", "cosine", "chebyshev"],
+    "seed": null,
+    "verbose": 1
+}
+}

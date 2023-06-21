@@ -1,0 +1,22 @@
+{   "data_io": {
+    "save_dir": "../output",
+    "data_dir": "../data/networks/bonobo/",
+    "graph_filenames": ["bonobo_th01_phase-G1_cc-0_sample-0.h5", "bonobo_th01_phase-S_cc-0_sample-0.h5", "bonobo_th01_phase-G2-M_cc-0_sample-0.h5"],
+    "seperator": ",",
+    "is_edge_list": false,
+    "transpose": false
+},
+"data_preprocessing": {
+    "project_unipartite_on": "columns",
+    "threshold" : 0, 
+    "top_percent_keep" : [100, 75],
+    "binarize" : [false,true], 
+    "absolute" : false
+},
+"fitting_ranking": {
+    "embed_dimensions": [2,4,16,8],
+    "distance_metrics": ["euclidean", "cosine", "chebyshev"],
+    "seed": null,
+    "verbose": 1
+}
+}

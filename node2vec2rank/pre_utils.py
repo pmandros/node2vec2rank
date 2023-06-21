@@ -15,15 +15,18 @@ returns A symmetric matrix corresponding to the projection
 """
 
 
-def bipartite_to_unipartite_projection(grn, on_right=True):
+def bipartite_to_unipartite_projection(grn, project_unipartite_on='columns'):
     [r, c] = grn.shape
 
     assert (r != c, 'Graph is not bipartite')
 
-    if (on_right):
+    if project_unipartite_on.casefold() == 'columns':
         to_return = np.matmul(np.transpose(grn), grn)
-    else:
+    elif project_unipartite_on.casefold() == 'rows':
         to_return = np.matmul(grn, np.transpose(grn))
+    else:
+        raise ValueError(
+            'Unknown projection type, options are columns or rows')
 
     [r, c] = np.shape(to_return)
     assert (r == c, 'Graph should be square')
@@ -77,7 +80,32 @@ returns A transformed and preprocessed symmetric matrix
 """
 
 
-def network_transform(network, threshold=None, top_percent_keep=100, binarize=False, symmetrize=True, absolute=False, project_unipartite=False, on_right=True):
+# def network_transform(network, threshold=None, top_percent_keep=100, binarize=False, symmetrize=True, absolute=False, project_unipartite=False, on_columns=True):
+#     [r, c] = np.shape(network)
+
+#     if absolute:
+#         network = np.abs(network)
+
+#     if threshold is not None:
+#         network[network < threshold] = 0
+
+#     if (r != c) and symmetrize and (project_unipartite is False):
+#         network = symmetrize_matrix(network)
+#     elif (r != c) and (project_unipartite is not False):
+#         network = bipartite_to_unipartite_projection(
+#             network, project_unipartite_on=on_columns)
+
+#     cut_off = np.percentile(network, 100-top_percent_keep)
+#     network[network < cut_off] = 0
+
+#     # binarize
+#     if binarize:
+#         network[network != 0] = 1
+
+#     return np.float32(network)
+
+
+def network_transform(network, threshold=None, top_percent_keep=100, binarize=False, absolute=False, project_unipartite_on='columns'):
     [r, c] = np.shape(network)
 
     if absolute:
@@ -86,11 +114,9 @@ def network_transform(network, threshold=None, top_percent_keep=100, binarize=Fa
     if threshold is not None:
         network[network < threshold] = 0
 
-    if (r != c) and symmetrize and (not project_unipartite):
-        network = symmetrize_matrix(network)
-    elif (r != c) and project_unipartite:
+    if r != c:
         network = bipartite_to_unipartite_projection(
-            network, on_right=on_right)
+            network, project_unipartite_on)
 
     cut_off = np.percentile(network, 100-top_percent_keep)
     network[network < cut_off] = 0
@@ -167,7 +193,7 @@ def network_transform(network, threshold=None, top_percent_keep=100, binarize=Fa
 
 # """
 # Join all rankings and compute average pairwise distances for all nodes across trials
-# rankings: rankings of all nodes across several trials 
+# rankings: rankings of all nodes across several trials
 # save_dir: path to save the average rankings (Optional)
 # agg: aggregation operations to be done on the data (Default: average and standard deviation)
 # returns Dataframe of nodes names and average distance values sorted by similarity in decreasing order
@@ -248,3 +274,20 @@ def network_transform(network, threshold=None, top_percent_keep=100, binarize=Fa
 #             print(values_row)
 #             file.write(keys_row+"\n")
 #             file.write(values_row+"\n")
+
+def match_networks(graphs):
+    column_nodes_list = []
+    row_nodes_list = []
+    new_graphs = []
+
+    for graph in graphs:
+        column_nodes_list.append(set(graph.columns.to_list()))
+        row_nodes_list.append(set(graph.index.to_list()))
+
+    common_cols = set.intersection(*column_nodes_list)
+    common_rows = set.intersection(*row_nodes_list)
+
+    for i in range(len(graphs)):
+        new_graphs.append(graphs[i].loc[common_rows, common_cols])
+
+    return new_graphs
