@@ -11,7 +11,7 @@
     "threshold" : 0, 
     "top_percent_keep" : [100, 75],
     "binarize" : [false,true], 
-    "absolute" : true
+    "absolute" : false
 },
 "fitting_ranking": {
     "embed_dimensions": [2,4,8,16],

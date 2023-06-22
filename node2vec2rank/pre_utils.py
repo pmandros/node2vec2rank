@@ -104,6 +104,15 @@ returns A transformed and preprocessed symmetric matrix
 
 #     return np.float32(network)
 
+"""
+Computes various matrix transformations for pre-processing in a certain sequence. Use with caution.
+threshold: below this everything is set to 0 (second operation to be applied)
+top_percent_keep: keep the top percent of edges according to their weisght (fourth operation to be applied)
+binarize: turn all non-zero elements into 1 (last operation to be applied)
+absolute: compute the absolute of the matrix (first operation to be applied)
+project_unipartite_on: project the mXn matrix into a mXm (rows) or nXn (columns) matrix (third oprtation to be applied)
+returns A transformed and preprocessed symmetric matrix 
+"""
 
 def network_transform(network, threshold=None, top_percent_keep=100, binarize=False, absolute=False, project_unipartite_on='columns'):
     [r, c] = np.shape(network)

@@ -165,6 +165,7 @@ class n2v2r():
                     raise ValueError(
                         'Aggregation method not found. Available methods: Borda')
 
+                aggregate_ranking_pd = aggregate_ranking_pd.loc[self.node_names,:]
                 pairwise_aggregate_ranks_dict[comparison_key] = aggregate_ranking_pd
 
             self.pairwise_aggregate_ranks = pairwise_aggregate_ranks_dict
@@ -277,7 +278,6 @@ def borda_aggregate_parallel(rankings: list):
         n_jobs=-2)(delayed(get_ranking)(ranking, index) for ranking in rankings))
     borda_ranks = np.sum(results, axis=0)
     to_return = pd.DataFrame(borda_ranks, index=index, columns=['borda_ranks'])
-    to_return.sort_values(by='borda_ranks', ascending=False, inplace=True)
 
     return to_return
 

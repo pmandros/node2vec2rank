@@ -592,7 +592,7 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
     return aggregate_enr_pd
 
 
-def plot_gseapy_enrich(ranking, title='GSEA', topk=25, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None):
+def plot_gseapy_enrich(ranking, title='enrichr', topk=25, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None):
     ranking_copy = ranking.copy()
 
     ranking_copy['pathway'] = ranking_copy['pathway'].str[trim_first_num_characters:]
@@ -605,7 +605,7 @@ def plot_gseapy_enrich(ranking, title='GSEA', topk=25, padj_cutoff=0.1, stabilit
     num_results = len(ranking_copy.index)
 
     if num_results == 0:
-        print("No results found")
+        print(f"No results found for {title}")
         return
 
     ranking_copy['-log padj'] = - \
@@ -637,11 +637,11 @@ def plot_gseapy_enrich(ranking, title='GSEA', topk=25, padj_cutoff=0.1, stabilit
         pio.write_image(fig, os.path.join(output_dir, filename+".pdf"))
 
 
-def plot_gseapy_prerank(ranking, title='GSEA', one_sided=True, topk=25, padj_cutoff=0.25, stability_cutoff=0, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None):
+def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=25, padj_cutoff=0.25, stability_cutoff=0, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None):
     ranking_copy = ranking.copy()
 
     if one_sided:
-        ranking_copy['NES'] = ranking_copy['NES'].abs()
+        ranking_copy = ranking_copy.loc[ranking_copy['NES'] >=0]
 
     ranking_copy['pathway'] = ranking_copy['pathway'].str[trim_first_num_characters:]
 
@@ -653,7 +653,7 @@ def plot_gseapy_prerank(ranking, title='GSEA', one_sided=True, topk=25, padj_cut
     num_results = len(ranking_copy.index)
 
     if num_results == 0:
-        print("No results found")
+        print(f"No results found for {title}")
         return
 
     if topk > num_results:
