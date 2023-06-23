@@ -293,27 +293,24 @@ returns Lists of nodes names and distance values sorted by similarity in decreas
 
 
 def compute_pairwise_distances(mat1, mat2, distance='cosine'):
-    mat1 = mat1 - mat1.mean(axis=0, keepdims=True)
-    mat2 = mat2 - mat2.mean(axis=0, keepdims=True)
-
     if distance == "cosine":
         dists = [scipy.spatial.distance.cosine(row1, row2)
                  for row1, row2 in zip(mat1, mat2)]
     elif distance == "euclidean":
         dists = [scipy.spatial.distance.euclidean(row1, row2)
                  for row1, row2 in zip(mat1, mat2)]
-    elif distance == "cityblock":
-        dists = [scipy.spatial.distance.cityblock(row1, row2)
-                 for row1, row2 in zip(mat1, mat2)]
-    elif distance == "chebyshev":
-        dists = [scipy.spatial.distance.chebyshev(row1, row2)
-                 for row1, row2 in zip(mat1, mat2)]
-    elif distance == "correlation":
-        dists = [scipy.spatial.distance.correlation(row1, row2, centered=False)
-                 for row1, row2 in zip(mat1, mat2)]
-        dists = [0 if np.isnan(x) else x for x in dists]
+    # elif distance == "cityblock":
+    #     dists = [scipy.spatial.distance.cityblock(row1, row2)
+    #              for row1, row2 in zip(mat1, mat2)]
+    # elif distance == "chebyshev":
+    #     dists = [scipy.spatial.distance.chebyshev(row1, row2)
+    #              for row1, row2 in zip(mat1, mat2)]
+    # elif distance == "correlation":
+    #     dists = [scipy.spatial.distance.correlation(row1, row2, centered=False)
+    #              for row1, row2 in zip(mat1, mat2)]
+    #     dists = [0 if np.isnan(x) else x for x in dists]
     else:
-        raise Exception("Distance metric unknown")
+        raise Exception("Unsupported metric")
 
     return dists
 
