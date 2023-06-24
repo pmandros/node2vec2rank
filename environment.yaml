@@ -18,4 +18,5 @@ dependencies:
     - git+https://github.com/iggallagher/Spectral-Embedding
     - git+https://github.com/djcunningham0/rankaggregation.git
     - plotly==5.15.0
+    - networkx
 
