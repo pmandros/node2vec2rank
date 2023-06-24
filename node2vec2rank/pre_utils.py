@@ -114,6 +114,7 @@ project_unipartite_on: project the mXn matrix into a mXm (rows) or nXn (columns)
 returns A transformed and preprocessed symmetric matrix 
 """
 
+
 def network_transform(network, threshold=None, top_percent_keep=100, binarize=False, absolute=False, project_unipartite_on='columns'):
     [r, c] = np.shape(network)
 
@@ -293,8 +294,8 @@ def match_networks(graphs):
         column_nodes_list.append(set(graph.columns.to_list()))
         row_nodes_list.append(set(graph.index.to_list()))
 
-    common_cols = set.intersection(*column_nodes_list)
-    common_rows = set.intersection(*row_nodes_list)
+    common_cols = list(set.intersection(*column_nodes_list))
+    common_rows = list(set.intersection(*row_nodes_list))
 
     for i in range(len(graphs)):
         new_graphs.append(graphs[i].loc[common_rows, common_cols])
