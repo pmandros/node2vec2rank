@@ -15,7 +15,7 @@
 },
 "fitting_ranking": {
     "embed_dimensions": [2,4,16,8],
-    "distance_metrics": ["euclidean", "cosine", "chebyshev"],
+    "distance_metrics": ["euclidean", "cosine"],
     "seed": null,
     "verbose": 1
 }
