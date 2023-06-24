@@ -336,8 +336,6 @@ def degree_difference_ranking(graphs, node_names, threshold=None, top_percent_ke
     pairwise_DeDi_ranking = {}
     networks_transformed = []
 
-    graphs = match_networks(graphs)
-
     for graph in graphs:
         networks_transformed.append(network_transform(graph,
                                                       binarize=binarize,

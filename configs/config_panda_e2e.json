@@ -1,13 +1,13 @@
 {   "data_io": {
     "save_dir": "../output",
-    "data_dir": "../data/networks/TCGA_mf_contrast/tcga_luad_sex/wgcna",
-    "graph_filenames": ["wgcna_recount3_tcga_luad_purity03_normlogtpm_mintpm1_fracsamples01_tissueall_batchnull_adjnull_MALE-tumor_power10.h5", "wgcna_recount3_tcga_luad_purity03_normlogtpm_mintpm1_fracsamples01_tissueall_batchnull_adjnull_FEMALE-tumor_power10.h5"],
+    "data_dir": "../data/networks/en_lung_mf",
+    "graph_filenames": ["TCGA_lung_panda_male.h5", "TCGA_lung_panda_female.h5"],
     "seperator": ",",
     "is_edge_list": false,
     "transpose": false
 },
 "data_preprocessing": {
-    "project_unipartite_on": null,
+    "project_unipartite_on": "columns",
     "threshold" : 0, 
     "top_percent_keep" : [100, 75],
     "binarize" : [false,true], 
