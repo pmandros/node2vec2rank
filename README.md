@@ -93,14 +93,13 @@ To get a local copy up and running follow these simple steps:
    cd N2V2R
 
    ```
-
-3. Install required packages
-   ```sh
-   pip install -r requirements.txt
-   ```
-4. Run the following bash script to install the needed packages in conda:
+3. Run the following command to create the environment with the needed packages in conda. Please note that it might take around 10-20 mins for the environment to be created:
 ```sh
-conda_install.sh
+conda env create --file environment.yaml
+```
+4. Activate the environment:
+```sh
+conda activate bio_embed_env
 ```
 
 <!-- USAGE EXAMPLES -->
