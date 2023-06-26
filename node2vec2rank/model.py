@@ -36,12 +36,17 @@ class n2v2r():
             random.seed(self.config["seed"])
             np.random.seed(self.config["seed"])
 
-    """
-    Computes the differential ranks of nodes for a given sequence of graphs.
-    returns A list of dataframes (one per comparison) with all computed ranks for all combinations of parameters
-    """
-
     def fit_transform_rank(self):
+        """
+        Computes the differential ranks of nodes for a given sequence of graphs.
+        returns A list of dataframes (one per comparison) with all computed ranks for all combinations of parameters
+
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_    
+        """
 
         now = datetime.now().strftime(r"%m_%d_%Y_%H_%M_%S")
 
@@ -134,12 +139,23 @@ class n2v2r():
         return self.pairwise_ranks
 
     """
-    Computes the aggregation of ranks of nodes for a given sequence of graphs.
-    method: the method to use for aggregation (currently only Borda)
-    returns A list of dataframes (one per comparison) with aggregated ranks 
+    
     """
 
     def aggregate_transform(self, method='Borda'):
+        """
+        Computes the aggregation of ranks of nodes for a given sequence of graphs. 
+        returns  
+
+        Args:
+            method (str, optional): the method to use for aggregation (currently only Borda). Defaults to 'Borda'.
+
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            List: A list of dataframes (one per comparison) with aggregated ranks
+        """
         # if ranks have been computed already
         if self.pairwise_ranks:
             pairwise_aggregate_ranks_dict = {}
@@ -165,7 +181,7 @@ class n2v2r():
                     raise ValueError(
                         'Aggregation method not found. Available methods: Borda')
 
-                aggregate_ranking_pd = aggregate_ranking_pd.loc[self.node_names,:]
+                aggregate_ranking_pd = aggregate_ranking_pd.loc[self.node_names, :]
                 pairwise_aggregate_ranks_dict[comparison_key] = aggregate_ranking_pd
 
             self.pairwise_aggregate_ranks = pairwise_aggregate_ranks_dict

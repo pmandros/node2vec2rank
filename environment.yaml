@@ -1,0 +1,21 @@
+name: bio_embed_env
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - umap-learn
+  - openblas
+  - numpy
+  - scipy
+  - scikit-learn
+  - numexpr
+  - nbformat
+  - gseapy 
+  - pip
+  - pip:
+    - typing_extensions
+    - chardet
+    - git+https://github.com/iggallagher/Spectral-Embedding
+    - git+https://github.com/djcunningham0/rankaggregation.git
+    - plotly==5.15.0
+

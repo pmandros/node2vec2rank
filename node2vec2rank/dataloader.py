@@ -2,97 +2,69 @@ import pandas as pd
 import numpy as np
 import networkx as nx
 import os
-import csrgraph as cg
 
-from node2vec2rank.pre_utils import network_transform
+from node2vec2rank.pre_utils import match_networks
 
 
 class DataLoader():
     def __init__(self, config):
         self.config = config
         self.graphs = []
-        self.id2node = {}
-        self.__graph_names = [
-            key for key in config.keys() if "graph_name" in key]
-        self.__load_graphs()
+        self.interest_nodes = []
 
-        self.graphs_size = 0
+        self.__graph_filenames = config["graph_filenames"]
+        self.__load_graphs()
 
     def get_graphs(self):
         return self.graphs
 
-    def get_id2node(self):
-        return self.id2node
-
-    def size(self):
-        return self.graphs_size
+    def get_interest_nodes(self):
+        return self.interest_nodes
 
     def __load_graphs(self):
-        if not self.config["bipartite"]:
-            self.__process_unipartite_graph()
-        else:
-            self.__process_bipartite_graph()
+        # go through every graph
+        for i, graph_filename in enumerate(self.__graph_filenames):
+            # check if in h5 format
+            if ('h5' not in graph_filename) and (not self.config["is_edge_list"]):
+                graph_pd = pd.read_csv(
+                    os.path.join(
+                        self.config["data_dir"], graph_filename),
+                    index_col=0,
+                    header=0,
+                    sep=self.config["seperator"])
+            elif ('h5' in graph_filename) and (not self.config["is_edge_list"]):
+                graph_pd = pd.read_hdf(os.path.join(
+                    self.config["data_dir"], graph_filename))
+            elif self.config["is_edge_list"]:
+                raise ValueError(
+                    "TODO: turn the edge list into a rectangular dataframe ")
 
-    def __process_unipartite_graph(self):
-        for i, graph_name in enumerate(self.__graph_names):
-            graph_pd = pd.read_csv(
-                os.path.join(self.config["data_dir"], self.config[graph_name]),
-                index_col=0,
-                header=0,
-                sep=self.config["seperator"]).sort_index(ascending=True)
+            # transpose (e.g., to bring regulators in rows)
+            if self.config['transpose']:
+                graph_pd = graph_pd.T
 
             row_nodes = graph_pd.index.to_numpy()
             col_nodes = graph_pd.columns.to_numpy()
-            total_nodes = row_nodes.copy()
-            num_rows, num_cols, num_total = np.size(
-                row_nodes), np.size(col_nodes), np.size(total_nodes)
+
+            num_rows, num_cols = np.size(row_nodes), np.size(col_nodes)
             print(
-                f"There are {num_rows} row genes, {num_cols} column genes, and {num_total} total genes in graph no. {i} ")
-            self.graphs.append(cg.csrgraph(graph_pd.values))
-            self.id2node = total_nodes.copy()
-            self.graphs_size = np.size(total_nodes)
+                f"There are {num_rows} row nodes and {num_cols} column nodes in graph {i+1} ")
 
-    def __process_bipartite_graph(self):
-        if not self.config["is_edge_list"]:
-            for i, graph_name in enumerate(self.__graph_names):
-                graph_pd = pd.read_csv(
-                    os.path.join(self.config["data_dir"],
-                                 self.config[graph_name]),
-                    index_col=0,
-                    header=0,
-                    sep=self.config["seperator"]).sort_index(ascending=True)
-                graph_pd.index = 'row_' + graph_pd.index.astype(str)
-                graph_pd.columns = 'col_' + graph_pd.columns.astype(str)
+            self.graphs.append(graph_pd)
 
-                row_nodes = graph_pd.index.to_numpy()
-                col_nodes = graph_pd.columns.to_numpy()
-                total_nodes = np.append(row_nodes, col_nodes)
+        self.graphs = match_networks(self.graphs)
 
-                num_rows, num_cols, num_total = np.size(
-                    row_nodes), np.size(col_nodes), np.size(total_nodes)
-                print(
-                    f"There are {num_rows} row genes, {num_cols} column genes, and {num_total} total genes in graph no. {i} ")
-                adj_matrix = network_transform(graph_pd,
-                                               threshold=self.config["threshold"],
-                                               percentile_to_keep=self.config["percentile_to_keep"],
-                                               binarize=self.config["binarize"],
-                                               symmetrize=self.config["symmetrize"],
-                                               absolute=self.config["absolute"])
+        row_nodes = self.graphs[0].index.to_numpy()
+        col_nodes = self.graphs[0].columns.to_numpy()
 
-                self.graphs.append(cg.csrgraph(adj_matrix.values))
-            self.id2node = total_nodes.copy()
-            self.graphs_size = np.size(total_nodes)
-
+        # get the eventual node IDs after the planned transformations
+        if np.size(row_nodes) != np.size(col_nodes):
+            print('Graphs are rectangular')
+            if self.config["project_unipartite_on"].casefold() == 'rows':
+                self.interest_nodes = row_nodes
+            elif self.config["project_unipartite_on"].casefold() == 'columns':
+                self.interest_nodes = col_nodes
+            else:
+                raise Exception("Impossible transformation")
         else:
-            for i, graph_name in enumerate(self.__graph_names):
-                grn = pd.read_csv(os.path.join(self.config["data_dir"], self.config[graph_name]),
-                                  sep=self.config["seperator"], index_col=False, header=None,
-                                  names=['source', 'target'])
-                total_nodes = np.union1d(
-                    grn['source'].unique(), grn['target'].unique())
-                num_nodes = np.size(total_nodes)
-                print(f"There are {num_nodes} total genes in graph no. {i} ")
-                self.graphs.append(cg.read_edgelist(os.path.join(self.config["data_dir"], self.config[graph_name]),
-                                                    sep=self.config["seperator"]))
-            self.id2node = total_nodes.copy()
-            self.graphs_size = np.size(total_nodes)
+            self.interest_nodes = col_nodes
