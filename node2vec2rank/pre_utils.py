@@ -1,11 +1,9 @@
-from distutils.log import error
 import numpy as np
 import pandas as pd
 import pickle
 import os
-import scipy.spatial.distance
-from joblib import Parallel, delayed
 import plotly.graph_objects as go
+from scipy.sparse import csc_matrix
 
 """
 Computes the projections W^TW if on_right is True, or WW^T otherwise 
