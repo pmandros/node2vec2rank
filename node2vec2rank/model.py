@@ -13,7 +13,7 @@ import spectral_embedding as se
 
 from datetime import datetime
 
-from node2vec2rank.pre_utils import network_transform, match_networks
+from pre_utils import network_transform, match_networks
 
 
 class n2v2r():

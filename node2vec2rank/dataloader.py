@@ -3,7 +3,7 @@ import numpy as np
 import networkx as nx
 import os
 
-from node2vec2rank.pre_utils import match_networks
+from pre_utils import match_networks
 
 
 class DataLoader():
