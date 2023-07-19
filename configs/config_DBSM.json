@@ -1,20 +1,22 @@
-{   "data_loading": {
+{   "data_io": {
     "save_dir": null,
-    "network_filenames": ["sbm1.txt", "sbm2.txt"],
+    "data_dir": "../data",
+    "graph_filenames": ["sbm1.txt","sbm2.txt"],
     "seperator": ",",
-    "is_edge_list": false
+    "is_edge_list": false,
+    "transpose": false
 },
 "data_preprocessing": {
-    "project_unipartite": false,
+    "project_unipartite_on": null,
     "threshold" : 0, 
     "top_percent_keep" : [100],
     "binarize" : [false], 
     "absolute" : false
 },
 "fitting_ranking": {
-    "embed_dimensions": [2,4,8,16],
-    "distance_metrics": ["euclidean","cosine","chebyshev"],
+    "embed_dimensions": [32],
+    "distance_metrics": ["cosine"],
     "seed": null,
-    "verbose": 0
+    "verbose": 1
 }
 }

@@ -480,16 +480,16 @@ Given a ranking (node integer IDs) and the true community membership matrices, i
 
 def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, prerank_min_path_size=5, prerank_max_path_size=1500, prerank_num_perms=1000, prerank_weight=0, num_threads=4):
     aggregate_count_dict = defaultdict(int)
-    aggregate_padj_dict = defaultdict(float)
-    aggregate_NES_dict = defaultdict(float)
-    aggregate_overlap = defaultdict(float)
+    aggregate_padj_dict = defaultdict(list)
+    aggregate_NES_dict = defaultdict(list)
+    aggregate_overlap = defaultdict(list)
 
     results_found = 0
-    for (column_name, column_data) in ranking_pd.iteritems():
-        ranking_pd = pd.DataFrame(
+    for (_, column_data) in ranking_pd.iteritems():
+        column_pd = pd.DataFrame(
             column_data, index=ranking_pd.index.to_list())
 
-        pre_res = gseapy.prerank(rnk=ranking_pd,  # or rnk = rnk,
+        pre_res = gseapy.prerank(rnk=column_pd,  # or rnk = rnk,
                                  gene_sets=library_fn,
                                  threads=num_threads,
                                  min_size=prerank_min_path_size,
@@ -510,8 +510,6 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, pre
                 'Term', 'NES', 'FDR q-val', 'Gene %']]
 
         if not filtered_prerank.empty:
-            # print(
-            #     f'combo: {column_name} with {len(filtered_prerank.index)} found')
             results_found += 1
 
             for _, row in filtered_prerank.iterrows():
@@ -520,21 +518,18 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, pre
                 nes = row['NES']
                 overlap = row['Gene %'][:-1]
                 aggregate_count_dict[term] += 1
-                aggregate_padj_dict[term] += padj
-                aggregate_NES_dict[term] += nes
-                aggregate_overlap[term] += float(overlap)
+                aggregate_padj_dict[term].append(padj)
+                aggregate_NES_dict[term].append(nes)
+                aggregate_overlap[term].append(float(overlap))
 
     aggregate_prerank_pd = pd.DataFrame(
         aggregate_count_dict.items(), columns=['pathway', 'freq'], index=aggregate_count_dict.keys())
-    aggregate_prerank_pd['padj'] = [v/aggregate_count_dict[k]
-                                    for (k, v) in aggregate_padj_dict.items()]
-    aggregate_prerank_pd['NES'] = [v/aggregate_count_dict[k]
-                                   for (k, v) in aggregate_NES_dict.items()]
+    aggregate_prerank_pd['padj'] = [np.average(aggregate_padj_dict[k]) for k in aggregate_prerank_pd.index]
+    aggregate_prerank_pd['NES'] = [np.average(aggregate_NES_dict[k]) for k in aggregate_prerank_pd.index]
     aggregate_prerank_pd['stability'] = [aggregate_prerank_pd.iloc[i, 1] /
-                                         results_found for i in range(len(aggregate_prerank_pd.index))]
+                                         len(ranking_pd.columns) for i in range(len(aggregate_prerank_pd.index))]
 
-    aggregate_prerank_pd['overlap'] = [v/aggregate_count_dict[k]
-                                       for (k, v) in aggregate_overlap.items()]
+    aggregate_prerank_pd['overlap'] = [np.average(aggregate_overlap[k]) for k in aggregate_prerank_pd.index]
 
     aggregate_prerank_pd.sort_values(
         by=['padj', 'stability'], ascending=False, inplace=True)
@@ -544,17 +539,17 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, pre
 
 def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_quantile_cutoff=0.9, organism='human'):
     aggregate_count_dict = defaultdict(int)
-    aggregate_padj_dict = defaultdict(float)
-    aggregate_overlap = defaultdict(float)
+    aggregate_padj_dict = defaultdict(list)
+    aggregate_overlap = defaultdict(list)
 
     results_found = 0
     for (column_name, column_data) in ranking_pd.iteritems():
-        ranking_pd = pd.DataFrame(
+        column_pd = pd.DataFrame(
             np.abs(column_data), index=ranking_pd.index.to_list())
-        top_cutoff = ranking_pd[column_name].quantile(enrich_quantile_cutoff)
+        top_cutoff = column_pd[column_name].quantile(enrich_quantile_cutoff)
 
         ind_keep = np.where(column_data >= top_cutoff)[0]
-        top_genes = ranking_pd.iloc[ind_keep, :].index.to_list()
+        top_genes = column_pd.iloc[ind_keep, :].index.to_list()
 
         enr = gseapy.enrichr(gene_list=top_genes,
                              gene_sets=library_fn,
@@ -566,7 +561,6 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
                                      <= padj_cutoff][['Term', 'Adjusted P-value', 'Overlap']]
 
         if not filtered_enr.empty:
-            # print(f'combo: {column_name} with {len(filtered_enr.index)} found')
             results_found += 1
 
             for _, row in filtered_enr.iterrows():
@@ -574,18 +568,17 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
                 padj = row['Adjusted P-value']
                 overlap = row['Overlap']
                 aggregate_count_dict[term] += 1
-                aggregate_padj_dict[term] += padj
-                aggregate_overlap[term] += float(overlap.split("/")[0]) / \
-                    float(overlap.split("/")[1])
+                aggregate_padj_dict[term].append(padj)
+                aggregate_overlap[term].append(float(overlap.split("/")[0]) / \
+                    float(overlap.split("/")[1]))
 
     aggregate_enr_pd = pd.DataFrame(
         aggregate_count_dict.items(), columns=['pathway', 'freq'], index=aggregate_count_dict.keys())
-    aggregate_enr_pd['padj'] = [v/aggregate_count_dict[k]
-                                for (k, v) in aggregate_padj_dict.items()]
+
+    aggregate_enr_pd['padj'] = [np.average(aggregate_padj_dict[k]) for k in aggregate_enr_pd.index]
     aggregate_enr_pd['stability'] = [aggregate_enr_pd.iloc[i, 1] /
-                                     results_found for i in range(len(aggregate_enr_pd.index))]
-    aggregate_enr_pd['overlap'] = [v/aggregate_count_dict[k]
-                                   for (k, v) in aggregate_overlap.items()]
+                                     float(len(ranking_pd.columns)) for i in range(len(aggregate_enr_pd.index))]
+    aggregate_enr_pd['overlap'] = [np.average(aggregate_overlap[k]) for k in aggregate_enr_pd.index]
 
     aggregate_enr_pd.sort_values(
         by=['padj'], ascending=True, inplace=True)
@@ -641,7 +634,7 @@ def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=25, padj_
     ranking_copy = ranking.copy()
 
     if one_sided:
-        ranking_copy = ranking_copy.loc[ranking_copy['NES'] >=0]
+        ranking_copy = ranking_copy.loc[ranking_copy['NES'] >= 0]
 
     ranking_copy['pathway'] = ranking_copy['pathway'].str[trim_first_num_characters:]
 

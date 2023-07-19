@@ -3,6 +3,8 @@ import numpy as np
 from scipy.sparse import csc_matrix
 import scipy.spatial.distance
 import gc
+import json
+
 
 import os
 import random
@@ -13,7 +15,7 @@ import spectral_embedding as se
 
 from datetime import datetime
 
-from pre_utils import network_transform, match_networks
+from pre_utils import network_transform
 
 
 class n2v2r():
@@ -54,6 +56,8 @@ class n2v2r():
             self.save_dir = os.path.join(
                 self.config["save_dir"], now)
             os.makedirs(self.save_dir)
+            with open(os.path.join(self.save_dir, "config.json"), 'w') as f:
+                json.dump(self.config, f)
 
         max_embed_dim = max(self.embed_dimensions)
 
@@ -186,7 +190,8 @@ class n2v2r():
 
             self.pairwise_aggregate_ranks = pairwise_aggregate_ranks_dict
             exec_time_agg = round(time.time() - start_time, 2)
-            print(f"\tFinished aggregation in {exec_time_agg} seconds")
+            if self.config["verbose"] == 1:
+                print(f"\tFinished aggregation in {exec_time_agg} seconds")
 
             if self.config["save_dir"]:
                 for (i, k) in enumerate(self.pairwise_aggregate_ranks.keys()):
@@ -249,8 +254,9 @@ class n2v2r():
             self.pairwise_signed_aggregate_ranks = pairwise_signed_aggregate_ranks_dict
 
         exec_time_signed = round(time.time() - start_time, 2)
-        print(
-            f"\tFinished signed transformation in {exec_time_signed} seconds")
+        if self.config["verbose"] == 1:
+            print(
+                f"\tFinished signed transformation in {exec_time_signed} seconds")
 
         if self.config["save_dir"]:
             for (i, k) in enumerate(self.pairwise_signed_ranks.keys()):
@@ -309,6 +315,9 @@ returns Lists of nodes names and distance values sorted by similarity in decreas
 
 
 def compute_pairwise_distances(mat1, mat2, distance='cosine'):
+    # mat1 = mat1 - mat1.mean(axis=1, keepdims=True)
+    # mat2 = mat2 - mat2.mean(axis=1, keepdims=True)
+
     if distance == "cosine":
         dists = [scipy.spatial.distance.cosine(row1, row2)
                  for row1, row2 in zip(mat1, mat2)]
