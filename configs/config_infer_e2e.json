@@ -1,22 +1,40 @@
-{   "data_io": {
-    "save_dir": "../output",
-    "data_dir": "../data/networks/inferelator",
-    "graph_filenames": ["signed_network.tsv", "CSTARVE_signed_network.tsv"],
-    "seperator": "\t",
-    "is_edge_list": false,
-    "transpose": true
-},
-"data_preprocessing": {
-    "project_unipartite_on": "columns",
-    "threshold" : 0, 
-    "top_percent_keep" : [100, 75],
-    "binarize" : [false,true], 
-    "absolute" : true
-},
-"fitting_ranking": {
-    "embed_dimensions": [2,4,8,16],
-    "distance_metrics": ["euclidean", "cosine"],
-    "seed": null,
-    "verbose": 1
-}
+{
+    "data_io": {
+        "save_dir": "../output",
+        "data_dir": "/Users/anisi/Documents/Python & Data Science & ML/Fatima Fellowship/n2v2r/data/networks/inferelator",
+        "graph_filenames": [
+            "signed_network.tsv",
+            "CSTARVE_signed_network.tsv"
+        ],
+        "seperator": "\t",
+        "is_edge_list": false,
+        "transpose": true
+    },
+    "data_preprocessing": {
+        "project_unipartite_on": "columns",
+        "threshold": 0,
+        "top_percent_keep": [
+            100,
+            75
+        ],
+        "binarize": [
+            false,
+            true
+        ],
+        "absolute": true
+    },
+    "fitting_ranking": {
+        "embed_dimensions": [
+            2,
+            4,
+            8,
+            16
+        ],
+        "distance_metrics": [
+            "euclidean",
+            "cosine"
+        ],
+        "seed": null,
+        "verbose": 1
+    }
 }

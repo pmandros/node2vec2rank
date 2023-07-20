@@ -89,10 +89,13 @@ class n2v2r():
                         index=self.node_names)
 
                     # go over all provided choices for number of latent dimensions
-                    subsets = sample_noreplace(np.arange(self.embed_dim), self.num_reps, 4)
-                    for index,subset in enumerate(subsets):
-                        embed_one = np.transpose(self.node_embeddings[i-1, :, subset])
-                        embed_two = np.transpose(self.node_embeddings[i, :, subset])
+                    subsets = sample_noreplace(
+                        np.arange(self.embed_dim), self.num_reps, 4)
+                    for index, subset in enumerate(subsets):
+                        embed_one = np.transpose(
+                            self.node_embeddings[i-1, :, subset])
+                        embed_two = np.transpose(
+                            self.node_embeddings[i, :, subset])
                         for distance_metric in self.distance_metrics:
                             col_name = "bin-" + \
                                 str(bin)+"_top-"+str(top_percent)+"_rep-" + \
@@ -144,7 +147,7 @@ class n2v2r():
 
                 ranks_list = []
                 # collect the columns containing the different combo rankings
-                for (_, column_data) in self.pairwise_ranks[comparison_key].iteritems():
+                for (_, column_data) in self.pairwise_ranks[comparison_key].items():
                     # sort according to rank value and get the index
                     rank_series = pd.Series(column_data, index=self.node_names)
                     rank_series.sort_values(ascending=False, inplace=True)
@@ -245,7 +248,7 @@ class n2v2r():
 def signed_transform_single(ranks: pd.Series, prior_signed_ranks: pd.Series):
     node_names_list = []
     ranks_list = []
-    for index, rank in ranks.iteritems():
+    for index, rank in ranks.items():
         if index in prior_signed_ranks.index:
             node_names_list.append(index)
             value = prior_signed_ranks.loc[index]
@@ -328,9 +331,10 @@ def compute_pairwise_distances(mat1, mat2, distance='cosine'):
 
     return dists
 
+
 def sample_noreplace(arr, n, k):
     assert k <= len(arr)
     idx = np.random.randint(len(arr) - np.arange(k), size=[n, k])
     for i in range(k-1, 0, -1):
-        idx[:,i:] += idx[:,i:] >= idx[:,i-1,None]
+        idx[:, i:] += idx[:, i:] >= idx[:, i-1, None]
     return np.array(arr)[idx]

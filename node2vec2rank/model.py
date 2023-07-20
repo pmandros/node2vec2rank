@@ -1,18 +1,15 @@
 import pandas as pd
 import numpy as np
-from scipy.sparse import csc_matrix
-import scipy.spatial.distance
 import gc
 import json
-
-
 import os
 import random
 import time
 
+from scipy.sparse import csc_matrix
+import scipy.spatial.distance
 from joblib import Parallel, delayed
 import spectral_embedding as se
-
 from datetime import datetime
 
 from pre_utils import network_transform
