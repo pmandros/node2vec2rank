@@ -12,10 +12,11 @@ from joblib import Parallel, delayed
 import spectral_embedding as se
 from datetime import datetime
 
-from pre_utils import network_transform
+from preprocessing_utils import network_transform
+from model_utils import borda_aggregate_parallel, compute_pairwise_distances, get_ranking, signed_transform_single
 
 
-class n2v2r():
+class n2v2r:
     def __init__(self, graphs: list, node_names: list, config: dict):
         self.config = config
         self.node_names = node_names
@@ -30,6 +31,7 @@ class n2v2r():
         self.pairwise_signed_ranks = None
         self.pairwise_aggregate_ranks = None
         self.pairwise_signed_aggregate_ranks = None
+        self.prior_singed_ranks = None
 
         if self.config["seed"]:
             random.seed(self.config["seed"])
@@ -65,12 +67,12 @@ class n2v2r():
         # go over all pairwise comparisons and preprocessing combinations
         pairwise_ranks_dict = {}
         for top_percent in self.config['top_percent_keep']:
-            for bin in self.config['binarize']:
+            for binarize in self.config['binarize']:
                 # network transformation
                 grns_transformed = []
                 for graph in self.graphs:
                     grns_transformed.append(csc_matrix(network_transform(graph,
-                                                                         binarize=bin,
+                                                                         binarize=binarize,
                                                                          threshold=self.config['threshold'],
                                                                          absolute=self.config['absolute'],
                                                                          top_percent_keep=top_percent,
@@ -85,8 +87,8 @@ class n2v2r():
                 grns_transformed.clear()
 
                 if self.config["verbose"] == 1:
-                    print(
-                        f"\tUASE embedding in {exec_time_embed} seconds for bin={bin} and keep_top={top_percent}%")
+                    print(f"""\tUASE embedding in {
+                        exec_time_embed} seconds for bin={binarize} and keep_top={top_percent}%""")
 
                 start_time_ranking = time.time()
 
@@ -104,7 +106,7 @@ class n2v2r():
                         # go over all provided choices for distance metrics
                         for distance_metric in self.distance_metrics:
                             col_name = "bin-" + \
-                                str(bin)+"_top-"+str(top_percent)+"_dim-" + \
+                                str(binarize)+"_top-"+str(top_percent)+"_dim-" + \
                                 str(d)+"_distance-"+distance_metric
                             distances = compute_pairwise_distances(
                                 embed_one, embed_two, distance_metric)
@@ -126,11 +128,12 @@ class n2v2r():
 
         self.pairwise_ranks = dict([(key, pd.concat(
             pairwise_ranks_dict[key], axis=1)) for key in pairwise_ranks_dict])
-        assert (len(pairwise_ranks_dict) == ((len(self.graphs)-1)),
-                'Number of comparisons should be the same as number of graphs')
+        assert len(pairwise_ranks_dict) == len(
+            self.graphs)-1, "Number of comparisons should be the same as number of graphs"
 
-        print(
-            f"n2v2r computed {len(self.pairwise_ranks)*len(self.embed_dimensions)*len(self.config['binarize'])*len(self.config['top_percent_keep'])*len(self.distance_metrics)} rankings for {len(self.pairwise_ranks)} comparison(s) in {round(time.time() - start_time, 2)} seconds")
+        print(f"""n2v2r computed {len(self.pairwise_ranks)*len(self.embed_dimensions)*
+            len(self.config['binarize'])*len(self.config['top_percent_keep'])*len(self.distance_metrics)} rankings for {
+                len(self.pairwise_ranks)} comparison(s) in {round(time.time() - start_time, 2)} seconds""")
 
         if self.config["save_dir"]:
             for (i, k) in enumerate(self.pairwise_ranks.keys()):
@@ -138,10 +141,6 @@ class n2v2r():
                     self.save_dir, k + ".tsv"), sep='\t', index=True)
 
         return self.pairwise_ranks
-
-    """
-    
-    """
 
     def aggregate_transform(self, method='Borda'):
         """
@@ -179,7 +178,7 @@ class n2v2r():
                 if method.casefold() == 'borda':
                     aggregate_ranking_pd = borda_aggregate_parallel(ranks_list)
                 else:
-                    raise ValueError(
+                    raise NotImplementedError(
                         'Aggregation method not found. Available methods: Borda')
 
                 aggregate_ranking_pd = aggregate_ranking_pd.loc[self.node_names, :]
@@ -200,14 +199,25 @@ class n2v2r():
 
         return self.pairwise_aggregate_ranks
 
-    """
-    Computes the sign transofrmation of ranks of nodes for a given sequence of 
-    graphs and a prior signed ranking.
-    prior_signed_ranks: the prior singed ranking to use
-    returns A list of dataframes (one per comparison) with all computed singed ranks for all combinations of parameters
-    """
+    def signed_ranks_transform(self, prior_signed_ranks: pd.Series = None):
+        """ 
+        Computes the sign transofrmation of ranks of nodes for a given sequence of 
+        graphs and a prior signed ranking.
 
-    def signed_ranks_transform(self, prior_signed_ranks: pd.Series):
+        Args:
+            prior_signed_ranks (pd.Series): the prior singed ranking to use
+
+        Returns:
+            List(pd.DataFrame):  A list of dataframes (one per comparison) 
+            with all computed singed ranks for all combinations of parameters
+        """
+        if prior_signed_ranks is None:
+            if self.prior_singed_ranks:
+                prior_signed_ranks = self.prior_singed_ranks
+            else:
+                raise ValueError("""Prior signed ranks needed, run degree_difference_ranking beforehand
+                                 or provide them in arguments.""")
+
         if self.pairwise_ranks:
             print("\nSigned ranks transformation ...")
             start_time = time.time()
@@ -264,103 +274,36 @@ class n2v2r():
             if self.pairwise_aggregate_ranks:
                 for (i, k) in enumerate(self.pairwise_signed_aggregate_ranks.keys()):
                     self.pairwise_signed_aggregate_ranks[k].to_csv(os.path.join(
-                        self.save_dir, k + "_agg_signed.tsv"), sep='\t', index=True)
+                        self.save_dir, str(k) + "_agg_signed.tsv"), sep='\t', index=True)
 
         return self.pairwise_signed_ranks
 
+    def degree_difference_ranking(self, threshold=None, top_percent_keep=100, binarize=False, absolute=False, project_unipartite_on='columns'):
 
-def signed_transform_single(ranks: pd.Series, prior_signed_ranks: pd.Series):
-    node_names_list = []
-    ranks_list = []
-    for index, rank in ranks.items():
-        if index in prior_signed_ranks.index:
-            node_names_list.append(index)
-            value = prior_signed_ranks.loc[index]
-            if value > 0:
-                ranks_list.append(rank)
-            else:
-                ranks_list.append(-rank)
+        pairwise_DeDi_ranking = {}
+        networks_transformed = []
 
-    return pd.Series(ranks_list, index=node_names_list)
+        for graph in self.graphs:
+            networks_transformed.append(network_transform(graph,
+                                                          binarize=binarize,
+                                                          threshold=threshold,
+                                                          absolute=absolute,
+                                                          top_percent_keep=top_percent_keep,
+                                                          project_unipartite_on=project_unipartite_on))
 
+        for i in range(1, len(self.graphs)):
+            graph_comparison_key = str(i) + "vs" + str(i+1)
 
-def get_ranking(ranking: list, index: list):
-    num_candidates = len(index)
+            DeDi = np.sum(
+                networks_transformed[i-1], axis=0) - np.sum(networks_transformed[i], axis=0)
+            absDeDi = np.abs(DeDi)
 
-    return [num_candidates-ranking.index(node) for node in index]
+            DeDi_data_dict = {"DeDi": DeDi, "absDeDi": absDeDi}
+            ranking = pd.DataFrame.from_dict(DeDi_data_dict)
+            ranking.index = self.node_names
 
+            pairwise_DeDi_ranking[graph_comparison_key] = ranking
 
-def borda_aggregate_parallel(rankings: list):
-    index = rankings[0]
-
-    results = np.asarray(Parallel(
-        n_jobs=-2)(delayed(get_ranking)(ranking, index) for ranking in rankings))
-    borda_ranks = np.sum(results, axis=0)
-    to_return = pd.DataFrame(borda_ranks, index=index, columns=['borda_ranks'])
-
-    return to_return
-
-
-"""
-Computes Pairwise Distances between two embedding matrices
-nodes: names of nodes in the graph
-mat1: first embedding matrix (n_nodes,d_dimensions)
-mat1: second embedding matrix (n_nodes,d_dimensions)
-distance: distance metric to be used
-returns Lists of nodes names and distance values sorted by similarity in decreasing order
-"""
-
-
-def compute_pairwise_distances(mat1, mat2, distance='cosine'):
-    # mat1 = mat1 - mat1.mean(axis=1, keepdims=True)
-    # mat2 = mat2 - mat2.mean(axis=1, keepdims=True)
-
-    if distance == "cosine":
-        dists = [scipy.spatial.distance.cosine(row1, row2)
-                 for row1, row2 in zip(mat1, mat2)]
-    elif distance == "euclidean":
-        dists = [scipy.spatial.distance.euclidean(row1, row2)
-                 for row1, row2 in zip(mat1, mat2)]
-    # elif distance == "cityblock":
-    #     dists = [scipy.spatial.distance.cityblock(row1, row2)
-    #              for row1, row2 in zip(mat1, mat2)]
-    # elif distance == "chebyshev":
-    #     dists = [scipy.spatial.distance.chebyshev(row1, row2)
-    #              for row1, row2 in zip(mat1, mat2)]
-    # elif distance == "correlation":
-    #     dists = [scipy.spatial.distance.correlation(row1, row2, centered=False)
-    #              for row1, row2 in zip(mat1, mat2)]
-    #     dists = [0 if np.isnan(x) else x for x in dists]
-    else:
-        raise Exception("Unsupported metric")
-
-    return dists
-
-
-def degree_difference_ranking(graphs, node_names, threshold=None, top_percent_keep=100, binarize=False, absolute=False, project_unipartite_on='columns'):
-
-    pairwise_DeDi_ranking = {}
-    networks_transformed = []
-
-    for graph in graphs:
-        networks_transformed.append(network_transform(graph,
-                                                      binarize=binarize,
-                                                      threshold=threshold,
-                                                      absolute=absolute,
-                                                      top_percent_keep=top_percent_keep,
-                                                      project_unipartite_on=project_unipartite_on))
-
-    for i in range(1, len(graphs)):
-        graph_comparison_key = str(i) + "vs" + str(i+1)
-
-        DeDi = np.sum(
-            networks_transformed[i-1], axis=0) - np.sum(networks_transformed[i], axis=0)
-        absDeDi = np.abs(DeDi)
-
-        DeDi_data_dict = {"DeDi": DeDi, "absDeDi": absDeDi}
-        ranking = pd.DataFrame.from_dict(DeDi_data_dict)
-        ranking.index = node_names
-
-        pairwise_DeDi_ranking[graph_comparison_key] = ranking
-
-    return pairwise_DeDi_ranking
+        self.prior_singed_ranks = [v.iloc[:, 0]
+                                   for k, v in pairwise_DeDi_ranking.items()]
+        return pairwise_DeDi_ranking

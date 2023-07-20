@@ -1,9 +1,8 @@
 import json
-import os
 import argparse
 from dataloader import DataLoader
 from model import n2v2r
-from model import degree_difference_ranking
+
 
 # Create the parser
 parser = argparse.ArgumentParser(description='Script arguments')
@@ -70,18 +69,18 @@ graphs = dataloader.get_graphs()
 interest_nodes = dataloader.get_interest_nodes()
 print(interest_nodes)
 
-# compute DeDi ranking
-DeDi_ranking = degree_difference_ranking(
-    graphs=graphs, node_names=interest_nodes)
-prior_singed_ranks = [v.iloc[:, 0] for k, v in DeDi_ranking.items()]
 
-# define and train the Node2Vec2Rank
+# define Node2Vec2Rank
 model = n2v2r(graphs=graphs, config=config, node_names=interest_nodes)
+
+# compute DeDi ranking
+DeDi_ranking = model.degree_difference_ranking()
+
+# train Node2Vec2Rank
 rankings = model.fit_transform_rank()
 
 # generate ranking based on borda ranking
 borda_rankings = model.aggregate_transform()
 
 # get signed ranking based on dedi ranks
-signed_rankings = model.signed_ranks_transform(
-    prior_signed_ranks=prior_singed_ranks)
+signed_rankings = model.signed_ranks_transform()
