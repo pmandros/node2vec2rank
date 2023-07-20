@@ -1,6 +1,0 @@
-typing_extensions
-chardet==5.1.0
-git+https://github.com/iggallagher/Spectral-Embedding
-git+https://github.com/djcunningham0/rankaggregation.git
-plotly==5.15.0
-

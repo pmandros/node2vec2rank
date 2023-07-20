@@ -1,13 +1,13 @@
 {
     "data_io": {
         "save_dir": null,
-        "data_dir": "./input",
+        "data_dir": "input",
         "graph_filenames": [
-            "sbm1.txt",
-            "sbm2.txt"
+            "test1.edgelist",
+            "test2.edgelist"
         ],
         "seperator": ",",
-        "is_edge_list": false,
+        "is_edge_list": true,
         "transpose": false
     },
     "data_preprocessing": {

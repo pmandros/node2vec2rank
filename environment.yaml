@@ -3,19 +3,20 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
-  - umap-learn
-  - openblas
-  - numpy
-  - scipy
-  - scikit-learn
-  - numexpr
-  - nbformat
-  - gseapy 
-  - pip
+  - umap-learn==0.5.3
+  - openblas==0.3.23
+  - numpy==1.25.0
+  - pandas==2.0.2
+  - scipy==1.10.1
+  - scikit-learn==1.2.2
+  - numexpr==2.8.4
+  - nbformat==5.9.0
+  - gseapy==0.12.0 
+  - pip==23.1.2
   - pip:
-    - typing_extensions
-    - chardet
+    - typing_extensions==4.6.3
+    - chardet==5.1.0
     - git+https://github.com/iggallagher/Spectral-Embedding
     - plotly==5.15.0
-    - networkx
+    - networkx==3.1
 

@@ -79,7 +79,9 @@ prior_singed_ranks = [v.iloc[:, 0] for k, v in DeDi_ranking.items()]
 model = n2v2r(graphs=graphs, config=config, node_names=interest_nodes)
 rankings = model.fit_transform_rank()
 
+# generate ranking based on borda ranking
 borda_rankings = model.aggregate_transform()
 
+# get signed ranking based on dedi ranks
 signed_rankings = model.signed_ranks_transform(
     prior_signed_ranks=prior_singed_ranks)
