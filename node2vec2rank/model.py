@@ -171,7 +171,7 @@ class n2v2r():
 
                 ranks_list = []
                 # collect the columns containing the different combo rankings
-                for (_, column_data) in self.pairwise_ranks[comparison_key].iteritems():
+                for (_, column_data) in self.pairwise_ranks[comparison_key].items():
                     # sort according to rank value and get the index
                     rank_series = pd.Series(column_data, index=self.node_names)
                     rank_series.sort_values(ascending=False, inplace=True)
@@ -275,7 +275,7 @@ class n2v2r():
 def signed_transform_single(ranks: pd.Series, prior_signed_ranks: pd.Series):
     node_names_list = []
     ranks_list = []
-    for index, rank in ranks.iteritems():
+    for index, rank in ranks.items():
         if index in prior_signed_ranks.index:
             node_names_list.append(index)
             value = prior_signed_ranks.loc[index]

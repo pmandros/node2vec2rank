@@ -21,7 +21,7 @@ data_loading_group.add_argument(
 data_loading_group.add_argument(
     '--is_edge_list', action='store_true', help='Whether the input is an edge list')
 data_loading_group.add_argument(
-    '--transpose', action='store_true', help='Whether the input is an edge list')
+    '--transpose', action='store_true', help='whether to transpose the adjacency matrix or not')
 
 # Add data_preprocessing arguments
 data_preprocessing_group = parser.add_argument_group('data_preprocessing')
@@ -47,14 +47,16 @@ fitting_ranking_group.add_argument(
 fitting_ranking_group.add_argument(
     '--verbose', type=int, default=0, help='Verbose level')
 
-# Parse the arguments
+# Parse the arguments from the command line
 config = parser.parse_args()
+
+# user should provide path of config file (all other args will be ignored and will be extracted from the file)
 if config.config is not None:
     with open(config.config, 'r', encoding='utf-8') as file:
         config = json.load(file)
         config = {param: value for _, params in config.items()
                   for param, value in params.items()}
-
+# if no config file, these args are required
 elif any([config.data_dir is None, config.graph_filenames is None,
           config.save_dir is None]):
     print("The following arguments are required: --save_dir, --graph_filenames, --data_dir")
@@ -67,7 +69,7 @@ dataloader = DataLoader(config=config)
 graphs = dataloader.get_graphs()
 interest_nodes = dataloader.get_interest_nodes()
 print(interest_nodes)
-"""
+
 # compute DeDi ranking
 DeDi_ranking = degree_difference_ranking(
     graphs=graphs, node_names=interest_nodes)
@@ -81,4 +83,3 @@ borda_rankings = model.aggregate_transform()
 
 signed_rankings = model.signed_ranks_transform(
     prior_signed_ranks=prior_singed_ranks)
-"""
