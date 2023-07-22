@@ -23,8 +23,11 @@ class n2v2r:
         self.graphs = graphs
         self.num_graphs = len(graphs)
         self.embed_dimensions = self.config['embed_dimensions']
+        self.max_embed_dim = max(self.embed_dimensions)
         self.distance_metrics = self.config['distance_metrics']
         self.save_dir = None
+        self.nb_rankings = len(self.pairwise_ranks)*len(self.embed_dimensions)*len(
+            self.config['binarize'])*len(self.config['top_percent_keep'])*len(self.distance_metrics)
 
         self.node_embeddings = None
         self.pairwise_ranks = None
@@ -37,16 +40,52 @@ class n2v2r:
             random.seed(self.config["seed"])
             np.random.seed(self.config["seed"])
 
+    def __fit(self, grns, binarize, top_percent):
+        # fitting UASE
+        start_time_uase = time.time()
+        _, self.node_embeddings = se.UASE(
+            grns, self.max_embed_dim)
+        exec_time_embed = round(time.time() - start_time_uase, 2)
+
+        if self.config["verbose"] == 1:
+            print(f"""\tUASE embedding in {
+                exec_time_embed} seconds for bin={binarize} and keep_top={top_percent}%""")
+
+    def __rank(self, pairwise_ranks_dict, binarize, top_percent):
+        start_time_ranking = time.time()
+
+        # for every pair of consecutive graphs
+        for i in range(1, self.num_graphs):
+            graph_comparison_key = str(i) + "vs" + str(i+1)
+            per_graph_comp_and_prepro_combo_ranks_pd = pd.DataFrame(
+                index=self.node_names)
+
+            # go over all provided choices for number of latent dimensions
+            for dim in self.embed_dimensions:
+                embed_one = self.node_embeddings[i-1, :, :dim+1]
+                embed_two = self.node_embeddings[i, :, :dim+1]
+
+                # go over all provided choices for distance metrics
+                for distance_metric in self.distance_metrics:
+                    col_name = f"bin-{binarize}_top-{top_percent}_dim-{dim}_distance-{distance_metric}"
+                    distances = compute_pairwise_distances(
+                        embed_one, embed_two, distance_metric)
+                    per_graph_comp_and_prepro_combo_ranks_pd[col_name] = distances
+
+            pairwise_ranks_dict.setdefault(graph_comparison_key, []).append(
+                per_graph_comp_and_prepro_combo_ranks_pd)
+
+        exec_time_ranking = round(time.time() - start_time_ranking, 2)
+        if self.config["verbose"] == 1:
+            print(f"\t\tRanking in {exec_time_ranking} seconds")
+
     def fit_transform_rank(self):
         """
         Computes the differential ranks of nodes for a given sequence of graphs.
         returns A list of dataframes (one per comparison) with all computed ranks for all combinations of parameters
 
-        Raises:
-            ValueError: _description_
-
         Returns:
-            _type_: _description_    
+            pd.DatFrame: pairwise ranks of all nodes    
         """
 
         now = datetime.now().strftime(r"%m_%d_%Y_%H_%M_%S")
@@ -55,10 +94,8 @@ class n2v2r:
             self.save_dir = os.path.join(
                 self.config["save_dir"], now)
             os.makedirs(self.save_dir)
-            with open(os.path.join(self.save_dir, "config.json"), 'w') as f:
+            with open(os.path.join(self.save_dir, "config.json"), 'w', encoding="utf-8") as f:
                 json.dump(self.config, f)
-
-        max_embed_dim = max(self.embed_dimensions)
 
         print(
             f"\nRunning n2v2r with dimensions {self.embed_dimensions} and distance metrics {self.distance_metrics} ...")
@@ -69,76 +106,36 @@ class n2v2r:
         for top_percent in self.config['top_percent_keep']:
             for binarize in self.config['binarize']:
                 # network transformation
-                grns_transformed = []
-                for graph in self.graphs:
-                    grns_transformed.append(csc_matrix(network_transform(graph,
-                                                                         binarize=binarize,
-                                                                         threshold=self.config['threshold'],
-                                                                         absolute=self.config['absolute'],
-                                                                         top_percent_keep=top_percent,
-                                                                         project_unipartite_on=self.config['project_unipartite_on'])))
-
-                # fitting UASE
-                start_time_uase = time.time()
-                _, self.node_embeddings = se.UASE(
-                    grns_transformed, max_embed_dim)
-                exec_time_embed = round(time.time() - start_time_uase, 2)
-
+                grns_transformed = [csc_matrix(network_transform(graph,
+                                                                 binarize=binarize,
+                                                                 threshold=self.config['threshold'],
+                                                                 absolute=self.config['absolute'],
+                                                                 top_percent_keep=top_percent,
+                                                                 project_unipartite_on=self.config['project_unipartite_on']))
+                                    for graph in self.graphs]
+                # fit UASE model
+                self.__fit(grns=grns_transformed, binarize=binarize,
+                           top_percent=top_percent)
+                # remove the transformed graphs
                 grns_transformed.clear()
 
-                if self.config["verbose"] == 1:
-                    print(f"""\tUASE embedding in {
-                        exec_time_embed} seconds for bin={binarize} and keep_top={top_percent}%""")
-
-                start_time_ranking = time.time()
-
-                # for every pair of consecutive graphs
-                for i in range(1, self.num_graphs):
-                    graph_comparison_key = str(i) + "vs" + str(i+1)
-                    per_graph_comp_and_prepro_combo_ranks_pd = pd.DataFrame(
-                        index=self.node_names)
-
-                    # go over all provided choices for number of latent dimensions
-                    for d in self.embed_dimensions:
-                        embed_one = self.node_embeddings[i-1, :, :d+1]
-                        embed_two = self.node_embeddings[i, :, :d+1]
-
-                        # go over all provided choices for distance metrics
-                        for distance_metric in self.distance_metrics:
-                            col_name = "bin-" + \
-                                str(binarize)+"_top-"+str(top_percent)+"_dim-" + \
-                                str(d)+"_distance-"+distance_metric
-                            distances = compute_pairwise_distances(
-                                embed_one, embed_two, distance_metric)
-                            per_graph_comp_and_prepro_combo_ranks_pd[col_name] = distances
-
-                    if graph_comparison_key in pairwise_ranks_dict:
-                        pairwise_ranks_dict[graph_comparison_key].append(
-                            per_graph_comp_and_prepro_combo_ranks_pd)
-                    else:
-                        pairwise_ranks_dict[graph_comparison_key] = []
-                        pairwise_ranks_dict[graph_comparison_key].append(
-                            per_graph_comp_and_prepro_combo_ranks_pd)
-
-                exec_time_ranking = round(time.time() - start_time_ranking, 2)
-                if self.config["verbose"] == 1:
-                    print(f"\t\tRanking in {exec_time_ranking} seconds")
-
+                # rank the nodes
+                self.__rank(pairwise_ranks_dict=pairwise_ranks_dict, binarize=binarize,
+                            top_percent=top_percent)
                 gc.collect()
 
-        self.pairwise_ranks = dict([(key, pd.concat(
-            pairwise_ranks_dict[key], axis=1)) for key in pairwise_ranks_dict])
+        self.pairwise_ranks = {key: pd.concat(
+            pairwise_ranks_dict[key], axis=1) for key in pairwise_ranks_dict}
         assert len(pairwise_ranks_dict) == len(
             self.graphs)-1, "Number of comparisons should be the same as number of graphs"
 
-        print(f"""n2v2r computed {len(self.pairwise_ranks)*len(self.embed_dimensions)*
-            len(self.config['binarize'])*len(self.config['top_percent_keep'])*len(self.distance_metrics)} rankings for {
+        print(f"""n2v2r computed {self.nb_rankings} rankings for {
                 len(self.pairwise_ranks)} comparison(s) in {round(time.time() - start_time, 2)} seconds""")
 
         if self.config["save_dir"]:
-            for (i, k) in enumerate(self.pairwise_ranks.keys()):
-                self.pairwise_ranks[k].to_csv(os.path.join(
-                    self.save_dir, k + ".tsv"), sep='\t', index=True)
+            for key, rank in self.pairwise_ranks.items():
+                rank.to_csv(os.path.join(
+                    self.save_dir, key + ".tsv"), sep='\t', index=True)
 
         return self.pairwise_ranks
 
@@ -149,9 +146,6 @@ class n2v2r:
 
         Args:
             method (str, optional): the method to use for aggregation (currently only Borda). Defaults to 'Borda'.
-
-        Raises:
-            ValueError: _description_
 
         Returns:
             List: A list of dataframes (one per comparison) with aggregated ranks
@@ -174,7 +168,7 @@ class n2v2r:
                     ranks_list.append(rank_series.index.to_list())
 
                 # aggregate the rankings
-                # TODO currently it works only with Borda and rankaggregator package
+                # TODO currently it works only with Borda
                 if method.casefold() == 'borda':
                     aggregate_ranking_pd = borda_aggregate_parallel(ranks_list)
                 else:
@@ -190,12 +184,12 @@ class n2v2r:
                 print(f"\tFinished aggregation in {exec_time_agg} seconds")
 
             if self.config["save_dir"]:
-                for (i, k) in enumerate(self.pairwise_aggregate_ranks.keys()):
-                    self.pairwise_aggregate_ranks[k].to_csv(os.path.join(
+                for k, rank in self.pairwise_aggregate_ranks.items():
+                    rank.to_csv(os.path.join(
                         self.save_dir, k + "_agg.tsv"), sep='\t', index=True)
 
         else:
-            print("No n2v2r embeddings found")
+            raise ValueError("No n2v2r embeddings found")
 
         return self.pairwise_aggregate_ranks
 
@@ -279,7 +273,18 @@ class n2v2r:
         return self.pairwise_signed_ranks
 
     def degree_difference_ranking(self, threshold=None, top_percent_keep=100, binarize=False, absolute=False, project_unipartite_on='columns'):
+        """_summary_
 
+        Args:
+            threshold (int, optional): Defaults to None.
+            top_percent_keep (int, optional): Defaults to 100.
+            binarize (bool, optional): Defaults to False.
+            absolute (bool, optional): Defaults to False.
+            project_unipartite_on (str, optional): Defaults to 'columns'.
+
+        Returns:
+            list: pairwise DeDi ranking
+        """
         pairwise_DeDi_ranking = {}
         networks_transformed = []
 
