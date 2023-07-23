@@ -108,45 +108,67 @@ conda activate bio_embed_env
 1. Running a single node2vec2rank model:
 To run the node2vec2rank algorithm, run the following command:
    ```sh
-   python node2vec2rank.py
+   python node2vec2rank/node2vec2rank.py
    ```
 You can modify the experiment parameters in the config.json file:
    ```json
-{   "data_loading": {
-    "save_dir": null,
-    "network_filenames": ["sbm1.txt", "sbm2.txt"],
-    "seperator": ",",
-    "is_edge_list": false
-},
-"data_preprocessing": {
-    "project_unipartite": false,
-    "threshold" : 0, 
-    "top_percent_keep" : [100],
-    "binarize" : [false], 
-    "absolute" : false
-},
-"fitting_ranking": {
-    "embed_dimensions": [2,4,8,16],
-    "distance_metrics": ["euclidean","cosine","chebyshev"],
-    "seed": null,
-    "verbose": 0
-}
+{
+    "data_io": {
+        "save_dir": "../output",
+        "data_dir": "data/networks/inferelator",
+        "graph_filenames": [
+            "signed_network.tsv",
+            "CSTARVE_signed_network.tsv"
+        ],
+        "seperator": "\t",
+        "is_edge_list": false,
+        "transpose": true
+    },
+    "data_preprocessing": {
+        "project_unipartite_on": "columns",
+        "threshold": 0,
+        "top_percent_keep": [
+            100,
+            75
+        ],
+        "binarize": [
+            false,
+            true
+        ],
+        "absolute": true
+    },
+    "fitting_ranking": {
+        "embed_dimensions": [
+            2,
+            4,
+            8,
+            16
+        ],
+        "distance_metrics": [
+            "euclidean",
+            "cosine"
+        ],
+        "seed": null,
+        "verbose": 1
+    }
 }
    ```
 2. You can run the script from the command line and it will parse the command line arguments based on the given parameters:
 ```sh
-python node2vec2rank.py --save_dir mydir --graphs_filenames sbm1.txt sbm2.txt --seperator "," --is_edge_list False --project_unipartite_on columns --threshold 0 --top_percent_keep 100 --binarize False --absolute False--embed_dimensions 2 4 8 16 --distance_metrics euclidean cosine --seed 123 --verbose 1
+python node2vec2rank.py --save_dir ../output --data_dir data/networks/inferelator --graph_filenames signed_network.tsv CSTARVE_signed_network.tsv --seperator "\t" --is_edge_list false --transpose true --project_unipartite_on columns --threshold 0 --top_percent_keep 100 75 --binarize false true --absolute true --embed_dimensions 2 4 8 16 --distance_metrics "euclidean" "cosine" --verbose 1
+
 ```
 3. You can also check all the possible parameters with their corresponding description using the following command:
 ```sh
-python node2vec2rank.py --help
+python node2vec2rank/node2vec2rank.py --help
 ```
 It will generate the following output:
 ```sh
-usage: node2vec2rank.py [-h] [--config CONFIG] --save_dir SAVE_DIR --graph_filenames GRAPH_FILENAMES [GRAPH_FILENAMES ...] --data_dir
-                        DATA_DIR [--seperator SEPERATOR] [--is_edge_list] [--transpose] [--project_unipartite_on PROJECT_UNIPARTITE_ON]
-                        [--threshold THRESHOLD] [--top_percent_keep TOP_PERCENT_KEEP [TOP_PERCENT_KEEP ...]]
-                        [--binarize BINARIZE [BINARIZE ...]] [--absolute] [--embed_dimensions EMBED_DIMENSIONS [EMBED_DIMENSIONS ...]]
+usage: node2vec2rank.py [-h] [--config CONFIG] [--save_dir SAVE_DIR] [--graph_filenames GRAPH_FILENAMES [GRAPH_FILENAMES ...]]
+                        [--data_dir DATA_DIR] [--seperator SEPERATOR] [--is_edge_list] [--transpose]
+                        [--project_unipartite_on PROJECT_UNIPARTITE_ON] [--threshold THRESHOLD]
+                        [--top_percent_keep TOP_PERCENT_KEEP [TOP_PERCENT_KEEP ...]] [--binarize BINARIZE [BINARIZE ...]]
+                        [--absolute] [--embed_dimensions EMBED_DIMENSIONS [EMBED_DIMENSIONS ...]]
                         [--distance_metrics DISTANCE_METRICS [DISTANCE_METRICS ...]] [--seed SEED] [--verbose VERBOSE]
 
 Script arguments
@@ -163,7 +185,7 @@ data_io:
   --seperator SEPERATOR
                         Separator
   --is_edge_list        Whether the input is an edge list
-  --transpose           Whether the input is an edge list
+  --transpose           whether to transpose the adjacency matrix or not
 
 data_preprocessing:
   --project_unipartite_on PROJECT_UNIPARTITE_ON
@@ -185,7 +207,7 @@ fitting_ranking:
   --verbose VERBOSE     Verbose level
 ```
 4. Running in a Jupyter Notebook Environment:
-You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in [demo.ipynb]((https://github.com/pmandros/n2v2r/notebooks/demo.ipynb). 
+You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in [node2vec2rank_demo.ipynb]((https://github.com/pmandros/n2v2r/notebooks/node2vec2rank_demo.ipynb). 
 <!-- ROADMAP -->
 ## Roadmap
 
