@@ -1,7 +1,8 @@
 import json
 import argparse
+import sys
 from dataloader import DataLoader
-from model import n2v2r
+from model import N2V2R
 
 
 # Create the parser
@@ -49,7 +50,8 @@ fitting_ranking_group.add_argument(
 # Parse the arguments from the command line
 config = parser.parse_args()
 
-# user should provide path of config file (all other args will be ignored and will be extracted from the file)
+# user should provide path of config file
+# all other args will be ignored and will be extracted from the file
 if config.config is not None:
     with open(config.config, 'r', encoding='utf-8') as file:
         config = json.load(file)
@@ -60,7 +62,7 @@ elif any([config.data_dir is None, config.graph_filenames is None,
           config.save_dir is None]):
     print("The following arguments are required: --save_dir, --graph_filenames, --data_dir")
     parser.print_help()
-    exit(1)
+    sys.exit(1)
 
 
 # create dataloader and load the graphs in memory
@@ -70,17 +72,17 @@ interest_nodes = dataloader.get_interest_nodes()
 print(interest_nodes)
 
 
-# define Node2Vec2Rank
-model = n2v2r(graphs=graphs, config=config, node_names=interest_nodes)
+# define Node2Vec2Rank model
+model = N2V2R(graphs=graphs, config=config, node_names=interest_nodes)
 
 # compute DeDi ranking
 DeDi_ranking = model.degree_difference_ranking()
 
-# train Node2Vec2Rank
+# train Node2Vec2Rank and generate rankings
 rankings = model.fit_transform_rank()
 
 # generate ranking based on borda ranking
 borda_rankings = model.aggregate_transform()
 
-# get signed ranking based on dedi ranks
+# get signed ranking based on DeDi ranks
 signed_rankings = model.signed_ranks_transform()

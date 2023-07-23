@@ -1,22 +1,20 @@
-import pandas as pd
-import numpy as np
+from datetime import datetime
 import gc
 import json
 import os
 import random
+import numpy as np
+import pandas as pd
 import time
-
 from scipy.sparse import csc_matrix
-import scipy.spatial.distance
-from joblib import Parallel, delayed
 import spectral_embedding as se
-from datetime import datetime
+
 
 from preprocessing_utils import network_transform
 from model_utils import borda_aggregate_parallel, compute_pairwise_distances, get_ranking, signed_transform_single
 
 
-class n2v2r:
+class N2V2R:
     def __init__(self, graphs: list, node_names: list, config: dict):
         self.config = config
         self.node_names = node_names
@@ -26,8 +24,6 @@ class n2v2r:
         self.max_embed_dim = max(self.embed_dimensions)
         self.distance_metrics = self.config['distance_metrics']
         self.save_dir = None
-        self.nb_rankings = len(self.pairwise_ranks)*len(self.embed_dimensions)*len(
-            self.config['binarize'])*len(self.config['top_percent_keep'])*len(self.distance_metrics)
 
         self.node_embeddings = None
         self.pairwise_ranks = None
@@ -93,6 +89,7 @@ class n2v2r:
         if self.config["save_dir"]:
             self.save_dir = os.path.join(
                 self.config["save_dir"], now)
+            print(self.save_dir)
             os.makedirs(self.save_dir)
             with open(os.path.join(self.save_dir, "config.json"), 'w', encoding="utf-8") as f:
                 json.dump(self.config, f)
@@ -129,7 +126,10 @@ class n2v2r:
         assert len(pairwise_ranks_dict) == len(
             self.graphs)-1, "Number of comparisons should be the same as number of graphs"
 
-        print(f"""n2v2r computed {self.nb_rankings} rankings for {
+        nb_rankings = len(self.pairwise_ranks)*len(self.embed_dimensions)*len(
+            self.config['binarize'])*len(self.config['top_percent_keep'])*len(self.distance_metrics)
+
+        print(f"""n2v2r computed {nb_rankings} rankings for {
                 len(self.pairwise_ranks)} comparison(s) in {round(time.time() - start_time, 2)} seconds""")
 
         if self.config["save_dir"]:
