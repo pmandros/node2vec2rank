@@ -14,9 +14,9 @@
     "absolute" : false
 },
 "fitting_ranking": {
-    "embed_dimensions": [32],
-    "distance_metrics": ["cosine"],
+    "embed_dimensions": [1, 2, 4, 8],
+    "distance_metrics": ["euclidean" ],
     "seed": null,
-    "verbose": 1
+    "verbose": 0
 }
 }
