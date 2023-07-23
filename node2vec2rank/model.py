@@ -1,21 +1,18 @@
 import pandas as pd
 import numpy as np
-from scipy.sparse import csc_matrix
-import scipy.spatial.distance
 import gc
 import json
-
-
 import os
 import random
 import time
 
+from scipy.sparse import csc_matrix
+import scipy.spatial.distance
 from joblib import Parallel, delayed
 import spectral_embedding as se
-
 from datetime import datetime
 
-from node2vec2rank.pre_utils import network_transform
+from pre_utils import network_transform
 
 
 class n2v2r():
@@ -171,7 +168,7 @@ class n2v2r():
 
                 ranks_list = []
                 # collect the columns containing the different combo rankings
-                for (_, column_data) in self.pairwise_ranks[comparison_key].iteritems():
+                for (_, column_data) in self.pairwise_ranks[comparison_key].items():
                     # sort according to rank value and get the index
                     rank_series = pd.Series(column_data, index=self.node_names)
                     rank_series.sort_values(ascending=False, inplace=True)
@@ -275,7 +272,7 @@ class n2v2r():
 def signed_transform_single(ranks: pd.Series, prior_signed_ranks: pd.Series):
     node_names_list = []
     ranks_list = []
-    for index, rank in ranks.iteritems():
+    for index, rank in ranks.items():
         if index in prior_signed_ranks.index:
             node_names_list.append(index)
             value = prior_signed_ranks.loc[index]
@@ -317,7 +314,6 @@ returns Lists of nodes names and distance values sorted by similarity in decreas
 def compute_pairwise_distances(mat1, mat2, distance='cosine'):
     # mat1 = mat1 - mat1.mean(axis=1, keepdims=True)
     # mat2 = mat2 - mat2.mean(axis=1, keepdims=True)
-
 
     if distance == "cosine":
         dists = [scipy.spatial.distance.cosine(row1, row2)

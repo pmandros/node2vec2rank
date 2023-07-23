@@ -291,7 +291,7 @@ Given a ranking (node integer IDs) and the true community membership matrices, i
 #         index = rankings.index.to_list()
 
 #         ranked_lists = []
-#         for (columnName, columnData) in n2v2r_distances_per_combo.iteritems():
+#         for (columnName, columnData) in n2v2r_distances_per_combo.items():
 #             temp_df = pd.DataFrame(columnData.values, columns=['col'], index = index)
 #             temp_df.sort_values(by='col', ascending=False, inplace=True)
 #             ranked_lists.append(temp_df.index.to_list())
@@ -382,7 +382,7 @@ Given a ranking (node integer IDs) and the true community membership matrices, i
 #             index = rankings.index.to_list()
 
 #             ranked_lists = []
-#             for (columnName, columnData) in n2v2r_distances_per_combo.iteritems():
+#             for (columnName, columnData) in n2v2r_distances_per_combo.items():
 #                 temp_df = pd.DataFrame(columnData.values, columns=['col'], index = index)
 #                 temp_df.sort_values(by='col', ascending=False, inplace=True)
 #                 ranked_lists.append(temp_df.index.to_list())
@@ -414,7 +414,7 @@ Given a ranking (node integer IDs) and the true community membership matrices, i
 #     aggregate_NES_dict = defaultdict(float)
 
 #     results_found = 0
-#     for (column_name, column_data) in ranking_pd.iteritems():
+#     for (column_name, column_data) in ranking_pd.items():
 #         ranking_pd = pd.DataFrame(
 #             column_data, index=ranking_pd.index.to_list())
 
@@ -467,7 +467,7 @@ Given a ranking (node integer IDs) and the true community membership matrices, i
 #     aggregate_sum_padj_dict = defaultdict(float)
 
 #     results_found = 0
-#     for (column_name, column_data) in ranking_pd.iteritems():
+#     for (column_name, column_data) in ranking_pd.items():
 #         ranking_pd = pd.DataFrame(
 #             column_data, index=ranking_pd.index.to_list())
 #         top_cutoff = ranking_pd[column_name].quantile(enrich_quantile_cutoff)
@@ -510,7 +510,7 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, pre
     aggregate_overlap = defaultdict(list)
 
     results_found = 0
-    for (_, column_data) in ranking_pd.iteritems():
+    for (_, column_data) in ranking_pd.items():
         column_pd = pd.DataFrame(
             column_data, index=ranking_pd.index.to_list())
 
@@ -571,7 +571,7 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
     aggregate_overlap = defaultdict(list)
 
     results_found = 0
-    for (column_name, column_data) in ranking_pd.iteritems():
+    for (column_name, column_data) in ranking_pd.items():
         column_pd = pd.DataFrame(
             np.abs(column_data), index=ranking_pd.index.to_list())
         top_cutoff = column_pd[column_name].quantile(enrich_quantile_cutoff)
