@@ -56,7 +56,29 @@ Computes the normalized discounted cumulative gain for a given relevance vector
 """
 
 
-def normalized_discounted_cumulative_gain(relevance_vector, binary_relevance=False, denominator=None, ideal_numerator=None):
+# def normalized_discounted_cumulative_gain(relevance_vector, binary_relevance=False, denominator=None, ideal_numerator=None):
+#     relevance_vector = np.array(relevance_vector)
+#     if np.sum(relevance_vector) == 0:
+#         return 0
+#     else:
+#         if denominator is None:
+#             denominator = np.log2(np.arange(len(relevance_vector)) + 2)
+
+#         dcg = discounted_cumulative_gain(relevance_vector, denominator)
+#         if binary_relevance:
+#             num_relevant = np.sum(relevance_vector)
+#             if ideal_numerator is None:
+#                 ideal_numerator = (2**np.ones(num_relevant)-1)
+#                 ideal_numerator = np.pad(ideal_numerator,
+#                                          (0, relevance_vector.shape[0]-num_relevant), mode='constant')
+#             idcg = np.sum(np.divide(ideal_numerator, denominator))
+#         else:
+#             idcg = discounted_cumulative_gain(
+#                 sorted(relevance_vector, reverse=True), denominator)
+
+#         return dcg/idcg
+
+def normalized_discounted_cumulative_gain(relevance_vector, binary_relevance=False, denominator=None, ideal_numerator=None, denom_all_rel=False):
     relevance_vector = np.array(relevance_vector)
     if np.sum(relevance_vector) == 0:
         return 0
@@ -67,10 +89,13 @@ def normalized_discounted_cumulative_gain(relevance_vector, binary_relevance=Fal
         dcg = discounted_cumulative_gain(relevance_vector, denominator)
         if binary_relevance:
             num_relevant = np.sum(relevance_vector)
-            if ideal_numerator is None:
+            if ideal_numerator is None and not denom_all_rel:
                 ideal_numerator = (2**np.ones(num_relevant)-1)
                 ideal_numerator = np.pad(ideal_numerator,
                                          (0, relevance_vector.shape[0]-num_relevant), mode='constant')
+            elif ideal_numerator is None and denom_all_rel:
+                ideal_numerator = np.ones(len(relevance_vector))
+
             idcg = np.sum(np.divide(ideal_numerator, denominator))
         else:
             idcg = discounted_cumulative_gain(
@@ -524,12 +549,15 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, pre
 
     aggregate_prerank_pd = pd.DataFrame(
         aggregate_count_dict.items(), columns=['pathway', 'freq'], index=aggregate_count_dict.keys())
-    aggregate_prerank_pd['padj'] = [np.average(aggregate_padj_dict[k]) for k in aggregate_prerank_pd.index]
-    aggregate_prerank_pd['NES'] = [np.average(aggregate_NES_dict[k]) for k in aggregate_prerank_pd.index]
+    aggregate_prerank_pd['padj'] = [np.average(
+        aggregate_padj_dict[k]) for k in aggregate_prerank_pd.index]
+    aggregate_prerank_pd['NES'] = [np.average(
+        aggregate_NES_dict[k]) for k in aggregate_prerank_pd.index]
     aggregate_prerank_pd['stability'] = [aggregate_prerank_pd.iloc[i, 1] /
                                          len(ranking_pd.columns) for i in range(len(aggregate_prerank_pd.index))]
 
-    aggregate_prerank_pd['overlap'] = [np.average(aggregate_overlap[k]) for k in aggregate_prerank_pd.index]
+    aggregate_prerank_pd['overlap'] = [np.average(
+        aggregate_overlap[k]) for k in aggregate_prerank_pd.index]
 
     aggregate_prerank_pd.sort_values(
         by=['padj', 'stability'], ascending=False, inplace=True)
@@ -569,16 +597,18 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
                 overlap = row['Overlap']
                 aggregate_count_dict[term] += 1
                 aggregate_padj_dict[term].append(padj)
-                aggregate_overlap[term].append(float(overlap.split("/")[0]) / \
-                    float(overlap.split("/")[1]))
+                aggregate_overlap[term].append(float(overlap.split("/")[0]) /
+                                               float(overlap.split("/")[1]))
 
     aggregate_enr_pd = pd.DataFrame(
         aggregate_count_dict.items(), columns=['pathway', 'freq'], index=aggregate_count_dict.keys())
 
-    aggregate_enr_pd['padj'] = [np.average(aggregate_padj_dict[k]) for k in aggregate_enr_pd.index]
+    aggregate_enr_pd['padj'] = [np.average(
+        aggregate_padj_dict[k]) for k in aggregate_enr_pd.index]
     aggregate_enr_pd['stability'] = [aggregate_enr_pd.iloc[i, 1] /
                                      float(len(ranking_pd.columns)) for i in range(len(aggregate_enr_pd.index))]
-    aggregate_enr_pd['overlap'] = [np.average(aggregate_overlap[k]) for k in aggregate_enr_pd.index]
+    aggregate_enr_pd['overlap'] = [np.average(
+        aggregate_overlap[k]) for k in aggregate_enr_pd.index]
 
     aggregate_enr_pd.sort_values(
         by=['padj'], ascending=True, inplace=True)
