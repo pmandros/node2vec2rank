@@ -19,7 +19,7 @@ def signed_transform_single(ranks: pd.Series, prior_signed_ranks: pd.Series):
     return pd.Series(ranks_list, index=node_names_list)
 
 
-def get_ranking(ranking: list, index: list):
+def _get_ranking(ranking: list, index: list):
     num_candidates = len(index)
 
     return [num_candidates-ranking.index(node) for node in index]
@@ -29,7 +29,7 @@ def borda_aggregate_parallel(rankings: list):
     index = rankings[0]
 
     results = np.asarray(Parallel(
-        n_jobs=-2)(delayed(get_ranking)(ranking, index) for ranking in rankings))
+        n_jobs=-2)(delayed(_get_ranking)(ranking, index) for ranking in rankings))
     borda_ranks = np.sum(results, axis=0)
     to_return = pd.DataFrame(borda_ranks, index=index, columns=['borda_ranks'])
 
@@ -52,25 +52,12 @@ def compute_pairwise_distances(mat1, mat2, distance='cosine'):
 
     """
 
-    # mat1 = mat1 - mat1.mean(axis=1, keepdims=True)
-    # mat2 = mat2 - mat2.mean(axis=1, keepdims=True)
-
     if distance == "cosine":
         dists = [scipy.spatial.distance.cosine(row1, row2)
                  for row1, row2 in zip(mat1, mat2)]
     elif distance == "euclidean":
         dists = [scipy.spatial.distance.euclidean(row1, row2)
                  for row1, row2 in zip(mat1, mat2)]
-    # elif distance == "cityblock":
-    #     dists = [scipy.spatial.distance.cityblock(row1, row2)
-    #              for row1, row2 in zip(mat1, mat2)]
-    # elif distance == "chebyshev":
-    #     dists = [scipy.spatial.distance.chebyshev(row1, row2)
-    #              for row1, row2 in zip(mat1, mat2)]
-    # elif distance == "correlation":
-    #     dists = [scipy.spatial.distance.correlation(row1, row2, centered=False)
-    #              for row1, row2 in zip(mat1, mat2)]
-    #     dists = [0 if np.isnan(x) else x for x in dists]
     else:
         raise NotImplementedError("Unsupported metric")
 

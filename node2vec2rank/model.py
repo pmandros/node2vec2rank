@@ -11,7 +11,7 @@ import spectral_embedding as se
 
 
 from preprocessing_utils import network_transform
-from model_utils import borda_aggregate_parallel, compute_pairwise_distances, get_ranking, signed_transform_single
+from model_utils import borda_aggregate_parallel, compute_pairwise_distances, signed_transform_single
 
 
 class N2V2R:
@@ -36,20 +36,12 @@ class N2V2R:
             random.seed(self.config["seed"])
             np.random.seed(self.config["seed"])
 
-    def __fit(self, grns, binarize, top_percent):
+    def __fit(self, grns):
         # fitting UASE
-        start_time_uase = time.time()
         _, self.node_embeddings = se.UASE(
             grns, self.max_embed_dim)
-        exec_time_embed = round(time.time() - start_time_uase, 2)
-
-        if self.config["verbose"] == 1:
-            print(f"""\tUASE embedding in {
-                exec_time_embed} seconds for bin={binarize} and keep_top={top_percent}%""")
 
     def __rank(self, pairwise_ranks_dict, binarize, top_percent):
-        start_time_ranking = time.time()
-
         # for every pair of consecutive graphs
         for i in range(1, self.num_graphs):
             graph_comparison_key = str(i) + "vs" + str(i+1)
@@ -73,10 +65,6 @@ class N2V2R:
             pairwise_ranks_dict.setdefault(graph_comparison_key, []).append(
                 per_graph_comp_and_prepro_combo_ranks_pd)
 
-        exec_time_ranking = round(time.time() - start_time_ranking, 2)
-        if self.config["verbose"] == 1:
-            print(f"\t\tRanking in {exec_time_ranking} seconds")
-
     def fit_transform_rank(self):
         """
         Computes the differential ranks of nodes for a given sequence of graphs.
@@ -98,7 +86,7 @@ class N2V2R:
 
         print(
             f"\nRunning n2v2r with dimensions {self.embed_dimensions} and distance metrics {self.distance_metrics} ...")
-        start_time = time.time()
+        tic_n2v2r = time.time()
 
         # go over all pairwise comparisons and preprocessing combinations
         pairwise_ranks_dict = {}
@@ -113,14 +101,25 @@ class N2V2R:
                                                                  project_unipartite_on=self.config['project_unipartite_on']))
                                     for graph in self.graphs]
                 # fit UASE model
-                self.__fit(grns=grns_transformed, binarize=binarize,
-                           top_percent=top_percent)
+                tic_uase = time.time()
+                self.__fit(grns=grns_transformed)
+                toc_uase = time.time()
+                if self.config["verbose"] == 1:
+                    print(f"""\tUASE embedding in {
+                        round(toc_uase-tic_uase,2)} seconds for bin={binarize} and keep_top={top_percent}%""")
+                toc_uase = time.time()
+
                 # remove the transformed graphs
                 grns_transformed.clear()
 
                 # rank the nodes
+                tic_rank = time.time()
                 self.__rank(pairwise_ranks_dict=pairwise_ranks_dict, binarize=binarize,
                             top_percent=top_percent)
+                toc_rank = time.time()
+                if self.config["verbose"] == 1:
+                    print(f"\t\tRanking in {round(toc_rank-tic_rank,2)} seconds")
+
                 gc.collect()
 
         self.pairwise_ranks = {key: pd.concat(
@@ -130,8 +129,9 @@ class N2V2R:
         
         num_rankings = sum([len(self.pairwise_ranks[key].columns) for key in self.pairwise_ranks])
 
+        toc_n2v2r = time.time()
         print(f"""n2v2r computed {num_rankings} rankings for {
-                len(self.pairwise_ranks)} comparison(s) in {round(time.time() - start_time, 2)} seconds""")
+                len(self.pairwise_ranks)} comparison(s) in {round(toc_n2v2r - tic_n2v2r, 2)} seconds""")
 
         if self.config["save_dir"]:
             for key, rank in self.pairwise_ranks.items():
