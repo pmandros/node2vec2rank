@@ -63,6 +63,8 @@ class N2V2R:
 
                 # go over all provided choices for distance metrics
                 for distance_metric in self.distance_metrics:
+                    if distance_metric=='cosine' and dim==1:
+                        continue
                     col_name = f"bin-{binarize}_top-{top_percent}_dim-{dim}_distance-{distance_metric}"
                     distances = compute_pairwise_distances(
                         embed_one, embed_two, distance_metric)
@@ -125,11 +127,10 @@ class N2V2R:
             pairwise_ranks_dict[key], axis=1) for key in pairwise_ranks_dict}
         assert len(pairwise_ranks_dict) == len(
             self.graphs)-1, "Number of comparisons should be the same as number of graphs"
+        
+        num_rankings = sum([len(self.pairwise_ranks[key].columns) for key in self.pairwise_ranks])
 
-        nb_rankings = len(self.pairwise_ranks)*len(self.embed_dimensions)*len(
-            self.config['binarize'])*len(self.config['top_percent_keep'])*len(self.distance_metrics)
-
-        print(f"""n2v2r computed {nb_rankings} rankings for {
+        print(f"""n2v2r computed {num_rankings} rankings for {
                 len(self.pairwise_ranks)} comparison(s) in {round(time.time() - start_time, 2)} seconds""")
 
         if self.config["save_dir"]:
