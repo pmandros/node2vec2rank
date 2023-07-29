@@ -84,8 +84,9 @@ class N2V2R:
             with open(os.path.join(self.save_dir, "config.json"), 'w', encoding="utf-8") as f:
                 json.dump(self.config, f)
 
-        print(
-            f"\nRunning n2v2r with dimensions {self.embed_dimensions} and distance metrics {self.distance_metrics} ...")
+        if self.config["verbose"] >= 0:
+            print(
+                f"\nRunning n2v2r with dimensions {self.embed_dimensions} and distance metrics {self.distance_metrics} ...")
         tic_n2v2r = time.time()
 
         # go over all pairwise comparisons and preprocessing combinations
@@ -130,8 +131,9 @@ class N2V2R:
         num_rankings = sum([len(self.pairwise_ranks[key].columns) for key in self.pairwise_ranks])
 
         toc_n2v2r = time.time()
-        print(f"""n2v2r computed {num_rankings} rankings for {
-                len(self.pairwise_ranks)} comparison(s) in {round(toc_n2v2r - tic_n2v2r, 2)} seconds""")
+        if self.config["verbose"] >= 0:
+            print(f"""n2v2r computed {num_rankings} rankings for {
+                    len(self.pairwise_ranks)} comparison(s) in {round(toc_n2v2r - tic_n2v2r, 2)} seconds""")
 
         if self.config["save_dir"]:
             for key, rank in self.pairwise_ranks.items():
@@ -156,7 +158,8 @@ class N2V2R:
             pairwise_aggregate_ranks_dict = {}
 
             start_time = time.time()
-            print("\nRank aggregation with Borda ...")
+            if self.config["verbose"] >= 0:
+                print("\nRank aggregation with Borda ...")
 
             for comparison_key in self.pairwise_ranks:
 
