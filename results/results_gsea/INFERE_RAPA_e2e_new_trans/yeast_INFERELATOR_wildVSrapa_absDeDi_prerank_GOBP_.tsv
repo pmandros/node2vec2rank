@@ -1,0 +1,9 @@
+pathway	freq	padj	NES	stability	overlap
+establishment of protein localization to mitochondrial membrane (GO:0090151)	1	0.2490678510594764	2.055196268513101	1.0	36.28
+establishment of protein localization to mitochondrion (GO:0072655)	1	0.2373611195526112	1.8690785246634953	1.0	36.28
+purine nucleotide biosynthetic process (GO:0006164)	1	0.228233676044413	1.9083080368372316	1.0	33.17
+purine nucleotide metabolic process (GO:0006163)	1	0.228233676044413	1.9083080368372316	1.0	33.17
+'de novo' IMP biosynthetic process (GO:0006189)	1	0.22142854350180435	1.896177439602669	1.0	33.17
+IMP biosynthetic process (GO:0006188)	1	0.20658811984157704	2.04350457835322	1.0	33.17
+protein transmembrane import into intracellular organelle (GO:0044743)	1	0.1747872119982328	2.1597061270174245	1.0	36.28
+protein targeting to mitochondrion (GO:0006626)	1	0.06878418585375198	2.387069878301395	1.0	36.28

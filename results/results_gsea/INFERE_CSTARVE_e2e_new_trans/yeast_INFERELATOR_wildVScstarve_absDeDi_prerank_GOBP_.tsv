@@ -1,0 +1,7 @@
+pathway	freq	padj	NES	stability	overlap
+cellular response to oxidative stress (GO:0034599)	1	0.20346163212945598	1.9495583837975856	1.0	21.13
+cytoplasmic translational initiation (GO:0002183)	1	0.1046005146843254	2.1959162543335435	1.0	22.81
+nucleotide metabolic process (GO:0009117)	1	0.09986551196198967	2.29574731701984	1.0	19.46
+deadenylation-dependent decapping of nuclear-transcribed mRNA (GO:0000290)	1	0.09900460237611045	2.0816518370853	1.0	25.36
+regulation of translation (GO:0006417)	1	0.09233255308554648	2.125897674994146	1.0	28.55
+cellular protein catabolic process (GO:0044257)	1	0.09096944624123772	2.164001941326297	1.0	42.9

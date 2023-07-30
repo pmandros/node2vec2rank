@@ -1,0 +1,13 @@
+pathway	freq	padj	NES	stability	overlap
+ceramide metabolic process (GO:0006672)	1	0.18256887872209643	1.8672387453589108	1.0	13.48
+maturation of SSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000462)	1	0.1654914260128891	1.8963537436089708	1.0	69.3
+purine-containing compound biosynthetic process (GO:0072522)	1	0.15360239023365468	1.9245526962363033	1.0	12.68
+cellular protein catabolic process (GO:0044257)	1	0.1463167422692177	1.9529230312616126	1.0	40.59
+ribosomal large subunit biogenesis (GO:0042273)	1	0.14592679909432554	1.9706197914108698	1.0	70.89
+regulation of translation (GO:0006417)	1	0.1271825721021585	2.0111870093227684	1.0	39.0
+fungal-type cell wall organization (GO:0031505)	1	0.11381309182014114	2.0469247315154133	1.0	33.09
+tRNA aminoacylation for protein translation (GO:0006418)	1	0.11375271352209333	2.072247228717516	1.0	27.11
+nucleotide metabolic process (GO:0009117)	1	0.05886884059662473	2.1957835600078233	1.0	20.26
+cytoplasmic translational initiation (GO:0002183)	1	0.02324564474841079	2.371331182181391	1.0	29.74
+translation (GO:0006412)	1	0.0	3.3023888203567546	1.0	73.29
+cytoplasmic translation (GO:0002181)	1	0.0	3.257426204280851	1.0	73.29
