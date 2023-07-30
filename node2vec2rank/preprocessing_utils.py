@@ -13,15 +13,15 @@ returns A symmetric matrix corresponding to the projection
 """
 
 
-def bipartite_to_unipartite_projection(grn, project_unipartite_on='columns'):
-    [r, c] = grn.shape
+def bipartite_to_unipartite_projection(graph, project_unipartite_on='columns'):
+    [r, c] = graph.shape
 
     assert r != c, 'Graph is not bipartite'
 
     if project_unipartite_on.casefold() == 'columns':
-        to_return = np.matmul(np.transpose(grn), grn)
+        to_return = np.matmul(np.transpose(graph), graph)
     elif project_unipartite_on.casefold() == 'rows':
-        to_return = np.matmul(grn, np.transpose(grn))
+        to_return = np.matmul(graph, np.transpose(graph))
     else:
         raise ValueError(
             'Unknown projection type, options are columns or rows')
@@ -116,24 +116,29 @@ returns A transformed and preprocessed symmetric matrix
 def network_transform(network, threshold=None, top_percent_keep=100, binarize=False, absolute=False, project_unipartite_on='columns'):
     [r, c] = np.shape(network)
 
+    if (isinstance(network, pd.DataFrame)):
+        network_copy = network.values.copy()
+    else:
+        network_copy = network.copy()
+
     if absolute:
-        network = np.abs(network)
+        network_copy = np.abs(network_copy)
 
     if threshold is not None:
-        network[network < threshold] = 0
+        network_copy[network_copy < threshold] = 0
 
     if r != c:
-        network = bipartite_to_unipartite_projection(
-            network, project_unipartite_on)
+        network_copy = bipartite_to_unipartite_projection(
+            network_copy, project_unipartite_on)
 
-    cut_off = np.percentile(network, 100-top_percent_keep)
-    network[network < cut_off] = 0
+    cut_off = np.percentile(network_copy[network_copy.nonzero()], 100-top_percent_keep)
+    network_copy[network_copy < cut_off] = 0
 
     # binarize
     if binarize:
-        network[network != 0] = 1
+        network_copy[network_copy != 0] = 1
 
-    return np.float32(network)
+    return np.float32(network_copy)
 
 # # remove nodes that have no edges
 # # if two networks are passed, then their intersection of genes is used
