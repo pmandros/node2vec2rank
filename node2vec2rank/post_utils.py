@@ -631,8 +631,8 @@ def plot_gseapy_enrich(ranking, title='enrichr', topk=25, padj_cutoff=0.1, stabi
         print(f"No results found for {title}")
         return
 
-    ranking_copy['-log padj'] = - \
-        np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps)
+    ranking_copy['-log padj'] = np.around(- \
+        np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps),2)
     ranking_copy.sort_values(by=['-log padj'],
                              ascending=True, inplace=True)
 
@@ -641,7 +641,7 @@ def plot_gseapy_enrich(ranking, title='enrichr', topk=25, padj_cutoff=0.1, stabi
 
     if has_stability:
         fig = px.scatter(ranking_copy.iloc[-topk:, :], x="-log padj", y="pathway", color='stability', size='overlap',
-                         title=title, color_continuous_scale='BuGn', range_color=[ranking_copy['stability'].min(), ranking_copy['stability'].max()]
+                         title=title, color_continuous_scale='BuGn', range_color=[0, ranking_copy['stability'].max()]
                          )
     else:
         fig = px.scatter(ranking_copy.iloc[-topk:, :], x="-log padj", y="pathway", size='overlap',
@@ -682,8 +682,8 @@ def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=25, padj_
     if topk > num_results:
         topk = num_results
 
-    ranking_copy['-log padj'] = - \
-        np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps)
+    ranking_copy['-log padj'] = np.around(- \
+        np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps),2)
     ranking_copy.sort_values(by=['-log padj'],
                              ascending=True, inplace=True)
 
@@ -692,7 +692,7 @@ def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=25, padj_
     if has_stability:
         if one_sided:
             fig = px.scatter(ranking_copy.iloc[-topk:, :], x='NES', y="pathway", color='stability', size='overlap',
-                             title=title, color_continuous_scale='BuGn', range_color=[ranking_copy['stability'].min(), ranking_copy['stability'].max()]
+                             title=title, color_continuous_scale='BuGn', range_color=[0, ranking_copy['stability'].max()]
                              )
             fig.add_annotation(
                 x=ranking_copy.loc[ranking_copy.index[-1],
@@ -701,40 +701,55 @@ def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=25, padj_
                 str(round(
                     ranking_copy.loc[ranking_copy.index[-1], '-log padj'], 2)),
                 showarrow=True,
+                arrowcolor='black',
+                arrowhead=1,
+                arrowwidth=1,
                 yshift=10
             )
             fig.add_annotation(
                 x=ranking_copy.loc[ranking_copy.index[-topk],
-                                   'NES'], y=ranking_copy.loc[ranking_copy.index[-topk], 'pathway'],
+                                   'NES'], 
+                y=ranking_copy.loc[ranking_copy.index[-topk], 'pathway'],
                 text='-log padj ' +
                 str(round(
                     ranking_copy.loc[ranking_copy.index[-topk], '-log padj'], 2)),
                 showarrow=True,
+                arrowcolor='black',
+                arrowhead=1,
+                arrowwidth=1,
                 yshift=10
-            )
+                )
         else:
             biggest_nes_value = ceil(np.max(
                 np.abs(ranking_copy.iloc[-topk:, :]['NES'])))
             fig = px.scatter(ranking_copy.iloc[-topk:, :], x='NES', y="pathway", color='stability', size='overlap',
-                             title=title, color_continuous_scale='BuGn', range_x=[-biggest_nes_value-0.2, biggest_nes_value+0.2], range_color=[ranking_copy['stability'].min(), ranking_copy['stability'].max()]
+                             title=title, color_continuous_scale='BuGn', range_x=[-biggest_nes_value-0.2, biggest_nes_value+0.2], range_color=[0, ranking_copy['stability'].max()]
                              )
             fig.add_annotation(
                 x=ranking_copy.loc[ranking_copy.index[-1],
-                                   'NES'], y=ranking_copy.loc[ranking_copy.index[-1], 'pathway'],
+                                   'NES'], 
+                y=ranking_copy.loc[ranking_copy.index[-1], 'pathway'],
                 text='-log padj ' +
                 str(round(
                     ranking_copy.loc[ranking_copy.index[-1], '-log padj'], 2)),
                 showarrow=True,
-                yshift=10
+                arrowcolor='black',
+                arrowhead=1,
+                arrowwidth=1,
+                yshift=12
             )
             fig.add_annotation(
                 x=ranking_copy.loc[ranking_copy.index[-topk],
-                                   'NES'], y=ranking_copy.loc[ranking_copy.index[-topk], 'pathway'],
+                                   'NES'] ,
+                y=ranking_copy.loc[ranking_copy.index[-topk], 'pathway'],
                 text='-log padj ' +
                 str(round(
                     ranking_copy.loc[ranking_copy.index[-topk], '-log padj'], 2)),
                 showarrow=True,
-                yshift=10
+                arrowcolor='black',
+                arrowhead=1,
+                arrowwidth=1,
+                yshift=12
             )
     else:
         if one_sided:

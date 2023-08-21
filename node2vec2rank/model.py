@@ -24,6 +24,7 @@ class N2V2R:
         self.max_embed_dim = max(self.embed_dimensions)
         self.distance_metrics = self.config['distance_metrics']
         self.save_dir = None
+        self.comp_strategy = self.config['comp_strategy']
 
         self.node_embeddings = None
         self.pairwise_ranks = None
@@ -41,7 +42,7 @@ class N2V2R:
         _, self.node_embeddings = se.UASE(
             grns, self.max_embed_dim)
 
-    def __rank(self, pairwise_ranks_dict, binarize, top_percent):
+    def __rank(self, pairwise_ranks_dict, comp_strategy, binarize, top_percent):
         # for every pair of consecutive graphs
         for i in range(1, self.num_graphs):
             graph_comparison_key = str(i) + "vs" + str(i+1)
@@ -50,7 +51,11 @@ class N2V2R:
 
             # go over all provided choices for number of latent dimensions
             for dim in self.embed_dimensions:
-                embed_one = self.node_embeddings[i-1, :, :dim+1]
+                if comp_strategy=='one-vs-next':
+                    embed_one = self.node_embeddings[i-1, :, :dim+1]
+                elif comp_strategy=='one-vs-before':
+                    embed_one = np.mean(self.node_embeddings[:i, :, :dim+1],axis=0)
+
                 embed_two = self.node_embeddings[i, :, :dim+1]
 
                 # go over all provided choices for distance metrics
@@ -115,7 +120,7 @@ class N2V2R:
 
                 # rank the nodes
                 tic_rank = time.time()
-                self.__rank(pairwise_ranks_dict=pairwise_ranks_dict, binarize=binarize,
+                self.__rank(pairwise_ranks_dict=pairwise_ranks_dict, comp_strategy=self.comp_strategy, binarize=binarize,
                             top_percent=top_percent)
                 toc_rank = time.time()
                 if self.config["verbose"] == 1:
