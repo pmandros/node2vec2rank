@@ -80,8 +80,7 @@ To get a local copy up and running follow these simple steps:
 
 ### Prerequisites
 
-* It is recommended to create a new virtual enviroment with [conda](https://www.anaconda.com/): <br>
-`conda create --name node2vec2rank python=3.9`
+* It is recommended to create a new virtual enviroment with [conda](https://www.anaconda.com/)
 
 ### Installation
 
