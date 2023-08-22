@@ -1,0 +1,2 @@
+pathway	freq	padj	NES	stability	overlap	Lead_genes
+cytoplasmic translational initiation (GO:0002183)	1	0.13940684084758315	2.274097547641873	1.0	42.58	['FUN12', 'GCD11', 'SUI3', 'SUI1', 'PRT1', 'SUI2', 'TIF11', 'TIF34', 'TIF5', 'TIF35']

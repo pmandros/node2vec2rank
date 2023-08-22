@@ -1,0 +1,2 @@
+pathway	freq	padj	NES	stability	overlap	Lead_genes
+Transfer RNA biogenesis  sce03016	1	0.23530311723082808	1.813706630332163	1.0	50.17	['TEF1', 'TRM5', 'GUS1', 'SES1', 'CDC60', 'YDR341C', 'DED81', 'DPS1', 'GSP2', 'GRS1', 'TEF2', 'VAS1', 'MET22', 'FRS1', 'KRS1', 'FRS2']

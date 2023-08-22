@@ -1,0 +1,3 @@
+pathway	freq	padj	stability	overlap	genes
+mRNA processing (GO:0006397)	1	0.03310555551475782	0.1	0.6666666666666666	['LSM6', 'SUB2', 'LSM5', 'STO1', 'NAB3', 'SMB1']
+cellular response to oxidative stress (GO:0034599)	1	0.09103085137358555	0.1	0.29545454545454547	['GRX3', 'AHP1', 'ACT1', 'MCR1', 'GPX2', 'YJR096W', 'GRX2', 'GRX1', 'YDL124W', 'VHR1', 'GRE3', 'PRX1', 'NCE103']

@@ -1,0 +1,2 @@
+pathway	freq	padj	stability	overlap	genes
+KEGG_CELL_CYCLE	1	0.021737271356311143	1.0	0.5	['PRKDC', 'SMC1A', 'RAD21', 'CREBBP', 'YWHAG', 'STAG1']

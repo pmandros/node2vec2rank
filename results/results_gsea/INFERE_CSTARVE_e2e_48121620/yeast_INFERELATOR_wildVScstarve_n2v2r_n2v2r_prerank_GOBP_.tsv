@@ -1,0 +1,2 @@
+pathway	freq	padj	NES	stability	overlap	Lead_genes
+nucleotide metabolic process (GO:0009117)	1	0.22706454175819038	2.0441629688651988	1.0	27.35	['PRS1', 'PHM8', 'PRS3', 'ADK1', 'HNT1']

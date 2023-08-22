@@ -1,0 +1,2 @@
+pathway	freq	padj	stability	overlap	genes
+Amino acid related enzymes  sce01007	1	0.01645318126438872	1.0	0.391304347826087	['HEM1', 'ALT1', 'SER1', 'CDC60', 'DPS1', 'BNA3', 'AAT2', 'VAS1', 'FRS1']
