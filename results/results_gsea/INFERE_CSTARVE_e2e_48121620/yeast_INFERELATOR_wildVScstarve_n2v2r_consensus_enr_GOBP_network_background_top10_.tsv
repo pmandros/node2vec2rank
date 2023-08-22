@@ -1,0 +1,2 @@
+pathway	freq	padj	stability	overlap	genes
+regulation of transcription from RNA polymerase I promoter (GO:0006356)	1	0.043827172149342675	0.1	1.0	['CKB2', 'HMO1', 'SCH9', 'RXT3']

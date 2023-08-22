@@ -1,0 +1,3 @@
+pathway	freq	padj	stability	overlap	genes
+Amino acid related enzymes  sce01007	2	0.09367992907083424	0.2	0.34782608695652173	['ALT1', 'SER1', 'CDC60', 'DPS1', 'BNA3', 'VAS1', 'FRS1', 'KRS1']
+Pyruvate metabolism  sce00620	1	0.09787645422361575	0.1	0.2903225806451613	['PDA1', 'LYS20', 'PYC1', 'GLO1', 'ERG10', 'PDB1', 'DLD3', 'ACS2', 'GRE2']
