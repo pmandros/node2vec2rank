@@ -2,8 +2,7 @@
 import numpy as np
 import pandas as pd
 from joblib import Parallel, delayed
-from scipy import stats
-from scipy.sparse import csc_matrix
+
 import json
 import os
 
@@ -15,7 +14,7 @@ from itertools import chain
 import plotly.express as px
 import plotly.io as pio
 from math import ceil
-
+import itertools
 
 """
 Reads gmt files into dictionaries
@@ -78,7 +77,7 @@ Computes the normalized discounted cumulative gain for a given relevance vector
 
 #         return dcg/idcg
 
-def normalized_discounted_cumulative_gain(relevance_vector, binary_relevance=False, denominator=None, ideal_numerator=None, denom_all_rel=False):
+def normalized_discounted_cumulative_gain(relevance_vector, binary_relevance=False, denominator=None, ideal_numerator=None, denom_all_rel=False, all_rel=None):
     relevance_vector = np.array(relevance_vector)
     if np.sum(relevance_vector) == 0:
         return 0
@@ -98,8 +97,13 @@ def normalized_discounted_cumulative_gain(relevance_vector, binary_relevance=Fal
 
             idcg = np.sum(np.divide(ideal_numerator, denominator))
         else:
-            idcg = discounted_cumulative_gain(
+            if denom_all_rel is False:
+                idcg = discounted_cumulative_gain(
                 sorted(relevance_vector, reverse=True), denominator)
+            elif (denom_all_rel is True) and not all_rel is None:
+                idcg = discounted_cumulative_gain(all_rel*np.ones(len(relevance_vector)))
+            else:
+                raise ValueError('IDCG needs the relevance value to assign for the whole ranking')
 
         return dcg/idcg
 
@@ -508,6 +512,8 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, pre
     aggregate_padj_dict = defaultdict(list)
     aggregate_NES_dict = defaultdict(list)
     aggregate_overlap = defaultdict(list)
+    aggregate_genes = defaultdict(list)
+
 
     results_found = 0
     for (_, column_data) in ranking_pd.items():
@@ -526,13 +532,12 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, pre
                                  weighted_score_type=prerank_weight,
                                  no_plot=True
                                  )
-
         if one_sided:
             filtered_prerank = pre_res.res2d.loc[(pre_res.res2d["NES"] > 0) & (pre_res.res2d['FDR q-val'] <= padj_cutoff)][[
-                'Term', 'NES', 'FDR q-val', 'Gene %']]
+                'Term', 'NES', 'FDR q-val', 'Gene %', 'Lead_genes']]
         else:
             filtered_prerank = pre_res.res2d.loc[pre_res.res2d['FDR q-val'] <= padj_cutoff][[
-                'Term', 'NES', 'FDR q-val', 'Gene %']]
+                'Term', 'NES', 'FDR q-val', 'Gene %', 'Lead_genes']]
 
         if not filtered_prerank.empty:
             results_found += 1
@@ -542,10 +547,14 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, pre
                 padj = row['FDR q-val']
                 nes = row['NES']
                 overlap = row['Gene %'][:-1]
+                genes = row['Lead_genes']
+
                 aggregate_count_dict[term] += 1
                 aggregate_padj_dict[term].append(padj)
                 aggregate_NES_dict[term].append(nes)
                 aggregate_overlap[term].append(float(overlap))
+                aggregate_genes[term].append(genes.split(";"))
+
 
     aggregate_prerank_pd = pd.DataFrame(
         aggregate_count_dict.items(), columns=['pathway', 'freq'], index=aggregate_count_dict.keys())
@@ -558,7 +567,9 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, pre
 
     aggregate_prerank_pd['overlap'] = [np.average(
         aggregate_overlap[k]) for k in aggregate_prerank_pd.index]
-
+    
+    aggregate_prerank_pd['Lead_genes'] = [list(set(flatten(aggregate_genes[k]))) for k in aggregate_prerank_pd.index]
+    
     aggregate_prerank_pd.sort_values(
         by=['padj', 'stability'], ascending=False, inplace=True)
 
@@ -569,6 +580,8 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
     aggregate_count_dict = defaultdict(int)
     aggregate_padj_dict = defaultdict(list)
     aggregate_overlap = defaultdict(list)
+    aggregate_genes = defaultdict(list)
+
 
     results_found = 0
     for (column_name, column_data) in ranking_pd.items():
@@ -585,8 +598,9 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
                              organism=organism,
                              no_plot=True
                              )
+        
         filtered_enr = enr.res2d.loc[enr.res2d['Adjusted P-value']
-                                     <= padj_cutoff][['Term', 'Adjusted P-value', 'Overlap']]
+                                     <= padj_cutoff][['Term', 'Adjusted P-value', 'Overlap', 'Genes']]
 
         if not filtered_enr.empty:
             results_found += 1
@@ -595,10 +609,12 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
                 term = row['Term']
                 padj = row['Adjusted P-value']
                 overlap = row['Overlap']
+                genes = row['Genes']
                 aggregate_count_dict[term] += 1
                 aggregate_padj_dict[term].append(padj)
                 aggregate_overlap[term].append(float(overlap.split("/")[0]) /
                                                float(overlap.split("/")[1]))
+                aggregate_genes[term].append(genes.split(";"))
 
     aggregate_enr_pd = pd.DataFrame(
         aggregate_count_dict.items(), columns=['pathway', 'freq'], index=aggregate_count_dict.keys())
@@ -609,6 +625,8 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
                                      float(len(ranking_pd.columns)) for i in range(len(aggregate_enr_pd.index))]
     aggregate_enr_pd['overlap'] = [np.average(
         aggregate_overlap[k]) for k in aggregate_enr_pd.index]
+    
+    aggregate_enr_pd['genes'] = [list(set(flatten(aggregate_genes[k]))) for k in aggregate_enr_pd.index]
 
     aggregate_enr_pd.sort_values(
         by=['padj'], ascending=True, inplace=True)
@@ -773,3 +791,7 @@ def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=25, padj_
     if output_dir:
         filename = '-'.join(title.split(" "))
         pio.write_image(fig, os.path.join(output_dir, filename+".pdf"))
+
+
+def flatten(l):
+    return [item for sublist in l for item in sublist]
