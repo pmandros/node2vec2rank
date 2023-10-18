@@ -315,4 +315,10 @@ class N2V2R:
 
         self.prior_singed_ranks = [v.iloc[:, 0]
                                    for k, v in pairwise_DeDi_ranking.items()]
+
+        if self.config["save_dir"]:
+            for k, rank in pairwise_DeDi_ranking.items():
+                rank.to_csv(os.path.join(
+                    self.save_dir, k + "_degDif.tsv"), sep='\t', index=True)
+        
         return pairwise_DeDi_ranking
