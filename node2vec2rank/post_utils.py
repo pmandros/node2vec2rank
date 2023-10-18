@@ -633,7 +633,7 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
     return aggregate_enr_pd
 
 
-def plot_gseapy_enrich(ranking, title='enrichr', topk=25, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None):
+def plot_gseapy_enrich(ranking, title='enrichr', topk=30, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None):
     ranking_copy = ranking.copy()
 
     ranking_copy['pathway'] = ranking_copy['pathway'].str[trim_first_num_characters:]
@@ -678,8 +678,9 @@ def plot_gseapy_enrich(ranking, title='enrichr', topk=25, padj_cutoff=0.1, stabi
         pio.write_image(fig, os.path.join(output_dir, filename+".pdf"))
 
 
-def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=25, padj_cutoff=0.25, stability_cutoff=0, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None):
+def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=30, padj_cutoff=0.25, stability_cutoff=0, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None):
     ranking_copy = ranking.copy()
+    ranking_copy['abs_NES'] = ranking_copy['NES'].abs()
 
     if one_sided:
         ranking_copy = ranking_copy.loc[ranking_copy['NES'] >= 0]
@@ -702,8 +703,8 @@ def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=25, padj_
 
     ranking_copy['-log padj'] = np.around(- \
         np.log10(ranking_copy['padj'].to_numpy()+np.finfo(float).eps),2)
-    ranking_copy.sort_values(by=['-log padj'],
-                             ascending=True, inplace=True)
+    ranking_copy.sort_values(by=['-log padj','abs_NES'],
+                             ascending=[True,True], inplace=True)
 
     ranking_copy['-log padj'] = ranking_copy['-log padj'].round(2)
 
