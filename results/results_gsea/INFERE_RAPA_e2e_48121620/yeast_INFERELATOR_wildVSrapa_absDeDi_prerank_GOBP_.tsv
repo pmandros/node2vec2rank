@@ -1,9 +1,0 @@
-pathway	freq	padj	NES	stability	overlap	Lead_genes
-purine-containing compound biosynthetic process (GO:0072522)	1	0.24275416764498708	1.9856201538540441	1.0	33.17	['SER1', 'ADE8', 'ADE1', 'ADE17', 'ADE2', 'MTD1', 'ADE16', 'ADE13', 'ADE12']
-purine nucleotide metabolic process (GO:0006163)	1	0.2219116380997104	1.8933313345631544	1.0	33.17	['ADE8', 'ADE17', 'ADE1', 'ADE2', 'ADE16', 'ADE13', 'ADE12']
-purine nucleotide biosynthetic process (GO:0006164)	1	0.2219116380997104	1.8933313345631544	1.0	33.17	['ADE8', 'ADE17', 'ADE1', 'ADE2', 'ADE16', 'ADE13', 'ADE12']
-IMP biosynthetic process (GO:0006188)	1	0.20441711669405965	2.046083606872054	1.0	33.17	['ADE8', 'ADE1', 'ADE17', 'ADE2', 'ADE16', 'ADE13', 'XPT1', 'ADE4']
-chronological cell aging (GO:0001300)	1	0.20245232318488954	1.985079922519542	1.0	12.44	['ALT1', 'ACB1', 'ACT1', 'PGA3', 'VHR1', 'HST2', 'SCP1']
-establishment of protein localization to mitochondrial membrane (GO:0090151)	1	0.2005661214160862	2.0878339515314566	1.0	36.28	['SDH3', 'MIM1', 'OXA1', 'TOM7', 'TIM13', 'SAM35', 'TOM22']
-protein transmembrane import into intracellular organelle (GO:0044743)	1	0.12354621585661738	2.2185106583113017	1.0	36.28	['SDH3', 'PEX25', 'MIM1', 'HSP10', 'OXA1', 'TOM7', 'PEX2', 'TOM40', 'PEX5', 'GPD1', 'TIM13', 'HSP60', 'TIM23', 'TIM21', 'SAM35', 'TOM6', 'TOM22']
-protein targeting to mitochondrion (GO:0006626)	1	0.04243953979807467	2.4223284049530505	1.0	36.28	['MIM1', 'YDJ1', 'STI1', 'SSA1', 'TIM13', 'OM14', 'TOM22', 'HSP82', 'SDH3', 'HSP10', 'HSP60', 'QCR2', 'TIM21', 'SAM35', 'OXA1', 'TOM7', 'TOM40', 'TIM23', 'TOM6']
