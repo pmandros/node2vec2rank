@@ -45,16 +45,19 @@ class N2V2R:
     def __rank(self, pairwise_ranks_dict, comp_strategy, binarize, top_percent):
         # for every pair of consecutive graphs
         for i in range(1, self.num_graphs):
-            graph_comparison_key = str(i) + "vs" + str(i+1)
             per_graph_comp_and_prepro_combo_ranks_pd = pd.DataFrame(
                 index=self.node_names)
+            graph_comparison_key = str(i) 
+
 
             # go over all provided choices for number of latent dimensions
             for dim in self.embed_dimensions:
                 if comp_strategy=='one-vs-next':
                     embed_one = self.node_embeddings[i-1, :, :dim+1]
+
                 elif comp_strategy=='one-vs-before':
                     embed_one = np.mean(self.node_embeddings[:i, :, :dim+1],axis=0)
+
 
                 embed_two = self.node_embeddings[i, :, :dim+1]
 
@@ -306,7 +309,7 @@ class N2V2R:
                                                           project_unipartite_on=project_unipartite_on))
 
         for i in range(1, len(self.graphs)):
-            graph_comparison_key = str(i) + "vs" + str(i+1)
+            graph_comparison_key = str(i)
 
             DeDi = np.sum(
                 networks_transformed[i-1], axis=0) - np.sum(networks_transformed[i], axis=0)
