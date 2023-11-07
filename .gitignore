@@ -10,3 +10,7 @@ notebooks/.ipynb_checkpoints
 .vscode/settings.json
 results/results_sim_sbm/
 results/**/*.csv
+results/dedi_sort_vs_dedi
+results/vs_dedi_paper_params
+results/results_gsea/TIGER_COAD_comps
+results/*
