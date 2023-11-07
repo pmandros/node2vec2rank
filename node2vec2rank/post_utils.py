@@ -633,7 +633,7 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
     return aggregate_enr_pd
 
 
-def plot_gseapy_enrich(ranking, title='enrichr', topk=30, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None):
+def plot_gseapy_enrich(ranking, title='enrichr', topk=30, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None, to_bold=None, plot=True):
     ranking_copy = ranking.copy()
 
     ranking_copy['pathway'] = ranking_copy['pathway'].str[trim_first_num_characters:]
@@ -656,23 +656,42 @@ def plot_gseapy_enrich(ranking, title='enrichr', topk=30, padj_cutoff=0.1, stabi
 
     if topk > num_results:
         topk = num_results
+        
+    if plot==False:
+        return ranking_copy.iloc[-topk:, :]
 
     if has_stability:
         fig = px.scatter(ranking_copy.iloc[-topk:, :], x="-log padj", y="pathway", color='stability', size='overlap',
                          title=title, color_continuous_scale='BuGn', range_color=[0, ranking_copy['stability'].max()]
                          )
-        fig.update_xaxes(range=[-np.log10(padj_cutoff)-1, math.ceil(ranking_copy['-log padj'].max())+1.5],tickvals=list(range(int(-np.log10(padj_cutoff)),math.ceil(ranking_copy['-log padj'].max()+2),2 )))
+        fig.update_xaxes(range=[-np.log10(padj_cutoff)-1, ceil(ranking_copy['-log padj'].max())+1.5],tickvals=list(range(int(-np.log10(padj_cutoff)),ceil(ranking_copy['-log padj'].max()+2),2 )))
 
     else:
         fig = px.scatter(ranking_copy.iloc[-topk:, :], x="-log padj", y="pathway", size='overlap',
                          title=title, color_discrete_sequence=['green']
                          )
-        fig.update_xaxes(range=[-np.log10(padj_cutoff)-1, math.ceil(ranking_copy['-log padj'].max())+1.5],tickvals=list(range(int(-np.log10(padj_cutoff)),math.ceil(ranking_copy['-log padj'].max()+2),2 )))
+        fig.update_xaxes(range=[-np.log10(padj_cutoff)-1, ceil(ranking_copy['-log padj'].max())+1.5],tickvals=list(range(int(-np.log10(padj_cutoff)),ceil(ranking_copy['-log padj'].max()+2),2 )))
+
+    if to_bold is not None:
+        # Define the y-axis tick values and labels
+
+        y_tickvals = ranking_copy.iloc[-topk:,:].copy()['pathway']
+        y_ticktext = ["<b>"+x+"</b>" if x in to_bold else x for x in y_tickvals]
+        y_tickvals
+
+        # Update the layout to set the y-axis tick values and labels
+        fig.update_layout(yaxis=dict(
+        tickvals=y_tickvals,
+        ticktext=y_ticktext
+        ))
 
     fig.update_layout(
         autosize=True,
         width=800,
-        height=1000,)
+        height=1000,
+        yaxis_title=None)
+
+
 
     fig.show()
 
@@ -680,12 +699,9 @@ def plot_gseapy_enrich(ranking, title='enrichr', topk=30, padj_cutoff=0.1, stabi
         filename = '-'.join(title.split(" "))
         pio.write_image(fig, os.path.join(output_dir, filename+".pdf"))
 
+    return ranking_copy.iloc[-topk:, :]
 
-
-import plotly.express as px
-import plotly.io as pio
-
-def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=30, padj_cutoff=0.1, stability_cutoff=0, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None):
+def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=30, padj_cutoff=0.1, stability_cutoff=0, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None, to_bold=None, plot=True):
     ranking_copy = ranking.copy()
     ranking_copy['abs_NES'] = ranking_copy['NES'].abs()
 
@@ -714,13 +730,18 @@ def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=30, padj_
                              ascending=[True,True], inplace=True)
 
     ranking_copy['-log padj'] = ranking_copy['-log padj'].round(2)
+    
+    if plot==False:
+        return ranking_copy.iloc[-topk:, :]
 
     if has_stability:
         if one_sided:
             biggest_nes_value = np.max(
                 np.abs(ranking_copy.iloc[-topk:, :]['NES']))
+            smalles_nes_value = np.min(
+                np.abs(ranking_copy.iloc[-topk:, :]['NES']))
             fig = px.scatter(ranking_copy.iloc[-topk:, :], x='NES', y="pathway", color='stability', size='overlap',
-                             title=title, color_continuous_scale='BuGn',range_x=[0, biggest_nes_value+1], range_color=[0, ranking_copy['stability'].max()]
+                             title=title, color_continuous_scale='BuGn',range_x=[smalles_nes_value-0.5, biggest_nes_value+1], range_color=[0, ranking_copy['stability'].max()]
                              )
             fig.add_annotation(
                 x=ranking_copy.loc[ranking_copy.index[-1],
@@ -783,8 +804,10 @@ def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=30, padj_
         if one_sided:
             biggest_nes_value = np.max(
                 np.abs(ranking_copy.iloc[-topk:, :]['NES']))
+            smallest_nes_value = np.min(
+                np.abs(ranking_copy.iloc[-topk:, :]['NES']))
             fig = px.scatter(ranking_copy.iloc[-topk:, :], x='NES', y="pathway", color='-log padj', size='overlap',
-                             title=title, color_continuous_scale='BuGn',range_x=[0, biggest_nes_value+1], range_color=[-np.log10(padj_cutoff), 5]
+                             title=title, color_continuous_scale='BuGn',range_x=[smallest_nes_value-0.5, biggest_nes_value+1], range_color=[-np.log10(padj_cutoff), 5]
                              )
         else:
             biggest_nes_value = ceil(np.max(
@@ -793,16 +816,32 @@ def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=30, padj_
                              title=title, color_continuous_scale='BuGn', range_x=[-biggest_nes_value-1, biggest_nes_value+1], range_color=[-np.log10(padj_cutoff), 5]
                              )
 
+    if to_bold is not None:
+        # Define the y-axis tick values and labels
+
+        y_tickvals = ranking_copy.iloc[-topk:,:].copy()['pathway']
+        y_ticktext = ["<b>"+x+"</b>" if x in to_bold else x for x in y_tickvals]
+        # Update the layout to set the y-axis tick values and labels
+        fig.update_layout(yaxis=dict(
+        tickvals=y_tickvals,
+        ticktext=y_ticktext
+        ))
+
     fig.update_layout(
         autosize=True,
         width=800,
-        height=1000,)
+        height=1000,
+        yaxis_title=None)
+
+
 
     fig.show()
 
     if output_dir:
         filename = '-'.join(title.split(" "))
         pio.write_image(fig, os.path.join(output_dir, filename+".pdf"))
+
+    return ranking_copy.iloc[-topk:, :]
 
 
 def flatten(l):
