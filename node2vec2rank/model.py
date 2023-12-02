@@ -44,22 +44,32 @@ class N2V2R:
 
     def __rank(self, pairwise_ranks_dict, comp_strategy, binarize, top_percent):
         # for every pair of consecutive graphs
-        for i in range(1, self.num_graphs):
+        for i in range(0, self.num_graphs):
+            if i==0 and comp_strategy!='one_vs_rest':
+                continue
+            
+            if comp_strategy!='one_vs_rest':
+                graph_comparison_key = str(i)
+            else:
+                graph_comparison_key = str(i+1)  
+  
+   
             per_graph_comp_and_prepro_combo_ranks_pd = pd.DataFrame(
                 index=self.node_names)
-            graph_comparison_key = str(i) 
-
 
             # go over all provided choices for number of latent dimensions
             for dim in self.embed_dimensions:
-                if comp_strategy=='one-vs-next':
-                    embed_one = self.node_embeddings[i-1, :, :dim+1]
+                if comp_strategy=='one_vs_next':
+                    embed_one = self.node_embeddings[i-1, :, :dim]
+                    embed_two = self.node_embeddings[i, :, :dim]
 
-                elif comp_strategy=='one-vs-before':
-                    embed_one = np.mean(self.node_embeddings[:i, :, :dim+1],axis=0)
+                elif comp_strategy=='one_vs_before':
+                    embed_one = np.mean(self.node_embeddings[:i, :, :dim],axis=0)
+                    embed_two = self.node_embeddings[i, :, :dim]
 
-
-                embed_two = self.node_embeddings[i, :, :dim+1]
+                elif comp_strategy=='one_vs_rest':
+                    embed_one = np.mean(self.node_embeddings[np.arange(self.node_embeddings.shape[0]) != i, :, :dim],axis=0)
+                    embed_two = self.node_embeddings[i, :, :dim]
 
                 # go over all provided choices for distance metrics
                 for distance_metric in self.distance_metrics:
@@ -133,8 +143,8 @@ class N2V2R:
 
         self.pairwise_ranks = {key: pd.concat(
             pairwise_ranks_dict[key], axis=1) for key in pairwise_ranks_dict}
-        assert len(pairwise_ranks_dict) == len(
-            self.graphs)-1, "Number of comparisons should be the same as number of graphs"
+        # assert len(pairwise_ranks_dict) == len(
+        #     self.graphs)-1, "Number of comparisons should be the same as number of graphs"
         
         num_rankings = sum([len(self.pairwise_ranks[key].columns) for key in self.pairwise_ranks])
 

@@ -1,0 +1,24 @@
+{   "data_io": {
+    "save_dir": "../output",
+    "data_dir": "../data/networks/TCGA_nt_contrast/tcga_brca_luma_matched_tissue_old/panda",
+    "graph_filenames": ["panda_recount3_tcga_brca_purity03_normlogtpm_mintpm1_fracsamples01_tissueall_batchnull_adjnull_luma_healthy.txt","panda_recount3_tcga_brca_purity03_normlogtpm_mintpm1_fracsamples01_tissueall_batchnull_adjnull_luma_tumor.txt"],
+    "seperator": " ",
+    "is_edge_list": false,
+    "transpose": false
+},
+"data_preprocessing": {
+    "project_unipartite_on": "columns",
+    "threshold" : 0, 
+    "top_percent_keep" : [100],
+    "binarize" : [false], 
+    "absolute" : false
+},
+"fitting_ranking": {
+    "embed_dimensions": [4,6,8,10,12,14,16,18,20,22,24],
+    "distance_metrics": ["euclidean", "cosine"],
+    "comp_strategy": "one_vs_before",
+    "seed": null,
+    "verbose": 1
+}
+}
+

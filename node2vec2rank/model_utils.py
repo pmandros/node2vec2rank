@@ -58,6 +58,9 @@ def compute_pairwise_distances(mat1, mat2, distance='cosine'):
     elif distance == "euclidean":
         dists = [scipy.spatial.distance.euclidean(row1, row2)
                  for row1, row2 in zip(mat1, mat2)]
+    elif distance == "correlation":
+        dists = [scipy.spatial.distance.correlation(row1, row2)
+                 for row1, row2 in zip(mat1, mat2)]
     else:
         raise NotImplementedError("Unsupported metric")
 

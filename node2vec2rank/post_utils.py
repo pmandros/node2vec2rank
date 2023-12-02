@@ -507,7 +507,7 @@ Given a ranking (node integer IDs) and the true community membership matrices, i
 
 #     return aggregate_enr_pd
 
-def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, prerank_min_path_size=5, prerank_max_path_size=1500, prerank_num_perms=1000, prerank_weight=0, num_threads=4):
+def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, prerank_min_path_size=5, prerank_max_path_size=1500, prerank_num_perms=1000, prerank_weight=0, num_threads=4, seed=42):
     aggregate_count_dict = defaultdict(int)
     aggregate_padj_dict = defaultdict(list)
     aggregate_NES_dict = defaultdict(list)
@@ -527,7 +527,7 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, pre
                                  max_size=prerank_max_path_size,
                                  permutation_num=prerank_num_perms,  # reduce number to speed up testing
                                  outdir=None,  # don't write to disk
-                                 seed=6,
+                                 seed=seed,
                                  verbose=False,  # see what's going on behind the scenes
                                  weighted_score_type=prerank_weight,
                                  no_plot=True
@@ -690,8 +690,12 @@ def plot_gseapy_enrich(ranking, title='enrichr', topk=30, padj_cutoff=0.1, stabi
         width=800,
         height=1000,
         yaxis_title=None)
-
-
+    
+    fig.update_layout(
+        xaxis=dict(title_font=dict(family='Arial',size=20), tickfont=dict(family='Arial',size=18)),  # Adjust x-axis label font size
+        yaxis=dict( title_font=dict(family='Arial',size=20),tickfont=dict(family='Arial',size=18))
+    )
+    
 
     fig.show()
 
@@ -832,8 +836,12 @@ def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=30, padj_
         width=800,
         height=1000,
         yaxis_title=None)
-
-
+    
+    fig.update_layout(
+        xaxis=dict(title_font=dict(family='Arial',size=20), tickfont=dict(family='Arial',size=18)),  # Adjust x-axis label font size
+        yaxis=dict( title_font=dict(family='Arial',size=20),tickfont=dict(family='Arial',size=18))
+    )
+    
 
     fig.show()
 
