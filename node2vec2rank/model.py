@@ -59,7 +59,7 @@ class N2V2R:
 
             # go over all provided choices for number of latent dimensions
             for dim in self.embed_dimensions:
-                if comp_strategy=='one_vs_next':
+                if comp_strategy=='sequential':
                     embed_one = self.node_embeddings[i-1, :, :dim]
                     embed_two = self.node_embeddings[i, :, :dim]
 
