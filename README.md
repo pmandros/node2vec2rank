@@ -10,7 +10,7 @@
 <br />
 <p align="center">
  <!-- <img src="" alt="logo" align="center"> -->
-  <h3 align="center"> Node2vec2rank: the coolest kid in the block for extracting changes in networks</h3>
+  <h3 align="center"> node2vec2rank: Large Scale and Stable Graph Differential Analysis via Node Embeddings and Ranking</h3>
 
   <p align="center">
     <br />
@@ -56,15 +56,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Graphs are ubiquitous in science as they can flexibly represent the interactions driving the arbitrarily complex
-phenomena under investigation. Surprisingly, we find that the fundamental question of “how two graphs
-differ”, e.g., a case-control study utilizing gene regulatory networks, lacks the attention and success of
-its tabular data counterpart. <br> <br>
-We introduce **node2vec2rank**, a framework for graph differential analysis that
-ranks the nodes according to their drift in latent embedding spaces—provided the latent space is shared.
-Unlike previous approaches that are primarily based on the bag of features approach comparing individual
-edges with handcrafted criteria, we take advantage of the recent advances in machine learning and statistics
-to compare graphs in their higher-order structure and in a data-driven manner. Coupled with a **statistical model** for **tractability**, **interpretability**, and **reproducibility**, our procedure further incorporates perturbations for **stability** and consensus-based downstream applications.
+Computational methods in biology can infer large molecular interaction networks from multiple data modalities and resolutions, creating unprecedented opportunities to dig deeper into the mechanisms behind complex biological phenomena. Such graphs can be built from different conditions and get contrasted to uncover graph-level differences, e.g., a case-control study utilizing gene regulatory networks. <br> <br>
+Towards this end, we introduce **node2vec2rank**, a method for graph differential analysis that ranks nodes  according to the disparities of their representations in joint latent embedding spaces. Unlike previous bag-of-features approaches, we take advantage of recent advances in machine learning and statistics to compare graphs in higher-order structures and in a data-driven manner. Employing a multi-layer spectral embedding technique, n2v2r is computationally efficient and can provably identify the correct ranking of differences. Furthermore, we incorporate stability into n2v2r for an overall procedure that adheres to veridical data science principles. <br> <br>
+This repository provides the method, source code, and example notebooks.
 ### Built With
 
 * [NumPy](https://numpy.org/)
@@ -115,39 +109,22 @@ You can modify the experiment parameters in the config.json file:
 {
     "data_io": {
         "save_dir": "../output",
-        "data_dir": "data/networks/inferelator",
-        "graph_filenames": [
-            "signed_network.tsv",
-            "CSTARVE_signed_network.tsv"
-        ],
+        "data_dir": "../data/networks",
+        "graph_filenames": ["network_control.tsv","network_case.tsv"],
         "seperator": "\t",
         "is_edge_list": false,
         "transpose": true
     },
     "data_preprocessing": {
-        "project_unipartite_on": "columns",
+        "project_unipartite_on": null,
         "threshold": 0,
-        "top_percent_keep": [
-            100,
-            75
-        ],
-        "binarize": [
-            false,
-            true
-        ],
-        "absolute": true
+        "top_percent_keep": [100],
+        "binarize": [false],
+        "absolute": false
     },
     "fitting_ranking": {
-        "embed_dimensions": [
-            2,
-            4,
-            8,
-            16
-        ],
-        "distance_metrics": [
-            "euclidean",
-            "cosine"
-        ],
+        "embed_dimensions": [4,6,8,10,12,14,16,18,20,22,24],
+        "distance_metrics": ["euclidean","cosine"],
         "seed": null,
         "verbose": 1
     }
@@ -155,7 +132,7 @@ You can modify the experiment parameters in the config.json file:
    ```
 2. You can alternatively run the script from the command line and it will parse the command line arguments based on the given parameters:
 ```sh
-python node2vec2rank.py --save_dir ../output --data_dir data/networks/inferelator --graph_filenames signed_network.tsv CSTARVE_signed_network.tsv --seperator "\t" --is_edge_list false --transpose true --project_unipartite_on columns --threshold 0 --top_percent_keep 100 75 --binarize false true --absolute true --embed_dimensions 2 4 8 16 --distance_metrics "euclidean" "cosine" --verbose 1
+python node2vec2rank.py --save_dir ../output --data_dir ../data/networks --graph_filenames network_control.tsv network_case.tsv --seperator "\t" --is_edge_list false --transpose true --project_unipartite_on null --threshold 0 --top_percent_keep 100 --binarize false --absolute false --embed_dimensions 4 6 8 10 12 14 16 18 20 22 24 --distance_metrics "euclidean" "cosine" --verbose 1
 
 ```
 Please note that the following arguments are **required**: **--save_dir**, **--graph_filenames**, **--data_dir**
@@ -179,38 +156,38 @@ optional arguments:
   --config CONFIG       Configuration file path
 
 data_io:
-  --save_dir SAVE_DIR   Save directory  
+  --save_dir SAVE_DIR   Save directory
   --graph_filenames GRAPH_FILENAMES [GRAPH_FILENAMES ...]
-                        Graph filenames 
-  --data_dir DATA_DIR   Data Directory  
+                        Graph filenames
+  --data_dir DATA_DIR   Data Directory
   --seperator SEPERATOR
                         Separator
-  --is_edge_list        Whether the input is an edge list
-  --transpose           whether to transpose the adjacency matrix or not
+  --is_edge_list        Whether the input is an edge list or tabular
+  --transpose           Wether to transpose the graph adjacency matrices or not, e.g., bringing the row genes to the column
 
 data_preprocessing:
   --project_unipartite_on PROJECT_UNIPARTITE_ON
-                        Project unipartite
+                        If the graphs are rectangular, it will project them into column or row space
   --threshold THRESHOLD
-                        Threshold value
+                        Everything below this value will be 0
   --top_percent_keep TOP_PERCENT_KEEP [TOP_PERCENT_KEEP ...]
-                        Top percentage to keep
+                        Keeps the top percentage of edges, turning the rest to 0
   --binarize BINARIZE [BINARIZE ...]
-                        Whether to binarize the data
-  --absolute            Take the absolute value
+                        Whether to binarize the graphs, turning everything above 0 to 1
+  --absolute            Absolute the graphs, i.e., turn negative values into positive
 
 fitting_ranking:
   --embed_dimensions EMBED_DIMENSIONS [EMBED_DIMENSIONS ...]
-                        Embed dimensions
+                        Embedding dimensions
   --distance_metrics DISTANCE_METRICS [DISTANCE_METRICS ...]
                         Distance metrics
   --seed SEED           Random seed
   --verbose VERBOSE     Verbose level
 ```
 4. Running in a Jupyter Notebook Environment:
-You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in [node2vec2rank_demo.ipynb]((https://github.com/pmandros/n2v2r/notebooks/node2vec2rank_demo.ipynb). 
-<!-- ROADMAP -->
-## Roadmap
+You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided. 
+<!-- Issues -->
+## Issues
 
 
 See the [open issues](https://github.com/pmandros/n2v2r/issues) for a list of proposed features (and known issues).
