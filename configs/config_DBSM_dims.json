@@ -16,7 +16,7 @@
 "fitting_ranking": {
     "embed_dimensions": [2,4,8,16,32],
     "distance_metrics": ["cosine"],
-    "comp_strategy": "one_vs_before",
+    "comp_strategy": "sequential",
     "seed": null,
     "verbose": -1
 }
