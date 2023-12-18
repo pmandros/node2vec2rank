@@ -14,14 +14,10 @@
 
   <p align="center">
     <br />
-    <a href="https://github.com/pmandros/n2v2r"><strong>Explore the docs</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/pmandros/n2v2r">View Demo</a>
-    ·
     <a href="https://github.com/pmandros/n2v2r/issues">Report Bug</a>
     ·
-    <a href="https://github.com/pmandros/n2v2r/pulls">Request Feature</a>
+    <a href="https://github.com/pmandros/n2v2r/pulls">Add Feature</a>
   </p>
 </p>
 
@@ -44,7 +40,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -186,11 +181,6 @@ fitting_ranking:
 ```
 4. Running in a Jupyter Notebook Environment:
 You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided. 
-<!-- Issues -->
-## Issues
-
-
-See the [open issues](https://github.com/pmandros/n2v2r/issues) for a list of proposed features (and known issues).
 
 
 
