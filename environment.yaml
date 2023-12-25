@@ -1,4 +1,4 @@
-name: bio_embed_env
+name: n2v2r
 channels:
   - conda-forge
   - bioconda
