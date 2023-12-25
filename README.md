@@ -79,7 +79,7 @@ To get a local copy up and running follow these simple steps:
    ```
 2. Change to the project repositry:
    ```sh
-   cd N2V2R
+   cd n2v2r
 
    ```
 3. Run the following command to create the environment with the needed packages in conda. Please note that it might take around 10-20 mins for the environment to be created:
@@ -88,7 +88,7 @@ conda env create --file environment.yaml
 ```
 4. Activate the environment:
 ```sh
-conda activate bio_embed_env
+conda activate n2v2r
 ```
 
 <!-- USAGE EXAMPLES -->
