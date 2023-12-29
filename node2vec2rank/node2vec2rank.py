@@ -67,13 +67,13 @@ elif any([config.data_dir is None, config.graph_filenames is None,
 
 # create dataloader and load the graphs in memory
 dataloader = DataLoader(config=config)
-graphs = dataloader.get_graphs()
-interest_nodes = dataloader.get_interest_nodes()
+graphs = dataloader.graphs()
+interest_nodes = dataloader.nodes()
 print(interest_nodes)
 
 
 # define Node2Vec2Rank model
-model = N2V2R(graphs=graphs, config=config, node_names=interest_nodes)
+model = N2V2R(graphs=graphs, config=config, nodes=interest_nodes)
 
 # compute DeDi ranking
 DeDi_ranking = model.degree_difference_ranking()

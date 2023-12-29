@@ -17,7 +17,7 @@ class DataLoader():
     def get_graphs(self):
         return self.graphs
 
-    def get_interest_nodes(self):
+    def get_nodes(self):
         return self.interest_nodes
 
     def __load_graphs(self):
@@ -60,13 +60,12 @@ class DataLoader():
                     self.config["data_dir"], graph_filename))
         else:
             edge_list_graph = nx.read_weighted_edgelist(os.path.join(
-                self.config["data_dir"], graph_filename), nodetype=str)
+                self.config["data_dir"], graph_filename), delimiter=self.config["seperator"], nodetype=str)
             adj_matrix = nx.to_numpy_array(edge_list_graph)
             graph_pd = pd.DataFrame(
                 adj_matrix, index=edge_list_graph.nodes, columns=edge_list_graph.nodes)
-            print(graph_pd)
 
-        # transpose (e.g., to bring regulators in rows)
+        # transpose if rectangular (e.g., if bipartite to bring row nodes to column)
         graph_pd = graph_pd.T if self.config["transpose"] else graph_pd
 
         row_nodes, col_nodes = graph_pd.index.to_numpy(), graph_pd.columns.to_numpy()

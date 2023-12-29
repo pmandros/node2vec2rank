@@ -15,9 +15,9 @@ from model_utils import borda_aggregate_parallel, compute_pairwise_distances, si
 
 
 class N2V2R:
-    def __init__(self, graphs: list, node_names: list, config: dict):
+    def __init__(self, graphs: list, nodes: list, config: dict):
         self.config = config
-        self.node_names = node_names
+        self.node_names = nodes
         self.graphs = graphs
         self.num_graphs = len(graphs)
         self.embed_dimensions = self.config['embed_dimensions']
@@ -124,8 +124,8 @@ class N2V2R:
                 self.__fit(grns=grns_transformed)
                 toc_uase = time.time()
                 if self.config["verbose"] == 1:
-                    print(f"""\tUASE embedding in {
-                        round(toc_uase-tic_uase,2)} seconds for bin={binarize} and keep_top={top_percent}%""")
+                    print(f"""\tMulti-layer embedding in {
+                        round(toc_uase-tic_uase,2)} seconds""")
                 toc_uase = time.time()
 
                 # remove the transformed graphs
@@ -136,8 +136,8 @@ class N2V2R:
                 self.__rank(pairwise_ranks_dict=pairwise_ranks_dict, comp_strategy=self.comp_strategy, binarize=binarize,
                             top_percent=top_percent)
                 toc_rank = time.time()
-                if self.config["verbose"] == 1:
-                    print(f"\t\tRanking in {round(toc_rank-tic_rank,2)} seconds")
+                # if self.config["verbose"] == 1:
+                #     print(f"\t\tRanking in {round(toc_rank-tic_rank,2)} seconds")
 
                 gc.collect()
 
