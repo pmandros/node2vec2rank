@@ -181,7 +181,7 @@ You can also run the code in jupyter notebook. Details about setting up your own
 <!-- Practicalities -->
 ## Practicalities
 
-The input can be either in adjacency format with index and header, or a weigted edge list without header (supported by networkx). Regarding the parameters embed_dimensions and distance_metrics, node2vec2rank runs multiple times for every parameter combination, and then all the rankings are aggregated into one using the Borda scheme. The default settings have been tested thoroughly. 
+The input can be either in adjacency format with index and header, or a weigted edge list without header (supported by networkx). Regarding the parameters embed_dimensions and distance_metrics, node2vec2rank runs multiple times for every parameter combination, and then all the rankings are aggregated into one using the Borda scheme. The default settings have been tested thoroughly. The data_preprocessing parameteres are more involved. In a nutshell, they perform graph preprocessing such as binarization, sparsifying by keeping top edges, absoluting. We highly recommend to perform your own preprocessing and use the resulting networks with n2v2r.
 
 <!-- CONTRIBUTING -->
 ## Contributing
