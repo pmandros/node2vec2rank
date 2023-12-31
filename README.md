@@ -28,9 +28,6 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -40,10 +37,10 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+      <li><a href="#practicalities">Practicalities</a></li>
     <li><a href="#contributing">Contributing</a></li>
    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -51,16 +48,13 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Computational methods in biology can infer large molecular interaction networks from multiple data modalities and resolutions, creating unprecedented opportunities to dig deeper into the mechanisms behind complex biological phenomena. Such graphs can be built from different conditions and get contrasted to uncover graph-level differences, e.g., a case-control study utilizing gene regulatory networks. <br> <br>
-Towards this end, we introduce **node2vec2rank**, a method for graph differential analysis that ranks nodes  according to the disparities of their representations in joint latent embedding spaces. Unlike previous bag-of-features approaches, we take advantage of recent advances in machine learning and statistics to compare graphs in higher-order structures and in a data-driven manner. Employing a multi-layer spectral embedding technique, n2v2r is computationally efficient and can provably identify the correct ranking of differences. Furthermore, we incorporate stability into n2v2r for an overall procedure that adheres to veridical data science principles. <br> <br>
-This repository provides the method, source code, and example notebooks.
-### Built With
+Computational methods in biology can infer large molecular interaction networks from multiple data modalities and resolutions, creating unprecedented opportunities to better understand complex biological phenomena. Such graphs can be built from different conditions and get contrasted to uncover graph-level differences, e.g., a case-control study utilizing gene regulatory networks. <br> <br>
+Towards this end, we introduce **node2vec2rank**, a method for graph differential analysis that ranks nodes  according to the disparities of their representations in joint latent embedding spaces. Unlike previous bag-of-features approaches, we take advantage of recent advances in machine learning and statistics to compare graphs in higher-order structures and in a data-driven manner. Employing [UASE](https://github.com/iggallagher/Spectral-Embedding), a multi-layer spectral embedding technique, n2v2r is computationally efficient and can provably identify the correct ranking of differences. Furthermore, we incorporate stability into n2v2r for an overall procedure that adheres to veridical data science principles. <br>
 
-* [NumPy](https://numpy.org/)
-* [Matplotlib](https://matplotlib.org/)
-* [Pandas](https://pandas.pydata.org/docs)
-* [NetworkX](https://networkx.org/)
-* [Spectral Embedding](https://github.com/iggallagher/Spectral-Embedding)
+While the method is motivated and validated with biological applications, it can be used in any other domain with similar objectives. <br>
+
+This repository provides the method, source code, and example notebooks. In particular, we provide the notebooks corresponding to the biological applications used in the paper, as well as a demo notebook for the general usage. 
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -182,7 +176,10 @@ fitting_ranking:
 4. Running in a Jupyter Notebook Environment:
 You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided. 
 
+<!-- Practicalities -->
+## Practicalities
 
+The input can be either in adjacency format with index and header, or a weigted edge list without header (supported by networkx). Regarding the parameters embed_dimensions and distance_metrics, node2vec2rank runs multiple times for every parameter combination, and then all the rankings are aggregated into one using the Borda scheme. The default settings have been tested thoroughly. 
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -211,11 +208,7 @@ Distributed under the GPL-3 License. See `LICENSE` for more information.
 
 
 
-<!-- ACKNOWLEDGEMENTS 
-## Acknowledgements
 
-* []()
--->
 
 
 
