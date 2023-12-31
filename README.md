@@ -55,6 +55,8 @@ While the method is motivated and validated with biological applications, it can
 
 This repository provides the method, source code, and example notebooks. In particular, we provide the notebooks corresponding to the biological applications used in the paper, as well as a demo notebook for the general usage. 
 
+![alt text](https://github.com/pmandros/n2v2r/blob/main/n2v2r.png)
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
