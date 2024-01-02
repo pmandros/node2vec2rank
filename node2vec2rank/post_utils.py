@@ -633,7 +633,7 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
     return aggregate_enr_pd
 
 
-def plot_gseapy_enrich(ranking, title='enrichr', topk=30, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None, to_bold=None, plot=True):
+def plot_gseapy_enrich(ranking, title='enrichr', topk=30, padj_cutoff=0.1, stability_cutoff=0.5, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None, to_bold=None, plot=True, interactive=True):
     ranking_copy = ranking.copy()
 
     ranking_copy['pathway'] = ranking_copy['pathway'].str[trim_first_num_characters:]
@@ -696,8 +696,11 @@ def plot_gseapy_enrich(ranking, title='enrichr', topk=30, padj_cutoff=0.1, stabi
         yaxis=dict( title_font=dict(family='Arial',size=20),tickfont=dict(family='Arial',size=18))
     )
     
+    if interactive:
+        fig.show()
+    else:
+        fig.show('png')
 
-    fig.show()
 
     if output_dir:
         filename = '-'.join(title.split(" "))
@@ -705,7 +708,7 @@ def plot_gseapy_enrich(ranking, title='enrichr', topk=30, padj_cutoff=0.1, stabi
 
     return ranking_copy.iloc[-topk:, :]
 
-def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=30, padj_cutoff=0.1, stability_cutoff=0, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None, to_bold=None, plot=True):
+def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=30, padj_cutoff=0.1, stability_cutoff=0, has_stability=False, characters_trim=50, trim_first_num_characters=0, output_dir=None, to_bold=None, plot=True, interactive=True):
     ranking_copy = ranking.copy()
     ranking_copy['abs_NES'] = ranking_copy['NES'].abs()
 
@@ -843,7 +846,10 @@ def plot_gseapy_prerank(ranking, title='prerank', one_sided=True, topk=30, padj_
     )
     
 
-    fig.show()
+    if interactive:
+        fig.show()
+    else:
+        fig.show('png')
 
     if output_dir:
         filename = '-'.join(title.split(" "))
