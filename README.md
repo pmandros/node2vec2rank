@@ -125,7 +125,7 @@ You can modify the experiment parameters in the config.json file:
    ```
 2. You can alternatively run the script from the command line and it will parse the command line arguments based on the given parameters:
 ```sh
-python node2vec2rank.py --save_dir ../output --data_dir ../data/networks --graph_filenames network_control.tsv network_case.tsv --seperator "\t" --is_edge_list false --transpose true --project_unipartite_on null --threshold 0 --top_percent_keep 100 --binarize false --absolute false --embed_dimensions 4 6 8 10 12 14 16 18 20 22 24 --distance_metrics "euclidean" "cosine" --verbose 1
+python  node2vec2rank/node2vec2rank.py --save_dir ../output --data_dir ../data/networks --graph_filenames network_control.tsv network_case.tsv --seperator "\t" --is_edge_list false --transpose true --project_unipartite_on null --threshold 0 --top_percent_keep 100 --binarize false --absolute false --embed_dimensions 4 6 8 10 12 14 16 18 20 22 24 --distance_metrics "euclidean" "cosine" --verbose 1
 
 ```
 Please note that the following arguments are **required**: **--save_dir**, **--graph_filenames**, **--data_dir**
