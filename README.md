@@ -80,7 +80,7 @@ To get a local copy up and running follow these simple steps:
    cd n2v2r
 
    ```
-3. Run the following command to create the environment with the needed packages in conda. Please note that it might take around 10-20 mins for the environment to be created:
+3. Run the following command to create the environment with the needed packages in conda. Please note that it might take a few minutes for the environment to be created:
 ```sh
 conda env create --file environment.yaml
 ```
@@ -106,7 +106,7 @@ You can modify the experiment parameters in the config.json file:
         "graph_filenames": ["network_control.tsv","network_case.tsv"],
         "seperator": "\t",
         "is_edge_list": false,
-        "transpose": true
+        "transpose": false
     },
     "data_preprocessing": {
         "project_unipartite_on": null,
@@ -178,12 +178,14 @@ fitting_ranking:
   --verbose VERBOSE     Verbose level
 ```
 4. Running in a Jupyter Notebook Environment:
-You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided. 
+You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided.  
 
 <!-- Practicalities -->
 ## Practicalities
 
 The input files can be either in adjacency format with index and header, or a weigted edge list (three columns of source, target, weight) without header (the latter supported by networkx). At the moment, n2v2r accepts a list of symmetric dataframes as input, so the above input files will be converted by the Dataloader and N2V2R classes accordingly automatically. If your graphs are bipartite and in adjacency format (i.e., rectangular and not symmetric matrices), they will be projected to unipartite with multiplication depending on the PROJECT_UNIPARTITE_ON parameter. As an example, if you graphs are in adjacency format with regulators in rows and genes in the columns, PROJECT_UNIPARTITE_ON = 'columns' will create symmetric networks by projecting the bipartite networks to gene space.  <br>
+
+The output (i.e., node rankings) and config file are written to disk in the folder specifed in the config file with a timestamp attached. <br>
 
 Regarding the parameters embed_dimensions and distance_metrics, node2vec2rank runs multiple times for every parameter combination, and then all the rankings are aggregated into one using the Borda scheme. The default settings have been tested thoroughly. The data_preprocessing parameteres are more involved. In a nutshell, they perform graph preprocessing such as binarization, sparsifying by keeping top edges, absoluting, thresholding, and projecting bipartite graphs to unipartite. We highly recommend to perform your own preprocessing and use the resulting networks with n2v2r. <br>
 
