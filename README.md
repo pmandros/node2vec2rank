@@ -97,7 +97,7 @@ To run the node2vec2rank algorithm, run the following command:
    ```sh
    python node2vec2rank/node2vec2rank.py --config config.json
    ```
-You can modify the experiment parameters in the config.json file:
+The configuration file template is:
    ```json
 {
     "data_io": {
@@ -123,23 +123,8 @@ You can modify the experiment parameters in the config.json file:
     }
 }
    ```
-You can also check all the possible parameters with their corresponding description using the following command:
+The parameters have the following funcitonality:
 ```sh
-python node2vec2rank/node2vec2rank.py --help
-```
-It will generate the following output:
-```sh
-usage: node2vec2rank.py [-h] [--config CONFIG] [--save_dir SAVE_DIR] [--graph_filenames GRAPH_FILENAMES [GRAPH_FILENAMES ...]] [--data_dir DATA_DIR]
-                        [--separator SEPARATOR] [--is_edge_list] [--transpose] [--project_unipartite_on PROJECT_UNIPARTITE_ON] [--threshold THRESHOLD]
-                        [--top_percent_keep TOP_PERCENT_KEEP] [--binarize] [--absolute] [--embed_dimensions EMBED_DIMENSIONS [EMBED_DIMENSIONS ...]]
-                        [--distance_metrics DISTANCE_METRICS [DISTANCE_METRICS ...]] [--seed SEED] [--verbose VERBOSE]
-
-Script arguments
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --config CONFIG       Configuration file path
-
 data_io:
   --save_dir SAVE_DIR   Save directory
   --graph_filenames GRAPH_FILENAMES [GRAPH_FILENAMES ...]
@@ -161,10 +146,10 @@ data_preprocessing:
   --absolute            Absolute the graphs, i.e., turn negative values into positive
 
 fitting_ranking:
-  --embed_dimensions EMBED_DIMENSIONS [EMBED_DIMENSIONS ...]
-                        Embedding dimensions
-  --distance_metrics DISTANCE_METRICS [DISTANCE_METRICS ...]
-                        Distance metrics
+  --embed_dimensions [EMBED_DIMENSIONS ...]
+                        A list of all the embedding dimensions to use in n2v2r
+  --distance_metrics [DISTANCE_METRICS ...]
+                        A list of all the distance metrics to use in n2v2r
   --seed SEED           Random seed
   --verbose VERBOSE     Verbose level
 ```
