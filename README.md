@@ -111,8 +111,8 @@ You can modify the experiment parameters in the config.json file:
     "data_preprocessing": {
         "project_unipartite_on": null,
         "threshold": 0,
-        "top_percent_keep": [100],
-        "binarize": [false],
+        "top_percent_keep": 100,
+        "binarize": false,
         "absolute": false
     },
     "fitting_ranking": {
@@ -183,7 +183,7 @@ You can also run the code in jupyter notebook. Details about setting up your own
 <!-- Practicalities -->
 ## Practicalities
 
-The input files can be either in adjacency format with index and header, or a weigted edge list (three columns of source, target, weight) without header (the latter supported by networkx). At the moment, n2v2r accepts a list of symmetric dataframes as input, so the above input files will be converted by the Dataloader and N2V2R classes accordingly automatically. If your graphs are bipartite and in adjacency format (i.e., rectangular and not symmetric matrices), they will be projected to unipartite with multiplication depending on the PROJECT_UNIPARTITE_ON parameter. As an example, if you graphs are in adjacency format with regulators in rows and genes in the columns, PROJECT_UNIPARTITE_ON = 'columns' will create symmetric networks by projecting the bipartite networks to gene space.  <br>
+The input files can be either in adjacency format with index and header, or a weigted edge list (three columns of source, target, weight) without header (the latter supported by networkx). At the moment, n2v2r accepts a list of symmetric dataframes as input, so the above input files will be converted by the Dataloader and N2V2R classes accordingly automatically. If your graphs are bipartite and in adjacency format (i.e., rectangular and not symmetric matrices), they will be projected to unipartite with multiplication depending on the PROJECT_UNIPARTITE_ON parameter. As an example, if you graphs are in adjacency format with regulators in rows and genes in the columns, PROJECT_UNIPARTITE_ON = 'columns' will create symmetric networks by projecting the bipartite networks to gene space. If you want to work directly with bipartite graphs, they should be represented in edge list format. <br>
 
 The output (i.e., node rankings) and config file are written to disk in the folder specifed in the config file with a timestamp attached. <br>
 
