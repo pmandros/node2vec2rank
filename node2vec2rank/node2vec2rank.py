@@ -17,7 +17,7 @@ data_loading_group.add_argument(
 data_loading_group.add_argument(
     '--data_dir', type=str, help='Data Directory')
 data_loading_group.add_argument(
-    '--separator', default='\t', type=str, help='Separator')
+    '--separator', default='\t', type=str, help='Separator used in the graph files')
 data_loading_group.add_argument(
     '--is_edge_list', action='store_true', help='Whether the input is an edge list or tabular')
 data_loading_group.add_argument(
@@ -26,7 +26,7 @@ data_loading_group.add_argument(
 # Add data_preprocessing arguments
 data_preprocessing_group = parser.add_argument_group('data_preprocessing')
 data_preprocessing_group.add_argument(
-    '--project_unipartite_on', default='columns', type=str, help='If the graphs are non-square (i.e., bipartite), it will project them into column or row space')
+    '--project_unipartite_on', default='columns', type=str, help='If the graph adjacency matrices are non-square (i.e., bipartite), it will make them square by projecting into column or row space')
 data_preprocessing_group.add_argument(
     '--threshold', type=float, default=None, help='Everything below this value will be 0')
 data_preprocessing_group.add_argument(
@@ -45,7 +45,7 @@ fitting_ranking_group.add_argument(
 fitting_ranking_group.add_argument(
     '--seed', type=int, default=None, help='Random seed')
 fitting_ranking_group.add_argument(
-    '--verbose', type=int, default=0, help='Verbose level')
+    '--verbose', type=int, default=1, help='Verbose level')
 
 # Parse the arguments from the command line
 config = parser.parse_args()
