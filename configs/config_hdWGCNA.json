@@ -8,7 +8,7 @@
 },
 "data_preprocessing": {
     "project_unipartite_on": null,
-    "threshold" : -100, 
+    "threshold" : null, 
     "top_percent_keep" : 100,
     "binarize" : false, 
     "absolute" : false
