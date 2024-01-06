@@ -110,7 +110,7 @@ You can modify the experiment parameters in the config.json file:
     },
     "data_preprocessing": {
         "project_unipartite_on": null,
-        "threshold": 0,
+        "threshold": null,
         "top_percent_keep": 100,
         "binarize": false,
         "absolute": false
