@@ -137,7 +137,7 @@ It will generate the following output:
 ```sh
 usage: node2vec2rank.py [-h] [--config CONFIG] [--save_dir SAVE_DIR] [--graph_filenames GRAPH_FILENAMES [GRAPH_FILENAMES ...]] [--data_dir DATA_DIR]
                         [--seperator SEPERATOR] [--is_edge_list] [--transpose] [--project_unipartite_on PROJECT_UNIPARTITE_ON] [--threshold THRESHOLD]
-                        [--top_percent_keep TOP_PERCENT_KEEP] [--binarize BINARIZE] [--absolute] [--embed_dimensions EMBED_DIMENSIONS [EMBED_DIMENSIONS ...]]
+                        [--top_percent_keep TOP_PERCENT_KEEP] [--binarize] [--absolute] [--embed_dimensions EMBED_DIMENSIONS [EMBED_DIMENSIONS ...]]
                         [--distance_metrics DISTANCE_METRICS [DISTANCE_METRICS ...]] [--seed SEED] [--verbose VERBOSE]
 
 Script arguments
@@ -163,7 +163,7 @@ data_preprocessing:
                         Everything below this value will be 0
   --top_percent_keep TOP_PERCENT_KEEP
                         Keeps the top percentage of edges, turning the rest to 0
-  --binarize BINARIZE   Whether to binarize the graphs, turning everything above 0 to 1
+  --binarize            Whether to binarize the graphs, turning everything above 0 to 1
   --absolute            Absolute the graphs, i.e., turn negative values into positive
 
 fitting_ranking:
