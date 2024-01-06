@@ -7,7 +7,7 @@ from model import N2V2R
 
 # Create the parser
 parser = argparse.ArgumentParser(description='Script arguments')
-parser.add_argument("--config", default=None, help='Configuration file path')
+parser.add_argument("--config", required=True, help='Configuration file path')
 
 # # Add data_loading arguments
 # data_loading_group = parser.add_argument_group('data_io')
@@ -49,29 +49,27 @@ parser.add_argument("--config", default=None, help='Configuration file path')
 #     '--verbose', type=int, default=1, help='Verbose level')
 
 # Parse the arguments from the command line
-config = parser.parse_args()
+args = parser.parse_args()
 
 # user should provide path of config file
 # all other args will be ignored and will be extracted from the file
-if config.config is not None:
-    with open(config.config, 'r', encoding='utf-8') as file:
-        config = json.load(file)
-        config = {param: value for _, params in config.items()
+if args.config is not None:
+    with open(args.config, 'r', encoding='utf-8') as file:
+        args = json.load(file)
+        args = {param: value for _, params in args.items()
                   for param, value in params.items()}
-# if no config file, these args are required
-elif any([config.data_dir is None, config.graph_filenames is None,
-          config.save_dir is None]):
-    print("The following arguments are required: --save_dir, --graph_filenames, --data_dir")
+else:
+    print("The following argument is required: --config")
     parser.print_help()
     sys.exit(1)
 
 # create dataloader and load the graphs in memory
-dataloader = DataLoader(config=config)
+dataloader = DataLoader(config=args)
 graphs = dataloader.get_graphs()
 interest_nodes = dataloader.get_nodes()
 
 # define Node2Vec2Rank model
-model = N2V2R(graphs=graphs, config=config, nodes=interest_nodes)
+model = N2V2R(graphs=graphs, config=args, nodes=interest_nodes)
 
 # train Node2Vec2Rank and generate rankings
 rankings = model.fit_transform_rank()
