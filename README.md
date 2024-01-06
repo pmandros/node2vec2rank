@@ -136,7 +136,7 @@ python node2vec2rank/node2vec2rank.py --help
 It will generate the following output:
 ```sh
 usage: node2vec2rank.py [-h] [--config CONFIG] [--save_dir SAVE_DIR] [--graph_filenames GRAPH_FILENAMES [GRAPH_FILENAMES ...]] [--data_dir DATA_DIR]
-                        [--seperator SEPERATOR] [--is_edge_list] [--transpose] [--project_unipartite_on PROJECT_UNIPARTITE_ON] [--threshold THRESHOLD]
+                        [--separator SEPARATOR] [--is_edge_list] [--transpose] [--project_unipartite_on PROJECT_UNIPARTITE_ON] [--threshold THRESHOLD]
                         [--top_percent_keep TOP_PERCENT_KEEP] [--binarize] [--absolute] [--embed_dimensions EMBED_DIMENSIONS [EMBED_DIMENSIONS ...]]
                         [--distance_metrics DISTANCE_METRICS [DISTANCE_METRICS ...]] [--seed SEED] [--verbose VERBOSE]
 
@@ -151,14 +151,14 @@ data_io:
   --graph_filenames GRAPH_FILENAMES [GRAPH_FILENAMES ...]
                         Graph filenames
   --data_dir DATA_DIR   Data Directory
-  --seperator SEPERATOR
-                        Separator
+  --separator SEPARATOR
+                        Separator used in the graph files
   --is_edge_list        Whether the input is an edge list or tabular
   --transpose           Whether to transpose the graph adjacency matrices or not if bipartite
 
 data_preprocessing:
   --project_unipartite_on PROJECT_UNIPARTITE_ON
-                        If the graphs are non-square (i.e., bipartite), it will project them into column or row space
+                        If the graph adjacency matrices are non-square (i.e., bipartite), it will make them square by projecting into column or row space
   --threshold THRESHOLD
                         Everything below this value will be 0
   --top_percent_keep TOP_PERCENT_KEEP
