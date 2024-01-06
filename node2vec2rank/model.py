@@ -37,12 +37,13 @@ class N2V2R:
             random.seed(self.config["seed"])
             np.random.seed(self.config["seed"])
 
-    def __fit(self, grns):
+    def __fit(self, graphs):
         # fitting UASE
+        sparce_graphs = [csc_matrix(graph) for graph in graphs]
         _, self.node_embeddings = se.UASE(
-            grns, self.max_embed_dim)
+            sparce_graphs, self.max_embed_dim)
 
-    def __rank(self, pairwise_ranks_dict, comp_strategy, binarize, top_percent):
+    def __rank(self, pairwise_ranks_dict, comp_strategy):
         # for every pair of consecutive graphs
         for i in range(0, self.num_graphs):
             if i==0 and comp_strategy!='one_vs_rest':
@@ -75,7 +76,7 @@ class N2V2R:
                 for distance_metric in self.distance_metrics:
                     if distance_metric=='cosine' and dim==1:
                         continue
-                    col_name = f"bin-{binarize}_top-{top_percent}_dim-{dim}_distance-{distance_metric}"
+                    col_name = f"dim-{dim}_distance-{distance_metric}"
                     distances = compute_pairwise_distances(
                         embed_one, embed_two, distance_metric)
                     per_graph_comp_and_prepro_combo_ranks_pd[col_name] = distances
@@ -107,39 +108,23 @@ class N2V2R:
                 f"\nRunning n2v2r with dimensions {self.embed_dimensions} and distance metrics {self.distance_metrics} ...")
         tic_n2v2r = time.time()
 
-        # go over all pairwise comparisons and preprocessing combinations
+        # go over all pairwise comparisons 
         pairwise_ranks_dict = {}
-        for top_percent in self.config['top_percent_keep']:
-            for binarize in self.config['binarize']:
-                # network transformation
-                grns_transformed = [csc_matrix(network_transform(graph,
-                                                                 binarize=binarize,
-                                                                 threshold=self.config['threshold'],
-                                                                 absolute=self.config['absolute'],
-                                                                 top_percent_keep=top_percent,
-                                                                 project_unipartite_on=self.config['project_unipartite_on']))
-                                    for graph in self.graphs]
-                # fit UASE model
-                tic_uase = time.time()
-                self.__fit(grns=grns_transformed)
-                toc_uase = time.time()
-                if self.config["verbose"] == 1:
-                    print(f"""\tMulti-layer embedding in {
-                        round(toc_uase-tic_uase,2)} seconds""")
-                toc_uase = time.time()
+        # fit UASE model
+        tic_uase = time.time()
+        self.__fit(graphs=self.graphs)
+        toc_uase = time.time()
+        if self.config["verbose"] == 1:
+            print(f"""\tMulti-layer embedding in {
+                round(toc_uase-tic_uase,2)} seconds""")
+        toc_uase = time.time()
 
-                # remove the transformed graphs
-                grns_transformed.clear()
-
-                # rank the nodes
-                tic_rank = time.time()
-                self.__rank(pairwise_ranks_dict=pairwise_ranks_dict, comp_strategy=self.comp_strategy, binarize=binarize,
-                            top_percent=top_percent)
-                toc_rank = time.time()
-                # if self.config["verbose"] == 1:
-                #     print(f"\t\tRanking in {round(toc_rank-tic_rank,2)} seconds")
-
-                gc.collect()
+        # rank the nodes
+        tic_rank = time.time()
+        self.__rank(pairwise_ranks_dict=pairwise_ranks_dict, comp_strategy=self.comp_strategy)
+        toc_rank = time.time()
+        # if self.config["verbose"] == 1:
+        #     print(f"\t\tRanking in {round(toc_rank-tic_rank,2)} seconds")
 
         self.pairwise_ranks = {key: pd.concat(
             pairwise_ranks_dict[key], axis=1) for key in pairwise_ranks_dict}
@@ -163,7 +148,6 @@ class N2V2R:
     def aggregate_transform(self, method='Borda'):
         """
         Computes the aggregation of ranks of nodes for a given sequence of graphs. 
-        returns  
 
         Args:
             method (str, optional): the method to use for aggregation (currently only Borda). Defaults to 'Borda'.
@@ -294,38 +278,22 @@ class N2V2R:
 
         return self.pairwise_signed_ranks
 
-    def degree_difference_ranking(self, threshold=None, top_percent_keep=100, binarize=False, absolute=False, project_unipartite_on='columns'):
-        """_summary_
-
-        Args:
-            threshold (int, optional): Defaults to None.
-            top_percent_keep (int, optional): Defaults to 100.
-            binarize (bool, optional): Defaults to False.
-            absolute (bool, optional): Defaults to False.
-            project_unipartite_on (str, optional): Defaults to 'columns'.
+    def degree_difference_ranking(self):
+        """
+        Computes the degree difference ranking. 
 
         Returns:
             list: pairwise DeDi ranking
         """
         pairwise_DeDi_ranking = {}
-        networks_transformed = []
-
-        for graph in self.graphs:
-            networks_transformed.append(network_transform(graph,
-                                                          binarize=binarize,
-                                                          threshold=threshold,
-                                                          absolute=absolute,
-                                                          top_percent_keep=top_percent_keep,
-                                                          project_unipartite_on=project_unipartite_on))
-
+        
         for i in range(1, len(self.graphs)):
             graph_comparison_key = str(i)
-
             DeDi = np.sum(
-                networks_transformed[i-1], axis=0) - np.sum(networks_transformed[i], axis=0)
+                self.graphs[i-1], axis=0) - np.sum(self.graphs[i], axis=0)
             absDeDi = np.abs(DeDi)
-
             DeDi_data_dict = {"DeDi": DeDi, "absDeDi": absDeDi}
+
             ranking = pd.DataFrame.from_dict(DeDi_data_dict)
             ranking.index = self.node_names
 
