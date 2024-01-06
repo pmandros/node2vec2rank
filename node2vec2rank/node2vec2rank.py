@@ -32,7 +32,7 @@ data_preprocessing_group.add_argument(
 data_preprocessing_group.add_argument(
     '--top_percent_keep',  type=int, default=100, help='Keeps the top percentage of edges, turning the rest to 0')
 data_preprocessing_group.add_argument(
-    '--binarize',  type=bool, default=False, help='Whether to binarize the graphs, turning everything above 0 to 1')
+    '--binarize',  action='store_true', help='Whether to binarize the graphs, turning everything above 0 to 1')
 data_preprocessing_group.add_argument(
     '--absolute', action='store_true', help='Absolute the graphs, i.e., turn negative values into positive')
 
