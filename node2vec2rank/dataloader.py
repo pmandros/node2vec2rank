@@ -38,18 +38,19 @@ class DataLoader():
 
         # get the eventual node IDs after the planned transformations
         if np.size(row_nodes) != np.size(col_nodes):
-            print('Graphs are non-square')
             if self.config["project_unipartite_on"].casefold() == 'rows':
                 self.interest_nodes = row_nodes
+                print('Graphs are non-square and will be projected on row nodes')
             elif self.config["project_unipartite_on"].casefold() == 'columns':
                 self.interest_nodes = col_nodes
+                print('Graphs are non-square and will be projected on column nodes')
             else:
                 raise ValueError("Impossible transformation")
         else:
             self.interest_nodes = col_nodes
             
         print(
-            f"""There are {np.size(self.interest_nodes)} common nodes""")
+            f"""There are {np.size(self.interest_nodes)} common nodes and resulting networks will have size {np.size(self.interest_nodes)} by {np.size(self.interest_nodes)}""")
         
         self.graphs=[network_transform(graph,
                                     binarize=self.config['binarize'],
