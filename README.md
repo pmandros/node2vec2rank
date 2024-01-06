@@ -135,11 +135,9 @@ python node2vec2rank/node2vec2rank.py --help
 ```
 It will generate the following output:
 ```sh
-usage: node2vec2rank.py [-h] [--config CONFIG] [--save_dir SAVE_DIR] [--graph_filenames GRAPH_FILENAMES [GRAPH_FILENAMES ...]]
-                        [--data_dir DATA_DIR] [--seperator SEPERATOR] [--is_edge_list] [--transpose]
-                        [--project_unipartite_on PROJECT_UNIPARTITE_ON] [--threshold THRESHOLD]
-                        [--top_percent_keep TOP_PERCENT_KEEP [TOP_PERCENT_KEEP ...]] [--binarize BINARIZE [BINARIZE ...]]
-                        [--absolute] [--embed_dimensions EMBED_DIMENSIONS [EMBED_DIMENSIONS ...]]
+usage: node2vec2rank.py [-h] [--config CONFIG] [--save_dir SAVE_DIR] [--graph_filenames GRAPH_FILENAMES [GRAPH_FILENAMES ...]] [--data_dir DATA_DIR]
+                        [--seperator SEPERATOR] [--is_edge_list] [--transpose] [--project_unipartite_on PROJECT_UNIPARTITE_ON] [--threshold THRESHOLD]
+                        [--top_percent_keep TOP_PERCENT_KEEP] [--binarize BINARIZE] [--absolute] [--embed_dimensions EMBED_DIMENSIONS [EMBED_DIMENSIONS ...]]
                         [--distance_metrics DISTANCE_METRICS [DISTANCE_METRICS ...]] [--seed SEED] [--verbose VERBOSE]
 
 Script arguments
@@ -156,17 +154,16 @@ data_io:
   --seperator SEPERATOR
                         Separator
   --is_edge_list        Whether the input is an edge list or tabular
-  --transpose           Wether to transpose the graph adjacency matrices or not, e.g., bringing the row genes to the column
+  --transpose           Whether to transpose the graph adjacency matrices or not if bipartite
 
 data_preprocessing:
   --project_unipartite_on PROJECT_UNIPARTITE_ON
-                        If the graphs are rectangular, it will project them into column or row space
+                        If the graphs are non-square (i.e., bipartite), it will project them into column or row space
   --threshold THRESHOLD
                         Everything below this value will be 0
-  --top_percent_keep TOP_PERCENT_KEEP [TOP_PERCENT_KEEP ...]
+  --top_percent_keep TOP_PERCENT_KEEP
                         Keeps the top percentage of edges, turning the rest to 0
-  --binarize BINARIZE [BINARIZE ...]
-                        Whether to binarize the graphs, turning everything above 0 to 1
+  --binarize BINARIZE   Whether to binarize the graphs, turning everything above 0 to 1
   --absolute            Absolute the graphs, i.e., turn negative values into positive
 
 fitting_ranking:
