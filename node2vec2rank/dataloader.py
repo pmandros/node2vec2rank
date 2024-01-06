@@ -48,6 +48,9 @@ class DataLoader():
         else:
             self.interest_nodes = col_nodes
             
+        print(
+            f"""There are {np.size(self.interest_nodes)} common nodes""")
+        
         self.graphs=[network_transform(graph,
                                     binarize=self.config['binarize'],
                                     threshold=self.config['threshold'],
