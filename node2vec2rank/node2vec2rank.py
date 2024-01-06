@@ -21,18 +21,18 @@ data_loading_group.add_argument(
 data_loading_group.add_argument(
     '--is_edge_list', action='store_true', help='Whether the input is an edge list or tabular')
 data_loading_group.add_argument(
-    '--transpose', action='store_true', help='Wether to transpose the graph adjacency matrices or not, e.g., bringing the row genes to the column')
+    '--transpose', action='store_true', help='Whether to transpose the graph adjacency matrices or not if bipartite')
 
 # Add data_preprocessing arguments
 data_preprocessing_group = parser.add_argument_group('data_preprocessing')
 data_preprocessing_group.add_argument(
-    '--project_unipartite_on', default='columns', type=str, help='If the graphs are rectangular, it will project them into column or row space')
+    '--project_unipartite_on', default='columns', type=str, help='If the graphs are non-square (i.e., bipartite), it will project them into column or row space')
 data_preprocessing_group.add_argument(
-    '--threshold', type=float, default=0, help='Everything below this value will be 0')
+    '--threshold', type=float, default=None, help='Everything below this value will be 0')
 data_preprocessing_group.add_argument(
-    '--top_percent_keep', nargs='+', type=int, default=[100], help='Keeps the top percentage of edges, turning the rest to 0')
+    '--top_percent_keep',  type=int, default=100, help='Keeps the top percentage of edges, turning the rest to 0')
 data_preprocessing_group.add_argument(
-    '--binarize', nargs='+', type=bool, default=[False], help='Whether to binarize the graphs, turning everything above 0 to 1')
+    '--binarize',  type=bool, default=False, help='Whether to binarize the graphs, turning everything above 0 to 1')
 data_preprocessing_group.add_argument(
     '--absolute', action='store_true', help='Absolute the graphs, i.e., turn negative values into positive')
 
