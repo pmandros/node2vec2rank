@@ -92,7 +92,7 @@ conda activate n2v2r
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Running a single node2vec2rank model:
+### Running a single node2vec2rank model:
 To run the node2vec2rank algorithm, run the following command:
    ```sh
    python node2vec2rank/node2vec2rank.py --config config.json
@@ -123,13 +123,7 @@ You can modify the experiment parameters in the config.json file:
     }
 }
    ```
-2. You can alternatively run the script from the command line and it will parse the command line arguments based on the given parameters:
-```sh
-python  node2vec2rank/node2vec2rank.py --save_dir ../output --data_dir ../data/networks --graph_filenames network_control.tsv network_case.tsv --seperator "\t" --is_edge_list false --transpose true --project_unipartite_on null --threshold null --top_percent_keep 100 --binarize false --absolute false --embed_dimensions 4 6 8 10 12 14 16 18 20 22 24 --distance_metrics "euclidean" "cosine" --verbose 1
-
-```
-Please note that the following arguments are **required**: **--save_dir**, **--graph_filenames**, **--data_dir**
-3. You can also check all the possible parameters with their corresponding description using the following command:
+You can also check all the possible parameters with their corresponding description using the following command:
 ```sh
 python node2vec2rank/node2vec2rank.py --help
 ```
@@ -174,7 +168,7 @@ fitting_ranking:
   --seed SEED           Random seed
   --verbose VERBOSE     Verbose level
 ```
-4. Running in a Jupyter Notebook Environment:
+### Running in a Jupyter Notebook Environment:
 You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided.  
 
 <!-- Practicalities -->
