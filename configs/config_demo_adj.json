@@ -2,7 +2,7 @@
     "save_dir": "../output",
     "data_dir": "../data/networks/demo",
     "graph_filenames": ["adj_matrix_1.csv","adj_matrix_2.csv"],
-    "seperator": ",",
+    "separator": ",",
     "is_edge_list": false,
     "transpose": false
     },

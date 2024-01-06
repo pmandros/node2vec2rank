@@ -2,7 +2,7 @@
     "save_dir": "../output",
     "data_dir": "../data/networks/TCGA_mf_contrast/tcga_luad_sex/wgcna",
     "graph_filenames": ["wgcna_recount3_tcga_luad_purity03_normlogtpm_mintpm1_fracsamples01_tissueall_batchnull_adjnull_MALE-tumor.csv","wgcna_recount3_tcga_luad_purity03_normlogtpm_mintpm1_fracsamples01_tissueall_batchnull_adjnull_FEMALE-tumor.csv"],
-    "seperator": ",",
+    "separator": ",",
     "is_edge_list": false,
     "transpose": false
 },

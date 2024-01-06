@@ -2,7 +2,7 @@
     "save_dir": "../output",
     "data_dir": "../data/networks/TCGA_nt_contrast/tcga_brca_luma_matched_tissue/panda",
     "graph_filenames": ["panda_recount3_tcga_brca_purity03_normlogtpm_mintpm1_fracsamples01_tissueall_batchnull_adjnull_luma_healthy.txt","panda_recount3_tcga_brca_purity03_normlogtpm_mintpm1_fracsamples01_tissueall_batchnull_adjnull_luma_tumor.txt"],
-    "seperator": " ",
+    "separator": " ",
     "is_edge_list": false,
     "transpose": false
 },

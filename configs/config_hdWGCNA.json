@@ -2,7 +2,7 @@
     "save_dir": "../output",
     "data_dir": "../data/networks/hdWGCNA_metacells/",
     "graph_filenames": ["G1.txt","S.txt","G2.txt","M.txt"],
-    "seperator": " ",
+    "separator": " ",
     "is_edge_list": false,
     "transpose": false
 },

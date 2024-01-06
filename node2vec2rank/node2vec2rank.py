@@ -17,7 +17,7 @@ data_loading_group.add_argument(
 data_loading_group.add_argument(
     '--data_dir', type=str, help='Data Directory')
 data_loading_group.add_argument(
-    '--seperator', default='\t', type=str, help='Separator')
+    '--separator', default='\t', type=str, help='Separator')
 data_loading_group.add_argument(
     '--is_edge_list', action='store_true', help='Whether the input is an edge list or tabular')
 data_loading_group.add_argument(

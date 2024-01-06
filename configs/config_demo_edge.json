@@ -2,7 +2,7 @@
     "save_dir": "../output",
     "data_dir": "../data/networks/demo",
     "graph_filenames": ["edge_list_1.csv","edge_list_2.csv"],
-    "seperator": ",",
+    "separator": ",",
     "is_edge_list": true,
     "transpose": false
     },

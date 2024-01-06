@@ -70,13 +70,13 @@ class DataLoader():
                         self.config["data_dir"], graph_filename),
                     index_col=0,
                     header=0,
-                    sep=self.config["seperator"])
+                    sep=self.config["separator"])
             else:
                 graph_pd = pd.read_hdf(os.path.join(
                     self.config["data_dir"], graph_filename))
         else:
             edge_list_graph = nx.read_weighted_edgelist(os.path.join(
-                self.config["data_dir"], graph_filename), delimiter=self.config["seperator"], nodetype=str)
+                self.config["data_dir"], graph_filename), delimiter=self.config["separator"], nodetype=str)
             adj_matrix = nx.to_numpy_array(edge_list_graph)
             graph_pd = pd.DataFrame(
                 adj_matrix, index=edge_list_graph.nodes, columns=edge_list_graph.nodes)
