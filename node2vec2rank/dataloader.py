@@ -2,8 +2,12 @@ import pandas as pd
 import numpy as np
 import networkx as nx
 import os
+from scipy.sparse import csc_matrix
+
 
 from preprocessing_utils import match_networks
+from preprocessing_utils import network_transform
+
 
 
 class DataLoader():
@@ -34,15 +38,27 @@ class DataLoader():
 
         # get the eventual node IDs after the planned transformations
         if np.size(row_nodes) != np.size(col_nodes):
-            print('Graphs are rectangular')
             if self.config["project_unipartite_on"].casefold() == 'rows':
                 self.interest_nodes = row_nodes
+                print('Graphs are non-square and will be projected on row nodes')
             elif self.config["project_unipartite_on"].casefold() == 'columns':
                 self.interest_nodes = col_nodes
+                print('Graphs are non-square and will be projected on column nodes')
             else:
                 raise ValueError("Impossible transformation")
         else:
             self.interest_nodes = col_nodes
+            
+        print(
+            f"""There are {np.size(self.interest_nodes)} common nodes and resulting networks will have size {np.size(self.interest_nodes)} by {np.size(self.interest_nodes)}""")
+        
+        self.graphs=[network_transform(graph,
+                                    binarize=self.config['binarize'],
+                                    threshold=self.config['threshold'],
+                                    absolute=self.config['absolute'],
+                                    top_percent_keep=self.config['top_percent_keep'],
+                                    project_unipartite_on=self.config['project_unipartite_on'])
+                                    for graph in self.graphs]
 
     def __load_graph(self, graph_filename, graph_index):
         # check if in h5 format

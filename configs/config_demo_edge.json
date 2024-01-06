@@ -9,8 +9,8 @@
 "data_preprocessing": {
     "project_unipartite_on": null,
     "threshold" : -100, 
-    "top_percent_keep" : [100],
-    "binarize" : [false], 
+    "top_percent_keep" : 100,
+    "binarize" : false, 
     "absolute" : false
     },
 "fitting_ranking": {
