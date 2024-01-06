@@ -36,6 +36,17 @@ class N2V2R:
         if self.config["seed"]:
             random.seed(self.config["seed"])
             np.random.seed(self.config["seed"])
+            
+        now = datetime.now().strftime(r"%m_%d_%Y_%H_%M_%S")
+
+        if self.config["save_dir"]:
+            self.save_dir = os.path.join(
+                self.config["save_dir"], now)
+            print(self.save_dir)
+            os.makedirs(self.save_dir)
+            with open(os.path.join(self.save_dir, "config.json"), 'w', encoding="utf-8") as f:
+                json.dump(self.config, f)
+
 
     def __fit(self, graphs):
         # fitting UASE
@@ -92,16 +103,6 @@ class N2V2R:
         Returns:
             pd.DatFrame: pairwise ranks of all nodes    
         """
-
-        now = datetime.now().strftime(r"%m_%d_%Y_%H_%M_%S")
-
-        if self.config["save_dir"]:
-            self.save_dir = os.path.join(
-                self.config["save_dir"], now)
-            print(self.save_dir)
-            os.makedirs(self.save_dir)
-            with open(os.path.join(self.save_dir, "config.json"), 'w', encoding="utf-8") as f:
-                json.dump(self.config, f)
 
         if self.config["verbose"] >= 0:
             print(
