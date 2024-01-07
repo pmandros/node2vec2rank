@@ -3,6 +3,7 @@ import numpy as np
 import networkx as nx
 import os
 from scipy.sparse import csc_matrix
+import time
 
 
 from preprocessing_utils import match_networks
@@ -26,6 +27,10 @@ class DataLoader():
 
     def __load_graphs(self):
         # go through every graph
+        tic_loading = time.time()
+
+        print('Loading graphs in memory ...')
+
         for i, graph_filename in enumerate(self.__graph_filenames):
             graph_pd = self.__load_graph(
                 graph_filename=graph_filename, graph_index=i)
@@ -40,17 +45,27 @@ class DataLoader():
         if np.size(row_nodes) != np.size(col_nodes):
             if self.config["project_unipartite_on"].casefold() == 'rows':
                 self.interest_nodes = row_nodes
-                print('Graphs are non-square and will be projected on row nodes')
+                print('\tGraphs are non-square and will be projected on row nodes')
             elif self.config["project_unipartite_on"].casefold() == 'columns':
                 self.interest_nodes = col_nodes
-                print('Graphs are non-square and will be projected on column nodes')
+                print('\tGraphs are non-square and will be projected on column nodes')
             else:
                 raise ValueError("Impossible transformation")
         else:
             self.interest_nodes = col_nodes
             
         print(
-            f"""There are {np.size(self.interest_nodes)} common nodes and resulting networks will have size {np.size(self.interest_nodes)} by {np.size(self.interest_nodes)}""")
+            f"""\tThere are {np.size(self.interest_nodes)} common nodes and resulting networks will have size {np.size(self.interest_nodes)} by {np.size(self.interest_nodes)}""")
+        
+        
+        
+        if any([self.config['binarize'], self.config['threshold'] is not None, self.config['absolute'], int(self.config['top_percent_keep'])!=100, self.config['project_unipartite_on'] is not None]):
+            print('Transforming graphs ...')
+            
+        variables = [("absoluting", self.config['absolute']), ("thresholding", self.config['threshold'] is not None),  ('to_unipartite',self.config['project_unipartite_on'] is not None),   ('sparcifying',int(self.config['top_percent_keep'])!=100),("binarize", self.config['binarize'])]
+        for var_name, var_value in variables:
+            if var_value:
+                print(f"\t {var_name}")
         
         self.graphs=[network_transform(graph,
                                     binarize=self.config['binarize'],
@@ -59,6 +74,9 @@ class DataLoader():
                                     top_percent_keep=self.config['top_percent_keep'],
                                     project_unipartite_on=self.config['project_unipartite_on'])
                                     for graph in self.graphs]
+        
+        toc_loading = time.time()
+        print(f"""Finished loading in {round(toc_loading - tic_loading, 2)} seconds \n""")
 
     def __load_graph(self, graph_filename, graph_index):
         # check if in h5 format
@@ -87,5 +105,5 @@ class DataLoader():
         row_nodes, col_nodes = graph_pd.index.to_numpy(), graph_pd.columns.to_numpy()
         num_rows, num_cols = np.size(row_nodes), np.size(col_nodes)
         print(
-            f"""There are {num_rows} row nodes and {num_cols} column nodes in graph {graph_index+1}""")
+            f"""\tThere are {num_rows} row nodes and {num_cols} column nodes in graph {graph_index+1}""")
         return graph_pd
