@@ -49,9 +49,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 Computational methods in biology can infer large molecular interaction networks from multiple data modalities and resolutions, creating unprecedented opportunities to better understand complex biological phenomena. Such graphs can be built from different conditions and get contrasted to uncover graph-level differences, e.g., a case-control study utilizing gene regulatory networks. <br> <br>
-Towards this end, we introduce **node2vec2rank**, a method for graph differential analysis that ranks nodes  according to the disparities of their representations in joint latent embedding spaces. Unlike previous bag-of-features approaches, we take advantage of recent advances in machine learning and statistics to compare graphs in higher-order structures and in a data-driven manner. Employing [UASE](https://github.com/iggallagher/Spectral-Embedding), a multi-layer spectral embedding technique, n2v2r is computationally efficient and can provably identify the correct ranking of differences. Furthermore, we incorporate stability into n2v2r for an overall procedure that adheres to veridical data science principles. See figure below for a demonstration simulating a case-control study. <br>
+Towards this end, we introduce **node2vec2rank**, a method for graph differential analysis that ranks nodes  according to the disparities of their representations in joint latent embedding spaces. Unlike previous bag-of-features approaches, we take advantage of recent advances in machine learning and statistics to compare graphs in higher-order structures and in a data-driven manner. Employing [UASE](https://github.com/iggallagher/Spectral-Embedding), a multi-layer spectral embedding technique, n2v2r is computationally efficient and can provably identify the correct ranking of differences. Furthermore, we incorporate stability into n2v2r for an overall procedure that adheres to veridical data science principles by running it multiple times and aggregating the results. See figure below for a demonstration simulating a case-control study. <br>
 
-Note, that in our case, node2vec in the title does not correspond to the algorithm by Grover and Leskovec, but rather to any algorithm that can produce (multi-layer) node embeddings. An earlier version of node2vec2rank was using node2vec with transfer learning, but it was unstable and with many paramaters. UASE is more stable, more efficient, has practically no parameters, and we were able to provide theoretical guarantees about the correct ranking.  <br>
+Note, that in our case, node2vec in the title does not correspond to the algorithm by Grover and Leskovec, but rather to any algorithm that can produce (multi-layer) node embeddings. An earlier version of node2vec2rank was using node2vec with transfer learning, but it was unstable and with many paramaters. UASE is based on SVD and is more stable, more efficient, has practically no parameters, and we were able to provide theoretical guarantees about the correct ranking.  <br>
 
 While the method is motivated and validated with biological applications, it can be used in any other domain with similar objectives. <br>
 
@@ -63,11 +63,11 @@ This repository provides the method, source code, and example notebooks. In part
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps:
+To get a local copy up and running follow steps below.
 
 ### Prerequisites
 
-* It is recommended to create a new virtual enviroment with [conda](https://www.anaconda.com/)
+It is recommended to create a new virtual enviroment with [conda](https://www.anaconda.com/).
 
 ### Installation
 
@@ -75,34 +75,33 @@ To get a local copy up and running follow these simple steps:
    ```sh
    git clone https://github.com/pmandros/n2v2r
    ```
-2. Change to the project repositry:
+2. Change to the project repositry
    ```sh
    cd n2v2r
-
    ```
-3. Run the following command to create the environment with the needed packages in conda. Please note that it might take a few minutes for the environment to be created:
-```sh
-conda env create --file environment.yaml
-```
-4. Activate the environment:
-```sh
-conda activate n2v2r
-```
+3. Run the following command to create the environment with the needed packages in conda. Please note that it might take a few minutes for the environment to be created
+   ```sh
+   conda env create --file environment.yaml
+   ```
+4. Activate the environment
+   ```sh
+   conda activate n2v2r
+   ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-### Running a single node2vec2rank model:
-To run the node2vec2rank algorithm, run the following command:
+### Running node2vec2rank model in command line
+To run the node2vec2rank algorithm in command line, run the following command with a configuration file as input
    ```sh
    python node2vec2rank/node2vec2rank.py --config config.json
    ```
-The configuration file template is:
+The configuration file template is as follows
    ```json
 {
     "data_io": {
-        "save_dir": "../output",
-        "data_dir": "../data/networks",
+        "save_dir": "output",
+        "data_dir": "data/networks",
         "graph_filenames": ["network_control.tsv","network_case.tsv"],
         "seperator": "\t",
         "is_edge_list": false,
@@ -123,11 +122,11 @@ The configuration file template is:
     }
 }
    ```
-The parameters have the following funcitonality:
+The parameters have the following funcitonality
 ```sh
 data_io:
   --save_dir SAVE_DIR   Save directory
-  --graph_filenames GRAPH_FILENAMES [GRAPH_FILENAMES ...]
+  --graph_filenames [GRAPH_FILENAMES ...]
                         Graph filenames
   --data_dir DATA_DIR   Data Directory
   --separator SEPARATOR
@@ -149,12 +148,12 @@ fitting_ranking:
   --embed_dimensions [EMBED_DIMENSIONS ...]
                         A list of all the embedding dimensions to use in n2v2r
   --distance_metrics [DISTANCE_METRICS ...]
-                        A list of all the distance metrics to use in n2v2r
+                        A list of all the distance metrics to use in n2v2r (currently supporting "cosine" and/or "Euclidean")
   --seed SEED           Random seed
   --verbose VERBOSE     Verbose level
 ```
-### Running in a Jupyter Notebook Environment:
-You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided.  
+### Running in a Jupyter Notebook Environment
+You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided. Check the demo notebook for general usage.  
 
 <!-- Practicalities -->
 ## Practicalities
