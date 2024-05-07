@@ -75,13 +75,13 @@ It is recommended to create a new virtual enviroment with [conda](https://www.an
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/pmandros/n2v2r
+   git clone https://github.com/pmandros/node2vec2rank
    ```
 2. Change to the project repositry
    ```sh
    cd node2vec2rank
    ```
-3. Run the following command to create the environment with the needed packages in conda. Please note that it might take a few minutes for the environment to be created
+3. Run the following command to create a conda enviroment named n2v2r with the necessary packages. Please note that it might take a few minutes for the environment to be created
    ```sh
    conda env create --file environment.yaml
    ```
