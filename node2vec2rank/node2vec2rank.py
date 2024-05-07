@@ -1,8 +1,8 @@
 import json
 import argparse
 import sys
-from dataloader import DataLoader
-from model import N2V2R
+from node2vec2rank.dataloader import DataLoader
+from node2vec2rank.model import N2V2R
 
 
 # Create the parser

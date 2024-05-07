@@ -10,8 +10,8 @@ from scipy.sparse import csc_matrix
 import spectral_embedding as se
 
 
-from preprocessing_utils import network_transform
-from model_utils import borda_aggregate_parallel, compute_pairwise_distances, signed_transform_single
+from node2vec2rank.preprocessing_utils import network_transform
+from node2vec2rank.model_utils import borda_aggregate_parallel, compute_pairwise_distances, signed_transform_single
 
 
 class N2V2R:

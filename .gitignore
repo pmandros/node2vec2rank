@@ -5,3 +5,5 @@ __pycache__
 notebooks/.ipynb_checkpoints
 .vscode/settings.json
 results/
+build/
+node2vec2rank.egg-info/

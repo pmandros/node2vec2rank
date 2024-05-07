@@ -6,8 +6,8 @@ from scipy.sparse import csc_matrix
 import time
 
 
-from preprocessing_utils import match_networks
-from preprocessing_utils import network_transform
+from node2vec2rank.preprocessing_utils import match_networks
+from node2vec2rank.preprocessing_utils import network_transform
 
 
 
