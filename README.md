@@ -79,7 +79,7 @@ It is recommended to create a new virtual enviroment with [conda](https://www.an
    ```
 2. Change to the project repositry
    ```sh
-   cd n2v2r
+   cd node2vec2rank
    ```
 3. Run the following command to create the environment with the needed packages in conda. Please note that it might take a few minutes for the environment to be created
    ```sh
@@ -88,6 +88,10 @@ It is recommended to create a new virtual enviroment with [conda](https://www.an
 4. Activate the environment
    ```sh
    conda activate n2v2r
+   ```
+5. Install node2vec2rank
+   ```sh
+   pip install .
    ```
 
 <!-- USAGE EXAMPLES -->
