@@ -109,7 +109,7 @@ The configuration file template is as follows
 {
     "data_io": {
         "save_dir": "<path_to_output>",
-        "data_dir": ""<path_to_data>"",
+        "data_dir": "<path_to_data>",
         "graph_filenames": ["network_control.tsv","network_case.tsv"],
         "seperator": "\t",
         "is_edge_list": false,
