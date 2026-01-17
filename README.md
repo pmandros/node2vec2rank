@@ -108,8 +108,8 @@ The configuration file template is as follows
    ```json
 {
     "data_io": {
-        "save_dir": "output",
-        "data_dir": "data/networks",
+        "save_dir": "<path_to_output>",
+        "data_dir": ""<path_to_data>"",
         "graph_filenames": ["network_control.tsv","network_case.tsv"],
         "seperator": "\t",
         "is_edge_list": false,
