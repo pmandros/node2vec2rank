@@ -98,7 +98,7 @@ To run the node2vec2rank algorithm in command line, run the following command wi
    ```sh
    n2v2r --config configs/config_demo_adj_CLI.json
    ```
-`python -m node2vec2rank --config ...` works too. `--save_dir` and `--seed` override the config file, and `--signed` also writes the rankings signed by the degree difference. Any parameter left out of the config file takes its default value.
+`python -m node2vec2rank --config ...` works too. `--save_dir` and `--seed` override the config file, `--signed` also writes the rankings signed by the degree difference, and `--significance` writes per-node p- and q-values. Any parameter left out of the config file takes its default value.
 The configuration file template is as follows
    ```json
 {
@@ -155,6 +155,8 @@ fitting_ranking:
                         A list of all the distance metrics to use in n2v2r ("euclidean", "cosine" and/or "correlation")
   --comp_strategy COMP_STRATEGY
                         How to compare more than two graphs: "sequential" (default), "one_vs_before" or "one_vs_rest"
+  --embedding_method EMBEDDING_METHOD
+                        "uase" (default) or "ulse" (regularised unfolded Laplacian embedding)
   --seed SEED           Random seed
   --verbose VERBOSE     Verbose level
 ```
@@ -168,6 +170,7 @@ rankings = model.fit_transform_rank()          # one DataFrame per comparison, o
 borda = model.aggregate_transform()            # aggregated Borda ranking per comparison
 degree_difference = model.degree_difference_ranking()
 signed = model.signed_ranks_transform()        # rankings signed by the degree difference
+significance = model.significance()            # per-node z, p- and q-values (see below)
 ```
 To load graphs from files with the same options as the command line, use `DataLoader`:
 ```python
@@ -176,6 +179,13 @@ from node2vec2rank import DataLoader, N2V2R
 loader = DataLoader("configs/config_demo_adj_CLI.json")
 model = N2V2R(loader.get_graphs(), loader.get_nodes(), config=loader.config)
 ```
+
+### Significance and diagnostics
+`model.significance()` tests every node for a larger shift between the graphs than nodes of similar degree. Each distance is compared against a robust trend with degree (a degree-adjusted empirical null), and the results are combined into one z-score per node, a one-sided p-value and a Benjamini-Hochberg q-value. Like other empirical-null methods, it assumes that most nodes do not change. The z-score is also a ranking free of degree bias. By default it combines the same dimensions and metrics as the ranking; `significance(dimensions="elbow")` uses only the dimension at the elbow of the singular values, which is much more powerful when that elbow captures the change and fails when it does not. `n2v2r --significance` writes the results as `<comparison>_significance.tsv`.
+
+`node2vec2rank.diagnostics` measures how much the rankings agree across dimensions and metrics (`ranking_agreement`), how strongly they follow node degree (`degree_bias`), and how often each node is in the top (`top_k_stability`). `node2vec2rank.plotting` draws these, together with the scree plot of the joint embedding (`plot_scree(model.singular_values, model.selected_dimension)`), after `pip install "node2vec2rank[plot]"`.
+
+The config also accepts `"embed_dimensions": "auto"` to use only the elbow dimension, and `"embedding_method": "ulse"` for the regularised unfolded Laplacian embedding. See [the simulation benchmarks](benchmarks/README.md) for when these choices help and when they hurt; the defaults are unchanged from the paper.
 
 ### Running in a Jupyter Notebook Environment
 You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided. Check the demo notebook for general usage.  

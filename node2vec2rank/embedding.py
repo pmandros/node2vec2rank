@@ -7,11 +7,18 @@ The right singular vectors, scaled by the square root of the singular values,
 give one ``d``-dimensional embedding per node and per graph. These per-graph
 embeddings are cross-sectionally and longitudinally stable, which is what makes
 comparing a node's position across graphs meaningful.
+
+The regularised unfolded Laplacian spectral embedding (ULSE) from the same line
+of work is available as an alternative, together with an automatic choice of
+the embedding dimension.
 """
 
 import numpy as np
 from scipy import sparse
 from scipy.sparse.linalg import svds
+from scipy.stats import norm
+
+EMBEDDING_METHODS = ("uase", "ulse")
 
 
 def uase(graphs, d, random_state=None, return_singular_values=False):
@@ -30,6 +37,90 @@ def uase(graphs, d, random_state=None, return_singular_values=False):
         dimensions ordered by decreasing singular value. If
         ``return_singular_values`` is True, a tuple ``(embeddings, singular_values)``.
     """
+    unfolded, num_graphs, n = _unfold(graphs, d)
+    return _right_embedding(unfolded, num_graphs, n, d, random_state, return_singular_values)
+
+
+def ulse(graphs, d, regularisation=None, random_state=None, return_singular_values=False):
+    """Computes the regularised unfolded Laplacian spectral embedding.
+
+    Like :func:`uase`, but embeds the degree-normalised unfolded matrix
+    ``(D_row + tau I)^{-1/2} A (D_col + tau I)^{-1/2}``, where the degrees are
+    computed on absolute edge weights. This down-weights hub nodes, which can
+    otherwise dominate the leading dimensions of weighted networks.
+
+    Args:
+        graphs: list of K (n x n) adjacency matrices over the same nodes.
+        d: embedding dimension.
+        regularisation: the regulariser tau; defaults to the mean row degree
+            of the unfolded matrix.
+        random_state: seed or numpy Generator for the SVD starting vector.
+        return_singular_values: whether to also return the singular values.
+
+    Returns:
+        Same as :func:`uase`.
+    """
+    unfolded, num_graphs, n = _unfold(graphs, d)
+    magnitude = abs(unfolded)
+    row_degrees = np.asarray(magnitude.sum(axis=1)).ravel()
+    col_degrees = np.asarray(magnitude.sum(axis=0)).ravel()
+    tau = row_degrees.mean() if regularisation is None else regularisation
+    if tau <= 0 and (row_degrees.min() <= 0 or col_degrees.min() <= 0):
+        raise ValueError("regularisation must be positive when some nodes have no edges")
+    row_scale = 1.0 / np.sqrt(row_degrees + tau)
+    col_scale = 1.0 / np.sqrt(col_degrees + tau)
+    if sparse.issparse(unfolded):
+        normalised = sparse.diags(row_scale) @ unfolded @ sparse.diags(col_scale)
+    else:
+        normalised = unfolded * row_scale[:, None] * col_scale[None, :]
+    return _right_embedding(normalised, num_graphs, n, d, random_state, return_singular_values)
+
+
+def embed(graphs, d, method="uase", random_state=None, return_singular_values=False):
+    """Embeds graphs jointly with the given method ('uase' or 'ulse')."""
+    method = method.casefold()
+    if method == "uase":
+        return uase(graphs, d, random_state=random_state,
+                    return_singular_values=return_singular_values)
+    if method == "ulse":
+        return ulse(graphs, d, random_state=random_state,
+                    return_singular_values=return_singular_values)
+    raise ValueError(f"Unknown embedding method {method!r}, options are {EMBEDDING_METHODS}")
+
+
+def select_dimension(singular_values, min_dimension=1):
+    """Selects an embedding dimension at the elbow of the singular values.
+
+    Uses the profile likelihood method of Zhu & Ghodsi (2006): the singular
+    values are split into a leading and a trailing group, each modelled as
+    Gaussian with its own mean and a common variance, and the split with the
+    highest likelihood is the dimension.
+
+    Args:
+        singular_values: the singular values (any order).
+        min_dimension: the smallest dimension that may be returned.
+
+    Returns:
+        int: the selected dimension.
+    """
+    values = np.sort(np.asarray(singular_values, dtype=np.float64))[::-1]
+    num_values = len(values)
+    if num_values < 3:
+        return max(min_dimension, 1)
+
+    best_dimension, best_likelihood = 1, -np.inf
+    for q in range(1, num_values):
+        head, tail = values[:q], values[q:]
+        pooled_var = (np.sum((head - head.mean()) ** 2) + np.sum((tail - tail.mean()) ** 2)) \
+            / (num_values - 2)
+        sd = np.sqrt(max(pooled_var, np.finfo(float).tiny))
+        likelihood = norm.logpdf(head, head.mean(), sd).sum() + norm.logpdf(tail, tail.mean(), sd).sum()
+        if likelihood > best_likelihood:
+            best_dimension, best_likelihood = q, likelihood
+    return max(best_dimension, min_dimension)
+
+
+def _unfold(graphs, d):
     if len(graphs) == 0:
         raise ValueError("At least one graph is required")
 
@@ -50,7 +141,10 @@ def uase(graphs, d, random_state=None, return_singular_values=False):
     else:
         unfolded = np.hstack([graph.toarray() if sparse.issparse(graph) else np.asarray(graph)
                               for graph in graphs]).astype(np.float64)
+    return unfolded, num_graphs, n
 
+
+def _right_embedding(unfolded, num_graphs, n, d, random_state, return_singular_values):
     rng = np.random.default_rng(random_state)
     v0 = rng.standard_normal(min(unfolded.shape))
     _, singular_values, vt = svds(unfolded, k=d, v0=v0)

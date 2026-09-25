@@ -5,6 +5,9 @@ import json
 
 COMPARISON_STRATEGIES = ("sequential", "one_vs_before", "one_vs_rest")
 DISTANCE_METRICS = ("euclidean", "cosine", "correlation")
+EMBEDDING_METHODS = ("uase", "ulse")
+# largest dimension considered when embed_dimensions is "auto"
+AUTO_MAX_DIMENSION = 50
 
 DEFAULT_CONFIG = {
     # data_io
@@ -21,7 +24,9 @@ DEFAULT_CONFIG = {
     "binarize": False,
     "absolute": False,
     # fitting_ranking
+    # a list of dimensions, or "auto" for the elbow of the singular values
     "embed_dimensions": [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24],
+    "embedding_method": "uase",
     "distance_metrics": ["euclidean", "cosine"],
     "comp_strategy": "sequential",
     "seed": None,
@@ -77,9 +82,13 @@ def resolve_config(config=None, **overrides) -> dict:
 
 def _validate(config: dict):
     dims = config["embed_dimensions"]
-    if isinstance(dims, int):
+    if isinstance(dims, str):
+        if dims.casefold() != "auto":
+            raise ValueError(f'embed_dimensions must be a list of integers or "auto", got {dims!r}')
+        dims = config["embed_dimensions"] = "auto"
+    elif isinstance(dims, int):
         dims = config["embed_dimensions"] = [dims]
-    if not dims or any(int(d) != d or d < 1 for d in dims):
+    if dims != "auto" and (not dims or any(int(d) != d or d < 1 for d in dims)):
         raise ValueError(
             f"embed_dimensions must be a non-empty list of positive integers, got {dims}")
 
@@ -91,6 +100,10 @@ def _validate(config: dict):
     if not metrics or bad_metrics:
         raise ValueError(
             f"distance_metrics must be chosen from {DISTANCE_METRICS}, got {metrics}")
+
+    method = config["embedding_method"] = config["embedding_method"].casefold()
+    if method not in EMBEDDING_METHODS:
+        raise ValueError(f"embedding_method must be one of {EMBEDDING_METHODS}, got {method!r}")
 
     if config["comp_strategy"] not in COMPARISON_STRATEGIES:
         raise ValueError(

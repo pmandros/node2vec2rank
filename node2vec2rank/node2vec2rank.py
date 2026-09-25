@@ -20,6 +20,8 @@ def build_parser():
     parser.add_argument("--seed", type=int, help="Random seed (overrides the config)")
     parser.add_argument("--signed", action="store_true",
                         help="Also write the rankings signed by the degree difference")
+    parser.add_argument("--significance", action="store_true",
+                        help="Also write per-node p- and q-values from the degree-adjusted empirical null")
     parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     return parser
 
@@ -45,6 +47,8 @@ def run(argv=None):
     model.degree_difference_ranking()
     if args.signed:
         model.signed_ranks_transform()
+    if args.significance:
+        model.significance()
 
     if model.save_dir:
         print(f"\nResults written to {model.save_dir}")

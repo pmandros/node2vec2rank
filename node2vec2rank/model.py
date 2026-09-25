@@ -7,9 +7,10 @@ import numpy as np
 import pandas as pd
 from scipy import sparse
 
-from node2vec2rank.config import resolve_config
-from node2vec2rank.embedding import uase
+from node2vec2rank.config import AUTO_MAX_DIMENSION, resolve_config
+from node2vec2rank.embedding import embed, select_dimension
 from node2vec2rank.model_utils import borda_aggregate, compute_pairwise_distances, signed_transform_single
+from node2vec2rank.significance import empirical_null_test
 
 
 class N2V2R:
@@ -49,19 +50,28 @@ class N2V2R:
                     "graphs must be square and match the node list")
 
         self.num_graphs = len(self.graphs)
-        self.embed_dimensions = self.config['embed_dimensions']
-        self.max_embed_dim = max(self.embed_dimensions)
+        self.auto_dimensions = self.config['embed_dimensions'] == "auto"
+        if self.auto_dimensions:
+            # resolved to the elbow of the singular values when fitting
+            self.embed_dimensions = None
+            self.max_embed_dim = min(AUTO_MAX_DIMENSION, num_nodes - 1)
+        else:
+            self.embed_dimensions = list(self.config['embed_dimensions'])
+            self.max_embed_dim = max(self.embed_dimensions)
         if self.max_embed_dim >= num_nodes:
             raise ValueError(
                 f"Largest embedding dimension ({self.max_embed_dim}) must be smaller "
                 f"than the number of nodes ({num_nodes})")
         self.distance_metrics = self.config['distance_metrics']
+        self.embedding_method = self.config['embedding_method']
         self.comp_strategy = self.config['comp_strategy']
         self.seed = self.config['seed']
         self.save_dir = None
 
         self.node_embeddings = None
         self.singular_values = None
+        self.selected_dimension = None
+        self.pairwise_significance = None
         self.pairwise_ranks = None
         self.pairwise_signed_ranks = None
         self.pairwise_aggregate_ranks = None
@@ -102,28 +112,55 @@ class N2V2R:
                 for i in range(self.num_graphs)]
 
     def __fit(self):
-        self.node_embeddings, self.singular_values = uase(
-            self.graphs, self.max_embed_dim, random_state=self.seed,
-            return_singular_values=True)
+        self.node_embeddings, self.singular_values = embed(
+            self.graphs, self.max_embed_dim, method=self.embedding_method,
+            random_state=self.seed, return_singular_values=True)
+        # at least 2 dimensions so that angle-based distances are meaningful
+        self.selected_dimension = select_dimension(
+            self.singular_values, min_dimension=min(2, self.max_embed_dim))
+        if self.auto_dimensions:
+            self.embed_dimensions = [self.selected_dimension]
+            self.__log(f"\tSelected embedding dimension {self.selected_dimension} "
+                       "at the elbow of the singular values", level=1)
 
-    def __rank(self):
-        pairwise_ranks = {}
+    def degrees(self, key=None):
+        """Node degrees (sum of absolute edge weights).
+
+        Args:
+            key: a comparison key; if given, the mean degree over the graphs of
+                that comparison, otherwise the mean over all graphs.
+
+        Returns:
+            pd.Series of degrees indexed by node.
+        """
+        if key is None:
+            indices = range(self.num_graphs)
+        else:
+            comparisons = {k: reference + [target] for k, reference, target in self.comparisons()}
+            if key not in comparisons:
+                raise KeyError(f"Unknown comparison {key!r}, available: {list(comparisons)}")
+            indices = comparisons[key]
+        degrees = [np.asarray(abs(self.graphs[i]).sum(axis=0)).ravel() for i in indices]
+        return pd.Series(np.mean(degrees, axis=0), index=self.node_names, name="degree")
+
+    def __distances(self, dimensions, distance_metrics):
+        pairwise_distances = {}
         for key, reference, target in self.comparisons():
             columns = {}
             # go over all provided choices for number of latent dimensions
-            for dim in self.embed_dimensions:
+            for dim in dimensions:
                 embed_one = np.mean(self.node_embeddings[reference, :, :dim], axis=0)
                 embed_two = self.node_embeddings[target, :, :dim]
 
                 # go over all provided choices for distance metrics
-                for distance_metric in self.distance_metrics:
+                for distance_metric in distance_metrics:
                     # angles are meaningless in one dimension
                     if distance_metric in ('cosine', 'correlation') and dim == 1:
                         continue
                     columns[f"dim-{dim}_distance-{distance_metric}"] = compute_pairwise_distances(
                         embed_one, embed_two, distance_metric)
-            pairwise_ranks[key] = pd.DataFrame(columns, index=self.node_names)
-        return pairwise_ranks
+            pairwise_distances[key] = pd.DataFrame(columns, index=self.node_names)
+        return pairwise_distances
 
     def fit_transform_rank(self):
         """
@@ -136,14 +173,14 @@ class N2V2R:
             combination (columns). Larger distances mean more differential.
         """
         self.__log(
-            f"\nRunning n2v2r with dimensions {self.embed_dimensions} and distance metrics {self.distance_metrics} ...")
+            f"\nRunning n2v2r with dimensions {self.config['embed_dimensions']} and distance metrics {self.distance_metrics} ...")
         tic_n2v2r = time.time()
 
         tic_uase = time.time()
         self.__fit()
         self.__log(f"\tMulti-layer embedding in {round(time.time() - tic_uase, 2)} seconds", level=1)
 
-        self.pairwise_ranks = self.__rank()
+        self.pairwise_ranks = self.__distances(self.embed_dimensions, self.distance_metrics)
 
         num_rankings = sum(len(ranks.columns) for ranks in self.pairwise_ranks.values())
         self.__log(
@@ -252,6 +289,60 @@ class N2V2R:
                         self.save_dir, k + "_agg_signed.tsv"), sep='\t', index=True)
 
         return self.pairwise_signed_ranks
+
+    def significance(self, dimensions=None, distance_metrics=None):
+        """
+        Tests every node for a larger shift between the graphs than nodes of
+        similar degree, with a degree-adjusted empirical null (see
+        :mod:`node2vec2rank.significance`).
+
+        By default the test combines the same embedding dimensions and
+        distance metrics as the rankings. ``dimensions="elbow"`` uses only the
+        dimension at the elbow of the singular values instead: when the change
+        lives in the dominant structure this is much more powerful, but when
+        the elbow is too low it misses the change entirely (see the benchmarks).
+
+        Args:
+            dimensions: list of embedding dimensions to combine, or "elbow";
+                defaults to the configured dimensions.
+            distance_metrics: list of distance metrics to combine; defaults to
+                the configured metrics.
+
+        Returns:
+            dict: one DataFrame per comparison with columns ``z`` (larger is
+            more differential), ``pvalue`` (one-sided), ``qvalue``
+            (Benjamini-Hochberg) and ``degree``, indexed by node.
+        """
+        if self.node_embeddings is None:
+            raise ValueError("No n2v2r embeddings found, run fit_transform_rank first")
+        if dimensions is None:
+            dimensions = self.embed_dimensions
+        elif isinstance(dimensions, str):
+            if dimensions.casefold() != "elbow":
+                raise ValueError(f'dimensions must be a list of integers or "elbow", got {dimensions!r}')
+            dimensions = [self.selected_dimension]
+        dimensions = list(dimensions)
+        if max(dimensions) > self.max_embed_dim:
+            raise ValueError(
+                f"Dimensions up to {self.max_embed_dim} were embedded, got {dimensions}")
+        distance_metrics = self.distance_metrics if distance_metrics is None else list(distance_metrics)
+
+        self.__log(f"\nSignificance with dimensions {dimensions} and distance metrics {distance_metrics} ...")
+        self.pairwise_significance = {}
+        for key, distances in self.__distances(dimensions, distance_metrics).items():
+            degree = self.degrees(key)
+            z, pvalues, qvalues = empirical_null_test(distances.to_numpy(), degree.to_numpy())
+            self.pairwise_significance[key] = pd.DataFrame(
+                {"z": z, "pvalue": pvalues, "qvalue": qvalues, "degree": degree.to_numpy()},
+                index=self.node_names)
+            self.__log(f"\tComparison {key}: {int(np.sum(qvalues < 0.05))} nodes with q < 0.05", level=1)
+
+        if self.save_dir:
+            for k, frame in self.pairwise_significance.items():
+                frame.to_csv(os.path.join(
+                    self.save_dir, k + "_significance.tsv"), sep='\t', index=True)
+
+        return self.pairwise_significance
 
     def degree_difference_ranking(self):
         """
