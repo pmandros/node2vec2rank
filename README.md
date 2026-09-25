@@ -189,7 +189,7 @@ If you have the samples behind the networks (e.g., expression profiles for co-ex
 
 `node2vec2rank.simulate.simulate_expression` simulates expression in two conditions with known co-expression rewiring (module switches, losses and gains) and differential-expression decoys, and `coexpression_network` builds the networks. Together they provide a ground truth to try the method on.
 
-The config also accepts `"embed_dimensions": "auto"` to use only the elbow dimension, and `"embedding_method": "ulse"` for the regularised unfolded Laplacian embedding. See [the simulation benchmarks](benchmarks/README.md) for when these choices help and when they hurt; the defaults are unchanged from the paper.
+The config also accepts `"embed_dimensions": "auto"` to use only the elbow dimension, and `"embedding_method": "ulse"` for the regularised unfolded Laplacian embedding. See [the benchmarks](benchmarks/README.md) (simulations and the locCSN single-cell networks) for when these choices help and when they hurt. On the single-cell networks and the demo network the elbow was too low, so the defaults are unchanged from the paper.
 
 ### Running in a Jupyter Notebook Environment
 You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided. Check the demo notebook for general usage.  

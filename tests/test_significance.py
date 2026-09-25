@@ -156,3 +156,15 @@ def test_plots_render(two_sbm_graphs):
     plotting.plot_ranking_agreement(ranking_agreement(ranks))
     plotting.plot_degree_bias(ranks.iloc[:, 0], model.degrees("1"))
     plotting.plot_significance(significance)
+
+
+def test_empirical_null_leaves_nodes_without_distance_untested():
+    rng = np.random.default_rng(3)
+    degree = rng.uniform(1, 100, 500)
+    distances = np.exp(rng.standard_normal((500, 4)))
+    distances[:10] = 0.0  # e.g. isolated in both graphs: zero euclidean distance
+    distances[:10, 1::2] = np.nan  # and undefined cosine distance
+    degree[:10] = 0.0
+    z, pvalues, qvalues = empirical_null_test(distances, degree)
+    assert np.all(np.isnan(z[:10])) and np.all(np.isnan(pvalues[:10])) and np.all(np.isnan(qvalues[:10]))
+    assert np.all(np.isfinite(z[10:]))

@@ -117,10 +117,17 @@ def empirical_null_test(distances, covariate):
     Returns:
         tuple ``(z, pvalues, qvalues)`` of arrays of shape (n,). Larger z means
         a larger shift than nodes of similar degree; p-values are one-sided.
+        Nodes without a positive distance (e.g., isolated in both graphs) get NaN.
     """
     distances = np.asarray(distances, dtype=np.float64)
     if distances.ndim == 1:
         distances = distances[:, None]
+    # a node with no positive distance in any combination carries no
+    # information (typically it is isolated in both graphs, so its embedding is
+    # zero); it is left untested instead of pulling down the low-degree trend
+    with np.errstate(invalid="ignore"):
+        untestable = ~np.any(distances > 0, axis=1)
+    distances = np.where(untestable[:, None], np.nan, distances)
 
     zscores = []
     for column in distances.T:
