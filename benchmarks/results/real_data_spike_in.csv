@@ -1,0 +1,641 @@
+background,spike_in,replicate,elbow_dimension,method,auroc,power_q_0.1,false_calls_q_0.1
+resampled null,degree-matched swap,0,2,DeDi,0.640892990305742,,
+resampled null,degree-matched swap,0,2,n2v2r (default),0.9576808351976137,,
+resampled null,degree-matched swap,0,2,n2v2r euclidean only,0.9422422632363907,,
+resampled null,degree-matched swap,0,2,n2v2r cosine only,0.9435123042505593,,
+resampled null,degree-matched swap,0,2,n2v2r ULSE,0.9568535607755406,,
+resampled null,degree-matched swap,0,2,n2v2r elbow dimension,0.9847478560775541,,
+resampled null,degree-matched swap,0,2,n2v2r degree-adjusted z,0.9843167412378822,0.75,0.0
+resampled null,degree-matched swap,0,2,n2v2r degree-adjusted z (elbow),0.9915874347501864,0.75,0.0
+resampled null,degree-matched swap,1,2,DeDi,0.6249300894854586,,
+resampled null,degree-matched swap,1,2,n2v2r (default),0.9669206748695004,,
+resampled null,degree-matched swap,1,2,n2v2r euclidean only,0.9502470171513796,,
+resampled null,degree-matched swap,1,2,n2v2r cosine only,0.9483943885160329,,
+resampled null,degree-matched swap,1,2,n2v2r ULSE,0.9647417971662938,,
+resampled null,degree-matched swap,1,2,n2v2r elbow dimension,0.9189620618941089,,
+resampled null,degree-matched swap,1,2,n2v2r degree-adjusted z,0.9681441088739746,0.9166666666666666,0.0
+resampled null,degree-matched swap,1,2,n2v2r degree-adjusted z (elbow),0.9156646159582401,0.6666666666666666,0.0
+resampled null,degree-matched swap,2,2,DeDi,0.5300615212527964,,
+resampled null,degree-matched swap,2,2,n2v2r (default),0.919789336316182,,
+resampled null,degree-matched swap,2,2,n2v2r euclidean only,0.8383202833706189,,
+resampled null,degree-matched swap,2,2,n2v2r cosine only,0.9516219239373602,,
+resampled null,degree-matched swap,2,2,n2v2r ULSE,0.9121690902311708,,
+resampled null,degree-matched swap,2,2,n2v2r elbow dimension,0.9211642431021626,,
+resampled null,degree-matched swap,2,2,n2v2r degree-adjusted z,0.892710663683818,0.6458333333333334,0.0
+resampled null,degree-matched swap,2,2,n2v2r degree-adjusted z (elbow),0.921956562266965,0.6666666666666666,0.0
+resampled null,degree-matched swap,3,2,DeDi,0.5176174496644296,,
+resampled null,degree-matched swap,3,2,n2v2r (default),0.9734223527218494,,
+resampled null,degree-matched swap,3,2,n2v2r euclidean only,0.9294486390753169,,
+resampled null,degree-matched swap,3,2,n2v2r cosine only,0.9792831841909023,,
+resampled null,degree-matched swap,3,2,n2v2r ULSE,0.9769411819537659,,
+resampled null,degree-matched swap,3,2,n2v2r elbow dimension,0.9347734899328859,,
+resampled null,degree-matched swap,3,2,n2v2r degree-adjusted z,0.959195563012677,0.9166666666666666,1.0
+resampled null,degree-matched swap,3,2,n2v2r degree-adjusted z (elbow),0.9267104772557793,0.5833333333333334,0.0
+resampled null,degree-matched swap,4,2,DeDi,0.5201342281879194,,
+resampled null,degree-matched swap,4,2,n2v2r (default),0.9149072520507084,,
+resampled null,degree-matched swap,4,2,n2v2r euclidean only,0.8328905667412378,,
+resampled null,degree-matched swap,4,2,n2v2r cosine only,0.9544183445190156,,
+resampled null,degree-matched swap,4,2,n2v2r ULSE,0.9106543624161074,,
+resampled null,degree-matched swap,4,2,n2v2r elbow dimension,0.9135439970171514,,
+resampled null,degree-matched swap,4,2,n2v2r degree-adjusted z,0.9072287472035794,0.75,0.0
+resampled null,degree-matched swap,4,2,n2v2r degree-adjusted z (elbow),0.9492216629381058,0.4791666666666667,0.0
+resampled null,degree-matched swap,5,2,DeDi,0.4697986577181208,,
+resampled null,degree-matched swap,5,2,n2v2r (default),0.951039336316182,,
+resampled null,degree-matched swap,5,2,n2v2r euclidean only,0.9120525727069351,,
+resampled null,degree-matched swap,5,2,n2v2r cosine only,0.9580303877703207,,
+resampled null,degree-matched swap,5,2,n2v2r ULSE,0.9522977255779269,,
+resampled null,degree-matched swap,5,2,n2v2r elbow dimension,0.9677013422818792,,
+resampled null,degree-matched swap,5,2,n2v2r degree-adjusted z,0.9462621178225205,0.7916666666666666,0.0
+resampled null,degree-matched swap,5,2,n2v2r degree-adjusted z (elbow),0.9694258016405667,0.75,0.0
+resampled null,degree-matched swap,6,2,DeDi,0.5663450782997763,,
+resampled null,degree-matched swap,6,2,n2v2r (default),0.9649631804623415,,
+resampled null,degree-matched swap,6,2,n2v2r euclidean only,0.9250908836689038,,
+resampled null,degree-matched swap,6,2,n2v2r cosine only,0.9626561334824758,,
+resampled null,degree-matched swap,6,2,n2v2r ULSE,0.9708939224459359,,
+resampled null,degree-matched swap,6,2,n2v2r elbow dimension,0.9247413310961968,,
+resampled null,degree-matched swap,6,2,n2v2r degree-adjusted z,0.9587294929157345,0.8125,0.0
+resampled null,degree-matched swap,6,2,n2v2r degree-adjusted z (elbow),0.9217002237136466,0.6458333333333334,0.0
+resampled null,degree-matched swap,7,2,DeDi,0.5759228187919463,,
+resampled null,degree-matched swap,7,2,n2v2r (default),0.9499790268456376,,
+resampled null,degree-matched swap,7,2,n2v2r euclidean only,0.9092445003728561,,
+resampled null,degree-matched swap,7,2,n2v2r cosine only,0.9471359992542878,,
+resampled null,degree-matched swap,7,2,n2v2r ULSE,0.9545814690529456,,
+resampled null,degree-matched swap,7,2,n2v2r elbow dimension,0.9313595264727815,,
+resampled null,degree-matched swap,7,2,n2v2r degree-adjusted z,0.962784302759135,0.6875,1.0
+resampled null,degree-matched swap,7,2,n2v2r degree-adjusted z (elbow),0.9242403057419836,0.5833333333333334,0.0
+resampled null,degree-matched swap,8,2,DeDi,0.5213460104399702,,
+resampled null,degree-matched swap,8,2,n2v2r (default),0.9650214392244594,,
+resampled null,degree-matched swap,8,2,n2v2r euclidean only,0.9238907531692767,,
+resampled null,degree-matched swap,8,2,n2v2r cosine only,0.9608501118568232,,
+resampled null,degree-matched swap,8,2,n2v2r ULSE,0.9652777777777778,,
+resampled null,degree-matched swap,8,2,n2v2r elbow dimension,0.9538823639075317,,
+resampled null,degree-matched swap,8,2,n2v2r degree-adjusted z,0.9646718866517524,0.8958333333333334,0.0
+resampled null,degree-matched swap,8,2,n2v2r degree-adjusted z (elbow),0.9707541014168531,0.7291666666666666,0.0
+resampled null,degree-matched swap,9,2,DeDi,0.6232289336316182,,
+resampled null,degree-matched swap,9,2,n2v2r (default),0.9881385160328113,,
+resampled null,degree-matched swap,9,2,n2v2r euclidean only,0.9740981543624161,,
+resampled null,degree-matched swap,9,2,n2v2r cosine only,0.9468447054436987,,
+resampled null,degree-matched swap,9,2,n2v2r ULSE,0.988091909023117,,
+resampled null,degree-matched swap,9,2,n2v2r elbow dimension,0.9576225764354959,,
+resampled null,degree-matched swap,9,2,n2v2r degree-adjusted z,0.9974366144668159,0.8333333333333334,1.0
+resampled null,degree-matched swap,9,2,n2v2r degree-adjusted z (elbow),0.9592654735272185,0.5416666666666666,0.0
+resampled null,degree-matched swap,10,2,DeDi,0.5695609619686801,,
+resampled null,degree-matched swap,10,2,n2v2r (default),0.9171676920208799,,
+resampled null,degree-matched swap,10,2,n2v2r euclidean only,0.8386348806860552,,
+resampled null,degree-matched swap,10,2,n2v2r cosine only,0.9344821961222968,,
+resampled null,degree-matched swap,10,2,n2v2r ULSE,0.9221313385533184,,
+resampled null,degree-matched swap,10,2,n2v2r elbow dimension,0.9499790268456376,,
+resampled null,degree-matched swap,10,2,n2v2r degree-adjusted z,0.9489886278896346,0.6666666666666666,0.0
+resampled null,degree-matched swap,10,2,n2v2r degree-adjusted z (elbow),0.9453532811334825,0.5208333333333334,0.0
+resampled null,degree-matched swap,11,2,DeDi,0.6044929157345265,,
+resampled null,degree-matched swap,11,2,n2v2r (default),0.9608501118568232,,
+resampled null,degree-matched swap,11,2,n2v2r euclidean only,0.9710803504847129,,
+resampled null,degree-matched swap,11,2,n2v2r cosine only,0.9210127703206562,,
+resampled null,degree-matched swap,11,2,n2v2r ULSE,0.9605005592841164,,
+resampled null,degree-matched swap,11,2,n2v2r elbow dimension,0.9781879194630873,,
+resampled null,degree-matched swap,11,2,n2v2r degree-adjusted z,0.9915408277404921,0.875,0.0
+resampled null,degree-matched swap,11,2,n2v2r degree-adjusted z (elbow),0.9781879194630873,0.7291666666666666,0.0
+resampled null,degree-matched swap,12,2,DeDi,0.5405714019388516,,
+resampled null,degree-matched swap,12,2,n2v2r (default),0.9493148769574944,,
+resampled null,degree-matched swap,12,2,n2v2r euclidean only,0.9253006152125279,,
+resampled null,degree-matched swap,12,2,n2v2r cosine only,0.9329208612975392,,
+resampled null,degree-matched swap,12,2,n2v2r ULSE,0.9634717561521253,,
+resampled null,degree-matched swap,12,2,n2v2r elbow dimension,0.9402265100671141,,
+resampled null,degree-matched swap,12,2,n2v2r degree-adjusted z,0.9603607382550335,0.8333333333333334,0.0
+resampled null,degree-matched swap,12,2,n2v2r degree-adjusted z (elbow),0.9269668158090977,0.625,0.0
+resampled null,degree-matched swap,13,2,DeDi,0.5853840417598807,,
+resampled null,degree-matched swap,13,2,n2v2r (default),0.9965044742729307,,
+resampled null,degree-matched swap,13,2,n2v2r euclidean only,0.989513422818792,,
+resampled null,degree-matched swap,13,2,n2v2r cosine only,0.966046793437733,,
+resampled null,degree-matched swap,13,2,n2v2r ULSE,0.9970404548844146,,
+resampled null,degree-matched swap,13,2,n2v2r elbow dimension,0.9379311148396718,,
+resampled null,degree-matched swap,13,2,n2v2r degree-adjusted z,1.0,0.9583333333333334,0.0
+resampled null,degree-matched swap,13,2,n2v2r degree-adjusted z (elbow),0.93498322147651,0.625,0.0
+resampled null,degree-matched swap,14,2,DeDi,0.5595637583892618,,
+resampled null,degree-matched swap,14,2,n2v2r (default),0.9549077181208053,,
+resampled null,degree-matched swap,14,2,n2v2r euclidean only,0.9169812639821029,,
+resampled null,degree-matched swap,14,2,n2v2r cosine only,0.9645670208799404,,
+resampled null,degree-matched swap,14,2,n2v2r ULSE,0.9546280760626398,,
+resampled null,degree-matched swap,14,2,n2v2r elbow dimension,0.9797142990305742,,
+resampled null,degree-matched swap,14,2,n2v2r degree-adjusted z,0.9486157718120806,0.8333333333333334,0.0
+resampled null,degree-matched swap,14,2,n2v2r degree-adjusted z (elbow),0.9754847129008203,0.8333333333333334,0.0
+resampled null,degree-matched swap,15,2,DeDi,0.5630126771066368,,
+resampled null,degree-matched swap,15,2,n2v2r (default),0.9720124906785981,,
+resampled null,degree-matched swap,15,2,n2v2r euclidean only,0.9257084265473527,,
+resampled null,degree-matched swap,15,2,n2v2r cosine only,0.9788637211036539,,
+resampled null,degree-matched swap,15,2,n2v2r ULSE,0.9763003355704698,,
+resampled null,degree-matched swap,15,2,n2v2r elbow dimension,0.9769528337061895,,
+resampled null,degree-matched swap,15,2,n2v2r degree-adjusted z,0.9610132363907532,0.9166666666666666,1.0
+resampled null,degree-matched swap,15,2,n2v2r degree-adjusted z (elbow),0.9829185309470544,0.5625,0.0
+resampled null,degree-matched swap,16,2,DeDi,0.46756152125279643,,
+resampled null,degree-matched swap,16,2,n2v2r (default),0.9576575316927666,,
+resampled null,degree-matched swap,16,2,n2v2r euclidean only,0.9186591163310962,,
+resampled null,degree-matched swap,16,2,n2v2r cosine only,0.9581352535421327,,
+resampled null,degree-matched swap,16,2,n2v2r ULSE,0.9584148956002982,,
+resampled null,degree-matched swap,16,2,n2v2r elbow dimension,0.9245199478001491,,
+resampled null,degree-matched swap,16,2,n2v2r degree-adjusted z,0.9217002237136466,0.875,0.0
+resampled null,degree-matched swap,16,2,n2v2r degree-adjusted z (elbow),0.9030108128262491,0.3958333333333333,0.0
+resampled null,degree-matched swap,17,2,DeDi,0.5166620059656972,,
+resampled null,degree-matched swap,17,2,n2v2r (default),0.9824175055928411,,
+resampled null,degree-matched swap,17,2,n2v2r euclidean only,0.9787239000745712,,
+resampled null,degree-matched swap,17,2,n2v2r cosine only,0.9440482848620433,,
+resampled null,degree-matched swap,17,2,n2v2r ULSE,0.977954884414616,,
+resampled null,degree-matched swap,17,2,n2v2r elbow dimension,0.9136838180462341,,
+resampled null,degree-matched swap,17,2,n2v2r degree-adjusted z,0.9977162565249813,0.7708333333333334,0.0
+resampled null,degree-matched swap,17,2,n2v2r degree-adjusted z (elbow),0.9172259507829977,0.5833333333333334,0.0
+resampled null,degree-matched swap,18,2,DeDi,0.5687919463087249,,
+resampled null,degree-matched swap,18,2,n2v2r (default),0.976696495152871,,
+resampled null,degree-matched swap,18,2,n2v2r euclidean only,0.9284349366144669,,
+resampled null,degree-matched swap,18,2,n2v2r cosine only,0.9712434750186428,,
+resampled null,degree-matched swap,18,2,n2v2r ULSE,0.9812406785980612,,
+resampled null,degree-matched swap,18,2,n2v2r elbow dimension,0.9164103281133482,,
+resampled null,degree-matched swap,18,2,n2v2r degree-adjusted z,0.9961316181953765,0.9166666666666666,1.0
+resampled null,degree-matched swap,18,2,n2v2r degree-adjusted z (elbow),0.9306953765846383,0.4583333333333333,0.0
+resampled null,degree-matched swap,19,2,DeDi,0.6403803131991052,,
+resampled null,degree-matched swap,19,2,n2v2r (default),0.9974366144668159,,
+resampled null,degree-matched swap,19,2,n2v2r euclidean only,0.9977046047725578,,
+resampled null,degree-matched swap,19,2,n2v2r cosine only,0.9591489560029829,,
+resampled null,degree-matched swap,19,2,n2v2r ULSE,0.9957121551081283,,
+resampled null,degree-matched swap,19,2,n2v2r elbow dimension,0.9884065063385533,,
+resampled null,degree-matched swap,19,2,n2v2r degree-adjusted z,1.0,0.9791666666666666,0.0
+resampled null,degree-matched swap,19,2,n2v2r degree-adjusted z (elbow),0.9893502982848621,0.75,0.0
+resampled null,random swap,0,2,DeDi,0.987532624906786,,
+resampled null,random swap,0,2,n2v2r (default),0.9984619686800895,,
+resampled null,random swap,0,2,n2v2r euclidean only,0.9957354586129754,,
+resampled null,random swap,0,2,n2v2r cosine only,0.9916107382550335,,
+resampled null,random swap,0,2,n2v2r ULSE,0.997832774049217,,
+resampled null,random swap,0,2,n2v2r elbow dimension,0.9936497949291574,,
+resampled null,random swap,0,2,n2v2r degree-adjusted z,0.9975764354958986,0.8125,0.0
+resampled null,random swap,0,2,n2v2r degree-adjusted z (elbow),0.9998834824757643,0.8333333333333334,0.0
+resampled null,random swap,1,2,DeDi,0.9998834824757643,,
+resampled null,random swap,1,2,n2v2r (default),0.9975065249813572,,
+resampled null,random swap,1,2,n2v2r euclidean only,0.9931953765846383,,
+resampled null,random swap,1,2,n2v2r cosine only,0.9973900074571216,,
+resampled null,random swap,1,2,n2v2r ULSE,0.9973900074571216,,
+resampled null,random swap,1,2,n2v2r elbow dimension,1.0,,
+resampled null,random swap,1,2,n2v2r degree-adjusted z,1.0,0.9791666666666666,0.0
+resampled null,random swap,1,2,n2v2r degree-adjusted z (elbow),1.0,0.9583333333333334,0.0
+resampled null,random swap,2,2,DeDi,1.0,,
+resampled null,random swap,2,2,n2v2r (default),1.0,,
+resampled null,random swap,2,2,n2v2r euclidean only,0.9999533929903057,,
+resampled null,random swap,2,2,n2v2r cosine only,0.9964578672632364,,
+resampled null,random swap,2,2,n2v2r ULSE,1.0,,
+resampled null,random swap,2,2,n2v2r elbow dimension,1.0,,
+resampled null,random swap,2,2,n2v2r degree-adjusted z,0.9999067859806114,1.0,2.0
+resampled null,random swap,2,2,n2v2r degree-adjusted z (elbow),1.0,1.0,0.0
+resampled null,random swap,3,2,DeDi,0.9968307233407905,,
+resampled null,random swap,3,2,n2v2r (default),0.9895600298284862,,
+resampled null,random swap,3,2,n2v2r euclidean only,0.9623648396718867,,
+resampled null,random swap,3,2,n2v2r cosine only,0.9911330164056674,,
+resampled null,random swap,3,2,n2v2r ULSE,0.9915058724832215,,
+resampled null,random swap,3,2,n2v2r elbow dimension,0.9835593773303505,,
+resampled null,random swap,3,2,n2v2r degree-adjusted z,0.9995339299030574,0.8333333333333334,0.0
+resampled null,random swap,3,2,n2v2r degree-adjusted z (elbow),0.9969705443698732,0.8333333333333334,0.0
+resampled null,random swap,4,2,DeDi,0.9866470917225951,,
+resampled null,random swap,4,2,n2v2r (default),0.980494966442953,,
+resampled null,random swap,4,2,n2v2r euclidean only,0.957727442207308,,
+resampled null,random swap,4,2,n2v2r cosine only,0.9899794929157345,,
+resampled null,random swap,4,2,n2v2r ULSE,0.9801687173750933,,
+resampled null,random swap,4,2,n2v2r elbow dimension,0.9953276472781506,,
+resampled null,random swap,4,2,n2v2r degree-adjusted z,0.995315995525727,0.875,1.0
+resampled null,random swap,4,2,n2v2r degree-adjusted z (elbow),0.9982988441461595,0.9583333333333334,0.0
+resampled null,random swap,5,2,DeDi,1.0,,
+resampled null,random swap,5,2,n2v2r (default),0.9980308538404176,,
+resampled null,random swap,5,2,n2v2r euclidean only,0.9883832028337062,,
+resampled null,random swap,5,2,n2v2r cosine only,0.9946868008948546,,
+resampled null,random swap,5,2,n2v2r ULSE,0.9982988441461595,,
+resampled null,random swap,5,2,n2v2r elbow dimension,0.9758575689783744,,
+resampled null,random swap,5,2,n2v2r degree-adjusted z,0.9994873228933632,0.9166666666666666,0.0
+resampled null,random swap,5,2,n2v2r degree-adjusted z (elbow),0.9918903803131991,0.9166666666666666,0.0
+resampled null,random swap,6,2,DeDi,0.9859712900820283,,
+resampled null,random swap,6,2,n2v2r (default),0.9922049776286354,,
+resampled null,random swap,6,2,n2v2r euclidean only,0.9954907718120806,,
+resampled null,random swap,6,2,n2v2r cosine only,0.9690529455630127,,
+resampled null,random swap,6,2,n2v2r ULSE,0.9894784675615212,,
+resampled null,random swap,6,2,n2v2r elbow dimension,0.9751584638329605,,
+resampled null,random swap,6,2,n2v2r degree-adjusted z,0.994943139448173,0.875,0.0
+resampled null,random swap,6,2,n2v2r degree-adjusted z (elbow),0.9778150633855331,0.8541666666666666,0.0
+resampled null,random swap,7,2,DeDi,0.9731543624161074,,
+resampled null,random swap,7,2,n2v2r (default),0.9993008948545862,,
+resampled null,random swap,7,2,n2v2r euclidean only,0.9965976882923192,,
+resampled null,random swap,7,2,n2v2r cosine only,0.9915757829977628,,
+resampled null,random swap,7,2,n2v2r ULSE,0.9989513422818792,,
+resampled null,random swap,7,2,n2v2r elbow dimension,0.6505872483221476,,
+resampled null,random swap,7,2,n2v2r degree-adjusted z,0.9998368754660701,0.8958333333333334,0.0
+resampled null,random swap,7,2,n2v2r degree-adjusted z (elbow),0.6346010439970171,0.0625,0.0
+resampled null,random swap,8,2,DeDi,0.973270879940343,,
+resampled null,random swap,8,2,n2v2r (default),0.9808445190156599,,
+resampled null,random swap,8,2,n2v2r euclidean only,0.9594052945563013,,
+resampled null,random swap,8,2,n2v2r cosine only,0.9925428784489188,,
+resampled null,random swap,8,2,n2v2r ULSE,0.9801570656226697,,
+resampled null,random swap,8,2,n2v2r elbow dimension,0.9989396905294556,,
+resampled null,random swap,8,2,n2v2r degree-adjusted z,0.9970404548844146,0.9375,0.0
+resampled null,random swap,8,2,n2v2r degree-adjusted z (elbow),1.0,0.9375,0.0
+resampled null,random swap,9,2,DeDi,0.9923564504101416,,
+resampled null,random swap,9,2,n2v2r (default),0.9982755406413124,,
+resampled null,random swap,9,2,n2v2r euclidean only,0.9907834638329605,,
+resampled null,random swap,9,2,n2v2r cosine only,0.9903173937360179,,
+resampled null,random swap,9,2,n2v2r ULSE,0.9985318791946308,,
+resampled null,random swap,9,2,n2v2r elbow dimension,1.0,,
+resampled null,random swap,9,2,n2v2r degree-adjusted z,0.999464019388516,0.8958333333333334,1.0
+resampled null,random swap,9,2,n2v2r degree-adjusted z (elbow),1.0,1.0,0.0
+resampled null,random swap,10,2,DeDi,1.0,,
+resampled null,random swap,10,2,n2v2r (default),0.9733291387024608,,
+resampled null,random swap,10,2,n2v2r euclidean only,0.9500838926174496,,
+resampled null,random swap,10,2,n2v2r cosine only,0.9875559284116331,,
+resampled null,random swap,10,2,n2v2r ULSE,0.970917225950783,,
+resampled null,random swap,10,2,n2v2r elbow dimension,0.9902940902311708,,
+resampled null,random swap,10,2,n2v2r degree-adjusted z,0.9950130499627144,0.875,1.0
+resampled null,random swap,10,2,n2v2r degree-adjusted z (elbow),0.9999067859806114,0.8958333333333334,0.0
+resampled null,random swap,11,2,DeDi,1.0,,
+resampled null,random swap,11,2,n2v2r (default),0.9811940715883669,,
+resampled null,random swap,11,2,n2v2r euclidean only,0.9603723900074571,,
+resampled null,random swap,11,2,n2v2r cosine only,0.9903523489932886,,
+resampled null,random swap,11,2,n2v2r ULSE,0.9810775540641312,,
+resampled null,random swap,11,2,n2v2r elbow dimension,0.9928108687546607,,
+resampled null,random swap,11,2,n2v2r degree-adjusted z,0.9985085756897838,0.9166666666666666,2.0
+resampled null,random swap,11,2,n2v2r degree-adjusted z (elbow),0.9996737509321402,0.9166666666666666,0.0
+resampled null,random swap,12,2,DeDi,0.9866004847129008,,
+resampled null,random swap,12,2,n2v2r (default),0.9825456748695004,,
+resampled null,random swap,12,2,n2v2r euclidean only,0.968027591349739,,
+resampled null,random swap,12,2,n2v2r cosine only,0.9863674496644296,,
+resampled null,random swap,12,2,n2v2r ULSE,0.9830233967188665,,
+resampled null,random swap,12,2,n2v2r elbow dimension,0.9998601789709173,,
+resampled null,random swap,12,2,n2v2r degree-adjusted z,0.9988348247576435,0.9583333333333334,0.0
+resampled null,random swap,12,2,n2v2r degree-adjusted z (elbow),1.0,0.875,0.0
+resampled null,random swap,13,2,DeDi,1.0,,
+resampled null,random swap,13,2,n2v2r (default),0.9843633482475764,,
+resampled null,random swap,13,2,n2v2r euclidean only,0.9616424310216256,,
+resampled null,random swap,13,2,n2v2r cosine only,0.9921933258762118,,
+resampled null,random swap,13,2,n2v2r ULSE,0.9875093214019388,,
+resampled null,random swap,13,2,n2v2r elbow dimension,0.9851090604026845,,
+resampled null,random swap,13,2,n2v2r degree-adjusted z,0.9985085756897838,0.9375,0.0
+resampled null,random swap,13,2,n2v2r degree-adjusted z (elbow),0.9952227815063386,0.8125,0.0
+resampled null,random swap,14,2,DeDi,0.9999533929903057,,
+resampled null,random swap,14,2,n2v2r (default),0.9825456748695004,,
+resampled null,random swap,14,2,n2v2r euclidean only,0.9480914429530202,,
+resampled null,random swap,14,2,n2v2r cosine only,0.9912145786726324,,
+resampled null,random swap,14,2,n2v2r ULSE,0.9876724459358688,,
+resampled null,random swap,14,2,n2v2r elbow dimension,0.9711269574944071,,
+resampled null,random swap,14,2,n2v2r degree-adjusted z,0.9979725950782998,0.8958333333333334,2.0
+resampled null,random swap,14,2,n2v2r degree-adjusted z (elbow),0.9713599925428784,0.9166666666666666,0.0
+resampled null,random swap,15,2,DeDi,1.0,,
+resampled null,random swap,15,2,n2v2r (default),0.987346196868009,,
+resampled null,random swap,15,2,n2v2r euclidean only,0.9685169649515287,,
+resampled null,random swap,15,2,n2v2r cosine only,0.9975531319910514,,
+resampled null,random swap,15,2,n2v2r ULSE,0.9885579791200596,,
+resampled null,random swap,15,2,n2v2r elbow dimension,1.0,,
+resampled null,random swap,15,2,n2v2r degree-adjusted z,0.9999533929903057,0.9583333333333334,0.0
+resampled null,random swap,15,2,n2v2r degree-adjusted z (elbow),1.0,1.0,0.0
+resampled null,random swap,16,2,DeDi,0.9931953765846383,,
+resampled null,random swap,16,2,n2v2r (default),0.998019202087994,,
+resampled null,random swap,16,2,n2v2r euclidean only,0.998450316927666,,
+resampled null,random swap,16,2,n2v2r cosine only,0.9873811521252797,,
+resampled null,random swap,16,2,n2v2r ULSE,0.9978793810589113,,
+resampled null,random swap,16,2,n2v2r elbow dimension,0.9992542878448919,,
+resampled null,random swap,16,2,n2v2r degree-adjusted z,0.9998834824757643,0.8958333333333334,1.0
+resampled null,random swap,16,2,n2v2r degree-adjusted z (elbow),0.9999533929903057,0.9791666666666666,0.0
+resampled null,random swap,17,2,DeDi,0.9948033184190902,,
+resampled null,random swap,17,2,n2v2r (default),0.9984736204325131,,
+resampled null,random swap,17,2,n2v2r euclidean only,0.988977442207308,,
+resampled null,random swap,17,2,n2v2r cosine only,0.9937080536912751,,
+resampled null,random swap,17,2,n2v2r ULSE,0.998555182699478,,
+resampled null,random swap,17,2,n2v2r elbow dimension,0.9832797352721849,,
+resampled null,random swap,17,2,n2v2r degree-adjusted z,0.9945935868754661,0.9583333333333334,0.0
+resampled null,random swap,17,2,n2v2r degree-adjusted z (elbow),0.981753355704698,0.8958333333333334,0.0
+resampled null,random swap,18,2,DeDi,0.9998368754660701,,
+resampled null,random swap,18,2,n2v2r (default),0.9902707867263236,,
+resampled null,random swap,18,2,n2v2r euclidean only,0.9590324384787472,,
+resampled null,random swap,18,2,n2v2r cosine only,0.9920418530947055,,
+resampled null,random swap,18,2,n2v2r ULSE,0.9934400633855331,,
+resampled null,random swap,18,2,n2v2r elbow dimension,0.9978560775540641,,
+resampled null,random swap,18,2,n2v2r degree-adjusted z,0.9996271439224459,0.875,0.0
+resampled null,random swap,18,2,n2v2r degree-adjusted z (elbow),0.9978560775540641,0.9583333333333334,0.0
+resampled null,random swap,19,2,DeDi,1.0,,
+resampled null,random swap,19,2,n2v2r (default),0.9954092095451156,,
+resampled null,random swap,19,2,n2v2r euclidean only,0.990795115585384,,
+resampled null,random swap,19,2,n2v2r cosine only,0.9877190529455631,,
+resampled null,random swap,19,2,n2v2r ULSE,0.9931720730797912,,
+resampled null,random swap,19,2,n2v2r elbow dimension,0.9987998695003728,,
+resampled null,random swap,19,2,n2v2r degree-adjusted z,0.9858547725577927,0.9375,1.0
+resampled null,random swap,19,2,n2v2r degree-adjusted z (elbow),1.0,0.9166666666666666,0.0
+real,degree-matched swap,0,2,DeDi,0.47779175988068606,,
+real,degree-matched swap,0,2,n2v2r (default),0.6442603467561522,,
+real,degree-matched swap,0,2,n2v2r euclidean only,0.5521532438478747,,
+real,degree-matched swap,0,2,n2v2r cosine only,0.7387444071588367,,
+real,degree-matched swap,0,2,n2v2r ULSE,0.6445632923191648,,
+real,degree-matched swap,0,2,n2v2r elbow dimension,0.47401659209545116,,
+real,degree-matched swap,0,2,n2v2r degree-adjusted z,0.6790408277404921,0.0,0.0
+real,degree-matched swap,0,2,n2v2r degree-adjusted z (elbow),0.5342794556301268,0.0,0.0
+real,degree-matched swap,1,2,DeDi,0.4699617822520507,,
+real,degree-matched swap,1,2,n2v2r (default),0.6068349179716629,,
+real,degree-matched swap,1,2,n2v2r euclidean only,0.5927479492915735,,
+real,degree-matched swap,1,2,n2v2r cosine only,0.6268060216256525,,
+real,degree-matched swap,1,2,n2v2r ULSE,0.6074175055928411,,
+real,degree-matched swap,1,2,n2v2r elbow dimension,0.5172795488441462,,
+real,degree-matched swap,1,2,n2v2r degree-adjusted z,0.705024235645041,0.0,0.0
+real,degree-matched swap,1,2,n2v2r degree-adjusted z (elbow),0.5689084638329605,0.0,0.0
+real,degree-matched swap,2,2,DeDi,0.5452554064131245,,
+real,degree-matched swap,2,2,n2v2r (default),0.6233337994034303,,
+real,degree-matched swap,2,2,n2v2r euclidean only,0.5730797912005966,,
+real,degree-matched swap,2,2,n2v2r cosine only,0.6508901938851603,,
+real,degree-matched swap,2,2,n2v2r ULSE,0.6336339485458613,,
+real,degree-matched swap,2,2,n2v2r elbow dimension,0.481030947054437,,
+real,degree-matched swap,2,2,n2v2r degree-adjusted z,0.6511698359433259,0.0,0.0
+real,degree-matched swap,2,2,n2v2r degree-adjusted z (elbow),0.5179903057419836,0.0,0.0
+real,degree-matched swap,3,2,DeDi,0.4356823266219239,,
+real,degree-matched swap,3,2,n2v2r (default),0.7310892058165548,,
+real,degree-matched swap,3,2,n2v2r euclidean only,0.6967747949291574,,
+real,degree-matched swap,3,2,n2v2r cosine only,0.7293997017151379,,
+real,degree-matched swap,3,2,n2v2r ULSE,0.735097408650261,,
+real,degree-matched swap,3,2,n2v2r elbow dimension,0.5346756152125279,,
+real,degree-matched swap,3,2,n2v2r degree-adjusted z,0.7214765100671141,0.020833333333333332,0.0
+real,degree-matched swap,3,2,n2v2r degree-adjusted z (elbow),0.5575130499627144,0.0,0.0
+real,degree-matched swap,4,2,DeDi,0.5359806114839671,,
+real,degree-matched swap,4,2,n2v2r (default),0.7216279828486204,,
+real,degree-matched swap,4,2,n2v2r euclidean only,0.6917994966442953,,
+real,degree-matched swap,4,2,n2v2r cosine only,0.7251934190902312,,
+real,degree-matched swap,4,2,n2v2r ULSE,0.7263702460850112,,
+real,degree-matched swap,4,2,n2v2r elbow dimension,0.5503122669649515,,
+real,degree-matched swap,4,2,n2v2r degree-adjusted z,0.7457587621178225,0.041666666666666664,0.0
+real,degree-matched swap,4,2,n2v2r degree-adjusted z (elbow),0.5660654362416108,0.0,0.0
+real,degree-matched swap,5,2,DeDi,0.47450596569724085,,
+real,degree-matched swap,5,2,n2v2r (default),0.693733687546607,,
+real,degree-matched swap,5,2,n2v2r euclidean only,0.6460430648769575,,
+real,degree-matched swap,5,2,n2v2r cosine only,0.728595730797912,,
+real,degree-matched swap,5,2,n2v2r ULSE,0.6888399515287099,,
+real,degree-matched swap,5,2,n2v2r elbow dimension,0.5279175988068605,,
+real,degree-matched swap,5,2,n2v2r degree-adjusted z,0.6734013795674869,0.0625,0.0
+real,degree-matched swap,5,2,n2v2r degree-adjusted z (elbow),0.5484479865771812,0.020833333333333332,0.0
+real,degree-matched swap,6,2,DeDi,0.4656273303504847,,
+real,degree-matched swap,6,2,n2v2r (default),0.7560822147651006,,
+real,degree-matched swap,6,2,n2v2r euclidean only,0.7642267897091722,,
+real,degree-matched swap,6,2,n2v2r cosine only,0.7352721849366145,,
+real,degree-matched swap,6,2,n2v2r ULSE,0.7514098620432513,,
+real,degree-matched swap,6,2,n2v2r elbow dimension,0.5221499813571961,,
+real,degree-matched swap,6,2,n2v2r degree-adjusted z,0.8074664429530202,0.0,0.0
+real,degree-matched swap,6,2,n2v2r degree-adjusted z (elbow),0.5407811334824758,0.0,0.0
+real,degree-matched swap,7,2,DeDi,0.478863721103654,,
+real,degree-matched swap,7,2,n2v2r (default),0.6294742729306487,,
+real,degree-matched swap,7,2,n2v2r euclidean only,0.6306044929157345,,
+real,degree-matched swap,7,2,n2v2r cosine only,0.6297772184936614,,
+real,degree-matched swap,7,2,n2v2r ULSE,0.6323755592841164,,
+real,degree-matched swap,7,2,n2v2r elbow dimension,0.4869383855331842,,
+real,degree-matched swap,7,2,n2v2r degree-adjusted z,0.7097548471290082,0.041666666666666664,0.0
+real,degree-matched swap,7,2,n2v2r degree-adjusted z (elbow),0.5174776286353467,0.0,0.0
+real,degree-matched swap,8,2,DeDi,0.5282904548844146,,
+real,degree-matched swap,8,2,n2v2r (default),0.7448965324384788,,
+real,degree-matched swap,8,2,n2v2r euclidean only,0.767605797912006,,
+real,degree-matched swap,8,2,n2v2r cosine only,0.7024375466070097,,
+real,degree-matched swap,8,2,n2v2r ULSE,0.747751211782252,,
+real,degree-matched swap,8,2,n2v2r elbow dimension,0.6482918530947055,,
+real,degree-matched swap,8,2,n2v2r degree-adjusted z,0.8449151752423565,0.125,1.0
+real,degree-matched swap,8,2,n2v2r degree-adjusted z (elbow),0.6518922445935869,0.0,0.0
+real,degree-matched swap,9,2,DeDi,0.5228840417598807,,
+real,degree-matched swap,9,2,n2v2r (default),0.713798005219985,,
+real,degree-matched swap,9,2,n2v2r euclidean only,0.6855541573452647,,
+real,degree-matched swap,9,2,n2v2r cosine only,0.724902125279642,,
+real,degree-matched swap,9,2,n2v2r ULSE,0.7150214392244594,,
+real,degree-matched swap,9,2,n2v2r elbow dimension,0.5130965697240865,,
+real,degree-matched swap,9,2,n2v2r degree-adjusted z,0.763725764354959,0.041666666666666664,0.0
+real,degree-matched swap,9,2,n2v2r degree-adjusted z (elbow),0.5454651379567487,0.0,0.0
+real,degree-matched swap,10,2,DeDi,0.4576575316927666,,
+real,degree-matched swap,10,2,n2v2r (default),0.6883855331841909,,
+real,degree-matched swap,10,2,n2v2r euclidean only,0.6898769574944071,,
+real,degree-matched swap,10,2,n2v2r cosine only,0.6693465697240865,,
+real,degree-matched swap,10,2,n2v2r ULSE,0.6840860365398956,,
+real,degree-matched swap,10,2,n2v2r elbow dimension,0.5785444630872483,,
+real,degree-matched swap,10,2,n2v2r degree-adjusted z,0.7360412005965697,0.0,0.0
+real,degree-matched swap,10,2,n2v2r degree-adjusted z (elbow),0.5869919835943326,0.0,0.0
+real,degree-matched swap,11,2,DeDi,0.5201342281879194,,
+real,degree-matched swap,11,2,n2v2r (default),0.720113255033557,,
+real,degree-matched swap,11,2,n2v2r euclidean only,0.7235971290082028,,
+real,degree-matched swap,11,2,n2v2r cosine only,0.6933258762117822,,
+real,degree-matched swap,11,2,n2v2r ULSE,0.727791759880686,,
+real,degree-matched swap,11,2,n2v2r elbow dimension,0.5525144481730052,,
+real,degree-matched swap,11,2,n2v2r degree-adjusted z,0.7773816181953765,0.0625,1.0
+real,degree-matched swap,11,2,n2v2r degree-adjusted z (elbow),0.5680928411633109,0.0,0.0
+real,degree-matched swap,12,2,DeDi,0.4500372856077554,,
+real,degree-matched swap,12,2,n2v2r (default),0.5819933818046235,,
+real,degree-matched swap,12,2,n2v2r euclidean only,0.585081096196868,,
+real,degree-matched swap,12,2,n2v2r cosine only,0.5888213087248322,,
+real,degree-matched swap,12,2,n2v2r ULSE,0.5800941461595824,,
+real,degree-matched swap,12,2,n2v2r elbow dimension,0.5144598247576435,,
+real,degree-matched swap,12,2,n2v2r degree-adjusted z,0.6413124533929903,0.0625,1.0
+real,degree-matched swap,12,2,n2v2r degree-adjusted z (elbow),0.5260300149142431,0.020833333333333332,0.0
+real,degree-matched swap,13,2,DeDi,0.5194584265473527,,
+real,degree-matched swap,13,2,n2v2r (default),0.7339555369127517,,
+real,degree-matched swap,13,2,n2v2r euclidean only,0.7013539336316182,,
+real,degree-matched swap,13,2,n2v2r cosine only,0.7476696495152871,,
+real,degree-matched swap,13,2,n2v2r ULSE,0.7384531133482476,,
+real,degree-matched swap,13,2,n2v2r elbow dimension,0.5193652125279642,,
+real,degree-matched swap,13,2,n2v2r degree-adjusted z,0.7498601789709173,0.0625,1.0
+real,degree-matched swap,13,2,n2v2r degree-adjusted z (elbow),0.5421094332587622,0.0,0.0
+real,degree-matched swap,14,2,DeDi,0.4809843400447427,,
+real,degree-matched swap,14,2,n2v2r (default),0.7580164056674124,,
+real,degree-matched swap,14,2,n2v2r euclidean only,0.7087411446681581,,
+real,degree-matched swap,14,2,n2v2r cosine only,0.7838949478001491,,
+real,degree-matched swap,14,2,n2v2r ULSE,0.7621411260253542,,
+real,degree-matched swap,14,2,n2v2r elbow dimension,0.5097525167785235,,
+real,degree-matched swap,14,2,n2v2r degree-adjusted z,0.7955816554809844,0.16666666666666666,1.0
+real,degree-matched swap,14,2,n2v2r degree-adjusted z (elbow),0.5596569724086503,0.020833333333333332,0.0
+real,degree-matched swap,15,2,DeDi,0.49715697240865026,,
+real,degree-matched swap,15,2,n2v2r (default),0.6059959917971663,,
+real,degree-matched swap,15,2,n2v2r euclidean only,0.6443652125279642,,
+real,degree-matched swap,15,2,n2v2r cosine only,0.5691414988814317,,
+real,degree-matched swap,15,2,n2v2r ULSE,0.6094798657718121,,
+real,degree-matched swap,15,2,n2v2r elbow dimension,0.5740934936614467,,
+real,degree-matched swap,15,2,n2v2r degree-adjusted z,0.7418204697986577,0.08333333333333333,1.0
+real,degree-matched swap,15,2,n2v2r degree-adjusted z (elbow),0.5945656226696495,0.0,0.0
+real,degree-matched swap,16,2,DeDi,0.4831282624906786,,
+real,degree-matched swap,16,2,n2v2r (default),0.6850764354958986,,
+real,degree-matched swap,16,2,n2v2r euclidean only,0.7516778523489933,,
+real,degree-matched swap,16,2,n2v2r cosine only,0.5954162005965697,,
+real,degree-matched swap,16,2,n2v2r ULSE,0.6842258575689784,,
+real,degree-matched swap,16,2,n2v2r elbow dimension,0.6199314876957495,,
+real,degree-matched swap,16,2,n2v2r degree-adjusted z,0.7794556301267711,0.0,0.0
+real,degree-matched swap,16,2,n2v2r degree-adjusted z (elbow),0.582191461595824,0.0,0.0
+real,degree-matched swap,17,2,DeDi,0.5145879940343028,,
+real,degree-matched swap,17,2,n2v2r (default),0.6969379194630873,,
+real,degree-matched swap,17,2,n2v2r euclidean only,0.6669463087248322,,
+real,degree-matched swap,17,2,n2v2r cosine only,0.7222105704697986,,
+real,degree-matched swap,17,2,n2v2r ULSE,0.6983477815063386,,
+real,degree-matched swap,17,2,n2v2r elbow dimension,0.5563828299776287,,
+real,degree-matched swap,17,2,n2v2r degree-adjusted z,0.6955630126771066,0.0,0.0
+real,degree-matched swap,17,2,n2v2r degree-adjusted z (elbow),0.5703066741237882,0.0,0.0
+real,degree-matched swap,18,2,DeDi,0.5060123042505593,,
+real,degree-matched swap,18,2,n2v2r (default),0.693815249813572,,
+real,degree-matched swap,18,2,n2v2r euclidean only,0.6775843586875466,,
+real,degree-matched swap,18,2,n2v2r cosine only,0.6927782438478747,,
+real,degree-matched swap,18,2,n2v2r ULSE,0.6923238255033557,,
+real,degree-matched swap,18,2,n2v2r elbow dimension,0.573068139448173,,
+real,degree-matched swap,18,2,n2v2r degree-adjusted z,0.7084731543624161,0.08333333333333333,1.0
+real,degree-matched swap,18,2,n2v2r degree-adjusted z (elbow),0.5790920954511558,0.020833333333333332,0.0
+real,degree-matched swap,19,2,DeDi,0.5050801640566741,,
+real,degree-matched swap,19,2,n2v2r (default),0.6817323825503355,,
+real,degree-matched swap,19,2,n2v2r euclidean only,0.7130872483221476,,
+real,degree-matched swap,19,2,n2v2r cosine only,0.640892990305742,,
+real,degree-matched swap,19,2,n2v2r ULSE,0.6755802572706935,,
+real,degree-matched swap,19,2,n2v2r elbow dimension,0.5572334079045489,,
+real,degree-matched swap,19,2,n2v2r degree-adjusted z,0.7446634973900075,0.041666666666666664,0.0
+real,degree-matched swap,19,2,n2v2r degree-adjusted z (elbow),0.5532252050708426,0.0,0.0
+real,random swap,0,2,DeDi,0.8471290082028337,,
+real,random swap,0,2,n2v2r (default),0.8647464578672632,,
+real,random swap,0,2,n2v2r euclidean only,0.8822590417598807,,
+real,random swap,0,2,n2v2r cosine only,0.7989956189410887,,
+real,random swap,0,2,n2v2r ULSE,0.8635929343773303,,
+real,random swap,0,2,n2v2r elbow dimension,0.7066904362416108,,
+real,random swap,0,2,n2v2r degree-adjusted z,0.8821075689783744,0.08333333333333333,0.0
+real,random swap,0,2,n2v2r degree-adjusted z (elbow),0.6915548098434005,0.0,0.0
+real,random swap,1,2,DeDi,0.8578719239373602,,
+real,random swap,1,2,n2v2r (default),0.8943535607755406,,
+real,random swap,1,2,n2v2r euclidean only,0.9249860178970917,,
+real,random swap,1,2,n2v2r cosine only,0.8109386651752424,,
+real,random swap,1,2,n2v2r ULSE,0.8892151379567487,,
+real,random swap,1,2,n2v2r elbow dimension,0.678481543624161,,
+real,random swap,1,2,n2v2r degree-adjusted z,0.8988161819537659,0.08333333333333333,0.0
+real,random swap,1,2,n2v2r degree-adjusted z (elbow),0.6353467561521253,0.0,0.0
+real,random swap,2,2,DeDi,0.834708240119314,,
+real,random swap,2,2,n2v2r (default),0.8392873788217748,,
+real,random swap,2,2,n2v2r euclidean only,0.8678458240119314,,
+real,random swap,2,2,n2v2r cosine only,0.7662891498881432,,
+real,random swap,2,2,n2v2r ULSE,0.829569817300522,,
+real,random swap,2,2,n2v2r elbow dimension,0.6900517337807607,,
+real,random swap,2,2,n2v2r degree-adjusted z,0.8614373601789709,0.020833333333333332,0.0
+real,random swap,2,2,n2v2r degree-adjusted z (elbow),0.6449711036539896,0.0,0.0
+real,random swap,3,2,DeDi,0.8942486950037286,,
+real,random swap,3,2,n2v2r (default),0.8943535607755406,,
+real,random swap,3,2,n2v2r euclidean only,0.8892151379567487,,
+real,random swap,3,2,n2v2r cosine only,0.854423005219985,,
+real,random swap,3,2,n2v2r ULSE,0.891988255033557,,
+real,random swap,3,2,n2v2r elbow dimension,0.7025657158836689,,
+real,random swap,3,2,n2v2r degree-adjusted z,0.8566834451901566,0.08333333333333333,0.0
+real,random swap,3,2,n2v2r degree-adjusted z (elbow),0.7047912005965697,0.020833333333333332,0.0
+real,random swap,4,2,DeDi,0.8124766964951529,,
+real,random swap,4,2,n2v2r (default),0.8985598434004475,,
+real,random swap,4,2,n2v2r euclidean only,0.8959964578672632,,
+real,random swap,4,2,n2v2r cosine only,0.8326109246830723,,
+real,random swap,4,2,n2v2r ULSE,0.9014960850111857,,
+real,random swap,4,2,n2v2r elbow dimension,0.6859153616703952,,
+real,random swap,4,2,n2v2r degree-adjusted z,0.9002609992542878,0.0,0.0
+real,random swap,4,2,n2v2r degree-adjusted z (elbow),0.645041014168531,0.0,0.0
+real,random swap,5,2,DeDi,0.8079092095451156,,
+real,random swap,5,2,n2v2r (default),0.879252889634601,,
+real,random swap,5,2,n2v2r euclidean only,0.8351160514541387,,
+real,random swap,5,2,n2v2r cosine only,0.877085663683818,,
+real,random swap,5,2,n2v2r ULSE,0.8794043624161074,,
+real,random swap,5,2,n2v2r elbow dimension,0.5870036353467561,,
+real,random swap,5,2,n2v2r degree-adjusted z,0.8275540641312453,0.020833333333333332,0.0
+real,random swap,5,2,n2v2r degree-adjusted z (elbow),0.5829604772557793,0.020833333333333332,0.0
+real,random swap,6,2,DeDi,0.8207727442207308,,
+real,random swap,6,2,n2v2r (default),0.8300358873974646,,
+real,random swap,6,2,n2v2r euclidean only,0.8365375652498136,,
+real,random swap,6,2,n2v2r cosine only,0.7815529455630127,,
+real,random swap,6,2,n2v2r ULSE,0.8269714765100671,,
+real,random swap,6,2,n2v2r elbow dimension,0.6921140939597316,,
+real,random swap,6,2,n2v2r degree-adjusted z,0.8278104026845637,0.08333333333333333,0.0
+real,random swap,6,2,n2v2r degree-adjusted z (elbow),0.6702787099179717,0.0,0.0
+real,random swap,7,2,DeDi,0.8378076062639821,,
+real,random swap,7,2,n2v2r (default),0.8337411446681581,,
+real,random swap,7,2,n2v2r euclidean only,0.8657718120805369,,
+real,random swap,7,2,n2v2r cosine only,0.7532275354213274,,
+real,random swap,7,2,n2v2r ULSE,0.8295814690529456,,
+real,random swap,7,2,n2v2r elbow dimension,0.6819421140939598,,
+real,random swap,7,2,n2v2r degree-adjusted z,0.8280667412378822,0.20833333333333334,1.0
+real,random swap,7,2,n2v2r degree-adjusted z (elbow),0.6378169276659209,0.08333333333333333,0.0
+real,random swap,8,2,DeDi,0.9036633109619687,,
+real,random swap,8,2,n2v2r (default),0.9069258016405667,,
+real,random swap,8,2,n2v2r euclidean only,0.9071238814317674,,
+real,random swap,8,2,n2v2r cosine only,0.8603420954511558,,
+real,random swap,8,2,n2v2r ULSE,0.9000512677106637,,
+real,random swap,8,2,n2v2r elbow dimension,0.7004567486950037,,
+real,random swap,8,2,n2v2r degree-adjusted z,0.8514867636092468,0.041666666666666664,0.0
+real,random swap,8,2,n2v2r degree-adjusted z (elbow),0.6264215137956749,0.08333333333333333,0.0
+real,random swap,9,2,DeDi,0.7866331096196868,,
+real,random swap,9,2,n2v2r (default),0.852873322147651,,
+real,random swap,9,2,n2v2r euclidean only,0.8754194630872483,,
+real,random swap,9,2,n2v2r cosine only,0.8019202087994034,,
+real,random swap,9,2,n2v2r ULSE,0.8525587248322147,,
+real,random swap,9,2,n2v2r elbow dimension,0.6854026845637584,,
+real,random swap,9,2,n2v2r degree-adjusted z,0.8605518269947801,0.020833333333333332,0.0
+real,random swap,9,2,n2v2r degree-adjusted z (elbow),0.6155853840417599,0.020833333333333332,0.0
+real,random swap,10,2,DeDi,0.9081841909023117,,
+real,random swap,10,2,n2v2r (default),0.9369873228933632,,
+real,random swap,10,2,n2v2r euclidean only,0.939480797912006,,
+real,random swap,10,2,n2v2r cosine only,0.883936894108874,,
+real,random swap,10,2,n2v2r ULSE,0.9305089485458613,,
+real,random swap,10,2,n2v2r elbow dimension,0.6528127330350485,,
+real,random swap,10,2,n2v2r degree-adjusted z,0.915454884414616,0.1875,0.0
+real,random swap,10,2,n2v2r degree-adjusted z (elbow),0.6259787472035794,0.0625,0.0
+real,random swap,11,2,DeDi,0.8100997390007457,,
+real,random swap,11,2,n2v2r (default),0.8404991610738255,,
+real,random swap,11,2,n2v2r euclidean only,0.8191531506338553,,
+real,random swap,11,2,n2v2r cosine only,0.8018036912751678,,
+real,random swap,11,2,n2v2r ULSE,0.8374930089485458,,
+real,random swap,11,2,n2v2r elbow dimension,0.6481869873228934,,
+real,random swap,11,2,n2v2r degree-adjusted z,0.8111717002237137,0.020833333333333332,0.0
+real,random swap,11,2,n2v2r degree-adjusted z (elbow),0.615608687546607,0.020833333333333332,0.0
+real,random swap,12,2,DeDi,0.8329837807606264,,
+real,random swap,12,2,n2v2r (default),0.8884461222967934,,
+real,random swap,12,2,n2v2r euclidean only,0.8769691461595824,,
+real,random swap,12,2,n2v2r cosine only,0.845917225950783,,
+real,random swap,12,2,n2v2r ULSE,0.8886325503355704,,
+real,random swap,12,2,n2v2r elbow dimension,0.6685425988068605,,
+real,random swap,12,2,n2v2r degree-adjusted z,0.8634647651006712,0.0,0.0
+real,random swap,12,2,n2v2r degree-adjusted z (elbow),0.6658510439970171,0.020833333333333332,0.0
+real,random swap,13,2,DeDi,0.899748322147651,,
+real,random swap,13,2,n2v2r (default),0.9020087621178225,,
+real,random swap,13,2,n2v2r euclidean only,0.9095824011931395,,
+real,random swap,13,2,n2v2r cosine only,0.8622879381058911,,
+real,random swap,13,2,n2v2r ULSE,0.8975577926920209,,
+real,random swap,13,2,n2v2r elbow dimension,0.6682862602535421,,
+real,random swap,13,2,n2v2r degree-adjusted z,0.9046420581655481,0.0,0.0
+real,random swap,13,2,n2v2r degree-adjusted z (elbow),0.6343680089485458,0.0,0.0
+real,random swap,14,2,DeDi,0.8159023117076808,,
+real,random swap,14,2,n2v2r (default),0.9057373228933632,,
+real,random swap,14,2,n2v2r euclidean only,0.9130080164056674,,
+real,random swap,14,2,n2v2r cosine only,0.8597711595824012,,
+real,random swap,14,2,n2v2r ULSE,0.898839485458613,,
+real,random swap,14,2,n2v2r elbow dimension,0.6727605331841909,,
+real,random swap,14,2,n2v2r degree-adjusted z,0.901729120059657,0.020833333333333332,0.0
+real,random swap,14,2,n2v2r degree-adjusted z (elbow),0.6067999627143923,0.020833333333333332,0.0
+real,random swap,15,2,DeDi,0.8877237136465325,,
+real,random swap,15,2,n2v2r (default),0.9031389821029083,,
+real,random swap,15,2,n2v2r euclidean only,0.9206981730052199,,
+real,random swap,15,2,n2v2r cosine only,0.8422935309470544,,
+real,random swap,15,2,n2v2r ULSE,0.8967188665175242,,
+real,random swap,15,2,n2v2r elbow dimension,0.674659768829232,,
+real,random swap,15,2,n2v2r degree-adjusted z,0.8770973154362416,0.020833333333333332,0.0
+real,random swap,15,2,n2v2r degree-adjusted z (elbow),0.5934703579418344,0.020833333333333332,0.0
+real,random swap,16,2,DeDi,0.8426081282624907,,
+real,random swap,16,2,n2v2r (default),0.9162122483221476,,
+real,random swap,16,2,n2v2r euclidean only,0.9111320842654735,,
+real,random swap,16,2,n2v2r cosine only,0.86659908650261,,
+real,random swap,16,2,n2v2r ULSE,0.9148023862788963,,
+real,random swap,16,2,n2v2r elbow dimension,0.7219891871737509,,
+real,random swap,16,2,n2v2r degree-adjusted z,0.9172026472781506,0.0,0.0
+real,random swap,16,2,n2v2r degree-adjusted z (elbow),0.6799729679343773,0.0,0.0
+real,random swap,17,2,DeDi,0.8236157718120806,,
+real,random swap,17,2,n2v2r (default),0.8675778337061895,,
+real,random swap,17,2,n2v2r euclidean only,0.9024049217002237,,
+real,random swap,17,2,n2v2r cosine only,0.7818092841163311,,
+real,random swap,17,2,n2v2r ULSE,0.8609596383296048,,
+real,random swap,17,2,n2v2r elbow dimension,0.705105797912006,,
+real,random swap,17,2,n2v2r degree-adjusted z,0.8777265100671141,0.0,0.0
+real,random swap,17,2,n2v2r degree-adjusted z (elbow),0.6258622296793438,0.0,0.0
+real,random swap,18,2,DeDi,0.772208240119314,,
+real,random swap,18,2,n2v2r (default),0.813303970917226,,
+real,random swap,18,2,n2v2r euclidean only,0.7941135346756152,,
+real,random swap,18,2,n2v2r cosine only,0.7803295115585384,,
+real,random swap,18,2,n2v2r ULSE,0.8068489000745712,,
+real,random swap,18,2,n2v2r elbow dimension,0.6210850111856824,,
+real,random swap,18,2,n2v2r degree-adjusted z,0.7837900820283371,0.020833333333333332,0.0
+real,random swap,18,2,n2v2r degree-adjusted z (elbow),0.5935169649515287,0.020833333333333332,0.0
+real,random swap,19,2,DeDi,0.8272744220730798,,
+real,random swap,19,2,n2v2r (default),0.8422352721849367,,
+real,random swap,19,2,n2v2r euclidean only,0.8474203020134228,,
+real,random swap,19,2,n2v2r cosine only,0.7986111111111112,,
+real,random swap,19,2,n2v2r ULSE,0.8458706189410887,,
+real,random swap,19,2,n2v2r elbow dimension,0.6717002237136466,,
+real,random swap,19,2,n2v2r degree-adjusted z,0.8206562266964952,0.041666666666666664,0.0
+real,random swap,19,2,n2v2r degree-adjusted z (elbow),0.6287285607755406,0.020833333333333332,0.0

@@ -7,7 +7,6 @@ import json
 import os
 
 
-import matplotlib as mpl
 from collections import defaultdict
 import gseapy
 from itertools import chain
@@ -571,7 +570,7 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, pre
     aggregate_prerank_pd['Lead_genes'] = [list(set(flatten(aggregate_genes[k]))) for k in aggregate_prerank_pd.index]
     
     aggregate_prerank_pd.sort_values(
-        by=['padj', 'stability'], ascending=False, inplace=True)
+        by=['padj', 'stability'], ascending=[True, False], inplace=True)
 
     return aggregate_prerank_pd
 

@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "node2vec2rank"
+dynamic = ["version"]
+description = "Graph differential analysis with multi-layer spectral embedding and ranking"
+readme = "README.md"
+license = { text = "GPL-3.0-only" }
+authors = [
+    { name = "Panagiotis Mandros", email = "mandros.p@gmail.com" },
+    { name = "Anis Ismail" },
+]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.22",
+    "pandas>=1.5",
+    "scipy>=1.9",
+    "networkx>=2.8",
+]
+keywords = ["network biology", "differential network analysis", "spectral embedding", "UASE", "ranking"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Intended Audience :: Science/Research",
+]
+
+[project.optional-dependencies]
+enrichment = ["gseapy>=0.12", "plotly>=5", "kaleido", "joblib"]
+plot = ["matplotlib>=3.5"]
+test = ["pytest>=7", "matplotlib>=3.5"]
+
+[project.scripts]
+n2v2r = "node2vec2rank.node2vec2rank:main"
+
+[project.urls]
+Homepage = "https://github.com/pmandros/node2vec2rank"
+Paper = "https://www.biorxiv.org/content/10.1101/2024.06.16.599201v1"
+Issues = "https://github.com/pmandros/node2vec2rank/issues"
+
+[tool.setuptools]
+packages = ["node2vec2rank"]
+
+[tool.setuptools.dynamic]
+version = { attr = "node2vec2rank.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

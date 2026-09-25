@@ -1,0 +1,1641 @@
+analysis,method,bin_start,count,replicate,elbow_dimension
+observed,n2v2r degree-adjusted z,0.0,33,,
+observed,n2v2r degree-adjusted z,0.05,51,,
+observed,n2v2r degree-adjusted z,0.1,46,,
+observed,n2v2r degree-adjusted z,0.15000000000000002,28,,
+observed,n2v2r degree-adjusted z,0.2,40,,
+observed,n2v2r degree-adjusted z,0.25,43,,
+observed,n2v2r degree-adjusted z,0.30000000000000004,54,,
+observed,n2v2r degree-adjusted z,0.35000000000000003,53,,
+observed,n2v2r degree-adjusted z,0.4,64,,
+observed,n2v2r degree-adjusted z,0.45,47,,
+observed,n2v2r degree-adjusted z,0.5,42,,
+observed,n2v2r degree-adjusted z,0.55,34,,
+observed,n2v2r degree-adjusted z,0.6000000000000001,42,,
+observed,n2v2r degree-adjusted z,0.65,46,,
+observed,n2v2r degree-adjusted z,0.7000000000000001,34,,
+observed,n2v2r degree-adjusted z,0.75,53,,
+observed,n2v2r degree-adjusted z,0.8,32,,
+observed,n2v2r degree-adjusted z,0.8500000000000001,43,,
+observed,n2v2r degree-adjusted z,0.9,46,,
+observed,n2v2r degree-adjusted z,0.9500000000000001,88,,
+observed,n2v2r degree-adjusted z (elbow),0.0,27,,
+observed,n2v2r degree-adjusted z (elbow),0.05,31,,
+observed,n2v2r degree-adjusted z (elbow),0.1,53,,
+observed,n2v2r degree-adjusted z (elbow),0.15000000000000002,44,,
+observed,n2v2r degree-adjusted z (elbow),0.2,43,,
+observed,n2v2r degree-adjusted z (elbow),0.25,59,,
+observed,n2v2r degree-adjusted z (elbow),0.30000000000000004,57,,
+observed,n2v2r degree-adjusted z (elbow),0.35000000000000003,48,,
+observed,n2v2r degree-adjusted z (elbow),0.4,59,,
+observed,n2v2r degree-adjusted z (elbow),0.45,38,,
+observed,n2v2r degree-adjusted z (elbow),0.5,43,,
+observed,n2v2r degree-adjusted z (elbow),0.55,45,,
+observed,n2v2r degree-adjusted z (elbow),0.6000000000000001,35,,
+observed,n2v2r degree-adjusted z (elbow),0.65,35,,
+observed,n2v2r degree-adjusted z (elbow),0.7000000000000001,40,,
+observed,n2v2r degree-adjusted z (elbow),0.75,35,,
+observed,n2v2r degree-adjusted z (elbow),0.8,40,,
+observed,n2v2r degree-adjusted z (elbow),0.8500000000000001,48,,
+observed,n2v2r degree-adjusted z (elbow),0.9,46,,
+observed,n2v2r degree-adjusted z (elbow),0.9500000000000001,93,,
+null: binomial,n2v2r degree-adjusted z,0.0,46,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,53,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,46,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,47,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,39,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,45,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,46,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,50,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,43,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,44,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,42,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,43,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,55,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,47,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,44,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,43,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,34,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,33,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,37,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,82,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,5,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,35,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,44,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,55,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,69,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,58,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,53,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,46,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,49,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,45,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,42,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,42,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,47,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,37,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,40,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,30,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,40,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,34,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,55,0.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,93,0.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,36,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,33,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,45,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,45,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,65,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,41,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,55,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,53,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,44,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,42,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,40,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,50,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,45,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,31,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,58,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,45,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,48,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,41,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,41,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,61,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,6,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,32,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,48,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,57,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,69,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,62,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,54,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,42,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,51,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,38,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,45,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,43,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,44,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,39,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,41,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,29,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,44,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,49,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,46,1.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,80,1.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,43,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,37,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,47,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,52,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,55,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,42,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,45,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,51,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,39,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,48,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,60,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,59,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,38,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,38,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,39,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,32,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,43,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,45,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,38,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,68,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,5,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,36,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,65,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,64,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,52,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,44,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,52,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,47,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,60,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,34,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,52,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,42,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,49,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,40,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,39,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,39,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,26,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,51,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,43,2.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,79,2.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,33,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,40,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,49,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,43,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,51,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,53,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,49,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,53,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,45,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,43,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,41,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,43,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,37,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,41,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,54,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,40,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,37,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,40,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,55,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,72,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,8,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,29,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,46,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,47,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,61,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,67,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,65,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,49,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,43,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,44,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,44,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,38,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,42,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,37,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,30,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,46,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,42,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,38,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,42,3.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,101,3.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,33,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,50,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,43,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,58,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,42,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,46,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,42,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,51,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,42,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,52,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,47,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,41,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,56,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,41,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,41,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,40,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,40,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,41,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,52,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,61,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,8,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,47,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,49,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,47,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,50,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,72,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,57,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,37,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,48,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,44,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,50,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,44,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,40,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,29,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,38,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,34,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,37,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,38,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,57,4.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,93,4.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,41,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,48,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,43,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,38,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,51,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,53,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,41,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,53,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,36,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,55,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,44,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,54,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,43,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,45,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,35,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,44,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,41,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,43,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,42,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,69,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,11,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,46,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,50,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,51,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,55,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,58,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,50,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,36,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,52,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,50,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,41,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,43,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,43,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,38,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,48,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,31,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,44,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,30,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,45,5.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,97,5.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,40,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,45,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,38,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,52,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,57,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,37,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,45,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,58,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,50,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,37,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,52,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,52,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,46,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,42,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,40,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,51,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,40,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,41,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,33,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,63,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,10,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,38,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,63,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,45,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,49,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,50,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,64,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,55,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,48,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,37,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,47,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,36,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,45,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,39,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,38,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,33,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,39,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,41,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,47,6.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,95,6.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,50,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,42,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,45,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,49,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,53,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,44,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,47,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,41,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,41,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,47,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,52,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,51,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,48,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,40,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,48,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,37,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,41,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,25,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,47,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,71,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,6,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,35,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,57,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,47,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,64,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,67,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,42,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,49,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,48,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,44,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,39,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,41,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,51,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,46,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,32,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,41,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,40,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,45,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,47,7.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,78,7.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,34,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,47,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,48,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,47,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,53,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,55,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,43,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,44,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,50,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,38,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,46,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,43,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,50,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,49,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,41,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,43,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,49,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,45,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,35,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,59,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,2,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,22,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,55,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,63,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,60,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,56,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,53,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,60,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,39,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,49,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,47,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,44,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,46,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,28,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,37,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,43,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,47,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,50,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,46,8.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,72,8.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,39,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,43,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,41,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,47,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,61,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,45,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,32,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,57,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,41,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,53,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,52,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,39,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,48,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,43,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,49,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,53,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,39,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,37,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,41,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,59,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,5,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,40,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,51,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,61,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,52,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,66,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,43,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,44,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,53,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,44,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,50,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,37,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,35,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,53,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,34,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,43,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,46,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,43,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,39,9.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,80,9.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,41,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,40,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,55,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,48,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,42,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,45,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,42,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,50,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,43,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,53,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,51,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,38,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,48,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,43,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,46,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,45,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,47,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,44,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,37,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,61,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,4,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,26,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,61,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,62,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,70,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,55,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,47,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,47,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,47,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,40,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,37,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,48,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,46,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,46,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,46,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,42,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,37,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,33,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,34,10.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,91,10.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,38,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,38,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,50,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,48,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,38,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,69,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,36,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,53,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,43,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,46,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,41,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,47,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,52,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,34,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,38,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,42,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,43,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,44,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,45,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,74,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,10,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,37,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,55,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,58,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,59,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,46,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,50,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,57,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,44,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,43,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,52,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,52,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,38,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,30,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,47,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,38,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,27,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,46,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,40,11.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,90,11.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,30,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,39,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,53,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,63,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,44,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,46,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,52,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,39,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,47,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,46,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,44,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,55,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,46,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,36,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,48,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,48,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,39,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,31,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,46,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,67,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,6,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,30,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,33,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,58,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,65,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,55,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,57,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,47,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,55,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,53,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,43,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,40,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,33,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,38,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,38,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,28,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,50,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,38,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,42,12.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,110,12.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,48,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,44,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,43,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,50,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,47,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,41,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,48,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,35,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,60,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,43,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,56,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,42,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,39,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,55,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,40,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,37,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,35,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,42,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,50,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,64,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,5,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,25,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,49,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,80,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,59,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,68,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,50,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,47,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,38,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,38,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,42,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,46,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,47,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,41,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,42,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,39,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,50,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,44,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,44,13.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,65,13.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,33,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,44,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,38,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,46,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,43,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,54,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,53,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,47,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,58,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,43,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,40,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,47,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,40,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,38,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,39,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,40,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,44,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,43,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,53,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,76,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,2,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,34,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,41,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,70,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,50,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,67,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,48,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,54,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,53,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,40,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,40,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,39,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,32,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,45,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,41,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,43,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,44,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,31,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,50,14.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,95,14.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,37,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,45,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,55,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,36,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,48,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,50,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,43,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,46,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,56,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,43,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,39,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,54,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,34,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,51,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,43,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,44,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,44,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,28,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,48,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,75,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,11,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,47,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,52,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,49,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,44,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,58,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,57,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,45,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,55,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,41,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,41,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,39,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,42,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,39,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,42,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,37,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,27,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,32,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,62,15.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,99,15.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,50,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,43,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,47,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,47,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,42,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,47,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,52,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,41,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,53,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,37,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,37,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,35,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,51,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,53,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,53,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,36,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,40,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,40,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,41,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,74,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,8,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,35,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,48,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,53,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,65,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,59,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,41,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,50,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,49,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,51,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,47,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,48,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,36,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,44,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,34,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,29,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,43,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,43,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,45,16.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,91,16.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,36,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,41,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,50,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,48,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,44,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,44,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,54,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,46,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,48,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,48,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,49,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,39,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,39,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,33,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,59,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,33,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,34,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,41,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,39,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,94,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,16,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,30,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,47,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,49,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,59,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,44,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,64,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,41,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,63,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,46,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,35,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,47,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,41,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,39,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,39,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,30,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,35,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,39,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,50,17.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,105,17.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,43,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,48,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,43,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,43,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,41,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,48,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,45,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,49,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,41,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,58,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,52,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,27,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,49,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,48,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,42,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,38,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,44,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,49,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,44,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,67,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,9,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,45,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,57,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,47,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,45,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,65,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,44,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,53,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,56,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,38,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,43,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,46,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,37,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,40,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,37,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,40,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,34,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,44,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,48,18.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,91,18.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.0,45,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.05,47,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.1,38,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.15000000000000002,35,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.2,44,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.25,53,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.30000000000000004,45,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.35000000000000003,50,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.4,54,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.45,48,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.5,41,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.55,38,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.6000000000000001,37,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.65,43,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.7000000000000001,50,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.75,48,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8,49,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.8500000000000001,39,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9,43,19.0,2.0
+null: binomial,n2v2r degree-adjusted z,0.9500000000000001,72,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.0,6,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.05,38,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.1,44,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.15000000000000002,65,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.2,59,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.25,58,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.30000000000000004,47,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.35000000000000003,54,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.4,39,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.45,49,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.5,38,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.55,46,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.6000000000000001,44,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.65,44,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.7000000000000001,40,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.75,33,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8,35,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.8500000000000001,45,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9,43,19.0,2.0
+null: binomial,n2v2r degree-adjusted z (elbow),0.9500000000000001,92,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,57,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,45,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,45,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,46,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,43,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,39,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,44,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,37,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,50,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,53,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,49,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,39,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,48,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,53,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,47,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,43,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,46,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,46,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,35,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,54,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,12,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,44,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,62,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,51,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,53,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,58,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,57,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,48,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,46,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,28,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,53,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,36,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,46,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,47,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,40,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,43,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,35,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,38,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,40,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,82,0.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,53,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,43,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,32,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,45,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,51,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,37,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,39,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,60,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,57,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,42,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,42,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,45,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,52,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,35,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,50,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,53,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,55,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,48,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,39,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,41,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,12,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,35,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,57,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,51,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,47,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,55,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,44,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,50,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,64,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,44,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,45,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,43,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,48,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,35,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,31,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,37,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,41,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,46,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,50,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,84,1.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,64,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,45,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,37,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,36,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,51,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,43,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,44,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,39,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,49,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,51,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,47,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,35,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,44,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,51,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,56,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,41,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,40,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,48,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,37,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,61,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,6,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,38,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,53,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,54,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,46,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,60,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,51,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,38,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,52,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,61,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,47,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,50,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,31,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,38,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,31,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,44,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,38,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,46,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,45,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,90,2.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,68,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,45,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,42,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,38,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,40,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,43,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,39,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,47,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,58,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,39,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,53,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,49,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,49,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,43,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,39,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,46,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,47,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,42,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,33,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,59,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,3,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,33,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,48,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,58,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,61,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,60,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,59,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,45,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,50,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,42,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,47,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,45,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,37,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,28,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,46,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,39,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,44,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,41,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,47,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,86,3.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,55,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,34,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,42,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,45,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,48,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,38,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,38,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,56,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,50,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,53,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,50,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,37,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,51,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,45,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,41,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,36,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,64,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,32,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,48,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,56,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,12,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,35,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,56,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,58,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,56,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,53,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,45,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,56,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,47,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,41,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,48,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,39,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,53,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,40,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,37,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,35,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,29,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,39,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,42,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,98,4.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,60,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,40,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,46,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,40,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,49,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,37,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,47,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,46,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,44,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,50,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,48,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,50,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,41,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,47,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,49,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,37,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,39,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,49,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,40,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,60,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,14,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,43,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,56,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,46,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,53,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,59,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,47,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,52,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,43,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,46,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,47,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,38,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,42,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,45,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,40,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,35,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,43,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,34,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,43,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,93,5.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,53,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,50,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,44,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,43,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,45,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,40,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,53,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,46,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,46,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,39,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,49,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,43,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,44,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,48,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,51,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,44,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,40,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,50,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,49,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,42,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,7,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,31,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,68,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,58,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,50,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,59,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,50,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,54,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,43,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,39,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,44,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,40,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,45,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,42,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,43,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,36,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,41,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,35,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,41,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,93,6.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,52,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,28,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,38,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,49,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,61,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,49,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,44,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,53,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,42,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,43,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,47,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,42,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,46,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,53,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,40,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,55,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,47,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,44,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,49,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,37,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,9,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,28,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,46,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,55,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,63,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,63,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,51,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,48,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,58,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,38,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,35,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,42,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,45,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,43,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,36,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,43,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,45,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,38,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,45,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,88,7.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,56,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,45,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,51,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,37,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,36,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,40,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,54,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,50,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,45,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,45,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,46,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,42,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,46,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,45,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,46,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,47,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,42,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,59,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,43,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,44,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,11,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,44,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,48,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,48,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,53,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,62,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,52,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,43,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,46,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,52,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,41,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,36,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,56,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,33,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,38,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,41,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,31,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,49,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,51,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,84,8.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,59,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,41,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,40,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,38,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,54,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,46,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,47,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,41,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,51,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,42,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,37,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,46,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,46,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,54,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,49,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,50,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,35,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,49,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,43,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,51,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,9,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,40,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,56,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,57,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,62,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,55,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,51,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,48,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,46,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,35,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,51,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,46,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,48,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,42,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,37,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,42,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,50,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,43,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,33,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,68,9.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,57,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,44,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,38,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,44,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,48,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,37,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,46,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,47,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,60,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,38,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,55,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,37,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,44,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,49,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,46,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,49,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,39,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,34,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,50,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,57,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,11,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,28,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,48,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,70,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,50,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,60,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,57,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,53,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,46,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,36,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,45,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,36,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,53,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,31,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,42,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,48,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,30,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,51,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,47,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,77,10.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,55,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,40,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,54,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,35,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,60,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,39,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,44,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,52,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,35,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,45,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,53,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,54,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,46,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,47,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,44,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,53,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,40,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,36,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,37,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,50,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,6,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,39,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,43,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,51,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,53,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,65,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,56,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,49,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,44,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,53,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,41,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,47,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,38,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,35,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,31,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,59,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,32,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,32,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,55,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,90,11.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,70,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,40,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,53,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,33,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,58,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,40,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,45,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,26,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,52,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,42,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,57,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,46,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,51,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,49,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,51,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,38,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,39,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,34,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,42,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,53,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,13,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,36,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,53,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,41,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,56,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,51,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,67,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,48,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,47,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,47,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,45,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,36,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,40,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,43,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,35,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,40,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,40,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,35,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,46,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,100,12.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,56,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,45,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,52,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,37,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,52,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,33,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,30,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,45,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,53,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,56,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,40,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,52,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,48,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,59,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,43,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,38,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,60,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,31,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,45,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,44,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,8,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,29,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,53,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,52,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,62,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,60,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,42,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,48,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,52,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,53,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,39,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,51,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,34,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,44,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,36,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,54,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,34,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,32,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,62,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,74,13.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,63,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,45,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,40,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,45,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,50,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,45,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,44,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,35,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,51,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,41,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,49,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,53,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,61,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,49,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,31,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,41,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,42,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,34,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,43,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,57,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,14,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,40,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,55,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,49,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,54,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,43,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,48,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,43,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,56,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,57,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,38,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,50,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,50,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,42,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,32,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,40,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,38,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,36,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,49,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,85,14.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,63,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,38,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,32,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,51,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,57,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,45,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,48,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,41,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,40,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,44,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,48,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,51,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,55,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,42,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,45,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,44,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,51,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,29,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,46,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,49,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,7,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,25,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,49,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,50,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,49,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,49,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,61,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,60,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,49,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,60,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,32,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,41,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,35,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,43,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,29,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,45,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,42,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,44,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,50,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,99,15.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,66,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,43,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,46,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,52,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,45,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,40,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,38,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,47,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,44,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,38,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,66,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,45,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,53,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,50,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,38,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,50,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,37,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,36,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,31,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,54,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,3,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,28,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,40,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,63,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,77,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,54,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,43,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,57,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,43,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,51,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,53,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,33,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,42,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,41,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,42,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,51,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,33,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,43,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,46,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,76,16.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,56,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,35,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,39,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,43,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,52,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,46,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,36,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,44,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,55,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,53,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,54,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,48,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,33,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,39,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,51,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,46,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,46,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,47,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,43,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,53,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,13,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,40,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,53,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,59,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,57,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,62,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,45,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,46,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,41,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,43,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,51,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,38,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,41,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,51,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,41,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,47,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,43,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,28,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,50,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,70,17.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,64,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,42,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,50,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,44,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,35,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,44,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,35,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,39,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,40,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,66,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,62,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,42,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,53,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,38,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,40,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,41,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,59,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,26,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,40,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,59,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,7,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,25,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,44,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,60,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,51,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,59,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,57,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,56,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,43,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,57,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,34,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,46,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,34,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,41,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,32,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,44,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,51,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,48,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,47,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,83,18.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.0,60,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.05,44,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.1,42,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.15000000000000002,53,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.2,39,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.25,39,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.30000000000000004,44,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.35000000000000003,36,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.4,60,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.45,42,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.5,52,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.55,46,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.6000000000000001,51,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.65,46,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.7000000000000001,43,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.75,44,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8,44,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.8500000000000001,47,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9,41,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z,0.9500000000000001,46,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.0,2,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.05,22,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.1,40,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.15000000000000002,44,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.2,81,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.25,65,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.30000000000000004,55,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.35000000000000003,61,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.4,42,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.45,47,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.5,39,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.55,45,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.6000000000000001,44,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.65,29,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.7000000000000001,32,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.75,41,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8,52,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.8500000000000001,52,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9,55,19.0,2.0
+null: edge swap,n2v2r degree-adjusted z (elbow),0.9500000000000001,71,19.0,2.0
