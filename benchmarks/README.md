@@ -90,9 +90,47 @@ simulated from the fitted low-rank model gives per-node p-values whose calibrati
 the assumed rank. With rank 8 instead of the true 3, 10% of null nodes had p < 0.05; at the true rank
 the share was 1.5%. It is also expensive at 20,000 nodes and needs a noise model for weighted networks.
 
+## Simulated expression data
+
+`benchmarks/expression.py` (about 10 minutes) simulates gene expression rather than networks. It uses
+`node2vec2rank.simulate`: 1,000 genes, 100 samples per condition, 5 modules, and 10% of genes rewired
+(module switch, loss or gain). Another 10% of genes are differential-expression decoys, whose mean
+shifts but whose co-expression does not. Networks are built as the paper does (`|cor|^6`), with 10
+replicates. Three tests are compared: `significance()` with all dimensions and with the elbow
+dimension, and the new sample-label `permutation_test` (100 permutations).
+
+**Calibration with shuffled sample labels.** Pooling both conditions and splitting the samples at
+random leaves no true difference between the groups. The permutation test is close to uniform: 5.4%
+of genes have p < 0.05 (3.9–8.6% per replicate), with one false call at q < 0.1 in 10 replicates. The
+empirical null is conservative (2.6% all dimensions, 4.0% elbow), with 2 false calls in 10
+replicates for the elbow variant. A first version of the permutation test standardised distances by
+their permutation mean and sd. It failed on one random split, where two near-equal singular values
+made a single dimension unstable, and called 202 genes. Its scores are now rank-based, so no single
+dimension can dominate.
+
+![Expression calibration](results/expression_calibration.png)
+
+**Power against the known rewiring.** The tests answer different questions:
+
+- The permutation test calls 82% of rewired genes. It also calls 25% of their module partners,
+  whose co-expression neighbourhood genuinely changed when a gene joined or left their module. Only
+  2% of genes that are never in a module, and 2% of differential-expression decoys, are called.
+- The empirical null calls only the genes that stand out from genes of similar degree: 54% of
+  rewired genes with the elbow dimension and 18% with all dimensions. It calls no partners and no
+  decoys.
+- For ranking the rewired genes, AUROC is 0.98 for the elbow z-score, 0.96 for the all-dimension
+  z-score, 0.91 for the default Borda and 0.90 for the permutation z-score. The permutation score
+  ranks partners high too.
+
+![Expression calls](results/expression_calls.png)
+
+In practice, use `permutation_test` when the samples are available and "did this gene's co-expression
+change at all" is the question. Use `significance()` when only the networks are available, or to
+prioritise the most rewired genes.
+
 ## Limitations
 
 These are small (1,000-node), two-graph simulations with community-switch changes. Real regulatory
-and co-expression networks have more gradual changes, larger size and no clean rank. The most
-informative next check is to repeat the calibration on real network pairs built from permuted sample
-labels, which needs the expression data behind the paper's networks.
+and co-expression networks have more gradual changes, larger size and no clean rank. The
+simulated-expression benchmark covers the sample-level null. A remaining check is the same
+shuffled-label calibration on the paper's real expression data.

@@ -185,6 +185,10 @@ model = N2V2R(loader.get_graphs(), loader.get_nodes(), config=loader.config)
 
 `node2vec2rank.diagnostics` measures how much the rankings agree across dimensions and metrics (`ranking_agreement`), how strongly they follow node degree (`degree_bias`), and how often each node is in the top (`top_k_stability`). `node2vec2rank.plotting` draws these, together with the scree plot of the joint embedding (`plot_scree(model.singular_values, model.selected_dimension)`), after `pip install "node2vec2rank[plot]"`.
 
+If you have the samples behind the networks (e.g., expression profiles for co-expression networks), `node2vec2rank.permutation.permutation_test(expression_a, expression_b)` gives an exact per-node test instead: it shuffles the samples between the two groups, rebuilds both networks (by default WGCNA-style `|cor|^6`, or any `build_network` function you pass) and compares every node with its own permutation distribution. It answers a broader question than `significance()`: whether a node's neighbourhood changed at all, including nodes whose partners were rewired. The empirical null in `significance()` instead picks out nodes that changed more than others of similar degree.
+
+`node2vec2rank.simulate.simulate_expression` simulates expression in two conditions with known co-expression rewiring (module switches, losses and gains) and differential-expression decoys, and `coexpression_network` builds the networks. Together they provide a ground truth to try the method on.
+
 The config also accepts `"embed_dimensions": "auto"` to use only the elbow dimension, and `"embedding_method": "ulse"` for the regularised unfolded Laplacian embedding. See [the simulation benchmarks](benchmarks/README.md) for when these choices help and when they hurt; the defaults are unchanged from the paper.
 
 ### Running in a Jupyter Notebook Environment
