@@ -70,10 +70,10 @@ def permutation_test(expression_a, expression_b, build_network=coexpression_netw
     params = {"verbose": -1, **n2v2r_params}
     nodes = list(expression_a.columns)
 
-    observed = _distances(build_network(expression_a), build_network(expression_b), nodes, params)
-
     if standardize_within_groups:
         expression_a, expression_b = (_standardize(expression_a), _standardize(expression_b))
+    observed = _distances(build_network(expression_a), build_network(expression_b), nodes, params)
+
     pooled = pd.concat([expression_a, expression_b], axis=0, ignore_index=True)
     size_a = len(expression_a)
     null = np.empty((num_permutations,) + observed.shape)

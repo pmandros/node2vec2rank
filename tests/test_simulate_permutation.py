@@ -67,3 +67,21 @@ def test_permutation_test_rejects_mismatched_columns():
     a = pd.DataFrame(np.zeros((5, 3)), columns=list("abc"))
     with pytest.raises(ValueError):
         permutation_test(a, a[["b", "a", "c"]])
+
+
+def test_permutation_test_is_calibrated_with_scale_dependent_networks():
+    # the observed and permuted networks must be built from identically
+    # standardised data, otherwise a builder that is not scale-invariant
+    # (here covariance) compares networks on different scales
+    def covariance_network(expression):
+        network = np.abs(np.cov(expression.to_numpy(), rowvar=False))
+        np.fill_diagonal(network, 0)
+        return network
+
+    sim = simulate_expression(num_genes=200, num_samples=80, frac_rewired=0.0,
+                              frac_differentially_expressed=0.0, random_state=4)
+    scale = np.random.default_rng(0).uniform(1, 5, 200)
+    group_a, group_b = (expression * scale for expression in sim.expression)
+    result = permutation_test(group_a, group_b, build_network=covariance_network,
+                              num_permutations=20, random_state=1, seed=0, embed_dimensions=[4, 8])
+    assert (result["pvalue"] < 0.05).mean() < 0.1
