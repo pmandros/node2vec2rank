@@ -1,0 +1,71 @@
+analysis,replicate,test,frac_p_below_0.05,num_called_q_0.1,auroc_rewired,called rewired,called module partners,called never in a module,called differential expression only
+shuffled labels,0,empirical null,0.02,0.0,,,,,
+shuffled labels,0,empirical null (elbow),0.038,0.0,,,,,
+shuffled labels,0,permutation,0.039,0.0,,,,,
+true conditions,0,empirical null,,16.0,0.9688888888888889,0.16,0.0,0.0,0.0
+true conditions,0,empirical null (elbow),,45.0,0.9901444444444445,0.45,0.0,0.0,0.0
+true conditions,0,permutation,,257.0,0.8893555555555556,0.82,0.27986906710310966,0.01384083044982699,0.027777777777777776
+true conditions,0,n2v2r Borda (no test),,,0.9062777777777777,,,,
+shuffled labels,1,empirical null,0.031,0.0,,,,,
+shuffled labels,1,empirical null (elbow),0.039,0.0,,,,,
+shuffled labels,1,permutation,0.044,0.0,,,,,
+true conditions,1,empirical null,,24.0,0.9616333333333333,0.24,0.0,0.0,0.0
+true conditions,1,empirical null (elbow),,36.0,0.9901888888888889,0.36,0.0,0.0,0.0
+true conditions,1,permutation,,213.0,0.8974555555555556,0.79,0.20806451612903226,0.017857142857142856,0.03125
+true conditions,1,n2v2r Borda (no test),,,0.90625,,,,
+shuffled labels,2,empirical null,0.025,0.0,,,,,
+shuffled labels,2,empirical null (elbow),0.033,0.0,,,,,
+shuffled labels,2,permutation,0.061,0.0,,,,,
+true conditions,2,empirical null,,20.0,0.9646777777777777,0.2,0.0,0.0,0.0
+true conditions,2,empirical null (elbow),,89.0,0.9897666666666667,0.85,0.00625,0.0,0.0
+true conditions,2,permutation,,249.0,0.8967888888888889,0.87,0.24375,0.023076923076923078,0.0
+true conditions,2,n2v2r Borda (no test),,,0.9075222222222222,,,,
+shuffled labels,3,empirical null,0.034,0.0,,,,,
+shuffled labels,3,empirical null (elbow),0.035,0.0,,,,,
+shuffled labels,3,permutation,0.072,0.0,,,,,
+true conditions,3,empirical null,,20.0,0.9538777777777778,0.2,0.0,0.0,0.0
+true conditions,3,empirical null (elbow),,70.0,0.9815,0.69,0.0015527950310559005,0.0,0.0
+true conditions,3,permutation,,239.0,0.8940888888888889,0.84,0.2391304347826087,0.00390625,0.0
+true conditions,3,n2v2r Borda (no test),,,0.9059,,,,
+shuffled labels,4,empirical null,0.031,0.0,,,,,
+shuffled labels,4,empirical null (elbow),0.044,0.0,,,,,
+shuffled labels,4,permutation,0.05,0.0,,,,,
+true conditions,4,empirical null,,22.0,0.9382555555555555,0.21,0.0,0.003436426116838488,0.0
+true conditions,4,empirical null (elbow),,60.0,0.9740333333333333,0.59,0.0016420361247947454,0.0,0.0
+true conditions,4,permutation,,189.0,0.8884777777777778,0.74,0.18555008210180624,0.006872852233676976,0.03333333333333333
+true conditions,4,n2v2r Borda (no test),,,0.8893833333333333,,,,
+shuffled labels,5,empirical null,0.014,0.0,,,,,
+shuffled labels,5,empirical null (elbow),0.031,0.0,,,,,
+shuffled labels,5,permutation,0.041,0.0,,,,,
+true conditions,5,empirical null,,21.0,0.9582555555555555,0.2,0.0,0.003875968992248062,0.0
+true conditions,5,empirical null (elbow),,74.0,0.9933111111111111,0.71,0.004672897196261682,0.0,0.0
+true conditions,5,permutation,,299.0,0.8820666666666667,0.86,0.32398753894080995,0.01937984496124031,0.0
+true conditions,5,n2v2r Borda (no test),,,0.9054222222222222,,,,
+shuffled labels,6,empirical null,0.028,0.0,,,,,
+shuffled labels,6,empirical null (elbow),0.043,2.0,,,,,
+shuffled labels,6,permutation,0.053,0.0,,,,,
+true conditions,6,empirical null,,2.0,0.9754555555555555,0.02,0.0,0.0,0.0
+true conditions,6,empirical null (elbow),,28.0,0.9697666666666667,0.27,0.0,0.0037174721189591076,0.0
+true conditions,6,permutation,,266.0,0.9172888888888889,0.86,0.2757527733755943,0.022304832713754646,0.038461538461538464
+true conditions,6,n2v2r Borda (no test),,,0.9279055555555555,,,,
+shuffled labels,7,empirical null,0.016,0.0,,,,,
+shuffled labels,7,empirical null (elbow),0.044,0.0,,,,,
+shuffled labels,7,permutation,0.041,0.0,,,,,
+true conditions,7,empirical null,,35.0,0.9301333333333334,0.33,0.0,0.007575757575757576,0.03571428571428571
+true conditions,7,empirical null (elbow),,53.0,0.9607,0.53,0.0,0.0,0.0
+true conditions,7,permutation,,194.0,0.8819333333333333,0.78,0.17767295597484276,0.011363636363636364,0.0
+true conditions,7,n2v2r Borda (no test),,,0.8966055555555555,,,,
+shuffled labels,8,empirical null,0.035,0.0,,,,,
+shuffled labels,8,empirical null (elbow),0.053,0.0,,,,,
+shuffled labels,8,permutation,0.051,1.0,,,,,
+true conditions,8,empirical null,,8.0,0.9805777777777778,0.08,0.0,0.0,0.0
+true conditions,8,empirical null (elbow),,69.0,0.9937222222222222,0.69,0.0,0.0,0.0
+true conditions,8,permutation,,226.0,0.9109222222222222,0.83,0.2146118721461187,0.00823045267489712,0.0
+true conditions,8,n2v2r Borda (no test),,,0.9081166666666667,,,,
+shuffled labels,9,empirical null,0.025,0.0,,,,,
+shuffled labels,9,empirical null (elbow),0.044,0.0,,,,,
+shuffled labels,9,permutation,0.086,0.0,,,,,
+true conditions,9,empirical null,,13.0,0.9722888888888889,0.13,0.0,0.0,0.0
+true conditions,9,empirical null (elbow),,27.0,0.9939111111111111,0.27,0.0,0.0,0.0
+true conditions,9,permutation,,297.0,0.8886888888888889,0.85,0.3253968253968254,0.025925925925925925,0.03333333333333333
+true conditions,9,n2v2r Borda (no test),,,0.9084722222222222,,,,

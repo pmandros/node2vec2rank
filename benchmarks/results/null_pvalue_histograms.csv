@@ -1,0 +1,3201 @@
+scenario,method,replicate,bin_start,count
+dcsbm,n2v2r degree-adjusted z,0,0.0,24
+dcsbm,n2v2r degree-adjusted z,0,0.05,39
+dcsbm,n2v2r degree-adjusted z,0,0.1,57
+dcsbm,n2v2r degree-adjusted z,0,0.15000000000000002,42
+dcsbm,n2v2r degree-adjusted z,0,0.2,63
+dcsbm,n2v2r degree-adjusted z,0,0.25,55
+dcsbm,n2v2r degree-adjusted z,0,0.30000000000000004,65
+dcsbm,n2v2r degree-adjusted z,0,0.35000000000000003,59
+dcsbm,n2v2r degree-adjusted z,0,0.4,57
+dcsbm,n2v2r degree-adjusted z,0,0.45,39
+dcsbm,n2v2r degree-adjusted z,0,0.5,47
+dcsbm,n2v2r degree-adjusted z,0,0.55,40
+dcsbm,n2v2r degree-adjusted z,0,0.6000000000000001,52
+dcsbm,n2v2r degree-adjusted z,0,0.65,47
+dcsbm,n2v2r degree-adjusted z,0,0.7000000000000001,39
+dcsbm,n2v2r degree-adjusted z,0,0.75,39
+dcsbm,n2v2r degree-adjusted z,0,0.8,51
+dcsbm,n2v2r degree-adjusted z,0,0.8500000000000001,55
+dcsbm,n2v2r degree-adjusted z,0,0.9,63
+dcsbm,n2v2r degree-adjusted z,0,0.9500000000000001,67
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.0,22
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.05,50
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.1,57
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.15000000000000002,42
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.2,60
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.25,39
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.30000000000000004,70
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.35000000000000003,49
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.4,58
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.45,53
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.5,48
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.55,43
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.6000000000000001,41
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.65,56
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.7000000000000001,43
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.75,52
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.8,37
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.8500000000000001,51
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.9,60
+dcsbm,n2v2r degree-adjusted z (elbow),0,0.9500000000000001,69
+dcsbm,n2v2r degree-adjusted z,1,0.0,28
+dcsbm,n2v2r degree-adjusted z,1,0.05,44
+dcsbm,n2v2r degree-adjusted z,1,0.1,60
+dcsbm,n2v2r degree-adjusted z,1,0.15000000000000002,44
+dcsbm,n2v2r degree-adjusted z,1,0.2,44
+dcsbm,n2v2r degree-adjusted z,1,0.25,58
+dcsbm,n2v2r degree-adjusted z,1,0.30000000000000004,60
+dcsbm,n2v2r degree-adjusted z,1,0.35000000000000003,67
+dcsbm,n2v2r degree-adjusted z,1,0.4,52
+dcsbm,n2v2r degree-adjusted z,1,0.45,43
+dcsbm,n2v2r degree-adjusted z,1,0.5,41
+dcsbm,n2v2r degree-adjusted z,1,0.55,46
+dcsbm,n2v2r degree-adjusted z,1,0.6000000000000001,46
+dcsbm,n2v2r degree-adjusted z,1,0.65,38
+dcsbm,n2v2r degree-adjusted z,1,0.7000000000000001,49
+dcsbm,n2v2r degree-adjusted z,1,0.75,39
+dcsbm,n2v2r degree-adjusted z,1,0.8,57
+dcsbm,n2v2r degree-adjusted z,1,0.8500000000000001,54
+dcsbm,n2v2r degree-adjusted z,1,0.9,43
+dcsbm,n2v2r degree-adjusted z,1,0.9500000000000001,87
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.0,26
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.05,47
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.1,51
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.15000000000000002,49
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.2,50
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.25,50
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.30000000000000004,59
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.35000000000000003,67
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.4,46
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.45,55
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.5,47
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.55,42
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.6000000000000001,48
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.65,42
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.7000000000000001,44
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.75,45
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.8,46
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.8500000000000001,53
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.9,40
+dcsbm,n2v2r degree-adjusted z (elbow),1,0.9500000000000001,93
+dcsbm,n2v2r degree-adjusted z,2,0.0,20
+dcsbm,n2v2r degree-adjusted z,2,0.05,56
+dcsbm,n2v2r degree-adjusted z,2,0.1,55
+dcsbm,n2v2r degree-adjusted z,2,0.15000000000000002,48
+dcsbm,n2v2r degree-adjusted z,2,0.2,64
+dcsbm,n2v2r degree-adjusted z,2,0.25,60
+dcsbm,n2v2r degree-adjusted z,2,0.30000000000000004,45
+dcsbm,n2v2r degree-adjusted z,2,0.35000000000000003,51
+dcsbm,n2v2r degree-adjusted z,2,0.4,50
+dcsbm,n2v2r degree-adjusted z,2,0.45,51
+dcsbm,n2v2r degree-adjusted z,2,0.5,37
+dcsbm,n2v2r degree-adjusted z,2,0.55,46
+dcsbm,n2v2r degree-adjusted z,2,0.6000000000000001,48
+dcsbm,n2v2r degree-adjusted z,2,0.65,51
+dcsbm,n2v2r degree-adjusted z,2,0.7000000000000001,61
+dcsbm,n2v2r degree-adjusted z,2,0.75,38
+dcsbm,n2v2r degree-adjusted z,2,0.8,41
+dcsbm,n2v2r degree-adjusted z,2,0.8500000000000001,52
+dcsbm,n2v2r degree-adjusted z,2,0.9,52
+dcsbm,n2v2r degree-adjusted z,2,0.9500000000000001,74
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.0,20
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.05,39
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.1,53
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.15000000000000002,56
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.2,51
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.25,53
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.30000000000000004,51
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.35000000000000003,56
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.4,63
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.45,58
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.5,39
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.55,40
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.6000000000000001,50
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.65,43
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.7000000000000001,47
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.75,51
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.8,50
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.8500000000000001,54
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.9,50
+dcsbm,n2v2r degree-adjusted z (elbow),2,0.9500000000000001,76
+dcsbm,n2v2r degree-adjusted z,3,0.0,39
+dcsbm,n2v2r degree-adjusted z,3,0.05,30
+dcsbm,n2v2r degree-adjusted z,3,0.1,40
+dcsbm,n2v2r degree-adjusted z,3,0.15000000000000002,58
+dcsbm,n2v2r degree-adjusted z,3,0.2,62
+dcsbm,n2v2r degree-adjusted z,3,0.25,52
+dcsbm,n2v2r degree-adjusted z,3,0.30000000000000004,54
+dcsbm,n2v2r degree-adjusted z,3,0.35000000000000003,56
+dcsbm,n2v2r degree-adjusted z,3,0.4,62
+dcsbm,n2v2r degree-adjusted z,3,0.45,47
+dcsbm,n2v2r degree-adjusted z,3,0.5,46
+dcsbm,n2v2r degree-adjusted z,3,0.55,41
+dcsbm,n2v2r degree-adjusted z,3,0.6000000000000001,50
+dcsbm,n2v2r degree-adjusted z,3,0.65,50
+dcsbm,n2v2r degree-adjusted z,3,0.7000000000000001,42
+dcsbm,n2v2r degree-adjusted z,3,0.75,52
+dcsbm,n2v2r degree-adjusted z,3,0.8,44
+dcsbm,n2v2r degree-adjusted z,3,0.8500000000000001,45
+dcsbm,n2v2r degree-adjusted z,3,0.9,42
+dcsbm,n2v2r degree-adjusted z,3,0.9500000000000001,88
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.0,21
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.05,62
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.1,43
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.15000000000000002,52
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.2,46
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.25,57
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.30000000000000004,58
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.35000000000000003,69
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.4,47
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.45,45
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.5,45
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.55,55
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.6000000000000001,44
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.65,47
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.7000000000000001,33
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.75,53
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.8,36
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.8500000000000001,41
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.9,51
+dcsbm,n2v2r degree-adjusted z (elbow),3,0.9500000000000001,95
+dcsbm,n2v2r degree-adjusted z,4,0.0,31
+dcsbm,n2v2r degree-adjusted z,4,0.05,46
+dcsbm,n2v2r degree-adjusted z,4,0.1,44
+dcsbm,n2v2r degree-adjusted z,4,0.15000000000000002,53
+dcsbm,n2v2r degree-adjusted z,4,0.2,55
+dcsbm,n2v2r degree-adjusted z,4,0.25,55
+dcsbm,n2v2r degree-adjusted z,4,0.30000000000000004,65
+dcsbm,n2v2r degree-adjusted z,4,0.35000000000000003,56
+dcsbm,n2v2r degree-adjusted z,4,0.4,53
+dcsbm,n2v2r degree-adjusted z,4,0.45,42
+dcsbm,n2v2r degree-adjusted z,4,0.5,48
+dcsbm,n2v2r degree-adjusted z,4,0.55,47
+dcsbm,n2v2r degree-adjusted z,4,0.6000000000000001,45
+dcsbm,n2v2r degree-adjusted z,4,0.65,38
+dcsbm,n2v2r degree-adjusted z,4,0.7000000000000001,51
+dcsbm,n2v2r degree-adjusted z,4,0.75,42
+dcsbm,n2v2r degree-adjusted z,4,0.8,53
+dcsbm,n2v2r degree-adjusted z,4,0.8500000000000001,47
+dcsbm,n2v2r degree-adjusted z,4,0.9,47
+dcsbm,n2v2r degree-adjusted z,4,0.9500000000000001,82
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.0,27
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.05,52
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.1,62
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.15000000000000002,47
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.2,43
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.25,66
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.30000000000000004,55
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.35000000000000003,65
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.4,43
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.45,40
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.5,48
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.55,42
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.6000000000000001,39
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.65,53
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.7000000000000001,49
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.75,41
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.8,34
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.8500000000000001,47
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.9,50
+dcsbm,n2v2r degree-adjusted z (elbow),4,0.9500000000000001,97
+dcsbm,n2v2r degree-adjusted z,5,0.0,26
+dcsbm,n2v2r degree-adjusted z,5,0.05,60
+dcsbm,n2v2r degree-adjusted z,5,0.1,58
+dcsbm,n2v2r degree-adjusted z,5,0.15000000000000002,49
+dcsbm,n2v2r degree-adjusted z,5,0.2,64
+dcsbm,n2v2r degree-adjusted z,5,0.25,43
+dcsbm,n2v2r degree-adjusted z,5,0.30000000000000004,59
+dcsbm,n2v2r degree-adjusted z,5,0.35000000000000003,54
+dcsbm,n2v2r degree-adjusted z,5,0.4,55
+dcsbm,n2v2r degree-adjusted z,5,0.45,32
+dcsbm,n2v2r degree-adjusted z,5,0.5,47
+dcsbm,n2v2r degree-adjusted z,5,0.55,54
+dcsbm,n2v2r degree-adjusted z,5,0.6000000000000001,51
+dcsbm,n2v2r degree-adjusted z,5,0.65,53
+dcsbm,n2v2r degree-adjusted z,5,0.7000000000000001,52
+dcsbm,n2v2r degree-adjusted z,5,0.75,38
+dcsbm,n2v2r degree-adjusted z,5,0.8,34
+dcsbm,n2v2r degree-adjusted z,5,0.8500000000000001,45
+dcsbm,n2v2r degree-adjusted z,5,0.9,45
+dcsbm,n2v2r degree-adjusted z,5,0.9500000000000001,81
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.0,25
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.05,42
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.1,57
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.15000000000000002,61
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.2,52
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.25,45
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.30000000000000004,46
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.35000000000000003,68
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.4,58
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.45,46
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.5,45
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.55,49
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.6000000000000001,35
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.65,57
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.7000000000000001,51
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.75,43
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.8,41
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.8500000000000001,47
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.9,49
+dcsbm,n2v2r degree-adjusted z (elbow),5,0.9500000000000001,83
+dcsbm,n2v2r degree-adjusted z,6,0.0,23
+dcsbm,n2v2r degree-adjusted z,6,0.05,52
+dcsbm,n2v2r degree-adjusted z,6,0.1,43
+dcsbm,n2v2r degree-adjusted z,6,0.15000000000000002,41
+dcsbm,n2v2r degree-adjusted z,6,0.2,65
+dcsbm,n2v2r degree-adjusted z,6,0.25,42
+dcsbm,n2v2r degree-adjusted z,6,0.30000000000000004,57
+dcsbm,n2v2r degree-adjusted z,6,0.35000000000000003,49
+dcsbm,n2v2r degree-adjusted z,6,0.4,54
+dcsbm,n2v2r degree-adjusted z,6,0.45,74
+dcsbm,n2v2r degree-adjusted z,6,0.5,31
+dcsbm,n2v2r degree-adjusted z,6,0.55,52
+dcsbm,n2v2r degree-adjusted z,6,0.6000000000000001,54
+dcsbm,n2v2r degree-adjusted z,6,0.65,44
+dcsbm,n2v2r degree-adjusted z,6,0.7000000000000001,43
+dcsbm,n2v2r degree-adjusted z,6,0.75,46
+dcsbm,n2v2r degree-adjusted z,6,0.8,43
+dcsbm,n2v2r degree-adjusted z,6,0.8500000000000001,59
+dcsbm,n2v2r degree-adjusted z,6,0.9,49
+dcsbm,n2v2r degree-adjusted z,6,0.9500000000000001,79
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.0,29
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.05,48
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.1,48
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.15000000000000002,63
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.2,55
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.25,60
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.30000000000000004,45
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.35000000000000003,55
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.4,57
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.45,40
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.5,46
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.55,51
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.6000000000000001,45
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.65,58
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.7000000000000001,43
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.75,38
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.8,53
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.8500000000000001,52
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.9,42
+dcsbm,n2v2r degree-adjusted z (elbow),6,0.9500000000000001,72
+dcsbm,n2v2r degree-adjusted z,7,0.0,32
+dcsbm,n2v2r degree-adjusted z,7,0.05,35
+dcsbm,n2v2r degree-adjusted z,7,0.1,56
+dcsbm,n2v2r degree-adjusted z,7,0.15000000000000002,59
+dcsbm,n2v2r degree-adjusted z,7,0.2,52
+dcsbm,n2v2r degree-adjusted z,7,0.25,59
+dcsbm,n2v2r degree-adjusted z,7,0.30000000000000004,46
+dcsbm,n2v2r degree-adjusted z,7,0.35000000000000003,51
+dcsbm,n2v2r degree-adjusted z,7,0.4,56
+dcsbm,n2v2r degree-adjusted z,7,0.45,54
+dcsbm,n2v2r degree-adjusted z,7,0.5,54
+dcsbm,n2v2r degree-adjusted z,7,0.55,51
+dcsbm,n2v2r degree-adjusted z,7,0.6000000000000001,42
+dcsbm,n2v2r degree-adjusted z,7,0.65,43
+dcsbm,n2v2r degree-adjusted z,7,0.7000000000000001,44
+dcsbm,n2v2r degree-adjusted z,7,0.75,51
+dcsbm,n2v2r degree-adjusted z,7,0.8,55
+dcsbm,n2v2r degree-adjusted z,7,0.8500000000000001,41
+dcsbm,n2v2r degree-adjusted z,7,0.9,64
+dcsbm,n2v2r degree-adjusted z,7,0.9500000000000001,55
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.0,24
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.05,43
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.1,52
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.15000000000000002,60
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.2,56
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.25,59
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.30000000000000004,54
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.35000000000000003,55
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.4,60
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.45,37
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.5,50
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.55,50
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.6000000000000001,50
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.65,43
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.7000000000000001,42
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.75,48
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.8,44
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.8500000000000001,57
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.9,40
+dcsbm,n2v2r degree-adjusted z (elbow),7,0.9500000000000001,76
+dcsbm,n2v2r degree-adjusted z,8,0.0,29
+dcsbm,n2v2r degree-adjusted z,8,0.05,46
+dcsbm,n2v2r degree-adjusted z,8,0.1,48
+dcsbm,n2v2r degree-adjusted z,8,0.15000000000000002,52
+dcsbm,n2v2r degree-adjusted z,8,0.2,72
+dcsbm,n2v2r degree-adjusted z,8,0.25,65
+dcsbm,n2v2r degree-adjusted z,8,0.30000000000000004,41
+dcsbm,n2v2r degree-adjusted z,8,0.35000000000000003,44
+dcsbm,n2v2r degree-adjusted z,8,0.4,45
+dcsbm,n2v2r degree-adjusted z,8,0.45,58
+dcsbm,n2v2r degree-adjusted z,8,0.5,61
+dcsbm,n2v2r degree-adjusted z,8,0.55,52
+dcsbm,n2v2r degree-adjusted z,8,0.6000000000000001,40
+dcsbm,n2v2r degree-adjusted z,8,0.65,55
+dcsbm,n2v2r degree-adjusted z,8,0.7000000000000001,39
+dcsbm,n2v2r degree-adjusted z,8,0.75,50
+dcsbm,n2v2r degree-adjusted z,8,0.8,47
+dcsbm,n2v2r degree-adjusted z,8,0.8500000000000001,41
+dcsbm,n2v2r degree-adjusted z,8,0.9,49
+dcsbm,n2v2r degree-adjusted z,8,0.9500000000000001,66
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.0,34
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.05,48
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.1,55
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.15000000000000002,58
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.2,57
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.25,51
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.30000000000000004,47
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.35000000000000003,49
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.4,61
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.45,40
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.5,52
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.55,56
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.6000000000000001,51
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.65,44
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.7000000000000001,49
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.75,57
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.8,42
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.8500000000000001,54
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.9,33
+dcsbm,n2v2r degree-adjusted z (elbow),8,0.9500000000000001,62
+dcsbm,n2v2r degree-adjusted z,9,0.0,33
+dcsbm,n2v2r degree-adjusted z,9,0.05,43
+dcsbm,n2v2r degree-adjusted z,9,0.1,60
+dcsbm,n2v2r degree-adjusted z,9,0.15000000000000002,44
+dcsbm,n2v2r degree-adjusted z,9,0.2,61
+dcsbm,n2v2r degree-adjusted z,9,0.25,64
+dcsbm,n2v2r degree-adjusted z,9,0.30000000000000004,53
+dcsbm,n2v2r degree-adjusted z,9,0.35000000000000003,34
+dcsbm,n2v2r degree-adjusted z,9,0.4,64
+dcsbm,n2v2r degree-adjusted z,9,0.45,44
+dcsbm,n2v2r degree-adjusted z,9,0.5,49
+dcsbm,n2v2r degree-adjusted z,9,0.55,53
+dcsbm,n2v2r degree-adjusted z,9,0.6000000000000001,46
+dcsbm,n2v2r degree-adjusted z,9,0.65,45
+dcsbm,n2v2r degree-adjusted z,9,0.7000000000000001,48
+dcsbm,n2v2r degree-adjusted z,9,0.75,46
+dcsbm,n2v2r degree-adjusted z,9,0.8,54
+dcsbm,n2v2r degree-adjusted z,9,0.8500000000000001,44
+dcsbm,n2v2r degree-adjusted z,9,0.9,45
+dcsbm,n2v2r degree-adjusted z,9,0.9500000000000001,70
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.0,26
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.05,56
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.1,54
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.15000000000000002,50
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.2,58
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.25,58
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.30000000000000004,51
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.35000000000000003,55
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.4,52
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.45,40
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.5,53
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.55,46
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.6000000000000001,46
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.65,54
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.7000000000000001,45
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.75,43
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.8,38
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.8500000000000001,59
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.9,51
+dcsbm,n2v2r degree-adjusted z (elbow),9,0.9500000000000001,65
+dcsbm,n2v2r degree-adjusted z,10,0.0,22
+dcsbm,n2v2r degree-adjusted z,10,0.05,41
+dcsbm,n2v2r degree-adjusted z,10,0.1,52
+dcsbm,n2v2r degree-adjusted z,10,0.15000000000000002,54
+dcsbm,n2v2r degree-adjusted z,10,0.2,72
+dcsbm,n2v2r degree-adjusted z,10,0.25,41
+dcsbm,n2v2r degree-adjusted z,10,0.30000000000000004,62
+dcsbm,n2v2r degree-adjusted z,10,0.35000000000000003,68
+dcsbm,n2v2r degree-adjusted z,10,0.4,42
+dcsbm,n2v2r degree-adjusted z,10,0.45,46
+dcsbm,n2v2r degree-adjusted z,10,0.5,50
+dcsbm,n2v2r degree-adjusted z,10,0.55,52
+dcsbm,n2v2r degree-adjusted z,10,0.6000000000000001,41
+dcsbm,n2v2r degree-adjusted z,10,0.65,51
+dcsbm,n2v2r degree-adjusted z,10,0.7000000000000001,47
+dcsbm,n2v2r degree-adjusted z,10,0.75,49
+dcsbm,n2v2r degree-adjusted z,10,0.8,43
+dcsbm,n2v2r degree-adjusted z,10,0.8500000000000001,40
+dcsbm,n2v2r degree-adjusted z,10,0.9,48
+dcsbm,n2v2r degree-adjusted z,10,0.9500000000000001,79
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.0,25
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.05,49
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.1,47
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.15000000000000002,52
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.2,52
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.25,62
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.30000000000000004,52
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.35000000000000003,59
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.4,56
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.45,46
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.5,47
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.55,55
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.6000000000000001,46
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.65,44
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.7000000000000001,33
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.75,55
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.8,46
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.8500000000000001,49
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.9,53
+dcsbm,n2v2r degree-adjusted z (elbow),10,0.9500000000000001,72
+dcsbm,n2v2r degree-adjusted z,11,0.0,42
+dcsbm,n2v2r degree-adjusted z,11,0.05,49
+dcsbm,n2v2r degree-adjusted z,11,0.1,46
+dcsbm,n2v2r degree-adjusted z,11,0.15000000000000002,60
+dcsbm,n2v2r degree-adjusted z,11,0.2,46
+dcsbm,n2v2r degree-adjusted z,11,0.25,70
+dcsbm,n2v2r degree-adjusted z,11,0.30000000000000004,53
+dcsbm,n2v2r degree-adjusted z,11,0.35000000000000003,43
+dcsbm,n2v2r degree-adjusted z,11,0.4,52
+dcsbm,n2v2r degree-adjusted z,11,0.45,39
+dcsbm,n2v2r degree-adjusted z,11,0.5,45
+dcsbm,n2v2r degree-adjusted z,11,0.55,38
+dcsbm,n2v2r degree-adjusted z,11,0.6000000000000001,52
+dcsbm,n2v2r degree-adjusted z,11,0.65,62
+dcsbm,n2v2r degree-adjusted z,11,0.7000000000000001,46
+dcsbm,n2v2r degree-adjusted z,11,0.75,53
+dcsbm,n2v2r degree-adjusted z,11,0.8,44
+dcsbm,n2v2r degree-adjusted z,11,0.8500000000000001,43
+dcsbm,n2v2r degree-adjusted z,11,0.9,54
+dcsbm,n2v2r degree-adjusted z,11,0.9500000000000001,63
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.0,27
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.05,59
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.1,57
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.15000000000000002,58
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.2,42
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.25,58
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.30000000000000004,53
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.35000000000000003,61
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.4,45
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.45,40
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.5,51
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.55,44
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.6000000000000001,58
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.65,47
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.7000000000000001,43
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.75,43
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.8,42
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.8500000000000001,44
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.9,45
+dcsbm,n2v2r degree-adjusted z (elbow),11,0.9500000000000001,83
+dcsbm,n2v2r degree-adjusted z,12,0.0,27
+dcsbm,n2v2r degree-adjusted z,12,0.05,49
+dcsbm,n2v2r degree-adjusted z,12,0.1,55
+dcsbm,n2v2r degree-adjusted z,12,0.15000000000000002,59
+dcsbm,n2v2r degree-adjusted z,12,0.2,52
+dcsbm,n2v2r degree-adjusted z,12,0.25,54
+dcsbm,n2v2r degree-adjusted z,12,0.30000000000000004,59
+dcsbm,n2v2r degree-adjusted z,12,0.35000000000000003,61
+dcsbm,n2v2r degree-adjusted z,12,0.4,43
+dcsbm,n2v2r degree-adjusted z,12,0.45,41
+dcsbm,n2v2r degree-adjusted z,12,0.5,48
+dcsbm,n2v2r degree-adjusted z,12,0.55,53
+dcsbm,n2v2r degree-adjusted z,12,0.6000000000000001,50
+dcsbm,n2v2r degree-adjusted z,12,0.65,51
+dcsbm,n2v2r degree-adjusted z,12,0.7000000000000001,40
+dcsbm,n2v2r degree-adjusted z,12,0.75,37
+dcsbm,n2v2r degree-adjusted z,12,0.8,44
+dcsbm,n2v2r degree-adjusted z,12,0.8500000000000001,43
+dcsbm,n2v2r degree-adjusted z,12,0.9,48
+dcsbm,n2v2r degree-adjusted z,12,0.9500000000000001,86
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.0,29
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.05,47
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.1,45
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.15000000000000002,43
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.2,58
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.25,61
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.30000000000000004,52
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.35000000000000003,61
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.4,40
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.45,64
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.5,52
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.55,35
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.6000000000000001,42
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.65,49
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.7000000000000001,44
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.75,32
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.8,36
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.8500000000000001,45
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.9,56
+dcsbm,n2v2r degree-adjusted z (elbow),12,0.9500000000000001,109
+dcsbm,n2v2r degree-adjusted z,13,0.0,52
+dcsbm,n2v2r degree-adjusted z,13,0.05,47
+dcsbm,n2v2r degree-adjusted z,13,0.1,44
+dcsbm,n2v2r degree-adjusted z,13,0.15000000000000002,44
+dcsbm,n2v2r degree-adjusted z,13,0.2,55
+dcsbm,n2v2r degree-adjusted z,13,0.25,52
+dcsbm,n2v2r degree-adjusted z,13,0.30000000000000004,57
+dcsbm,n2v2r degree-adjusted z,13,0.35000000000000003,54
+dcsbm,n2v2r degree-adjusted z,13,0.4,43
+dcsbm,n2v2r degree-adjusted z,13,0.45,52
+dcsbm,n2v2r degree-adjusted z,13,0.5,51
+dcsbm,n2v2r degree-adjusted z,13,0.55,43
+dcsbm,n2v2r degree-adjusted z,13,0.6000000000000001,45
+dcsbm,n2v2r degree-adjusted z,13,0.65,47
+dcsbm,n2v2r degree-adjusted z,13,0.7000000000000001,56
+dcsbm,n2v2r degree-adjusted z,13,0.75,44
+dcsbm,n2v2r degree-adjusted z,13,0.8,47
+dcsbm,n2v2r degree-adjusted z,13,0.8500000000000001,53
+dcsbm,n2v2r degree-adjusted z,13,0.9,47
+dcsbm,n2v2r degree-adjusted z,13,0.9500000000000001,67
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.0,15
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.05,51
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.1,48
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.15000000000000002,63
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.2,63
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.25,48
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.30000000000000004,51
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.35000000000000003,54
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.4,60
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.45,47
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.5,48
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.55,45
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.6000000000000001,50
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.65,44
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.7000000000000001,53
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.75,37
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.8,62
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.8500000000000001,36
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.9,52
+dcsbm,n2v2r degree-adjusted z (elbow),13,0.9500000000000001,73
+dcsbm,n2v2r degree-adjusted z,14,0.0,36
+dcsbm,n2v2r degree-adjusted z,14,0.05,47
+dcsbm,n2v2r degree-adjusted z,14,0.1,56
+dcsbm,n2v2r degree-adjusted z,14,0.15000000000000002,53
+dcsbm,n2v2r degree-adjusted z,14,0.2,47
+dcsbm,n2v2r degree-adjusted z,14,0.25,60
+dcsbm,n2v2r degree-adjusted z,14,0.30000000000000004,57
+dcsbm,n2v2r degree-adjusted z,14,0.35000000000000003,46
+dcsbm,n2v2r degree-adjusted z,14,0.4,53
+dcsbm,n2v2r degree-adjusted z,14,0.45,45
+dcsbm,n2v2r degree-adjusted z,14,0.5,41
+dcsbm,n2v2r degree-adjusted z,14,0.55,52
+dcsbm,n2v2r degree-adjusted z,14,0.6000000000000001,50
+dcsbm,n2v2r degree-adjusted z,14,0.65,48
+dcsbm,n2v2r degree-adjusted z,14,0.7000000000000001,48
+dcsbm,n2v2r degree-adjusted z,14,0.75,38
+dcsbm,n2v2r degree-adjusted z,14,0.8,49
+dcsbm,n2v2r degree-adjusted z,14,0.8500000000000001,59
+dcsbm,n2v2r degree-adjusted z,14,0.9,43
+dcsbm,n2v2r degree-adjusted z,14,0.9500000000000001,72
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.0,27
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.05,50
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.1,52
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.15000000000000002,57
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.2,68
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.25,60
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.30000000000000004,52
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.35000000000000003,42
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.4,46
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.45,46
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.5,45
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.55,46
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.6000000000000001,54
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.65,48
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.7000000000000001,61
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.75,43
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.8,42
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.8500000000000001,48
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.9,48
+dcsbm,n2v2r degree-adjusted z (elbow),14,0.9500000000000001,65
+dcsbm,n2v2r degree-adjusted z,15,0.0,30
+dcsbm,n2v2r degree-adjusted z,15,0.05,57
+dcsbm,n2v2r degree-adjusted z,15,0.1,46
+dcsbm,n2v2r degree-adjusted z,15,0.15000000000000002,61
+dcsbm,n2v2r degree-adjusted z,15,0.2,51
+dcsbm,n2v2r degree-adjusted z,15,0.25,59
+dcsbm,n2v2r degree-adjusted z,15,0.30000000000000004,42
+dcsbm,n2v2r degree-adjusted z,15,0.35000000000000003,56
+dcsbm,n2v2r degree-adjusted z,15,0.4,49
+dcsbm,n2v2r degree-adjusted z,15,0.45,49
+dcsbm,n2v2r degree-adjusted z,15,0.5,55
+dcsbm,n2v2r degree-adjusted z,15,0.55,42
+dcsbm,n2v2r degree-adjusted z,15,0.6000000000000001,50
+dcsbm,n2v2r degree-adjusted z,15,0.65,45
+dcsbm,n2v2r degree-adjusted z,15,0.7000000000000001,53
+dcsbm,n2v2r degree-adjusted z,15,0.75,47
+dcsbm,n2v2r degree-adjusted z,15,0.8,45
+dcsbm,n2v2r degree-adjusted z,15,0.8500000000000001,39
+dcsbm,n2v2r degree-adjusted z,15,0.9,47
+dcsbm,n2v2r degree-adjusted z,15,0.9500000000000001,77
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.0,41
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.05,45
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.1,52
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.15000000000000002,54
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.2,53
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.25,55
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.30000000000000004,44
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.35000000000000003,62
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.4,43
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.45,51
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.5,49
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.55,52
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.6000000000000001,57
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.65,41
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.7000000000000001,46
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.75,44
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.8,34
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.8500000000000001,43
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.9,53
+dcsbm,n2v2r degree-adjusted z (elbow),15,0.9500000000000001,81
+dcsbm,n2v2r degree-adjusted z,16,0.0,29
+dcsbm,n2v2r degree-adjusted z,16,0.05,51
+dcsbm,n2v2r degree-adjusted z,16,0.1,53
+dcsbm,n2v2r degree-adjusted z,16,0.15000000000000002,56
+dcsbm,n2v2r degree-adjusted z,16,0.2,52
+dcsbm,n2v2r degree-adjusted z,16,0.25,60
+dcsbm,n2v2r degree-adjusted z,16,0.30000000000000004,48
+dcsbm,n2v2r degree-adjusted z,16,0.35000000000000003,46
+dcsbm,n2v2r degree-adjusted z,16,0.4,47
+dcsbm,n2v2r degree-adjusted z,16,0.45,58
+dcsbm,n2v2r degree-adjusted z,16,0.5,42
+dcsbm,n2v2r degree-adjusted z,16,0.55,49
+dcsbm,n2v2r degree-adjusted z,16,0.6000000000000001,55
+dcsbm,n2v2r degree-adjusted z,16,0.65,36
+dcsbm,n2v2r degree-adjusted z,16,0.7000000000000001,59
+dcsbm,n2v2r degree-adjusted z,16,0.75,52
+dcsbm,n2v2r degree-adjusted z,16,0.8,49
+dcsbm,n2v2r degree-adjusted z,16,0.8500000000000001,42
+dcsbm,n2v2r degree-adjusted z,16,0.9,41
+dcsbm,n2v2r degree-adjusted z,16,0.9500000000000001,75
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.0,27
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.05,49
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.1,46
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.15000000000000002,57
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.2,62
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.25,52
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.30000000000000004,40
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.35000000000000003,65
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.4,62
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.45,40
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.5,54
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.55,45
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.6000000000000001,49
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.65,50
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.7000000000000001,43
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.75,40
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.8,53
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.8500000000000001,59
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.9,44
+dcsbm,n2v2r degree-adjusted z (elbow),16,0.9500000000000001,63
+dcsbm,n2v2r degree-adjusted z,17,0.0,30
+dcsbm,n2v2r degree-adjusted z,17,0.05,60
+dcsbm,n2v2r degree-adjusted z,17,0.1,43
+dcsbm,n2v2r degree-adjusted z,17,0.15000000000000002,56
+dcsbm,n2v2r degree-adjusted z,17,0.2,49
+dcsbm,n2v2r degree-adjusted z,17,0.25,50
+dcsbm,n2v2r degree-adjusted z,17,0.30000000000000004,48
+dcsbm,n2v2r degree-adjusted z,17,0.35000000000000003,54
+dcsbm,n2v2r degree-adjusted z,17,0.4,55
+dcsbm,n2v2r degree-adjusted z,17,0.45,55
+dcsbm,n2v2r degree-adjusted z,17,0.5,52
+dcsbm,n2v2r degree-adjusted z,17,0.55,48
+dcsbm,n2v2r degree-adjusted z,17,0.6000000000000001,50
+dcsbm,n2v2r degree-adjusted z,17,0.65,45
+dcsbm,n2v2r degree-adjusted z,17,0.7000000000000001,43
+dcsbm,n2v2r degree-adjusted z,17,0.75,60
+dcsbm,n2v2r degree-adjusted z,17,0.8,46
+dcsbm,n2v2r degree-adjusted z,17,0.8500000000000001,31
+dcsbm,n2v2r degree-adjusted z,17,0.9,51
+dcsbm,n2v2r degree-adjusted z,17,0.9500000000000001,74
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.0,24
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.05,48
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.1,39
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.15000000000000002,57
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.2,59
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.25,44
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.30000000000000004,57
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.35000000000000003,59
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.4,47
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.45,66
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.5,45
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.55,36
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.6000000000000001,54
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.65,46
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.7000000000000001,46
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.75,44
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.8,42
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.8500000000000001,45
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.9,60
+dcsbm,n2v2r degree-adjusted z (elbow),17,0.9500000000000001,82
+dcsbm,n2v2r degree-adjusted z,18,0.0,23
+dcsbm,n2v2r degree-adjusted z,18,0.05,49
+dcsbm,n2v2r degree-adjusted z,18,0.1,59
+dcsbm,n2v2r degree-adjusted z,18,0.15000000000000002,55
+dcsbm,n2v2r degree-adjusted z,18,0.2,60
+dcsbm,n2v2r degree-adjusted z,18,0.25,51
+dcsbm,n2v2r degree-adjusted z,18,0.30000000000000004,50
+dcsbm,n2v2r degree-adjusted z,18,0.35000000000000003,45
+dcsbm,n2v2r degree-adjusted z,18,0.4,55
+dcsbm,n2v2r degree-adjusted z,18,0.45,53
+dcsbm,n2v2r degree-adjusted z,18,0.5,54
+dcsbm,n2v2r degree-adjusted z,18,0.55,63
+dcsbm,n2v2r degree-adjusted z,18,0.6000000000000001,46
+dcsbm,n2v2r degree-adjusted z,18,0.65,44
+dcsbm,n2v2r degree-adjusted z,18,0.7000000000000001,39
+dcsbm,n2v2r degree-adjusted z,18,0.75,53
+dcsbm,n2v2r degree-adjusted z,18,0.8,48
+dcsbm,n2v2r degree-adjusted z,18,0.8500000000000001,39
+dcsbm,n2v2r degree-adjusted z,18,0.9,49
+dcsbm,n2v2r degree-adjusted z,18,0.9500000000000001,65
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.0,18
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.05,51
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.1,44
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.15000000000000002,60
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.2,70
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.25,56
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.30000000000000004,46
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.35000000000000003,44
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.4,63
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.45,48
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.5,56
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.55,61
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.6000000000000001,50
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.65,37
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.7000000000000001,39
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.75,47
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.8,50
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.8500000000000001,33
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.9,58
+dcsbm,n2v2r degree-adjusted z (elbow),18,0.9500000000000001,69
+dcsbm,n2v2r degree-adjusted z,19,0.0,16
+dcsbm,n2v2r degree-adjusted z,19,0.05,33
+dcsbm,n2v2r degree-adjusted z,19,0.1,52
+dcsbm,n2v2r degree-adjusted z,19,0.15000000000000002,56
+dcsbm,n2v2r degree-adjusted z,19,0.2,67
+dcsbm,n2v2r degree-adjusted z,19,0.25,53
+dcsbm,n2v2r degree-adjusted z,19,0.30000000000000004,51
+dcsbm,n2v2r degree-adjusted z,19,0.35000000000000003,61
+dcsbm,n2v2r degree-adjusted z,19,0.4,65
+dcsbm,n2v2r degree-adjusted z,19,0.45,46
+dcsbm,n2v2r degree-adjusted z,19,0.5,55
+dcsbm,n2v2r degree-adjusted z,19,0.55,39
+dcsbm,n2v2r degree-adjusted z,19,0.6000000000000001,43
+dcsbm,n2v2r degree-adjusted z,19,0.65,44
+dcsbm,n2v2r degree-adjusted z,19,0.7000000000000001,43
+dcsbm,n2v2r degree-adjusted z,19,0.75,46
+dcsbm,n2v2r degree-adjusted z,19,0.8,51
+dcsbm,n2v2r degree-adjusted z,19,0.8500000000000001,50
+dcsbm,n2v2r degree-adjusted z,19,0.9,54
+dcsbm,n2v2r degree-adjusted z,19,0.9500000000000001,75
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.0,28
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.05,45
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.1,42
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.15000000000000002,56
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.2,56
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.25,55
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.30000000000000004,57
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.35000000000000003,49
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.4,52
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.45,60
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.5,50
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.55,46
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.6000000000000001,43
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.65,42
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.7000000000000001,46
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.75,45
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.8,54
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.8500000000000001,40
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.9,47
+dcsbm,n2v2r degree-adjusted z (elbow),19,0.9500000000000001,87
+sbm,n2v2r degree-adjusted z,0,0.0,36
+sbm,n2v2r degree-adjusted z,0,0.05,56
+sbm,n2v2r degree-adjusted z,0,0.1,52
+sbm,n2v2r degree-adjusted z,0,0.15000000000000002,60
+sbm,n2v2r degree-adjusted z,0,0.2,46
+sbm,n2v2r degree-adjusted z,0,0.25,51
+sbm,n2v2r degree-adjusted z,0,0.30000000000000004,46
+sbm,n2v2r degree-adjusted z,0,0.35000000000000003,49
+sbm,n2v2r degree-adjusted z,0,0.4,46
+sbm,n2v2r degree-adjusted z,0,0.45,58
+sbm,n2v2r degree-adjusted z,0,0.5,66
+sbm,n2v2r degree-adjusted z,0,0.55,45
+sbm,n2v2r degree-adjusted z,0,0.6000000000000001,52
+sbm,n2v2r degree-adjusted z,0,0.65,41
+sbm,n2v2r degree-adjusted z,0,0.7000000000000001,46
+sbm,n2v2r degree-adjusted z,0,0.75,43
+sbm,n2v2r degree-adjusted z,0,0.8,46
+sbm,n2v2r degree-adjusted z,0,0.8500000000000001,54
+sbm,n2v2r degree-adjusted z,0,0.9,51
+sbm,n2v2r degree-adjusted z,0,0.9500000000000001,56
+sbm,n2v2r degree-adjusted z (elbow),0,0.0,24
+sbm,n2v2r degree-adjusted z (elbow),0,0.05,38
+sbm,n2v2r degree-adjusted z (elbow),0,0.1,52
+sbm,n2v2r degree-adjusted z (elbow),0,0.15000000000000002,47
+sbm,n2v2r degree-adjusted z (elbow),0,0.2,69
+sbm,n2v2r degree-adjusted z (elbow),0,0.25,40
+sbm,n2v2r degree-adjusted z (elbow),0,0.30000000000000004,59
+sbm,n2v2r degree-adjusted z (elbow),0,0.35000000000000003,55
+sbm,n2v2r degree-adjusted z (elbow),0,0.4,57
+sbm,n2v2r degree-adjusted z (elbow),0,0.45,59
+sbm,n2v2r degree-adjusted z (elbow),0,0.5,45
+sbm,n2v2r degree-adjusted z (elbow),0,0.55,58
+sbm,n2v2r degree-adjusted z (elbow),0,0.6000000000000001,40
+sbm,n2v2r degree-adjusted z (elbow),0,0.65,44
+sbm,n2v2r degree-adjusted z (elbow),0,0.7000000000000001,43
+sbm,n2v2r degree-adjusted z (elbow),0,0.75,45
+sbm,n2v2r degree-adjusted z (elbow),0,0.8,34
+sbm,n2v2r degree-adjusted z (elbow),0,0.8500000000000001,52
+sbm,n2v2r degree-adjusted z (elbow),0,0.9,56
+sbm,n2v2r degree-adjusted z (elbow),0,0.9500000000000001,83
+sbm,n2v2r degree-adjusted z,1,0.0,45
+sbm,n2v2r degree-adjusted z,1,0.05,50
+sbm,n2v2r degree-adjusted z,1,0.1,42
+sbm,n2v2r degree-adjusted z,1,0.15000000000000002,55
+sbm,n2v2r degree-adjusted z,1,0.2,45
+sbm,n2v2r degree-adjusted z,1,0.25,54
+sbm,n2v2r degree-adjusted z,1,0.30000000000000004,53
+sbm,n2v2r degree-adjusted z,1,0.35000000000000003,53
+sbm,n2v2r degree-adjusted z,1,0.4,61
+sbm,n2v2r degree-adjusted z,1,0.45,42
+sbm,n2v2r degree-adjusted z,1,0.5,47
+sbm,n2v2r degree-adjusted z,1,0.55,35
+sbm,n2v2r degree-adjusted z,1,0.6000000000000001,62
+sbm,n2v2r degree-adjusted z,1,0.65,43
+sbm,n2v2r degree-adjusted z,1,0.7000000000000001,50
+sbm,n2v2r degree-adjusted z,1,0.75,42
+sbm,n2v2r degree-adjusted z,1,0.8,46
+sbm,n2v2r degree-adjusted z,1,0.8500000000000001,49
+sbm,n2v2r degree-adjusted z,1,0.9,58
+sbm,n2v2r degree-adjusted z,1,0.9500000000000001,68
+sbm,n2v2r degree-adjusted z (elbow),1,0.0,19
+sbm,n2v2r degree-adjusted z (elbow),1,0.05,50
+sbm,n2v2r degree-adjusted z (elbow),1,0.1,45
+sbm,n2v2r degree-adjusted z (elbow),1,0.15000000000000002,52
+sbm,n2v2r degree-adjusted z (elbow),1,0.2,51
+sbm,n2v2r degree-adjusted z (elbow),1,0.25,52
+sbm,n2v2r degree-adjusted z (elbow),1,0.30000000000000004,51
+sbm,n2v2r degree-adjusted z (elbow),1,0.35000000000000003,65
+sbm,n2v2r degree-adjusted z (elbow),1,0.4,49
+sbm,n2v2r degree-adjusted z (elbow),1,0.45,66
+sbm,n2v2r degree-adjusted z (elbow),1,0.5,40
+sbm,n2v2r degree-adjusted z (elbow),1,0.55,46
+sbm,n2v2r degree-adjusted z (elbow),1,0.6000000000000001,40
+sbm,n2v2r degree-adjusted z (elbow),1,0.65,51
+sbm,n2v2r degree-adjusted z (elbow),1,0.7000000000000001,40
+sbm,n2v2r degree-adjusted z (elbow),1,0.75,47
+sbm,n2v2r degree-adjusted z (elbow),1,0.8,41
+sbm,n2v2r degree-adjusted z (elbow),1,0.8500000000000001,41
+sbm,n2v2r degree-adjusted z (elbow),1,0.9,70
+sbm,n2v2r degree-adjusted z (elbow),1,0.9500000000000001,84
+sbm,n2v2r degree-adjusted z,2,0.0,23
+sbm,n2v2r degree-adjusted z,2,0.05,36
+sbm,n2v2r degree-adjusted z,2,0.1,52
+sbm,n2v2r degree-adjusted z,2,0.15000000000000002,45
+sbm,n2v2r degree-adjusted z,2,0.2,60
+sbm,n2v2r degree-adjusted z,2,0.25,70
+sbm,n2v2r degree-adjusted z,2,0.30000000000000004,56
+sbm,n2v2r degree-adjusted z,2,0.35000000000000003,60
+sbm,n2v2r degree-adjusted z,2,0.4,48
+sbm,n2v2r degree-adjusted z,2,0.45,50
+sbm,n2v2r degree-adjusted z,2,0.5,45
+sbm,n2v2r degree-adjusted z,2,0.55,45
+sbm,n2v2r degree-adjusted z,2,0.6000000000000001,46
+sbm,n2v2r degree-adjusted z,2,0.65,39
+sbm,n2v2r degree-adjusted z,2,0.7000000000000001,41
+sbm,n2v2r degree-adjusted z,2,0.75,61
+sbm,n2v2r degree-adjusted z,2,0.8,66
+sbm,n2v2r degree-adjusted z,2,0.8500000000000001,40
+sbm,n2v2r degree-adjusted z,2,0.9,53
+sbm,n2v2r degree-adjusted z,2,0.9500000000000001,64
+sbm,n2v2r degree-adjusted z (elbow),2,0.0,43
+sbm,n2v2r degree-adjusted z (elbow),2,0.05,58
+sbm,n2v2r degree-adjusted z (elbow),2,0.1,47
+sbm,n2v2r degree-adjusted z (elbow),2,0.15000000000000002,51
+sbm,n2v2r degree-adjusted z (elbow),2,0.2,58
+sbm,n2v2r degree-adjusted z (elbow),2,0.25,50
+sbm,n2v2r degree-adjusted z (elbow),2,0.30000000000000004,57
+sbm,n2v2r degree-adjusted z (elbow),2,0.35000000000000003,48
+sbm,n2v2r degree-adjusted z (elbow),2,0.4,49
+sbm,n2v2r degree-adjusted z (elbow),2,0.45,39
+sbm,n2v2r degree-adjusted z (elbow),2,0.5,46
+sbm,n2v2r degree-adjusted z (elbow),2,0.55,74
+sbm,n2v2r degree-adjusted z (elbow),2,0.6000000000000001,40
+sbm,n2v2r degree-adjusted z (elbow),2,0.65,53
+sbm,n2v2r degree-adjusted z (elbow),2,0.7000000000000001,44
+sbm,n2v2r degree-adjusted z (elbow),2,0.75,40
+sbm,n2v2r degree-adjusted z (elbow),2,0.8,34
+sbm,n2v2r degree-adjusted z (elbow),2,0.8500000000000001,37
+sbm,n2v2r degree-adjusted z (elbow),2,0.9,45
+sbm,n2v2r degree-adjusted z (elbow),2,0.9500000000000001,87
+sbm,n2v2r degree-adjusted z,3,0.0,44
+sbm,n2v2r degree-adjusted z,3,0.05,46
+sbm,n2v2r degree-adjusted z,3,0.1,45
+sbm,n2v2r degree-adjusted z,3,0.15000000000000002,62
+sbm,n2v2r degree-adjusted z,3,0.2,44
+sbm,n2v2r degree-adjusted z,3,0.25,50
+sbm,n2v2r degree-adjusted z,3,0.30000000000000004,53
+sbm,n2v2r degree-adjusted z,3,0.35000000000000003,59
+sbm,n2v2r degree-adjusted z,3,0.4,46
+sbm,n2v2r degree-adjusted z,3,0.45,51
+sbm,n2v2r degree-adjusted z,3,0.5,42
+sbm,n2v2r degree-adjusted z,3,0.55,51
+sbm,n2v2r degree-adjusted z,3,0.6000000000000001,50
+sbm,n2v2r degree-adjusted z,3,0.65,55
+sbm,n2v2r degree-adjusted z,3,0.7000000000000001,43
+sbm,n2v2r degree-adjusted z,3,0.75,56
+sbm,n2v2r degree-adjusted z,3,0.8,41
+sbm,n2v2r degree-adjusted z,3,0.8500000000000001,44
+sbm,n2v2r degree-adjusted z,3,0.9,41
+sbm,n2v2r degree-adjusted z,3,0.9500000000000001,77
+sbm,n2v2r degree-adjusted z (elbow),3,0.0,28
+sbm,n2v2r degree-adjusted z (elbow),3,0.05,41
+sbm,n2v2r degree-adjusted z (elbow),3,0.1,48
+sbm,n2v2r degree-adjusted z (elbow),3,0.15000000000000002,50
+sbm,n2v2r degree-adjusted z (elbow),3,0.2,56
+sbm,n2v2r degree-adjusted z (elbow),3,0.25,69
+sbm,n2v2r degree-adjusted z (elbow),3,0.30000000000000004,51
+sbm,n2v2r degree-adjusted z (elbow),3,0.35000000000000003,45
+sbm,n2v2r degree-adjusted z (elbow),3,0.4,50
+sbm,n2v2r degree-adjusted z (elbow),3,0.45,62
+sbm,n2v2r degree-adjusted z (elbow),3,0.5,42
+sbm,n2v2r degree-adjusted z (elbow),3,0.55,59
+sbm,n2v2r degree-adjusted z (elbow),3,0.6000000000000001,38
+sbm,n2v2r degree-adjusted z (elbow),3,0.65,46
+sbm,n2v2r degree-adjusted z (elbow),3,0.7000000000000001,38
+sbm,n2v2r degree-adjusted z (elbow),3,0.75,60
+sbm,n2v2r degree-adjusted z (elbow),3,0.8,47
+sbm,n2v2r degree-adjusted z (elbow),3,0.8500000000000001,45
+sbm,n2v2r degree-adjusted z (elbow),3,0.9,44
+sbm,n2v2r degree-adjusted z (elbow),3,0.9500000000000001,81
+sbm,n2v2r degree-adjusted z,4,0.0,36
+sbm,n2v2r degree-adjusted z,4,0.05,33
+sbm,n2v2r degree-adjusted z,4,0.1,61
+sbm,n2v2r degree-adjusted z,4,0.15000000000000002,50
+sbm,n2v2r degree-adjusted z,4,0.2,51
+sbm,n2v2r degree-adjusted z,4,0.25,61
+sbm,n2v2r degree-adjusted z,4,0.30000000000000004,57
+sbm,n2v2r degree-adjusted z,4,0.35000000000000003,44
+sbm,n2v2r degree-adjusted z,4,0.4,47
+sbm,n2v2r degree-adjusted z,4,0.45,60
+sbm,n2v2r degree-adjusted z,4,0.5,51
+sbm,n2v2r degree-adjusted z,4,0.55,45
+sbm,n2v2r degree-adjusted z,4,0.6000000000000001,42
+sbm,n2v2r degree-adjusted z,4,0.65,51
+sbm,n2v2r degree-adjusted z,4,0.7000000000000001,42
+sbm,n2v2r degree-adjusted z,4,0.75,54
+sbm,n2v2r degree-adjusted z,4,0.8,62
+sbm,n2v2r degree-adjusted z,4,0.8500000000000001,48
+sbm,n2v2r degree-adjusted z,4,0.9,41
+sbm,n2v2r degree-adjusted z,4,0.9500000000000001,64
+sbm,n2v2r degree-adjusted z (elbow),4,0.0,31
+sbm,n2v2r degree-adjusted z (elbow),4,0.05,50
+sbm,n2v2r degree-adjusted z (elbow),4,0.1,55
+sbm,n2v2r degree-adjusted z (elbow),4,0.15000000000000002,42
+sbm,n2v2r degree-adjusted z (elbow),4,0.2,50
+sbm,n2v2r degree-adjusted z (elbow),4,0.25,60
+sbm,n2v2r degree-adjusted z (elbow),4,0.30000000000000004,50
+sbm,n2v2r degree-adjusted z (elbow),4,0.35000000000000003,54
+sbm,n2v2r degree-adjusted z (elbow),4,0.4,52
+sbm,n2v2r degree-adjusted z (elbow),4,0.45,56
+sbm,n2v2r degree-adjusted z (elbow),4,0.5,50
+sbm,n2v2r degree-adjusted z (elbow),4,0.55,45
+sbm,n2v2r degree-adjusted z (elbow),4,0.6000000000000001,45
+sbm,n2v2r degree-adjusted z (elbow),4,0.65,46
+sbm,n2v2r degree-adjusted z (elbow),4,0.7000000000000001,42
+sbm,n2v2r degree-adjusted z (elbow),4,0.75,45
+sbm,n2v2r degree-adjusted z (elbow),4,0.8,50
+sbm,n2v2r degree-adjusted z (elbow),4,0.8500000000000001,39
+sbm,n2v2r degree-adjusted z (elbow),4,0.9,61
+sbm,n2v2r degree-adjusted z (elbow),4,0.9500000000000001,77
+sbm,n2v2r degree-adjusted z,5,0.0,29
+sbm,n2v2r degree-adjusted z,5,0.05,44
+sbm,n2v2r degree-adjusted z,5,0.1,63
+sbm,n2v2r degree-adjusted z,5,0.15000000000000002,51
+sbm,n2v2r degree-adjusted z,5,0.2,63
+sbm,n2v2r degree-adjusted z,5,0.25,45
+sbm,n2v2r degree-adjusted z,5,0.30000000000000004,38
+sbm,n2v2r degree-adjusted z,5,0.35000000000000003,48
+sbm,n2v2r degree-adjusted z,5,0.4,55
+sbm,n2v2r degree-adjusted z,5,0.45,64
+sbm,n2v2r degree-adjusted z,5,0.5,56
+sbm,n2v2r degree-adjusted z,5,0.55,43
+sbm,n2v2r degree-adjusted z,5,0.6000000000000001,50
+sbm,n2v2r degree-adjusted z,5,0.65,50
+sbm,n2v2r degree-adjusted z,5,0.7000000000000001,51
+sbm,n2v2r degree-adjusted z,5,0.75,43
+sbm,n2v2r degree-adjusted z,5,0.8,54
+sbm,n2v2r degree-adjusted z,5,0.8500000000000001,51
+sbm,n2v2r degree-adjusted z,5,0.9,54
+sbm,n2v2r degree-adjusted z,5,0.9500000000000001,48
+sbm,n2v2r degree-adjusted z (elbow),5,0.0,21
+sbm,n2v2r degree-adjusted z (elbow),5,0.05,56
+sbm,n2v2r degree-adjusted z (elbow),5,0.1,45
+sbm,n2v2r degree-adjusted z (elbow),5,0.15000000000000002,51
+sbm,n2v2r degree-adjusted z (elbow),5,0.2,58
+sbm,n2v2r degree-adjusted z (elbow),5,0.25,65
+sbm,n2v2r degree-adjusted z (elbow),5,0.30000000000000004,52
+sbm,n2v2r degree-adjusted z (elbow),5,0.35000000000000003,50
+sbm,n2v2r degree-adjusted z (elbow),5,0.4,47
+sbm,n2v2r degree-adjusted z (elbow),5,0.45,55
+sbm,n2v2r degree-adjusted z (elbow),5,0.5,53
+sbm,n2v2r degree-adjusted z (elbow),5,0.55,36
+sbm,n2v2r degree-adjusted z (elbow),5,0.6000000000000001,50
+sbm,n2v2r degree-adjusted z (elbow),5,0.65,43
+sbm,n2v2r degree-adjusted z (elbow),5,0.7000000000000001,49
+sbm,n2v2r degree-adjusted z (elbow),5,0.75,44
+sbm,n2v2r degree-adjusted z (elbow),5,0.8,39
+sbm,n2v2r degree-adjusted z (elbow),5,0.8500000000000001,48
+sbm,n2v2r degree-adjusted z (elbow),5,0.9,36
+sbm,n2v2r degree-adjusted z (elbow),5,0.9500000000000001,102
+sbm,n2v2r degree-adjusted z,6,0.0,39
+sbm,n2v2r degree-adjusted z,6,0.05,53
+sbm,n2v2r degree-adjusted z,6,0.1,56
+sbm,n2v2r degree-adjusted z,6,0.15000000000000002,43
+sbm,n2v2r degree-adjusted z,6,0.2,54
+sbm,n2v2r degree-adjusted z,6,0.25,47
+sbm,n2v2r degree-adjusted z,6,0.30000000000000004,56
+sbm,n2v2r degree-adjusted z,6,0.35000000000000003,58
+sbm,n2v2r degree-adjusted z,6,0.4,45
+sbm,n2v2r degree-adjusted z,6,0.45,49
+sbm,n2v2r degree-adjusted z,6,0.5,46
+sbm,n2v2r degree-adjusted z,6,0.55,44
+sbm,n2v2r degree-adjusted z,6,0.6000000000000001,68
+sbm,n2v2r degree-adjusted z,6,0.65,48
+sbm,n2v2r degree-adjusted z,6,0.7000000000000001,39
+sbm,n2v2r degree-adjusted z,6,0.75,47
+sbm,n2v2r degree-adjusted z,6,0.8,42
+sbm,n2v2r degree-adjusted z,6,0.8500000000000001,45
+sbm,n2v2r degree-adjusted z,6,0.9,50
+sbm,n2v2r degree-adjusted z,6,0.9500000000000001,71
+sbm,n2v2r degree-adjusted z (elbow),6,0.0,38
+sbm,n2v2r degree-adjusted z (elbow),6,0.05,50
+sbm,n2v2r degree-adjusted z (elbow),6,0.1,53
+sbm,n2v2r degree-adjusted z (elbow),6,0.15000000000000002,54
+sbm,n2v2r degree-adjusted z (elbow),6,0.2,52
+sbm,n2v2r degree-adjusted z (elbow),6,0.25,46
+sbm,n2v2r degree-adjusted z (elbow),6,0.30000000000000004,48
+sbm,n2v2r degree-adjusted z (elbow),6,0.35000000000000003,56
+sbm,n2v2r degree-adjusted z (elbow),6,0.4,50
+sbm,n2v2r degree-adjusted z (elbow),6,0.45,53
+sbm,n2v2r degree-adjusted z (elbow),6,0.5,44
+sbm,n2v2r degree-adjusted z (elbow),6,0.55,51
+sbm,n2v2r degree-adjusted z (elbow),6,0.6000000000000001,54
+sbm,n2v2r degree-adjusted z (elbow),6,0.65,46
+sbm,n2v2r degree-adjusted z (elbow),6,0.7000000000000001,52
+sbm,n2v2r degree-adjusted z (elbow),6,0.75,45
+sbm,n2v2r degree-adjusted z (elbow),6,0.8,44
+sbm,n2v2r degree-adjusted z (elbow),6,0.8500000000000001,43
+sbm,n2v2r degree-adjusted z (elbow),6,0.9,38
+sbm,n2v2r degree-adjusted z (elbow),6,0.9500000000000001,83
+sbm,n2v2r degree-adjusted z,7,0.0,36
+sbm,n2v2r degree-adjusted z,7,0.05,53
+sbm,n2v2r degree-adjusted z,7,0.1,55
+sbm,n2v2r degree-adjusted z,7,0.15000000000000002,61
+sbm,n2v2r degree-adjusted z,7,0.2,50
+sbm,n2v2r degree-adjusted z,7,0.25,50
+sbm,n2v2r degree-adjusted z,7,0.30000000000000004,59
+sbm,n2v2r degree-adjusted z,7,0.35000000000000003,47
+sbm,n2v2r degree-adjusted z,7,0.4,49
+sbm,n2v2r degree-adjusted z,7,0.45,40
+sbm,n2v2r degree-adjusted z,7,0.5,52
+sbm,n2v2r degree-adjusted z,7,0.55,49
+sbm,n2v2r degree-adjusted z,7,0.6000000000000001,53
+sbm,n2v2r degree-adjusted z,7,0.65,48
+sbm,n2v2r degree-adjusted z,7,0.7000000000000001,53
+sbm,n2v2r degree-adjusted z,7,0.75,40
+sbm,n2v2r degree-adjusted z,7,0.8,58
+sbm,n2v2r degree-adjusted z,7,0.8500000000000001,47
+sbm,n2v2r degree-adjusted z,7,0.9,48
+sbm,n2v2r degree-adjusted z,7,0.9500000000000001,52
+sbm,n2v2r degree-adjusted z (elbow),7,0.0,21
+sbm,n2v2r degree-adjusted z (elbow),7,0.05,48
+sbm,n2v2r degree-adjusted z (elbow),7,0.1,53
+sbm,n2v2r degree-adjusted z (elbow),7,0.15000000000000002,51
+sbm,n2v2r degree-adjusted z (elbow),7,0.2,62
+sbm,n2v2r degree-adjusted z (elbow),7,0.25,53
+sbm,n2v2r degree-adjusted z (elbow),7,0.30000000000000004,56
+sbm,n2v2r degree-adjusted z (elbow),7,0.35000000000000003,54
+sbm,n2v2r degree-adjusted z (elbow),7,0.4,55
+sbm,n2v2r degree-adjusted z (elbow),7,0.45,47
+sbm,n2v2r degree-adjusted z (elbow),7,0.5,54
+sbm,n2v2r degree-adjusted z (elbow),7,0.55,48
+sbm,n2v2r degree-adjusted z (elbow),7,0.6000000000000001,42
+sbm,n2v2r degree-adjusted z (elbow),7,0.65,46
+sbm,n2v2r degree-adjusted z (elbow),7,0.7000000000000001,45
+sbm,n2v2r degree-adjusted z (elbow),7,0.75,43
+sbm,n2v2r degree-adjusted z (elbow),7,0.8,43
+sbm,n2v2r degree-adjusted z (elbow),7,0.8500000000000001,40
+sbm,n2v2r degree-adjusted z (elbow),7,0.9,55
+sbm,n2v2r degree-adjusted z (elbow),7,0.9500000000000001,84
+sbm,n2v2r degree-adjusted z,8,0.0,32
+sbm,n2v2r degree-adjusted z,8,0.05,50
+sbm,n2v2r degree-adjusted z,8,0.1,48
+sbm,n2v2r degree-adjusted z,8,0.15000000000000002,57
+sbm,n2v2r degree-adjusted z,8,0.2,61
+sbm,n2v2r degree-adjusted z,8,0.25,47
+sbm,n2v2r degree-adjusted z,8,0.30000000000000004,54
+sbm,n2v2r degree-adjusted z,8,0.35000000000000003,55
+sbm,n2v2r degree-adjusted z,8,0.4,46
+sbm,n2v2r degree-adjusted z,8,0.45,50
+sbm,n2v2r degree-adjusted z,8,0.5,47
+sbm,n2v2r degree-adjusted z,8,0.55,48
+sbm,n2v2r degree-adjusted z,8,0.6000000000000001,51
+sbm,n2v2r degree-adjusted z,8,0.65,49
+sbm,n2v2r degree-adjusted z,8,0.7000000000000001,53
+sbm,n2v2r degree-adjusted z,8,0.75,36
+sbm,n2v2r degree-adjusted z,8,0.8,50
+sbm,n2v2r degree-adjusted z,8,0.8500000000000001,50
+sbm,n2v2r degree-adjusted z,8,0.9,44
+sbm,n2v2r degree-adjusted z,8,0.9500000000000001,72
+sbm,n2v2r degree-adjusted z (elbow),8,0.0,22
+sbm,n2v2r degree-adjusted z (elbow),8,0.05,50
+sbm,n2v2r degree-adjusted z (elbow),8,0.1,53
+sbm,n2v2r degree-adjusted z (elbow),8,0.15000000000000002,57
+sbm,n2v2r degree-adjusted z (elbow),8,0.2,56
+sbm,n2v2r degree-adjusted z (elbow),8,0.25,53
+sbm,n2v2r degree-adjusted z (elbow),8,0.30000000000000004,45
+sbm,n2v2r degree-adjusted z (elbow),8,0.35000000000000003,55
+sbm,n2v2r degree-adjusted z (elbow),8,0.4,53
+sbm,n2v2r degree-adjusted z (elbow),8,0.45,56
+sbm,n2v2r degree-adjusted z (elbow),8,0.5,49
+sbm,n2v2r degree-adjusted z (elbow),8,0.55,47
+sbm,n2v2r degree-adjusted z (elbow),8,0.6000000000000001,42
+sbm,n2v2r degree-adjusted z (elbow),8,0.65,48
+sbm,n2v2r degree-adjusted z (elbow),8,0.7000000000000001,52
+sbm,n2v2r degree-adjusted z (elbow),8,0.75,38
+sbm,n2v2r degree-adjusted z (elbow),8,0.8,55
+sbm,n2v2r degree-adjusted z (elbow),8,0.8500000000000001,45
+sbm,n2v2r degree-adjusted z (elbow),8,0.9,50
+sbm,n2v2r degree-adjusted z (elbow),8,0.9500000000000001,74
+sbm,n2v2r degree-adjusted z,9,0.0,45
+sbm,n2v2r degree-adjusted z,9,0.05,50
+sbm,n2v2r degree-adjusted z,9,0.1,52
+sbm,n2v2r degree-adjusted z,9,0.15000000000000002,46
+sbm,n2v2r degree-adjusted z,9,0.2,50
+sbm,n2v2r degree-adjusted z,9,0.25,41
+sbm,n2v2r degree-adjusted z,9,0.30000000000000004,52
+sbm,n2v2r degree-adjusted z,9,0.35000000000000003,54
+sbm,n2v2r degree-adjusted z,9,0.4,50
+sbm,n2v2r degree-adjusted z,9,0.45,60
+sbm,n2v2r degree-adjusted z,9,0.5,42
+sbm,n2v2r degree-adjusted z,9,0.55,43
+sbm,n2v2r degree-adjusted z,9,0.6000000000000001,55
+sbm,n2v2r degree-adjusted z,9,0.65,63
+sbm,n2v2r degree-adjusted z,9,0.7000000000000001,40
+sbm,n2v2r degree-adjusted z,9,0.75,38
+sbm,n2v2r degree-adjusted z,9,0.8,57
+sbm,n2v2r degree-adjusted z,9,0.8500000000000001,40
+sbm,n2v2r degree-adjusted z,9,0.9,49
+sbm,n2v2r degree-adjusted z,9,0.9500000000000001,73
+sbm,n2v2r degree-adjusted z (elbow),9,0.0,20
+sbm,n2v2r degree-adjusted z (elbow),9,0.05,43
+sbm,n2v2r degree-adjusted z (elbow),9,0.1,53
+sbm,n2v2r degree-adjusted z (elbow),9,0.15000000000000002,65
+sbm,n2v2r degree-adjusted z (elbow),9,0.2,61
+sbm,n2v2r degree-adjusted z (elbow),9,0.25,47
+sbm,n2v2r degree-adjusted z (elbow),9,0.30000000000000004,56
+sbm,n2v2r degree-adjusted z (elbow),9,0.35000000000000003,57
+sbm,n2v2r degree-adjusted z (elbow),9,0.4,39
+sbm,n2v2r degree-adjusted z (elbow),9,0.45,59
+sbm,n2v2r degree-adjusted z (elbow),9,0.5,44
+sbm,n2v2r degree-adjusted z (elbow),9,0.55,44
+sbm,n2v2r degree-adjusted z (elbow),9,0.6000000000000001,54
+sbm,n2v2r degree-adjusted z (elbow),9,0.65,55
+sbm,n2v2r degree-adjusted z (elbow),9,0.7000000000000001,45
+sbm,n2v2r degree-adjusted z (elbow),9,0.75,36
+sbm,n2v2r degree-adjusted z (elbow),9,0.8,45
+sbm,n2v2r degree-adjusted z (elbow),9,0.8500000000000001,43
+sbm,n2v2r degree-adjusted z (elbow),9,0.9,52
+sbm,n2v2r degree-adjusted z (elbow),9,0.9500000000000001,82
+sbm,n2v2r degree-adjusted z,10,0.0,31
+sbm,n2v2r degree-adjusted z,10,0.05,48
+sbm,n2v2r degree-adjusted z,10,0.1,49
+sbm,n2v2r degree-adjusted z,10,0.15000000000000002,59
+sbm,n2v2r degree-adjusted z,10,0.2,50
+sbm,n2v2r degree-adjusted z,10,0.25,55
+sbm,n2v2r degree-adjusted z,10,0.30000000000000004,67
+sbm,n2v2r degree-adjusted z,10,0.35000000000000003,48
+sbm,n2v2r degree-adjusted z,10,0.4,48
+sbm,n2v2r degree-adjusted z,10,0.45,45
+sbm,n2v2r degree-adjusted z,10,0.5,55
+sbm,n2v2r degree-adjusted z,10,0.55,43
+sbm,n2v2r degree-adjusted z,10,0.6000000000000001,44
+sbm,n2v2r degree-adjusted z,10,0.65,44
+sbm,n2v2r degree-adjusted z,10,0.7000000000000001,51
+sbm,n2v2r degree-adjusted z,10,0.75,44
+sbm,n2v2r degree-adjusted z,10,0.8,45
+sbm,n2v2r degree-adjusted z,10,0.8500000000000001,42
+sbm,n2v2r degree-adjusted z,10,0.9,56
+sbm,n2v2r degree-adjusted z,10,0.9500000000000001,76
+sbm,n2v2r degree-adjusted z (elbow),10,0.0,35
+sbm,n2v2r degree-adjusted z (elbow),10,0.05,45
+sbm,n2v2r degree-adjusted z (elbow),10,0.1,41
+sbm,n2v2r degree-adjusted z (elbow),10,0.15000000000000002,46
+sbm,n2v2r degree-adjusted z (elbow),10,0.2,52
+sbm,n2v2r degree-adjusted z (elbow),10,0.25,55
+sbm,n2v2r degree-adjusted z (elbow),10,0.30000000000000004,48
+sbm,n2v2r degree-adjusted z (elbow),10,0.35000000000000003,65
+sbm,n2v2r degree-adjusted z (elbow),10,0.4,59
+sbm,n2v2r degree-adjusted z (elbow),10,0.45,54
+sbm,n2v2r degree-adjusted z (elbow),10,0.5,39
+sbm,n2v2r degree-adjusted z (elbow),10,0.55,52
+sbm,n2v2r degree-adjusted z (elbow),10,0.6000000000000001,32
+sbm,n2v2r degree-adjusted z (elbow),10,0.65,42
+sbm,n2v2r degree-adjusted z (elbow),10,0.7000000000000001,54
+sbm,n2v2r degree-adjusted z (elbow),10,0.75,35
+sbm,n2v2r degree-adjusted z (elbow),10,0.8,48
+sbm,n2v2r degree-adjusted z (elbow),10,0.8500000000000001,48
+sbm,n2v2r degree-adjusted z (elbow),10,0.9,66
+sbm,n2v2r degree-adjusted z (elbow),10,0.9500000000000001,84
+sbm,n2v2r degree-adjusted z,11,0.0,46
+sbm,n2v2r degree-adjusted z,11,0.05,55
+sbm,n2v2r degree-adjusted z,11,0.1,55
+sbm,n2v2r degree-adjusted z,11,0.15000000000000002,46
+sbm,n2v2r degree-adjusted z,11,0.2,45
+sbm,n2v2r degree-adjusted z,11,0.25,59
+sbm,n2v2r degree-adjusted z,11,0.30000000000000004,46
+sbm,n2v2r degree-adjusted z,11,0.35000000000000003,38
+sbm,n2v2r degree-adjusted z,11,0.4,54
+sbm,n2v2r degree-adjusted z,11,0.45,56
+sbm,n2v2r degree-adjusted z,11,0.5,54
+sbm,n2v2r degree-adjusted z,11,0.55,48
+sbm,n2v2r degree-adjusted z,11,0.6000000000000001,44
+sbm,n2v2r degree-adjusted z,11,0.65,58
+sbm,n2v2r degree-adjusted z,11,0.7000000000000001,43
+sbm,n2v2r degree-adjusted z,11,0.75,47
+sbm,n2v2r degree-adjusted z,11,0.8,36
+sbm,n2v2r degree-adjusted z,11,0.8500000000000001,50
+sbm,n2v2r degree-adjusted z,11,0.9,51
+sbm,n2v2r degree-adjusted z,11,0.9500000000000001,69
+sbm,n2v2r degree-adjusted z (elbow),11,0.0,43
+sbm,n2v2r degree-adjusted z (elbow),11,0.05,48
+sbm,n2v2r degree-adjusted z (elbow),11,0.1,52
+sbm,n2v2r degree-adjusted z (elbow),11,0.15000000000000002,54
+sbm,n2v2r degree-adjusted z (elbow),11,0.2,47
+sbm,n2v2r degree-adjusted z (elbow),11,0.25,66
+sbm,n2v2r degree-adjusted z (elbow),11,0.30000000000000004,45
+sbm,n2v2r degree-adjusted z (elbow),11,0.35000000000000003,53
+sbm,n2v2r degree-adjusted z (elbow),11,0.4,41
+sbm,n2v2r degree-adjusted z (elbow),11,0.45,51
+sbm,n2v2r degree-adjusted z (elbow),11,0.5,58
+sbm,n2v2r degree-adjusted z (elbow),11,0.55,37
+sbm,n2v2r degree-adjusted z (elbow),11,0.6000000000000001,51
+sbm,n2v2r degree-adjusted z (elbow),11,0.65,43
+sbm,n2v2r degree-adjusted z (elbow),11,0.7000000000000001,55
+sbm,n2v2r degree-adjusted z (elbow),11,0.75,47
+sbm,n2v2r degree-adjusted z (elbow),11,0.8,40
+sbm,n2v2r degree-adjusted z (elbow),11,0.8500000000000001,38
+sbm,n2v2r degree-adjusted z (elbow),11,0.9,49
+sbm,n2v2r degree-adjusted z (elbow),11,0.9500000000000001,82
+sbm,n2v2r degree-adjusted z,12,0.0,41
+sbm,n2v2r degree-adjusted z,12,0.05,57
+sbm,n2v2r degree-adjusted z,12,0.1,47
+sbm,n2v2r degree-adjusted z,12,0.15000000000000002,62
+sbm,n2v2r degree-adjusted z,12,0.2,48
+sbm,n2v2r degree-adjusted z,12,0.25,55
+sbm,n2v2r degree-adjusted z,12,0.30000000000000004,48
+sbm,n2v2r degree-adjusted z,12,0.35000000000000003,49
+sbm,n2v2r degree-adjusted z,12,0.4,41
+sbm,n2v2r degree-adjusted z,12,0.45,52
+sbm,n2v2r degree-adjusted z,12,0.5,47
+sbm,n2v2r degree-adjusted z,12,0.55,53
+sbm,n2v2r degree-adjusted z,12,0.6000000000000001,52
+sbm,n2v2r degree-adjusted z,12,0.65,51
+sbm,n2v2r degree-adjusted z,12,0.7000000000000001,52
+sbm,n2v2r degree-adjusted z,12,0.75,33
+sbm,n2v2r degree-adjusted z,12,0.8,35
+sbm,n2v2r degree-adjusted z,12,0.8500000000000001,48
+sbm,n2v2r degree-adjusted z,12,0.9,57
+sbm,n2v2r degree-adjusted z,12,0.9500000000000001,72
+sbm,n2v2r degree-adjusted z (elbow),12,0.0,29
+sbm,n2v2r degree-adjusted z (elbow),12,0.05,42
+sbm,n2v2r degree-adjusted z (elbow),12,0.1,49
+sbm,n2v2r degree-adjusted z (elbow),12,0.15000000000000002,54
+sbm,n2v2r degree-adjusted z (elbow),12,0.2,56
+sbm,n2v2r degree-adjusted z (elbow),12,0.25,54
+sbm,n2v2r degree-adjusted z (elbow),12,0.30000000000000004,51
+sbm,n2v2r degree-adjusted z (elbow),12,0.35000000000000003,58
+sbm,n2v2r degree-adjusted z (elbow),12,0.4,52
+sbm,n2v2r degree-adjusted z (elbow),12,0.45,55
+sbm,n2v2r degree-adjusted z (elbow),12,0.5,36
+sbm,n2v2r degree-adjusted z (elbow),12,0.55,49
+sbm,n2v2r degree-adjusted z (elbow),12,0.6000000000000001,42
+sbm,n2v2r degree-adjusted z (elbow),12,0.65,52
+sbm,n2v2r degree-adjusted z (elbow),12,0.7000000000000001,51
+sbm,n2v2r degree-adjusted z (elbow),12,0.75,55
+sbm,n2v2r degree-adjusted z (elbow),12,0.8,36
+sbm,n2v2r degree-adjusted z (elbow),12,0.8500000000000001,45
+sbm,n2v2r degree-adjusted z (elbow),12,0.9,50
+sbm,n2v2r degree-adjusted z (elbow),12,0.9500000000000001,84
+sbm,n2v2r degree-adjusted z,13,0.0,32
+sbm,n2v2r degree-adjusted z,13,0.05,72
+sbm,n2v2r degree-adjusted z,13,0.1,50
+sbm,n2v2r degree-adjusted z,13,0.15000000000000002,46
+sbm,n2v2r degree-adjusted z,13,0.2,58
+sbm,n2v2r degree-adjusted z,13,0.25,48
+sbm,n2v2r degree-adjusted z,13,0.30000000000000004,48
+sbm,n2v2r degree-adjusted z,13,0.35000000000000003,47
+sbm,n2v2r degree-adjusted z,13,0.4,57
+sbm,n2v2r degree-adjusted z,13,0.45,42
+sbm,n2v2r degree-adjusted z,13,0.5,51
+sbm,n2v2r degree-adjusted z,13,0.55,57
+sbm,n2v2r degree-adjusted z,13,0.6000000000000001,47
+sbm,n2v2r degree-adjusted z,13,0.65,43
+sbm,n2v2r degree-adjusted z,13,0.7000000000000001,60
+sbm,n2v2r degree-adjusted z,13,0.75,51
+sbm,n2v2r degree-adjusted z,13,0.8,47
+sbm,n2v2r degree-adjusted z,13,0.8500000000000001,41
+sbm,n2v2r degree-adjusted z,13,0.9,48
+sbm,n2v2r degree-adjusted z,13,0.9500000000000001,55
+sbm,n2v2r degree-adjusted z (elbow),13,0.0,20
+sbm,n2v2r degree-adjusted z (elbow),13,0.05,51
+sbm,n2v2r degree-adjusted z (elbow),13,0.1,43
+sbm,n2v2r degree-adjusted z (elbow),13,0.15000000000000002,49
+sbm,n2v2r degree-adjusted z (elbow),13,0.2,65
+sbm,n2v2r degree-adjusted z (elbow),13,0.25,53
+sbm,n2v2r degree-adjusted z (elbow),13,0.30000000000000004,56
+sbm,n2v2r degree-adjusted z (elbow),13,0.35000000000000003,50
+sbm,n2v2r degree-adjusted z (elbow),13,0.4,63
+sbm,n2v2r degree-adjusted z (elbow),13,0.45,50
+sbm,n2v2r degree-adjusted z (elbow),13,0.5,43
+sbm,n2v2r degree-adjusted z (elbow),13,0.55,44
+sbm,n2v2r degree-adjusted z (elbow),13,0.6000000000000001,46
+sbm,n2v2r degree-adjusted z (elbow),13,0.65,51
+sbm,n2v2r degree-adjusted z (elbow),13,0.7000000000000001,44
+sbm,n2v2r degree-adjusted z (elbow),13,0.75,40
+sbm,n2v2r degree-adjusted z (elbow),13,0.8,55
+sbm,n2v2r degree-adjusted z (elbow),13,0.8500000000000001,44
+sbm,n2v2r degree-adjusted z (elbow),13,0.9,52
+sbm,n2v2r degree-adjusted z (elbow),13,0.9500000000000001,81
+sbm,n2v2r degree-adjusted z,14,0.0,27
+sbm,n2v2r degree-adjusted z,14,0.05,48
+sbm,n2v2r degree-adjusted z,14,0.1,48
+sbm,n2v2r degree-adjusted z,14,0.15000000000000002,61
+sbm,n2v2r degree-adjusted z,14,0.2,57
+sbm,n2v2r degree-adjusted z,14,0.25,67
+sbm,n2v2r degree-adjusted z,14,0.30000000000000004,44
+sbm,n2v2r degree-adjusted z,14,0.35000000000000003,61
+sbm,n2v2r degree-adjusted z,14,0.4,50
+sbm,n2v2r degree-adjusted z,14,0.45,37
+sbm,n2v2r degree-adjusted z,14,0.5,53
+sbm,n2v2r degree-adjusted z,14,0.55,46
+sbm,n2v2r degree-adjusted z,14,0.6000000000000001,50
+sbm,n2v2r degree-adjusted z,14,0.65,53
+sbm,n2v2r degree-adjusted z,14,0.7000000000000001,39
+sbm,n2v2r degree-adjusted z,14,0.75,52
+sbm,n2v2r degree-adjusted z,14,0.8,55
+sbm,n2v2r degree-adjusted z,14,0.8500000000000001,60
+sbm,n2v2r degree-adjusted z,14,0.9,52
+sbm,n2v2r degree-adjusted z,14,0.9500000000000001,40
+sbm,n2v2r degree-adjusted z (elbow),14,0.0,25
+sbm,n2v2r degree-adjusted z (elbow),14,0.05,44
+sbm,n2v2r degree-adjusted z (elbow),14,0.1,51
+sbm,n2v2r degree-adjusted z (elbow),14,0.15000000000000002,57
+sbm,n2v2r degree-adjusted z (elbow),14,0.2,50
+sbm,n2v2r degree-adjusted z (elbow),14,0.25,60
+sbm,n2v2r degree-adjusted z (elbow),14,0.30000000000000004,44
+sbm,n2v2r degree-adjusted z (elbow),14,0.35000000000000003,51
+sbm,n2v2r degree-adjusted z (elbow),14,0.4,58
+sbm,n2v2r degree-adjusted z (elbow),14,0.45,60
+sbm,n2v2r degree-adjusted z (elbow),14,0.5,37
+sbm,n2v2r degree-adjusted z (elbow),14,0.55,45
+sbm,n2v2r degree-adjusted z (elbow),14,0.6000000000000001,51
+sbm,n2v2r degree-adjusted z (elbow),14,0.65,53
+sbm,n2v2r degree-adjusted z (elbow),14,0.7000000000000001,41
+sbm,n2v2r degree-adjusted z (elbow),14,0.75,51
+sbm,n2v2r degree-adjusted z (elbow),14,0.8,42
+sbm,n2v2r degree-adjusted z (elbow),14,0.8500000000000001,49
+sbm,n2v2r degree-adjusted z (elbow),14,0.9,52
+sbm,n2v2r degree-adjusted z (elbow),14,0.9500000000000001,79
+sbm,n2v2r degree-adjusted z,15,0.0,37
+sbm,n2v2r degree-adjusted z,15,0.05,45
+sbm,n2v2r degree-adjusted z,15,0.1,49
+sbm,n2v2r degree-adjusted z,15,0.15000000000000002,56
+sbm,n2v2r degree-adjusted z,15,0.2,54
+sbm,n2v2r degree-adjusted z,15,0.25,36
+sbm,n2v2r degree-adjusted z,15,0.30000000000000004,53
+sbm,n2v2r degree-adjusted z,15,0.35000000000000003,66
+sbm,n2v2r degree-adjusted z,15,0.4,48
+sbm,n2v2r degree-adjusted z,15,0.45,56
+sbm,n2v2r degree-adjusted z,15,0.5,49
+sbm,n2v2r degree-adjusted z,15,0.55,47
+sbm,n2v2r degree-adjusted z,15,0.6000000000000001,50
+sbm,n2v2r degree-adjusted z,15,0.65,45
+sbm,n2v2r degree-adjusted z,15,0.7000000000000001,50
+sbm,n2v2r degree-adjusted z,15,0.75,37
+sbm,n2v2r degree-adjusted z,15,0.8,42
+sbm,n2v2r degree-adjusted z,15,0.8500000000000001,49
+sbm,n2v2r degree-adjusted z,15,0.9,69
+sbm,n2v2r degree-adjusted z,15,0.9500000000000001,62
+sbm,n2v2r degree-adjusted z (elbow),15,0.0,28
+sbm,n2v2r degree-adjusted z (elbow),15,0.05,32
+sbm,n2v2r degree-adjusted z (elbow),15,0.1,52
+sbm,n2v2r degree-adjusted z (elbow),15,0.15000000000000002,58
+sbm,n2v2r degree-adjusted z (elbow),15,0.2,57
+sbm,n2v2r degree-adjusted z (elbow),15,0.25,60
+sbm,n2v2r degree-adjusted z (elbow),15,0.30000000000000004,50
+sbm,n2v2r degree-adjusted z (elbow),15,0.35000000000000003,60
+sbm,n2v2r degree-adjusted z (elbow),15,0.4,55
+sbm,n2v2r degree-adjusted z (elbow),15,0.45,48
+sbm,n2v2r degree-adjusted z (elbow),15,0.5,42
+sbm,n2v2r degree-adjusted z (elbow),15,0.55,42
+sbm,n2v2r degree-adjusted z (elbow),15,0.6000000000000001,42
+sbm,n2v2r degree-adjusted z (elbow),15,0.65,50
+sbm,n2v2r degree-adjusted z (elbow),15,0.7000000000000001,51
+sbm,n2v2r degree-adjusted z (elbow),15,0.75,35
+sbm,n2v2r degree-adjusted z (elbow),15,0.8,69
+sbm,n2v2r degree-adjusted z (elbow),15,0.8500000000000001,43
+sbm,n2v2r degree-adjusted z (elbow),15,0.9,52
+sbm,n2v2r degree-adjusted z (elbow),15,0.9500000000000001,74
+sbm,n2v2r degree-adjusted z,16,0.0,37
+sbm,n2v2r degree-adjusted z,16,0.05,44
+sbm,n2v2r degree-adjusted z,16,0.1,46
+sbm,n2v2r degree-adjusted z,16,0.15000000000000002,59
+sbm,n2v2r degree-adjusted z,16,0.2,53
+sbm,n2v2r degree-adjusted z,16,0.25,46
+sbm,n2v2r degree-adjusted z,16,0.30000000000000004,62
+sbm,n2v2r degree-adjusted z,16,0.35000000000000003,39
+sbm,n2v2r degree-adjusted z,16,0.4,51
+sbm,n2v2r degree-adjusted z,16,0.45,63
+sbm,n2v2r degree-adjusted z,16,0.5,46
+sbm,n2v2r degree-adjusted z,16,0.55,46
+sbm,n2v2r degree-adjusted z,16,0.6000000000000001,51
+sbm,n2v2r degree-adjusted z,16,0.65,48
+sbm,n2v2r degree-adjusted z,16,0.7000000000000001,48
+sbm,n2v2r degree-adjusted z,16,0.75,49
+sbm,n2v2r degree-adjusted z,16,0.8,54
+sbm,n2v2r degree-adjusted z,16,0.8500000000000001,49
+sbm,n2v2r degree-adjusted z,16,0.9,45
+sbm,n2v2r degree-adjusted z,16,0.9500000000000001,64
+sbm,n2v2r degree-adjusted z (elbow),16,0.0,31
+sbm,n2v2r degree-adjusted z (elbow),16,0.05,57
+sbm,n2v2r degree-adjusted z (elbow),16,0.1,59
+sbm,n2v2r degree-adjusted z (elbow),16,0.15000000000000002,56
+sbm,n2v2r degree-adjusted z (elbow),16,0.2,40
+sbm,n2v2r degree-adjusted z (elbow),16,0.25,60
+sbm,n2v2r degree-adjusted z (elbow),16,0.30000000000000004,50
+sbm,n2v2r degree-adjusted z (elbow),16,0.35000000000000003,50
+sbm,n2v2r degree-adjusted z (elbow),16,0.4,62
+sbm,n2v2r degree-adjusted z (elbow),16,0.45,35
+sbm,n2v2r degree-adjusted z (elbow),16,0.5,54
+sbm,n2v2r degree-adjusted z (elbow),16,0.55,55
+sbm,n2v2r degree-adjusted z (elbow),16,0.6000000000000001,37
+sbm,n2v2r degree-adjusted z (elbow),16,0.65,43
+sbm,n2v2r degree-adjusted z (elbow),16,0.7000000000000001,54
+sbm,n2v2r degree-adjusted z (elbow),16,0.75,50
+sbm,n2v2r degree-adjusted z (elbow),16,0.8,54
+sbm,n2v2r degree-adjusted z (elbow),16,0.8500000000000001,38
+sbm,n2v2r degree-adjusted z (elbow),16,0.9,40
+sbm,n2v2r degree-adjusted z (elbow),16,0.9500000000000001,75
+sbm,n2v2r degree-adjusted z,17,0.0,28
+sbm,n2v2r degree-adjusted z,17,0.05,52
+sbm,n2v2r degree-adjusted z,17,0.1,49
+sbm,n2v2r degree-adjusted z,17,0.15000000000000002,64
+sbm,n2v2r degree-adjusted z,17,0.2,59
+sbm,n2v2r degree-adjusted z,17,0.25,52
+sbm,n2v2r degree-adjusted z,17,0.30000000000000004,57
+sbm,n2v2r degree-adjusted z,17,0.35000000000000003,38
+sbm,n2v2r degree-adjusted z,17,0.4,51
+sbm,n2v2r degree-adjusted z,17,0.45,50
+sbm,n2v2r degree-adjusted z,17,0.5,57
+sbm,n2v2r degree-adjusted z,17,0.55,50
+sbm,n2v2r degree-adjusted z,17,0.6000000000000001,51
+sbm,n2v2r degree-adjusted z,17,0.65,49
+sbm,n2v2r degree-adjusted z,17,0.7000000000000001,45
+sbm,n2v2r degree-adjusted z,17,0.75,48
+sbm,n2v2r degree-adjusted z,17,0.8,61
+sbm,n2v2r degree-adjusted z,17,0.8500000000000001,52
+sbm,n2v2r degree-adjusted z,17,0.9,49
+sbm,n2v2r degree-adjusted z,17,0.9500000000000001,38
+sbm,n2v2r degree-adjusted z (elbow),17,0.0,28
+sbm,n2v2r degree-adjusted z (elbow),17,0.05,47
+sbm,n2v2r degree-adjusted z (elbow),17,0.1,45
+sbm,n2v2r degree-adjusted z (elbow),17,0.15000000000000002,61
+sbm,n2v2r degree-adjusted z (elbow),17,0.2,55
+sbm,n2v2r degree-adjusted z (elbow),17,0.25,58
+sbm,n2v2r degree-adjusted z (elbow),17,0.30000000000000004,58
+sbm,n2v2r degree-adjusted z (elbow),17,0.35000000000000003,52
+sbm,n2v2r degree-adjusted z (elbow),17,0.4,52
+sbm,n2v2r degree-adjusted z (elbow),17,0.45,44
+sbm,n2v2r degree-adjusted z (elbow),17,0.5,57
+sbm,n2v2r degree-adjusted z (elbow),17,0.55,42
+sbm,n2v2r degree-adjusted z (elbow),17,0.6000000000000001,42
+sbm,n2v2r degree-adjusted z (elbow),17,0.65,46
+sbm,n2v2r degree-adjusted z (elbow),17,0.7000000000000001,49
+sbm,n2v2r degree-adjusted z (elbow),17,0.75,55
+sbm,n2v2r degree-adjusted z (elbow),17,0.8,44
+sbm,n2v2r degree-adjusted z (elbow),17,0.8500000000000001,41
+sbm,n2v2r degree-adjusted z (elbow),17,0.9,48
+sbm,n2v2r degree-adjusted z (elbow),17,0.9500000000000001,76
+sbm,n2v2r degree-adjusted z,18,0.0,52
+sbm,n2v2r degree-adjusted z,18,0.05,54
+sbm,n2v2r degree-adjusted z,18,0.1,40
+sbm,n2v2r degree-adjusted z,18,0.15000000000000002,41
+sbm,n2v2r degree-adjusted z,18,0.2,50
+sbm,n2v2r degree-adjusted z,18,0.25,52
+sbm,n2v2r degree-adjusted z,18,0.30000000000000004,55
+sbm,n2v2r degree-adjusted z,18,0.35000000000000003,55
+sbm,n2v2r degree-adjusted z,18,0.4,59
+sbm,n2v2r degree-adjusted z,18,0.45,42
+sbm,n2v2r degree-adjusted z,18,0.5,43
+sbm,n2v2r degree-adjusted z,18,0.55,43
+sbm,n2v2r degree-adjusted z,18,0.6000000000000001,52
+sbm,n2v2r degree-adjusted z,18,0.65,48
+sbm,n2v2r degree-adjusted z,18,0.7000000000000001,51
+sbm,n2v2r degree-adjusted z,18,0.75,45
+sbm,n2v2r degree-adjusted z,18,0.8,41
+sbm,n2v2r degree-adjusted z,18,0.8500000000000001,46
+sbm,n2v2r degree-adjusted z,18,0.9,43
+sbm,n2v2r degree-adjusted z,18,0.9500000000000001,88
+sbm,n2v2r degree-adjusted z (elbow),18,0.0,20
+sbm,n2v2r degree-adjusted z (elbow),18,0.05,34
+sbm,n2v2r degree-adjusted z (elbow),18,0.1,59
+sbm,n2v2r degree-adjusted z (elbow),18,0.15000000000000002,54
+sbm,n2v2r degree-adjusted z (elbow),18,0.2,58
+sbm,n2v2r degree-adjusted z (elbow),18,0.25,47
+sbm,n2v2r degree-adjusted z (elbow),18,0.30000000000000004,65
+sbm,n2v2r degree-adjusted z (elbow),18,0.35000000000000003,55
+sbm,n2v2r degree-adjusted z (elbow),18,0.4,56
+sbm,n2v2r degree-adjusted z (elbow),18,0.45,52
+sbm,n2v2r degree-adjusted z (elbow),18,0.5,39
+sbm,n2v2r degree-adjusted z (elbow),18,0.55,44
+sbm,n2v2r degree-adjusted z (elbow),18,0.6000000000000001,45
+sbm,n2v2r degree-adjusted z (elbow),18,0.65,41
+sbm,n2v2r degree-adjusted z (elbow),18,0.7000000000000001,56
+sbm,n2v2r degree-adjusted z (elbow),18,0.75,40
+sbm,n2v2r degree-adjusted z (elbow),18,0.8,38
+sbm,n2v2r degree-adjusted z (elbow),18,0.8500000000000001,54
+sbm,n2v2r degree-adjusted z (elbow),18,0.9,52
+sbm,n2v2r degree-adjusted z (elbow),18,0.9500000000000001,91
+sbm,n2v2r degree-adjusted z,19,0.0,28
+sbm,n2v2r degree-adjusted z,19,0.05,47
+sbm,n2v2r degree-adjusted z,19,0.1,54
+sbm,n2v2r degree-adjusted z,19,0.15000000000000002,58
+sbm,n2v2r degree-adjusted z,19,0.2,57
+sbm,n2v2r degree-adjusted z,19,0.25,51
+sbm,n2v2r degree-adjusted z,19,0.30000000000000004,59
+sbm,n2v2r degree-adjusted z,19,0.35000000000000003,46
+sbm,n2v2r degree-adjusted z,19,0.4,52
+sbm,n2v2r degree-adjusted z,19,0.45,48
+sbm,n2v2r degree-adjusted z,19,0.5,54
+sbm,n2v2r degree-adjusted z,19,0.55,43
+sbm,n2v2r degree-adjusted z,19,0.6000000000000001,41
+sbm,n2v2r degree-adjusted z,19,0.65,56
+sbm,n2v2r degree-adjusted z,19,0.7000000000000001,50
+sbm,n2v2r degree-adjusted z,19,0.75,39
+sbm,n2v2r degree-adjusted z,19,0.8,53
+sbm,n2v2r degree-adjusted z,19,0.8500000000000001,49
+sbm,n2v2r degree-adjusted z,19,0.9,59
+sbm,n2v2r degree-adjusted z,19,0.9500000000000001,56
+sbm,n2v2r degree-adjusted z (elbow),19,0.0,32
+sbm,n2v2r degree-adjusted z (elbow),19,0.05,58
+sbm,n2v2r degree-adjusted z (elbow),19,0.1,46
+sbm,n2v2r degree-adjusted z (elbow),19,0.15000000000000002,51
+sbm,n2v2r degree-adjusted z (elbow),19,0.2,42
+sbm,n2v2r degree-adjusted z (elbow),19,0.25,68
+sbm,n2v2r degree-adjusted z (elbow),19,0.30000000000000004,52
+sbm,n2v2r degree-adjusted z (elbow),19,0.35000000000000003,53
+sbm,n2v2r degree-adjusted z (elbow),19,0.4,43
+sbm,n2v2r degree-adjusted z (elbow),19,0.45,55
+sbm,n2v2r degree-adjusted z (elbow),19,0.5,48
+sbm,n2v2r degree-adjusted z (elbow),19,0.55,44
+sbm,n2v2r degree-adjusted z (elbow),19,0.6000000000000001,57
+sbm,n2v2r degree-adjusted z (elbow),19,0.65,29
+sbm,n2v2r degree-adjusted z (elbow),19,0.7000000000000001,51
+sbm,n2v2r degree-adjusted z (elbow),19,0.75,43
+sbm,n2v2r degree-adjusted z (elbow),19,0.8,36
+sbm,n2v2r degree-adjusted z (elbow),19,0.8500000000000001,45
+sbm,n2v2r degree-adjusted z (elbow),19,0.9,36
+sbm,n2v2r degree-adjusted z (elbow),19,0.9500000000000001,111
+weighted,n2v2r degree-adjusted z,0,0.0,31
+weighted,n2v2r degree-adjusted z,0,0.05,45
+weighted,n2v2r degree-adjusted z,0,0.1,50
+weighted,n2v2r degree-adjusted z,0,0.15000000000000002,61
+weighted,n2v2r degree-adjusted z,0,0.2,57
+weighted,n2v2r degree-adjusted z,0,0.25,50
+weighted,n2v2r degree-adjusted z,0,0.30000000000000004,45
+weighted,n2v2r degree-adjusted z,0,0.35000000000000003,44
+weighted,n2v2r degree-adjusted z,0,0.4,58
+weighted,n2v2r degree-adjusted z,0,0.45,59
+weighted,n2v2r degree-adjusted z,0,0.5,48
+weighted,n2v2r degree-adjusted z,0,0.55,64
+weighted,n2v2r degree-adjusted z,0,0.6000000000000001,35
+weighted,n2v2r degree-adjusted z,0,0.65,50
+weighted,n2v2r degree-adjusted z,0,0.7000000000000001,47
+weighted,n2v2r degree-adjusted z,0,0.75,51
+weighted,n2v2r degree-adjusted z,0,0.8,46
+weighted,n2v2r degree-adjusted z,0,0.8500000000000001,49
+weighted,n2v2r degree-adjusted z,0,0.9,45
+weighted,n2v2r degree-adjusted z,0,0.9500000000000001,65
+weighted,n2v2r degree-adjusted z (elbow),0,0.0,31
+weighted,n2v2r degree-adjusted z (elbow),0,0.05,52
+weighted,n2v2r degree-adjusted z (elbow),0,0.1,50
+weighted,n2v2r degree-adjusted z (elbow),0,0.15000000000000002,55
+weighted,n2v2r degree-adjusted z (elbow),0,0.2,56
+weighted,n2v2r degree-adjusted z (elbow),0,0.25,50
+weighted,n2v2r degree-adjusted z (elbow),0,0.30000000000000004,53
+weighted,n2v2r degree-adjusted z (elbow),0,0.35000000000000003,55
+weighted,n2v2r degree-adjusted z (elbow),0,0.4,52
+weighted,n2v2r degree-adjusted z (elbow),0,0.45,46
+weighted,n2v2r degree-adjusted z (elbow),0,0.5,48
+weighted,n2v2r degree-adjusted z (elbow),0,0.55,49
+weighted,n2v2r degree-adjusted z (elbow),0,0.6000000000000001,48
+weighted,n2v2r degree-adjusted z (elbow),0,0.65,47
+weighted,n2v2r degree-adjusted z (elbow),0,0.7000000000000001,52
+weighted,n2v2r degree-adjusted z (elbow),0,0.75,39
+weighted,n2v2r degree-adjusted z (elbow),0,0.8,60
+weighted,n2v2r degree-adjusted z (elbow),0,0.8500000000000001,34
+weighted,n2v2r degree-adjusted z (elbow),0,0.9,47
+weighted,n2v2r degree-adjusted z (elbow),0,0.9500000000000001,76
+weighted,n2v2r degree-adjusted z,1,0.0,21
+weighted,n2v2r degree-adjusted z,1,0.05,35
+weighted,n2v2r degree-adjusted z,1,0.1,62
+weighted,n2v2r degree-adjusted z,1,0.15000000000000002,51
+weighted,n2v2r degree-adjusted z,1,0.2,57
+weighted,n2v2r degree-adjusted z,1,0.25,50
+weighted,n2v2r degree-adjusted z,1,0.30000000000000004,54
+weighted,n2v2r degree-adjusted z,1,0.35000000000000003,52
+weighted,n2v2r degree-adjusted z,1,0.4,57
+weighted,n2v2r degree-adjusted z,1,0.45,61
+weighted,n2v2r degree-adjusted z,1,0.5,50
+weighted,n2v2r degree-adjusted z,1,0.55,43
+weighted,n2v2r degree-adjusted z,1,0.6000000000000001,45
+weighted,n2v2r degree-adjusted z,1,0.65,47
+weighted,n2v2r degree-adjusted z,1,0.7000000000000001,41
+weighted,n2v2r degree-adjusted z,1,0.75,47
+weighted,n2v2r degree-adjusted z,1,0.8,42
+weighted,n2v2r degree-adjusted z,1,0.8500000000000001,53
+weighted,n2v2r degree-adjusted z,1,0.9,52
+weighted,n2v2r degree-adjusted z,1,0.9500000000000001,80
+weighted,n2v2r degree-adjusted z (elbow),1,0.0,37
+weighted,n2v2r degree-adjusted z (elbow),1,0.05,46
+weighted,n2v2r degree-adjusted z (elbow),1,0.1,44
+weighted,n2v2r degree-adjusted z (elbow),1,0.15000000000000002,48
+weighted,n2v2r degree-adjusted z (elbow),1,0.2,51
+weighted,n2v2r degree-adjusted z (elbow),1,0.25,68
+weighted,n2v2r degree-adjusted z (elbow),1,0.30000000000000004,51
+weighted,n2v2r degree-adjusted z (elbow),1,0.35000000000000003,56
+weighted,n2v2r degree-adjusted z (elbow),1,0.4,55
+weighted,n2v2r degree-adjusted z (elbow),1,0.45,44
+weighted,n2v2r degree-adjusted z (elbow),1,0.5,39
+weighted,n2v2r degree-adjusted z (elbow),1,0.55,50
+weighted,n2v2r degree-adjusted z (elbow),1,0.6000000000000001,42
+weighted,n2v2r degree-adjusted z (elbow),1,0.65,48
+weighted,n2v2r degree-adjusted z (elbow),1,0.7000000000000001,47
+weighted,n2v2r degree-adjusted z (elbow),1,0.75,37
+weighted,n2v2r degree-adjusted z (elbow),1,0.8,53
+weighted,n2v2r degree-adjusted z (elbow),1,0.8500000000000001,50
+weighted,n2v2r degree-adjusted z (elbow),1,0.9,34
+weighted,n2v2r degree-adjusted z (elbow),1,0.9500000000000001,100
+weighted,n2v2r degree-adjusted z,2,0.0,34
+weighted,n2v2r degree-adjusted z,2,0.05,48
+weighted,n2v2r degree-adjusted z,2,0.1,48
+weighted,n2v2r degree-adjusted z,2,0.15000000000000002,52
+weighted,n2v2r degree-adjusted z,2,0.2,47
+weighted,n2v2r degree-adjusted z,2,0.25,50
+weighted,n2v2r degree-adjusted z,2,0.30000000000000004,62
+weighted,n2v2r degree-adjusted z,2,0.35000000000000003,48
+weighted,n2v2r degree-adjusted z,2,0.4,51
+weighted,n2v2r degree-adjusted z,2,0.45,60
+weighted,n2v2r degree-adjusted z,2,0.5,53
+weighted,n2v2r degree-adjusted z,2,0.55,38
+weighted,n2v2r degree-adjusted z,2,0.6000000000000001,34
+weighted,n2v2r degree-adjusted z,2,0.65,54
+weighted,n2v2r degree-adjusted z,2,0.7000000000000001,50
+weighted,n2v2r degree-adjusted z,2,0.75,38
+weighted,n2v2r degree-adjusted z,2,0.8,56
+weighted,n2v2r degree-adjusted z,2,0.8500000000000001,43
+weighted,n2v2r degree-adjusted z,2,0.9,59
+weighted,n2v2r degree-adjusted z,2,0.9500000000000001,75
+weighted,n2v2r degree-adjusted z (elbow),2,0.0,16
+weighted,n2v2r degree-adjusted z (elbow),2,0.05,48
+weighted,n2v2r degree-adjusted z (elbow),2,0.1,69
+weighted,n2v2r degree-adjusted z (elbow),2,0.15000000000000002,51
+weighted,n2v2r degree-adjusted z (elbow),2,0.2,59
+weighted,n2v2r degree-adjusted z (elbow),2,0.25,58
+weighted,n2v2r degree-adjusted z (elbow),2,0.30000000000000004,42
+weighted,n2v2r degree-adjusted z (elbow),2,0.35000000000000003,49
+weighted,n2v2r degree-adjusted z (elbow),2,0.4,52
+weighted,n2v2r degree-adjusted z (elbow),2,0.45,56
+weighted,n2v2r degree-adjusted z (elbow),2,0.5,41
+weighted,n2v2r degree-adjusted z (elbow),2,0.55,56
+weighted,n2v2r degree-adjusted z (elbow),2,0.6000000000000001,51
+weighted,n2v2r degree-adjusted z (elbow),2,0.65,44
+weighted,n2v2r degree-adjusted z (elbow),2,0.7000000000000001,51
+weighted,n2v2r degree-adjusted z (elbow),2,0.75,38
+weighted,n2v2r degree-adjusted z (elbow),2,0.8,38
+weighted,n2v2r degree-adjusted z (elbow),2,0.8500000000000001,39
+weighted,n2v2r degree-adjusted z (elbow),2,0.9,50
+weighted,n2v2r degree-adjusted z (elbow),2,0.9500000000000001,92
+weighted,n2v2r degree-adjusted z,3,0.0,26
+weighted,n2v2r degree-adjusted z,3,0.05,59
+weighted,n2v2r degree-adjusted z,3,0.1,45
+weighted,n2v2r degree-adjusted z,3,0.15000000000000002,52
+weighted,n2v2r degree-adjusted z,3,0.2,55
+weighted,n2v2r degree-adjusted z,3,0.25,63
+weighted,n2v2r degree-adjusted z,3,0.30000000000000004,47
+weighted,n2v2r degree-adjusted z,3,0.35000000000000003,65
+weighted,n2v2r degree-adjusted z,3,0.4,42
+weighted,n2v2r degree-adjusted z,3,0.45,46
+weighted,n2v2r degree-adjusted z,3,0.5,58
+weighted,n2v2r degree-adjusted z,3,0.55,66
+weighted,n2v2r degree-adjusted z,3,0.6000000000000001,47
+weighted,n2v2r degree-adjusted z,3,0.65,34
+weighted,n2v2r degree-adjusted z,3,0.7000000000000001,32
+weighted,n2v2r degree-adjusted z,3,0.75,37
+weighted,n2v2r degree-adjusted z,3,0.8,43
+weighted,n2v2r degree-adjusted z,3,0.8500000000000001,59
+weighted,n2v2r degree-adjusted z,3,0.9,51
+weighted,n2v2r degree-adjusted z,3,0.9500000000000001,73
+weighted,n2v2r degree-adjusted z (elbow),3,0.0,13
+weighted,n2v2r degree-adjusted z (elbow),3,0.05,41
+weighted,n2v2r degree-adjusted z (elbow),3,0.1,53
+weighted,n2v2r degree-adjusted z (elbow),3,0.15000000000000002,57
+weighted,n2v2r degree-adjusted z (elbow),3,0.2,66
+weighted,n2v2r degree-adjusted z (elbow),3,0.25,56
+weighted,n2v2r degree-adjusted z (elbow),3,0.30000000000000004,55
+weighted,n2v2r degree-adjusted z (elbow),3,0.35000000000000003,49
+weighted,n2v2r degree-adjusted z (elbow),3,0.4,49
+weighted,n2v2r degree-adjusted z (elbow),3,0.45,61
+weighted,n2v2r degree-adjusted z (elbow),3,0.5,54
+weighted,n2v2r degree-adjusted z (elbow),3,0.55,42
+weighted,n2v2r degree-adjusted z (elbow),3,0.6000000000000001,50
+weighted,n2v2r degree-adjusted z (elbow),3,0.65,37
+weighted,n2v2r degree-adjusted z (elbow),3,0.7000000000000001,47
+weighted,n2v2r degree-adjusted z (elbow),3,0.75,56
+weighted,n2v2r degree-adjusted z (elbow),3,0.8,44
+weighted,n2v2r degree-adjusted z (elbow),3,0.8500000000000001,47
+weighted,n2v2r degree-adjusted z (elbow),3,0.9,47
+weighted,n2v2r degree-adjusted z (elbow),3,0.9500000000000001,76
+weighted,n2v2r degree-adjusted z,4,0.0,34
+weighted,n2v2r degree-adjusted z,4,0.05,42
+weighted,n2v2r degree-adjusted z,4,0.1,58
+weighted,n2v2r degree-adjusted z,4,0.15000000000000002,54
+weighted,n2v2r degree-adjusted z,4,0.2,53
+weighted,n2v2r degree-adjusted z,4,0.25,48
+weighted,n2v2r degree-adjusted z,4,0.30000000000000004,48
+weighted,n2v2r degree-adjusted z,4,0.35000000000000003,54
+weighted,n2v2r degree-adjusted z,4,0.4,43
+weighted,n2v2r degree-adjusted z,4,0.45,66
+weighted,n2v2r degree-adjusted z,4,0.5,54
+weighted,n2v2r degree-adjusted z,4,0.55,46
+weighted,n2v2r degree-adjusted z,4,0.6000000000000001,45
+weighted,n2v2r degree-adjusted z,4,0.65,43
+weighted,n2v2r degree-adjusted z,4,0.7000000000000001,53
+weighted,n2v2r degree-adjusted z,4,0.75,54
+weighted,n2v2r degree-adjusted z,4,0.8,45
+weighted,n2v2r degree-adjusted z,4,0.8500000000000001,52
+weighted,n2v2r degree-adjusted z,4,0.9,47
+weighted,n2v2r degree-adjusted z,4,0.9500000000000001,61
+weighted,n2v2r degree-adjusted z (elbow),4,0.0,24
+weighted,n2v2r degree-adjusted z (elbow),4,0.05,40
+weighted,n2v2r degree-adjusted z (elbow),4,0.1,45
+weighted,n2v2r degree-adjusted z (elbow),4,0.15000000000000002,55
+weighted,n2v2r degree-adjusted z (elbow),4,0.2,47
+weighted,n2v2r degree-adjusted z (elbow),4,0.25,65
+weighted,n2v2r degree-adjusted z (elbow),4,0.30000000000000004,66
+weighted,n2v2r degree-adjusted z (elbow),4,0.35000000000000003,57
+weighted,n2v2r degree-adjusted z (elbow),4,0.4,51
+weighted,n2v2r degree-adjusted z (elbow),4,0.45,50
+weighted,n2v2r degree-adjusted z (elbow),4,0.5,42
+weighted,n2v2r degree-adjusted z (elbow),4,0.55,38
+weighted,n2v2r degree-adjusted z (elbow),4,0.6000000000000001,38
+weighted,n2v2r degree-adjusted z (elbow),4,0.65,56
+weighted,n2v2r degree-adjusted z (elbow),4,0.7000000000000001,37
+weighted,n2v2r degree-adjusted z (elbow),4,0.75,38
+weighted,n2v2r degree-adjusted z (elbow),4,0.8,42
+weighted,n2v2r degree-adjusted z (elbow),4,0.8500000000000001,47
+weighted,n2v2r degree-adjusted z (elbow),4,0.9,57
+weighted,n2v2r degree-adjusted z (elbow),4,0.9500000000000001,105
+weighted,n2v2r degree-adjusted z,5,0.0,29
+weighted,n2v2r degree-adjusted z,5,0.05,53
+weighted,n2v2r degree-adjusted z,5,0.1,56
+weighted,n2v2r degree-adjusted z,5,0.15000000000000002,54
+weighted,n2v2r degree-adjusted z,5,0.2,49
+weighted,n2v2r degree-adjusted z,5,0.25,57
+weighted,n2v2r degree-adjusted z,5,0.30000000000000004,56
+weighted,n2v2r degree-adjusted z,5,0.35000000000000003,59
+weighted,n2v2r degree-adjusted z,5,0.4,32
+weighted,n2v2r degree-adjusted z,5,0.45,55
+weighted,n2v2r degree-adjusted z,5,0.5,50
+weighted,n2v2r degree-adjusted z,5,0.55,39
+weighted,n2v2r degree-adjusted z,5,0.6000000000000001,39
+weighted,n2v2r degree-adjusted z,5,0.65,57
+weighted,n2v2r degree-adjusted z,5,0.7000000000000001,56
+weighted,n2v2r degree-adjusted z,5,0.75,51
+weighted,n2v2r degree-adjusted z,5,0.8,45
+weighted,n2v2r degree-adjusted z,5,0.8500000000000001,49
+weighted,n2v2r degree-adjusted z,5,0.9,48
+weighted,n2v2r degree-adjusted z,5,0.9500000000000001,66
+weighted,n2v2r degree-adjusted z (elbow),5,0.0,12
+weighted,n2v2r degree-adjusted z (elbow),5,0.05,39
+weighted,n2v2r degree-adjusted z (elbow),5,0.1,59
+weighted,n2v2r degree-adjusted z (elbow),5,0.15000000000000002,59
+weighted,n2v2r degree-adjusted z (elbow),5,0.2,57
+weighted,n2v2r degree-adjusted z (elbow),5,0.25,59
+weighted,n2v2r degree-adjusted z (elbow),5,0.30000000000000004,49
+weighted,n2v2r degree-adjusted z (elbow),5,0.35000000000000003,55
+weighted,n2v2r degree-adjusted z (elbow),5,0.4,58
+weighted,n2v2r degree-adjusted z (elbow),5,0.45,53
+weighted,n2v2r degree-adjusted z (elbow),5,0.5,40
+weighted,n2v2r degree-adjusted z (elbow),5,0.55,43
+weighted,n2v2r degree-adjusted z (elbow),5,0.6000000000000001,54
+weighted,n2v2r degree-adjusted z (elbow),5,0.65,37
+weighted,n2v2r degree-adjusted z (elbow),5,0.7000000000000001,52
+weighted,n2v2r degree-adjusted z (elbow),5,0.75,40
+weighted,n2v2r degree-adjusted z (elbow),5,0.8,45
+weighted,n2v2r degree-adjusted z (elbow),5,0.8500000000000001,52
+weighted,n2v2r degree-adjusted z (elbow),5,0.9,42
+weighted,n2v2r degree-adjusted z (elbow),5,0.9500000000000001,95
+weighted,n2v2r degree-adjusted z,6,0.0,21
+weighted,n2v2r degree-adjusted z,6,0.05,45
+weighted,n2v2r degree-adjusted z,6,0.1,46
+weighted,n2v2r degree-adjusted z,6,0.15000000000000002,62
+weighted,n2v2r degree-adjusted z,6,0.2,53
+weighted,n2v2r degree-adjusted z,6,0.25,51
+weighted,n2v2r degree-adjusted z,6,0.30000000000000004,61
+weighted,n2v2r degree-adjusted z,6,0.35000000000000003,52
+weighted,n2v2r degree-adjusted z,6,0.4,55
+weighted,n2v2r degree-adjusted z,6,0.45,54
+weighted,n2v2r degree-adjusted z,6,0.5,47
+weighted,n2v2r degree-adjusted z,6,0.55,45
+weighted,n2v2r degree-adjusted z,6,0.6000000000000001,44
+weighted,n2v2r degree-adjusted z,6,0.65,48
+weighted,n2v2r degree-adjusted z,6,0.7000000000000001,43
+weighted,n2v2r degree-adjusted z,6,0.75,53
+weighted,n2v2r degree-adjusted z,6,0.8,55
+weighted,n2v2r degree-adjusted z,6,0.8500000000000001,55
+weighted,n2v2r degree-adjusted z,6,0.9,50
+weighted,n2v2r degree-adjusted z,6,0.9500000000000001,60
+weighted,n2v2r degree-adjusted z (elbow),6,0.0,26
+weighted,n2v2r degree-adjusted z (elbow),6,0.05,47
+weighted,n2v2r degree-adjusted z (elbow),6,0.1,59
+weighted,n2v2r degree-adjusted z (elbow),6,0.15000000000000002,50
+weighted,n2v2r degree-adjusted z (elbow),6,0.2,63
+weighted,n2v2r degree-adjusted z (elbow),6,0.25,53
+weighted,n2v2r degree-adjusted z (elbow),6,0.30000000000000004,56
+weighted,n2v2r degree-adjusted z (elbow),6,0.35000000000000003,46
+weighted,n2v2r degree-adjusted z (elbow),6,0.4,59
+weighted,n2v2r degree-adjusted z (elbow),6,0.45,41
+weighted,n2v2r degree-adjusted z (elbow),6,0.5,52
+weighted,n2v2r degree-adjusted z (elbow),6,0.55,45
+weighted,n2v2r degree-adjusted z (elbow),6,0.6000000000000001,50
+weighted,n2v2r degree-adjusted z (elbow),6,0.65,50
+weighted,n2v2r degree-adjusted z (elbow),6,0.7000000000000001,48
+weighted,n2v2r degree-adjusted z (elbow),6,0.75,35
+weighted,n2v2r degree-adjusted z (elbow),6,0.8,37
+weighted,n2v2r degree-adjusted z (elbow),6,0.8500000000000001,46
+weighted,n2v2r degree-adjusted z (elbow),6,0.9,54
+weighted,n2v2r degree-adjusted z (elbow),6,0.9500000000000001,83
+weighted,n2v2r degree-adjusted z,7,0.0,33
+weighted,n2v2r degree-adjusted z,7,0.05,59
+weighted,n2v2r degree-adjusted z,7,0.1,46
+weighted,n2v2r degree-adjusted z,7,0.15000000000000002,57
+weighted,n2v2r degree-adjusted z,7,0.2,41
+weighted,n2v2r degree-adjusted z,7,0.25,50
+weighted,n2v2r degree-adjusted z,7,0.30000000000000004,45
+weighted,n2v2r degree-adjusted z,7,0.35000000000000003,56
+weighted,n2v2r degree-adjusted z,7,0.4,55
+weighted,n2v2r degree-adjusted z,7,0.45,58
+weighted,n2v2r degree-adjusted z,7,0.5,46
+weighted,n2v2r degree-adjusted z,7,0.55,43
+weighted,n2v2r degree-adjusted z,7,0.6000000000000001,57
+weighted,n2v2r degree-adjusted z,7,0.65,53
+weighted,n2v2r degree-adjusted z,7,0.7000000000000001,37
+weighted,n2v2r degree-adjusted z,7,0.75,51
+weighted,n2v2r degree-adjusted z,7,0.8,57
+weighted,n2v2r degree-adjusted z,7,0.8500000000000001,55
+weighted,n2v2r degree-adjusted z,7,0.9,34
+weighted,n2v2r degree-adjusted z,7,0.9500000000000001,67
+weighted,n2v2r degree-adjusted z (elbow),7,0.0,36
+weighted,n2v2r degree-adjusted z (elbow),7,0.05,46
+weighted,n2v2r degree-adjusted z (elbow),7,0.1,58
+weighted,n2v2r degree-adjusted z (elbow),7,0.15000000000000002,56
+weighted,n2v2r degree-adjusted z (elbow),7,0.2,49
+weighted,n2v2r degree-adjusted z (elbow),7,0.25,48
+weighted,n2v2r degree-adjusted z (elbow),7,0.30000000000000004,65
+weighted,n2v2r degree-adjusted z (elbow),7,0.35000000000000003,50
+weighted,n2v2r degree-adjusted z (elbow),7,0.4,39
+weighted,n2v2r degree-adjusted z (elbow),7,0.45,53
+weighted,n2v2r degree-adjusted z (elbow),7,0.5,58
+weighted,n2v2r degree-adjusted z (elbow),7,0.55,33
+weighted,n2v2r degree-adjusted z (elbow),7,0.6000000000000001,43
+weighted,n2v2r degree-adjusted z (elbow),7,0.65,55
+weighted,n2v2r degree-adjusted z (elbow),7,0.7000000000000001,56
+weighted,n2v2r degree-adjusted z (elbow),7,0.75,41
+weighted,n2v2r degree-adjusted z (elbow),7,0.8,42
+weighted,n2v2r degree-adjusted z (elbow),7,0.8500000000000001,36
+weighted,n2v2r degree-adjusted z (elbow),7,0.9,58
+weighted,n2v2r degree-adjusted z (elbow),7,0.9500000000000001,78
+weighted,n2v2r degree-adjusted z,8,0.0,36
+weighted,n2v2r degree-adjusted z,8,0.05,41
+weighted,n2v2r degree-adjusted z,8,0.1,64
+weighted,n2v2r degree-adjusted z,8,0.15000000000000002,64
+weighted,n2v2r degree-adjusted z,8,0.2,52
+weighted,n2v2r degree-adjusted z,8,0.25,50
+weighted,n2v2r degree-adjusted z,8,0.30000000000000004,45
+weighted,n2v2r degree-adjusted z,8,0.35000000000000003,56
+weighted,n2v2r degree-adjusted z,8,0.4,43
+weighted,n2v2r degree-adjusted z,8,0.45,49
+weighted,n2v2r degree-adjusted z,8,0.5,50
+weighted,n2v2r degree-adjusted z,8,0.55,49
+weighted,n2v2r degree-adjusted z,8,0.6000000000000001,58
+weighted,n2v2r degree-adjusted z,8,0.65,51
+weighted,n2v2r degree-adjusted z,8,0.7000000000000001,49
+weighted,n2v2r degree-adjusted z,8,0.75,53
+weighted,n2v2r degree-adjusted z,8,0.8,44
+weighted,n2v2r degree-adjusted z,8,0.8500000000000001,50
+weighted,n2v2r degree-adjusted z,8,0.9,50
+weighted,n2v2r degree-adjusted z,8,0.9500000000000001,46
+weighted,n2v2r degree-adjusted z (elbow),8,0.0,34
+weighted,n2v2r degree-adjusted z (elbow),8,0.05,61
+weighted,n2v2r degree-adjusted z (elbow),8,0.1,47
+weighted,n2v2r degree-adjusted z (elbow),8,0.15000000000000002,54
+weighted,n2v2r degree-adjusted z (elbow),8,0.2,48
+weighted,n2v2r degree-adjusted z (elbow),8,0.25,54
+weighted,n2v2r degree-adjusted z (elbow),8,0.30000000000000004,62
+weighted,n2v2r degree-adjusted z (elbow),8,0.35000000000000003,52
+weighted,n2v2r degree-adjusted z (elbow),8,0.4,48
+weighted,n2v2r degree-adjusted z (elbow),8,0.45,40
+weighted,n2v2r degree-adjusted z (elbow),8,0.5,52
+weighted,n2v2r degree-adjusted z (elbow),8,0.55,50
+weighted,n2v2r degree-adjusted z (elbow),8,0.6000000000000001,38
+weighted,n2v2r degree-adjusted z (elbow),8,0.65,50
+weighted,n2v2r degree-adjusted z (elbow),8,0.7000000000000001,54
+weighted,n2v2r degree-adjusted z (elbow),8,0.75,41
+weighted,n2v2r degree-adjusted z (elbow),8,0.8,30
+weighted,n2v2r degree-adjusted z (elbow),8,0.8500000000000001,39
+weighted,n2v2r degree-adjusted z (elbow),8,0.9,56
+weighted,n2v2r degree-adjusted z (elbow),8,0.9500000000000001,90
+weighted,n2v2r degree-adjusted z,9,0.0,33
+weighted,n2v2r degree-adjusted z,9,0.05,46
+weighted,n2v2r degree-adjusted z,9,0.1,42
+weighted,n2v2r degree-adjusted z,9,0.15000000000000002,51
+weighted,n2v2r degree-adjusted z,9,0.2,59
+weighted,n2v2r degree-adjusted z,9,0.25,46
+weighted,n2v2r degree-adjusted z,9,0.30000000000000004,57
+weighted,n2v2r degree-adjusted z,9,0.35000000000000003,61
+weighted,n2v2r degree-adjusted z,9,0.4,50
+weighted,n2v2r degree-adjusted z,9,0.45,55
+weighted,n2v2r degree-adjusted z,9,0.5,48
+weighted,n2v2r degree-adjusted z,9,0.55,48
+weighted,n2v2r degree-adjusted z,9,0.6000000000000001,47
+weighted,n2v2r degree-adjusted z,9,0.65,35
+weighted,n2v2r degree-adjusted z,9,0.7000000000000001,53
+weighted,n2v2r degree-adjusted z,9,0.75,40
+weighted,n2v2r degree-adjusted z,9,0.8,43
+weighted,n2v2r degree-adjusted z,9,0.8500000000000001,58
+weighted,n2v2r degree-adjusted z,9,0.9,55
+weighted,n2v2r degree-adjusted z,9,0.9500000000000001,73
+weighted,n2v2r degree-adjusted z (elbow),9,0.0,38
+weighted,n2v2r degree-adjusted z (elbow),9,0.05,59
+weighted,n2v2r degree-adjusted z (elbow),9,0.1,48
+weighted,n2v2r degree-adjusted z (elbow),9,0.15000000000000002,52
+weighted,n2v2r degree-adjusted z (elbow),9,0.2,55
+weighted,n2v2r degree-adjusted z (elbow),9,0.25,52
+weighted,n2v2r degree-adjusted z (elbow),9,0.30000000000000004,50
+weighted,n2v2r degree-adjusted z (elbow),9,0.35000000000000003,43
+weighted,n2v2r degree-adjusted z (elbow),9,0.4,54
+weighted,n2v2r degree-adjusted z (elbow),9,0.45,49
+weighted,n2v2r degree-adjusted z (elbow),9,0.5,49
+weighted,n2v2r degree-adjusted z (elbow),9,0.55,46
+weighted,n2v2r degree-adjusted z (elbow),9,0.6000000000000001,61
+weighted,n2v2r degree-adjusted z (elbow),9,0.65,46
+weighted,n2v2r degree-adjusted z (elbow),9,0.7000000000000001,50
+weighted,n2v2r degree-adjusted z (elbow),9,0.75,27
+weighted,n2v2r degree-adjusted z (elbow),9,0.8,40
+weighted,n2v2r degree-adjusted z (elbow),9,0.8500000000000001,54
+weighted,n2v2r degree-adjusted z (elbow),9,0.9,47
+weighted,n2v2r degree-adjusted z (elbow),9,0.9500000000000001,80
+weighted,n2v2r degree-adjusted z,10,0.0,39
+weighted,n2v2r degree-adjusted z,10,0.05,46
+weighted,n2v2r degree-adjusted z,10,0.1,40
+weighted,n2v2r degree-adjusted z,10,0.15000000000000002,62
+weighted,n2v2r degree-adjusted z,10,0.2,57
+weighted,n2v2r degree-adjusted z,10,0.25,48
+weighted,n2v2r degree-adjusted z,10,0.30000000000000004,53
+weighted,n2v2r degree-adjusted z,10,0.35000000000000003,41
+weighted,n2v2r degree-adjusted z,10,0.4,58
+weighted,n2v2r degree-adjusted z,10,0.45,56
+weighted,n2v2r degree-adjusted z,10,0.5,52
+weighted,n2v2r degree-adjusted z,10,0.55,45
+weighted,n2v2r degree-adjusted z,10,0.6000000000000001,59
+weighted,n2v2r degree-adjusted z,10,0.65,36
+weighted,n2v2r degree-adjusted z,10,0.7000000000000001,52
+weighted,n2v2r degree-adjusted z,10,0.75,39
+weighted,n2v2r degree-adjusted z,10,0.8,42
+weighted,n2v2r degree-adjusted z,10,0.8500000000000001,44
+weighted,n2v2r degree-adjusted z,10,0.9,57
+weighted,n2v2r degree-adjusted z,10,0.9500000000000001,74
+weighted,n2v2r degree-adjusted z (elbow),10,0.0,24
+weighted,n2v2r degree-adjusted z (elbow),10,0.05,61
+weighted,n2v2r degree-adjusted z (elbow),10,0.1,57
+weighted,n2v2r degree-adjusted z (elbow),10,0.15000000000000002,48
+weighted,n2v2r degree-adjusted z (elbow),10,0.2,52
+weighted,n2v2r degree-adjusted z (elbow),10,0.25,56
+weighted,n2v2r degree-adjusted z (elbow),10,0.30000000000000004,45
+weighted,n2v2r degree-adjusted z (elbow),10,0.35000000000000003,54
+weighted,n2v2r degree-adjusted z (elbow),10,0.4,55
+weighted,n2v2r degree-adjusted z (elbow),10,0.45,48
+weighted,n2v2r degree-adjusted z (elbow),10,0.5,51
+weighted,n2v2r degree-adjusted z (elbow),10,0.55,51
+weighted,n2v2r degree-adjusted z (elbow),10,0.6000000000000001,44
+weighted,n2v2r degree-adjusted z (elbow),10,0.65,54
+weighted,n2v2r degree-adjusted z (elbow),10,0.7000000000000001,42
+weighted,n2v2r degree-adjusted z (elbow),10,0.75,33
+weighted,n2v2r degree-adjusted z (elbow),10,0.8,51
+weighted,n2v2r degree-adjusted z (elbow),10,0.8500000000000001,39
+weighted,n2v2r degree-adjusted z (elbow),10,0.9,52
+weighted,n2v2r degree-adjusted z (elbow),10,0.9500000000000001,83
+weighted,n2v2r degree-adjusted z,11,0.0,27
+weighted,n2v2r degree-adjusted z,11,0.05,32
+weighted,n2v2r degree-adjusted z,11,0.1,56
+weighted,n2v2r degree-adjusted z,11,0.15000000000000002,48
+weighted,n2v2r degree-adjusted z,11,0.2,67
+weighted,n2v2r degree-adjusted z,11,0.25,49
+weighted,n2v2r degree-adjusted z,11,0.30000000000000004,59
+weighted,n2v2r degree-adjusted z,11,0.35000000000000003,41
+weighted,n2v2r degree-adjusted z,11,0.4,60
+weighted,n2v2r degree-adjusted z,11,0.45,61
+weighted,n2v2r degree-adjusted z,11,0.5,64
+weighted,n2v2r degree-adjusted z,11,0.55,39
+weighted,n2v2r degree-adjusted z,11,0.6000000000000001,31
+weighted,n2v2r degree-adjusted z,11,0.65,52
+weighted,n2v2r degree-adjusted z,11,0.7000000000000001,44
+weighted,n2v2r degree-adjusted z,11,0.75,58
+weighted,n2v2r degree-adjusted z,11,0.8,51
+weighted,n2v2r degree-adjusted z,11,0.8500000000000001,49
+weighted,n2v2r degree-adjusted z,11,0.9,43
+weighted,n2v2r degree-adjusted z,11,0.9500000000000001,69
+weighted,n2v2r degree-adjusted z (elbow),11,0.0,30
+weighted,n2v2r degree-adjusted z (elbow),11,0.05,52
+weighted,n2v2r degree-adjusted z (elbow),11,0.1,47
+weighted,n2v2r degree-adjusted z (elbow),11,0.15000000000000002,57
+weighted,n2v2r degree-adjusted z (elbow),11,0.2,58
+weighted,n2v2r degree-adjusted z (elbow),11,0.25,49
+weighted,n2v2r degree-adjusted z (elbow),11,0.30000000000000004,71
+weighted,n2v2r degree-adjusted z (elbow),11,0.35000000000000003,57
+weighted,n2v2r degree-adjusted z (elbow),11,0.4,38
+weighted,n2v2r degree-adjusted z (elbow),11,0.45,41
+weighted,n2v2r degree-adjusted z (elbow),11,0.5,61
+weighted,n2v2r degree-adjusted z (elbow),11,0.55,46
+weighted,n2v2r degree-adjusted z (elbow),11,0.6000000000000001,50
+weighted,n2v2r degree-adjusted z (elbow),11,0.65,42
+weighted,n2v2r degree-adjusted z (elbow),11,0.7000000000000001,45
+weighted,n2v2r degree-adjusted z (elbow),11,0.75,27
+weighted,n2v2r degree-adjusted z (elbow),11,0.8,45
+weighted,n2v2r degree-adjusted z (elbow),11,0.8500000000000001,42
+weighted,n2v2r degree-adjusted z (elbow),11,0.9,44
+weighted,n2v2r degree-adjusted z (elbow),11,0.9500000000000001,98
+weighted,n2v2r degree-adjusted z,12,0.0,36
+weighted,n2v2r degree-adjusted z,12,0.05,53
+weighted,n2v2r degree-adjusted z,12,0.1,43
+weighted,n2v2r degree-adjusted z,12,0.15000000000000002,50
+weighted,n2v2r degree-adjusted z,12,0.2,54
+weighted,n2v2r degree-adjusted z,12,0.25,47
+weighted,n2v2r degree-adjusted z,12,0.30000000000000004,61
+weighted,n2v2r degree-adjusted z,12,0.35000000000000003,45
+weighted,n2v2r degree-adjusted z,12,0.4,53
+weighted,n2v2r degree-adjusted z,12,0.45,58
+weighted,n2v2r degree-adjusted z,12,0.5,56
+weighted,n2v2r degree-adjusted z,12,0.55,48
+weighted,n2v2r degree-adjusted z,12,0.6000000000000001,47
+weighted,n2v2r degree-adjusted z,12,0.65,50
+weighted,n2v2r degree-adjusted z,12,0.7000000000000001,35
+weighted,n2v2r degree-adjusted z,12,0.75,40
+weighted,n2v2r degree-adjusted z,12,0.8,37
+weighted,n2v2r degree-adjusted z,12,0.8500000000000001,60
+weighted,n2v2r degree-adjusted z,12,0.9,50
+weighted,n2v2r degree-adjusted z,12,0.9500000000000001,77
+weighted,n2v2r degree-adjusted z (elbow),12,0.0,24
+weighted,n2v2r degree-adjusted z (elbow),12,0.05,47
+weighted,n2v2r degree-adjusted z (elbow),12,0.1,45
+weighted,n2v2r degree-adjusted z (elbow),12,0.15000000000000002,49
+weighted,n2v2r degree-adjusted z (elbow),12,0.2,61
+weighted,n2v2r degree-adjusted z (elbow),12,0.25,66
+weighted,n2v2r degree-adjusted z (elbow),12,0.30000000000000004,59
+weighted,n2v2r degree-adjusted z (elbow),12,0.35000000000000003,49
+weighted,n2v2r degree-adjusted z (elbow),12,0.4,61
+weighted,n2v2r degree-adjusted z (elbow),12,0.45,39
+weighted,n2v2r degree-adjusted z (elbow),12,0.5,50
+weighted,n2v2r degree-adjusted z (elbow),12,0.55,47
+weighted,n2v2r degree-adjusted z (elbow),12,0.6000000000000001,49
+weighted,n2v2r degree-adjusted z (elbow),12,0.65,43
+weighted,n2v2r degree-adjusted z (elbow),12,0.7000000000000001,37
+weighted,n2v2r degree-adjusted z (elbow),12,0.75,47
+weighted,n2v2r degree-adjusted z (elbow),12,0.8,41
+weighted,n2v2r degree-adjusted z (elbow),12,0.8500000000000001,40
+weighted,n2v2r degree-adjusted z (elbow),12,0.9,57
+weighted,n2v2r degree-adjusted z (elbow),12,0.9500000000000001,89
+weighted,n2v2r degree-adjusted z,13,0.0,38
+weighted,n2v2r degree-adjusted z,13,0.05,55
+weighted,n2v2r degree-adjusted z,13,0.1,43
+weighted,n2v2r degree-adjusted z,13,0.15000000000000002,53
+weighted,n2v2r degree-adjusted z,13,0.2,52
+weighted,n2v2r degree-adjusted z,13,0.25,53
+weighted,n2v2r degree-adjusted z,13,0.30000000000000004,46
+weighted,n2v2r degree-adjusted z,13,0.35000000000000003,47
+weighted,n2v2r degree-adjusted z,13,0.4,49
+weighted,n2v2r degree-adjusted z,13,0.45,64
+weighted,n2v2r degree-adjusted z,13,0.5,54
+weighted,n2v2r degree-adjusted z,13,0.55,40
+weighted,n2v2r degree-adjusted z,13,0.6000000000000001,53
+weighted,n2v2r degree-adjusted z,13,0.65,35
+weighted,n2v2r degree-adjusted z,13,0.7000000000000001,59
+weighted,n2v2r degree-adjusted z,13,0.75,58
+weighted,n2v2r degree-adjusted z,13,0.8,36
+weighted,n2v2r degree-adjusted z,13,0.8500000000000001,35
+weighted,n2v2r degree-adjusted z,13,0.9,54
+weighted,n2v2r degree-adjusted z,13,0.9500000000000001,76
+weighted,n2v2r degree-adjusted z (elbow),13,0.0,17
+weighted,n2v2r degree-adjusted z (elbow),13,0.05,56
+weighted,n2v2r degree-adjusted z (elbow),13,0.1,43
+weighted,n2v2r degree-adjusted z (elbow),13,0.15000000000000002,60
+weighted,n2v2r degree-adjusted z (elbow),13,0.2,47
+weighted,n2v2r degree-adjusted z (elbow),13,0.25,59
+weighted,n2v2r degree-adjusted z (elbow),13,0.30000000000000004,59
+weighted,n2v2r degree-adjusted z (elbow),13,0.35000000000000003,54
+weighted,n2v2r degree-adjusted z (elbow),13,0.4,53
+weighted,n2v2r degree-adjusted z (elbow),13,0.45,52
+weighted,n2v2r degree-adjusted z (elbow),13,0.5,40
+weighted,n2v2r degree-adjusted z (elbow),13,0.55,33
+weighted,n2v2r degree-adjusted z (elbow),13,0.6000000000000001,41
+weighted,n2v2r degree-adjusted z (elbow),13,0.65,50
+weighted,n2v2r degree-adjusted z (elbow),13,0.7000000000000001,59
+weighted,n2v2r degree-adjusted z (elbow),13,0.75,50
+weighted,n2v2r degree-adjusted z (elbow),13,0.8,42
+weighted,n2v2r degree-adjusted z (elbow),13,0.8500000000000001,35
+weighted,n2v2r degree-adjusted z (elbow),13,0.9,67
+weighted,n2v2r degree-adjusted z (elbow),13,0.9500000000000001,83
+weighted,n2v2r degree-adjusted z,14,0.0,31
+weighted,n2v2r degree-adjusted z,14,0.05,38
+weighted,n2v2r degree-adjusted z,14,0.1,51
+weighted,n2v2r degree-adjusted z,14,0.15000000000000002,51
+weighted,n2v2r degree-adjusted z,14,0.2,66
+weighted,n2v2r degree-adjusted z,14,0.25,53
+weighted,n2v2r degree-adjusted z,14,0.30000000000000004,51
+weighted,n2v2r degree-adjusted z,14,0.35000000000000003,57
+weighted,n2v2r degree-adjusted z,14,0.4,53
+weighted,n2v2r degree-adjusted z,14,0.45,49
+weighted,n2v2r degree-adjusted z,14,0.5,63
+weighted,n2v2r degree-adjusted z,14,0.55,40
+weighted,n2v2r degree-adjusted z,14,0.6000000000000001,43
+weighted,n2v2r degree-adjusted z,14,0.65,45
+weighted,n2v2r degree-adjusted z,14,0.7000000000000001,46
+weighted,n2v2r degree-adjusted z,14,0.75,48
+weighted,n2v2r degree-adjusted z,14,0.8,36
+weighted,n2v2r degree-adjusted z,14,0.8500000000000001,65
+weighted,n2v2r degree-adjusted z,14,0.9,61
+weighted,n2v2r degree-adjusted z,14,0.9500000000000001,53
+weighted,n2v2r degree-adjusted z (elbow),14,0.0,30
+weighted,n2v2r degree-adjusted z (elbow),14,0.05,45
+weighted,n2v2r degree-adjusted z (elbow),14,0.1,53
+weighted,n2v2r degree-adjusted z (elbow),14,0.15000000000000002,54
+weighted,n2v2r degree-adjusted z (elbow),14,0.2,54
+weighted,n2v2r degree-adjusted z (elbow),14,0.25,68
+weighted,n2v2r degree-adjusted z (elbow),14,0.30000000000000004,57
+weighted,n2v2r degree-adjusted z (elbow),14,0.35000000000000003,42
+weighted,n2v2r degree-adjusted z (elbow),14,0.4,37
+weighted,n2v2r degree-adjusted z (elbow),14,0.45,60
+weighted,n2v2r degree-adjusted z (elbow),14,0.5,48
+weighted,n2v2r degree-adjusted z (elbow),14,0.55,60
+weighted,n2v2r degree-adjusted z (elbow),14,0.6000000000000001,30
+weighted,n2v2r degree-adjusted z (elbow),14,0.65,51
+weighted,n2v2r degree-adjusted z (elbow),14,0.7000000000000001,47
+weighted,n2v2r degree-adjusted z (elbow),14,0.75,53
+weighted,n2v2r degree-adjusted z (elbow),14,0.8,45
+weighted,n2v2r degree-adjusted z (elbow),14,0.8500000000000001,38
+weighted,n2v2r degree-adjusted z (elbow),14,0.9,35
+weighted,n2v2r degree-adjusted z (elbow),14,0.9500000000000001,93
+weighted,n2v2r degree-adjusted z,15,0.0,27
+weighted,n2v2r degree-adjusted z,15,0.05,44
+weighted,n2v2r degree-adjusted z,15,0.1,56
+weighted,n2v2r degree-adjusted z,15,0.15000000000000002,48
+weighted,n2v2r degree-adjusted z,15,0.2,55
+weighted,n2v2r degree-adjusted z,15,0.25,63
+weighted,n2v2r degree-adjusted z,15,0.30000000000000004,42
+weighted,n2v2r degree-adjusted z,15,0.35000000000000003,48
+weighted,n2v2r degree-adjusted z,15,0.4,56
+weighted,n2v2r degree-adjusted z,15,0.45,61
+weighted,n2v2r degree-adjusted z,15,0.5,45
+weighted,n2v2r degree-adjusted z,15,0.55,51
+weighted,n2v2r degree-adjusted z,15,0.6000000000000001,51
+weighted,n2v2r degree-adjusted z,15,0.65,37
+weighted,n2v2r degree-adjusted z,15,0.7000000000000001,46
+weighted,n2v2r degree-adjusted z,15,0.75,57
+weighted,n2v2r degree-adjusted z,15,0.8,48
+weighted,n2v2r degree-adjusted z,15,0.8500000000000001,61
+weighted,n2v2r degree-adjusted z,15,0.9,41
+weighted,n2v2r degree-adjusted z,15,0.9500000000000001,63
+weighted,n2v2r degree-adjusted z (elbow),15,0.0,15
+weighted,n2v2r degree-adjusted z (elbow),15,0.05,35
+weighted,n2v2r degree-adjusted z (elbow),15,0.1,63
+weighted,n2v2r degree-adjusted z (elbow),15,0.15000000000000002,60
+weighted,n2v2r degree-adjusted z (elbow),15,0.2,50
+weighted,n2v2r degree-adjusted z (elbow),15,0.25,60
+weighted,n2v2r degree-adjusted z (elbow),15,0.30000000000000004,55
+weighted,n2v2r degree-adjusted z (elbow),15,0.35000000000000003,50
+weighted,n2v2r degree-adjusted z (elbow),15,0.4,65
+weighted,n2v2r degree-adjusted z (elbow),15,0.45,47
+weighted,n2v2r degree-adjusted z (elbow),15,0.5,55
+weighted,n2v2r degree-adjusted z (elbow),15,0.55,43
+weighted,n2v2r degree-adjusted z (elbow),15,0.6000000000000001,42
+weighted,n2v2r degree-adjusted z (elbow),15,0.65,41
+weighted,n2v2r degree-adjusted z (elbow),15,0.7000000000000001,42
+weighted,n2v2r degree-adjusted z (elbow),15,0.75,50
+weighted,n2v2r degree-adjusted z (elbow),15,0.8,47
+weighted,n2v2r degree-adjusted z (elbow),15,0.8500000000000001,49
+weighted,n2v2r degree-adjusted z (elbow),15,0.9,45
+weighted,n2v2r degree-adjusted z (elbow),15,0.9500000000000001,86
+weighted,n2v2r degree-adjusted z,16,0.0,45
+weighted,n2v2r degree-adjusted z,16,0.05,55
+weighted,n2v2r degree-adjusted z,16,0.1,48
+weighted,n2v2r degree-adjusted z,16,0.15000000000000002,48
+weighted,n2v2r degree-adjusted z,16,0.2,63
+weighted,n2v2r degree-adjusted z,16,0.25,56
+weighted,n2v2r degree-adjusted z,16,0.30000000000000004,44
+weighted,n2v2r degree-adjusted z,16,0.35000000000000003,47
+weighted,n2v2r degree-adjusted z,16,0.4,56
+weighted,n2v2r degree-adjusted z,16,0.45,38
+weighted,n2v2r degree-adjusted z,16,0.5,51
+weighted,n2v2r degree-adjusted z,16,0.55,43
+weighted,n2v2r degree-adjusted z,16,0.6000000000000001,50
+weighted,n2v2r degree-adjusted z,16,0.65,55
+weighted,n2v2r degree-adjusted z,16,0.7000000000000001,60
+weighted,n2v2r degree-adjusted z,16,0.75,40
+weighted,n2v2r degree-adjusted z,16,0.8,44
+weighted,n2v2r degree-adjusted z,16,0.8500000000000001,36
+weighted,n2v2r degree-adjusted z,16,0.9,45
+weighted,n2v2r degree-adjusted z,16,0.9500000000000001,76
+weighted,n2v2r degree-adjusted z (elbow),16,0.0,31
+weighted,n2v2r degree-adjusted z (elbow),16,0.05,32
+weighted,n2v2r degree-adjusted z (elbow),16,0.1,49
+weighted,n2v2r degree-adjusted z (elbow),16,0.15000000000000002,44
+weighted,n2v2r degree-adjusted z (elbow),16,0.2,79
+weighted,n2v2r degree-adjusted z (elbow),16,0.25,68
+weighted,n2v2r degree-adjusted z (elbow),16,0.30000000000000004,50
+weighted,n2v2r degree-adjusted z (elbow),16,0.35000000000000003,51
+weighted,n2v2r degree-adjusted z (elbow),16,0.4,50
+weighted,n2v2r degree-adjusted z (elbow),16,0.45,46
+weighted,n2v2r degree-adjusted z (elbow),16,0.5,34
+weighted,n2v2r degree-adjusted z (elbow),16,0.55,55
+weighted,n2v2r degree-adjusted z (elbow),16,0.6000000000000001,56
+weighted,n2v2r degree-adjusted z (elbow),16,0.65,39
+weighted,n2v2r degree-adjusted z (elbow),16,0.7000000000000001,51
+weighted,n2v2r degree-adjusted z (elbow),16,0.75,39
+weighted,n2v2r degree-adjusted z (elbow),16,0.8,46
+weighted,n2v2r degree-adjusted z (elbow),16,0.8500000000000001,42
+weighted,n2v2r degree-adjusted z (elbow),16,0.9,55
+weighted,n2v2r degree-adjusted z (elbow),16,0.9500000000000001,83
+weighted,n2v2r degree-adjusted z,17,0.0,23
+weighted,n2v2r degree-adjusted z,17,0.05,44
+weighted,n2v2r degree-adjusted z,17,0.1,46
+weighted,n2v2r degree-adjusted z,17,0.15000000000000002,54
+weighted,n2v2r degree-adjusted z,17,0.2,55
+weighted,n2v2r degree-adjusted z,17,0.25,55
+weighted,n2v2r degree-adjusted z,17,0.30000000000000004,55
+weighted,n2v2r degree-adjusted z,17,0.35000000000000003,60
+weighted,n2v2r degree-adjusted z,17,0.4,54
+weighted,n2v2r degree-adjusted z,17,0.45,54
+weighted,n2v2r degree-adjusted z,17,0.5,41
+weighted,n2v2r degree-adjusted z,17,0.55,42
+weighted,n2v2r degree-adjusted z,17,0.6000000000000001,44
+weighted,n2v2r degree-adjusted z,17,0.65,44
+weighted,n2v2r degree-adjusted z,17,0.7000000000000001,51
+weighted,n2v2r degree-adjusted z,17,0.75,61
+weighted,n2v2r degree-adjusted z,17,0.8,51
+weighted,n2v2r degree-adjusted z,17,0.8500000000000001,56
+weighted,n2v2r degree-adjusted z,17,0.9,53
+weighted,n2v2r degree-adjusted z,17,0.9500000000000001,57
+weighted,n2v2r degree-adjusted z (elbow),17,0.0,24
+weighted,n2v2r degree-adjusted z (elbow),17,0.05,43
+weighted,n2v2r degree-adjusted z (elbow),17,0.1,53
+weighted,n2v2r degree-adjusted z (elbow),17,0.15000000000000002,51
+weighted,n2v2r degree-adjusted z (elbow),17,0.2,58
+weighted,n2v2r degree-adjusted z (elbow),17,0.25,64
+weighted,n2v2r degree-adjusted z (elbow),17,0.30000000000000004,53
+weighted,n2v2r degree-adjusted z (elbow),17,0.35000000000000003,61
+weighted,n2v2r degree-adjusted z (elbow),17,0.4,54
+weighted,n2v2r degree-adjusted z (elbow),17,0.45,39
+weighted,n2v2r degree-adjusted z (elbow),17,0.5,49
+weighted,n2v2r degree-adjusted z (elbow),17,0.55,49
+weighted,n2v2r degree-adjusted z (elbow),17,0.6000000000000001,52
+weighted,n2v2r degree-adjusted z (elbow),17,0.65,37
+weighted,n2v2r degree-adjusted z (elbow),17,0.7000000000000001,42
+weighted,n2v2r degree-adjusted z (elbow),17,0.75,41
+weighted,n2v2r degree-adjusted z (elbow),17,0.8,41
+weighted,n2v2r degree-adjusted z (elbow),17,0.8500000000000001,52
+weighted,n2v2r degree-adjusted z (elbow),17,0.9,53
+weighted,n2v2r degree-adjusted z (elbow),17,0.9500000000000001,84
+weighted,n2v2r degree-adjusted z,18,0.0,42
+weighted,n2v2r degree-adjusted z,18,0.05,40
+weighted,n2v2r degree-adjusted z,18,0.1,52
+weighted,n2v2r degree-adjusted z,18,0.15000000000000002,54
+weighted,n2v2r degree-adjusted z,18,0.2,45
+weighted,n2v2r degree-adjusted z,18,0.25,54
+weighted,n2v2r degree-adjusted z,18,0.30000000000000004,47
+weighted,n2v2r degree-adjusted z,18,0.35000000000000003,54
+weighted,n2v2r degree-adjusted z,18,0.4,51
+weighted,n2v2r degree-adjusted z,18,0.45,61
+weighted,n2v2r degree-adjusted z,18,0.5,47
+weighted,n2v2r degree-adjusted z,18,0.55,51
+weighted,n2v2r degree-adjusted z,18,0.6000000000000001,54
+weighted,n2v2r degree-adjusted z,18,0.65,42
+weighted,n2v2r degree-adjusted z,18,0.7000000000000001,39
+weighted,n2v2r degree-adjusted z,18,0.75,46
+weighted,n2v2r degree-adjusted z,18,0.8,44
+weighted,n2v2r degree-adjusted z,18,0.8500000000000001,62
+weighted,n2v2r degree-adjusted z,18,0.9,49
+weighted,n2v2r degree-adjusted z,18,0.9500000000000001,66
+weighted,n2v2r degree-adjusted z (elbow),18,0.0,18
+weighted,n2v2r degree-adjusted z (elbow),18,0.05,50
+weighted,n2v2r degree-adjusted z (elbow),18,0.1,43
+weighted,n2v2r degree-adjusted z (elbow),18,0.15000000000000002,56
+weighted,n2v2r degree-adjusted z (elbow),18,0.2,68
+weighted,n2v2r degree-adjusted z (elbow),18,0.25,62
+weighted,n2v2r degree-adjusted z (elbow),18,0.30000000000000004,48
+weighted,n2v2r degree-adjusted z (elbow),18,0.35000000000000003,50
+weighted,n2v2r degree-adjusted z (elbow),18,0.4,54
+weighted,n2v2r degree-adjusted z (elbow),18,0.45,51
+weighted,n2v2r degree-adjusted z (elbow),18,0.5,49
+weighted,n2v2r degree-adjusted z (elbow),18,0.55,48
+weighted,n2v2r degree-adjusted z (elbow),18,0.6000000000000001,52
+weighted,n2v2r degree-adjusted z (elbow),18,0.65,46
+weighted,n2v2r degree-adjusted z (elbow),18,0.7000000000000001,40
+weighted,n2v2r degree-adjusted z (elbow),18,0.75,41
+weighted,n2v2r degree-adjusted z (elbow),18,0.8,50
+weighted,n2v2r degree-adjusted z (elbow),18,0.8500000000000001,44
+weighted,n2v2r degree-adjusted z (elbow),18,0.9,48
+weighted,n2v2r degree-adjusted z (elbow),18,0.9500000000000001,82
+weighted,n2v2r degree-adjusted z,19,0.0,54
+weighted,n2v2r degree-adjusted z,19,0.05,59
+weighted,n2v2r degree-adjusted z,19,0.1,55
+weighted,n2v2r degree-adjusted z,19,0.15000000000000002,48
+weighted,n2v2r degree-adjusted z,19,0.2,40
+weighted,n2v2r degree-adjusted z,19,0.25,45
+weighted,n2v2r degree-adjusted z,19,0.30000000000000004,51
+weighted,n2v2r degree-adjusted z,19,0.35000000000000003,52
+weighted,n2v2r degree-adjusted z,19,0.4,39
+weighted,n2v2r degree-adjusted z,19,0.45,57
+weighted,n2v2r degree-adjusted z,19,0.5,61
+weighted,n2v2r degree-adjusted z,19,0.55,59
+weighted,n2v2r degree-adjusted z,19,0.6000000000000001,44
+weighted,n2v2r degree-adjusted z,19,0.65,44
+weighted,n2v2r degree-adjusted z,19,0.7000000000000001,48
+weighted,n2v2r degree-adjusted z,19,0.75,35
+weighted,n2v2r degree-adjusted z,19,0.8,46
+weighted,n2v2r degree-adjusted z,19,0.8500000000000001,40
+weighted,n2v2r degree-adjusted z,19,0.9,53
+weighted,n2v2r degree-adjusted z,19,0.9500000000000001,70
+weighted,n2v2r degree-adjusted z (elbow),19,0.0,17
+weighted,n2v2r degree-adjusted z (elbow),19,0.05,38
+weighted,n2v2r degree-adjusted z (elbow),19,0.1,50
+weighted,n2v2r degree-adjusted z (elbow),19,0.15000000000000002,57
+weighted,n2v2r degree-adjusted z (elbow),19,0.2,51
+weighted,n2v2r degree-adjusted z (elbow),19,0.25,57
+weighted,n2v2r degree-adjusted z (elbow),19,0.30000000000000004,61
+weighted,n2v2r degree-adjusted z (elbow),19,0.35000000000000003,64
+weighted,n2v2r degree-adjusted z (elbow),19,0.4,53
+weighted,n2v2r degree-adjusted z (elbow),19,0.45,52
+weighted,n2v2r degree-adjusted z (elbow),19,0.5,45
+weighted,n2v2r degree-adjusted z (elbow),19,0.55,45
+weighted,n2v2r degree-adjusted z (elbow),19,0.6000000000000001,44
+weighted,n2v2r degree-adjusted z (elbow),19,0.65,38
+weighted,n2v2r degree-adjusted z (elbow),19,0.7000000000000001,41
+weighted,n2v2r degree-adjusted z (elbow),19,0.75,53
+weighted,n2v2r degree-adjusted z (elbow),19,0.8,44
+weighted,n2v2r degree-adjusted z (elbow),19,0.8500000000000001,52
+weighted,n2v2r degree-adjusted z (elbow),19,0.9,56
+weighted,n2v2r degree-adjusted z (elbow),19,0.9500000000000001,82
+coexpression,n2v2r degree-adjusted z,0,0.0,26
+coexpression,n2v2r degree-adjusted z,0,0.05,46
+coexpression,n2v2r degree-adjusted z,0,0.1,42
+coexpression,n2v2r degree-adjusted z,0,0.15000000000000002,55
+coexpression,n2v2r degree-adjusted z,0,0.2,47
+coexpression,n2v2r degree-adjusted z,0,0.25,50
+coexpression,n2v2r degree-adjusted z,0,0.30000000000000004,56
+coexpression,n2v2r degree-adjusted z,0,0.35000000000000003,60
+coexpression,n2v2r degree-adjusted z,0,0.4,62
+coexpression,n2v2r degree-adjusted z,0,0.45,56
+coexpression,n2v2r degree-adjusted z,0,0.5,51
+coexpression,n2v2r degree-adjusted z,0,0.55,52
+coexpression,n2v2r degree-adjusted z,0,0.6000000000000001,35
+coexpression,n2v2r degree-adjusted z,0,0.65,43
+coexpression,n2v2r degree-adjusted z,0,0.7000000000000001,35
+coexpression,n2v2r degree-adjusted z,0,0.75,52
+coexpression,n2v2r degree-adjusted z,0,0.8,44
+coexpression,n2v2r degree-adjusted z,0,0.8500000000000001,42
+coexpression,n2v2r degree-adjusted z,0,0.9,40
+coexpression,n2v2r degree-adjusted z,0,0.9500000000000001,106
+coexpression,n2v2r degree-adjusted z (elbow),0,0.0,36
+coexpression,n2v2r degree-adjusted z (elbow),0,0.05,58
+coexpression,n2v2r degree-adjusted z (elbow),0,0.1,57
+coexpression,n2v2r degree-adjusted z (elbow),0,0.15000000000000002,50
+coexpression,n2v2r degree-adjusted z (elbow),0,0.2,38
+coexpression,n2v2r degree-adjusted z (elbow),0,0.25,54
+coexpression,n2v2r degree-adjusted z (elbow),0,0.30000000000000004,38
+coexpression,n2v2r degree-adjusted z (elbow),0,0.35000000000000003,63
+coexpression,n2v2r degree-adjusted z (elbow),0,0.4,60
+coexpression,n2v2r degree-adjusted z (elbow),0,0.45,46
+coexpression,n2v2r degree-adjusted z (elbow),0,0.5,58
+coexpression,n2v2r degree-adjusted z (elbow),0,0.55,52
+coexpression,n2v2r degree-adjusted z (elbow),0,0.6000000000000001,48
+coexpression,n2v2r degree-adjusted z (elbow),0,0.65,41
+coexpression,n2v2r degree-adjusted z (elbow),0,0.7000000000000001,40
+coexpression,n2v2r degree-adjusted z (elbow),0,0.75,38
+coexpression,n2v2r degree-adjusted z (elbow),0,0.8,47
+coexpression,n2v2r degree-adjusted z (elbow),0,0.8500000000000001,42
+coexpression,n2v2r degree-adjusted z (elbow),0,0.9,46
+coexpression,n2v2r degree-adjusted z (elbow),0,0.9500000000000001,88
+coexpression,n2v2r degree-adjusted z,1,0.0,33
+coexpression,n2v2r degree-adjusted z,1,0.05,45
+coexpression,n2v2r degree-adjusted z,1,0.1,41
+coexpression,n2v2r degree-adjusted z,1,0.15000000000000002,56
+coexpression,n2v2r degree-adjusted z,1,0.2,55
+coexpression,n2v2r degree-adjusted z,1,0.25,57
+coexpression,n2v2r degree-adjusted z,1,0.30000000000000004,61
+coexpression,n2v2r degree-adjusted z,1,0.35000000000000003,52
+coexpression,n2v2r degree-adjusted z,1,0.4,37
+coexpression,n2v2r degree-adjusted z,1,0.45,63
+coexpression,n2v2r degree-adjusted z,1,0.5,54
+coexpression,n2v2r degree-adjusted z,1,0.55,47
+coexpression,n2v2r degree-adjusted z,1,0.6000000000000001,39
+coexpression,n2v2r degree-adjusted z,1,0.65,50
+coexpression,n2v2r degree-adjusted z,1,0.7000000000000001,40
+coexpression,n2v2r degree-adjusted z,1,0.75,32
+coexpression,n2v2r degree-adjusted z,1,0.8,39
+coexpression,n2v2r degree-adjusted z,1,0.8500000000000001,44
+coexpression,n2v2r degree-adjusted z,1,0.9,57
+coexpression,n2v2r degree-adjusted z,1,0.9500000000000001,98
+coexpression,n2v2r degree-adjusted z (elbow),1,0.0,36
+coexpression,n2v2r degree-adjusted z (elbow),1,0.05,38
+coexpression,n2v2r degree-adjusted z (elbow),1,0.1,49
+coexpression,n2v2r degree-adjusted z (elbow),1,0.15000000000000002,43
+coexpression,n2v2r degree-adjusted z (elbow),1,0.2,59
+coexpression,n2v2r degree-adjusted z (elbow),1,0.25,53
+coexpression,n2v2r degree-adjusted z (elbow),1,0.30000000000000004,54
+coexpression,n2v2r degree-adjusted z (elbow),1,0.35000000000000003,60
+coexpression,n2v2r degree-adjusted z (elbow),1,0.4,48
+coexpression,n2v2r degree-adjusted z (elbow),1,0.45,60
+coexpression,n2v2r degree-adjusted z (elbow),1,0.5,49
+coexpression,n2v2r degree-adjusted z (elbow),1,0.55,37
+coexpression,n2v2r degree-adjusted z (elbow),1,0.6000000000000001,49
+coexpression,n2v2r degree-adjusted z (elbow),1,0.65,41
+coexpression,n2v2r degree-adjusted z (elbow),1,0.7000000000000001,49
+coexpression,n2v2r degree-adjusted z (elbow),1,0.75,57
+coexpression,n2v2r degree-adjusted z (elbow),1,0.8,44
+coexpression,n2v2r degree-adjusted z (elbow),1,0.8500000000000001,46
+coexpression,n2v2r degree-adjusted z (elbow),1,0.9,44
+coexpression,n2v2r degree-adjusted z (elbow),1,0.9500000000000001,84
+coexpression,n2v2r degree-adjusted z,2,0.0,35
+coexpression,n2v2r degree-adjusted z,2,0.05,32
+coexpression,n2v2r degree-adjusted z,2,0.1,60
+coexpression,n2v2r degree-adjusted z,2,0.15000000000000002,52
+coexpression,n2v2r degree-adjusted z,2,0.2,66
+coexpression,n2v2r degree-adjusted z,2,0.25,51
+coexpression,n2v2r degree-adjusted z,2,0.30000000000000004,41
+coexpression,n2v2r degree-adjusted z,2,0.35000000000000003,45
+coexpression,n2v2r degree-adjusted z,2,0.4,65
+coexpression,n2v2r degree-adjusted z,2,0.45,53
+coexpression,n2v2r degree-adjusted z,2,0.5,58
+coexpression,n2v2r degree-adjusted z,2,0.55,54
+coexpression,n2v2r degree-adjusted z,2,0.6000000000000001,49
+coexpression,n2v2r degree-adjusted z,2,0.65,47
+coexpression,n2v2r degree-adjusted z,2,0.7000000000000001,37
+coexpression,n2v2r degree-adjusted z,2,0.75,34
+coexpression,n2v2r degree-adjusted z,2,0.8,39
+coexpression,n2v2r degree-adjusted z,2,0.8500000000000001,38
+coexpression,n2v2r degree-adjusted z,2,0.9,52
+coexpression,n2v2r degree-adjusted z,2,0.9500000000000001,92
+coexpression,n2v2r degree-adjusted z (elbow),2,0.0,49
+coexpression,n2v2r degree-adjusted z (elbow),2,0.05,51
+coexpression,n2v2r degree-adjusted z (elbow),2,0.1,39
+coexpression,n2v2r degree-adjusted z (elbow),2,0.15000000000000002,49
+coexpression,n2v2r degree-adjusted z (elbow),2,0.2,61
+coexpression,n2v2r degree-adjusted z (elbow),2,0.25,50
+coexpression,n2v2r degree-adjusted z (elbow),2,0.30000000000000004,39
+coexpression,n2v2r degree-adjusted z (elbow),2,0.35000000000000003,65
+coexpression,n2v2r degree-adjusted z (elbow),2,0.4,47
+coexpression,n2v2r degree-adjusted z (elbow),2,0.45,50
+coexpression,n2v2r degree-adjusted z (elbow),2,0.5,44
+coexpression,n2v2r degree-adjusted z (elbow),2,0.55,55
+coexpression,n2v2r degree-adjusted z (elbow),2,0.6000000000000001,53
+coexpression,n2v2r degree-adjusted z (elbow),2,0.65,42
+coexpression,n2v2r degree-adjusted z (elbow),2,0.7000000000000001,55
+coexpression,n2v2r degree-adjusted z (elbow),2,0.75,40
+coexpression,n2v2r degree-adjusted z (elbow),2,0.8,46
+coexpression,n2v2r degree-adjusted z (elbow),2,0.8500000000000001,49
+coexpression,n2v2r degree-adjusted z (elbow),2,0.9,38
+coexpression,n2v2r degree-adjusted z (elbow),2,0.9500000000000001,78
+coexpression,n2v2r degree-adjusted z,3,0.0,30
+coexpression,n2v2r degree-adjusted z,3,0.05,40
+coexpression,n2v2r degree-adjusted z,3,0.1,55
+coexpression,n2v2r degree-adjusted z,3,0.15000000000000002,47
+coexpression,n2v2r degree-adjusted z,3,0.2,63
+coexpression,n2v2r degree-adjusted z,3,0.25,53
+coexpression,n2v2r degree-adjusted z,3,0.30000000000000004,57
+coexpression,n2v2r degree-adjusted z,3,0.35000000000000003,56
+coexpression,n2v2r degree-adjusted z,3,0.4,61
+coexpression,n2v2r degree-adjusted z,3,0.45,38
+coexpression,n2v2r degree-adjusted z,3,0.5,62
+coexpression,n2v2r degree-adjusted z,3,0.55,39
+coexpression,n2v2r degree-adjusted z,3,0.6000000000000001,46
+coexpression,n2v2r degree-adjusted z,3,0.65,34
+coexpression,n2v2r degree-adjusted z,3,0.7000000000000001,54
+coexpression,n2v2r degree-adjusted z,3,0.75,34
+coexpression,n2v2r degree-adjusted z,3,0.8,49
+coexpression,n2v2r degree-adjusted z,3,0.8500000000000001,45
+coexpression,n2v2r degree-adjusted z,3,0.9,40
+coexpression,n2v2r degree-adjusted z,3,0.9500000000000001,97
+coexpression,n2v2r degree-adjusted z (elbow),3,0.0,61
+coexpression,n2v2r degree-adjusted z (elbow),3,0.05,40
+coexpression,n2v2r degree-adjusted z (elbow),3,0.1,43
+coexpression,n2v2r degree-adjusted z (elbow),3,0.15000000000000002,46
+coexpression,n2v2r degree-adjusted z (elbow),3,0.2,56
+coexpression,n2v2r degree-adjusted z (elbow),3,0.25,46
+coexpression,n2v2r degree-adjusted z (elbow),3,0.30000000000000004,52
+coexpression,n2v2r degree-adjusted z (elbow),3,0.35000000000000003,53
+coexpression,n2v2r degree-adjusted z (elbow),3,0.4,54
+coexpression,n2v2r degree-adjusted z (elbow),3,0.45,49
+coexpression,n2v2r degree-adjusted z (elbow),3,0.5,48
+coexpression,n2v2r degree-adjusted z (elbow),3,0.55,59
+coexpression,n2v2r degree-adjusted z (elbow),3,0.6000000000000001,48
+coexpression,n2v2r degree-adjusted z (elbow),3,0.65,42
+coexpression,n2v2r degree-adjusted z (elbow),3,0.7000000000000001,49
+coexpression,n2v2r degree-adjusted z (elbow),3,0.75,43
+coexpression,n2v2r degree-adjusted z (elbow),3,0.8,38
+coexpression,n2v2r degree-adjusted z (elbow),3,0.8500000000000001,37
+coexpression,n2v2r degree-adjusted z (elbow),3,0.9,35
+coexpression,n2v2r degree-adjusted z (elbow),3,0.9500000000000001,101
+coexpression,n2v2r degree-adjusted z,4,0.0,35
+coexpression,n2v2r degree-adjusted z,4,0.05,41
+coexpression,n2v2r degree-adjusted z,4,0.1,53
+coexpression,n2v2r degree-adjusted z,4,0.15000000000000002,53
+coexpression,n2v2r degree-adjusted z,4,0.2,55
+coexpression,n2v2r degree-adjusted z,4,0.25,56
+coexpression,n2v2r degree-adjusted z,4,0.30000000000000004,53
+coexpression,n2v2r degree-adjusted z,4,0.35000000000000003,55
+coexpression,n2v2r degree-adjusted z,4,0.4,60
+coexpression,n2v2r degree-adjusted z,4,0.45,39
+coexpression,n2v2r degree-adjusted z,4,0.5,47
+coexpression,n2v2r degree-adjusted z,4,0.55,46
+coexpression,n2v2r degree-adjusted z,4,0.6000000000000001,48
+coexpression,n2v2r degree-adjusted z,4,0.65,49
+coexpression,n2v2r degree-adjusted z,4,0.7000000000000001,47
+coexpression,n2v2r degree-adjusted z,4,0.75,43
+coexpression,n2v2r degree-adjusted z,4,0.8,36
+coexpression,n2v2r degree-adjusted z,4,0.8500000000000001,33
+coexpression,n2v2r degree-adjusted z,4,0.9,53
+coexpression,n2v2r degree-adjusted z,4,0.9500000000000001,98
+coexpression,n2v2r degree-adjusted z (elbow),4,0.0,58
+coexpression,n2v2r degree-adjusted z (elbow),4,0.05,38
+coexpression,n2v2r degree-adjusted z (elbow),4,0.1,45
+coexpression,n2v2r degree-adjusted z (elbow),4,0.15000000000000002,51
+coexpression,n2v2r degree-adjusted z (elbow),4,0.2,52
+coexpression,n2v2r degree-adjusted z (elbow),4,0.25,56
+coexpression,n2v2r degree-adjusted z (elbow),4,0.30000000000000004,51
+coexpression,n2v2r degree-adjusted z (elbow),4,0.35000000000000003,58
+coexpression,n2v2r degree-adjusted z (elbow),4,0.4,48
+coexpression,n2v2r degree-adjusted z (elbow),4,0.45,43
+coexpression,n2v2r degree-adjusted z (elbow),4,0.5,55
+coexpression,n2v2r degree-adjusted z (elbow),4,0.55,53
+coexpression,n2v2r degree-adjusted z (elbow),4,0.6000000000000001,49
+coexpression,n2v2r degree-adjusted z (elbow),4,0.65,34
+coexpression,n2v2r degree-adjusted z (elbow),4,0.7000000000000001,53
+coexpression,n2v2r degree-adjusted z (elbow),4,0.75,43
+coexpression,n2v2r degree-adjusted z (elbow),4,0.8,47
+coexpression,n2v2r degree-adjusted z (elbow),4,0.8500000000000001,35
+coexpression,n2v2r degree-adjusted z (elbow),4,0.9,37
+coexpression,n2v2r degree-adjusted z (elbow),4,0.9500000000000001,94
+coexpression,n2v2r degree-adjusted z,5,0.0,20
+coexpression,n2v2r degree-adjusted z,5,0.05,48
+coexpression,n2v2r degree-adjusted z,5,0.1,48
+coexpression,n2v2r degree-adjusted z,5,0.15000000000000002,47
+coexpression,n2v2r degree-adjusted z,5,0.2,64
+coexpression,n2v2r degree-adjusted z,5,0.25,41
+coexpression,n2v2r degree-adjusted z,5,0.30000000000000004,64
+coexpression,n2v2r degree-adjusted z,5,0.35000000000000003,59
+coexpression,n2v2r degree-adjusted z,5,0.4,60
+coexpression,n2v2r degree-adjusted z,5,0.45,49
+coexpression,n2v2r degree-adjusted z,5,0.5,44
+coexpression,n2v2r degree-adjusted z,5,0.55,58
+coexpression,n2v2r degree-adjusted z,5,0.6000000000000001,49
+coexpression,n2v2r degree-adjusted z,5,0.65,36
+coexpression,n2v2r degree-adjusted z,5,0.7000000000000001,40
+coexpression,n2v2r degree-adjusted z,5,0.75,37
+coexpression,n2v2r degree-adjusted z,5,0.8,38
+coexpression,n2v2r degree-adjusted z,5,0.8500000000000001,32
+coexpression,n2v2r degree-adjusted z,5,0.9,47
+coexpression,n2v2r degree-adjusted z,5,0.9500000000000001,119
+coexpression,n2v2r degree-adjusted z (elbow),5,0.0,48
+coexpression,n2v2r degree-adjusted z (elbow),5,0.05,42
+coexpression,n2v2r degree-adjusted z (elbow),5,0.1,43
+coexpression,n2v2r degree-adjusted z (elbow),5,0.15000000000000002,52
+coexpression,n2v2r degree-adjusted z (elbow),5,0.2,55
+coexpression,n2v2r degree-adjusted z (elbow),5,0.25,55
+coexpression,n2v2r degree-adjusted z (elbow),5,0.30000000000000004,45
+coexpression,n2v2r degree-adjusted z (elbow),5,0.35000000000000003,57
+coexpression,n2v2r degree-adjusted z (elbow),5,0.4,53
+coexpression,n2v2r degree-adjusted z (elbow),5,0.45,50
+coexpression,n2v2r degree-adjusted z (elbow),5,0.5,49
+coexpression,n2v2r degree-adjusted z (elbow),5,0.55,52
+coexpression,n2v2r degree-adjusted z (elbow),5,0.6000000000000001,49
+coexpression,n2v2r degree-adjusted z (elbow),5,0.65,47
+coexpression,n2v2r degree-adjusted z (elbow),5,0.7000000000000001,43
+coexpression,n2v2r degree-adjusted z (elbow),5,0.75,37
+coexpression,n2v2r degree-adjusted z (elbow),5,0.8,43
+coexpression,n2v2r degree-adjusted z (elbow),5,0.8500000000000001,43
+coexpression,n2v2r degree-adjusted z (elbow),5,0.9,35
+coexpression,n2v2r degree-adjusted z (elbow),5,0.9500000000000001,102
+coexpression,n2v2r degree-adjusted z,6,0.0,26
+coexpression,n2v2r degree-adjusted z,6,0.05,36
+coexpression,n2v2r degree-adjusted z,6,0.1,43
+coexpression,n2v2r degree-adjusted z,6,0.15000000000000002,50
+coexpression,n2v2r degree-adjusted z,6,0.2,58
+coexpression,n2v2r degree-adjusted z,6,0.25,55
+coexpression,n2v2r degree-adjusted z,6,0.30000000000000004,55
+coexpression,n2v2r degree-adjusted z,6,0.35000000000000003,51
+coexpression,n2v2r degree-adjusted z,6,0.4,58
+coexpression,n2v2r degree-adjusted z,6,0.45,68
+coexpression,n2v2r degree-adjusted z,6,0.5,54
+coexpression,n2v2r degree-adjusted z,6,0.55,50
+coexpression,n2v2r degree-adjusted z,6,0.6000000000000001,41
+coexpression,n2v2r degree-adjusted z,6,0.65,36
+coexpression,n2v2r degree-adjusted z,6,0.7000000000000001,32
+coexpression,n2v2r degree-adjusted z,6,0.75,31
+coexpression,n2v2r degree-adjusted z,6,0.8,27
+coexpression,n2v2r degree-adjusted z,6,0.8500000000000001,30
+coexpression,n2v2r degree-adjusted z,6,0.9,34
+coexpression,n2v2r degree-adjusted z,6,0.9500000000000001,165
+coexpression,n2v2r degree-adjusted z (elbow),6,0.0,31
+coexpression,n2v2r degree-adjusted z (elbow),6,0.05,43
+coexpression,n2v2r degree-adjusted z (elbow),6,0.1,51
+coexpression,n2v2r degree-adjusted z (elbow),6,0.15000000000000002,54
+coexpression,n2v2r degree-adjusted z (elbow),6,0.2,56
+coexpression,n2v2r degree-adjusted z (elbow),6,0.25,59
+coexpression,n2v2r degree-adjusted z (elbow),6,0.30000000000000004,57
+coexpression,n2v2r degree-adjusted z (elbow),6,0.35000000000000003,56
+coexpression,n2v2r degree-adjusted z (elbow),6,0.4,37
+coexpression,n2v2r degree-adjusted z (elbow),6,0.45,56
+coexpression,n2v2r degree-adjusted z (elbow),6,0.5,48
+coexpression,n2v2r degree-adjusted z (elbow),6,0.55,49
+coexpression,n2v2r degree-adjusted z (elbow),6,0.6000000000000001,40
+coexpression,n2v2r degree-adjusted z (elbow),6,0.65,50
+coexpression,n2v2r degree-adjusted z (elbow),6,0.7000000000000001,48
+coexpression,n2v2r degree-adjusted z (elbow),6,0.75,38
+coexpression,n2v2r degree-adjusted z (elbow),6,0.8,37
+coexpression,n2v2r degree-adjusted z (elbow),6,0.8500000000000001,61
+coexpression,n2v2r degree-adjusted z (elbow),6,0.9,42
+coexpression,n2v2r degree-adjusted z (elbow),6,0.9500000000000001,87
+coexpression,n2v2r degree-adjusted z,7,0.0,36
+coexpression,n2v2r degree-adjusted z,7,0.05,46
+coexpression,n2v2r degree-adjusted z,7,0.1,48
+coexpression,n2v2r degree-adjusted z,7,0.15000000000000002,44
+coexpression,n2v2r degree-adjusted z,7,0.2,64
+coexpression,n2v2r degree-adjusted z,7,0.25,62
+coexpression,n2v2r degree-adjusted z,7,0.30000000000000004,54
+coexpression,n2v2r degree-adjusted z,7,0.35000000000000003,43
+coexpression,n2v2r degree-adjusted z,7,0.4,58
+coexpression,n2v2r degree-adjusted z,7,0.45,45
+coexpression,n2v2r degree-adjusted z,7,0.5,39
+coexpression,n2v2r degree-adjusted z,7,0.55,53
+coexpression,n2v2r degree-adjusted z,7,0.6000000000000001,49
+coexpression,n2v2r degree-adjusted z,7,0.65,47
+coexpression,n2v2r degree-adjusted z,7,0.7000000000000001,50
+coexpression,n2v2r degree-adjusted z,7,0.75,38
+coexpression,n2v2r degree-adjusted z,7,0.8,36
+coexpression,n2v2r degree-adjusted z,7,0.8500000000000001,37
+coexpression,n2v2r degree-adjusted z,7,0.9,51
+coexpression,n2v2r degree-adjusted z,7,0.9500000000000001,100
+coexpression,n2v2r degree-adjusted z (elbow),7,0.0,36
+coexpression,n2v2r degree-adjusted z (elbow),7,0.05,47
+coexpression,n2v2r degree-adjusted z (elbow),7,0.1,38
+coexpression,n2v2r degree-adjusted z (elbow),7,0.15000000000000002,49
+coexpression,n2v2r degree-adjusted z (elbow),7,0.2,64
+coexpression,n2v2r degree-adjusted z (elbow),7,0.25,50
+coexpression,n2v2r degree-adjusted z (elbow),7,0.30000000000000004,54
+coexpression,n2v2r degree-adjusted z (elbow),7,0.35000000000000003,49
+coexpression,n2v2r degree-adjusted z (elbow),7,0.4,56
+coexpression,n2v2r degree-adjusted z (elbow),7,0.45,57
+coexpression,n2v2r degree-adjusted z (elbow),7,0.5,50
+coexpression,n2v2r degree-adjusted z (elbow),7,0.55,57
+coexpression,n2v2r degree-adjusted z (elbow),7,0.6000000000000001,46
+coexpression,n2v2r degree-adjusted z (elbow),7,0.65,46
+coexpression,n2v2r degree-adjusted z (elbow),7,0.7000000000000001,35
+coexpression,n2v2r degree-adjusted z (elbow),7,0.75,40
+coexpression,n2v2r degree-adjusted z (elbow),7,0.8,48
+coexpression,n2v2r degree-adjusted z (elbow),7,0.8500000000000001,45
+coexpression,n2v2r degree-adjusted z (elbow),7,0.9,43
+coexpression,n2v2r degree-adjusted z (elbow),7,0.9500000000000001,90
+coexpression,n2v2r degree-adjusted z,8,0.0,42
+coexpression,n2v2r degree-adjusted z,8,0.05,43
+coexpression,n2v2r degree-adjusted z,8,0.1,48
+coexpression,n2v2r degree-adjusted z,8,0.15000000000000002,56
+coexpression,n2v2r degree-adjusted z,8,0.2,57
+coexpression,n2v2r degree-adjusted z,8,0.25,50
+coexpression,n2v2r degree-adjusted z,8,0.30000000000000004,52
+coexpression,n2v2r degree-adjusted z,8,0.35000000000000003,57
+coexpression,n2v2r degree-adjusted z,8,0.4,48
+coexpression,n2v2r degree-adjusted z,8,0.45,47
+coexpression,n2v2r degree-adjusted z,8,0.5,42
+coexpression,n2v2r degree-adjusted z,8,0.55,53
+coexpression,n2v2r degree-adjusted z,8,0.6000000000000001,58
+coexpression,n2v2r degree-adjusted z,8,0.65,59
+coexpression,n2v2r degree-adjusted z,8,0.7000000000000001,34
+coexpression,n2v2r degree-adjusted z,8,0.75,35
+coexpression,n2v2r degree-adjusted z,8,0.8,34
+coexpression,n2v2r degree-adjusted z,8,0.8500000000000001,37
+coexpression,n2v2r degree-adjusted z,8,0.9,57
+coexpression,n2v2r degree-adjusted z,8,0.9500000000000001,91
+coexpression,n2v2r degree-adjusted z (elbow),8,0.0,40
+coexpression,n2v2r degree-adjusted z (elbow),8,0.05,46
+coexpression,n2v2r degree-adjusted z (elbow),8,0.1,46
+coexpression,n2v2r degree-adjusted z (elbow),8,0.15000000000000002,46
+coexpression,n2v2r degree-adjusted z (elbow),8,0.2,53
+coexpression,n2v2r degree-adjusted z (elbow),8,0.25,54
+coexpression,n2v2r degree-adjusted z (elbow),8,0.30000000000000004,52
+coexpression,n2v2r degree-adjusted z (elbow),8,0.35000000000000003,53
+coexpression,n2v2r degree-adjusted z (elbow),8,0.4,47
+coexpression,n2v2r degree-adjusted z (elbow),8,0.45,63
+coexpression,n2v2r degree-adjusted z (elbow),8,0.5,41
+coexpression,n2v2r degree-adjusted z (elbow),8,0.55,58
+coexpression,n2v2r degree-adjusted z (elbow),8,0.6000000000000001,45
+coexpression,n2v2r degree-adjusted z (elbow),8,0.65,38
+coexpression,n2v2r degree-adjusted z (elbow),8,0.7000000000000001,49
+coexpression,n2v2r degree-adjusted z (elbow),8,0.75,48
+coexpression,n2v2r degree-adjusted z (elbow),8,0.8,37
+coexpression,n2v2r degree-adjusted z (elbow),8,0.8500000000000001,45
+coexpression,n2v2r degree-adjusted z (elbow),8,0.9,49
+coexpression,n2v2r degree-adjusted z (elbow),8,0.9500000000000001,90
+coexpression,n2v2r degree-adjusted z,9,0.0,31
+coexpression,n2v2r degree-adjusted z,9,0.05,39
+coexpression,n2v2r degree-adjusted z,9,0.1,49
+coexpression,n2v2r degree-adjusted z,9,0.15000000000000002,47
+coexpression,n2v2r degree-adjusted z,9,0.2,66
+coexpression,n2v2r degree-adjusted z,9,0.25,44
+coexpression,n2v2r degree-adjusted z,9,0.30000000000000004,58
+coexpression,n2v2r degree-adjusted z,9,0.35000000000000003,62
+coexpression,n2v2r degree-adjusted z,9,0.4,46
+coexpression,n2v2r degree-adjusted z,9,0.45,58
+coexpression,n2v2r degree-adjusted z,9,0.5,45
+coexpression,n2v2r degree-adjusted z,9,0.55,70
+coexpression,n2v2r degree-adjusted z,9,0.6000000000000001,51
+coexpression,n2v2r degree-adjusted z,9,0.65,37
+coexpression,n2v2r degree-adjusted z,9,0.7000000000000001,29
+coexpression,n2v2r degree-adjusted z,9,0.75,34
+coexpression,n2v2r degree-adjusted z,9,0.8,53
+coexpression,n2v2r degree-adjusted z,9,0.8500000000000001,46
+coexpression,n2v2r degree-adjusted z,9,0.9,43
+coexpression,n2v2r degree-adjusted z,9,0.9500000000000001,92
+coexpression,n2v2r degree-adjusted z (elbow),9,0.0,43
+coexpression,n2v2r degree-adjusted z (elbow),9,0.05,39
+coexpression,n2v2r degree-adjusted z (elbow),9,0.1,47
+coexpression,n2v2r degree-adjusted z (elbow),9,0.15000000000000002,39
+coexpression,n2v2r degree-adjusted z (elbow),9,0.2,59
+coexpression,n2v2r degree-adjusted z (elbow),9,0.25,48
+coexpression,n2v2r degree-adjusted z (elbow),9,0.30000000000000004,59
+coexpression,n2v2r degree-adjusted z (elbow),9,0.35000000000000003,60
+coexpression,n2v2r degree-adjusted z (elbow),9,0.4,49
+coexpression,n2v2r degree-adjusted z (elbow),9,0.45,57
+coexpression,n2v2r degree-adjusted z (elbow),9,0.5,53
+coexpression,n2v2r degree-adjusted z (elbow),9,0.55,36
+coexpression,n2v2r degree-adjusted z (elbow),9,0.6000000000000001,53
+coexpression,n2v2r degree-adjusted z (elbow),9,0.65,39
+coexpression,n2v2r degree-adjusted z (elbow),9,0.7000000000000001,46
+coexpression,n2v2r degree-adjusted z (elbow),9,0.75,35
+coexpression,n2v2r degree-adjusted z (elbow),9,0.8,48
+coexpression,n2v2r degree-adjusted z (elbow),9,0.8500000000000001,43
+coexpression,n2v2r degree-adjusted z (elbow),9,0.9,54
+coexpression,n2v2r degree-adjusted z (elbow),9,0.9500000000000001,93
+coexpression,n2v2r degree-adjusted z,10,0.0,27
+coexpression,n2v2r degree-adjusted z,10,0.05,38
+coexpression,n2v2r degree-adjusted z,10,0.1,57
+coexpression,n2v2r degree-adjusted z,10,0.15000000000000002,51
+coexpression,n2v2r degree-adjusted z,10,0.2,53
+coexpression,n2v2r degree-adjusted z,10,0.25,53
+coexpression,n2v2r degree-adjusted z,10,0.30000000000000004,47
+coexpression,n2v2r degree-adjusted z,10,0.35000000000000003,63
+coexpression,n2v2r degree-adjusted z,10,0.4,46
+coexpression,n2v2r degree-adjusted z,10,0.45,65
+coexpression,n2v2r degree-adjusted z,10,0.5,45
+coexpression,n2v2r degree-adjusted z,10,0.55,55
+coexpression,n2v2r degree-adjusted z,10,0.6000000000000001,39
+coexpression,n2v2r degree-adjusted z,10,0.65,40
+coexpression,n2v2r degree-adjusted z,10,0.7000000000000001,47
+coexpression,n2v2r degree-adjusted z,10,0.75,42
+coexpression,n2v2r degree-adjusted z,10,0.8,41
+coexpression,n2v2r degree-adjusted z,10,0.8500000000000001,42
+coexpression,n2v2r degree-adjusted z,10,0.9,41
+coexpression,n2v2r degree-adjusted z,10,0.9500000000000001,108
+coexpression,n2v2r degree-adjusted z (elbow),10,0.0,42
+coexpression,n2v2r degree-adjusted z (elbow),10,0.05,49
+coexpression,n2v2r degree-adjusted z (elbow),10,0.1,41
+coexpression,n2v2r degree-adjusted z (elbow),10,0.15000000000000002,52
+coexpression,n2v2r degree-adjusted z (elbow),10,0.2,55
+coexpression,n2v2r degree-adjusted z (elbow),10,0.25,60
+coexpression,n2v2r degree-adjusted z (elbow),10,0.30000000000000004,53
+coexpression,n2v2r degree-adjusted z (elbow),10,0.35000000000000003,49
+coexpression,n2v2r degree-adjusted z (elbow),10,0.4,45
+coexpression,n2v2r degree-adjusted z (elbow),10,0.45,54
+coexpression,n2v2r degree-adjusted z (elbow),10,0.5,61
+coexpression,n2v2r degree-adjusted z (elbow),10,0.55,38
+coexpression,n2v2r degree-adjusted z (elbow),10,0.6000000000000001,56
+coexpression,n2v2r degree-adjusted z (elbow),10,0.65,38
+coexpression,n2v2r degree-adjusted z (elbow),10,0.7000000000000001,46
+coexpression,n2v2r degree-adjusted z (elbow),10,0.75,53
+coexpression,n2v2r degree-adjusted z (elbow),10,0.8,43
+coexpression,n2v2r degree-adjusted z (elbow),10,0.8500000000000001,35
+coexpression,n2v2r degree-adjusted z (elbow),10,0.9,47
+coexpression,n2v2r degree-adjusted z (elbow),10,0.9500000000000001,83
+coexpression,n2v2r degree-adjusted z,11,0.0,20
+coexpression,n2v2r degree-adjusted z,11,0.05,41
+coexpression,n2v2r degree-adjusted z,11,0.1,54
+coexpression,n2v2r degree-adjusted z,11,0.15000000000000002,44
+coexpression,n2v2r degree-adjusted z,11,0.2,53
+coexpression,n2v2r degree-adjusted z,11,0.25,54
+coexpression,n2v2r degree-adjusted z,11,0.30000000000000004,56
+coexpression,n2v2r degree-adjusted z,11,0.35000000000000003,56
+coexpression,n2v2r degree-adjusted z,11,0.4,43
+coexpression,n2v2r degree-adjusted z,11,0.45,79
+coexpression,n2v2r degree-adjusted z,11,0.5,47
+coexpression,n2v2r degree-adjusted z,11,0.55,52
+coexpression,n2v2r degree-adjusted z,11,0.6000000000000001,48
+coexpression,n2v2r degree-adjusted z,11,0.65,37
+coexpression,n2v2r degree-adjusted z,11,0.7000000000000001,28
+coexpression,n2v2r degree-adjusted z,11,0.75,41
+coexpression,n2v2r degree-adjusted z,11,0.8,37
+coexpression,n2v2r degree-adjusted z,11,0.8500000000000001,34
+coexpression,n2v2r degree-adjusted z,11,0.9,42
+coexpression,n2v2r degree-adjusted z,11,0.9500000000000001,134
+coexpression,n2v2r degree-adjusted z (elbow),11,0.0,36
+coexpression,n2v2r degree-adjusted z (elbow),11,0.05,44
+coexpression,n2v2r degree-adjusted z (elbow),11,0.1,39
+coexpression,n2v2r degree-adjusted z (elbow),11,0.15000000000000002,46
+coexpression,n2v2r degree-adjusted z (elbow),11,0.2,56
+coexpression,n2v2r degree-adjusted z (elbow),11,0.25,66
+coexpression,n2v2r degree-adjusted z (elbow),11,0.30000000000000004,54
+coexpression,n2v2r degree-adjusted z (elbow),11,0.35000000000000003,48
+coexpression,n2v2r degree-adjusted z (elbow),11,0.4,52
+coexpression,n2v2r degree-adjusted z (elbow),11,0.45,59
+coexpression,n2v2r degree-adjusted z (elbow),11,0.5,58
+coexpression,n2v2r degree-adjusted z (elbow),11,0.55,40
+coexpression,n2v2r degree-adjusted z (elbow),11,0.6000000000000001,43
+coexpression,n2v2r degree-adjusted z (elbow),11,0.65,34
+coexpression,n2v2r degree-adjusted z (elbow),11,0.7000000000000001,46
+coexpression,n2v2r degree-adjusted z (elbow),11,0.75,35
+coexpression,n2v2r degree-adjusted z (elbow),11,0.8,41
+coexpression,n2v2r degree-adjusted z (elbow),11,0.8500000000000001,60
+coexpression,n2v2r degree-adjusted z (elbow),11,0.9,43
+coexpression,n2v2r degree-adjusted z (elbow),11,0.9500000000000001,100
+coexpression,n2v2r degree-adjusted z,12,0.0,52
+coexpression,n2v2r degree-adjusted z,12,0.05,49
+coexpression,n2v2r degree-adjusted z,12,0.1,46
+coexpression,n2v2r degree-adjusted z,12,0.15000000000000002,50
+coexpression,n2v2r degree-adjusted z,12,0.2,51
+coexpression,n2v2r degree-adjusted z,12,0.25,44
+coexpression,n2v2r degree-adjusted z,12,0.30000000000000004,47
+coexpression,n2v2r degree-adjusted z,12,0.35000000000000003,50
+coexpression,n2v2r degree-adjusted z,12,0.4,63
+coexpression,n2v2r degree-adjusted z,12,0.45,48
+coexpression,n2v2r degree-adjusted z,12,0.5,57
+coexpression,n2v2r degree-adjusted z,12,0.55,40
+coexpression,n2v2r degree-adjusted z,12,0.6000000000000001,54
+coexpression,n2v2r degree-adjusted z,12,0.65,46
+coexpression,n2v2r degree-adjusted z,12,0.7000000000000001,51
+coexpression,n2v2r degree-adjusted z,12,0.75,35
+coexpression,n2v2r degree-adjusted z,12,0.8,37
+coexpression,n2v2r degree-adjusted z,12,0.8500000000000001,35
+coexpression,n2v2r degree-adjusted z,12,0.9,37
+coexpression,n2v2r degree-adjusted z,12,0.9500000000000001,108
+coexpression,n2v2r degree-adjusted z (elbow),12,0.0,51
+coexpression,n2v2r degree-adjusted z (elbow),12,0.05,39
+coexpression,n2v2r degree-adjusted z (elbow),12,0.1,49
+coexpression,n2v2r degree-adjusted z (elbow),12,0.15000000000000002,52
+coexpression,n2v2r degree-adjusted z (elbow),12,0.2,41
+coexpression,n2v2r degree-adjusted z (elbow),12,0.25,49
+coexpression,n2v2r degree-adjusted z (elbow),12,0.30000000000000004,61
+coexpression,n2v2r degree-adjusted z (elbow),12,0.35000000000000003,58
+coexpression,n2v2r degree-adjusted z (elbow),12,0.4,55
+coexpression,n2v2r degree-adjusted z (elbow),12,0.45,45
+coexpression,n2v2r degree-adjusted z (elbow),12,0.5,48
+coexpression,n2v2r degree-adjusted z (elbow),12,0.55,52
+coexpression,n2v2r degree-adjusted z (elbow),12,0.6000000000000001,50
+coexpression,n2v2r degree-adjusted z (elbow),12,0.65,38
+coexpression,n2v2r degree-adjusted z (elbow),12,0.7000000000000001,44
+coexpression,n2v2r degree-adjusted z (elbow),12,0.75,45
+coexpression,n2v2r degree-adjusted z (elbow),12,0.8,51
+coexpression,n2v2r degree-adjusted z (elbow),12,0.8500000000000001,43
+coexpression,n2v2r degree-adjusted z (elbow),12,0.9,42
+coexpression,n2v2r degree-adjusted z (elbow),12,0.9500000000000001,87
+coexpression,n2v2r degree-adjusted z,13,0.0,36
+coexpression,n2v2r degree-adjusted z,13,0.05,46
+coexpression,n2v2r degree-adjusted z,13,0.1,38
+coexpression,n2v2r degree-adjusted z,13,0.15000000000000002,53
+coexpression,n2v2r degree-adjusted z,13,0.2,61
+coexpression,n2v2r degree-adjusted z,13,0.25,56
+coexpression,n2v2r degree-adjusted z,13,0.30000000000000004,60
+coexpression,n2v2r degree-adjusted z,13,0.35000000000000003,51
+coexpression,n2v2r degree-adjusted z,13,0.4,56
+coexpression,n2v2r degree-adjusted z,13,0.45,43
+coexpression,n2v2r degree-adjusted z,13,0.5,43
+coexpression,n2v2r degree-adjusted z,13,0.55,46
+coexpression,n2v2r degree-adjusted z,13,0.6000000000000001,50
+coexpression,n2v2r degree-adjusted z,13,0.65,50
+coexpression,n2v2r degree-adjusted z,13,0.7000000000000001,45
+coexpression,n2v2r degree-adjusted z,13,0.75,44
+coexpression,n2v2r degree-adjusted z,13,0.8,37
+coexpression,n2v2r degree-adjusted z,13,0.8500000000000001,33
+coexpression,n2v2r degree-adjusted z,13,0.9,44
+coexpression,n2v2r degree-adjusted z,13,0.9500000000000001,108
+coexpression,n2v2r degree-adjusted z (elbow),13,0.0,46
+coexpression,n2v2r degree-adjusted z (elbow),13,0.05,39
+coexpression,n2v2r degree-adjusted z (elbow),13,0.1,50
+coexpression,n2v2r degree-adjusted z (elbow),13,0.15000000000000002,47
+coexpression,n2v2r degree-adjusted z (elbow),13,0.2,46
+coexpression,n2v2r degree-adjusted z (elbow),13,0.25,52
+coexpression,n2v2r degree-adjusted z (elbow),13,0.30000000000000004,51
+coexpression,n2v2r degree-adjusted z (elbow),13,0.35000000000000003,60
+coexpression,n2v2r degree-adjusted z (elbow),13,0.4,45
+coexpression,n2v2r degree-adjusted z (elbow),13,0.45,64
+coexpression,n2v2r degree-adjusted z (elbow),13,0.5,55
+coexpression,n2v2r degree-adjusted z (elbow),13,0.55,41
+coexpression,n2v2r degree-adjusted z (elbow),13,0.6000000000000001,50
+coexpression,n2v2r degree-adjusted z (elbow),13,0.65,46
+coexpression,n2v2r degree-adjusted z (elbow),13,0.7000000000000001,35
+coexpression,n2v2r degree-adjusted z (elbow),13,0.75,42
+coexpression,n2v2r degree-adjusted z (elbow),13,0.8,38
+coexpression,n2v2r degree-adjusted z (elbow),13,0.8500000000000001,45
+coexpression,n2v2r degree-adjusted z (elbow),13,0.9,46
+coexpression,n2v2r degree-adjusted z (elbow),13,0.9500000000000001,102
+coexpression,n2v2r degree-adjusted z,14,0.0,21
+coexpression,n2v2r degree-adjusted z,14,0.05,31
+coexpression,n2v2r degree-adjusted z,14,0.1,58
+coexpression,n2v2r degree-adjusted z,14,0.15000000000000002,55
+coexpression,n2v2r degree-adjusted z,14,0.2,54
+coexpression,n2v2r degree-adjusted z,14,0.25,65
+coexpression,n2v2r degree-adjusted z,14,0.30000000000000004,55
+coexpression,n2v2r degree-adjusted z,14,0.35000000000000003,71
+coexpression,n2v2r degree-adjusted z,14,0.4,43
+coexpression,n2v2r degree-adjusted z,14,0.45,47
+coexpression,n2v2r degree-adjusted z,14,0.5,52
+coexpression,n2v2r degree-adjusted z,14,0.55,50
+coexpression,n2v2r degree-adjusted z,14,0.6000000000000001,53
+coexpression,n2v2r degree-adjusted z,14,0.65,36
+coexpression,n2v2r degree-adjusted z,14,0.7000000000000001,28
+coexpression,n2v2r degree-adjusted z,14,0.75,36
+coexpression,n2v2r degree-adjusted z,14,0.8,31
+coexpression,n2v2r degree-adjusted z,14,0.8500000000000001,37
+coexpression,n2v2r degree-adjusted z,14,0.9,34
+coexpression,n2v2r degree-adjusted z,14,0.9500000000000001,143
+coexpression,n2v2r degree-adjusted z (elbow),14,0.0,46
+coexpression,n2v2r degree-adjusted z (elbow),14,0.05,51
+coexpression,n2v2r degree-adjusted z (elbow),14,0.1,44
+coexpression,n2v2r degree-adjusted z (elbow),14,0.15000000000000002,52
+coexpression,n2v2r degree-adjusted z (elbow),14,0.2,57
+coexpression,n2v2r degree-adjusted z (elbow),14,0.25,59
+coexpression,n2v2r degree-adjusted z (elbow),14,0.30000000000000004,59
+coexpression,n2v2r degree-adjusted z (elbow),14,0.35000000000000003,47
+coexpression,n2v2r degree-adjusted z (elbow),14,0.4,37
+coexpression,n2v2r degree-adjusted z (elbow),14,0.45,48
+coexpression,n2v2r degree-adjusted z (elbow),14,0.5,46
+coexpression,n2v2r degree-adjusted z (elbow),14,0.55,63
+coexpression,n2v2r degree-adjusted z (elbow),14,0.6000000000000001,49
+coexpression,n2v2r degree-adjusted z (elbow),14,0.65,44
+coexpression,n2v2r degree-adjusted z (elbow),14,0.7000000000000001,48
+coexpression,n2v2r degree-adjusted z (elbow),14,0.75,40
+coexpression,n2v2r degree-adjusted z (elbow),14,0.8,42
+coexpression,n2v2r degree-adjusted z (elbow),14,0.8500000000000001,43
+coexpression,n2v2r degree-adjusted z (elbow),14,0.9,41
+coexpression,n2v2r degree-adjusted z (elbow),14,0.9500000000000001,84
+coexpression,n2v2r degree-adjusted z,15,0.0,20
+coexpression,n2v2r degree-adjusted z,15,0.05,43
+coexpression,n2v2r degree-adjusted z,15,0.1,58
+coexpression,n2v2r degree-adjusted z,15,0.15000000000000002,51
+coexpression,n2v2r degree-adjusted z,15,0.2,52
+coexpression,n2v2r degree-adjusted z,15,0.25,69
+coexpression,n2v2r degree-adjusted z,15,0.30000000000000004,58
+coexpression,n2v2r degree-adjusted z,15,0.35000000000000003,67
+coexpression,n2v2r degree-adjusted z,15,0.4,47
+coexpression,n2v2r degree-adjusted z,15,0.45,35
+coexpression,n2v2r degree-adjusted z,15,0.5,56
+coexpression,n2v2r degree-adjusted z,15,0.55,59
+coexpression,n2v2r degree-adjusted z,15,0.6000000000000001,46
+coexpression,n2v2r degree-adjusted z,15,0.65,29
+coexpression,n2v2r degree-adjusted z,15,0.7000000000000001,34
+coexpression,n2v2r degree-adjusted z,15,0.75,37
+coexpression,n2v2r degree-adjusted z,15,0.8,24
+coexpression,n2v2r degree-adjusted z,15,0.8500000000000001,32
+coexpression,n2v2r degree-adjusted z,15,0.9,28
+coexpression,n2v2r degree-adjusted z,15,0.9500000000000001,155
+coexpression,n2v2r degree-adjusted z (elbow),15,0.0,38
+coexpression,n2v2r degree-adjusted z (elbow),15,0.05,45
+coexpression,n2v2r degree-adjusted z (elbow),15,0.1,49
+coexpression,n2v2r degree-adjusted z (elbow),15,0.15000000000000002,46
+coexpression,n2v2r degree-adjusted z (elbow),15,0.2,45
+coexpression,n2v2r degree-adjusted z (elbow),15,0.25,73
+coexpression,n2v2r degree-adjusted z (elbow),15,0.30000000000000004,55
+coexpression,n2v2r degree-adjusted z (elbow),15,0.35000000000000003,41
+coexpression,n2v2r degree-adjusted z (elbow),15,0.4,61
+coexpression,n2v2r degree-adjusted z (elbow),15,0.45,47
+coexpression,n2v2r degree-adjusted z (elbow),15,0.5,43
+coexpression,n2v2r degree-adjusted z (elbow),15,0.55,64
+coexpression,n2v2r degree-adjusted z (elbow),15,0.6000000000000001,41
+coexpression,n2v2r degree-adjusted z (elbow),15,0.65,36
+coexpression,n2v2r degree-adjusted z (elbow),15,0.7000000000000001,39
+coexpression,n2v2r degree-adjusted z (elbow),15,0.75,42
+coexpression,n2v2r degree-adjusted z (elbow),15,0.8,54
+coexpression,n2v2r degree-adjusted z (elbow),15,0.8500000000000001,54
+coexpression,n2v2r degree-adjusted z (elbow),15,0.9,39
+coexpression,n2v2r degree-adjusted z (elbow),15,0.9500000000000001,88
+coexpression,n2v2r degree-adjusted z,16,0.0,30
+coexpression,n2v2r degree-adjusted z,16,0.05,48
+coexpression,n2v2r degree-adjusted z,16,0.1,45
+coexpression,n2v2r degree-adjusted z,16,0.15000000000000002,49
+coexpression,n2v2r degree-adjusted z,16,0.2,50
+coexpression,n2v2r degree-adjusted z,16,0.25,52
+coexpression,n2v2r degree-adjusted z,16,0.30000000000000004,64
+coexpression,n2v2r degree-adjusted z,16,0.35000000000000003,57
+coexpression,n2v2r degree-adjusted z,16,0.4,55
+coexpression,n2v2r degree-adjusted z,16,0.45,50
+coexpression,n2v2r degree-adjusted z,16,0.5,51
+coexpression,n2v2r degree-adjusted z,16,0.55,52
+coexpression,n2v2r degree-adjusted z,16,0.6000000000000001,43
+coexpression,n2v2r degree-adjusted z,16,0.65,38
+coexpression,n2v2r degree-adjusted z,16,0.7000000000000001,38
+coexpression,n2v2r degree-adjusted z,16,0.75,46
+coexpression,n2v2r degree-adjusted z,16,0.8,30
+coexpression,n2v2r degree-adjusted z,16,0.8500000000000001,43
+coexpression,n2v2r degree-adjusted z,16,0.9,44
+coexpression,n2v2r degree-adjusted z,16,0.9500000000000001,115
+coexpression,n2v2r degree-adjusted z (elbow),16,0.0,36
+coexpression,n2v2r degree-adjusted z (elbow),16,0.05,36
+coexpression,n2v2r degree-adjusted z (elbow),16,0.1,53
+coexpression,n2v2r degree-adjusted z (elbow),16,0.15000000000000002,60
+coexpression,n2v2r degree-adjusted z (elbow),16,0.2,61
+coexpression,n2v2r degree-adjusted z (elbow),16,0.25,63
+coexpression,n2v2r degree-adjusted z (elbow),16,0.30000000000000004,37
+coexpression,n2v2r degree-adjusted z (elbow),16,0.35000000000000003,50
+coexpression,n2v2r degree-adjusted z (elbow),16,0.4,48
+coexpression,n2v2r degree-adjusted z (elbow),16,0.45,56
+coexpression,n2v2r degree-adjusted z (elbow),16,0.5,50
+coexpression,n2v2r degree-adjusted z (elbow),16,0.55,64
+coexpression,n2v2r degree-adjusted z (elbow),16,0.6000000000000001,35
+coexpression,n2v2r degree-adjusted z (elbow),16,0.65,58
+coexpression,n2v2r degree-adjusted z (elbow),16,0.7000000000000001,39
+coexpression,n2v2r degree-adjusted z (elbow),16,0.75,37
+coexpression,n2v2r degree-adjusted z (elbow),16,0.8,36
+coexpression,n2v2r degree-adjusted z (elbow),16,0.8500000000000001,56
+coexpression,n2v2r degree-adjusted z (elbow),16,0.9,49
+coexpression,n2v2r degree-adjusted z (elbow),16,0.9500000000000001,76
+coexpression,n2v2r degree-adjusted z,17,0.0,48
+coexpression,n2v2r degree-adjusted z,17,0.05,46
+coexpression,n2v2r degree-adjusted z,17,0.1,52
+coexpression,n2v2r degree-adjusted z,17,0.15000000000000002,53
+coexpression,n2v2r degree-adjusted z,17,0.2,44
+coexpression,n2v2r degree-adjusted z,17,0.25,36
+coexpression,n2v2r degree-adjusted z,17,0.30000000000000004,53
+coexpression,n2v2r degree-adjusted z,17,0.35000000000000003,60
+coexpression,n2v2r degree-adjusted z,17,0.4,52
+coexpression,n2v2r degree-adjusted z,17,0.45,56
+coexpression,n2v2r degree-adjusted z,17,0.5,48
+coexpression,n2v2r degree-adjusted z,17,0.55,47
+coexpression,n2v2r degree-adjusted z,17,0.6000000000000001,63
+coexpression,n2v2r degree-adjusted z,17,0.65,44
+coexpression,n2v2r degree-adjusted z,17,0.7000000000000001,41
+coexpression,n2v2r degree-adjusted z,17,0.75,38
+coexpression,n2v2r degree-adjusted z,17,0.8,32
+coexpression,n2v2r degree-adjusted z,17,0.8500000000000001,45
+coexpression,n2v2r degree-adjusted z,17,0.9,47
+coexpression,n2v2r degree-adjusted z,17,0.9500000000000001,95
+coexpression,n2v2r degree-adjusted z (elbow),17,0.0,65
+coexpression,n2v2r degree-adjusted z (elbow),17,0.05,35
+coexpression,n2v2r degree-adjusted z (elbow),17,0.1,40
+coexpression,n2v2r degree-adjusted z (elbow),17,0.15000000000000002,42
+coexpression,n2v2r degree-adjusted z (elbow),17,0.2,52
+coexpression,n2v2r degree-adjusted z (elbow),17,0.25,55
+coexpression,n2v2r degree-adjusted z (elbow),17,0.30000000000000004,58
+coexpression,n2v2r degree-adjusted z (elbow),17,0.35000000000000003,47
+coexpression,n2v2r degree-adjusted z (elbow),17,0.4,48
+coexpression,n2v2r degree-adjusted z (elbow),17,0.45,58
+coexpression,n2v2r degree-adjusted z (elbow),17,0.5,59
+coexpression,n2v2r degree-adjusted z (elbow),17,0.55,53
+coexpression,n2v2r degree-adjusted z (elbow),17,0.6000000000000001,41
+coexpression,n2v2r degree-adjusted z (elbow),17,0.65,45
+coexpression,n2v2r degree-adjusted z (elbow),17,0.7000000000000001,36
+coexpression,n2v2r degree-adjusted z (elbow),17,0.75,44
+coexpression,n2v2r degree-adjusted z (elbow),17,0.8,44
+coexpression,n2v2r degree-adjusted z (elbow),17,0.8500000000000001,45
+coexpression,n2v2r degree-adjusted z (elbow),17,0.9,53
+coexpression,n2v2r degree-adjusted z (elbow),17,0.9500000000000001,80
+coexpression,n2v2r degree-adjusted z,18,0.0,13
+coexpression,n2v2r degree-adjusted z,18,0.05,43
+coexpression,n2v2r degree-adjusted z,18,0.1,49
+coexpression,n2v2r degree-adjusted z,18,0.15000000000000002,53
+coexpression,n2v2r degree-adjusted z,18,0.2,52
+coexpression,n2v2r degree-adjusted z,18,0.25,49
+coexpression,n2v2r degree-adjusted z,18,0.30000000000000004,60
+coexpression,n2v2r degree-adjusted z,18,0.35000000000000003,56
+coexpression,n2v2r degree-adjusted z,18,0.4,63
+coexpression,n2v2r degree-adjusted z,18,0.45,62
+coexpression,n2v2r degree-adjusted z,18,0.5,48
+coexpression,n2v2r degree-adjusted z,18,0.55,47
+coexpression,n2v2r degree-adjusted z,18,0.6000000000000001,31
+coexpression,n2v2r degree-adjusted z,18,0.65,48
+coexpression,n2v2r degree-adjusted z,18,0.7000000000000001,36
+coexpression,n2v2r degree-adjusted z,18,0.75,38
+coexpression,n2v2r degree-adjusted z,18,0.8,28
+coexpression,n2v2r degree-adjusted z,18,0.8500000000000001,32
+coexpression,n2v2r degree-adjusted z,18,0.9,34
+coexpression,n2v2r degree-adjusted z,18,0.9500000000000001,158
+coexpression,n2v2r degree-adjusted z (elbow),18,0.0,47
+coexpression,n2v2r degree-adjusted z (elbow),18,0.05,40
+coexpression,n2v2r degree-adjusted z (elbow),18,0.1,48
+coexpression,n2v2r degree-adjusted z (elbow),18,0.15000000000000002,48
+coexpression,n2v2r degree-adjusted z (elbow),18,0.2,42
+coexpression,n2v2r degree-adjusted z (elbow),18,0.25,55
+coexpression,n2v2r degree-adjusted z (elbow),18,0.30000000000000004,47
+coexpression,n2v2r degree-adjusted z (elbow),18,0.35000000000000003,55
+coexpression,n2v2r degree-adjusted z (elbow),18,0.4,53
+coexpression,n2v2r degree-adjusted z (elbow),18,0.45,65
+coexpression,n2v2r degree-adjusted z (elbow),18,0.5,54
+coexpression,n2v2r degree-adjusted z (elbow),18,0.55,50
+coexpression,n2v2r degree-adjusted z (elbow),18,0.6000000000000001,35
+coexpression,n2v2r degree-adjusted z (elbow),18,0.65,40
+coexpression,n2v2r degree-adjusted z (elbow),18,0.7000000000000001,46
+coexpression,n2v2r degree-adjusted z (elbow),18,0.75,50
+coexpression,n2v2r degree-adjusted z (elbow),18,0.8,47
+coexpression,n2v2r degree-adjusted z (elbow),18,0.8500000000000001,32
+coexpression,n2v2r degree-adjusted z (elbow),18,0.9,50
+coexpression,n2v2r degree-adjusted z (elbow),18,0.9500000000000001,96
+coexpression,n2v2r degree-adjusted z,19,0.0,28
+coexpression,n2v2r degree-adjusted z,19,0.05,37
+coexpression,n2v2r degree-adjusted z,19,0.1,50
+coexpression,n2v2r degree-adjusted z,19,0.15000000000000002,60
+coexpression,n2v2r degree-adjusted z,19,0.2,59
+coexpression,n2v2r degree-adjusted z,19,0.25,47
+coexpression,n2v2r degree-adjusted z,19,0.30000000000000004,58
+coexpression,n2v2r degree-adjusted z,19,0.35000000000000003,59
+coexpression,n2v2r degree-adjusted z,19,0.4,51
+coexpression,n2v2r degree-adjusted z,19,0.45,51
+coexpression,n2v2r degree-adjusted z,19,0.5,51
+coexpression,n2v2r degree-adjusted z,19,0.55,55
+coexpression,n2v2r degree-adjusted z,19,0.6000000000000001,42
+coexpression,n2v2r degree-adjusted z,19,0.65,45
+coexpression,n2v2r degree-adjusted z,19,0.7000000000000001,41
+coexpression,n2v2r degree-adjusted z,19,0.75,41
+coexpression,n2v2r degree-adjusted z,19,0.8,36
+coexpression,n2v2r degree-adjusted z,19,0.8500000000000001,40
+coexpression,n2v2r degree-adjusted z,19,0.9,45
+coexpression,n2v2r degree-adjusted z,19,0.9500000000000001,104
+coexpression,n2v2r degree-adjusted z (elbow),19,0.0,46
+coexpression,n2v2r degree-adjusted z (elbow),19,0.05,40
+coexpression,n2v2r degree-adjusted z (elbow),19,0.1,52
+coexpression,n2v2r degree-adjusted z (elbow),19,0.15000000000000002,40
+coexpression,n2v2r degree-adjusted z (elbow),19,0.2,55
+coexpression,n2v2r degree-adjusted z (elbow),19,0.25,49
+coexpression,n2v2r degree-adjusted z (elbow),19,0.30000000000000004,49
+coexpression,n2v2r degree-adjusted z (elbow),19,0.35000000000000003,47
+coexpression,n2v2r degree-adjusted z (elbow),19,0.4,64
+coexpression,n2v2r degree-adjusted z (elbow),19,0.45,58
+coexpression,n2v2r degree-adjusted z (elbow),19,0.5,52
+coexpression,n2v2r degree-adjusted z (elbow),19,0.55,45
+coexpression,n2v2r degree-adjusted z (elbow),19,0.6000000000000001,51
+coexpression,n2v2r degree-adjusted z (elbow),19,0.65,45
+coexpression,n2v2r degree-adjusted z (elbow),19,0.7000000000000001,40
+coexpression,n2v2r degree-adjusted z (elbow),19,0.75,42
+coexpression,n2v2r degree-adjusted z (elbow),19,0.8,37
+coexpression,n2v2r degree-adjusted z (elbow),19,0.8500000000000001,48
+coexpression,n2v2r degree-adjusted z (elbow),19,0.9,52
+coexpression,n2v2r degree-adjusted z (elbow),19,0.9500000000000001,88
