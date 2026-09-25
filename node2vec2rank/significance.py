@@ -148,13 +148,14 @@ def covariate_adjusted_zscores(statistic, covariate, trend="spline", polynomial_
     return zscores
 
 
-def empirical_null_test(distances, covariate):
+def empirical_null_test(distances, covariate, trend="spline"):
     """Tests every node for a larger than expected shift between two graphs.
 
     Args:
         distances: array of shape (n,) or (n, c) with a node's distance between
             the two embeddings for c combinations of dimension and metric.
         covariate: array of shape (n,) to adjust for, typically node degree.
+        trend: shape of the degree trend, see :func:`covariate_adjusted_zscores`.
 
     Returns:
         tuple ``(z, pvalues, qvalues)`` of arrays of shape (n,). Larger z means
@@ -178,7 +179,7 @@ def empirical_null_test(distances, covariate):
         floor = positive.min() if positive.size else 1.0
         with np.errstate(invalid="ignore"):
             log_distance = np.log(np.where(np.isfinite(column), np.maximum(column, floor), np.nan))
-        zscores.append(covariate_adjusted_zscores(log_distance, covariate))
+        zscores.append(covariate_adjusted_zscores(log_distance, covariate, trend=trend))
     zscores = np.column_stack(zscores)
 
     with np.errstate(invalid="ignore"):

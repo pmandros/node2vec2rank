@@ -65,22 +65,53 @@ directions. The default Borda over both metrics partly cancels these biases, but
 dominates (−0.48 to 0.43). This justifies mixing the metrics better than either alone, but not fully.
 The degree-adjusted z removes the bias in every scenario (|rho| ≤ 0.04) and ranks as well as or better
 than the default Borda in 7 of 8 settings (it loses 0.03 AUROC in co-expression with 30% change). It
-also recovers 58% of the demo's changed community, against 68% for the default Borda.
+also recovers 59% of the demo's changed community, against 68% for the default Borda.
 
 ![Degree bias](results/degree_bias.png)
 
 **4. The p-values are valid but conservative, and powerful only when the signal is concentrated.**
-With no change, 2.5–4.5% of nodes have p < 0.05, and the three SBM scenarios had no false calls at
-q < 0.1 in any replicate. The co-expression networks have heavier tails: 20–35% of null replicates
-produced 1–4 false calls at q < 0.1, so a stricter q is advisable there. Power at q < 0.1 with 10%
-change is 0.95–1.0 with the elbow dimension (0.79 for co-expression). With the default dimensions it
-is 0.95 for weighted graphs, 0.22 for co-expression and near 0 for binary graphs, where the noisy high
+With no change, 2.4–3.9% of nodes have p < 0.05, and no scenario had a false call at q < 0.1 in any
+of its 20 replicates (see the next section for harder co-expression nulls). Power at q < 0.1 with 10%
+change is 1.0 with the elbow dimension (0.78 for co-expression). With the default dimensions it
+is 0.95 for weighted graphs, 0.26 for co-expression and near 0 for binary graphs, where the noisy high
 dimensions dilute the combined score. With 30% change power drops for both variants (at best 0.70,
 for weighted graphs with the elbow dimension). The empirical null assumes that most nodes
 do not change, so it absorbs part of a change that affects a third of the graph; calls stay
 conservative (no false discoveries) rather than inflated.
 
 ![Calibration](results/calibration.png)
+
+**Calibration of the significance test.** An independent review found that the test is conservative
+and that the elbow variant gave false calls on co-expression networks in which many genes belong to
+no module. `benchmarks/calibration.py` reproduces its null scenarios with 30 replicates each:
+degree-corrected SBMs with Pareto or lognormal degrees, a weighted one, and co-expression networks
+from 60 or 150 samples with 40% of genes in no module.
+
+| Null scenario (30 replicates) | default dims, p < 0.05 (spline) | elbow, p < 0.05 (spline) | elbow, replicates with a call at q < 0.1: quadratic trend | spline trend |
+|---|---|---|---|---|
+| DCSBM, Pareto degrees | 1.4% | 2.2% | 0% | 0% |
+| DCSBM, lognormal degrees | 1.8% | 1.4% | 0% | 0% |
+| weighted DCSBM | 1.6% | 1.7% | 0% | 0% |
+| co-expression, 150 samples | 1.5% | 3.5% | 13% | 13% |
+| co-expression, 60 samples | 1.7% | 3.4% | **77%** | **3%** |
+
+- The false calls came from the degree trend, not from the tails. The lowest-degree genes (those in no
+  module) have embeddings close to zero, so their distances rise steeply at the bottom of the degree
+  range. The quadratic trend bent at the ends and missed that rise. The trend is now a natural cubic
+  spline with knots at the degree quartiles. It has as many parameters as the quadratic, so a changed
+  group that shares a degree keeps its signal (a unit test checks this), but it is linear beyond the
+  outer knots. It removes almost all of those false calls and changes the ranking AUROCs by at most
+  0.01 elsewhere. `trend="polynomial"` in `empirical_null_test` keeps the old fit.
+- The conservativeness was not fixed. The log distances are left-skewed, so the combined scores have a
+  thinner upper tail than a normal distribution, and 1.4–3.9% of null nodes have p < 0.05. Three
+  corrections were tried on these nulls, on the network simulations and on the resampled locCSN null:
+  a Box-Cox transform per distance chosen to make the scores symmetric, a Yeo-Johnson transform of the
+  combined score, and a scale estimated from the upper half of the scores. Each moved the rate at
+  p < 0.05 toward 5%, but the first two gave false calls. The Box-Cox version made about 9 calls per
+  replicate on the resampled locCSN null, and the Yeo-Johnson version about 9 per replicate with the
+  elbow dimension on the simulated co-expression null. These exploratory runs are not in the repository. The upper-half scale lost all power when 30% of nodes changed. The conservative
+  version is kept: its calls can be trusted, but it misses changes that a calibrated test would find.
+  The permutation test (below) is calibrated when the samples are available.
 
 **5. The regularised Laplacian embedding (ULSE) brings no consistent gain.** Its AUROC is within ±0.02
 of UASE everywhere. It remains available as `embedding_method: "ulse"` for networks with extreme hubs,
@@ -103,8 +134,8 @@ dimension, and the new sample-label `permutation_test` (100 permutations).
 **Calibration with shuffled sample labels.** Pooling both conditions and splitting the samples at
 random leaves no true difference between the groups. The permutation test is close to uniform: 5.4%
 of genes have p < 0.05 (3.9–8.6% per replicate), with one false call at q < 0.1 in 10 replicates. The
-empirical null is conservative (2.6% all dimensions, 4.0% elbow), with 2 false calls in 10
-replicates for the elbow variant. A first version of the permutation test standardised distances by
+empirical null is conservative (2.2% all dimensions, 3.6% elbow), with no false calls in 10
+replicates. A first version of the permutation test standardised distances by
 their permutation mean and sd. It failed on one random split, where two near-equal singular values
 made a single dimension unstable, and called 202 genes. Its scores are now rank-based, so no single
 dimension can dominate.
@@ -116,9 +147,9 @@ dimension can dominate.
 - The permutation test calls 82% of rewired genes. It also calls 25% of their module partners,
   whose co-expression neighbourhood genuinely changed when a gene joined or left their module. Only
   2% of genes that are never in a module, and 2% of differential-expression decoys, are called.
-- The empirical null calls only the genes that stand out from genes of similar degree: 54% of
-  rewired genes with the elbow dimension and 18% with all dimensions. It calls no partners and no
-  decoys.
+- The empirical null calls only the genes that stand out from genes of similar degree: 53% of
+  rewired genes with the elbow dimension and 24% with all dimensions. It calls almost no partners or
+  decoys (at most 0.4%).
 - For ranking the rewired genes, AUROC is 0.98 for the elbow z-score, 0.96 for the all-dimension
   z-score, 0.91 for the default Borda and 0.90 for the permutation z-score. The permutation score
   ranks partners high too.
@@ -158,8 +189,8 @@ rankings correlate with degree at 0.57 and cosine rankings at −0.41. The defau
 the degree-adjusted z at 0.08. On ASD vs CTL itself the cosine bias is −0.65, the default Borda −0.26
 and the elbow Borda 0.42, while the z-scores stay at 0.06–0.09.
 
-**3. The degree-adjusted test is calibrated on the resampled null.** With all dimensions, 4.2% of genes
-have p < 0.05 (at most 5.4% in a replicate), and one gene was called at q < 0.1 in 20 replicates. The
+**3. The degree-adjusted test is calibrated on the resampled null.** With all dimensions, 4.3% of genes
+have p < 0.05 (at most 5.4% in a replicate), and two genes were called at q < 0.1 in 20 replicates. The
 elbow variant is conservative (0.8%, no calls). The excess of p-values near 1 comes from genes that
 change less than their degree peers, which only makes the one-sided test conservative. Genes isolated
 in both networks (23 here) are now left untested by `significance()`, instead of entering the
@@ -168,16 +199,16 @@ degree trend with a zero distance.
 **4. A naive null that swaps edges between the networks is not valid per gene.** Swapping every edge's
 weight between ASD and CTL with probability ½ keeps the size of each gene's edge differences and only
 randomises their direction. The genes that differ most in the real data therefore keep large
-distances, and the same 9–17 genes are called in every replicate (6.6% of genes with p < 0.05). It is
+distances, and the same 8–15 genes are called in every replicate (6.5% of genes with p < 0.05). It is
 included in the results as a warning, not as a calibration check.
 
-**5. ASD vs CTL has no significant gene.** No gene reaches q < 0.1 with either variant, and 4.0% of
-genes have p < 0.05 (2.8% with the elbow), which is close to what the null gives. The top of the
-default ranking is led by NLGN4Y (p = 0.0003, q = 0.23) and USP9Y (p = 0.001), two Y-chromosome genes.
+**5. ASD vs CTL has no significant gene.** No gene reaches q < 0.1 with either variant, and 3.6% of
+genes have p < 0.05 (2.9% with the elbow), which is close to what the null gives. The top of the
+default ranking is led by NLGN4Y (p = 0.0007, q = 0.66) and USP9Y (p = 0.002), two Y-chromosome genes.
 NLGN4Y's degree drops from 270 in CTL to 112 in ASD. This looks like a difference in the sex
 composition of the donors or cells, rather than autism biology. This is inferred from the gene names;
 the donor metadata is not in the repository. The next genes (STXBP1, CAMK4, CNTN3, SCN8A, GRIN2B) are
-neuronal genes with nominal p-values between 0.005 and 0.02.
+neuronal genes with nominal p-values between 0.008 and 0.03.
 
 **6. The real differences dwarf the resampled noise.** Spike-ins on the resampled null are easy (AUROC
 0.93–1.0 for the n2v2r rankings, power at q < 0.1 of 0.83–0.91 for the z-score). On the real pair, the same spike-ins rank at
