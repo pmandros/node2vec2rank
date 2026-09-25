@@ -49,9 +49,12 @@ def permutation_test(expression_a, expression_b, build_network=coexpression_netw
         num_permutations: number of label permutations. The smallest possible
             p-value is about 1 / (num_permutations * num_nodes).
         standardize_within_groups: z-score every node within each group before
-            pooling the samples. Without it, mean or variance differences
-            between the groups (e.g., differential expression) become spurious
-            co-expression in the shuffled groups and invalidate the null.
+            building any network, observed or permuted. Without it, mean or
+            variance differences between the groups (e.g., differential
+            expression) become spurious co-expression in the shuffled groups
+            and invalidate the null. With a scale-dependent ``build_network``
+            (e.g., covariance), this also removes variance differences from
+            the observed networks.
         random_state: seed or numpy Generator for the permutations (the
             embeddings use ``seed`` from ``n2v2r_params`` if given).
         **n2v2r_params: parameters for :class:`node2vec2rank.model.N2V2R`,
