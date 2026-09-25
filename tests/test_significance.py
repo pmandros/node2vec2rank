@@ -168,3 +168,16 @@ def test_empirical_null_leaves_nodes_without_distance_untested():
     z, pvalues, qvalues = empirical_null_test(distances, degree)
     assert np.all(np.isnan(z[:10])) and np.all(np.isnan(pvalues[:10])) and np.all(np.isnan(qvalues[:10]))
     assert np.all(np.isfinite(z[10:]))
+
+
+
+def test_covariate_trend_options():
+    rng = np.random.default_rng(11)
+    degree = rng.uniform(0, 1, 1000)
+    statistic = 3 * degree ** 2 + rng.standard_normal(1000)
+    for trend in ("spline", "polynomial"):
+        z = covariate_adjusted_zscores(statistic, degree, trend=trend)
+        assert abs(np.corrcoef(z, degree)[0, 1]) < 0.1
+        assert 0.8 < np.std(z) < 1.2
+    with pytest.raises(ValueError):
+        covariate_adjusted_zscores(statistic, degree, trend="loess")

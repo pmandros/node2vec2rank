@@ -152,7 +152,7 @@ fitting_ranking:
   --embed_dimensions [EMBED_DIMENSIONS ...]
                         A list of all the embedding dimensions to use in n2v2r 
   --distance_metrics [DISTANCE_METRICS ...]
-                        A list of all the distance metrics to use in n2v2r ("euclidean", "cosine" and/or "correlation")
+                        A list of all the distance metrics to use in n2v2r ("euclidean", "cosine" and/or "correlation"; correlation depends on the arbitrary signs of the singular vectors and is not recommended)
   --comp_strategy COMP_STRATEGY
                         How to compare more than two graphs: "sequential" (default), "one_vs_before" or "one_vs_rest"
   --embedding_method EMBEDDING_METHOD

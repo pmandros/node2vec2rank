@@ -2,6 +2,7 @@
 
 import copy
 import json
+import warnings
 
 COMPARISON_STRATEGIES = ("sequential", "one_vs_before", "one_vs_rest")
 DISTANCE_METRICS = ("euclidean", "cosine", "correlation")
@@ -100,6 +101,11 @@ def _validate(config: dict):
     if not metrics or bad_metrics:
         raise ValueError(
             f"distance_metrics must be chosen from {DISTANCE_METRICS}, got {metrics}")
+    if "correlation" in metrics:
+        warnings.warn("The correlation distance centres each node's embedding across dimensions, which "
+                      "depends on the arbitrary sign of every singular vector, so two valid embeddings "
+                      "of the same graphs can give different distances. Prefer euclidean and cosine.",
+                      UserWarning, stacklevel=2)
 
     method = config["embedding_method"] = config["embedding_method"].casefold()
     if method not in EMBEDDING_METHODS:

@@ -13,6 +13,13 @@ scores of the different embedding dimensions and distance metrics are averaged,
 re-standardised, and turned into one-sided p-values and Benjamini-Hochberg
 q-values. The underlying assumption, as for other empirical-null methods, is
 that most nodes do not change between the graphs.
+
+The p-values are conservative: the log distances are left-skewed, so the
+standardised scores have a thinner upper tail than a normal distribution, and
+typically 1.5-4% of unchanged nodes have p < 0.05. Corrections of the tail
+that were tried (Box-Cox or Yeo-Johnson symmetrisation, a scale from the upper
+half) produced false discoveries in some null benchmarks, so the conservative
+version is kept (see benchmarks/README.md).
 """
 
 import numpy as np
@@ -66,20 +73,50 @@ def _huber_regression(design, response, num_iterations=50, tuning=1.345):
     return new_fitted
 
 
-def covariate_adjusted_zscores(statistic, covariate, polynomial_degree=2):
+def _natural_spline_basis(position, knots):
+    """Natural cubic spline basis with an intercept (Hastie et al., ESL eq. 5.4-5.5).
+
+    The fitted curve is cubic between the knots and linear beyond the outer
+    knots, so it can follow the steep changes of noise with degree near the
+    lowest degrees without the end effects of a global polynomial.
+    """
+    knots = np.asarray(knots, dtype=np.float64)
+
+    def truncated(j):
+        return ((np.maximum(position - knots[j], 0) ** 3 - np.maximum(position - knots[-1], 0) ** 3)
+                / (knots[-1] - knots[j]))
+
+    last = truncated(len(knots) - 2)
+    return np.column_stack([np.ones_like(position), position]
+                           + [truncated(j) - last for j in range(len(knots) - 2)])
+
+
+SPLINE_KNOTS = (0.25, 0.5, 0.75)
+
+
+def covariate_adjusted_zscores(statistic, covariate, trend="spline", polynomial_degree=2,
+                               knots=SPLINE_KNOTS):
     """Robust z-scores of a statistic after removing its trend with a covariate.
 
     The expected value and the spread of the statistic are modelled as smooth
-    (quadratic by default) functions of the covariate's rank quantile, fitted
-    with robust Huber regression so that the minority of differential nodes
-    does not pull the trend. Using a smooth global trend, rather than comparing
-    each node only to nodes of the same degree, keeps the signal of a group of
-    changed nodes that happen to share a degree.
+    functions of the covariate's rank quantile, fitted with robust Huber
+    regression so that the minority of differential nodes does not pull the
+    trend. Using a smooth global trend, rather than comparing each node only
+    to nodes of the same degree, keeps the signal of a group of changed nodes
+    that happen to share a degree.
 
     Args:
         statistic: array of shape (n,); non-finite values give NaN scores.
         covariate: array of shape (n,), e.g., node degrees.
+        trend: "spline" for a natural cubic spline with three knots (the
+            default), or "polynomial". The spline has as many parameters as a
+            quadratic, so a group of changed nodes sharing a degree keeps its
+            signal as well, but it is linear beyond the outer knots. A
+            quadratic bends at the ends and misfits the lowest-degree nodes
+            (e.g., genes outside any co-expression module), giving them too
+            large z-scores.
         polynomial_degree: degree of the polynomial trend.
+        knots: knots of the spline, as rank quantiles of the covariate.
 
     Returns:
         np.ndarray of shape (n,) with the z-scores.
@@ -89,12 +126,17 @@ def covariate_adjusted_zscores(statistic, covariate, polynomial_degree=2):
     valid = np.isfinite(statistic) & np.isfinite(covariate)
     zscores = np.full_like(statistic, np.nan)
     num_valid = valid.sum()
-    if num_valid <= polynomial_degree + 2:
-        return zscores
 
     # rank quantiles make the fit insensitive to the scale and skew of degrees
-    position = (rankdata(covariate[valid]) - 0.5) / num_valid
-    design = np.column_stack([position ** k for k in range(polynomial_degree + 1)])
+    position = (rankdata(covariate[valid]) - 0.5) / max(num_valid, 1)
+    if trend == "spline":
+        design = _natural_spline_basis(position, knots)
+    elif trend == "polynomial":
+        design = np.column_stack([position ** k for k in range(polynomial_degree + 1)])
+    else:
+        raise ValueError(f'trend must be "spline" or "polynomial", got {trend!r}')
+    if num_valid <= design.shape[1] + 1:
+        return zscores
     values = statistic[valid]
 
     residuals = values - _huber_regression(design, values)

@@ -46,8 +46,10 @@ def permutation_test(expression_a, expression_b, build_network=coexpression_netw
         expression_a, expression_b: DataFrames (samples x nodes) with the same columns.
         build_network: function from a samples x nodes DataFrame to a nodes x
             nodes network; defaults to the WGCNA-style |cor|^6 network.
-        num_permutations: number of label permutations. The smallest possible
-            p-value is about 1 / (num_permutations * num_nodes).
+        num_permutations: number of label permutations. The null is pooled
+            over nodes, so p-values can go below 1 / (num_permutations + 1),
+            but each node's score is still ranked among only
+            num_permutations + 1 values; 500 or more is safer for real use.
         standardize_within_groups: z-score every node within each group before
             building any network, observed or permuted. Without it, mean or
             variance differences between the groups (e.g., differential
