@@ -1,81 +1,60 @@
-import json
+"""Command line interface: ``n2v2r --config config.json`` or
+``python -m node2vec2rank --config config.json``."""
+
 import argparse
-import sys
+
+from node2vec2rank import __version__
+from node2vec2rank.config import resolve_config
 from node2vec2rank.dataloader import DataLoader
 from node2vec2rank.model import N2V2R
 
 
-# Create the parser
-parser = argparse.ArgumentParser(description='Script arguments')
-parser.add_argument("--config", required=True, help='Configuration file path')
+def build_parser():
+    parser = argparse.ArgumentParser(
+        prog="n2v2r",
+        description="node2vec2rank: graph differential analysis via multi-layer "
+                    "spectral embedding and ranking. Parameters come from the JSON "
+                    "config file; the options below override it.")
+    parser.add_argument("--config", required=True, help="Configuration file path")
+    parser.add_argument("--save_dir", help="Output directory (overrides the config)")
+    parser.add_argument("--seed", type=int, help="Random seed (overrides the config)")
+    parser.add_argument("--signed", action="store_true",
+                        help="Also write the rankings signed by the degree difference")
+    parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
+    return parser
 
-# # Add data_loading arguments
-# data_loading_group = parser.add_argument_group('data_io')
-# data_loading_group.add_argument(
-#     '--save_dir', type=str, help='Save directory')
-# data_loading_group.add_argument(
-#     '--graph_filenames', nargs='+', type=str, help='Graph filenames')
-# data_loading_group.add_argument(
-#     '--data_dir', type=str, help='Data Directory')
-# data_loading_group.add_argument(
-#     '--separator', default='\t', type=str, help='Separator used in the graph files')
-# data_loading_group.add_argument(
-#     '--is_edge_list', action='store_true', help='Whether the input is an edge list or tabular')
-# data_loading_group.add_argument(
-#     '--transpose', action='store_true', help='Whether to transpose the graph adjacency matrices or not if bipartite')
 
-# # Add data_preprocessing arguments
-# data_preprocessing_group = parser.add_argument_group('data_preprocessing')
-# data_preprocessing_group.add_argument(
-#     '--project_unipartite_on', default='columns', type=str, help='If the graph adjacency matrices are non-square (i.e., bipartite), it will make them square by projecting into column or row space')
-# data_preprocessing_group.add_argument(
-#     '--threshold', type=float, default=None, help='Everything below this value will be 0')
-# data_preprocessing_group.add_argument(
-#     '--top_percent_keep',  type=int, default=100, help='Keeps the top percentage of edges, turning the rest to 0')
-# data_preprocessing_group.add_argument(
-#     '--binarize',  action='store_true', help='Whether to binarize the graphs, turning everything above 0 to 1')
-# data_preprocessing_group.add_argument(
-#     '--absolute', action='store_true', help='Absolute the graphs, i.e., turn negative values into positive')
+def run(argv=None):
+    """Runs the command line workflow and returns the fitted model."""
+    args = build_parser().parse_args(argv)
 
-# # Add fitting_ranking arguments
-# fitting_ranking_group = parser.add_argument_group('fitting_ranking')
-# fitting_ranking_group.add_argument(
-#     '--embed_dimensions', nargs='+', type=int, default=[4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24], help='Embedding dimensions')
-# fitting_ranking_group.add_argument(
-#     '--distance_metrics', nargs='+', default=["euclidean", "cosine"], help='Distance metrics')
-# fitting_ranking_group.add_argument(
-#     '--seed', type=int, default=None, help='Random seed')
-# fitting_ranking_group.add_argument(
-#     '--verbose', type=int, default=1, help='Verbose level')
+    overrides = {key: value for key, value in
+                 (("save_dir", args.save_dir), ("seed", args.seed)) if value is not None}
+    config = resolve_config(args.config, **overrides)
 
-# Parse the arguments from the command line
-args = parser.parse_args()
+    # create dataloader and load the graphs in memory
+    dataloader = DataLoader(config=config)
 
-# user should provide path of config file
-# all other args will be ignored and will be extracted from the file
-if args.config is not None:
-    with open(args.config, 'r', encoding='utf-8') as file:
-        args = json.load(file)
-        args = {param: value for _, params in args.items()
-                  for param, value in params.items()}
-else:
-    print("The following argument is required: --config")
-    parser.print_help()
-    sys.exit(1)
+    model = N2V2R(graphs=dataloader.get_graphs(), nodes=dataloader.get_nodes(), config=config)
 
-# create dataloader and load the graphs in memory
-dataloader = DataLoader(config=args)
-graphs = dataloader.get_graphs()
-interest_nodes = dataloader.get_nodes()
+    # compute the rankings for every parameter combination, then aggregate them
+    model.fit_transform_rank()
+    model.aggregate_transform()
 
-# define Node2Vec2Rank model
-model = N2V2R(graphs=graphs, config=args, nodes=interest_nodes)
+    # compute the degree difference ranking (also the prior for signing)
+    model.degree_difference_ranking()
+    if args.signed:
+        model.signed_ranks_transform()
 
-# train Node2Vec2Rank and generate rankings
-rankings = model.fit_transform_rank()
+    if model.save_dir:
+        print(f"\nResults written to {model.save_dir}")
+    return model
 
-# generate ranking based on borda ranking
-borda_rankings = model.aggregate_transform()
 
-# compute DeDi ranking
-DeDi_ranking = model.degree_difference_ranking()
+def main(argv=None):
+    run(argv)
+    return 0
+
+
+if __name__ == "__main__":
+    main()
