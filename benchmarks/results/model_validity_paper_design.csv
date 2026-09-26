@@ -1,0 +1,1201 @@
+communities,design,metric,population_auroc
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9237925925925926
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9861555555555556
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8940296296296296
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9779037037037037
+4,SBM,euclidean,1.0
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6711111111111111
+4,DC-SBM,euclidean,0.8933629629629629
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.7598666666666667
+4,SBM,euclidean,1.0
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6711111111111111
+4,DC-SBM,euclidean,0.8872444444444444
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.7448888888888889
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9191851851851852
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9868148148148148
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8802074074074074
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9826222222222222
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9124444444444444
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9919333333333333
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8728592592592592
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9786222222222222
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9045185185185185
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9937259259259259
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8855851851851851
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9766962962962963
+4,SBM,euclidean,0.6666666666666666
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6666666666666666
+4,DC-SBM,euclidean,0.7896444444444445
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.6970296296296297
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9372592592592592
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9929111111111111
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8967703703703703
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.981125925925926
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8229333333333333
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.967362962962963
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8870518518518519
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9803333333333333
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9342074074074074
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9954518518518518
+4,SBM,euclidean,0.6666666666666666
+4,SBM,cosine,1.0
+4,SBM,borda (both),0.9977777777777778
+4,DC-SBM,euclidean,0.7775111111111112
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.6968740740740741
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9648888888888889
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9943703703703703
+4,SBM,euclidean,0.6666666666666666
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6666666666666666
+4,DC-SBM,euclidean,0.6781185185185186
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.6592962962962963
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.883762962962963
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9741481481481481
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9248888888888889
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9928814814814815
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9927555555555555
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9990370370370371
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9872740740740741
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9993037037037037
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9668
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9969851851851852
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9174962962962963
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9900518518518518
+4,SBM,euclidean,0.6666666666666666
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6666666666666666
+4,DC-SBM,euclidean,0.6548592592592593
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.6498814814814815
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8582962962962963
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9656740740740741
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9451259259259259
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9963851851851852
+4,SBM,euclidean,1.0
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6733333333333333
+4,DC-SBM,euclidean,0.783837037037037
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.7171851851851851
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8721777777777778
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9745555555555555
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8503851851851851
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9700740740740741
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9416888888888889
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9925111111111111
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9182962962962963
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9960740740740741
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.7947111111111111
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9420592592592593
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8755555555555555
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9790148148148148
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9610074074074074
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9965703703703703
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9673925925925926
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9967777777777778
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9252148148148148
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9922148148148148
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9585777777777778
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9965407407407407
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9834814814814815
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9979851851851852
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9409481481481482
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9922148148148148
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8153777777777778
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9607777777777777
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8755407407407407
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9853851851851851
+4,SBM,euclidean,0.6666666666666666
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6666666666666666
+4,DC-SBM,euclidean,0.7159111111111112
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.6695185185185185
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8890962962962963
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9800740740740741
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9316592592592593
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9942148148148148
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9455407407407408
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9923777777777778
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9152888888888889
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9886222222222222
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.7290962962962962
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.7179925925925926
+4,SBM,euclidean,1.0
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6711111111111111
+4,DC-SBM,euclidean,0.9021925925925925
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.759362962962963
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9051555555555556
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9910962962962963
+4,SBM,euclidean,0.6666666666666666
+4,SBM,cosine,0.3333333333333333
+4,SBM,borda (both),0.3333333333333333
+4,DC-SBM,euclidean,0.6591555555555556
+4,DC-SBM,cosine,0.3333333333333333
+4,DC-SBM,borda (both),0.41759259259259257
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8257777777777778
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9510740740740741
+4,SBM,euclidean,0.6666666666666666
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6666666666666666
+4,DC-SBM,euclidean,0.698237037037037
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.6658592592592593
+4,SBM,euclidean,0.6666666666666666
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6666666666666666
+4,DC-SBM,euclidean,0.6341333333333333
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.6615925925925926
+4,SBM,euclidean,1.0
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.8333333333333334
+4,DC-SBM,euclidean,0.8925037037037037
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.7661481481481481
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.924
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9862962962962963
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.915762962962963
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9890518518518518
+4,SBM,euclidean,0.6666666666666666
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6666666666666666
+4,DC-SBM,euclidean,0.7647555555555555
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.6856592592592593
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8488592592592593
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9660518518518518
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.836474074074074
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9641333333333333
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.7987407407407408
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9370444444444445
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.7908
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9341703703703703
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8350666666666666
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9516222222222223
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8750074074074075
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.978474074074074
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8845037037037037
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9785111111111111
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9413333333333334
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9934592592592593
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.886237037037037
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9769555555555556
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8596444444444444
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9664592592592592
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9528296296296296
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9979111111111111
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9846222222222222
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9989629629629629
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9328592592592593
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9905185185185185
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9677037037037037
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9990518518518519
+4,SBM,euclidean,1.0
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.9933333333333333
+4,DC-SBM,euclidean,0.8163407407407407
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.7087407407407408
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8360888888888889
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9803703703703703
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9050962962962963
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9844814814814815
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8883851851851852
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9753703703703703
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9245037037037037
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9857185185185185
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9359703703703703
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9911777777777778
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.7485037037037037
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9229333333333334
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9858518518518519
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9991111111111111
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9708888888888889
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9972074074074074
+4,SBM,euclidean,1.0
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6688888888888889
+4,DC-SBM,euclidean,0.9231407407407407
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.8120962962962963
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8076444444444445
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.974562962962963
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9325185185185185
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9893037037037037
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9359851851851851
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9912740740740741
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9670074074074074
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9966222222222222
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8815555555555555
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9811333333333333
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.7713481481481481
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.6936962962962963
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8360148148148148
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9533777777777778
+4,SBM,euclidean,1.0
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.9911111111111112
+4,DC-SBM,euclidean,0.892074074074074
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.7527703703703704
+4,SBM,euclidean,0.6666666666666666
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6666666666666666
+4,DC-SBM,euclidean,0.6482666666666667
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.6520592592592592
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9340148148148149
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9919185185185185
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9198666666666667
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9841777777777778
+4,SBM,euclidean,0.3333333333333333
+4,SBM,cosine,0.3333333333333333
+4,SBM,borda (both),0.3333333333333333
+4,DC-SBM,euclidean,0.9045777777777778
+4,DC-SBM,cosine,0.3333333333333333
+4,DC-SBM,borda (both),0.6057703703703704
+4,SBM,euclidean,1.0
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.9955555555555555
+4,DC-SBM,euclidean,0.896
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.7575259259259259
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.8508740740740741
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.965925925925926
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.964162962962963
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.9972444444444445
+4,SBM,euclidean,1.0
+4,SBM,cosine,1.0
+4,SBM,borda (both),1.0
+4,DC-SBM,euclidean,0.9541333333333334
+4,DC-SBM,cosine,1.0
+4,DC-SBM,borda (both),0.996874074074074
+4,SBM,euclidean,0.6666666666666666
+4,SBM,cosine,0.6666666666666666
+4,SBM,borda (both),0.6666666666666666
+4,DC-SBM,euclidean,0.7364888888888889
+4,DC-SBM,cosine,0.6666666666666666
+4,DC-SBM,borda (both),0.6778
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9618827160493827
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.997391975308642
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9747222222222223
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9993055555555556
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9814197530864197
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9996141975308642
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9756481481481482
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9984104938271605
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9576543209876544
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9933179012345679
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9670679012345679
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9961111111111111
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9730246913580247
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9974228395061728
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9375925925925926
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9914506172839506
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9830246913580247
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9989043209876544
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9242901234567901
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9864351851851851
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9537345679012346
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9942283950617284
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9754012345679013
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.996820987654321
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9495987654320988
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9948611111111111
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9765432098765432
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9985648148148148
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9002777777777777
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9848302469135802
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9711728395061728
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9973302469135803
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.972037037037037
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9968981481481481
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9850925925925926
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9990123456790123
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9521604938271605
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9917901234567901
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9731172839506173
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9984876543209876
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9507716049382716
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9942901234567901
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9317283950617284
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9907253086419753
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9580246913580247
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9959413580246913
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9446296296296296
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9938425925925926
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9714506172839507
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9982716049382716
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9425617283950617
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9893055555555555
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9620987654320987
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9979475308641975
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9765432098765432
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9986882716049382
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9620987654320987
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9980092592592592
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9624691358024692
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9975154320987655
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9653086419753086
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9952006172839506
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9767592592592592
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9979166666666667
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9425617283950617
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9936265432098765
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9800617283950618
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9982561728395062
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9638580246913581
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9971296296296296
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9720061728395062
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9954938271604938
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9872530864197531
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9998919753086419
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9696604938271605
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9964351851851851
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9009876543209877
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.986712962962963
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9793518518518518
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9979475308641975
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9774382716049382
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9972685185185185
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9898148148148148
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9980401234567902
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9711728395061728
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9952777777777778
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9354629629629629
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9884259259259259
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9790432098765433
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9980401234567902
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9557098765432098
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9948456790123457
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9911728395061729
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),1.0
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.8957407407407407
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9780092592592593
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.6651851851851852
+10,DC-SBM,cosine,0.8888888888888888
+10,DC-SBM,borda (both),0.8053395061728396
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9746604938271605
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9979629629629629
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9626543209876544
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9978858024691358
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9740123456790123
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9960956790123456
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9542901234567901
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9979629629629629
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9645061728395061
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9984259259259259
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9629938271604939
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9974691358024691
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9791358024691358
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9986111111111111
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9510802469135803
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9931481481481481
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9736111111111111
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9971913580246914
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9697530864197531
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.997037037037037
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9563888888888888
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9969753086419753
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9549074074074074
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9968364197530865
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9676543209876544
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.998179012345679
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9720679012345679
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9984567901234568
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9531481481481482
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9984876543209876
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9749074074074074
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9983179012345679
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9548765432098766
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9946604938271605
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9668827160493827
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9949228395061729
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9772530864197531
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9984567901234568
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9756172839506173
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.997608024691358
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9650925925925926
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9966975308641975
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9601543209876543
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9957407407407407
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.929537037037037
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9868055555555556
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9585802469135802
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9949691358024692
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.927746913580247
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9891820987654321
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.967037037037037
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9962191358024691
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9514814814814815
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9957561728395061
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9642901234567901
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9972376543209877
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9845987654320988
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9996913580246913
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9786111111111111
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9994753086419753
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9763271604938272
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9983641975308643
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9599382716049383
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9975617283950617
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9733024691358024
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9981635802469135
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9750308641975308
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9982716049382716
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9767592592592592
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9986111111111111
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9685185185185186
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9954012345679012
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9675
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9976851851851852
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.938858024691358
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9922685185185185
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9657407407407408
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9946450617283951
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9617592592592593
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9968055555555555
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9711728395061728
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9987654320987654
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9885493827160494
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9994753086419753
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9787962962962963
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),1.0
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9629938271604939
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.998503086419753
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9662654320987655
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9975617283950617
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.871358024691358
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9613117283950617
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9835802469135803
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9976388888888889
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9663271604938272
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9964506172839506
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9684876543209876
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.997608024691358
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.934537037037037
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9884567901234568
+10,SBM,euclidean,1.0
+10,SBM,cosine,1.0
+10,SBM,borda (both),1.0
+10,DC-SBM,euclidean,0.9596296296296296
+10,DC-SBM,cosine,1.0
+10,DC-SBM,borda (both),0.9973611111111111
