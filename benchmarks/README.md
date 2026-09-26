@@ -223,6 +223,33 @@ would show. That needs the per-cell networks and `permutation_test`.
 The hdWGCNA cell-cycle networks used in the paper are on Zenodo (10.5281/zenodo.10558426) and are
 not in the repository, so they were not tested.
 
+## Ordered conditions
+
+`python benchmarks/temporal.py` simulates co-expression networks over K = 4 or 8 ordered conditions
+(600 genes, 5 modules, 25, 50 or 100 samples per condition, 10 replicates). Genes are stable, move
+module once and stay (persistent), visit another module at one condition only (transient), or drift
+gradually between two modules. Results are in `results/temporal_*.csv`.
+
+- **The joint embedding helps each step.** The sequential comparison on the UASE of all K networks
+  beats embedding each pair on its own (AUROC 0.84 vs 0.81 at K = 4, 0.75 vs 0.70 at K = 8).
+- **Smoothing over time pays off only with many conditions.** A random-walk Kalman smoother on the
+  UASE positions gives at best 0.86 vs 0.84 at K = 4 and 0.86 vs 0.75 at K = 8, all of it on gradual
+  changes. Abrupt changes are found at AUROC 0.92–0.99 either way. With the noise variances estimated
+  from the data, the smoother is worse than the plain comparison at 25 samples (0.68 vs 0.80, K = 4).
+- **Direction can be read off the embedding; the degree sign cannot give it.** For a gene that
+  switches module, the change of its affinity to each module, `mean_j in module <X_j, Y_i(t+1) - Y_i(t)>`
+  (X the shared left embedding), names the module it joins and the one it leaves in 97–100% of cases.
+  The raw network rows do as well. The sign of the degree difference says "up" for 45–54% of
+  switching genes, a coin flip.
+- **Persistent and transient changes can be told apart from the sequential distances.** The ratio of
+  the net move (first to last condition) to the path length separates them with AUROC 0.85 at 100
+  samples and 0.64 at 25. The step with the largest move is the true change step for 87% (K = 4, 100
+  samples) of the persistent genes.
+- **A noisy condition spoils both comparisons next to it.** With 30 instead of 100 samples in
+  condition 3, stable genes move 2.3x further in comparisons 2→3 and 3→4, and the test finds 0.3 and
+  1.2 changed genes there instead of 6.1 and 10.9. There are still no false calls. Distances from
+  different steps are therefore not comparable when the conditions differ in size.
+
 ## Limitations
 
 The simulations are small (1,000-node), two-graph settings with community-switch changes. Real
