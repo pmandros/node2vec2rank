@@ -282,6 +282,22 @@ several donors, shuffle donors instead. The paper's own hdWGCNA networks (Zenodo
 downloaded here, so these networks follow the hdWGCNA recipe but are not the same files, and the
 merge of Revelio's five phases into four is an assumption.
 
+**The phase merge.** The paper does not say how Revelio's five phases were merged into four, so
+`--phase-merge` tries three merges with the fast test (`results/cell_cycle_fast*.csv`):
+"default" (G1 = M/G1 + G1/S, M = G2/M), "later" (every transition goes to the phase it leads into)
+and "earlier" (every transition goes to the phase it leaves). Cell-cycle pathways at FDR 0.1, n2v2r
+vs DeDi:
+
+| merge | cells G1 / S / G2 / M | G1 → S | S → G2 | G2 → M | null split |
+|---|---|---|---|---|---|
+| default | 838 / 258 / 186 / 195 | 53 vs 39 | 6 vs 11 | 23 vs 0 | 0 vs 0 |
+| later | 320 / 776 / 186 / 195 | 44 vs 0 | 36 vs 22 | 20 vs 0 | 0 vs 0 |
+| earlier | 518 / 258 / 381 / 320 | 40 vs 7 | 13 vs 10 | 37 vs 0 | 0 vs 0 |
+
+The conclusions do not depend on the merge: no calls on the null split, and n2v2r finds more
+cell-cycle pathways than DeDi in all comparisons but one, and far more at G2 → M. The "earlier" merge
+gives the most balanced phases.
+
 ### Which calls are true? Planted changes and split halves
 
 "More cell-cycle pathways" is only a proxy: the cell-cycle label comes from pathway names, and a

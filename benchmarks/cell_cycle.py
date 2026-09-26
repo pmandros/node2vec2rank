@@ -67,7 +67,15 @@ from node2vec2rank.simulate import coexpression_network  # noqa: E402
 
 RESULTS_DIR = os.path.join(HERE, "results")
 REACTOME = os.path.join(REPO, "data", "gene_set_libraries", "human", "c2.cp.reactome.v7.5.1.symbols.gmt")
-PHASES = {"M.G1": "G1", "G1.S": "G1", "S": "S", "G2": "G2", "G2.M": "M"}
+PHASE_MERGES = {
+    # transitions into and out of G1 go to G1, G2/M to M (the default here)
+    "default": {"M.G1": "G1", "G1.S": "G1", "S": "S", "G2": "G2", "G2.M": "M"},
+    # every transition goes to the phase it leads into
+    "later": {"M.G1": "G1", "G1.S": "S", "S": "S", "G2": "G2", "G2.M": "M"},
+    # every transition goes to the phase it leaves
+    "earlier": {"M.G1": "M", "G1.S": "G1", "S": "S", "G2": "G2", "G2.M": "G2"},
+}
+PHASES = PHASE_MERGES["default"]
 COMPARISONS = [("G1", "S"), ("S", "G2"), ("G2", "M")]
 CELL_CYCLE = re.compile(
     r"CELL_CYCLE|MITOTIC|MITOSIS|G1_S|G2_M|S_PHASE|M_PHASE|G0_AND_EARLY_G1|DNA_REPLICATION|"
@@ -89,7 +97,8 @@ def read_revelio(directory):
     return matrix, genes, cells, markers
 
 
-def assign_phases(counts, genes, cells, markers, min_marker_cor=0.2, min_highest=0.75, max_second=0.5):
+def assign_phases(counts, genes, cells, markers, min_marker_cor=0.2, min_highest=0.75, max_second=0.5,
+                  merge=PHASES):
     """Revelio's getCellCyclePhaseAssignInformation, per batch."""
     batch = np.array([c.split("_")[0] for c in cells])
     library = np.asarray(counts.sum(axis=1)).ravel()
@@ -119,7 +128,7 @@ def assign_phases(counts, genes, cells, markers, min_marker_cor=0.2, min_highest
         phase[rows] = np.array(names)[order[:, 0]]
         outlier[rows] = (highest < min_highest) | ((gap > 1) & (second > max_second))
     return pd.DataFrame({"cell": cells, "batch": batch, "revelio_phase": phase,
-                         "phase": pd.Series(phase).map(PHASES).to_numpy(), "outlier": outlier})
+                         "phase": pd.Series(phase).map(merge).to_numpy(), "outlier": outlier})
 
 
 def scale_free_fit(network, num_bins=10):
@@ -233,11 +242,11 @@ def random_halves(strata, rng):
     return half
 
 
-def prepare(revelio_dir, num_genes=2000):
+def prepare(revelio_dir, num_genes=2000, merge="default"):
     """Phases, expression of the most variable genes standardised within phase
     and batch, and the network builder."""
     counts, genes, cells, markers = read_revelio(revelio_dir)
-    cells_table = assign_phases(counts, genes, cells, markers)
+    cells_table = assign_phases(counts, genes, cells, markers, merge=PHASE_MERGES[merge])
     print(pd.crosstab([cells_table.batch, cells_table.outlier], cells_table.revelio_phase), flush=True)
     keep = ~cells_table["outlier"].to_numpy()
     counts, cells_table = counts[keep], cells_table[keep].reset_index(drop=True)
@@ -268,10 +277,12 @@ def main(argv=None):
     parser.add_argument("--top-sets", type=int, default=15)
     parser.add_argument("--methods", nargs="+", choices=list(METHODS), default=list(METHODS))
     parser.add_argument("--suffix", default="", help="appended to the result file names")
+    parser.add_argument("--phase-merge", choices=list(PHASE_MERGES), default="default",
+                        help="how Revelio's five phases are merged into four")
     args = parser.parse_args(argv)
     os.makedirs(RESULTS_DIR, exist_ok=True)
 
-    cells_table, groups, batches, build = prepare(args.revelio_dir, args.num_genes)
+    cells_table, groups, batches, build = prepare(args.revelio_dir, args.num_genes, args.phase_merge)
 
     gene_sets = read_gmt(REACTOME)
     names = pd.Index(list(gene_sets))
@@ -297,7 +308,7 @@ def main(argv=None):
     summary.to_csv(os.path.join(RESULTS_DIR, f"cell_cycle{args.suffix}.csv"), index=False)
     pd.concat(tops).to_csv(os.path.join(RESULTS_DIR, f"cell_cycle_top_sets{args.suffix}.csv"), index=False)
     cells_table.groupby(["batch", "phase"]).size().rename("cells").to_csv(
-        os.path.join(RESULTS_DIR, "cell_cycle_phases.csv"))
+        os.path.join(RESULTS_DIR, f"cell_cycle_phases{args.suffix}.csv"))
     with pd.option_context("display.width", 200, "display.max_columns", 20):
         print(summary.round(3))
 
