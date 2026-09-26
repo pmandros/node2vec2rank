@@ -38,7 +38,7 @@ from scipy.stats import spearmanr
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-from cell_cycle import (REACTOME, RESULTS_DIR, auroc, prepare, random_halves,  # noqa: E402
+from cell_cycle import (METHODS, REACTOME, RESULTS_DIR, auroc, prepare, random_halves,  # noqa: E402
                         read_gmt, score_methods)
 from node2vec2rank.singlecell import metacell_network  # noqa: E402
 
@@ -85,7 +85,7 @@ def spike_in(groups, batches, gene_sets, build, args):
             group_b, planted, shuffled, in_data = plant(group_b, strata[1], gene_sets, rng, args.num_planted,
                                                         fraction)
             results = score_methods(group_a, group_b, strata, gene_sets, build, args.num_permutations,
-                                    args.n_jobs)
+                                    args.n_jobs, args.methods)
             for method, result in results.items():
                 positive = result.index.isin(planted)
                 negative = np.array([not shuffled.intersection(in_data.get(name, ())) for name in result.index])
@@ -117,7 +117,7 @@ def reproducibility(groups, batches, gene_sets, build, args):
             mask_a, mask_b = halves[a] == side, halves[b] == side
             runs.append(score_methods(groups[a][mask_a], groups[b][mask_b],
                                       (batches[a][mask_a], batches[b][mask_b]), gene_sets, build,
-                                      args.num_permutations, args.n_jobs))
+                                      args.num_permutations, args.n_jobs, args.methods))
         for method in runs[0]:
             first, second = runs[0][method], runs[1][method].reindex(runs[0][method].index)
             calls = [set(r.index[r["qvalue"] <= Q_THRESHOLD]) for r in (first, second)]
@@ -143,6 +143,8 @@ def main(argv=None):
     parser.add_argument("--num-planted", type=int, default=8)
     parser.add_argument("--fractions", type=float, nargs="+", default=[0.3, 0.6])
     parser.add_argument("--skip-reproducibility", action="store_true")
+    parser.add_argument("--methods", nargs="+", choices=list(METHODS), default=list(METHODS))
+    parser.add_argument("--suffix", default="", help="appended to the result file names")
     parser.add_argument("--repro-k", type=int, default=10, help="cells per metacell for the split halves")
     parser.add_argument("--repro-max-shared", type=int, default=5)
     args = parser.parse_args(argv)
@@ -152,13 +154,13 @@ def main(argv=None):
     gene_sets = read_gmt(REACTOME)
 
     spikes = spike_in(groups, batches, gene_sets, build, args)
-    spikes.to_csv(os.path.join(RESULTS_DIR, "cell_cycle_spike_in.csv"), index=False)
+    spikes.to_csv(os.path.join(RESULTS_DIR, f"cell_cycle_spike_in{args.suffix}.csv"), index=False)
     with pd.option_context("display.width", 200, "display.max_columns", 20):
         print(spikes.groupby(["fraction_shuffled", "method"])[
             ["recall", "false_calls", "auroc", "median_rank_of_planted"]].mean().round(3))
     if not args.skip_reproducibility:
         repro = reproducibility(groups, batches, gene_sets, build, args)
-        repro.to_csv(os.path.join(RESULTS_DIR, "cell_cycle_reproducibility.csv"), index=False)
+        repro.to_csv(os.path.join(RESULTS_DIR, f"cell_cycle_reproducibility{args.suffix}.csv"), index=False)
         with pd.option_context("display.width", 200, "display.max_columns", 20):
             print(repro.round(3))
 

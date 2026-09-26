@@ -59,6 +59,7 @@ REPO = os.path.dirname(HERE)
 sys.path.insert(0, REPO)
 
 from node2vec2rank import N2V2R  # noqa: E402
+from node2vec2rank.fast_gene_sets import fast_gene_set_test  # noqa: E402
 from node2vec2rank.permutation import _standardize_within, gene_set_test, read_gmt  # noqa: E402
 from node2vec2rank.singlecell import (highly_variable_genes, metacell_network, metacells,  # noqa: E402
                                       normalize_log1p)
@@ -175,30 +176,44 @@ def summarise(name, comparison, result, is_cell_cycle, q_threshold=0.1):
             "auroc_cell_cycle": auroc(positives, result["score"].to_numpy())}
 
 
-def score_methods(group_a, group_b, strata, gene_sets, build, num_permutations, n_jobs):
+METHODS = {"gsea-n2v2r": "GSEA prerank, n2v2r Borda", "gsea-dedi": "GSEA prerank, absDeDi",
+           "perm-n2v2r": "permutation set test, n2v2r", "perm-dedi": "permutation set test, DeDi",
+           "fast-n2v2r": "fast set test, n2v2r", "fast-dedi": "fast set test, DeDi"}
+
+
+def score_methods(group_a, group_b, strata, gene_sets, build, num_permutations, n_jobs, methods=tuple(METHODS),
+                  num_fast_permutations=10):
     """Every method's set results (columns ``score``, larger is more
     differential, and ``qvalue``) for one comparison."""
-    network_a, network_b = build(group_a), build(group_b)
-    model = N2V2R([network_a, network_b], nodes=list(group_a.columns), verbose=-1, **PAPER_PARAMS)
-    model.fit_transform_rank()
-    borda = model.aggregate_transform()["1"]["borda_ranks"]
-    dedi = model.degree_difference_ranking()["1"]["absDeDi"]
-    results = {"GSEA prerank, n2v2r Borda": prerank(borda, gene_sets),
-               "GSEA prerank, absDeDi": prerank(dedi, gene_sets)}
-    for ranking, name in (("n2v2r", "permutation set test, n2v2r"),
-                          ("degree_difference", "permutation set test, DeDi")):
-        test = gene_set_test(group_a, group_b, gene_sets, build_network=build, num_permutations=num_permutations,
-                             min_size=5, max_size=500, strata=strata, random_state=0, n_jobs=n_jobs,
-                             ranking=ranking, **PAPER_PARAMS)
-        results[name] = test.drop(columns="score").rename(columns={"nes": "score"})
+    results = {}
+    if {"gsea-n2v2r", "gsea-dedi"} & set(methods):
+        network_a, network_b = build(group_a), build(group_b)
+        model = N2V2R([network_a, network_b], nodes=list(group_a.columns), verbose=-1, **PAPER_PARAMS)
+        model.fit_transform_rank()
+        if "gsea-n2v2r" in methods:
+            results[METHODS["gsea-n2v2r"]] = prerank(model.aggregate_transform()["1"]["borda_ranks"], gene_sets)
+        if "gsea-dedi" in methods:
+            results[METHODS["gsea-dedi"]] = prerank(model.degree_difference_ranking()["1"]["absDeDi"], gene_sets)
+    for ranking, key in (("n2v2r", "perm-n2v2r"), ("degree_difference", "perm-dedi")):
+        if key in methods:
+            test = gene_set_test(group_a, group_b, gene_sets, build_network=build,
+                                 num_permutations=num_permutations, min_size=5, max_size=500, strata=strata,
+                                 random_state=0, n_jobs=n_jobs, ranking=ranking, **PAPER_PARAMS)
+            results[METHODS[key]] = test.drop(columns="score").rename(columns={"nes": "score"})
+    for ranking, key in (("n2v2r", "fast-n2v2r"), ("degree_difference", "fast-dedi")):
+        if key in methods:
+            test = fast_gene_set_test(group_a, group_b, gene_sets, build_network=build,
+                                      num_permutations=num_fast_permutations, min_size=5, max_size=500,
+                                      strata=strata, random_state=0, ranking=ranking, **PAPER_PARAMS)
+            results[METHODS[key]] = test.drop(columns="score").rename(columns={"z": "score"})
     return results
 
 
 def run_comparison(label, group_a, group_b, strata, gene_sets, is_cell_cycle, build, num_permutations,
-                   n_jobs, top_sets):
+                   n_jobs, top_sets, methods=tuple(METHODS)):
     records, tops = [], []
     tic = time.time()
-    results = score_methods(group_a, group_b, strata, gene_sets, build, num_permutations, n_jobs)
+    results = score_methods(group_a, group_b, strata, gene_sets, build, num_permutations, n_jobs, methods)
     for name, result in results.items():
         records.append(summarise(name, label, result, is_cell_cycle))
         top = result.sort_values(["qvalue", "score"], ascending=[True, False]).head(top_sets)
@@ -251,6 +266,8 @@ def main(argv=None):
     parser.add_argument("--num-permutations", type=int, default=200)
     parser.add_argument("--n-jobs", type=int, default=4)
     parser.add_argument("--top-sets", type=int, default=15)
+    parser.add_argument("--methods", nargs="+", choices=list(METHODS), default=list(METHODS))
+    parser.add_argument("--suffix", default="", help="appended to the result file names")
     args = parser.parse_args(argv)
     os.makedirs(RESULTS_DIR, exist_ok=True)
 
@@ -263,7 +280,8 @@ def main(argv=None):
     records, tops = [], []
     for a, b in COMPARISONS:
         r, t = run_comparison(f"{a} -> {b}", groups[a], groups[b], (batches[a], batches[b]), gene_sets,
-                              is_cell_cycle, build, args.num_permutations, args.n_jobs, args.top_sets)
+                              is_cell_cycle, build, args.num_permutations, args.n_jobs, args.top_sets,
+                              args.methods)
         records += r
         tops += t
 
@@ -271,13 +289,13 @@ def main(argv=None):
     half = random_halves(batches["G1"], np.random.default_rng(0))
     r, t = run_comparison("null: G1 halves", groups["G1"][half], groups["G1"][~half],
                           (batches["G1"][half], batches["G1"][~half]), gene_sets, is_cell_cycle, build,
-                          args.num_permutations, args.n_jobs, args.top_sets)
+                          args.num_permutations, args.n_jobs, args.top_sets, args.methods)
     records += r
     tops += t
 
     summary = pd.DataFrame(records)
-    summary.to_csv(os.path.join(RESULTS_DIR, "cell_cycle.csv"), index=False)
-    pd.concat(tops).to_csv(os.path.join(RESULTS_DIR, "cell_cycle_top_sets.csv"), index=False)
+    summary.to_csv(os.path.join(RESULTS_DIR, f"cell_cycle{args.suffix}.csv"), index=False)
+    pd.concat(tops).to_csv(os.path.join(RESULTS_DIR, f"cell_cycle_top_sets{args.suffix}.csv"), index=False)
     cells_table.groupby(["batch", "phase"]).size().rename("cells").to_csv(
         os.path.join(RESULTS_DIR, "cell_cycle_phases.csv"))
     with pd.option_context("display.width", 200, "display.max_columns", 20):

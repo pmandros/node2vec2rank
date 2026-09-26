@@ -282,6 +282,76 @@ several donors, shuffle donors instead. The paper's own hdWGCNA networks (Zenodo
 downloaded here, so these networks follow the hdWGCNA recipe but are not the same files, and the
 merge of Revelio's five phases into four is an assumption.
 
+### Which calls are true? Planted changes and split halves
+
+"More cell-cycle pathways" is only a proxy: the cell-cycle label comes from pathway names, and a
+pathway without it is not necessarily false. `benchmarks/cell_cycle_validation.py` adds two checks
+with a real answer (1,000 permutations; about 75 minutes on 4 cores).
+
+**Planted changes in real cells.** The G1 cells of each batch are split at random, so nothing differs
+between the halves. In the second half, 30% or 60% of the genes of 6–8 disjoint Reactome sets
+(15–100 genes) lose their co-expression: each gene's values are shuffled across the cells of a batch,
+which keeps its expression level. Planted sets are the true positives. Sets that contain none of the
+shuffled genes are counted as negatives (sets that share some are left out). Three replicates per
+strength (`results/cell_cycle_spike_in*.csv`):
+
+| method | recall at FDR 0.1 (30% / 60%) | calls among negatives (30% / 60%) | AUROC planted vs negatives | median rank of planted sets |
+|---|---|---|---|---|
+| GSEA prerank, n2v2r | 0.11 / 0.25 | 5.0 / 6.0 | 0.68 / 0.67 | 68 / 35 |
+| GSEA prerank, DeDi | 0.11 / 0.21 | 2.7 / 0.3 | 0.69 / 0.79 | 57 / 25 |
+| permutation test, n2v2r | 0.06 / **0.42** | 1.3 / 0.7 | **0.83 / 0.95** | **20 / 5** |
+| permutation test, DeDi | 0.06 / 0.38 | 2.7 / 0.7 | 0.80 / **0.98** | 28 / 5.5 |
+| fast test, n2v2r | 0.15 / 0.29 | 3.7 / 2.0 | 0.81 / 0.91 | 34 / 11 |
+| fast test, DeDi | 0.06 / 0.29 | 2.0 / 0.3 | 0.77 / 0.97 | 34 / 7 |
+
+The "negatives" are not a clean null: when a gene loses its co-expression, its partners lose edges
+too, so sets of partners do change in network terms. Even so, GSEA on the n2v2r ranking makes the most
+of these calls and ranks the planted sets far lower. With the permutation test, the planted sets rank
+near the top (median 5th of about 140–250 sets at 60%). At 30% every method has little power at FDR
+0.1, but the permutation tests still rank the planted sets better (AUROC 0.80–0.83 vs 0.68–0.69). With
+this loss-of-co-expression change, n2v2r and DeDi perform similarly under a calibrated test. The
+larger n2v2r advantage in the phase comparisons likely comes from changes that are not simple degree
+losses.
+
+**Split-half reproducibility.** The cells of each phase are split in two, and each comparison is run
+on both halves (metacells of 10 cells, at most 5 shared, since half a G2 or M phase is about 90 cells)
+(`results/cell_cycle_reproducibility*.csv`):
+
+| comparison | method | Spearman of set scores | calls (half 1 / half 2 / both) | Jaccard of calls | top-20 overlap |
+|---|---|---|---|---|---|
+| G1 → S | GSEA prerank, n2v2r | 0.69 | 97 / 90 / 61 | 0.48 | 16 |
+| | GSEA prerank, DeDi | 0.28 | 13 / 33 / 10 | 0.28 | 9 |
+| | permutation test, n2v2r | 0.65 | 142 / 125 / 104 | **0.64** | **17** |
+| | permutation test, DeDi | 0.02 | 0 / 0 / 0 | – | 0 |
+| | fast test, n2v2r | 0.72 | 139 / 136 / 117 | **0.74** | 13 |
+| | fast test, DeDi | −0.05 | 0 / 2 / 0 | 0 | 0 |
+| G2 → M | all methods | −0.08 to 0.30 | GSEA 9–55 per half, tests 0–7 | ≤ 0.21 | ≤ 9 |
+
+With half the cells, n2v2r's G1 → S calls reproduce well under both calibrated tests (104–117 sets
+called in both halves), while DeDi finds nothing. Reproducibility alone does not prove the calls are
+true: GSEA's artefacts are reproducible too, since co-expression is a stable property of the cells.
+For G2 → M, halves of about 90 cells are too few for any method to be reproducible, so this
+comparison is not informative.
+
+### A faster test
+
+`node2vec2rank.fast_gene_sets.fast_gene_set_test` gets its null from a formula instead of hundreds of
+permutations, in the spirit of CAMERA. It uses the degree-adjusted z-scores of `significance()` as node
+scores. The correlation between node scores is modelled as a function of expression correlation, and
+both are learnt from about 10 label permutations. It supports the same `strata` and `ranking` options.
+On HeLa it takes about 20 seconds per comparison, against 6–12 minutes for 1,000 permutations.
+
+Checks:
+- No calls on the HeLa G1 null split.
+- On 10 simulated null splits with batch effects (strata by batch), no false calls at FDR 0.1 with
+  n2v2r and 3 single calls with DeDi; nominal p < 0.05 for 3.8–5.5% of sets.
+- Phase comparisons (`results/cell_cycle_fast.csv`): 53, 6 and 23 cell-cycle pathways at FDR 0.1 for
+  G1 → S, S → G2 and G2 → M, against 59, 36 and 34 for the permutation test.
+- Planted changes: lower recall and a worse median rank than the permutation test (table above).
+
+It asks a narrower question, whether a set's genes changed more than genes of similar degree, and it
+relies on the correlation model. Use it to explore; use `gene_set_test` for the final calls.
+
 ## Limitations
 
 The simulations are small (1,000-node), two-graph settings with community-switch changes. Real

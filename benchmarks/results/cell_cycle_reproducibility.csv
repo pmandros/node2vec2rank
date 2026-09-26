@@ -1,0 +1,9 @@
+comparison,method,spearman_scores,called_half_1,called_half_2,called_both,jaccard_calls,top20_overlap
+G1 -> S,"GSEA prerank, n2v2r Borda",0.6910995478190479,97,90,61,0.48412698412698413,16
+G1 -> S,"GSEA prerank, absDeDi",0.28289100444473725,13,33,10,0.2777777777777778,9
+G1 -> S,"permutation set test, n2v2r",0.6537770258284303,142,125,104,0.6380368098159509,17
+G1 -> S,"permutation set test, DeDi",0.02267555987132241,0,0,0,,0
+G2 -> M,"GSEA prerank, n2v2r Borda",0.30069792958510455,55,42,17,0.2125,9
+G2 -> M,"GSEA prerank, absDeDi",0.221716506602485,9,44,7,0.15217391304347827,8
+G2 -> M,"permutation set test, n2v2r",0.11377624249678216,0,0,0,,1
+G2 -> M,"permutation set test, DeDi",0.05859746280928105,0,0,0,,0
