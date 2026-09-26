@@ -15,7 +15,7 @@ the embedding dimension.
 
 import numpy as np
 from scipy import sparse
-from scipy.sparse.linalg import svds
+from scipy.sparse.linalg import ArpackNoConvergence, svds
 from scipy.stats import norm
 
 EMBEDDING_METHODS = ("uase", "ulse")
@@ -144,10 +144,30 @@ def _unfold(graphs, d):
     return unfolded, num_graphs, n
 
 
+ARPACK_MAXITER = 300
+
+
+def _dense_top_right_singular(unfolded, d):
+    matrix = unfolded.toarray() if sparse.issparse(unfolded) else np.asarray(unfolded)
+    eigenvalues, left = np.linalg.eigh(matrix @ matrix.T)
+    top = np.argsort(eigenvalues)[::-1][:d]
+    singular_values = np.sqrt(np.clip(eigenvalues[top], 0, None))
+    left = left[:, top]
+    with np.errstate(invalid="ignore", divide="ignore"):
+        vt = (matrix.T @ left / np.where(singular_values > 0, singular_values, np.inf)).T
+    return singular_values, vt
+
+
 def _right_embedding(unfolded, num_graphs, n, d, random_state, return_singular_values):
     rng = np.random.default_rng(random_state)
     v0 = rng.standard_normal(min(unfolded.shape))
-    _, singular_values, vt = svds(unfolded, k=d, v0=v0)
+    try:
+        _, singular_values, vt = svds(unfolded, k=d, v0=v0, maxiter=ARPACK_MAXITER)
+    except ArpackNoConvergence:
+        # near-degenerate spectra (e.g., a network built from a handful of
+        # samples, whose rank is below d) can stall ARPACK; the exact SVD from
+        # the smaller Gram matrix gives the same embedding up to sign
+        singular_values, vt = _dense_top_right_singular(unfolded, d)
 
     # svds does not guarantee an order; sort by decreasing singular value so
     # that embeddings[..., :k] is always the top-k embedding
