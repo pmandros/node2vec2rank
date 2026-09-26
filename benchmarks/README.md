@@ -249,6 +249,13 @@ gradually between two modules. Results are in `results/temporal_*.csv`.
   condition 3, stable genes move 2.3x further in comparisons 2→3 and 3→4, and the test finds 0.3 and
   1.2 changed genes there instead of 6.1 and 10.9. There are still no false calls. Distances from
   different steps are therefore not comparable when the conditions differ in size.
+- **Subsampling to equal size fixes it; per-gene bootstrap scaling does not.** In
+  `benchmarks/temporal_balance.py` (condition 3 has 30 samples, the others 150, 10 replicates), the
+  imbalance leaves the ranking intact (AUROC 0.99 against stable module genes) but the test's calls
+  next to the small condition drop from 14 and 19 to 0.9 and 2.3. Subsampling every condition to 30
+  samples, 10 times, and averaging the distances brings them back to 8.4 and 10.5, with about one
+  false call per step. Dividing every gene's move by its bootstrap standard deviation lowers the AUROC
+  to 0.70–0.88 and makes no calls.
 
 ## Limitations
 
