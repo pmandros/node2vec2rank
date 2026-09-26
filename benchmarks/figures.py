@@ -13,7 +13,8 @@ RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results"
 BLUE, ORANGE, INK, MUTED_INK, GRID = "#2a78d6", "#eb6834", "#0b0b0b", "#52514e", "#d9d8d4"
 
 METHODS = ["DeDi", "n2v2r (default)", "n2v2r euclidean only", "n2v2r cosine only", "n2v2r ULSE",
-           "n2v2r elbow dimension", "n2v2r degree-adjusted z", "n2v2r degree-adjusted z (elbow)"]
+           "n2v2r elbow dimension", "n2v2r degree-adjusted z", "n2v2r degree-adjusted z (mean)",
+           "n2v2r degree-adjusted z (elbow)"]
 SCENARIOS = {"dcsbm": "Binary, degree-corrected SBM", "sbm": "Binary SBM",
              "weighted": "Weighted, degree-corrected SBM", "coexpression": "Co-expression (WGCNA-style)"}
 
@@ -79,8 +80,9 @@ def degree_bias_figure(results):
 
 
 def calibration_figure(histograms):
-    methods = ["n2v2r degree-adjusted z", "n2v2r degree-adjusted z (elbow)"]
-    fig, axes = plt.subplots(2, 4, figsize=(12, 4.8), sharex=True)
+    methods = {"n2v2r degree-adjusted z": "all dimensions,\nCauchy", "n2v2r degree-adjusted z (mean)":
+               "all dimensions,\nmean", "n2v2r degree-adjusted z (elbow)": "elbow dimension"}
+    fig, axes = plt.subplots(3, 4, figsize=(12, 6.6), sharex=True)
     for row, method in enumerate(methods):
         for col, (scenario, title) in enumerate(SCENARIOS.items()):
             ax = axes[row, col]
@@ -92,10 +94,10 @@ def calibration_figure(histograms):
             ax.set_ylim(0, max(2, density.max() * 1.1))
             if row == 0:
                 ax.set_title(title, fontsize=9)
-            if row == 1:
+            if row == len(methods) - 1:
                 ax.set_xlabel("p-value")
             if col == 0:
-                ax.set_ylabel(("all dimensions" if row == 0 else "elbow dimension") + "\ndensity")
+                ax.set_ylabel(methods[method] + "\ndensity")
     fig.suptitle("Null p-values (no change, 20 replicates); dashed: uniform", x=0.02, ha="left")
     fig.tight_layout()
     return fig

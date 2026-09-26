@@ -4,9 +4,10 @@ samples, as in the paper, with a known set of rewired genes.
 For every replicate, two conditions of expression are simulated with
 node2vec2rank.simulate (1,000 genes, 100 samples per condition, 5 modules,
 10% of genes rewired, 10% of the others differentially expressed as decoys),
-and WGCNA-style networks |cor|^6 are built per condition. Three tests are compared:
+and WGCNA-style networks |cor|^6 are built per condition. Four tests are compared:
 
 - empirical null: N2V2R.significance() on the networks alone
+- empirical null (mean): N2V2R.significance(combine="mean"), the mean over dimensions
 - empirical null (elbow): N2V2R.significance(dimensions="elbow")
 - permutation: node2vec2rank.permutation.permutation_test on the expression
 
@@ -37,7 +38,7 @@ from node2vec2rank.simulate import coexpression_network, simulate_expression  # 
 
 RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 PVALUE_BINS = np.linspace(0, 1, 21)
-TESTS = ("empirical null", "empirical null (elbow)", "permutation")
+TESTS = ("empirical null", "empirical null (mean)", "empirical null (elbow)", "permutation")
 
 
 def auroc(labels, scores):
@@ -53,6 +54,7 @@ def run_tests(expression_a, expression_b, num_permutations, seed):
     model.fit_transform_rank()
     borda = model.aggregate_transform()["1"]["borda_ranks"]
     results = {"empirical null": model.significance()["1"],
+               "empirical null (mean)": model.significance(combine="mean")["1"],
                "empirical null (elbow)": model.significance(dimensions="elbow")["1"],
                "permutation": permutation_test(expression_a, expression_b,
                                                num_permutations=num_permutations,
@@ -121,7 +123,7 @@ def figures(results, histograms):
                          "ytick.color": muted, "text.color": ink, "axes.labelcolor": ink,
                          "axes.spines.top": False, "axes.spines.right": False})
 
-    fig, axes = plt.subplots(1, 3, figsize=(11, 3), sharey=True)
+    fig, axes = plt.subplots(1, len(TESTS), figsize=(13, 3), sharey=True)
     for ax, test in zip(axes, TESTS):
         counts = histograms[histograms.test == test].groupby("bin_start")["count"].sum()
         density = counts / counts.sum() / 0.05

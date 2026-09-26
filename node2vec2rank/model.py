@@ -290,7 +290,7 @@ class N2V2R:
 
         return self.pairwise_signed_ranks
 
-    def significance(self, dimensions=None, distance_metrics=None):
+    def significance(self, dimensions=None, distance_metrics=None, combine="cauchy"):
         """
         Tests every node for a larger shift between the graphs than nodes of
         similar degree, with a degree-adjusted empirical null (see
@@ -302,11 +302,19 @@ class N2V2R:
         lives in the dominant structure this is much more powerful, but when
         the elbow is too low it misses the change entirely (see the benchmarks).
 
+        The distances of every dimension and metric are first standardised
+        against their trend with degree. By default the scores of neighbouring
+        pairs of dimensions are then averaged and the pairs combined with a
+        Cauchy combination test, so a change visible in only a few dimensions
+        is not diluted by the others; ``combine="mean"`` averages all of them.
+
         Args:
             dimensions: list of embedding dimensions to combine, or "elbow";
                 defaults to the configured dimensions.
             distance_metrics: list of distance metrics to combine; defaults to
                 the configured metrics.
+            combine: "cauchy" (default) or "mean", see
+                :func:`node2vec2rank.significance.empirical_null_test`.
 
         Returns:
             dict: one DataFrame per comparison with columns ``z`` (larger is
@@ -331,7 +339,9 @@ class N2V2R:
         self.pairwise_significance = {}
         for key, distances in self.__distances(dimensions, distance_metrics).items():
             degree = self.degrees(key)
-            z, pvalues, qvalues = empirical_null_test(distances.to_numpy(), degree.to_numpy())
+            column_dimensions = [int(column.split("_")[0][len("dim-"):]) for column in distances.columns]
+            z, pvalues, qvalues = empirical_null_test(distances.to_numpy(), degree.to_numpy(), combine=combine,
+                                                      dimensions=column_dimensions)
             self.pairwise_significance[key] = pd.DataFrame(
                 {"z": z, "pvalue": pvalues, "qvalue": qvalues, "degree": degree.to_numpy()},
                 index=self.node_names)
