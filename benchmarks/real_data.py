@@ -55,7 +55,7 @@ from simulations import (DEFAULT_DIMS, PVALUE_BINS, RESULTS_DIR, auroc, score_me
 HISTORY_COMMIT = "b7bba41^"
 FILES = {"CTL": "avg_csn_ctl.csv", "ASD": "avg_csn_asd.csv"}
 NUM_CELLS = {"CTL": 211, "ASD": 238}
-TESTED = ("n2v2r degree-adjusted z", "n2v2r degree-adjusted z (elbow)")
+TESTED = ("n2v2r degree-adjusted z", "n2v2r degree-adjusted z (elbow)", "n2v2r degree-adjusted z (mean)")
 
 
 def load_networks(data_dir=None):
@@ -158,7 +158,7 @@ def run_observed(genes, graphs):
                         "borda_default": default, "borda_elbow": elbow_ranking,
                         "z": scores["n2v2r degree-adjusted z"], "pvalue": tests[TESTED[0]][0],
                         "qvalue": tests[TESTED[0]][1], "z_elbow": scores["n2v2r degree-adjusted z (elbow)"],
-                        "qvalue_elbow": tests[TESTED[1]][1]})
+                        "qvalue_elbow": tests[TESTED[1]][1], "qvalue_mean": tests[TESTED[2]][1]})
     top = top.sort_values("borda_default", ascending=False).head(30)
     spectrum = pd.DataFrame({"dimension": np.arange(1, len(singular_values) + 1),
                              "singular_value": singular_values})
@@ -238,7 +238,8 @@ def figures(observed, nulls, histograms, spikes, spectrum, agreement):
     ax.set_title("Degree bias", fontsize=9, loc="left")
 
     ax = axes[2]
-    for method, color, label in ((TESTED[0], BLUE, "all dimensions"), (TESTED[1], ORANGE, "elbow")):
+    for method, color, label in ((TESTED[0], BLUE, "all dimensions, Cauchy"), (TESTED[2], MUTED_INK,
+                                  "all dimensions, mean"), (TESTED[1], ORANGE, "elbow")):
         subset = histograms[(histograms.analysis == "null: binomial") & (histograms.method == method)]
         counts = subset.groupby("bin_start")["count"].sum()
         density = counts / counts.sum() / 0.05

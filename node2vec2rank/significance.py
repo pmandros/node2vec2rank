@@ -9,14 +9,17 @@ when nothing changes.
 This module standardises every node's (log) distance by the expected value and
 spread of distances at the node's degree, estimated with robust regression so
 that the minority of truly differential nodes does not distort the null. The standardised
-scores of the different embedding dimensions and distance metrics are averaged,
-re-standardised, and turned into one-sided p-values and Benjamini-Hochberg
-q-values. The underlying assumption, as for other empirical-null methods, is
-that most nodes do not change between the graphs.
+scores of the different embedding dimensions and distance metrics are then
+combined into one-sided p-values and Benjamini-Hochberg q-values. By default
+they are averaged within windows of two consecutive dimensions and the windows
+are combined with the Cauchy combination test (Liu & Xie, 2020), which keeps
+the signal of a change that lives in only a few dimensions; averaging all
+dimensions dilutes it. The underlying assumption, as for other empirical-null
+methods, is that most nodes do not change between the graphs.
 
 The p-values are conservative: the log distances are left-skewed, so the
 standardised scores have a thinner upper tail than a normal distribution, and
-typically 1.5-4% of unchanged nodes have p < 0.05. Corrections of the tail
+typically 0.5-3.5% of unchanged nodes have p < 0.05. Corrections of the tail
 that were tried (Box-Cox or Yeo-Johnson symmetrisation, a scale from the upper
 half) produced false discoveries in some null benchmarks, so the conservative
 version is kept (see benchmarks/README.md).
@@ -92,10 +95,33 @@ def _natural_spline_basis(position, knots):
 
 
 SPLINE_KNOTS = (0.25, 0.5, 0.75)
+LOG_TAIL = 0.95
+
+
+def _covariate_position(covariate, log_tail=None):
+    """Rank quantile of the covariate, optionally extended linearly in log scale for its top tail.
+
+    Rank quantiles make the trend insensitive to the scale and skew of degrees,
+    but they squeeze the largest hubs together: a hub with ten times the degree
+    of the 95th percentile sits at the same position as a node just above it.
+    With ``log_tail``, positions above that quantile grow linearly with the log
+    of the covariate instead, continuing the slope of the log covariate between
+    the 75th percentile and ``log_tail``.
+    """
+    position = (rankdata(covariate) - 0.5) / max(len(covariate), 1)
+    if log_tail is None or len(covariate) < 20:
+        return position
+    positive = covariate[covariate > 0]
+    log_covariate = np.log(np.maximum(covariate, positive.min() if positive.size else 1.0))
+    upper_quartile, top = np.quantile(log_covariate, [0.75, log_tail])
+    if top <= upper_quartile:
+        return position
+    slope = (log_tail - 0.75) / (top - upper_quartile)
+    return np.where(log_covariate > top, log_tail + slope * (log_covariate - top), position)
 
 
 def covariate_adjusted_zscores(statistic, covariate, trend="spline", polynomial_degree=2,
-                               knots=SPLINE_KNOTS):
+                               knots=SPLINE_KNOTS, log_tail=None):
     """Robust z-scores of a statistic after removing its trend with a covariate.
 
     The expected value and the spread of the statistic are modelled as smooth
@@ -117,6 +143,9 @@ def covariate_adjusted_zscores(statistic, covariate, trend="spline", polynomial_
             large z-scores.
         polynomial_degree: degree of the polynomial trend.
         knots: knots of the spline, as rank quantiles of the covariate.
+        log_tail: if given (e.g., 0.95), the covariate positions above this
+            quantile grow with the log of the covariate rather than its rank,
+            so that the trend extrapolates to the largest hubs.
 
     Returns:
         np.ndarray of shape (n,) with the z-scores.
@@ -127,8 +156,7 @@ def covariate_adjusted_zscores(statistic, covariate, trend="spline", polynomial_
     zscores = np.full_like(statistic, np.nan)
     num_valid = valid.sum()
 
-    # rank quantiles make the fit insensitive to the scale and skew of degrees
-    position = (rankdata(covariate[valid]) - 0.5) / max(num_valid, 1)
+    position = _covariate_position(covariate[valid], log_tail)
     if trend == "spline":
         design = _natural_spline_basis(position, knots)
     elif trend == "polynomial":
@@ -148,7 +176,46 @@ def covariate_adjusted_zscores(statistic, covariate, trend="spline", polynomial_
     return zscores
 
 
-def empirical_null_test(distances, covariate, trend="spline"):
+def cauchy_combination(pvalues):
+    """Combines the p-values in each row with the Cauchy combination test (ACAT).
+
+    The combined p-value stays valid under arbitrary dependence between the
+    p-values of a row, and is dominated by the smallest ones, so a signal in a
+    few of them is not diluted by the rest (Liu & Xie, JASA 2020). NaNs are
+    ignored; rows without any p-value give NaN.
+    """
+    pvalues = np.clip(np.asarray(pvalues, dtype=np.float64), 1e-300, 1 - 1e-16)
+    if pvalues.ndim == 1:
+        pvalues = pvalues[:, None]
+    combined = np.full(pvalues.shape[0], np.nan)
+    rows = ~np.all(np.isnan(pvalues), axis=1)
+    # tan((0.5 - p) * pi), written as 1 / tan(p * pi) to stay precise for tiny p
+    statistic = np.nanmean(1 / np.tan(pvalues[rows] * np.pi), axis=1)
+    combined[rows] = 0.5 - np.arctan(statistic) / np.pi
+    # the arctangent loses precision for very large statistics; use its tail instead
+    large = rows.copy()
+    large[rows] = statistic > 1e15
+    combined[large] = 1 / (statistic[statistic > 1e15] * np.pi)
+    return combined
+
+
+def _restandardize(scores):
+    """Centres and scales scores by their median and MAD (NaNs are kept)."""
+    finite = np.isfinite(scores)
+    if finite.sum() < 3:
+        return scores
+    location, scale = _robust_location_scale(scores[finite])
+    return (scores - location) / max(scale, np.finfo(float).eps)
+
+
+def _row_nanmean(values):
+    combined = np.full(values.shape[0], np.nan)
+    rows = ~np.all(np.isnan(values), axis=1)
+    combined[rows] = np.nanmean(values[rows], axis=1)
+    return combined
+
+
+def empirical_null_test(distances, covariate, trend="spline", combine="cauchy", dimensions=None, window=2):
     """Tests every node for a larger than expected shift between two graphs.
 
     Args:
@@ -156,12 +223,32 @@ def empirical_null_test(distances, covariate, trend="spline"):
             the two embeddings for c combinations of dimension and metric.
         covariate: array of shape (n,) to adjust for, typically node degree.
         trend: shape of the degree trend, see :func:`covariate_adjusted_zscores`.
+        combine: how the z-scores of the c columns are combined.
+
+            - "cauchy" (default): the columns of ``window`` consecutive
+              dimensions (with all their metrics) are averaged, each window is
+              re-standardised, and the windows are combined with
+              :func:`cauchy_combination`. A change that shows in only a few
+              dimensions, typically the leading ones in binary networks, keeps
+              its signal. The trend extrapolates to the largest hubs in log
+              degree (``log_tail`` of :func:`covariate_adjusted_zscores`),
+              since a single window is more sensitive to their misfit.
+            - "mean": all columns are averaged, as in the first version of
+              this test. It misses most changes that show in only a few
+              dimensions, but is somewhat more powerful when a change spreads
+              over many dimensions, as in co-expression networks.
+        dimensions: array of shape (c,) with the embedding dimension of every
+            column, used to form the windows; by default every column is its
+            own dimension.
+        window: number of consecutive dimensions averaged in a window.
 
     Returns:
         tuple ``(z, pvalues, qvalues)`` of arrays of shape (n,). Larger z means
         a larger shift than nodes of similar degree; p-values are one-sided.
         Nodes without a positive distance (e.g., isolated in both graphs) get NaN.
     """
+    if combine not in ("cauchy", "mean"):
+        raise ValueError(f'combine must be "cauchy" or "mean", got {combine!r}')
     distances = np.asarray(distances, dtype=np.float64)
     if distances.ndim == 1:
         distances = distances[:, None]
@@ -179,19 +266,31 @@ def empirical_null_test(distances, covariate, trend="spline"):
         floor = positive.min() if positive.size else 1.0
         with np.errstate(invalid="ignore"):
             log_distance = np.log(np.where(np.isfinite(column), np.maximum(column, floor), np.nan))
-        zscores.append(covariate_adjusted_zscores(log_distance, covariate, trend=trend))
+        z = covariate_adjusted_zscores(log_distance, covariate, trend=trend,
+                                       log_tail=LOG_TAIL if combine == "cauchy" else None)
+        zscores.append(_restandardize(z) if combine == "cauchy" else z)
     zscores = np.column_stack(zscores)
 
-    with np.errstate(invalid="ignore"):
-        valid_rows = ~np.all(np.isnan(zscores), axis=1)
-        combined = np.full(zscores.shape[0], np.nan)
-        combined[valid_rows] = np.nanmean(zscores[valid_rows], axis=1)
-
-    # averaging correlated z-scores changes their spread; re-standardise robustly
-    finite = np.isfinite(combined)
-    if finite.sum() >= 3:
-        location, scale = _robust_location_scale(combined[finite])
-        combined = (combined - location) / max(scale, np.finfo(float).eps)
+    if combine == "mean":
+        # averaging correlated z-scores changes their spread; re-standardise robustly
+        combined = _restandardize(_row_nanmean(zscores))
+    else:
+        if dimensions is None:
+            dimensions = np.arange(zscores.shape[1])
+        dimensions = np.asarray(dimensions)
+        if dimensions.shape != (zscores.shape[1],):
+            raise ValueError(f"dimensions must have one entry per column, got {dimensions.shape} "
+                             f"for {zscores.shape[1]} columns")
+        levels = np.unique(dimensions)
+        width = min(window, len(levels))
+        windows = [_restandardize(_row_nanmean(zscores[:, np.isin(dimensions, levels[start:start + width])]))
+                   for start in range(len(levels) - width + 1)]
+        pvalues = cauchy_combination(norm.sf(np.column_stack(windows)))
+        # the Cauchy p-values are valid but conservative for positively
+        # dependent windows; re-standardising their z-scores calibrates them
+        # to the bulk of the nodes, as for the mean
+        with np.errstate(divide="ignore"):
+            combined = _restandardize(norm.isf(np.clip(pvalues, 1e-300, 1)))
 
     pvalues = norm.sf(combined)
     return combined, pvalues, benjamini_hochberg(pvalues)
