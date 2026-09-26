@@ -309,7 +309,7 @@ better on the demo network (recall 0.76 against 0.68). But on the sparse switch 
 better than chance (0.61–0.64), because single edges are too noisy. Its degree-adjusted test is
 invalid on co-expression nulls: 8–12% of unchanged genes have p < 0.05, with 9–47 false calls at
 q < 0.1 per comparison, since row distances of |cor|^6 networks are not a location-scale family in
-degree. The embedding therefore buys robustness to sparsity and a calibrated test.
+degree. The embedding therefore buys robustness to sparsity and a valid (if conservative) test.
 
 **5. Separate embeddings are fragile.** ASE+Procrustes is competitive in every simulation, but on
 the demo network it recovers 15% of the rewired community against 68% for UASE (AUROC 0.70 against
@@ -322,7 +322,7 @@ embedding avoids this.
 DeDi is best (0.70) and every embedding is at 0.61–0.65. Distances in a joint embedding are not the
 right tool for changes that mostly scale a node's connections, and the paper should say so.
 
-**7. Calibration and degree bias carry over to OMNI.** With no change, the degree-adjusted z has
+**7. The degree adjustment works for OMNI too, and the test stays conservative.** With no change, the degree-adjusted z has
 |Spearman| ≤ 0.06 with degree and no false calls at q < 0.1 in any scenario, for both UASE and OMNI
 (1.1–3.6% of nodes at p < 0.05). The raw Borda rankings of both keep the same degree biases,
 including −0.45 in weighted graphs and +0.4 in co-expression.
@@ -350,7 +350,7 @@ reaches 0.87 (`results/multilayer_locscn_spike_in.csv`). No real network with mo
 conditions and a known answer is in the repository yet, so K > 2 is only simulated.
 
 **Summary for the paper.** UASE is a sound choice for co-expression networks. It matches or beats
-every alternative there, has a calibrated and more powerful test than OMNI, and costs K times less
+every alternative there, has a valid (conservative) test that is more powerful than OMNI's, and costs K times less
 memory. It is not the best embedding for sparse binary graphs, where OMNI and aligned separate
 embeddings rank 0.02–0.04 AUROC better. The stability argument against OMNI does not hold up in
 these simulations, so the case should rest on the co-expression accuracy, the test and the cost.
