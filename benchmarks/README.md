@@ -179,8 +179,11 @@ dimension can dominate.
 **Power against the known rewiring.** The tests answer different questions:
 
 - The permutation test calls 82% of rewired genes. It also calls 25% of their module partners,
-  whose co-expression neighbourhood genuinely changed when a gene joined or left their module. Only
-  2% of genes that are never in a module, and 2% of differential-expression decoys, are called.
+  whose own connections did not change: a gene joining or leaving their module changes their
+  neighbourhood and moves them in the joint embedding. Only 2% of genes that are never in a module,
+  and 2% of differential-expression decoys, are called. Its null is that the two groups do not differ
+  at all, so under a real difference it is not a per-gene test and its q-values do not control the
+  false discovery rate among genes.
 - The empirical null calls only the genes that stand out from genes of similar degree: 53% of
   rewired genes with the elbow dimension, 24% with the mean over all dimensions and 12% with the
   Cauchy combination. Here the change is spread over many dimensions, which favours the mean, as in
@@ -191,8 +194,8 @@ dimension can dominate.
 
 ![Expression calls](results/expression_calls.png)
 
-In practice, use `permutation_test` when the samples are available and "did this gene's co-expression
-change at all" is the question. Use `significance()` when only the networks are available, or to
+In practice, use `permutation_test` when the samples are available and the question is whether the
+networks differ at all and around which genes. Use `significance()` when only the networks are available, or to
 prioritise the most rewired genes.
 
 ## Real single-cell networks
