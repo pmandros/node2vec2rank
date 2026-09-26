@@ -257,6 +257,31 @@ gradually between two modules. Results are in `results/temporal_*.csv`.
   false call per step. Dividing every gene's move by its bootstrap standard deviation lowers the AUROC
   to 0.70–0.88 and makes no calls.
 
+### Unequal group sizes and averaging over subsamples
+
+Two-group simulations (`temporal_imbalance.py`, `temporal_bagging.py`, `temporal_bagging_null.py`;
+600 genes, 60 rewired, 10 replicates) at HeLa-like sizes (G1 has about 840 cells, S 260, G2 and M
+about 190), with the unsigned |cor|^6 network and the signed ((1 + cor) / 2)^10 network used for the
+HeLa phases.
+
+- **Extra cells in the big group buy nothing.** 840 vs 190 cells makes as many calls at q < 0.1 as
+  190 vs 190 (10.7 vs 10.3 unsigned, 38.1 vs 38.5 signed).
+- **It is not the noise floor.** The smaller group's network has a higher mean edge weight, but
+  subtracting the expected edge between unrelated genes, or dividing every network by its mean edge,
+  changes neither the ranking nor the calls. Stable genes' moves are unaligned noise whose size tracks
+  degree (Spearman 0.98), which the degree adjustment already handles.
+- **Averaging distances over 10 subsamples is what helps, balanced or not.** Subsampling both groups
+  to 80% of their own size, 10 times, doubles the calls on balanced data (10.3 to 20.1 unsigned, 38.5
+  to 46.3 signed). Subsampling to equal size, 10 times, gives the most at 840 vs 190 (28.3 and 54.7,
+  vs 10.7 and 38.1 on all cells). One balanced draw is worse than all cells (7.0 and 24.2).
+- **Calibration.** With nothing rewired, all cells and 80% subsamples make at most one false call
+  (2–4% of p < 0.05). Balanced subsamples made 29 false calls in one of 10 unsigned replicates (up to
+  15% of p < 0.05), so the 80% version is the safer default.
+- **Other fixes.** The cosine-only test makes fewer calls. The sample-label permutation test (100
+  permutations) makes 240–350 false calls among 540 unchanged genes when 60 genes are rewired: shuffling
+  labels tests whether the two networks are identical, and rewiring moves every gene a little, so it is
+  not a per-gene test under a real difference.
+
 ## Limitations
 
 The simulations are small (1,000-node), two-graph settings with community-switch changes. Real

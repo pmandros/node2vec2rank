@@ -1,0 +1,101 @@
+network,sizes,seed,method,false_calls,frac_p_below_05
+unsigned |cor|^6,190 vs 190,0,all cells,0,0.008333333333333333
+unsigned |cor|^6,190 vs 190,0,bagged 80%,0,0.03166666666666667
+unsigned |cor|^6,190 vs 190,1,all cells,0,0.011666666666666667
+unsigned |cor|^6,190 vs 190,1,bagged 80%,0,0.0
+unsigned |cor|^6,190 vs 190,2,all cells,0,0.041666666666666664
+unsigned |cor|^6,190 vs 190,2,bagged 80%,0,0.051666666666666666
+unsigned |cor|^6,190 vs 190,3,all cells,0,0.006666666666666667
+unsigned |cor|^6,190 vs 190,3,bagged 80%,0,0.006666666666666667
+unsigned |cor|^6,190 vs 190,4,all cells,0,0.0
+unsigned |cor|^6,190 vs 190,4,bagged 80%,0,0.0016666666666666668
+unsigned |cor|^6,190 vs 190,5,all cells,0,0.03166666666666667
+unsigned |cor|^6,190 vs 190,5,bagged 80%,0,0.02666666666666667
+unsigned |cor|^6,190 vs 190,6,all cells,0,0.015
+unsigned |cor|^6,190 vs 190,6,bagged 80%,0,0.021666666666666667
+unsigned |cor|^6,190 vs 190,7,all cells,0,0.035
+unsigned |cor|^6,190 vs 190,7,bagged 80%,0,0.011666666666666667
+unsigned |cor|^6,190 vs 190,8,all cells,0,0.03333333333333333
+unsigned |cor|^6,190 vs 190,8,bagged 80%,0,0.02666666666666667
+unsigned |cor|^6,190 vs 190,9,all cells,0,0.021666666666666667
+unsigned |cor|^6,190 vs 190,9,bagged 80%,0,0.015
+unsigned |cor|^6,840 vs 190,0,all cells,0,0.06833333333333333
+unsigned |cor|^6,840 vs 190,0,bagged 80%,0,0.08166666666666667
+unsigned |cor|^6,840 vs 190,0,balanced,29,0.145
+unsigned |cor|^6,840 vs 190,1,all cells,0,0.015
+unsigned |cor|^6,840 vs 190,1,bagged 80%,0,0.008333333333333333
+unsigned |cor|^6,840 vs 190,1,balanced,0,0.006666666666666667
+unsigned |cor|^6,840 vs 190,2,all cells,0,0.0
+unsigned |cor|^6,840 vs 190,2,bagged 80%,0,0.008333333333333333
+unsigned |cor|^6,840 vs 190,2,balanced,0,0.011666666666666667
+unsigned |cor|^6,840 vs 190,3,all cells,0,0.05
+unsigned |cor|^6,840 vs 190,3,bagged 80%,0,0.013333333333333334
+unsigned |cor|^6,840 vs 190,3,balanced,0,0.008333333333333333
+unsigned |cor|^6,840 vs 190,4,all cells,0,0.021666666666666667
+unsigned |cor|^6,840 vs 190,4,bagged 80%,0,0.06166666666666667
+unsigned |cor|^6,840 vs 190,4,balanced,0,0.03833333333333333
+unsigned |cor|^6,840 vs 190,5,all cells,0,0.051666666666666666
+unsigned |cor|^6,840 vs 190,5,bagged 80%,0,0.05333333333333334
+unsigned |cor|^6,840 vs 190,5,balanced,0,0.06166666666666667
+unsigned |cor|^6,840 vs 190,6,all cells,0,0.04
+unsigned |cor|^6,840 vs 190,6,bagged 80%,0,0.016666666666666666
+unsigned |cor|^6,840 vs 190,6,balanced,0,0.045
+unsigned |cor|^6,840 vs 190,7,all cells,0,0.016666666666666666
+unsigned |cor|^6,840 vs 190,7,bagged 80%,0,0.065
+unsigned |cor|^6,840 vs 190,7,balanced,0,0.08166666666666667
+unsigned |cor|^6,840 vs 190,8,all cells,0,0.025
+unsigned |cor|^6,840 vs 190,8,bagged 80%,0,0.028333333333333332
+unsigned |cor|^6,840 vs 190,8,balanced,0,0.03333333333333333
+unsigned |cor|^6,840 vs 190,9,all cells,0,0.018333333333333333
+unsigned |cor|^6,840 vs 190,9,bagged 80%,0,0.045
+unsigned |cor|^6,840 vs 190,9,balanced,0,0.05333333333333334
+signed ((1+cor)/2)^10,190 vs 190,0,all cells,0,0.021666666666666667
+signed ((1+cor)/2)^10,190 vs 190,0,bagged 80%,0,0.02666666666666667
+signed ((1+cor)/2)^10,190 vs 190,1,all cells,0,0.016666666666666666
+signed ((1+cor)/2)^10,190 vs 190,1,bagged 80%,0,0.021666666666666667
+signed ((1+cor)/2)^10,190 vs 190,2,all cells,0,0.02
+signed ((1+cor)/2)^10,190 vs 190,2,bagged 80%,0,0.041666666666666664
+signed ((1+cor)/2)^10,190 vs 190,3,all cells,0,0.008333333333333333
+signed ((1+cor)/2)^10,190 vs 190,3,bagged 80%,0,0.015
+signed ((1+cor)/2)^10,190 vs 190,4,all cells,0,0.016666666666666666
+signed ((1+cor)/2)^10,190 vs 190,4,bagged 80%,0,0.021666666666666667
+signed ((1+cor)/2)^10,190 vs 190,5,all cells,0,0.025
+signed ((1+cor)/2)^10,190 vs 190,5,bagged 80%,0,0.041666666666666664
+signed ((1+cor)/2)^10,190 vs 190,6,all cells,0,0.008333333333333333
+signed ((1+cor)/2)^10,190 vs 190,6,bagged 80%,0,0.023333333333333334
+signed ((1+cor)/2)^10,190 vs 190,7,all cells,0,0.03666666666666667
+signed ((1+cor)/2)^10,190 vs 190,7,bagged 80%,0,0.03333333333333333
+signed ((1+cor)/2)^10,190 vs 190,8,all cells,1,0.021666666666666667
+signed ((1+cor)/2)^10,190 vs 190,8,bagged 80%,1,0.023333333333333334
+signed ((1+cor)/2)^10,190 vs 190,9,all cells,0,0.02
+signed ((1+cor)/2)^10,190 vs 190,9,bagged 80%,0,0.04666666666666667
+signed ((1+cor)/2)^10,840 vs 190,0,all cells,0,0.03
+signed ((1+cor)/2)^10,840 vs 190,0,bagged 80%,1,0.065
+signed ((1+cor)/2)^10,840 vs 190,0,balanced,1,0.07
+signed ((1+cor)/2)^10,840 vs 190,1,all cells,0,0.013333333333333334
+signed ((1+cor)/2)^10,840 vs 190,1,bagged 80%,0,0.016666666666666666
+signed ((1+cor)/2)^10,840 vs 190,1,balanced,0,0.03666666666666667
+signed ((1+cor)/2)^10,840 vs 190,2,all cells,0,0.013333333333333334
+signed ((1+cor)/2)^10,840 vs 190,2,bagged 80%,0,0.021666666666666667
+signed ((1+cor)/2)^10,840 vs 190,2,balanced,0,0.025
+signed ((1+cor)/2)^10,840 vs 190,3,all cells,0,0.02
+signed ((1+cor)/2)^10,840 vs 190,3,bagged 80%,0,0.02
+signed ((1+cor)/2)^10,840 vs 190,3,balanced,1,0.03166666666666667
+signed ((1+cor)/2)^10,840 vs 190,4,all cells,0,0.03166666666666667
+signed ((1+cor)/2)^10,840 vs 190,4,bagged 80%,0,0.03833333333333333
+signed ((1+cor)/2)^10,840 vs 190,4,balanced,0,0.05
+signed ((1+cor)/2)^10,840 vs 190,5,all cells,0,0.01
+signed ((1+cor)/2)^10,840 vs 190,5,bagged 80%,0,0.02
+signed ((1+cor)/2)^10,840 vs 190,5,balanced,0,0.023333333333333334
+signed ((1+cor)/2)^10,840 vs 190,6,all cells,0,0.0
+signed ((1+cor)/2)^10,840 vs 190,6,bagged 80%,0,0.0033333333333333335
+signed ((1+cor)/2)^10,840 vs 190,6,balanced,0,0.015
+signed ((1+cor)/2)^10,840 vs 190,7,all cells,0,0.03166666666666667
+signed ((1+cor)/2)^10,840 vs 190,7,bagged 80%,0,0.03166666666666667
+signed ((1+cor)/2)^10,840 vs 190,7,balanced,0,0.045
+signed ((1+cor)/2)^10,840 vs 190,8,all cells,0,0.03333333333333333
+signed ((1+cor)/2)^10,840 vs 190,8,bagged 80%,0,0.03
+signed ((1+cor)/2)^10,840 vs 190,8,balanced,0,0.03166666666666667
+signed ((1+cor)/2)^10,840 vs 190,9,all cells,0,0.03166666666666667
+signed ((1+cor)/2)^10,840 vs 190,9,bagged 80%,0,0.05
+signed ((1+cor)/2)^10,840 vs 190,9,balanced,0,0.04
