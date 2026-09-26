@@ -253,6 +253,9 @@ Every method ranks nodes for each sequential comparison (network t−1 against t
 `comp_strategy="sequential"` does. Each is scored against the nodes that changed at that transition.
 All scenarios have 1,000 nodes and 10 replicates, and each has a no-change version.
 
+The degree-adjusted z and its p-values are from `significance()` as of main at d12ebda (spline trend,
+averaged dimensions). Rerun this benchmark if the combination rule changes.
+
 | Scenario | Networks |
 |---|---|
 | switch, K = 2, 4, 8 | degree-corrected SBM, 4 blocks (p_in 0.1, p_out 0.04); at every transition a fresh 5% of nodes switch block |
