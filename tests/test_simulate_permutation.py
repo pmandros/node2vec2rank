@@ -156,3 +156,11 @@ def test_read_gmt(tmp_path):
     path = tmp_path / "sets.gmt"
     path.write_text("A\turl\tg1\tg2\nB\tdesc\tg3\n")
     assert read_gmt(str(path)) == {"A": ["g1", "g2"], "B": ["g3"]}
+
+
+def test_parallel_permutations_match_serial():
+    sim = simulate_expression(num_genes=60, num_samples=40, frac_rewired=0.1, random_state=5)
+    kwargs = dict(num_permutations=6, random_state=0, seed=0, embed_dimensions=[4])
+    serial = permutation_test(*sim.expression, n_jobs=1, **kwargs)
+    parallel = permutation_test(*sim.expression, n_jobs=2, **kwargs)
+    pd.testing.assert_frame_equal(serial, parallel)

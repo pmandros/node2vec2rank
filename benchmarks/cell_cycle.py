@@ -175,10 +175,9 @@ def summarise(name, comparison, result, is_cell_cycle, q_threshold=0.1):
             "auroc_cell_cycle": auroc(positives, result["score"].to_numpy())}
 
 
-def run_comparison(label, group_a, group_b, strata, gene_sets, is_cell_cycle, build, num_permutations,
-                   n_jobs, top_sets):
-    records, tops = [], []
-    tic = time.time()
+def score_methods(group_a, group_b, strata, gene_sets, build, num_permutations, n_jobs):
+    """Every method's set results (columns ``score``, larger is more
+    differential, and ``qvalue``) for one comparison."""
     network_a, network_b = build(group_a), build(group_b)
     model = N2V2R([network_a, network_b], nodes=list(group_a.columns), verbose=-1, **PAPER_PARAMS)
     model.fit_transform_rank()
@@ -192,6 +191,14 @@ def run_comparison(label, group_a, group_b, strata, gene_sets, is_cell_cycle, bu
                              min_size=5, max_size=500, strata=strata, random_state=0, n_jobs=n_jobs,
                              ranking=ranking, **PAPER_PARAMS)
         results[name] = test.drop(columns="score").rename(columns={"nes": "score"})
+    return results
+
+
+def run_comparison(label, group_a, group_b, strata, gene_sets, is_cell_cycle, build, num_permutations,
+                   n_jobs, top_sets):
+    records, tops = [], []
+    tic = time.time()
+    results = score_methods(group_a, group_b, strata, gene_sets, build, num_permutations, n_jobs)
     for name, result in results.items():
         records.append(summarise(name, label, result, is_cell_cycle))
         top = result.sort_values(["qvalue", "score"], ascending=[True, False]).head(top_sets)
@@ -202,24 +209,26 @@ def run_comparison(label, group_a, group_b, strata, gene_sets, is_cell_cycle, bu
     return records, tops
 
 
-def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--revelio-dir", required=True, help="the data folder of the Revelio repository")
-    parser.add_argument("--num-genes", type=int, default=2000)
-    parser.add_argument("--num-permutations", type=int, default=200)
-    parser.add_argument("--n-jobs", type=int, default=4)
-    parser.add_argument("--top-sets", type=int, default=15)
-    args = parser.parse_args(argv)
-    os.makedirs(RESULTS_DIR, exist_ok=True)
+def random_halves(strata, rng):
+    """A boolean mask selecting a random half of the samples of every stratum."""
+    half = np.zeros(len(strata), dtype=bool)
+    for value in np.unique(strata):
+        members = np.flatnonzero(strata == value)
+        half[rng.choice(members, len(members) // 2, replace=False)] = True
+    return half
 
-    counts, genes, cells, markers = read_revelio(args.revelio_dir)
+
+def prepare(revelio_dir, num_genes=2000):
+    """Phases, expression of the most variable genes standardised within phase
+    and batch, and the network builder."""
+    counts, genes, cells, markers = read_revelio(revelio_dir)
     cells_table = assign_phases(counts, genes, cells, markers)
     print(pd.crosstab([cells_table.batch, cells_table.outlier], cells_table.revelio_phase), flush=True)
     keep = ~cells_table["outlier"].to_numpy()
     counts, cells_table = counts[keep], cells_table[keep].reset_index(drop=True)
 
     logged = normalize_log1p(counts)
-    selected = highly_variable_genes(logged, counts, num_genes=args.num_genes, min_detected=0.05)
+    selected = highly_variable_genes(logged, counts, num_genes=num_genes, min_detected=0.05)
     expression = pd.DataFrame(logged[:, selected].toarray(), columns=genes[selected])
     del logged, counts
 
@@ -232,6 +241,20 @@ def main(argv=None):
     power, fits = pick_power(list(groups.values()))
     print(f"signed soft power {power}; scale-free fits {fits}", flush=True)
     build = functools.partial(metacell_network, power=power, signed=True)
+    return cells_table, groups, batches, build
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--revelio-dir", required=True, help="the data folder of the Revelio repository")
+    parser.add_argument("--num-genes", type=int, default=2000)
+    parser.add_argument("--num-permutations", type=int, default=200)
+    parser.add_argument("--n-jobs", type=int, default=4)
+    parser.add_argument("--top-sets", type=int, default=15)
+    args = parser.parse_args(argv)
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+
+    cells_table, groups, batches, build = prepare(args.revelio_dir, args.num_genes)
 
     gene_sets = read_gmt(REACTOME)
     names = pd.Index(list(gene_sets))
@@ -245,11 +268,7 @@ def main(argv=None):
         tops += t
 
     # null control: random halves of the G1 cells, within batch
-    rng = np.random.default_rng(0)
-    half = np.zeros(len(groups["G1"]), dtype=bool)
-    for value in np.unique(batches["G1"]):
-        members = np.flatnonzero(batches["G1"] == value)
-        half[rng.choice(members, len(members) // 2, replace=False)] = True
+    half = random_halves(batches["G1"], np.random.default_rng(0))
     r, t = run_comparison("null: G1 halves", groups["G1"][half], groups["G1"][~half],
                           (batches["G1"][half], batches["G1"][~half]), gene_sets, is_cell_cycle, build,
                           args.num_permutations, args.n_jobs, args.top_sets)

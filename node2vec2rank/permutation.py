@@ -15,6 +15,7 @@ genes of a co-expression module move together, so co-expressed sets come out
 "enriched" even when nothing differs between the conditions.
 """
 
+import multiprocessing
 from concurrent.futures import ProcessPoolExecutor
 
 import numpy as np
@@ -123,7 +124,10 @@ def _node_scores(expression_a, expression_b, build_network, num_permutations,
         _init_worker(pooled, size_a, build_network, nodes, params)
         null = [_permuted_distances(order) for order in orders]
     else:
-        with ProcessPoolExecutor(max_workers=n_jobs, initializer=_init_worker,
+        # spawn rather than fork: forking a process that already runs threads
+        # (e.g., after gseapy or a multithreaded BLAS call) can deadlock
+        with ProcessPoolExecutor(max_workers=n_jobs, mp_context=multiprocessing.get_context("spawn"),
+                                 initializer=_init_worker,
                                  initargs=(pooled, size_a, build_network, nodes, params)) as executor:
             null = list(executor.map(_permuted_distances, orders))
     null = np.stack(null)
@@ -200,7 +204,9 @@ def permutation_test(expression_a, expression_b, build_network=coexpression_netw
             embeddings use ``seed`` from ``n2v2r_params`` if given).
         n_jobs: number of processes for the permutations. With more than one,
             ``build_network`` must be picklable (a module-level function or a
-            ``functools.partial`` of one, not a lambda); limiting every process
+            ``functools.partial`` of one, not a lambda or a function defined in
+            a notebook), and scripts need an ``if __name__ == "__main__":``
+            guard, since workers are started with "spawn"; limiting every process
             to one BLAS thread (e.g. ``OMP_NUM_THREADS=1``) avoids oversubscription.
         ranking: "n2v2r", or "degree_difference" to test the absolute degree
             difference (DeDi) instead, with the same permutations, e.g. as a baseline.
