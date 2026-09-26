@@ -223,9 +223,68 @@ would show. That needs the per-cell networks and `permutation_test`.
 The hdWGCNA cell-cycle networks used in the paper are on Zenodo (10.5281/zenodo.10558426) and are
 not in the repository, so they were not tested.
 
+## Pathway tests on single cells: HeLa cell cycle
+
+`benchmarks/cell_cycle.py` uses the HeLa S3 scRNA-seq of
+[Revelio](https://github.com/danielschw188/Revelio) (1,564 cells, WT and Ago2KO batches), the cells
+behind the paper's cell-cycle networks. Phases are assigned with Revelio's marker-gene method (87
+outlier cells dropped) and merged into G1 (M/G1 + G1/S, 838 cells), S (258), G2 (186) and M (195).
+Networks are built hdWGCNA style from the 2,000 most variable genes: metacells (k = 25, at most 10
+shared cells) per phase, signed WGCNA adjacency with soft power 10 (the lowest with scale-free fit
+above 0.8). For the paper's sequential comparisons, the Reactome library (534 sets with 5–500 genes
+in the data, 64 of them cell-cycle sets by name) is tested with GSEA prerank on the n2v2r Borda
+ranking and on absDeDi, as in the paper's notebook, and with `gene_set_test` (1,000 cell-label
+permutations within batch) for n2v2r and for DeDi. As a null control, the G1 cells of each batch are
+split at random into two halves.
+
+| comparison | method | pathways at FDR 0.1 | cell-cycle pathways at FDR 0.1 | AUROC of cell-cycle pathways |
+|---|---|---|---|---|
+| G1 → S | GSEA prerank, n2v2r | 112 | 38 | 0.83 |
+| | GSEA prerank, DeDi | 74 | 34 | 0.84 |
+| | permutation test, n2v2r | 146 | **59** | **0.91** |
+| | permutation test, DeDi | 72 | 31 | 0.87 |
+| S → G2 | GSEA prerank, n2v2r | 75 | 18 | 0.54 |
+| | GSEA prerank, DeDi | 32 | 22 | 0.59 |
+| | permutation test, n2v2r | 135 | **36** | **0.72** |
+| | permutation test, DeDi | 38 | 16 | 0.65 |
+| G2 → M | GSEA prerank, n2v2r | 153 | 27 | 0.57 |
+| | GSEA prerank, DeDi | 90 | 20 | 0.61 |
+| | permutation test, n2v2r | 104 | **34** | **0.74** |
+| | permutation test, DeDi | 0 | 0 | 0.62 |
+| **null: G1 halves** | GSEA prerank, n2v2r | **23** | 11 | 0.52 |
+| | GSEA prerank, DeDi | **12** | 8 | 0.67 |
+| | permutation test, n2v2r | 0 | 0 | 0.47 |
+| | permutation test, DeDi | 0 | 0 | 0.55 |
+
+Full numbers: `results/cell_cycle.csv`; top sets per comparison and method:
+`results/cell_cycle_top_sets.csv`.
+
+**1. GSEA prerank on network rankings is not calibrated on real data.** Two random halves of the same
+G1 cells give 23 Reactome pathways at FDR 0.1 with the n2v2r ranking and 12 with DeDi, led by
+REACTOME_CELL_CYCLE, M_PHASE and MITOTIC_PROMETAPHASE at q ≈ 0: the pathways the paper reports for
+the real comparisons. They most likely come out because their genes are strongly co-expressed
+(cells labelled G1 still spread along the cycle), not because anything differs. The cell-label permutation
+test calls nothing on the same split, in line with the simulations (no false call at FDR 0.1 in 12
+null replicates; nominal p < 0.05 for 4–7% of sets).
+
+**2. With a calibrated test, n2v2r clearly beats DeDi.** n2v2r calls more cell-cycle pathways in
+every comparison (59 vs 31, 36 vs 16, 34 vs 0) and ranks them higher (AUROC 0.91/0.72/0.74 vs
+0.87/0.65/0.62). Under GSEA prerank the two look similar, because both are dominated by the same
+co-expression artefact. At G2 → M, DeDi finds nothing, while n2v2r's top sets are the expected ones
+(condensation of prometaphase chromosomes, G2/M phases, M phase, APC/C degradation, PLK1 at G2/M).
+
+**Caveats.** Phases are assigned from cell-cycle marker genes, so cell-cycle pathways are the easiest
+positives (every gene is z-scored within phase and batch before building the networks, so mean
+expression differences do not enter them). The cell-cycle label is a regular expression on Reactome
+names, so "pathways at FDR 0.1" also includes real, non-cell-cycle changes between phases and
+is not a false-positive count. Cells of one cell line are treated as exchangeable within batch; with
+several donors, shuffle donors instead. The paper's own hdWGCNA networks (Zenodo) could not be
+downloaded here, so these networks follow the hdWGCNA recipe but are not the same files, and the
+merge of Revelio's five phases into four is an assumption.
+
 ## Limitations
 
 The simulations are small (1,000-node), two-graph settings with community-switch changes. Real
 regulatory and co-expression networks have more gradual changes, larger size and no clean rank. The
 simulated-expression benchmark covers the sample-level null, but the locCSN networks come without
-their cells. The remaining check is the shuffled-label calibration on real per-cell or per-sample data.
+their cells. The shuffled-label calibration on real per-cell data is covered by the HeLa null split above; per-sample (bulk) data remain untested.
