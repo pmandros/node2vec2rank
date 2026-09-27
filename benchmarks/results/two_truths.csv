@@ -1,0 +1,691 @@
+scenario,setting,rep,distances,metric,auroc,top_k_precision,true_calls,false_calls,unchanged_vs_degree
+mixed membership,5% changed,0,default,Borda (both),0.8715572232645403,0.4461538461538462,0,0,0.42877709394038765
+mixed membership,5% changed,0,default,euclidean,0.7706030554811043,0.27692307692307694,0,0,0.8404158094825082
+mixed membership,5% changed,0,default,cosine,0.894253551326722,0.4461538461538462,0,0,-0.1719733633989409
+mixed membership,5% changed,0,aligned,Borda (both),0.9266952559635486,0.5384615384615384,15,0,0.46286972953760824
+mixed membership,5% changed,0,aligned,euclidean,0.7962262128115787,0.4153846153846154,11,1,0.8398768519069436
+mixed membership,5% changed,0,aligned,cosine,0.9679335298847493,0.6615384615384615,16,0,-0.13533878959918036
+mixed membership (noise-free),5% changed,0,default,Borda (both),0.9382578397212543,0.7076923076923077,35,0,0.35832994297924925
+mixed membership (noise-free),5% changed,0,default,euclidean,0.8757705708925221,0.5692307692307692,0,0,0.6898711963849538
+mixed membership (noise-free),5% changed,0,default,cosine,0.9687376038595551,0.8461538461538461,46,0,-0.05556827749871602
+mixed membership (noise-free),5% changed,0,aligned,Borda (both),0.9987992495309569,0.9230769230769231,65,60,0.6975761116459983
+mixed membership (noise-free),5% changed,0,aligned,euclidean,0.9985312248726883,0.9230769230769231,65,61,0.7379660968562144
+mixed membership (noise-free),5% changed,0,aligned,cosine,0.9989707853122487,0.9384615384615385,65,54,0.6537142308197604
+mixed membership + kernel change,5% changed,0,default,Borda (both),0.8133422894117047,0.3253012048192771,0,0,0.48206907958942785
+mixed membership + kernel change,5% changed,0,default,euclidean,0.7014905068403465,0.1927710843373494,0,0,0.8754260582745372
+mixed membership + kernel change,5% changed,0,default,cosine,0.8209096087950957,0.39759036144578314,0,0,-0.1873952089114824
+mixed membership + kernel change,5% changed,0,aligned,Borda (both),0.8418047631599085,0.46987951807228917,5,0,0.4513718618092988
+mixed membership + kernel change,5% changed,0,aligned,euclidean,0.7311901097686441,0.25301204819277107,2,0,0.8428745504373106
+mixed membership + kernel change,5% changed,0,aligned,cosine,0.8649063437943729,0.5783132530120482,5,0,-0.1876859894283419
+mixed membership + kernel change (noise-free),5% changed,0,default,Borda (both),0.9120320378195917,0.6265060240963856,39,0,0.5024931173187936
+mixed membership + kernel change (noise-free),5% changed,0,default,euclidean,0.8184268478288595,0.4578313253012048,17,0,0.8093228547744868
+mixed membership + kernel change (noise-free),5% changed,0,default,cosine,0.9501237129180093,0.8313253012048193,57,0,0.01082534044581031
+mixed membership + kernel change (noise-free),5% changed,0,aligned,Borda (both),0.9919692885869519,0.8072289156626506,83,41,0.8498750398549447
+mixed membership + kernel change (noise-free),5% changed,0,aligned,euclidean,0.9895035328328132,0.7469879518072289,83,51,0.88457618366188
+mixed membership + kernel change (noise-free),5% changed,0,aligned,cosine,0.9940269192507504,0.8313253012048193,83,29,0.7990751705182506
+mixed membership,20% changed,0,default,Borda (both),0.7865497076023392,0.504950495049505,0,0,0.5141248829131344
+mixed membership,20% changed,0,default,euclidean,0.6770046678853349,0.38943894389438943,0,0,0.8620304717606702
+mixed membership,20% changed,0,default,cosine,0.8169047481189222,0.5775577557755776,0,0,-0.07597760353202723
+mixed membership,20% changed,0,aligned,Borda (both),0.8768855582300085,0.6501650165016502,3,0,0.473113631448675
+mixed membership,20% changed,0,aligned,euclidean,0.7418587723433998,0.46864686468646866,1,0,0.8388107053876775
+mixed membership,20% changed,0,aligned,cosine,0.9111695630715954,0.7326732673267327,0,0,-0.16615397215633598
+mixed membership (noise-free),20% changed,0,default,Borda (both),0.871779283191477,0.6204620462046204,0,0,0.41155742337627604
+mixed membership (noise-free),20% changed,0,default,euclidean,0.7696124249016381,0.48514851485148514,0,0,0.7194973555815363
+mixed membership (noise-free),20% changed,0,default,cosine,0.9116727462219906,0.7029702970297029,0,0,-0.014225957008760113
+mixed membership (noise-free),20% changed,0,aligned,Borda (both),0.9970388016245234,0.9570957095709571,302,12,0.5935238146254727
+mixed membership (noise-free),20% changed,0,aligned,euclidean,0.9964115459164964,0.9471947194719472,302,18,0.6491506922216908
+mixed membership (noise-free),20% changed,0,aligned,cosine,0.997158738430234,0.9603960396039604,302,7,0.5346358783143585
+mixed membership + kernel change,20% changed,0,default,Borda (both),0.7320689655172414,0.4241379310344828,0,0,0.5320513831383136
+mixed membership + kernel change,20% changed,0,default,euclidean,0.620212311199772,0.3137931034482759,0,0,0.8685325156850198
+mixed membership + kernel change,20% changed,0,default,cosine,0.7791407808492448,0.5310344827586206,0,0,-0.04537272146366472
+mixed membership + kernel change,20% changed,0,aligned,Borda (both),0.812744371615845,0.5517241379310345,5,0,0.417686543245125
+mixed membership + kernel change,20% changed,0,aligned,euclidean,0.6805557138785979,0.35517241379310344,0,0,0.8033687411825692
+mixed membership + kernel change,20% changed,0,aligned,cosine,0.847888287261328,0.6379310344827587,1,0,-0.2547847740525939
+mixed membership + kernel change (noise-free),20% changed,0,default,Borda (both),0.8180022798518096,0.5517241379310345,0,0,0.5612644921110065
+mixed membership + kernel change (noise-free),20% changed,0,default,euclidean,0.6882316899401539,0.3793103448275862,0,0,0.8207233335856058
+mixed membership + kernel change (noise-free),20% changed,0,default,cosine,0.8798190367626104,0.7103448275862069,106,0,0.09221317746280829
+mixed membership + kernel change (noise-free),20% changed,0,aligned,Borda (both),0.986127101738387,0.8655172413793103,290,31,0.8083798680624991
+mixed membership + kernel change (noise-free),20% changed,0,aligned,euclidean,0.9818609290396124,0.8517241379310345,290,33,0.8512017029604222
+mixed membership + kernel change (noise-free),20% changed,0,aligned,cosine,0.9893687660302081,0.8896551724137931,290,17,0.7484802230073049
+mixed membership,40% changed,0,default,Borda (both),0.7237804912396657,0.5823223570190641,0,0,0.5020788352948734
+mixed membership,40% changed,0,default,euclidean,0.635188547630269,0.49740034662045063,0,0,0.8504945646337124
+mixed membership,40% changed,0,default,cosine,0.7490409729406972,0.6048526863084922,0,0,-0.05927231192879002
+mixed membership,40% changed,0,aligned,Borda (both),0.8494933069956869,0.7261698440207972,0,0,0.48785203725997617
+mixed membership,40% changed,0,aligned,euclidean,0.7238171060759974,0.5736568457538995,0,0,0.8467133538090984
+mixed membership,40% changed,0,aligned,cosine,0.8821049212217714,0.7902946273830156,0,0,-0.2448526140544286
+mixed membership (noise-free),40% changed,0,default,Borda (both),0.7925910348103821,0.6395147313691508,0,0,0.3698306961265363
+mixed membership (noise-free),40% changed,0,default,euclidean,0.7047004061430306,0.5545927209705372,0,0,0.6808838829464726
+mixed membership (noise-free),40% changed,0,default,cosine,0.8322148596149621,0.6516464471403813,0,0,-0.044539895699214814
+mixed membership (noise-free),40% changed,0,aligned,Borda (both),0.999620707849282,0.9930675909878682,575,0,0.41072405704062304
+mixed membership (noise-free),40% changed,0,aligned,euclidean,0.9994320006158803,0.9930675909878682,576,1,0.5258660807747905
+mixed membership (noise-free),40% changed,0,aligned,cosine,0.9997183474128332,0.9965337954939342,575,0,0.2935567312968298
+mixed membership + kernel change,40% changed,0,default,Borda (both),0.7047975202702327,0.5862646566164154,0,0,0.5581571036459391
+mixed membership + kernel change,40% changed,0,default,euclidean,0.6164580747962775,0.49748743718592964,0,0,0.8724474271381872
+mixed membership + kernel change,40% changed,0,default,cosine,0.7335524058090378,0.5912897822445561,0,0,-0.008972250594567048
+mixed membership + kernel change,40% changed,0,aligned,Borda (both),0.8668647779317407,0.7437185929648241,0,0,0.46473318834724375
+mixed membership + kernel change,40% changed,0,aligned,euclidean,0.7396413592510356,0.6063651591289783,0,0,0.8275089220811154
+mixed membership + kernel change,40% changed,0,aligned,cosine,0.9016613150655455,0.7956448911222781,0,0,-0.20753239854442984
+mixed membership + kernel change (noise-free),40% changed,0,default,Borda (both),0.7774114203353423,0.6247906197654941,0,0,0.46808107832230583
+mixed membership + kernel change (noise-free),40% changed,0,default,euclidean,0.6816010654972908,0.5477386934673367,0,0,0.7501596158052088
+mixed membership + kernel change (noise-free),40% changed,0,default,cosine,0.8204125092053104,0.6700167504187605,0,0,0.019951150795159814
+mixed membership + kernel change (noise-free),40% changed,0,aligned,Borda (both),0.9984844859216718,0.983249581239531,595,6,0.7570498264653922
+mixed membership + kernel change (noise-free),40% changed,0,aligned,euclidean,0.9979168637576958,0.981574539363484,595,6,0.8421507839742043
+mixed membership + kernel change (noise-free),40% changed,0,aligned,cosine,0.9987877742347767,0.9882747068676717,595,6,0.6274197254733866
+DC-SBM switch,10% changed,0,default,Borda (both),0.9990182112193432,0.9398496240601504,133,2,0.43264090700398306
+DC-SBM switch,10% changed,0,default,euclidean,0.928736435089186,0.39849624060150374,131,18,0.7675575653925372
+DC-SBM switch,10% changed,0,default,cosine,1.0,1.0,133,0,-0.17316808075691786
+DC-SBM switch,10% changed,0,aligned,Borda (both),1.0,1.0,133,8,0.06267202347154052
+DC-SBM switch,10% changed,0,aligned,euclidean,0.9938040052582077,0.8796992481203008,133,24,0.5453308493143947
+DC-SBM switch,10% changed,0,aligned,cosine,1.0,1.0,133,6,-0.5023852435185436
+DC-SBM switch,30% changed,0,default,Borda (both),0.949675925925926,0.7833333333333333,0,0,0.41995780349663797
+DC-SBM switch,30% changed,0,default,euclidean,0.7833741181657848,0.5,3,2,0.7483678017570833
+DC-SBM switch,30% changed,0,default,cosine,0.989212962962963,0.9214285714285714,0,0,-0.16579981192440368
+DC-SBM switch,30% changed,0,aligned,Borda (both),0.9999404761904762,0.9976190476190476,420,2,0.08328055533444724
+DC-SBM switch,30% changed,0,aligned,euclidean,0.9943606701940035,0.9547619047619048,420,9,0.5273652705694065
+DC-SBM switch,30% changed,0,aligned,cosine,1.0,1.0,420,0,-0.47792566063179004
+co-expression ((1+cor)/2)^10,150 samples,0,default,Borda (both),0.8480944444444445,0.5,69,3,0.9320699576911424
+co-expression ((1+cor)/2)^10,150 samples,0,default,euclidean,0.6756222222222222,0.19,33,0,0.9768552324195547
+co-expression ((1+cor)/2)^10,150 samples,0,default,cosine,0.9333277777777778,0.82,68,1,0.7604408961264536
+co-expression ((1+cor)/2)^10,150 samples,0,aligned,Borda (both),0.9825611111111111,0.85,54,1,0.3659108380775498
+co-expression ((1+cor)/2)^10,150 samples,0,aligned,euclidean,0.8601833333333333,0.48,0,0,0.8577221125142617
+co-expression ((1+cor)/2)^10,150 samples,0,aligned,cosine,0.9944333333333333,0.94,85,1,-0.5630153093884446
+co-expression ((1+cor)/2)^10,500 samples,0,default,Borda (both),0.8630833333333333,0.51,95,0,0.9537912144887737
+co-expression ((1+cor)/2)^10,500 samples,0,default,euclidean,0.7102722222222222,0.25,90,1,0.9832537090103628
+co-expression ((1+cor)/2)^10,500 samples,0,default,cosine,0.9462944444444444,0.82,86,0,0.8757456513104565
+co-expression ((1+cor)/2)^10,500 samples,0,aligned,Borda (both),0.9983777777777778,0.95,99,3,0.3424766734460742
+co-expression ((1+cor)/2)^10,500 samples,0,aligned,euclidean,0.9334333333333333,0.65,97,3,0.8766698242841302
+co-expression ((1+cor)/2)^10,500 samples,0,aligned,cosine,1.0,1.0,100,3,-0.6278509783861962
+co-expression |cor|^6,150 samples,0,default,Borda (both),0.9157833333333333,0.73,30,0,0.5556524674472083
+co-expression |cor|^6,150 samples,0,default,euclidean,0.6492111111111111,0.16,4,1,0.9911296005384614
+co-expression |cor|^6,150 samples,0,default,cosine,0.8786166666666667,0.5,27,0,-0.6198747730732482
+co-expression |cor|^6,150 samples,0,aligned,Borda (both),0.9743611111111111,0.83,78,3,0.34921883900154954
+co-expression |cor|^6,150 samples,0,aligned,euclidean,0.7104,0.26,0,0,0.9604737971983474
+co-expression |cor|^6,150 samples,0,aligned,cosine,0.9112611111111111,0.52,77,0,-0.801314563253577
+co-expression |cor|^6,500 samples,0,default,Borda (both),0.9659111111111112,0.73,47,8,0.44780706191617736
+co-expression |cor|^6,500 samples,0,default,euclidean,0.7254444444444444,0.23,6,4,0.9908077688423228
+co-expression |cor|^6,500 samples,0,default,cosine,0.8939166666666667,0.48,20,0,-0.6350833408789645
+co-expression |cor|^6,500 samples,0,aligned,Borda (both),0.9939444444444444,0.9,100,10,0.32883642797661805
+co-expression |cor|^6,500 samples,0,aligned,euclidean,0.8199777777777778,0.45,0,0,0.9686801778847122
+co-expression |cor|^6,500 samples,0,aligned,cosine,0.9016166666666666,0.48,89,1,-0.827074382076561
+"co-expression ((1+cor)/2)^10, no change",150 samples,0,default,Borda (both),,,0,0,0.8921908664583296
+"co-expression ((1+cor)/2)^10, no change",150 samples,0,default,euclidean,,,0,1,0.9643756492457525
+"co-expression ((1+cor)/2)^10, no change",150 samples,0,default,cosine,,,0,0,0.6536402229828422
+"co-expression ((1+cor)/2)^10, no change",150 samples,0,aligned,Borda (both),,,0,0,0.4025043860499951
+"co-expression ((1+cor)/2)^10, no change",150 samples,0,aligned,euclidean,,,0,2,0.8577827398902522
+"co-expression ((1+cor)/2)^10, no change",150 samples,0,aligned,cosine,,,0,0,-0.44033682888150816
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,0,default,Borda (both),0.8277242524916943,0.5785714285714286,36,0,0.9006721682027956
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,0,default,euclidean,0.7088621262458472,0.34285714285714286,41,0,0.9628618078443388
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,0,default,cosine,0.8976661129568106,0.7428571428571429,0,0,0.689004348086253
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,0,aligned,Borda (both),0.34315199335548174,0.0,0,0,0.6197846284592492
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,0,aligned,euclidean,0.3245639534883721,0.0,0,0,0.8940015735243017
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,0,aligned,cosine,0.44049003322259134,0.1,0,0,0.00755881796732361
+"co-expression |cor|^6, no change",150 samples,0,default,Borda (both),,,0,0,0.4535162962648441
+"co-expression |cor|^6, no change",150 samples,0,default,euclidean,,,0,0,0.9850088180749638
+"co-expression |cor|^6, no change",150 samples,0,default,cosine,,,0,0,-0.6481090328243418
+"co-expression |cor|^6, no change",150 samples,0,aligned,Borda (both),,,0,2,0.3417398509339637
+"co-expression |cor|^6, no change",150 samples,0,aligned,euclidean,,,0,0,0.9602604254916834
+"co-expression |cor|^6, no change",150 samples,0,aligned,cosine,,,0,0,-0.7561607960012688
+"co-expression |cor|^6, one module weakens",150 samples,0,default,Borda (both),0.48171121223353497,0.10738255033557047,0,0,0.4641279725141168
+"co-expression |cor|^6, one module weakens",150 samples,0,default,euclidean,0.6724264386943115,0.2483221476510067,0,0,0.98311705159989
+"co-expression |cor|^6, one module weakens",150 samples,0,default,cosine,0.2693436068107793,0.053691275167785234,0,0,-0.7009697185379246
+"co-expression |cor|^6, one module weakens",150 samples,0,aligned,Borda (both),0.2833342534247115,0.026845637583892617,0,0,0.3619707525748775
+"co-expression |cor|^6, one module weakens",150 samples,0,aligned,euclidean,0.3216310854186547,0.0,0,0,0.9570856753037875
+"co-expression |cor|^6, one module weakens",150 samples,0,aligned,cosine,0.5357218905511874,0.053691275167785234,0,0,-0.7467190036325094
+"signed correlation, sign flips",500 samples,0,default,Borda (both),0.9997888888888888,0.98,100,0,0.4195301018020036
+"signed correlation, sign flips",500 samples,0,default,euclidean,0.9373611111111111,0.67,100,0,0.9755349203001905
+"signed correlation, sign flips",500 samples,0,default,cosine,0.9985055555555555,0.95,100,2,-0.5843606304572417
+"signed correlation, sign flips",500 samples,0,aligned,Borda (both),1.0,1.0,100,1,-0.8004323199055386
+"signed correlation, sign flips",500 samples,0,aligned,euclidean,1.0,1.0,100,1,-0.6010461331509763
+"signed correlation, sign flips",500 samples,0,aligned,cosine,0.9999333333333333,0.98,100,0,-0.9115120468443301
+mixed membership,5% changed,1,default,Borda (both),0.8713183730715287,0.3918918918918919,0,0,0.4620503050055517
+mixed membership,5% changed,1,default,euclidean,0.7650060649710019,0.2702702702702703,0,0,0.8582058719315604
+mixed membership,5% changed,1,default,cosine,0.8725929646336379,0.5540540540540541,0,0,-0.15956255415249912
+mixed membership,5% changed,1,aligned,Borda (both),0.9068031916909898,0.5405405405405406,13,0,0.4653578923414395
+mixed membership,5% changed,1,aligned,euclidean,0.8009362798984118,0.2702702702702703,0,0,0.8448176587752219
+mixed membership,5% changed,1,aligned,cosine,0.9142612107198362,0.6891891891891891,21,0,-0.14416478294580362
+mixed membership (noise-free),5% changed,1,default,Borda (both),0.9321718282096964,0.6216216216216216,49,0,0.41202339534141547
+mixed membership (noise-free),5% changed,1,default,euclidean,0.8819794549107312,0.5,36,0,0.7190160250832611
+mixed membership (noise-free),5% changed,1,default,cosine,0.9471305105947462,0.7702702702702703,55,0,0.01909527687754819
+mixed membership (noise-free),5% changed,1,aligned,Borda (both),0.9953186005079413,0.8243243243243243,74,17,0.6428759771871261
+mixed membership (noise-free),5% changed,1,aligned,euclidean,0.9941766801864979,0.7972972972972973,74,22,0.6863932396351631
+mixed membership (noise-free),5% changed,1,aligned,cosine,0.9961714870550775,0.8243243243243243,74,12,0.5962197183423312
+mixed membership + kernel change,5% changed,1,default,Borda (both),0.8243273211117682,0.3815789473684211,0,0,0.4909952443926892
+mixed membership + kernel change,5% changed,1,default,euclidean,0.714559617090479,0.3026315789473684,0,0,0.8688341453936588
+mixed membership + kernel change,5% changed,1,default,cosine,0.8563812093435836,0.4342105263157895,0,0,-0.15049540607356504
+mixed membership + kernel change,5% changed,1,aligned,Borda (both),0.8774255248373743,0.5921052631578947,17,0,0.4238752524986948
+mixed membership + kernel change,5% changed,1,aligned,euclidean,0.7635182584269663,0.4342105263157895,2,0,0.8209021661362164
+mixed membership + kernel change,5% changed,1,aligned,cosine,0.9214407155529273,0.6973684210526315,25,0,-0.20734176563329426
+mixed membership + kernel change (noise-free),5% changed,1,default,Borda (both),0.8888786221170905,0.6842105263157895,49,0,0.5410230225202355
+mixed membership + kernel change (noise-free),5% changed,1,default,euclidean,0.8162006578947368,0.5394736842105263,19,0,0.8241999554318604
+mixed membership + kernel change (noise-free),5% changed,1,default,cosine,0.9290360733293909,0.8157894736842105,56,0,0.05146367255999853
+mixed membership + kernel change (noise-free),5% changed,1,aligned,Borda (both),0.9911017888823181,0.7631578947368421,76,25,0.8785255968692529
+mixed membership + kernel change (noise-free),5% changed,1,aligned,euclidean,0.9861537182140745,0.6578947368421053,76,27,0.9059456080166889
+mixed membership + kernel change (noise-free),5% changed,1,aligned,cosine,0.9947100458308693,0.8026315789473685,76,21,0.8346447654276702
+mixed membership,20% changed,1,default,Borda (both),0.7681423019799216,0.49328859060402686,0,0,0.47084671180007315
+mixed membership,20% changed,1,default,euclidean,0.659239634166769,0.37583892617449666,0,0,0.8576094892925132
+mixed membership,20% changed,1,default,cosine,0.7989885425856235,0.5234899328859061,0,0,-0.14082859594779487
+mixed membership,20% changed,1,aligned,Borda (both),0.8747682832862456,0.6442953020134228,0,0,0.44426355250302224
+mixed membership,20% changed,1,aligned,euclidean,0.7354297647098237,0.47651006711409394,0,0,0.8368312214510276
+mixed membership,20% changed,1,aligned,cosine,0.9060570190621894,0.7449664429530202,0,0,-0.19521803046135502
+mixed membership (noise-free),20% changed,1,default,Borda (both),0.8669234162302203,0.6040268456375839,0,0,0.420109538246464
+mixed membership (noise-free),20% changed,1,default,euclidean,0.7526675339758121,0.4597315436241611,0,0,0.7155817888278334
+mixed membership (noise-free),20% changed,1,default,cosine,0.9190708438955209,0.6946308724832215,80,0,0.0008928657431440271
+mixed membership (noise-free),20% changed,1,aligned,Borda (both),0.9988860847133971,0.9765100671140939,298,19,0.6144856427341955
+mixed membership (noise-free),20% changed,1,aligned,euclidean,0.9982802711364728,0.9664429530201343,298,23,0.6658836017734053
+mixed membership (noise-free),20% changed,1,aligned,cosine,0.9991889915018594,0.9832214765100671,298,14,0.5628429819334884
+mixed membership + kernel change,20% changed,1,default,Borda (both),0.7075729657500528,0.4101694915254237,0,0,0.536154569173903
+mixed membership + kernel change,20% changed,1,default,euclidean,0.5968549124410999,0.28135593220338984,0,0,0.8741479124323953
+mixed membership + kernel change,20% changed,1,default,cosine,0.7576003938392292,0.5050847457627119,0,0,-0.06466784728529461
+mixed membership + kernel change,20% changed,1,aligned,Borda (both),0.8297236092552219,0.5864406779661017,0,0,0.45598079662322794
+mixed membership + kernel change,20% changed,1,aligned,euclidean,0.6865658625782404,0.36610169491525424,0,0,0.8168903385875713
+mixed membership + kernel change,20% changed,1,aligned,cosine,0.8745143821647092,0.6813559322033899,0,0,-0.1836265370095992
+mixed membership + kernel change (noise-free),20% changed,1,default,Borda (both),0.8055278148955622,0.5559322033898305,0,0,0.5248631217017515
+mixed membership + kernel change (noise-free),20% changed,1,default,euclidean,0.6805316829594205,0.4067796610169492,0,0,0.8065573284222681
+mixed membership + kernel change (noise-free),20% changed,1,default,cosine,0.8723749912089458,0.6847457627118644,95,0,0.051288150125103286
+mixed membership + kernel change (noise-free),20% changed,1,aligned,Borda (both),0.9873943315282369,0.8949152542372881,295,12,0.7725144064616346
+mixed membership + kernel change (noise-free),20% changed,1,aligned,euclidean,0.9847373232998101,0.8847457627118644,295,13,0.8133327673583919
+mixed membership + kernel change (noise-free),20% changed,1,aligned,cosine,0.989094873057177,0.8983050847457628,295,1,0.720992889563285
+mixed membership,40% changed,1,default,Borda (both),0.6808166827430986,0.5495934959349593,0,0,0.5397743126974459
+mixed membership,40% changed,1,default,euclidean,0.6000431767029535,0.4715447154471545,0,0,0.869273409386997
+mixed membership,40% changed,1,default,cosine,0.7150723439437784,0.6032520325203252,0,0,-0.03593108321745264
+mixed membership,40% changed,1,aligned,Borda (both),0.8619640806577558,0.7398373983739838,0,0,0.48064411387373285
+mixed membership,40% changed,1,aligned,euclidean,0.7268522346240411,0.5886178861788618,0,0,0.8410539485426125
+mixed membership,40% changed,1,aligned,cosine,0.8976849937990905,0.8032520325203252,0,0,-0.2273263820446382
+mixed membership (noise-free),40% changed,1,default,Borda (both),0.7853052225437509,0.640650406504065,0,0,0.43276733393718
+mixed membership (noise-free),40% changed,1,default,euclidean,0.682648477332231,0.5463414634146342,0,0,0.7328907716954636
+mixed membership (noise-free),40% changed,1,default,cosine,0.8332120711037618,0.6943089430894309,0,0,-0.005929053700499421
+mixed membership (noise-free),40% changed,1,aligned,Borda (both),0.9995737448899913,0.9869918699186991,614,4,0.2727970451929973
+mixed membership (noise-free),40% changed,1,aligned,euclidean,0.9990409260024804,0.983739837398374,614,8,0.43312837756348127
+mixed membership (noise-free),40% changed,1,aligned,cosine,0.9998199439621515,0.991869918699187,614,3,0.1324583899530608
+mixed membership + kernel change,40% changed,1,default,Borda (both),0.6993072199127515,0.592891760904685,0,0,0.5681569142713608
+mixed membership + kernel change,40% changed,1,default,euclidean,0.6067537806758732,0.4991922455573506,0,0,0.8780060764976603
+mixed membership + kernel change,40% changed,1,default,cosine,0.7377062707783599,0.6122778675282714,0,0,0.003251854346707541
+mixed membership + kernel change,40% changed,1,aligned,Borda (both),0.8539862360843439,0.7544426494345718,0,0,0.5223420249890772
+mixed membership + kernel change,40% changed,1,aligned,euclidean,0.7252608010796954,0.5977382875605816,0,0,0.8503258275171097
+mixed membership + kernel change,40% changed,1,aligned,cosine,0.889635621145746,0.7932148626817448,0,0,-0.2141479100254799
+mixed membership + kernel change (noise-free),40% changed,1,default,Borda (both),0.7641540399641324,0.6348949919224556,0,0,0.4754486966125375
+mixed membership + kernel change (noise-free),40% changed,1,default,euclidean,0.6675554104877883,0.5379644588045234,0,0,0.7590401569195805
+mixed membership + kernel change (noise-free),40% changed,1,default,cosine,0.8124313500409837,0.6752827140549273,0,0,0.0244661866516046
+mixed membership + kernel change (noise-free),40% changed,1,aligned,Borda (both),0.990729619557743,0.9515347334410339,618,18,0.7153154774465955
+mixed membership + kernel change (noise-free),40% changed,1,aligned,euclidean,0.9876223780070745,0.9402261712439418,617,19,0.8196975048040813
+mixed membership + kernel change (noise-free),40% changed,1,aligned,cosine,0.9923212900599444,0.9579967689822294,618,11,0.5590371402239898
+DC-SBM switch,10% changed,1,default,Borda (both),0.9484456520015435,0.6330935251798561,0,0,0.3363833258126934
+DC-SBM switch,10% changed,1,default,euclidean,0.8488944333144799,0.2589928057553957,2,3,0.614293408388688
+DC-SBM switch,10% changed,1,default,cosine,0.9875303284191163,0.8345323741007195,0,0,-0.06102104009691289
+DC-SBM switch,10% changed,1,aligned,Borda (both),0.9984194863066197,0.9424460431654677,139,12,0.1506482872925126
+DC-SBM switch,10% changed,1,aligned,euclidean,0.9837851981456716,0.7913669064748201,139,17,0.5820770749917878
+DC-SBM switch,10% changed,1,aligned,cosine,0.9976371584583913,0.920863309352518,139,7,-0.3989928716179194
+DC-SBM switch,30% changed,1,default,Borda (both),0.8305755740726839,0.5844155844155844,0,0,0.45264494172497677
+DC-SBM switch,30% changed,1,default,euclidean,0.6737169381678052,0.4004329004329004,2,0,0.6904259765090697
+DC-SBM switch,30% changed,1,default,cosine,0.9176185888613634,0.803030303030303,0,0,-0.010567098452958732
+DC-SBM switch,30% changed,1,aligned,Borda (both),0.9998582021703409,0.9956709956709957,461,2,0.19139960588272212
+DC-SBM switch,30% changed,1,aligned,euclidean,0.9918174311237895,0.9372294372294372,459,3,0.5926530959867043
+DC-SBM switch,30% changed,1,aligned,cosine,0.999776876944507,0.9978354978354979,461,0,-0.43977720050445196
+co-expression ((1+cor)/2)^10,150 samples,1,default,Borda (both),0.8762611111111112,0.59,92,4,0.9411680411410631
+co-expression ((1+cor)/2)^10,150 samples,1,default,euclidean,0.7287666666666667,0.25,72,2,0.9814241883067073
+co-expression ((1+cor)/2)^10,150 samples,1,default,cosine,0.9484944444444444,0.79,84,2,0.7978716018289038
+co-expression ((1+cor)/2)^10,150 samples,1,aligned,Borda (both),0.9944111111111111,0.91,88,1,0.32302855073954045
+co-expression ((1+cor)/2)^10,150 samples,1,aligned,euclidean,0.9005722222222222,0.6,0,0,0.8507663764188034
+co-expression ((1+cor)/2)^10,150 samples,1,aligned,cosine,0.9997,0.97,93,0,-0.6104735459495647
+co-expression ((1+cor)/2)^10,500 samples,1,default,Borda (both),0.8906888888888889,0.57,90,14,0.9331941902111413
+co-expression ((1+cor)/2)^10,500 samples,1,default,euclidean,0.7185833333333334,0.21,35,0,0.9742990088842098
+co-expression ((1+cor)/2)^10,500 samples,1,default,cosine,0.9620666666666666,0.84,86,11,0.8024353352149894
+co-expression ((1+cor)/2)^10,500 samples,1,aligned,Borda (both),0.9991,0.96,100,3,0.4429198094369379
+co-expression ((1+cor)/2)^10,500 samples,1,aligned,euclidean,0.9320555555555555,0.6,80,5,0.8830783798310512
+co-expression ((1+cor)/2)^10,500 samples,1,aligned,cosine,0.9999888888888889,0.99,100,4,-0.504423318982621
+co-expression |cor|^6,150 samples,1,default,Borda (both),0.9134388888888889,0.65,33,4,0.5549671550980847
+co-expression |cor|^6,150 samples,1,default,euclidean,0.6555277777777778,0.19,1,0,0.9911553625471625
+co-expression |cor|^6,150 samples,1,default,cosine,0.8745611111111111,0.44,20,0,-0.574843110065976
+co-expression |cor|^6,150 samples,1,aligned,Borda (both),0.9698722222222222,0.78,72,1,0.33001165722037784
+co-expression |cor|^6,150 samples,1,aligned,euclidean,0.7305666666666667,0.3,0,0,0.9543692490994997
+co-expression |cor|^6,150 samples,1,aligned,cosine,0.8940611111111111,0.46,67,0,-0.7954521499217904
+co-expression |cor|^6,500 samples,1,default,Borda (both),0.9082944444444444,0.65,39,1,0.5008299723615324
+co-expression |cor|^6,500 samples,1,default,euclidean,0.6977833333333333,0.26,2,6,0.991696881762452
+co-expression |cor|^6,500 samples,1,default,cosine,0.8773277777777778,0.47,10,0,-0.5495156474505326
+co-expression |cor|^6,500 samples,1,aligned,Borda (both),0.9779055555555556,0.78,100,9,0.3527457881451246
+co-expression |cor|^6,500 samples,1,aligned,euclidean,0.7812944444444444,0.43,0,0,0.9639668393618381
+co-expression |cor|^6,500 samples,1,aligned,cosine,0.9114666666666666,0.55,67,0,-0.7279523182505657
+"co-expression ((1+cor)/2)^10, no change",150 samples,1,default,Borda (both),,,0,0,0.8772960038353073
+"co-expression ((1+cor)/2)^10, no change",150 samples,1,default,euclidean,,,0,0,0.962326323579448
+"co-expression ((1+cor)/2)^10, no change",150 samples,1,default,cosine,,,0,0,0.6439445949003108
+"co-expression ((1+cor)/2)^10, no change",150 samples,1,aligned,Borda (both),,,0,0,0.3606042389585631
+"co-expression ((1+cor)/2)^10, no change",150 samples,1,aligned,euclidean,,,0,1,0.8553698062786282
+"co-expression ((1+cor)/2)^10, no change",150 samples,1,aligned,cosine,,,0,0,-0.4995950805294901
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,1,default,Borda (both),0.9211937890703771,0.7034482758620689,0,0,0.8930393854341885
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,1,default,euclidean,0.8079169187336156,0.43448275862068964,0,0,0.9552338312376094
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,1,default,cosine,0.9656583988707401,0.8689655172413793,0,0,0.6880702882727842
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,1,aligned,Borda (both),0.33633393829401087,0.0,0,1,0.6703075007187013
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,1,aligned,euclidean,0.3075337769711635,0.0,0,1,0.9138145583269497
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,1,aligned,cosine,0.4702762653760839,0.08275862068965517,0,0,0.043549860187918996
+"co-expression |cor|^6, no change",150 samples,1,default,Borda (both),,,0,0,0.45843577494930127
+"co-expression |cor|^6, no change",150 samples,1,default,euclidean,,,0,0,0.9825488743553348
+"co-expression |cor|^6, no change",150 samples,1,default,cosine,,,0,0,-0.6161327775498583
+"co-expression |cor|^6, no change",150 samples,1,aligned,Borda (both),,,0,1,0.365437949794671
+"co-expression |cor|^6, no change",150 samples,1,aligned,euclidean,,,0,0,0.9601721101979376
+"co-expression |cor|^6, no change",150 samples,1,aligned,cosine,,,0,0,-0.6941420610876433
+"co-expression |cor|^6, one module weakens",150 samples,1,default,Borda (both),0.3349469316575964,0.0379746835443038,0,0,0.49015034669026664
+"co-expression |cor|^6, one module weakens",150 samples,1,default,euclidean,0.6565253014221715,0.2468354430379747,0,0,0.9845487623599612
+"co-expression |cor|^6, one module weakens",150 samples,1,default,cosine,0.14646411497639736,0.006329113924050633,0,0,-0.7108908571761939
+"co-expression |cor|^6, one module weakens",150 samples,1,aligned,Borda (both),0.13038576024534712,0.0189873417721519,0,0,0.4632683918868098
+"co-expression |cor|^6, one module weakens",150 samples,1,aligned,euclidean,0.3086157130400794,0.0,0,0,0.9709102139147266
+"co-expression |cor|^6, one module weakens",150 samples,1,aligned,cosine,0.3483042184070477,0.0189873417721519,0,0,-0.7838312984090621
+"signed correlation, sign flips",500 samples,1,default,Borda (both),0.9995444444444445,0.97,100,15,0.3271340366190923
+"signed correlation, sign flips",500 samples,1,default,euclidean,0.9333388888888889,0.62,90,7,0.9653990431188623
+"signed correlation, sign flips",500 samples,1,default,cosine,0.9992222222222222,0.97,100,9,-0.6540893512454732
+"signed correlation, sign flips",500 samples,1,aligned,Borda (both),0.9999555555555556,0.99,100,0,-0.8347153180007698
+"signed correlation, sign flips",500 samples,1,aligned,euclidean,0.9999555555555556,0.99,100,0,-0.7051403330335546
+"signed correlation, sign flips",500 samples,1,aligned,cosine,0.9996555555555555,0.98,97,0,-0.9095024293058698
+mixed membership,5% changed,2,default,Borda (both),0.8243273079839879,0.3561643835616438,0,0,0.42996857729969634
+mixed membership,5% changed,2,default,euclidean,0.735147017884056,0.3287671232876712,0,0,0.8469464964796732
+mixed membership,5% changed,2,default,cosine,0.8280807518407234,0.410958904109589,0,0,-0.18855153357606882
+mixed membership,5% changed,2,aligned,Borda (both),0.862701711608797,0.4931506849315068,12,0,0.4450936408199154
+mixed membership,5% changed,2,aligned,euclidean,0.7614019256798917,0.3013698630136986,1,0,0.8344586342414396
+mixed membership,5% changed,2,aligned,cosine,0.8785506522928647,0.6164383561643836,18,0,-0.16128887028508476
+mixed membership (noise-free),5% changed,2,default,Borda (both),0.9310172696815813,0.5753424657534246,40,0,0.40671770405436
+mixed membership (noise-free),5% changed,2,default,euclidean,0.8617465513434641,0.4520547945205479,29,0,0.7093293787258318
+mixed membership (noise-free),5% changed,2,default,cosine,0.955313858943468,0.821917808219178,50,0,0.008806548977540515
+mixed membership (noise-free),5% changed,2,aligned,Borda (both),0.9988384483205499,0.9041095890410958,73,24,0.800100984362977
+mixed membership (noise-free),5% changed,2,aligned,euclidean,0.997729694444711,0.8767123287671232,73,29,0.8296464293016028
+mixed membership (noise-free),5% changed,2,aligned,cosine,0.9994000249589617,0.9452054794520548,73,17,0.76358488888635
+mixed membership + kernel change,5% changed,2,default,Borda (both),0.8247302697302697,0.3142857142857143,0,0,0.5236211292754239
+mixed membership + kernel change,5% changed,2,default,euclidean,0.7122327672327672,0.15714285714285714,1,0,0.8748986301684907
+mixed membership + kernel change,5% changed,2,default,cosine,0.8472027972027972,0.37142857142857144,0,0,-0.07150081731035443
+mixed membership + kernel change,5% changed,2,aligned,Borda (both),0.8921178821178821,0.5142857142857142,3,0,0.4785888193314567
+mixed membership + kernel change,5% changed,2,aligned,euclidean,0.7628171828171828,0.22857142857142856,0,0,0.8353250655339337
+mixed membership + kernel change,5% changed,2,aligned,cosine,0.9288061938061938,0.6428571428571429,2,0,-0.12780726939370973
+mixed membership + kernel change (noise-free),5% changed,2,default,Borda (both),0.9456543456543457,0.6714285714285714,41,0,0.5493236766438857
+mixed membership + kernel change (noise-free),5% changed,2,default,euclidean,0.8488061938061938,0.4714285714285714,24,0,0.8272135229467056
+mixed membership + kernel change (noise-free),5% changed,2,default,cosine,0.983976023976024,0.9428571428571428,55,0,0.04692111924484593
+mixed membership + kernel change (noise-free),5% changed,2,aligned,Borda (both),0.9898301698301698,0.7142857142857143,70,33,0.8682181354874995
+mixed membership + kernel change (noise-free),5% changed,2,aligned,euclidean,0.9845954045954046,0.6428571428571429,70,34,0.8969206648326473
+mixed membership + kernel change (noise-free),5% changed,2,aligned,cosine,0.9936113886113886,0.7714285714285715,70,20,0.8228391577451623
+mixed membership,20% changed,2,default,Borda (both),0.7554114125274745,0.4734982332155477,0,0,0.48961028214346713
+mixed membership,20% changed,2,default,euclidean,0.6336441054437867,0.3286219081272085,0,0,0.8570845600438848
+mixed membership,20% changed,2,default,cosine,0.8043369694928443,0.558303886925795,0,0,-0.10813481196554602
+mixed membership,20% changed,2,aligned,Borda (both),0.8329989460266949,0.5936395759717314,58,0,0.495501999273739
+mixed membership,20% changed,2,aligned,euclidean,0.6880660025376657,0.4134275618374558,9,0,0.8499184636193073
+mixed membership,20% changed,2,aligned,cosine,0.8908745655626562,0.7173144876325088,47,0,-0.15091116583112202
+mixed membership (noise-free),20% changed,2,default,Borda (both),0.8474061513714719,0.568904593639576,0,0,0.38538853534937106
+mixed membership (noise-free),20% changed,2,default,euclidean,0.7367026604841309,0.4098939929328622,0,0,0.6876924743853492
+mixed membership (noise-free),20% changed,2,default,cosine,0.9042292493561471,0.6925795053003534,101,0,-0.028264535976718564
+mixed membership (noise-free),20% changed,2,aligned,Borda (both),0.9924537834157445,0.9151943462897526,283,30,0.636291013251167
+mixed membership (noise-free),20% changed,2,aligned,euclidean,0.9911181698610091,0.9045936395759717,283,30,0.6847972421256876
+mixed membership (noise-free),20% changed,2,aligned,cosine,0.9931753050860744,0.9187279151943463,283,26,0.5823336857586557
+mixed membership + kernel change,20% changed,2,default,Borda (both),0.7761822251101004,0.49122807017543857,0,0,0.5163968252815655
+mixed membership + kernel change,20% changed,2,default,euclidean,0.6602512453974442,0.3719298245614035,0,0,0.8671917156406114
+mixed membership + kernel change,20% changed,2,default,cosine,0.8199639015233557,0.5614035087719298,0,0,-0.07888123356756578
+mixed membership + kernel change,20% changed,2,aligned,Borda (both),0.8602353620677208,0.6175438596491228,24,0,0.4659952162779102
+mixed membership + kernel change,20% changed,2,aligned,euclidean,0.7190282290087359,0.42105263157894735,0,0,0.8346589605972987
+mixed membership + kernel change,20% changed,2,aligned,cosine,0.9007378528626092,0.7263157894736842,0,0,-0.1853693419922658
+mixed membership + kernel change (noise-free),20% changed,2,default,Borda (both),0.8201963757129449,0.5859649122807018,29,0,0.4887629757467879
+mixed membership + kernel change (noise-free),20% changed,2,default,euclidean,0.7202324741895892,0.43157894736842106,0,0,0.7699994077983553
+mixed membership + kernel change (noise-free),20% changed,2,default,cosine,0.8698722113926792,0.6807017543859649,109,0,0.04075489238349494
+mixed membership + kernel change (noise-free),20% changed,2,aligned,Borda (both),0.9904454552017905,0.8912280701754386,285,13,0.866039959899156
+mixed membership + kernel change (noise-free),20% changed,2,aligned,euclidean,0.9873048877337376,0.8736842105263158,285,14,0.9004526855402459
+mixed membership + kernel change (noise-free),20% changed,2,aligned,cosine,0.992230163887084,0.9017543859649123,285,9,0.8109242855063616
+mixed membership,40% changed,2,default,Borda (both),0.7328891580860085,0.6121112929623568,0,0,0.4747457508737128
+mixed membership,40% changed,2,default,euclidean,0.6405494321393131,0.513911620294599,0,0,0.8596225441633462
+mixed membership,40% changed,2,default,cosine,0.7599446959473765,0.6415711947626841,0,0,-0.14825071185445862
+mixed membership,40% changed,2,aligned,Borda (both),0.8764532502176998,0.7545008183306056,0,0,0.4871044828311391
+mixed membership,40% changed,2,aligned,euclidean,0.757064429957712,0.6235679214402619,0,0,0.8386804952531433
+mixed membership,40% changed,2,aligned,cosine,0.906889809804871,0.8085106382978723,0,0,-0.19204412183669672
+mixed membership (noise-free),40% changed,2,default,Borda (both),0.7917141494792692,0.6530278232405892,0,0,0.33435672885301204
+mixed membership (noise-free),40% changed,2,default,euclidean,0.7081367284081307,0.5761047463175123,0,0,0.6635047825425662
+mixed membership (noise-free),40% changed,2,default,cosine,0.8243415154120465,0.6595744680851063,0,0,-0.10675730035401014
+mixed membership (noise-free),40% changed,2,aligned,Borda (both),0.9986956417681833,0.9885433715220949,611,1,0.28874534680327407
+mixed membership (noise-free),40% changed,2,aligned,euclidean,0.9981562247435928,0.9852700490998363,611,2,0.4285931244892418
+mixed membership (noise-free),40% changed,2,aligned,cosine,0.998959827239271,0.9885433715220949,611,0,0.1545763061618979
+mixed membership + kernel change,40% changed,2,default,Borda (both),0.6693339617919107,0.5502392344497608,0,0,0.5796520777405496
+mixed membership + kernel change,40% changed,2,default,euclidean,0.5734008560921203,0.45454545454545453,0,0,0.8790454400997575
+mixed membership + kernel change,40% changed,2,default,cosine,0.7190105065851132,0.6076555023923444,0,0,-0.0012038720498145044
+mixed membership + kernel change,40% changed,2,aligned,Borda (both),0.8530292982273449,0.7496012759170654,0,0,0.5212365839173211
+mixed membership + kernel change,40% changed,2,aligned,euclidean,0.7150725924464394,0.5933014354066986,0,0,0.8584910894259283
+mixed membership + kernel change,40% changed,2,aligned,cosine,0.8952328493836904,0.7878787878787878,0,0,-0.1986957809008543
+mixed membership + kernel change (noise-free),40% changed,2,default,Borda (both),0.7421465514249019,0.6172248803827751,0,0,0.5236327287358539
+mixed membership + kernel change (noise-free),40% changed,2,default,euclidean,0.6319936569529624,0.5231259968102073,0,0,0.7922983209297343
+mixed membership + kernel change (noise-free),40% changed,2,default,cosine,0.8077008098711843,0.6858054226475279,0,0,0.06634174771409265
+mixed membership + kernel change (noise-free),40% changed,2,aligned,Borda (both),0.997854288955754,0.9856459330143541,623,1,0.34978301235894677
+mixed membership + kernel change (noise-free),40% changed,2,aligned,euclidean,0.9971673691152801,0.9808612440191388,626,2,0.5595528745747884
+mixed membership + kernel change (noise-free),40% changed,2,aligned,cosine,0.998267171625826,0.988835725677831,620,0,0.12219735775219408
+DC-SBM switch,10% changed,2,default,Borda (both),0.9991033285064236,0.958041958041958,143,2,0.36785377842595407
+DC-SBM switch,10% changed,2,default,euclidean,0.9331541708107662,0.4755244755244755,109,15,0.7260161495885618
+DC-SBM switch,10% changed,2,default,cosine,0.9999948467155542,0.993006993006993,143,0,-0.19730883450195885
+DC-SBM switch,10% changed,2,aligned,Borda (both),1.0,1.0,143,11,0.10647422476531117
+DC-SBM switch,10% changed,2,aligned,euclidean,0.993068832420343,0.8811188811188811,143,24,0.5640259186640212
+DC-SBM switch,10% changed,2,aligned,cosine,0.9999896934311083,0.993006993006993,143,7,-0.44779559779998007
+DC-SBM switch,30% changed,2,default,Borda (both),0.9680222222222222,0.8311111111111111,0,0,0.632037402914955
+DC-SBM switch,30% changed,2,default,euclidean,0.7822433862433863,0.5177777777777778,5,2,0.890612533349581
+DC-SBM switch,30% changed,2,default,cosine,0.9980380952380953,0.9777777777777777,0,0,-0.040758316125902805
+DC-SBM switch,30% changed,2,aligned,Borda (both),1.0,1.0,450,3,0.14738699742165604
+DC-SBM switch,30% changed,2,aligned,euclidean,0.9967597883597884,0.9711111111111111,450,3,0.604121646954396
+DC-SBM switch,30% changed,2,aligned,cosine,1.0,1.0,450,0,-0.44556421818825775
+co-expression ((1+cor)/2)^10,150 samples,2,default,Borda (both),0.8583333333333333,0.52,86,5,0.9373048510660184
+co-expression ((1+cor)/2)^10,150 samples,2,default,euclidean,0.6866,0.22,61,2,0.9819079498457712
+co-expression ((1+cor)/2)^10,150 samples,2,default,cosine,0.9432111111111111,0.83,89,5,0.7696894213388361
+co-expression ((1+cor)/2)^10,150 samples,2,aligned,Borda (both),0.9841722222222222,0.86,81,4,0.39362721755192953
+co-expression ((1+cor)/2)^10,150 samples,2,aligned,euclidean,0.8538833333333333,0.48,0,0,0.883267389760104
+co-expression ((1+cor)/2)^10,150 samples,2,aligned,cosine,0.9970111111111111,0.96,93,3,-0.6119785596055898
+co-expression ((1+cor)/2)^10,500 samples,2,default,Borda (both),0.8834888888888889,0.52,98,2,0.9519557266575686
+co-expression ((1+cor)/2)^10,500 samples,2,default,euclidean,0.7194888888888888,0.28,83,0,0.9772531460639505
+co-expression ((1+cor)/2)^10,500 samples,2,default,cosine,0.9609888888888889,0.85,89,6,0.869265626674738
+co-expression ((1+cor)/2)^10,500 samples,2,aligned,Borda (both),0.9995333333333334,0.96,100,3,0.435238499122662
+co-expression ((1+cor)/2)^10,500 samples,2,aligned,euclidean,0.9335833333333333,0.61,92,5,0.8797451390557554
+co-expression ((1+cor)/2)^10,500 samples,2,aligned,cosine,1.0,1.0,100,5,-0.5580059421977217
+co-expression |cor|^6,150 samples,2,default,Borda (both),0.8933388888888889,0.64,37,0,0.5207042715968945
+co-expression |cor|^6,150 samples,2,default,euclidean,0.66425,0.23,0,0,0.9903399535620884
+co-expression |cor|^6,150 samples,2,default,cosine,0.88295,0.56,29,0,-0.5829013800505106
+co-expression |cor|^6,150 samples,2,aligned,Borda (both),0.9609611111111112,0.72,65,0,0.26829837610005236
+co-expression |cor|^6,150 samples,2,aligned,euclidean,0.7365333333333334,0.34,0,0,0.9460624365956006
+co-expression |cor|^6,150 samples,2,aligned,cosine,0.8686444444444444,0.32,64,0,-0.8025050801204382
+co-expression |cor|^6,500 samples,2,default,Borda (both),0.9260166666666667,0.69,37,10,0.49898760560853417
+co-expression |cor|^6,500 samples,2,default,euclidean,0.6760944444444444,0.22,10,20,0.9898127226651806
+co-expression |cor|^6,500 samples,2,default,cosine,0.8858222222222222,0.48,42,0,-0.5793757101527537
+co-expression |cor|^6,500 samples,2,aligned,Borda (both),0.9668611111111111,0.8,97,12,0.30329701723015823
+co-expression |cor|^6,500 samples,2,aligned,euclidean,0.7714222222222222,0.37,0,0,0.9561924132184189
+co-expression |cor|^6,500 samples,2,aligned,cosine,0.8507555555555556,0.3,60,0,-0.7568954265132364
+"co-expression ((1+cor)/2)^10, no change",150 samples,2,default,Borda (both),,,0,0,0.8913518162253721
+"co-expression ((1+cor)/2)^10, no change",150 samples,2,default,euclidean,,,0,0,0.9682926780609831
+"co-expression ((1+cor)/2)^10, no change",150 samples,2,default,cosine,,,0,0,0.6487860074602161
+"co-expression ((1+cor)/2)^10, no change",150 samples,2,aligned,Borda (both),,,0,0,0.3204117780550166
+"co-expression ((1+cor)/2)^10, no change",150 samples,2,aligned,euclidean,,,0,1,0.8418312709530059
+"co-expression ((1+cor)/2)^10, no change",150 samples,2,aligned,cosine,,,0,0,-0.5165063707746422
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,2,default,Borda (both),0.9323895356753813,0.7426470588235294,34,1,0.9029664783216438
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,2,default,euclidean,0.8187338303376906,0.4338235294117647,44,1,0.9617060369066962
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,2,default,cosine,0.9698010280501089,0.8897058823529411,0,0,0.7045067808505824
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,2,aligned,Borda (both),0.35891544117647056,0.022058823529411766,0,1,0.6715514707907784
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,2,aligned,euclidean,0.33430351307189543,0.0,0,1,0.9225786771526092
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,2,aligned,cosine,0.4925279139433551,0.0661764705882353,0,0,0.02122944017312991
+"co-expression |cor|^6, no change",150 samples,2,default,Borda (both),,,0,0,0.40996412928649817
+"co-expression |cor|^6, no change",150 samples,2,default,euclidean,,,0,0,0.9790730169967611
+"co-expression |cor|^6, no change",150 samples,2,default,cosine,,,0,0,-0.666208038133749
+"co-expression |cor|^6, no change",150 samples,2,aligned,Borda (both),,,0,0,0.29027877827063603
+"co-expression |cor|^6, no change",150 samples,2,aligned,euclidean,,,0,0,0.9574260181676532
+"co-expression |cor|^6, no change",150 samples,2,aligned,cosine,,,0,0,-0.7722210454374911
+"co-expression |cor|^6, one module weakens",150 samples,2,default,Borda (both),0.30322976562762705,0.014492753623188406,0,0,0.4729874931296105
+"co-expression |cor|^6, one module weakens",150 samples,2,default,euclidean,0.643796866068126,0.2028985507246377,0,0,0.981961615513432
+"co-expression |cor|^6, one module weakens",150 samples,2,default,cosine,0.1405645784996133,0.007246376811594203,0,0,-0.6900130817662309
+"co-expression |cor|^6, one module weakens",150 samples,2,aligned,Borda (both),0.11498369144893911,0.014492753623188406,0,0,0.36953117702024907
+"co-expression |cor|^6, one module weakens",150 samples,2,aligned,euclidean,0.27997747066142104,0.0,0,2,0.9649036946030443
+"co-expression |cor|^6, one module weakens",150 samples,2,aligned,cosine,0.3648954235179394,0.021739130434782608,0,0,-0.772711133776234
+"signed correlation, sign flips",500 samples,2,default,Borda (both),0.9999888888888889,0.99,100,2,0.3499175790943186
+"signed correlation, sign flips",500 samples,2,default,euclidean,0.9323333333333333,0.61,100,4,0.9776457170496636
+"signed correlation, sign flips",500 samples,2,default,cosine,0.9995944444444445,0.97,100,7,-0.6549708030227283
+"signed correlation, sign flips",500 samples,2,aligned,Borda (both),1.0,1.0,100,0,-0.8131404296380492
+"signed correlation, sign flips",500 samples,2,aligned,euclidean,1.0,1.0,100,0,-0.6290388333425693
+"signed correlation, sign flips",500 samples,2,aligned,cosine,1.0,1.0,100,0,-0.919961343317719
+mixed membership,5% changed,3,default,Borda (both),0.7882472089161091,0.2876712328767123,0,0,0.46196338517139257
+mixed membership,5% changed,3,default,euclidean,0.6591277802843402,0.1780821917808219,0,0,0.8558011396390424
+mixed membership,5% changed,3,default,cosine,0.8297942805579288,0.4383561643835616,0,0,-0.1523477097059122
+mixed membership,5% changed,3,aligned,Borda (both),0.8404162386844707,0.4246575342465753,5,0,0.4521456591388398
+mixed membership,5% changed,3,aligned,euclidean,0.6978861679354139,0.2328767123287671,0,0,0.8351143666114761
+mixed membership,5% changed,3,aligned,cosine,0.8868063088575515,0.6575342465753424,8,0,-0.14830614209640655
+mixed membership (noise-free),5% changed,3,default,Borda (both),0.9252767084889268,0.589041095890411,40,0,0.3686946549401491
+mixed membership (noise-free),5% changed,3,default,euclidean,0.8656343896093922,0.4520547945205479,20,0,0.6853373680773835
+mixed membership (noise-free),5% changed,3,default,cosine,0.9527795643701222,0.7945205479452054,47,0,-0.010096471080502437
+mixed membership (noise-free),5% changed,3,aligned,Borda (both),0.9948930124506821,0.8356164383561644,73,22,0.6695633684998845
+mixed membership (noise-free),5% changed,3,aligned,euclidean,0.9939714507876473,0.7945205479452054,73,30,0.7129118636025152
+mixed membership (noise-free),5% changed,3,aligned,cosine,0.9956177823002563,0.8356164383561644,73,18,0.6229992027148566
+mixed membership + kernel change,5% changed,3,default,Borda (both),0.7981316404065656,0.36046511627906974,0,0,0.49600193159667677
+mixed membership + kernel change,5% changed,3,default,euclidean,0.6921935133712707,0.2441860465116279,0,0,0.8751103212759004
+mixed membership + kernel change,5% changed,3,default,cosine,0.8338294792934443,0.4418604651162791,0,0,-0.1365193137170237
+mixed membership + kernel change,5% changed,3,aligned,Borda (both),0.8573032137100753,0.47674418604651164,15,0,0.521778090325819
+mixed membership + kernel change,5% changed,3,aligned,euclidean,0.7407239893424559,0.32558139534883723,11,0,0.865084676425466
+mixed membership + kernel change,5% changed,3,aligned,cosine,0.8992755172527219,0.686046511627907,24,0,-0.053223968566226104
+mixed membership + kernel change (noise-free),5% changed,3,default,Borda (both),0.9184895233709417,0.627906976744186,39,0,0.46736757701852905
+mixed membership + kernel change (noise-free),5% changed,3,default,euclidean,0.8301289431268708,0.45348837209302323,20,0,0.7826165925743782
+mixed membership + kernel change (noise-free),5% changed,3,default,cosine,0.9630234202822275,0.813953488372093,51,0,0.0044187946228749645
+mixed membership + kernel change (noise-free),5% changed,3,aligned,Borda (both),0.9929484227492517,0.7674418604651163,86,38,0.7462346962638419
+mixed membership + kernel change (noise-free),5% changed,3,aligned,euclidean,0.9908062234794908,0.7558139534883721,86,69,0.7898074553095054
+mixed membership + kernel change (noise-free),5% changed,3,aligned,cosine,0.9943751850268083,0.813953488372093,86,13,0.6969045279650167
+mixed membership,20% changed,3,default,Borda (both),0.781015237949059,0.5120274914089347,0,0,0.5037558761642436
+mixed membership,20% changed,3,default,euclidean,0.6909604086192047,0.39862542955326463,0,0,0.8718985871377894
+mixed membership,20% changed,3,default,cosine,0.7972693345157595,0.5292096219931272,0,0,-0.11633974926211663
+mixed membership,20% changed,3,aligned,Borda (both),0.8581301748910661,0.6254295532646048,10,0,0.4732500740677947
+mixed membership,20% changed,3,aligned,euclidean,0.7435229478794494,0.4742268041237113,0,0,0.8494996816560166
+mixed membership,20% changed,3,aligned,cosine,0.8840668070797768,0.7044673539518901,9,0,-0.15838234386688738
+mixed membership (noise-free),20% changed,3,default,Borda (both),0.8660092263351326,0.5807560137457045,0,0,0.4449877610318233
+mixed membership (noise-free),20% changed,3,default,euclidean,0.7748188699302766,0.45017182130584193,0,0,0.7411626953904377
+mixed membership (noise-free),20% changed,3,default,cosine,0.9021442844189768,0.6666666666666666,45,0,0.035463431617554615
+mixed membership (noise-free),20% changed,3,aligned,Borda (both),0.9967795940526236,0.9347079037800687,291,38,0.6269019464165185
+mixed membership (noise-free),20% changed,3,aligned,euclidean,0.9956625423868524,0.9312714776632303,291,44,0.6831586410537634
+mixed membership (noise-free),20% changed,3,aligned,cosine,0.9973679647773429,0.9415807560137457,291,34,0.5671413238543931
+mixed membership + kernel change,20% changed,3,default,Borda (both),0.7537031116794544,0.4384057971014493,0,0,0.5077350176875256
+mixed membership + kernel change,20% changed,3,default,euclidean,0.6431307426352183,0.3079710144927536,0,0,0.8622808626070344
+mixed membership + kernel change,20% changed,3,default,cosine,0.7892053258501468,0.5289855072463768,0,0,-0.09949753062740338
+mixed membership + kernel change,20% changed,3,aligned,Borda (both),0.8346905489248839,0.572463768115942,10,0,0.5116717334042638
+mixed membership + kernel change,20% changed,3,aligned,euclidean,0.7019453916832433,0.39855072463768115,1,0,0.8589244374777945
+mixed membership + kernel change,20% changed,3,aligned,cosine,0.8774539405134034,0.6920289855072463,3,0,-0.11040458604972053
+mixed membership + kernel change (noise-free),20% changed,3,default,Borda (both),0.8471260182817089,0.5760869565217391,0,0,0.4787851752310264
+mixed membership + kernel change (noise-free),20% changed,3,default,euclidean,0.7330251847115657,0.41304347826086957,0,0,0.7720836547204298
+mixed membership + kernel change (noise-free),20% changed,3,default,cosine,0.8999789831391494,0.7210144927536232,87,0,0.015390765753879177
+mixed membership + kernel change (noise-free),20% changed,3,aligned,Borda (both),0.9957625864355404,0.9166666666666666,276,47,0.7816532033084642
+mixed membership + kernel change (noise-free),20% changed,3,aligned,euclidean,0.9930481552524392,0.8985507246376812,276,51,0.8347154153151602
+mixed membership + kernel change (noise-free),20% changed,3,aligned,cosine,0.9973225703324808,0.9456521739130435,276,33,0.7052797819925157
+mixed membership,40% changed,3,default,Borda (both),0.7292806143566698,0.597682119205298,0,0,0.5301160270685855
+mixed membership,40% changed,3,default,euclidean,0.6455290622043519,0.5049668874172185,0,0,0.8662325594656445
+mixed membership,40% changed,3,default,cosine,0.7437775322256386,0.609271523178808,0,0,-0.06416123285427404
+mixed membership,40% changed,3,aligned,Borda (both),0.8597704292809839,0.7367549668874173,0,0,0.4570116219320218
+mixed membership,40% changed,3,aligned,euclidean,0.7502217360454115,0.6158940397350994,0,0,0.8386592745466575
+mixed membership,40% changed,3,aligned,cosine,0.8816188209555346,0.7615894039735099,0,0,-0.266232628119721
+mixed membership (noise-free),40% changed,3,default,Borda (both),0.7824455268448439,0.6374172185430463,0,0,0.40679841991920546
+mixed membership (noise-free),40% changed,3,default,euclidean,0.7041625399124882,0.5662251655629139,0,0,0.7064199855480637
+mixed membership (noise-free),40% changed,3,default,cosine,0.8133943353831599,0.6655629139072847,0,0,-0.012485554264947076
+mixed membership (noise-free),40% changed,3,aligned,Borda (both),1.0,1.0,604,0,0.3333111596803567
+mixed membership (noise-free),40% changed,3,aligned,euclidean,1.0,1.0,604,0,0.47665344110194446
+mixed membership (noise-free),40% changed,3,aligned,cosine,1.0,1.0,604,0,0.18571959237753463
+mixed membership + kernel change,40% changed,3,default,Borda (both),0.6916855971206042,0.5674342105263158,0,0,0.5764751530645842
+mixed membership + kernel change,40% changed,3,default,euclidean,0.5955542320627802,0.47368421052631576,0,0,0.8842003701211577
+mixed membership + kernel change,40% changed,3,default,cosine,0.7329026655062544,0.6052631578947368,0,0,-0.023161159673158037
+mixed membership + kernel change,40% changed,3,aligned,Borda (both),0.8334703947368421,0.7039473684210527,0,0,0.49981541680679137
+mixed membership + kernel change,40% changed,3,aligned,euclidean,0.6919557248642908,0.5641447368421053,0,0,0.8549464278690632
+mixed membership + kernel change,40% changed,3,aligned,cosine,0.8825783278262922,0.7861842105263158,0,0,-0.2289736438054344
+mixed membership + kernel change (noise-free),40% changed,3,default,Borda (both),0.7717273055817796,0.6480263157894737,0,0,0.508292509436247
+mixed membership + kernel change (noise-free),40% changed,3,default,euclidean,0.6618867270474392,0.524671052631579,0,0,0.7857577091883523
+mixed membership + kernel change (noise-free),40% changed,3,default,cosine,0.82649870191173,0.6842105263157895,0,0,0.039467411692268625
+mixed membership + kernel change (noise-free),40% changed,3,aligned,Borda (both),1.0,1.0,608,0,0.5708971131886545
+mixed membership + kernel change (noise-free),40% changed,3,aligned,euclidean,0.9999944683738494,0.9983552631578947,608,0,0.7177989394780244
+mixed membership + kernel change (noise-free),40% changed,3,aligned,cosine,1.0,1.0,608,0,0.37263913308931756
+DC-SBM switch,10% changed,3,default,Borda (both),0.9813289527419229,0.7791411042944786,1,0,0.3545732065260006
+DC-SBM switch,10% changed,3,default,euclidean,0.8927275146720751,0.4171779141104294,2,4,0.682918566317702
+DC-SBM switch,10% changed,3,default,cosine,0.9989698574319394,0.9570552147239264,0,0,-0.093398167878667
+DC-SBM switch,10% changed,3,aligned,Borda (both),0.9996420885509634,0.9877300613496932,163,13,0.13937079527663726
+DC-SBM switch,10% changed,3,aligned,euclidean,0.9932157425974276,0.8895705521472392,163,18,0.5862520768603668
+DC-SBM switch,10% changed,3,aligned,cosine,0.9999609968292716,0.9877300613496932,163,9,-0.43237502198022726
+DC-SBM switch,30% changed,3,default,Borda (both),0.9489830420307949,0.7824074074074074,0,0,0.4302816142989754
+DC-SBM switch,30% changed,3,default,euclidean,0.8254406384380635,0.5810185185185185,2,3,0.7136461530700422
+DC-SBM switch,30% changed,3,default,cosine,0.9828827247191011,0.8981481481481481,0,0,-0.07321919599549309
+DC-SBM switch,30% changed,3,aligned,Borda (both),0.9990690889859898,0.9930555555555556,432,4,0.03806814263218291
+DC-SBM switch,30% changed,3,aligned,euclidean,0.9918179532528784,0.9467592592592593,430,6,0.5098371569368109
+DC-SBM switch,30% changed,3,aligned,cosine,0.9999783257039812,0.9953703703703703,432,2,-0.5222864715585572
+co-expression ((1+cor)/2)^10,150 samples,3,default,Borda (both),0.89615,0.63,92,11,0.9495047612881067
+co-expression ((1+cor)/2)^10,150 samples,3,default,euclidean,0.74845,0.31,71,4,0.9806455576801001
+co-expression ((1+cor)/2)^10,150 samples,3,default,cosine,0.9514222222222222,0.87,88,6,0.822050526040913
+co-expression ((1+cor)/2)^10,150 samples,3,aligned,Borda (both),0.9871444444444445,0.88,30,0,0.344723417200965
+co-expression ((1+cor)/2)^10,150 samples,3,aligned,euclidean,0.8918277777777778,0.58,0,0,0.8778266942610093
+co-expression ((1+cor)/2)^10,150 samples,3,aligned,cosine,0.9973111111111111,0.96,75,0,-0.5809492326038724
+co-expression ((1+cor)/2)^10,500 samples,3,default,Borda (both),0.8765555555555555,0.51,46,0,0.9358565230009375
+co-expression ((1+cor)/2)^10,500 samples,3,default,euclidean,0.7125444444444444,0.26,40,0,0.9744406887282127
+co-expression ((1+cor)/2)^10,500 samples,3,default,cosine,0.9623333333333334,0.87,43,0,0.8036789550326007
+co-expression ((1+cor)/2)^10,500 samples,3,aligned,Borda (both),0.9997555555555555,0.96,100,5,0.3892391669252657
+co-expression ((1+cor)/2)^10,500 samples,3,aligned,euclidean,0.9408055555555556,0.68,87,2,0.877650267039062
+co-expression ((1+cor)/2)^10,500 samples,3,aligned,cosine,1.0,1.0,100,6,-0.608555460882364
+co-expression |cor|^6,150 samples,3,default,Borda (both),0.9331166666666667,0.71,78,0,0.5770551507065756
+co-expression |cor|^6,150 samples,3,default,euclidean,0.6953722222222222,0.22,6,0,0.991682745701256
+co-expression |cor|^6,150 samples,3,default,cosine,0.8872944444444445,0.54,45,0,-0.5588843151421949
+co-expression |cor|^6,150 samples,3,aligned,Borda (both),0.9794111111111111,0.82,91,3,0.34332371543189194
+co-expression |cor|^6,150 samples,3,aligned,euclidean,0.7741833333333333,0.34,0,0,0.963810151456888
+co-expression |cor|^6,150 samples,3,aligned,cosine,0.9018888888888889,0.5,61,0,-0.7836289923277151
+co-expression |cor|^6,500 samples,3,default,Borda (both),0.8907722222222222,0.64,83,2,0.5806886330111659
+co-expression |cor|^6,500 samples,3,default,euclidean,0.6665,0.25,0,0,0.9929276073011237
+co-expression |cor|^6,500 samples,3,default,cosine,0.8757444444444444,0.55,64,0,-0.5564031708456771
+co-expression |cor|^6,500 samples,3,aligned,Borda (both),0.9685444444444444,0.79,98,10,0.3520289360081662
+co-expression |cor|^6,500 samples,3,aligned,euclidean,0.7656944444444445,0.44,0,0,0.9613589912018938
+co-expression |cor|^6,500 samples,3,aligned,cosine,0.8989944444444444,0.49,71,0,-0.7538641465916739
+"co-expression ((1+cor)/2)^10, no change",150 samples,3,default,Borda (both),,,0,0,0.8563252971015058
+"co-expression ((1+cor)/2)^10, no change",150 samples,3,default,euclidean,,,0,0,0.9528534400643451
+"co-expression ((1+cor)/2)^10, no change",150 samples,3,default,cosine,,,0,0,0.5985323046329073
+"co-expression ((1+cor)/2)^10, no change",150 samples,3,aligned,Borda (both),,,0,0,0.4160034706917953
+"co-expression ((1+cor)/2)^10, no change",150 samples,3,aligned,euclidean,,,0,0,0.8877110361833691
+"co-expression ((1+cor)/2)^10, no change",150 samples,3,aligned,cosine,,,0,0,-0.41796607991489504
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,3,default,Borda (both),0.8792637622424856,0.6558441558441559,67,9,0.9011240032991095
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,3,default,euclidean,0.7686707500537288,0.4155844155844156,12,1,0.9616278292697987
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,3,default,cosine,0.9333916674342206,0.8051948051948052,0,0,0.6882334072794964
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,3,aligned,Borda (both),0.26801065364895155,0.0,0,0,0.6486747048887752
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,3,aligned,euclidean,0.259195296429339,0.0,0,0,0.9027504874942782
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,3,aligned,cosine,0.3700070614964232,0.03896103896103896,0,0,0.06474315702371522
+"co-expression |cor|^6, no change",150 samples,3,default,Borda (both),,,0,0,0.4042341090597681
+"co-expression |cor|^6, no change",150 samples,3,default,euclidean,,,0,0,0.9819704776987657
+"co-expression |cor|^6, no change",150 samples,3,default,cosine,,,0,0,-0.7103677675784589
+"co-expression |cor|^6, no change",150 samples,3,aligned,Borda (both),,,0,1,0.2986095940051023
+"co-expression |cor|^6, no change",150 samples,3,aligned,euclidean,,,0,0,0.9660217571289001
+"co-expression |cor|^6, no change",150 samples,3,aligned,cosine,,,0,0,-0.787424911002731
+"co-expression |cor|^6, one module weakens",150 samples,3,default,Borda (both),0.2909966777408638,0.02142857142857143,0,0,0.48747117678269225
+"co-expression |cor|^6, one module weakens",150 samples,3,default,euclidean,0.6524210963455149,0.19285714285714287,0,0,0.9866788083833163
+"co-expression |cor|^6, one module weakens",150 samples,3,default,cosine,0.12704734219269104,0.0,0,0,-0.7554080626588893
+"co-expression |cor|^6, one module weakens",150 samples,3,aligned,Borda (both),0.07854651162790698,0.0,0,0,0.47834758685087636
+"co-expression |cor|^6, one module weakens",150 samples,3,aligned,euclidean,0.2857765780730897,0.0,0,6,0.974179521329067
+"co-expression |cor|^6, one module weakens",150 samples,3,aligned,cosine,0.28018687707641193,0.0,0,0,-0.7975045703715696
+"signed correlation, sign flips",500 samples,3,default,Borda (both),1.0,1.0,100,13,0.3629632814514846
+"signed correlation, sign flips",500 samples,3,default,euclidean,0.91985,0.63,100,10,0.9836826601624419
+"signed correlation, sign flips",500 samples,3,default,cosine,0.9995833333333334,0.97,100,11,-0.7300368889812086
+"signed correlation, sign flips",500 samples,3,aligned,Borda (both),1.0,1.0,100,0,-0.8335907054228507
+"signed correlation, sign flips",500 samples,3,aligned,euclidean,1.0,1.0,100,0,-0.6620267096336468
+"signed correlation, sign flips",500 samples,3,aligned,cosine,0.9999222222222223,0.99,100,0,-0.9259390061144562
+mixed membership,5% changed,4,default,Borda (both),0.8033775044537179,0.3333333333333333,0,0,0.43673502917485457
+mixed membership,5% changed,4,default,euclidean,0.6701604965387087,0.21839080459770116,0,0,0.8483425367578075
+mixed membership,5% changed,4,default,cosine,0.8502493268581562,0.42528735632183906,0,0,-0.19313377238476298
+mixed membership,5% changed,4,aligned,Borda (both),0.8419967298728555,0.4942528735632184,15,0,0.4361894855762006
+mixed membership,5% changed,4,aligned,euclidean,0.7037769155054462,0.26436781609195403,2,0,0.8407985561401493
+mixed membership,5% changed,4,aligned,cosine,0.8986830010330998,0.6436781609195402,24,0,-0.19418274451000542
+mixed membership (noise-free),5% changed,4,default,Borda (both),0.9081273234578747,0.6091954022988506,53,0,0.4317212499412185
+mixed membership (noise-free),5% changed,4,default,euclidean,0.8194312256469076,0.4367816091954023,33,0,0.725906629243098
+mixed membership (noise-free),5% changed,4,default,cosine,0.9498377138394709,0.8505747126436781,60,0,0.0291456302432822
+mixed membership (noise-free),5% changed,4,aligned,Borda (both),0.9959855528711228,0.8620689655172413,87,38,0.7153570402762737
+mixed membership (noise-free),5% changed,4,aligned,euclidean,0.9946352018612067,0.8390804597701149,87,47,0.7537255882637134
+mixed membership (noise-free),5% changed,4,aligned,cosine,0.996851892525075,0.8850574712643678,87,24,0.6730984200762479
+mixed membership + kernel change,5% changed,4,default,Borda (both),0.8210413991888513,0.3132530120481928,0,0,0.48930437383653635
+mixed membership + kernel change,5% changed,4,default,euclidean,0.7044451624422886,0.21686746987951808,0,0,0.8641892383092656
+mixed membership + kernel change,5% changed,4,default,cosine,0.8437816190662438,0.39759036144578314,0,0,-0.11801037091448859
+mixed membership + kernel change,5% changed,4,aligned,Borda (both),0.872835023934836,0.5060240963855421,13,0,0.5001900019496701
+mixed membership + kernel change,5% changed,4,aligned,euclidean,0.7438589927812874,0.2891566265060241,0,0,0.8539141886774708
+mixed membership + kernel change,5% changed,4,aligned,cosine,0.9059739310098546,0.5903614457831325,15,0,-0.10122238465054954
+mixed membership + kernel change (noise-free),5% changed,4,default,Borda (both),0.9367916266335632,0.6506024096385542,37,0,0.4771594009309633
+mixed membership + kernel change (noise-free),5% changed,4,default,euclidean,0.836567157833876,0.39759036144578314,12,0,0.7863890016422721
+mixed membership + kernel change (noise-free),5% changed,4,default,cosine,0.9756315310642713,0.8795180722891566,59,0,-0.0025825471915710933
+mixed membership + kernel change (noise-free),5% changed,4,aligned,Borda (both),0.9956636709151355,0.8554216867469879,83,45,0.8241776295559611
+mixed membership + kernel change (noise-free),5% changed,4,aligned,euclidean,0.9934104803122157,0.8072289156626506,83,59,0.861217968577807
+mixed membership + kernel change (noise-free),5% changed,4,aligned,cosine,0.9973811973369838,0.891566265060241,83,39,0.7752264022654634
+mixed membership,20% changed,4,default,Borda (both),0.7859326297213055,0.5208333333333334,0,0,0.4830182633402732
+mixed membership,20% changed,4,default,euclidean,0.692069467363403,0.3784722222222222,0,0,0.8559778384774647
+mixed membership,20% changed,4,default,cosine,0.8001466813348002,0.5625,0,0,-0.13563460243637104
+mixed membership,20% changed,4,aligned,Borda (both),0.8690639897323066,0.6493055555555556,14,0,0.4796204672568618
+mixed membership,20% changed,4,aligned,euclidean,0.7546811972863953,0.4652777777777778,0,0,0.8449237296684415
+mixed membership,20% changed,4,aligned,cosine,0.8939439516868354,0.7256944444444444,11,0,-0.13951662583702093
+mixed membership (noise-free),20% changed,4,default,Borda (both),0.8684781238540521,0.5972222222222222,0,0,0.39780684754265094
+mixed membership (noise-free),20% changed,4,default,euclidean,0.780423485056839,0.4652777777777778,0,0,0.7090356310298052
+mixed membership (noise-free),20% changed,4,default,cosine,0.9001463948478181,0.6805555555555556,60,0,-0.016673346387848464
+mixed membership (noise-free),20% changed,4,aligned,Borda (both),0.9951827213971397,0.9340277777777778,288,25,0.6445199143616016
+mixed membership (noise-free),20% changed,4,aligned,euclidean,0.9938548542354235,0.9201388888888888,288,28,0.6974141637862129
+mixed membership (noise-free),20% changed,4,aligned,cosine,0.9957929386688669,0.9340277777777778,288,20,0.5871323908561225
+mixed membership + kernel change,20% changed,4,default,Borda (both),0.7628210717673513,0.48598130841121495,0,0,0.522181767543934
+mixed membership + kernel change,20% changed,4,default,euclidean,0.6526308001659361,0.35514018691588783,0,0,0.8709440685022223
+mixed membership + kernel change,20% changed,4,default,cosine,0.7908333531505394,0.5389408099688473,0,0,-0.09431295698848907
+mixed membership + kernel change,20% changed,4,aligned,Borda (both),0.8507447306049004,0.6479750778816199,0,0,0.43030415739113703
+mixed membership + kernel change,20% changed,4,aligned,euclidean,0.7142279612851061,0.42990654205607476,0,0,0.8169947905226296
+mixed membership + kernel change,20% changed,4,aligned,cosine,0.8790212414026354,0.6822429906542056,0,0,-0.23510359467471525
+mixed membership + kernel change (noise-free),20% changed,4,default,Borda (both),0.8421982301913814,0.5950155763239875,0,0,0.497565050561569
+mixed membership + kernel change (noise-free),20% changed,4,default,euclidean,0.7281502091375817,0.4454828660436137,0,0,0.7900384646736236
+mixed membership + kernel change (noise-free),20% changed,4,default,cosine,0.8822831535252167,0.7133956386292835,71,0,-0.0004652986761842089
+mixed membership + kernel change (noise-free),20% changed,4,aligned,Borda (both),0.9888363072353941,0.8909657320872274,321,11,0.7410237842015902
+mixed membership + kernel change (noise-free),20% changed,4,aligned,euclidean,0.9852190065502472,0.8722741433021807,321,16,0.8049535351066125
+mixed membership + kernel change (noise-free),20% changed,4,aligned,cosine,0.9906793074018586,0.9034267912772586,321,3,0.6546361633332359
+mixed membership,40% changed,4,default,Borda (both),0.7252663363035703,0.5780141843971631,0,0,0.5093731387381535
+mixed membership,40% changed,4,default,euclidean,0.6295718539734497,0.48226950354609927,0,0,0.8595198293830191
+mixed membership,40% changed,4,default,cosine,0.7531691368127539,0.599290780141844,0,0,-0.08528123483447463
+mixed membership,40% changed,4,aligned,Borda (both),0.8614719721767594,0.7304964539007093,0,0,0.5047628705572411
+mixed membership,40% changed,4,aligned,euclidean,0.7309577120082439,0.5815602836879432,0,0,0.852668535913202
+mixed membership,40% changed,4,aligned,cosine,0.8928176335091229,0.7960992907801419,0,0,-0.21237199929130057
+mixed membership (noise-free),40% changed,4,default,Borda (both),0.7837949702976299,0.6099290780141844,0,0,0.4329935040080346
+mixed membership (noise-free),40% changed,4,default,euclidean,0.6888667257683215,0.526595744680851,0,0,0.7296120032660292
+mixed membership (noise-free),40% changed,4,default,cosine,0.8257950309147117,0.6578014184397163,0,0,-0.0014594192227081798
+mixed membership (noise-free),40% changed,4,aligned,Borda (both),0.998484572952658,0.9787234042553191,564,3,0.43740166769115524
+mixed membership (noise-free),40% changed,4,aligned,euclidean,0.9975847881432988,0.9716312056737588,564,6,0.5672161703678503
+mixed membership (noise-free),40% changed,4,aligned,cosine,0.9988984739649633,0.9822695035460993,564,1,0.3120004016659309
+mixed membership + kernel change,40% changed,4,default,Borda (both),0.7026359143327842,0.5683690280065898,0,0,0.5202968574422678
+mixed membership + kernel change,40% changed,4,default,euclidean,0.6146829357385191,0.48105436573311366,0,0,0.8598511194997012
+mixed membership + kernel change,40% changed,4,default,cosine,0.7316996002221193,0.6046128500823723,0,0,-0.05971000254313541
+mixed membership + kernel change,40% changed,4,aligned,Borda (both),0.8525544644323135,0.7413509060955519,0,0,0.5098898681529529
+mixed membership + kernel change,40% changed,4,aligned,euclidean,0.7273918874792225,0.5930807248764415,0,0,0.8392039743846998
+mixed membership + kernel change,40% changed,4,aligned,cosine,0.8821300947696803,0.7907742998352554,0,0,-0.16457630450238167
+mixed membership + kernel change (noise-free),40% changed,4,default,Borda (both),0.7883557082267166,0.6523887973640856,0,0,0.4442746109544409
+mixed membership + kernel change (noise-free),40% changed,4,default,euclidean,0.6886086364567172,0.5502471169686985,0,0,0.737774937885805
+mixed membership + kernel change (noise-free),40% changed,4,default,cosine,0.8362285098634631,0.6902800658978583,0,0,-0.006737007018697976
+mixed membership + kernel change (noise-free),40% changed,4,aligned,Borda (both),0.9995563148117059,0.9884678747940692,606,0,0.6897541152134596
+mixed membership + kernel change (noise-free),40% changed,4,aligned,euclidean,0.99933770069606,0.9868204283360791,606,0,0.7838515064136601
+mixed membership + kernel change (noise-free),40% changed,4,aligned,cosine,0.9995664614584236,0.9901153212520593,606,0,0.5634718760427261
+DC-SBM switch,10% changed,4,default,Borda (both),0.9997873840984048,0.971830985915493,142,5,0.36440657840286644
+DC-SBM switch,10% changed,4,default,euclidean,0.9578138936713062,0.6126760563380281,140,23,0.7415818817692901
+DC-SBM switch,10% changed,4,default,cosine,1.0,1.0,142,1,-0.26449724376113154
+DC-SBM switch,10% changed,4,aligned,Borda (both),1.0,1.0,142,15,0.07169731041245171
+DC-SBM switch,10% changed,4,aligned,euclidean,0.9939404468045385,0.8802816901408451,142,24,0.5542665255892609
+DC-SBM switch,10% changed,4,aligned,cosine,1.0,1.0,142,9,-0.49089836175484436
+DC-SBM switch,30% changed,4,default,Borda (both),0.9817444845410698,0.8921775898520085,0,0,0.6335591367025851
+DC-SBM switch,30% changed,4,default,euclidean,0.8151361443972571,0.5687103594080338,2,1,0.8900855100840525
+DC-SBM switch,30% changed,4,default,cosine,0.9987370592316133,0.9809725158562368,0,0,-0.0950178354294214
+DC-SBM switch,30% changed,4,aligned,Borda (both),1.0,1.0,473,3,0.18518442755713826
+DC-SBM switch,30% changed,4,aligned,euclidean,0.9957716701902748,0.9640591966173362,473,4,0.615457377859153
+DC-SBM switch,30% changed,4,aligned,cosine,0.9999979414168404,0.9978858350951374,473,0,-0.4329277144292856
+co-expression ((1+cor)/2)^10,150 samples,4,default,Borda (both),0.8916333333333334,0.6,68,1,0.9247599832230262
+co-expression ((1+cor)/2)^10,150 samples,4,default,euclidean,0.74855,0.27,46,0,0.976348863832572
+co-expression ((1+cor)/2)^10,150 samples,4,default,cosine,0.9549666666666666,0.84,63,1,0.754008230316951
+co-expression ((1+cor)/2)^10,150 samples,4,aligned,Borda (both),0.9883444444444445,0.89,86,4,0.4243653552002643
+co-expression ((1+cor)/2)^10,150 samples,4,aligned,euclidean,0.8873722222222222,0.58,0,0,0.8782629733077449
+co-expression ((1+cor)/2)^10,150 samples,4,aligned,cosine,0.9969055555555556,0.95,91,0,-0.528028406163913
+co-expression ((1+cor)/2)^10,500 samples,4,default,Borda (both),0.9014111111111112,0.59,93,0,0.9545823909966699
+co-expression ((1+cor)/2)^10,500 samples,4,default,euclidean,0.7638388888888888,0.28,73,0,0.9795536218500962
+co-expression ((1+cor)/2)^10,500 samples,4,default,cosine,0.9691611111111111,0.84,72,0,0.872387324908357
+co-expression ((1+cor)/2)^10,500 samples,4,aligned,Borda (both),0.9999555555555556,0.99,100,1,0.3153094205975475
+co-expression ((1+cor)/2)^10,500 samples,4,aligned,euclidean,0.9652,0.73,95,5,0.8522764669899375
+co-expression ((1+cor)/2)^10,500 samples,4,aligned,cosine,1.0,1.0,100,1,-0.5965753917893608
+co-expression |cor|^6,150 samples,4,default,Borda (both),0.91255,0.68,52,0,0.5603350144605217
+co-expression |cor|^6,150 samples,4,default,euclidean,0.6747277777777778,0.2,12,0,0.9919879889216744
+co-expression |cor|^6,150 samples,4,default,cosine,0.8728555555555556,0.54,29,0,-0.591397913536102
+co-expression |cor|^6,150 samples,4,aligned,Borda (both),0.98725,0.85,80,4,0.3591703529481396
+co-expression |cor|^6,150 samples,4,aligned,euclidean,0.7400055555555556,0.29,0,0,0.9641979133115206
+co-expression |cor|^6,150 samples,4,aligned,cosine,0.8933444444444445,0.46,53,0,-0.8246869089202178
+co-expression |cor|^6,500 samples,4,default,Borda (both),0.9522722222222222,0.71,90,5,0.538930412520324
+co-expression |cor|^6,500 samples,4,default,euclidean,0.7234388888888889,0.26,17,6,0.9937146785261296
+co-expression |cor|^6,500 samples,4,default,cosine,0.8963888888888889,0.53,69,0,-0.5731979554736584
+co-expression |cor|^6,500 samples,4,aligned,Borda (both),0.9841555555555556,0.85,99,8,0.2742137519889088
+co-expression |cor|^6,500 samples,4,aligned,euclidean,0.8198444444444445,0.49,0,0,0.9632248179171462
+co-expression |cor|^6,500 samples,4,aligned,cosine,0.8822,0.42,92,1,-0.7930806239210642
+"co-expression ((1+cor)/2)^10, no change",150 samples,4,default,Borda (both),,,0,0,0.8856712327535915
+"co-expression ((1+cor)/2)^10, no change",150 samples,4,default,euclidean,,,0,0,0.9617195165993634
+"co-expression ((1+cor)/2)^10, no change",150 samples,4,default,cosine,,,0,0,0.6697666763153886
+"co-expression ((1+cor)/2)^10, no change",150 samples,4,aligned,Borda (both),,,0,0,0.451757064033729
+"co-expression ((1+cor)/2)^10, no change",150 samples,4,aligned,euclidean,,,0,0,0.8735073314308291
+"co-expression ((1+cor)/2)^10, no change",150 samples,4,aligned,cosine,,,0,0,-0.2994529838791394
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,4,default,Borda (both),0.8946288752130825,0.6686746987951807,0,0,0.887776207126762
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,4,default,euclidean,0.800384993210251,0.4759036144578313,0,0,0.9551087959641141
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,4,default,cosine,0.9341141544595649,0.8192771084337349,0,0,0.6670616414848477
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,4,aligned,Borda (both),0.37031940712490247,0.018072289156626505,0,0,0.580999138692983
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,4,aligned,euclidean,0.3235279246482332,0.0,0,1,0.8935882027751947
+"co-expression ((1+cor)/2)^10, one module weakens",150 samples,4,aligned,cosine,0.48123790124526883,0.1144578313253012,0,0,-0.069855000551732
+"co-expression |cor|^6, no change",150 samples,4,default,Borda (both),,,0,0,0.4358949565099452
+"co-expression |cor|^6, no change",150 samples,4,default,euclidean,,,0,0,0.9841416103337604
+"co-expression |cor|^6, no change",150 samples,4,default,cosine,,,0,0,-0.6583385032641756
+"co-expression |cor|^6, no change",150 samples,4,aligned,Borda (both),,,0,0,0.3490333170948206
+"co-expression |cor|^6, no change",150 samples,4,aligned,euclidean,,,0,0,0.9615450060457784
+"co-expression |cor|^6, no change",150 samples,4,aligned,cosine,,,0,0,-0.7277729483889414
+"co-expression |cor|^6, one module weakens",150 samples,4,default,Borda (both),0.2738909917362277,0.02877697841726619,0,0,0.4748700893892648
+"co-expression |cor|^6, one module weakens",150 samples,4,default,euclidean,0.6113562111982888,0.16546762589928057,0,0,0.9799129154704938
+"co-expression |cor|^6, one module weakens",150 samples,4,default,cosine,0.15122953901687014,0.0,0,0,-0.7111247282010255
+"co-expression |cor|^6, one module weakens",150 samples,4,aligned,Borda (both),0.1667251564601977,0.007194244604316547,0,0,0.42894057430511734
+"co-expression |cor|^6, one module weakens",150 samples,4,aligned,euclidean,0.29822274584513575,0.0,0,3,0.9661801163349412
+"co-expression |cor|^6, one module weakens",150 samples,4,aligned,cosine,0.39488130749755596,0.04316546762589928,0,0,-0.7517507738270935
+"signed correlation, sign flips",500 samples,4,default,Borda (both),1.0,1.0,100,1,0.29650124156348556
+"signed correlation, sign flips",500 samples,4,default,euclidean,0.9367222222222222,0.67,97,1,0.9696514881514916
+"signed correlation, sign flips",500 samples,4,default,cosine,0.9997277777777778,0.96,100,2,-0.6374592870792879
+"signed correlation, sign flips",500 samples,4,aligned,Borda (both),1.0,1.0,100,0,-0.8242380735694443
+"signed correlation, sign flips",500 samples,4,aligned,euclidean,1.0,1.0,100,0,-0.6626131328743512
+"signed correlation, sign flips",500 samples,4,aligned,cosine,1.0,1.0,100,0,-0.915174734488938
