@@ -1,28 +1,21 @@
-"""Two truths: the UASE target versus the nodes whose own latent position changed.
+"""The two-truths phenomenon (Priebe et al., PNAS 2019) for differential ranking.
 
-The consistency theorem is about the distance between a node's population UASE positions. Under a
-latent position model P^(k) = Phi^(k) Lambda_k Phi^(k)^T, those positions are
-Y^(k) = Phi^(k) M_k for a d x d matrix M_k that depends on every node of layer k. So when some nodes
-change (or the layer's kernel Lambda_k changes), M_1 != M_2 and *every* node moves, even nodes whose
-own latent position is unchanged ("spill-over"). With Euclidean distance the spill-over of node i is
-||Phi_i (M_1 - M_2)||, which grows with degree.
+On the same graph, adjacency spectral embedding (ASE) tends to reveal core-periphery structure
+(hubs versus the rest), while Laplacian spectral embedding (LSE) tends to reveal affinity structure
+(communities). n2v2r embeds with the unfolded adjacency (UASE) by default; the regularised unfolded
+Laplacian (ULSE) is an option. This script asks which kind of *change* each captures:
 
-Spill-over is a single linear map per layer, so it can be removed: fit G with Y^(1) G ~= Y^(2) on the
-nodes that did not change and measure distances after aligning. The unchanged nodes are unknown, so
-G is fitted robustly (least trimmed squares), which works when most nodes are unchanged, the same
-assumption as between-sample normalisation in differential expression. This script compares the
-default distances with the aligned ones in:
+- an affinity change: a node moves to another community (hemisphere), keeping its core/periphery
+  status;
+- a core-periphery change: a node moves between core and periphery, keeping its community.
 
-1. mixed-membership latent positions with Poisson weights, 5-40% of nodes changing;
-2. the same with a global change of the kernel (every module's strength changes);
-3. a degree-corrected SBM where nodes switch community;
-4. co-expression networks (hdWGCNA's signed ((1+cor)/2)^10 and WGCNA's |cor|^6);
-5. co-expression with no change (false calls), and with one whole module weakening, a change of
-   the kernel that alignment absorbs by design;
-6. signed correlation networks where 10% of genes turn anti-correlated with their module.
+It uses a 4-block SBM (2 communities x core/periphery, as in Priebe et al.'s connectome example), with
+and without degree heterogeneity, and co-expression networks where a gene either switches module
+(affinity) or changes how strongly it loads on its module (hub status). For each embedding (UASE,
+ULSE), metric (euclidean, cosine, both) and dimension choice (2, the true rank, the default Borda over
+4-24), it reports the AUROC for the changed nodes. "UASE + ULSE" is the Borda of both embeddings'
+default rankings; the absolute degree difference (DeDi) is shown in the same column for reference.
 
-Truth is "the node's own latent position changed". Reported: AUROC of the Borda over the default
-dimensions (4-24) and metrics, and calls at q < 0.1 from the degree-adjusted empirical null test.
 Run with ``python benchmarks/two_truths.py``; results go to ``results/two_truths.csv``.
 """
 
@@ -35,14 +28,19 @@ from scipy.stats import rankdata
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from node2vec2rank.embedding import uase  # noqa: E402
+from node2vec2rank.embedding import embed  # noqa: E402
 from node2vec2rank.model_utils import borda_aggregate, compute_pairwise_distances  # noqa: E402
-from node2vec2rank.significance import empirical_null_test  # noqa: E402
-from node2vec2rank.simulate import coexpression_network, simulate_expression  # noqa: E402
+from node2vec2rank.simulate import coexpression_network  # noqa: E402
 
 RESULTS = os.path.join(os.path.dirname(__file__), "results")
-DIMS = list(range(4, 25, 2))
-METRICS = ("euclidean", "cosine")
+DEFAULT_DIMS = list(range(4, 25, 2))
+METRICS = {"euclidean": ("euclidean",), "cosine": ("cosine",), "both": ("euclidean", "cosine")}
+
+# blocks: (community 0, core), (community 0, periphery), (community 1, core), (community 1, periphery)
+TWO_TRUTHS_B = np.array([[0.30, 0.05, 0.15, 0.03],
+                         [0.05, 0.02, 0.03, 0.01],
+                         [0.15, 0.03, 0.30, 0.05],
+                         [0.03, 0.01, 0.05, 0.02]])
 
 
 def auroc(labels, scores):
@@ -52,168 +50,96 @@ def auroc(labels, scores):
     return (ranks[labels].sum() - positives * (positives + 1) / 2) / (positives * (len(labels) - positives))
 
 
-def robust_linear_alignment(source, target, keep=0.5, max_iterations=50):
-    """Least trimmed squares fit of a d x d matrix G with source @ G ~= target.
-
-    Starts from ordinary least squares and from the identity, and alternates between fitting G on
-    the ``keep`` fraction of rows with the smallest residuals and recomputing the residuals
-    (concentration steps), keeping the start with the smaller trimmed loss.
-    """
-    n, d = source.shape
-    h = max(d + 1, int(keep * n))
-    best, best_loss = None, np.inf
-    for start in (np.linalg.lstsq(source, target, rcond=None)[0], np.eye(d)):
-        g = start
-        chosen = None
-        for _ in range(max_iterations):
-            residuals = np.linalg.norm(source @ g - target, axis=1)
-            new = np.sort(np.argpartition(residuals, h - 1)[:h])
-            if chosen is not None and np.array_equal(new, chosen):
-                break
-            chosen = new
-            g = np.linalg.lstsq(source[chosen], target[chosen], rcond=None)[0]
-        loss = np.sort(np.linalg.norm(source @ g - target, axis=1) ** 2)[:h].sum()
-        if loss < best_loss:
-            best, best_loss = g, loss
-    return best
+def scores(embeddings, dims, metrics):
+    columns = [compute_pairwise_distances(embeddings[0, :, :d], embeddings[1, :, :d], metric)
+               for d in dims for metric in metrics]
+    return borda_aggregate(np.column_stack(columns))
 
 
-def distance_table(embeddings, align):
-    columns = {}
-    for d in DIMS:
-        one, two = embeddings[0, :, :d], embeddings[1, :, :d]
-        if align:
-            one = one @ robust_linear_alignment(one, two)
-        for metric in METRICS:
-            columns[(d, metric)] = compute_pairwise_distances(one, two, metric)
-    return pd.DataFrame(columns)
+def evaluate(graphs, changed, scenario, change, rank, rep, rows):
+    degree_difference = np.abs(np.abs(np.asarray(graphs[1])).sum(axis=0)
+                               - np.abs(np.asarray(graphs[0])).sum(axis=0))
+    rows.append(dict(scenario=scenario, change=change, rep=rep, embedding="DeDi (degree difference)",
+                     dims="default 4-24", metric="both", auroc=auroc(changed, degree_difference)))
+    default_scores = []
+    for method in ("uase", "ulse"):
+        embeddings = embed(graphs, max(DEFAULT_DIMS), method=method, random_state=rep)
+        for dims_name, dims in (("d=2", [2]), ("true rank", [rank]), ("default 4-24", DEFAULT_DIMS)):
+            for metric_name, metrics in METRICS.items():
+                s = scores(embeddings, dims, metrics)
+                if dims_name == "default 4-24" and metric_name == "both":
+                    default_scores.append(s)
+                rows.append(dict(scenario=scenario, change=change, rep=rep, embedding=method.upper(),
+                                 dims=dims_name, metric=metric_name, auroc=auroc(changed, s)))
+    rows.append(dict(scenario=scenario, change=change, rep=rep, embedding="UASE + ULSE",
+                     dims="default 4-24", metric="both",
+                     auroc=auroc(changed, borda_aggregate(np.column_stack(default_scores)))))
 
 
-def evaluate(graphs, changed, scenario, setting, rep, rows):
-    embeddings = uase(graphs, max(DIMS), random_state=rep)
-    degree = np.mean([np.abs(g).sum(axis=0) for g in graphs], axis=0)
-    for align in (False, True):
-        table = distance_table(embeddings, align)
-        variants = {"Borda (both)": table, "euclidean": table.xs("euclidean", axis=1, level=1),
-                    "cosine": table.xs("cosine", axis=1, level=1)}
-        for metric, frame in variants.items():
-            values = frame.to_numpy()
-            borda = borda_aggregate(values)
-            _, _, q = empirical_null_test(values, degree)
-            calls = q < 0.1
-            top = rankdata(-borda, method="ordinal") <= changed.sum()
-            rows.append(dict(scenario=scenario, setting=setting, rep=rep,
-                             distances="aligned" if align else "default", metric=metric,
-                             auroc=auroc(changed, borda) if changed.any() else np.nan,
-                             top_k_precision=changed[top].mean() if changed.any() else np.nan,
-                             true_calls=int(np.sum(calls & changed)),
-                             false_calls=int(np.sum(calls & ~changed)),
-                             unchanged_vs_degree=pd.Series(borda[~changed]).corr(
-                                 pd.Series(degree[~changed]), method="spearman")))
-
-
-def poisson_graph(mean, rng, scale=2.0):
-    upper = np.triu(rng.poisson(scale * mean) / scale, 1)
+def bernoulli_graph(mean, rng):
+    upper = np.triu(rng.random(mean.shape) < mean, 1).astype(float)
     return upper + upper.T
 
 
-def mixed_membership(n, rank, rng, frac_changed, kernel_change):
-    centres = np.eye(rank) * 0.6 + 0.1
-    degree = rng.uniform(0.3, 1.0, n)
-    before = degree[:, None] * rng.dirichlet(np.full(rank, 0.3), n) @ centres
+def block_graphs(n, rng, change, degree_corrected, frac_changed=0.1):
+    blocks = rng.integers(0, 4, n)
+    community, core = blocks // 2, blocks % 2
     changed = rng.random(n) < frac_changed
-    after = before.copy()
-    after[changed] = degree[changed, None] * rng.dirichlet(np.full(rank, 0.3), changed.sum()) @ centres
-    kernel = np.diag(rng.uniform(0.6, 1.4, rank)) if kernel_change else np.eye(rank)
-    means = [before @ before.T, after @ kernel @ after.T]
-    for mean in means:
-        np.fill_diagonal(mean, 0)
-    return means, changed
+    if change == "affinity":
+        community = np.where(changed, 1 - community, community)
+    else:
+        core = np.where(changed, 1 - core, core)
+    blocks_after = 2 * community + core
+    theta = rng.pareto(3, n) + 1 if degree_corrected else np.ones(n)
+    theta = np.minimum(theta / theta.mean(), 4.0)
+    means = [np.clip(np.outer(theta, theta) * TWO_TRUTHS_B[b][:, b], 0, 1) for b in (blocks, blocks_after)]
+    return [bernoulli_graph(m, rng) for m in means], changed
 
 
-def dcsbm(n, k, rng, frac_changed):
-    b = np.full((k, k), 0.05) + np.eye(k) * 0.25
-    z = rng.integers(0, k, n)
-    changed = rng.random(n) < frac_changed
-    z_after = z.copy()
-    z_after[changed] = (z[changed] + rng.integers(1, k, changed.sum())) % k
-    theta = rng.pareto(2.5, n) + 1
-    theta /= theta.mean()
-    means = [np.outer(theta, theta) * b[a][:, a] for a in (z, z_after)]
-    for mean in means:
-        np.fill_diagonal(mean, 0)
-    return means, changed
-
-
-def module_expression(num_genes, samples, rng, num_modules=5, weaken=None, num_flipped=0):
-    """Factor-model expression.
-
-    ``weaken`` scales the loadings of module 0 in the second condition; ``num_flipped`` module genes
-    turn anti-correlated with their module in the second condition. Returns the expression of both
-    conditions and the genes of module 0 (or the flipped genes, if any).
-    """
-    modules = np.where(rng.random(num_genes) < 0.7, rng.integers(0, num_modules, num_genes), -1)
-    loadings = rng.uniform(0.3, 0.9, num_genes) * (modules >= 0)
-    flipped = np.zeros(num_genes, bool)
-    flipped[rng.choice(np.flatnonzero(modules >= 0), num_flipped, replace=False)] = True
-    expression = []
-    for condition in range(2):
-        scaled = loadings * (weaken if condition == 1 and weaken is not None else 1.0) ** (modules == 0)
-        if condition == 1:
-            scaled = np.where(flipped, -scaled, scaled)
+def expression(num_genes, samples, rng, change, num_modules=5, frac_changed=0.1):
+    """Factor-model expression; changed genes switch module (affinity) or hub status (loading)."""
+    modules = np.where(rng.random(num_genes) < 0.8, rng.integers(0, num_modules, num_genes), -1)
+    hub = rng.random(num_genes) < 0.3
+    loadings = np.where(hub, 0.85, 0.4) * (modules >= 0)
+    member = np.flatnonzero(modules >= 0)
+    changed = np.zeros(num_genes, bool)
+    changed[rng.choice(member, int(frac_changed * num_genes), replace=False)] = True
+    modules_after, loadings_after = modules.copy(), loadings.copy()
+    if change == "affinity":
+        modules_after[changed] = (modules[changed] + rng.integers(1, num_modules, changed.sum())) % num_modules
+    else:
+        loadings_after[changed] = np.where(hub[changed], 0.4, 0.85)
+    data = []
+    for mods, load in ((modules, loadings), (modules_after, loadings_after)):
         factors = rng.standard_normal((samples, num_modules))
-        signal = np.where(modules >= 0, factors[:, np.maximum(modules, 0)] * scaled, 0.0)
-        expression.append(signal + rng.standard_normal((samples, num_genes)) * np.sqrt(1 - scaled ** 2))
-    return expression, flipped if num_flipped else modules == 0
+        signal = np.where(mods >= 0, factors[:, np.maximum(mods, 0)] * load, 0.0)
+        data.append(signal + rng.standard_normal((samples, num_genes)) * np.sqrt(1 - load ** 2))
+    return data, changed
 
 
 def main(reps=5):
-    rng = np.random.default_rng(2027)
+    rng = np.random.default_rng(2019)
     rows = []
     for rep in range(reps):
-        for frac in (0.05, 0.2, 0.4):
-            for kernel_change in (False, True):
-                means, changed = mixed_membership(1500, 4, rng, frac, kernel_change)
-                scenario = "mixed membership + kernel change" if kernel_change else "mixed membership"
-                evaluate([poisson_graph(m, rng) for m in means], changed, scenario, f"{frac:.0%} changed",
-                         rep, rows)
-                evaluate(means, changed, scenario + " (noise-free)", f"{frac:.0%} changed", rep, rows)
-        for frac in (0.1, 0.3):
-            means, changed = dcsbm(1500, 6, rng, frac)
-            evaluate([poisson_graph(m, rng, 5.0) for m in means], changed, "DC-SBM switch",
-                     f"{frac:.0%} changed", rep, rows)
-        for power, signed in ((10, True), (6, False)):
-            for samples in (150, 500):
-                sim = simulate_expression(num_genes=1000, num_samples=samples, frac_rewired=0.1,
-                                          frac_differentially_expressed=0.0, random_state=rng)
-                graphs = [coexpression_network(e, power=power, signed=signed) for e in sim.expression]
+        for change in ("affinity", "core-periphery"):
+            for degree_corrected in (False, True):
+                graphs, changed = block_graphs(2000, rng, change, degree_corrected)
+                scenario = "4-block SBM" + (", degree-corrected" if degree_corrected else "")
+                evaluate(graphs, changed, scenario, change, 4, rep, rows)
+            for power, signed in ((10, True), (6, False)):
+                data, changed = expression(1000, 150, rng, change)
+                graphs = [coexpression_network(x, power=power, signed=signed) for x in data]
                 name = "co-expression ((1+cor)/2)^10" if signed else "co-expression |cor|^6"
-                evaluate(graphs, sim.rewired.to_numpy(), name, f"{samples} samples", rep, rows)
-        for power, signed in ((10, True), (6, False)):
-            name = "((1+cor)/2)^10" if signed else "|cor|^6"
-            # nothing changes: false calls only
-            expression, _ = module_expression(1000, 150, rng)
-            graphs = [coexpression_network(e, power=power, signed=signed) for e in expression]
-            evaluate(graphs, np.zeros(1000, bool), f"co-expression {name}, no change", "150 samples",
-                     rep, rows)
-            # a whole module weakens: a change of the kernel, which alignment absorbs by design
-            expression, module = module_expression(1000, 150, rng, weaken=0.6)
-            graphs = [coexpression_network(e, power=power, signed=signed) for e in expression]
-            evaluate(graphs, module, f"co-expression {name}, one module weakens", "150 samples",
-                     rep, rows)
-        # genes turning anti-correlated, in the signed correlation network (zero diagonal)
-        expression, flipped = module_expression(1000, 500, rng, num_flipped=100)
-        graphs = [np.corrcoef(e, rowvar=False) - np.eye(1000) for e in expression]
-        evaluate(graphs, flipped, "signed correlation, sign flips", "500 samples", rep, rows)
+                evaluate(graphs, changed, name, "module switch" if change == "affinity" else "hub status",
+                         5, rep, rows)
 
     results = pd.DataFrame(rows)
     results.to_csv(os.path.join(RESULTS, "two_truths.csv"), index=False)
-    summary = (results.groupby(["scenario", "setting", "metric", "distances"])
-               [["auroc", "top_k_precision", "true_calls", "false_calls", "unchanged_vs_degree"]]
-               .mean().round(3))
-    pd.set_option("display.width", 220)
-    pd.set_option("display.max_rows", 500)
-    print(summary)
+    table = results.pivot_table(index=["scenario", "change", "embedding"], columns=["dims", "metric"],
+                                values="auroc", aggfunc="mean").round(2)
+    pd.set_option("display.width", 250)
+    pd.set_option("display.max_columns", 30)
+    print(table.to_string())
 
 
 if __name__ == "__main__":
