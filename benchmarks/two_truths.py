@@ -16,7 +16,12 @@ ULSE), metric (euclidean, cosine, both) and dimension choice (2, the true rank, 
 4-24), it reports the AUROC for the changed nodes. "UASE + ULSE" is the Borda of both embeddings'
 default rankings; the absolute degree difference (DeDi) is shown in the same column for reference.
 
-Run with ``python benchmarks/two_truths.py``; results go to ``results/two_truths.csv``.
+Part 2 puts both kinds of change in the same degree-corrected graphs (5% of nodes change hub status,
+5% community, 5% both) and splits Euclidean distance into its radial part (change of the norm) and its
+angular part (cosine), for several change sizes and binary or Poisson weights.
+
+Run with ``python benchmarks/two_truths.py`` (about 2.5 minutes); results go to
+``results/two_truths.csv`` and ``results/two_truths_mixed.csv``.
 """
 
 import os
@@ -30,6 +35,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from node2vec2rank.embedding import embed  # noqa: E402
 from node2vec2rank.model_utils import borda_aggregate, compute_pairwise_distances  # noqa: E402
+from node2vec2rank.significance import empirical_null_test  # noqa: E402
 from node2vec2rank.simulate import coexpression_network  # noqa: E402
 
 RESULTS = os.path.join(os.path.dirname(__file__), "results")
@@ -117,6 +123,81 @@ def expression(num_genes, samples, rng, change, num_modules=5, frac_changed=0.1)
     return data, changed
 
 
+# --- part 2: both truths in the same graphs, radial vs angular change ----------------------------
+#
+# ||x - y||^2 = (||x|| - ||y||)^2 + 2 ||x|| ||y|| (1 - cos(x, y)), so Euclidean distance mixes a radial
+# change (the node's norm, i.e. its weight in the leading structure: hub status) and an angular change
+# (its direction: community), with the angular part weighted by the product of the norms. Cosine
+# keeps only the angular part. The radial part alone is a third, "hub" ranking.
+
+def radial_angular(embeddings, dims):
+    radial, angular, euclid = [], [], []
+    for d in dims:
+        one, two = embeddings[0, :, :d], embeddings[1, :, :d]
+        radial.append(np.abs(np.linalg.norm(one, axis=1) - np.linalg.norm(two, axis=1)))
+        angular.append(compute_pairwise_distances(one, two, "cosine"))
+        euclid.append(compute_pairwise_distances(one, two, "euclidean"))
+    return np.column_stack(radial), np.column_stack(angular), np.column_stack(euclid)
+
+
+def mixed_graphs(n, rng, weights, hub_factor=2.0, community_shift=1.0, frac=0.05):
+    """4-block DC-SBM; disjoint sets of nodes change hub status, community, or both."""
+    blocks = rng.integers(0, 4, n)
+    community, core = blocks // 2, blocks % 2
+    kind = rng.choice(["none", "hub", "community", "both"], n, p=[1 - 3 * frac, frac, frac, frac])
+    theta = np.minimum((rng.pareto(3, n) + 1) / 1.5, 4.0)
+    theta_after = theta.copy()
+    hub = np.isin(kind, ["hub", "both"])
+    up = rng.random(n) < 0.5
+    theta_after[hub] = np.where(up[hub], theta[hub] * hub_factor, theta[hub] / hub_factor)
+    moved = np.isin(kind, ["community", "both"])
+    # a moved node keeps (1 - shift) of its old community's connections and gains shift of the other's
+    membership = np.eye(4)[blocks]
+    other = np.eye(4)[2 * (1 - community) + core]
+    membership_after = np.where(moved[:, None], (1 - community_shift) * membership + community_shift * other,
+                                membership)
+    means = [np.clip(np.outer(t, t) * (m @ TWO_TRUTHS_B @ m.T), 0, 1)
+             for t, m in ((theta, membership), (theta_after, membership_after))]
+    graphs = []
+    for mean in means:
+        if weights == "binary":
+            upper = np.triu(rng.random(mean.shape) < mean, 1).astype(float)
+        else:  # Poisson counts with mean 5 * P, rescaled
+            upper = np.triu(rng.poisson(5 * mean) / 5, 1)
+        graphs.append(upper + upper.T)
+    return graphs, kind
+
+
+def mixed_experiment(rng, reps=5, n=2000):
+    rows = []
+    settings = [("binary", 2.0, 1.0), ("poisson", 2.0, 1.0), ("binary", 1.5, 0.5), ("binary", 1.25, 0.25)]
+    for rep in range(reps):
+        for weights, hub_factor, shift in settings:
+            graphs, kind = mixed_graphs(n, rng, weights, hub_factor, shift)
+            degree = np.mean([g.sum(axis=0) for g in graphs], axis=0)
+            dedi = np.abs(graphs[1].sum(axis=0) - graphs[0].sum(axis=0))
+            for method in ("uase", "ulse"):
+                embeddings = embed(graphs, max(DEFAULT_DIMS), method=method, random_state=rep)
+                for dims_name, dims in (("d=4 (true rank)", [4]), ("default 4-24", DEFAULT_DIMS)):
+                    radial, angular, euclid = radial_angular(embeddings, dims)
+                    rankings = {"euclidean": euclid, "cosine": angular, "radial": radial,
+                                "euclidean + cosine (default)": np.hstack([euclid, angular]),
+                                "radial + cosine": np.hstack([radial, angular])}
+                    if method == "uase" and dims_name == "default 4-24":
+                        rankings["DeDi"] = dedi[:, None]
+                    for name, columns in rankings.items():
+                        score = borda_aggregate(columns)
+                        _, _, q = empirical_null_test(columns, degree)
+                        for truth in ("hub", "community", "both"):
+                            keep = np.isin(kind, [truth, "none"])
+                            rows.append(dict(weights=weights, hub_factor=hub_factor, shift=shift, rep=rep,
+                                             embedding=method.upper(), dims=dims_name, ranking=name,
+                                             truth=truth, auroc=auroc(kind[keep] == truth, score[keep]),
+                                             calls=int(np.sum((q < 0.1) & (kind == truth))),
+                                             false_calls=int(np.sum((q < 0.1) & (kind == "none")))))
+    return pd.DataFrame(rows)
+
+
 def main(reps=5):
     rng = np.random.default_rng(2019)
     rows = []
@@ -140,6 +221,11 @@ def main(reps=5):
     pd.set_option("display.width", 250)
     pd.set_option("display.max_columns", 30)
     print(table.to_string())
+
+    mixed = mixed_experiment(rng)
+    mixed.to_csv(os.path.join(RESULTS, "two_truths_mixed.csv"), index=False)
+    print(mixed.pivot_table(index=["weights", "hub_factor", "shift", "embedding", "dims", "ranking"],
+                            columns="truth", values=["auroc", "calls"], aggfunc="mean").round(2).to_string())
 
 
 if __name__ == "__main__":

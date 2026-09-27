@@ -1,0 +1,17 @@
+Static embedding (d = 2): agreement of 2-means with the factions; Spearman(row norm, degree)
+  UASE: raw 0.97, row-normalised 0.97, norm vs degree 0.79
+  ULSE: raw 0.97, row-normalised 0.97, norm vs degree 0.92
+Per dimension: |Spearman| with degree / point-biserial |correlation| with faction
+  UASE: dim 1: 0.78 / 0.06; dim 2: 0.14 / 0.85; dim 3: 0.32 / 0.04; dim 4: 0.08 / 0.19
+  ULSE: dim 1: 0.79 / 0.07; dim 2: 0.08 / 0.88; dim 3: 0.40 / 0.06; dim 4: 0.01 / 0.04
+
+Differential: mean rank of the changed member among 34 (1 = top), 29 members x 20 rewirings
+  change, embedding, d | euclidean | cosine | radial | default Borda (euclidean + cosine) | DeDi
+  switch faction, UASE, 2 | 1.0 | 1.1 | 1.3 | 1.1 | 19.5
+  switch faction, UASE, 4 | 1.0 | 1.1 | 1.4 | 1.0 | 19.5
+  switch faction, ULSE, 2 | 1.1 | 1.1 | 1.8 | 1.1 | 19.5
+  switch faction, ULSE, 4 | 1.0 | 1.1 | 1.6 | 1.1 | 19.5
+  become a hub, UASE, 2 | 1.1 | 1.7 | 1.1 | 1.4 | 1.0
+  become a hub, UASE, 4 | 1.1 | 1.5 | 1.2 | 1.3 | 1.0
+  become a hub, ULSE, 2 | 1.0 | 1.8 | 1.0 | 1.4 | 1.0
+  become a hub, ULSE, 4 | 1.1 | 1.4 | 1.3 | 1.3 | 1.0

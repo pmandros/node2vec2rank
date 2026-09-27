@@ -1,0 +1,1261 @@
+weights,hub_factor,shift,rep,embedding,dims,ranking,truth,auroc,calls,false_calls
+binary,2.0,1.0,0,UASE,d=4 (true rank),euclidean,hub,0.5480766118154842,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),euclidean,community,0.6154782243803015,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),euclidean,both,0.6548177593639773,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),cosine,hub,0.44357701645535474,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),cosine,community,0.8092257890477476,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),cosine,both,0.8014052964559655,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),radial,hub,0.8691394658753709,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),radial,community,0.49331894613793725,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),radial,both,0.8772689099154583,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.48632317237658484,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),euclidean + cosine (default),community,0.7606690045859186,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),euclidean + cosine (default),both,0.785745478976541,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),radial + cosine,hub,0.7199298624224441,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),radial + cosine,community,0.7118874201960256,0,0
+binary,2.0,1.0,0,UASE,d=4 (true rank),radial + cosine,both,0.9076227534852472,0,0
+binary,2.0,1.0,0,UASE,default 4-24,euclidean,hub,0.5416104666846506,0,0
+binary,2.0,1.0,0,UASE,default 4-24,euclidean,community,0.5631957557773581,0,0
+binary,2.0,1.0,0,UASE,default 4-24,euclidean,both,0.6054812160573316,2,0
+binary,2.0,1.0,0,UASE,default 4-24,cosine,hub,0.536822228216887,0,0
+binary,2.0,1.0,0,UASE,default 4-24,cosine,community,0.7083745466534784,0,0
+binary,2.0,1.0,0,UASE,default 4-24,cosine,both,0.7164688427299704,0,0
+binary,2.0,1.0,0,UASE,default 4-24,radial,hub,0.8725896951712976,0,0
+binary,2.0,1.0,0,UASE,default 4-24,radial,community,0.47709138866408896,0,0
+binary,2.0,1.0,0,UASE,default 4-24,radial,both,0.8805581994289233,0,0
+binary,2.0,1.0,0,UASE,default 4-24,euclidean + cosine (default),hub,0.570930671702185,0,0
+binary,2.0,1.0,0,UASE,default 4-24,euclidean + cosine (default),community,0.7050894703713695,0,0
+binary,2.0,1.0,0,UASE,default 4-24,euclidean + cosine (default),both,0.7541682996472762,0,0
+binary,2.0,1.0,0,UASE,default 4-24,radial + cosine,hub,0.8351551119503642,0,0
+binary,2.0,1.0,0,UASE,default 4-24,radial + cosine,community,0.6660342295357132,0,0
+binary,2.0,1.0,0,UASE,default 4-24,radial + cosine,both,0.9167963719836515,0,0
+binary,2.0,1.0,0,UASE,default 4-24,DeDi,hub,0.9574399784192069,0,0
+binary,2.0,1.0,0,UASE,default 4-24,DeDi,community,0.5224680034769056,0,0
+binary,2.0,1.0,0,UASE,default 4-24,DeDi,both,0.9462292144896702,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),euclidean,hub,0.5473914216347451,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),euclidean,community,0.6352006714024518,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),euclidean,both,0.6680812944404009,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),cosine,hub,0.4653628270838953,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),cosine,community,0.8256451757935438,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),cosine,both,0.8346789093555792,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),radial,hub,0.9082924197464257,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),radial,community,0.5156910349788688,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),radial,both,0.9042382845305414,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5018964121931481,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.7792584599706261,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.7974161581098482,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),radial + cosine,hub,0.7567386026436471,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),radial + cosine,community,0.7347091088930852,0,0
+binary,2.0,1.0,0,ULSE,d=4 (true rank),radial + cosine,both,0.927879178097531,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,euclidean,hub,0.5352549231184246,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,euclidean,community,0.5714264304768756,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,euclidean,both,0.6089860590112536,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,cosine,hub,0.5039142163474508,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,cosine,community,0.6910199922069358,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,cosine,both,0.7233721516152511,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,radial,hub,0.9112705691934179,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,radial,community,0.5086862692203938,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,radial,both,0.9127344493589384,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,euclidean + cosine (default),hub,0.5338440787698948,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,euclidean + cosine (default),community,0.6876000359679885,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,euclidean + cosine (default),both,0.741968534796484,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,radial + cosine,hub,0.8394011329916374,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,radial + cosine,community,0.6724635074783443,0,0
+binary,2.0,1.0,0,ULSE,default 4-24,radial + cosine,both,0.9210962432114663,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),euclidean,hub,0.6078908756711436,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),euclidean,community,0.6911794806643092,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),euclidean,both,0.7100465758350879,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),cosine,hub,0.5202323944040459,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),cosine,community,0.9489275202744193,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),cosine,both,0.9261630908257785,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),radial,hub,0.9259605617452153,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),radial,community,0.5390842808845223,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),radial,both,0.9429895537884193,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5859896916635763,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),euclidean + cosine (default),community,0.8786287505028902,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),euclidean + cosine (default),both,0.8809532095564565,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),radial + cosine,hub,0.8337068627292906,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),radial + cosine,community,0.8402643967786788,0,0
+poisson,2.0,1.0,0,UASE,d=4 (true rank),radial + cosine,both,0.9814827704211546,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,euclidean,hub,0.5543498707427055,1,0
+poisson,2.0,1.0,0,UASE,default 4-24,euclidean,community,0.60886780866877,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,euclidean,both,0.6177069376533435,2,0
+poisson,2.0,1.0,0,UASE,default 4-24,cosine,hub,0.5765359045054632,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,cosine,community,0.8239848674134146,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,cosine,both,0.8064318734158126,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,radial,hub,0.8748246561648474,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,radial,community,0.5090379091056669,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,radial,both,0.9105981775681962,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,euclidean + cosine (default),hub,0.6089254714800901,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,euclidean + cosine (default),community,0.7934797185225966,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,euclidean + cosine (default),both,0.7999733189487666,4,0
+poisson,2.0,1.0,0,UASE,default 4-24,radial + cosine,hub,0.8655374792409023,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,radial + cosine,community,0.7666059669256993,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,radial + cosine,both,0.9515390906401712,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,DeDi,hub,0.9926207789834626,76,0
+poisson,2.0,1.0,0,UASE,default 4-24,DeDi,community,0.5584199716264001,0,0
+poisson,2.0,1.0,0,UASE,default 4-24,DeDi,both,0.9935269449616315,75,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),euclidean,hub,0.5709786470174081,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),euclidean,community,0.6586768868090993,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),euclidean,both,0.6651702077061836,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),cosine,hub,0.4485201249039304,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),cosine,community,0.92842371242439,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),cosine,both,0.9035886013908948,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),radial,hub,0.9697736788077157,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),radial,community,0.5035749324186024,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),radial,both,0.9674723184093453,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5104776339196939,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.8323063784134782,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.8402907074538737,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),radial + cosine,hub,0.8007556580298071,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),radial + cosine,community,0.794760765381385,0,0
+poisson,2.0,1.0,0,ULSE,d=4 (true rank),radial + cosine,both,0.9722952084312122,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,euclidean,hub,0.5648597518044963,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,euclidean,community,0.6259307881790783,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,euclidean,both,0.6295365037382473,2,0
+poisson,2.0,1.0,0,ULSE,default 4-24,cosine,hub,0.5341147890768181,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,cosine,community,0.8344661598944106,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,cosine,both,0.827762213831225,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,radial,hub,0.9772711393452755,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,radial,community,0.5178887783118414,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,radial,both,0.9669067961277674,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,euclidean + cosine (default),hub,0.5679742882787013,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,euclidean + cosine (default),community,0.743790628242319,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,euclidean + cosine (default),both,0.765424257715754,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,radial + cosine,hub,0.8890348967822727,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,radial + cosine,community,0.7637368454485781,0,0
+poisson,2.0,1.0,0,ULSE,default 4-24,radial + cosine,both,0.9585080652177695,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),euclidean,hub,0.6785322195704058,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),euclidean,community,0.6778608756480948,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),euclidean,both,0.6517833465924158,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),cosine,hub,0.49671837708830546,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),cosine,community,0.7319407867665213,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),cosine,both,0.7186367453372227,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),radial,hub,0.8123687350835322,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),radial,community,0.571475598716155,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),radial,both,0.7216587112171837,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.6113603818615752,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),euclidean + cosine (default),community,0.7771171097029052,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),euclidean + cosine (default),both,0.7511795058781933,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),radial + cosine,hub,0.7394003579952267,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),radial + cosine,community,0.7148022796477657,0,0
+binary,1.5,0.5,0,UASE,d=4 (true rank),radial + cosine,both,0.8123370237779546,0,0
+binary,1.5,0.5,0,UASE,default 4-24,euclidean,hub,0.5879743436754177,0,0
+binary,1.5,0.5,0,UASE,default 4-24,euclidean,community,0.5376846555839025,0,0
+binary,1.5,0.5,0,UASE,default 4-24,euclidean,both,0.49554992044550517,0,0
+binary,1.5,0.5,0,UASE,default 4-24,cosine,hub,0.5016408114558473,0,0
+binary,1.5,0.5,0,UASE,default 4-24,cosine,community,0.6248045428359805,0,0
+binary,1.5,0.5,0,UASE,default 4-24,cosine,both,0.5959128878281623,0,0
+binary,1.5,0.5,0,UASE,default 4-24,radial,hub,0.775277446300716,0,0
+binary,1.5,0.5,0,UASE,default 4-24,radial,community,0.5366842235206979,0,0
+binary,1.5,0.5,0,UASE,default 4-24,radial,both,0.7188135331035093,0,0
+binary,1.5,0.5,0,UASE,default 4-24,euclidean + cosine (default),hub,0.5889618138424821,0,0
+binary,1.5,0.5,0,UASE,default 4-24,euclidean + cosine (default),community,0.6570446876800263,0,0
+binary,1.5,0.5,0,UASE,default 4-24,euclidean + cosine (default),both,0.5891176080615221,0,0
+binary,1.5,0.5,0,UASE,default 4-24,radial + cosine,hub,0.757604415274463,0,0
+binary,1.5,0.5,0,UASE,default 4-24,radial + cosine,community,0.6406057114640771,0,0
+binary,1.5,0.5,0,UASE,default 4-24,radial + cosine,both,0.7742116370547159,0,0
+binary,1.5,0.5,0,UASE,default 4-24,DeDi,hub,0.8772046539379474,0,0
+binary,1.5,0.5,0,UASE,default 4-24,DeDi,community,0.4909060982635174,0,0
+binary,1.5,0.5,0,UASE,default 4-24,DeDi,both,0.8420235569698576,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),euclidean,hub,0.5986754176610979,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),euclidean,community,0.5947555756727841,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),euclidean,both,0.5987691151772297,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),cosine,hub,0.4794689737470167,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),cosine,community,0.6737254135462102,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),cosine,both,0.6842018032352162,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),radial,hub,0.8381026252983294,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),radial,community,0.5816496584643239,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),radial,both,0.7459228321400159,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5423359188544152,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.6732830631223767,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.6867376027578892,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),radial + cosine,hub,0.7286426014319809,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),radial + cosine,community,0.6706855402847502,0,0
+binary,1.5,0.5,0,ULSE,d=4 (true rank),radial + cosine,both,0.782523424379033,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,euclidean,hub,0.5638573985680191,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,euclidean,community,0.5227887622417908,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,euclidean,both,0.5177533589675595,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,cosine,hub,0.4854146778042959,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,cosine,community,0.6178915315611884,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,cosine,both,0.6108100194466543,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,radial,hub,0.8289618138424821,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,radial,community,0.5324896099086495,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,radial,both,0.752825841951737,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,euclidean + cosine (default),hub,0.5407010739856802,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,euclidean + cosine (default),community,0.6105901777631471,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,euclidean + cosine (default),both,0.6068184831609653,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,radial + cosine,hub,0.744859785202864,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,radial + cosine,community,0.618673360217266,0,0
+binary,1.5,0.5,0,ULSE,default 4-24,radial + cosine,both,0.776020949350305,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),euclidean,hub,0.5711973918197985,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),euclidean,community,0.5486749160245011,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),euclidean,both,0.5917650813916374,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),cosine,hub,0.5221517486662715,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),cosine,community,0.5652909504050583,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),cosine,both,0.5212915254409031,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),radial,hub,0.6409958506224066,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),radial,community,0.5121023513139695,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),radial,both,0.6018877388171994,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5620420865441612,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),euclidean + cosine (default),community,0.5810332691167753,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),euclidean + cosine (default),both,0.5836132516630442,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),radial + cosine,hub,0.6260373443983402,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),radial + cosine,community,0.5613669482315747,0,0
+binary,1.25,0.25,0,UASE,d=4 (true rank),radial + cosine,both,0.5989542960497317,0,0
+binary,1.25,0.25,0,UASE,default 4-24,euclidean,hub,0.5188500296384114,0,0
+binary,1.25,0.25,0,UASE,default 4-24,euclidean,community,0.5005402835408023,0,0
+binary,1.25,0.25,0,UASE,default 4-24,euclidean,both,0.5711423201049757,0,0
+binary,1.25,0.25,0,UASE,default 4-24,cosine,hub,0.5208654416123296,0,0
+binary,1.25,0.25,0,UASE,default 4-24,cosine,community,0.5576436228018178,0,0
+binary,1.25,0.25,0,UASE,default 4-24,cosine,both,0.5482092826491167,0,0
+binary,1.25,0.25,0,UASE,default 4-24,radial,hub,0.6268227622999407,0,0
+binary,1.25,0.25,0,UASE,default 4-24,radial,community,0.5522037393795692,0,0
+binary,1.25,0.25,0,UASE,default 4-24,radial,both,0.631997324943383,0,0
+binary,1.25,0.25,0,UASE,default 4-24,euclidean + cosine (default),hub,0.5408002371072911,0,0
+binary,1.25,0.25,0,UASE,default 4-24,euclidean + cosine (default),community,0.5554454406243825,0,0
+binary,1.25,0.25,0,UASE,default 4-24,euclidean + cosine (default),both,0.6171882520430239,0,0
+binary,1.25,0.25,0,UASE,default 4-24,radial + cosine,hub,0.6265174866627149,0,0
+binary,1.25,0.25,0,UASE,default 4-24,radial + cosine,community,0.5787239428966607,0,0
+binary,1.25,0.25,0,UASE,default 4-24,radial + cosine,both,0.6571773086295908,0,0
+binary,1.25,0.25,0,UASE,default 4-24,DeDi,hub,0.7359069353882632,0,0
+binary,1.25,0.25,0,UASE,default 4-24,DeDi,community,0.5214785862477771,0,0
+binary,1.25,0.25,0,UASE,default 4-24,DeDi,both,0.7686861317566712,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),euclidean,hub,0.5049792531120332,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),euclidean,community,0.5045692550879273,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),euclidean,both,0.5844745388313853,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),cosine,hub,0.4678660343805572,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),cosine,community,0.5175545840742937,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),cosine,both,0.5335522016019941,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),radial,hub,0.6619620628334322,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),radial,community,0.5828702331555029,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),radial,both,0.6281265990809559,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.48376407824540607,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.5086260126457222,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.5727281017737449,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),radial + cosine,hub,0.5895524599881447,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),radial + cosine,community,0.567220534479352,0,0
+binary,1.25,0.25,0,ULSE,d=4 (true rank),radial + cosine,both,0.6154682109038956,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,euclidean,hub,0.5008684054534677,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,euclidean,community,0.4655144734242245,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,euclidean,both,0.566293779986726,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,cosine,hub,0.4817753408417309,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,cosine,community,0.5220312191266548,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,cosine,both,0.5529564948652086,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,radial,hub,0.5970272673384707,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,radial,community,0.5309320045445564,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,radial,both,0.5982753991052746,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,euclidean + cosine (default),hub,0.47994665085951393,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,euclidean + cosine (default),community,0.48558523513139695,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,euclidean + cosine (default),both,0.599260812953759,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,radial + cosine,hub,0.5567753408417309,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,radial + cosine,community,0.5392647204109859,0,0
+binary,1.25,0.25,0,ULSE,default 4-24,radial + cosine,both,0.6162205705774171,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),euclidean,hub,0.6736065618517305,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),euclidean,community,0.6404137073151158,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),euclidean,both,0.6223749305871069,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),cosine,hub,0.47005677475706953,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),cosine,community,0.7661610689779704,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),cosine,both,0.7616802968347721,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),radial,hub,0.9153291844087782,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),radial,community,0.5485283495846877,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),radial,both,0.8436506133575647,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.6010345015831423,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),euclidean + cosine (default),community,0.767515348501264,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),euclidean + cosine (default),both,0.7497160381644707,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),radial + cosine,hub,0.7726894311606071,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),radial + cosine,community,0.7234611371935316,0,0
+binary,2.0,1.0,1,UASE,d=4 (true rank),radial + cosine,both,0.8810704730173153,0,0
+binary,2.0,1.0,1,UASE,default 4-24,euclidean,hub,0.6235294519052298,0,0
+binary,2.0,1.0,1,UASE,default 4-24,euclidean,community,0.586766682717387,0,0
+binary,2.0,1.0,1,UASE,default 4-24,euclidean,both,0.5551580089858146,0,0
+binary,2.0,1.0,1,UASE,default 4-24,cosine,hub,0.4629155748444153,0,0
+binary,2.0,1.0,1,UASE,default 4-24,cosine,community,0.6687632920027287,0,0
+binary,2.0,1.0,1,UASE,default 4-24,cosine,both,0.6881057852491291,0,0
+binary,2.0,1.0,1,UASE,default 4-24,radial,hub,0.9198329511955453,0,0
+binary,2.0,1.0,1,UASE,default 4-24,radial,community,0.5243745234942419,0,0
+binary,2.0,1.0,1,UASE,default 4-24,radial,both,0.8512166187086678,0,0
+binary,2.0,1.0,1,UASE,default 4-24,euclidean + cosine (default),hub,0.5887856207009499,0,0
+binary,2.0,1.0,1,UASE,default 4-24,euclidean + cosine (default),community,0.7027807872878296,0,0
+binary,2.0,1.0,1,UASE,default 4-24,euclidean + cosine (default),both,0.6915480337220455,0,0
+binary,2.0,1.0,1,UASE,default 4-24,radial + cosine,hub,0.832330221639917,0,0
+binary,2.0,1.0,1,UASE,default 4-24,radial + cosine,community,0.6671055535492155,0,0
+binary,2.0,1.0,1,UASE,default 4-24,radial + cosine,both,0.8912962542278762,0,0
+binary,2.0,1.0,1,UASE,default 4-24,DeDi,hub,0.9713055464570368,0,0
+binary,2.0,1.0,1,UASE,default 4-24,DeDi,community,0.5309578267324746,0,0
+binary,2.0,1.0,1,UASE,default 4-24,DeDi,both,0.950855671664395,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),euclidean,hub,0.650309804563817,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),euclidean,community,0.6325488543798403,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),euclidean,both,0.6201978898480489,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),cosine,hub,0.48945709138552246,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),cosine,community,0.7696069579872397,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),cosine,both,0.7853185420768337,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),radial,hub,0.912626924336718,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),radial,community,0.5096153846153846,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),radial,both,0.8736117421374123,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5820163227426575,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.745565988523735,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.7422604624160735,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),radial + cosine,hub,0.7743749317611093,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),radial + cosine,community,0.6926863889892059,0,0
+binary,2.0,1.0,1,ULSE,d=4 (true rank),radial + cosine,both,0.8962214145085567,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,euclidean,hub,0.619592067911344,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,euclidean,community,0.5969990168933831,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,euclidean,both,0.5624495178959059,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,cosine,hub,0.46221612621465225,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,cosine,community,0.7104349745194816,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,cosine,both,0.7099708465848856,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,radial,hub,0.9313687356698329,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,radial,community,0.4859154929577465,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,radial,both,0.8845915997778787,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,euclidean + cosine (default),hub,0.5774340812315755,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,euclidean + cosine (default),community,0.7125491553308455,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,euclidean + cosine (default),both,0.6978898480488667,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,radial + cosine,hub,0.8357319303417403,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,radial + cosine,community,0.6613649131254765,0,0
+binary,2.0,1.0,1,ULSE,default 4-24,radial + cosine,both,0.902481195416225,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),euclidean,hub,0.594917684054754,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),euclidean,community,0.6119072186657682,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),euclidean,both,0.6391837002096437,1,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),cosine,hub,0.47416065482796893,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),cosine,community,0.8892088527628033,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),cosine,both,0.8696344339622641,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),radial,hub,0.9364305863854976,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),radial,community,0.4647700471698113,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),radial,both,0.9392426624737945,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5398717859785424,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),euclidean + cosine (default),community,0.7902338485512129,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),euclidean + cosine (default),both,0.7923185272536688,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),radial + cosine,hub,0.7892590408805031,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),radial + cosine,community,0.7430982564016172,0,0
+poisson,2.0,1.0,1,UASE,d=4 (true rank),radial + cosine,both,0.9618022798742139,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,euclidean,hub,0.5673441546429893,4,0
+poisson,2.0,1.0,1,UASE,default 4-24,euclidean,community,0.5753295569407008,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,euclidean,both,0.5940251572327044,1,0
+poisson,2.0,1.0,1,UASE,default 4-24,cosine,hub,0.5010636330003699,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,cosine,community,0.8334000168463612,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,cosine,both,0.7990697064989518,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,radial,hub,0.92797354790973,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,radial,community,0.46848151111859837,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,radial,both,0.9152613993710692,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,euclidean + cosine (default),hub,0.5742664400665927,1,0
+poisson,2.0,1.0,1,UASE,default 4-24,euclidean + cosine (default),community,0.7807419769204852,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,euclidean + cosine (default),both,0.7755142819706499,1,0
+poisson,2.0,1.0,1,UASE,default 4-24,radial + cosine,hub,0.8740404180540141,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,radial + cosine,community,0.7521716012466307,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,radial + cosine,both,0.9563449947589099,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,DeDi,hub,0.9915198390677026,59,0
+poisson,2.0,1.0,1,UASE,default 4-24,DeDi,community,0.44749199797843664,0,0
+poisson,2.0,1.0,1,UASE,default 4-24,DeDi,both,0.9903039832285115,54,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),euclidean,hub,0.585327645209027,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),euclidean,community,0.6276059214959568,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),euclidean,both,0.6507403039832285,1,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),cosine,hub,0.47891231964483905,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),cosine,community,0.9103615650269542,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),cosine,both,0.9018933438155137,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),radial,hub,0.9724322512023678,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),radial,community,0.4801949966307278,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),radial,both,0.9732245807127883,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5384064002959674,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.8078830441374663,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.8182684748427673,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),radial + cosine,hub,0.8123034591194969,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),radial + cosine,community,0.7691864260444744,0,0
+poisson,2.0,1.0,1,ULSE,d=4 (true rank),radial + cosine,both,0.9837984800838574,0,0
+poisson,2.0,1.0,1,ULSE,default 4-24,euclidean,hub,0.5705523954864965,2,0
+poisson,2.0,1.0,1,ULSE,default 4-24,euclidean,community,0.5877642772911051,1,0
+poisson,2.0,1.0,1,ULSE,default 4-24,euclidean,both,0.6216227725366876,1,0
+poisson,2.0,1.0,1,ULSE,default 4-24,cosine,hub,0.501115658527562,0,0
+poisson,2.0,1.0,1,ULSE,default 4-24,cosine,community,0.8609517141172507,0,0
+poisson,2.0,1.0,1,ULSE,default 4-24,cosine,both,0.828102070230608,0,0
+poisson,2.0,1.0,1,ULSE,default 4-24,radial,hub,0.9736230577136515,0,0
+poisson,2.0,1.0,1,ULSE,default 4-24,radial,community,0.4762729531671159,0,0
+poisson,2.0,1.0,1,ULSE,default 4-24,radial,both,0.9759008123689727,0,0
+poisson,2.0,1.0,1,ULSE,default 4-24,euclidean + cosine (default),hub,0.553519815945246,0,0
+poisson,2.0,1.0,1,ULSE,default 4-24,euclidean + cosine (default),community,0.7533192596024259,0,0
+poisson,2.0,1.0,1,ULSE,default 4-24,euclidean + cosine (default),both,0.7547955974842767,0,0
+poisson,2.0,1.0,1,ULSE,default 4-24,radial + cosine,hub,0.8839050360710322,0,0
+poisson,2.0,1.0,1,ULSE,default 4-24,radial + cosine,community,0.7654328461927223,0,0
+poisson,2.0,1.0,1,ULSE,default 4-24,radial + cosine,both,0.9749803459119497,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),euclidean,hub,0.6121594381949411,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),euclidean,community,0.5967269044192121,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),euclidean,both,0.6737069910146833,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),cosine,hub,0.5474998374406659,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),cosine,community,0.7001332693640386,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),cosine,both,0.7152312075388998,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),radial,hub,0.7639248325638858,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),radial,community,0.5230022922330615,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),radial,both,0.7336017970633355,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.6067462123675141,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),euclidean + cosine (default),community,0.6957327149634842,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),euclidean + cosine (default),both,0.7651627218934911,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),radial + cosine,hub,0.7345698680018207,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),radial + cosine,community,0.6687323418092649,0,0
+binary,1.5,0.5,1,UASE,d=4 (true rank),radial + cosine,both,0.8142340565417489,0,0
+binary,1.5,0.5,1,UASE,default 4-24,euclidean,hub,0.503664087391898,0,0
+binary,1.5,0.5,1,UASE,default 4-24,euclidean,community,0.5004078042539581,0,0
+binary,1.5,0.5,1,UASE,default 4-24,euclidean,both,0.5396340127109358,0,0
+binary,1.5,0.5,1,UASE,default 4-24,cosine,hub,0.5293192015085506,0,0
+binary,1.5,0.5,1,UASE,default 4-24,cosine,community,0.6127512127512128,0,0
+binary,1.5,0.5,1,UASE,default 4-24,cosine,both,0.6193129520052597,0,0
+binary,1.5,0.5,1,UASE,default 4-24,radial,hub,0.7518629299694388,0,0
+binary,1.5,0.5,1,UASE,default 4-24,radial,community,0.5013033743802975,0,0
+binary,1.5,0.5,1,UASE,default 4-24,radial,both,0.731344510190664,0,0
+binary,1.5,0.5,1,UASE,default 4-24,euclidean + cosine (default),hub,0.5323135444437219,0,0
+binary,1.5,0.5,1,UASE,default 4-24,euclidean + cosine (default),community,0.5992936723705955,0,0
+binary,1.5,0.5,1,UASE,default 4-24,euclidean + cosine (default),both,0.6495315581854043,0,0
+binary,1.5,0.5,1,UASE,default 4-24,radial + cosine,hub,0.7422914363742766,0,0
+binary,1.5,0.5,1,UASE,default 4-24,radial + cosine,community,0.600421131190362,0,0
+binary,1.5,0.5,1,UASE,default 4-24,radial + cosine,both,0.7896285338593031,0,0
+binary,1.5,0.5,1,UASE,default 4-24,DeDi,hub,0.8703816893166005,0,0
+binary,1.5,0.5,1,UASE,default 4-24,DeDi,community,0.5479156671464364,0,0
+binary,1.5,0.5,1,UASE,default 4-24,DeDi,both,0.8970359412667105,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),euclidean,hub,0.5229013589960335,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),euclidean,community,0.552465483234714,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),euclidean,both,0.6049419241726934,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),cosine,hub,0.4732687430912283,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),cosine,community,0.6471027240258009,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),cosine,both,0.6794269121192198,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),radial,hub,0.7863645230509135,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),radial,community,0.5652646729569807,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),radial,both,0.7296515450361605,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.49222641264061384,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.628055866517405,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.6838072539995617,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),radial + cosine,hub,0.6799986995253268,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),radial + cosine,community,0.6524095101018178,0,0
+binary,1.5,0.5,1,ULSE,d=4 (true rank),radial + cosine,both,0.7792570677186061,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,euclidean,hub,0.5173028155276675,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,euclidean,community,0.49972813049736126,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,euclidean,both,0.5345386806925269,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,cosine,hub,0.5858020677547304,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,cosine,community,0.6134442134442134,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,cosine,both,0.6197485207100591,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,radial,hub,0.7229923922231615,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,radial,community,0.5393944240098086,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,radial,both,0.689847687924611,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,euclidean + cosine (default),hub,0.5706905520514988,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,euclidean + cosine (default),community,0.5877951916413455,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,euclidean + cosine (default),both,0.629059829059829,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,radial + cosine,hub,0.724591976071266,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,radial + cosine,community,0.6174236366544059,0,0
+binary,1.5,0.5,1,ULSE,default 4-24,radial + cosine,both,0.7373712469866316,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),euclidean,hub,0.5530233207652563,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),euclidean,community,0.5366410398668463,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),euclidean,both,0.6129970674486803,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),cosine,hub,0.541034771679933,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),cosine,community,0.5409791022694248,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),cosine,both,0.6035131964809384,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),radial,hub,0.7110668900991481,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),radial,community,0.5499511241446725,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),radial,both,0.6568328445747801,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5603896103896104,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),euclidean + cosine (default),community,0.551578558030171,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),euclidean + cosine (default),both,0.6394457478005865,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),radial + cosine,hub,0.6916038262812456,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),radial + cosine,community,0.562899262899263,0,0
+binary,1.25,0.25,1,UASE,d=4 (true rank),radial + cosine,both,0.6910381231671554,0,0
+binary,1.25,0.25,1,UASE,default 4-24,euclidean,hub,0.48099427454266164,0,0
+binary,1.25,0.25,1,UASE,default 4-24,euclidean,community,0.48161475258249453,0,0
+binary,1.25,0.25,1,UASE,default 4-24,euclidean,both,0.5271495601173021,0,0
+binary,1.25,0.25,1,UASE,default 4-24,cosine,hub,0.5202171484429549,0,0
+binary,1.25,0.25,1,UASE,default 4-24,cosine,community,0.5101873134131198,0,0
+binary,1.25,0.25,1,UASE,default 4-24,cosine,both,0.5729912023460411,0,0
+binary,1.25,0.25,1,UASE,default 4-24,radial,hub,0.7066925010473397,0,0
+binary,1.25,0.25,1,UASE,default 4-24,radial,community,0.5277139309397374,0,0
+binary,1.25,0.25,1,UASE,default 4-24,radial,both,0.6180527859237537,0,0
+binary,1.25,0.25,1,UASE,default 4-24,euclidean + cosine (default),hub,0.4968125960061444,0,0
+binary,1.25,0.25,1,UASE,default 4-24,euclidean + cosine (default),community,0.5062878127394257,0,0
+binary,1.25,0.25,1,UASE,default 4-24,euclidean + cosine (default),both,0.5904046920821114,0,0
+binary,1.25,0.25,1,UASE,default 4-24,radial + cosine,hub,0.699123725736629,0,0
+binary,1.25,0.25,1,UASE,default 4-24,radial + cosine,community,0.5322184354442419,0,0
+binary,1.25,0.25,1,UASE,default 4-24,radial + cosine,both,0.661683284457478,0,0
+binary,1.25,0.25,1,UASE,default 4-24,DeDi,hub,0.7416527021365731,0,0
+binary,1.25,0.25,1,UASE,default 4-24,DeDi,community,0.4847480911997041,0,0
+binary,1.25,0.25,1,UASE,default 4-24,DeDi,both,0.6841290322580645,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),euclidean,hub,0.5081483033095936,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),euclidean,community,0.5097091226123485,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),euclidean,both,0.5714604105571848,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),cosine,hub,0.5247730763859796,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),cosine,community,0.5360439618504135,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),cosine,both,0.6070733137829912,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),radial,hub,0.6199762602988409,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),radial,community,0.536577633351827,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),radial,both,0.6183929618768328,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5192989805893031,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.5325037647618293,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.6124897360703813,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),radial + cosine,hub,0.599043429688591,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),radial + cosine,community,0.5452643259094871,0,0
+binary,1.25,0.25,1,ULSE,d=4 (true rank),radial + cosine,both,0.6585630498533724,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,euclidean,hub,0.47735302332076524,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,euclidean,community,0.4791101952392275,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,euclidean,both,0.5020879765395895,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,cosine,hub,0.532052087697249,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,cosine,community,0.5322157935061161,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,cosine,both,0.5588680351906158,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,radial,hub,0.6473153190895127,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,radial,community,0.5224115611212385,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,radial,both,0.5220058651026392,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,euclidean + cosine (default),hub,0.5005481078061723,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,euclidean + cosine (default),community,0.5214314020765634,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,euclidean + cosine (default),both,0.5424076246334311,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,radial + cosine,hub,0.6259251501186985,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,radial + cosine,community,0.5431745528519722,0,0
+binary,1.25,0.25,1,ULSE,default 4-24,radial + cosine,both,0.5713607038123167,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),euclidean,hub,0.6472217921210378,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),euclidean,community,0.6510659124278674,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),euclidean,both,0.7038549065581684,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),cosine,hub,0.5044294277688071,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),cosine,community,0.8165811129195643,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),cosine,both,0.8465692021239914,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),radial,hub,0.873581587736955,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),radial,community,0.5646774946220648,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),radial,both,0.8588786980208262,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5933608352319228,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),euclidean + cosine (default),community,0.7816985169419183,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),euclidean + cosine (default),both,0.8309426936073374,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),radial + cosine,hub,0.7768917693379637,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),radial + cosine,community,0.7565047405501998,0,0
+binary,2.0,1.0,2,UASE,d=4 (true rank),radial + cosine,both,0.9248293221157161,0,0
+binary,2.0,1.0,2,UASE,default 4-24,euclidean,hub,0.576469840076091,0,0
+binary,2.0,1.0,2,UASE,default 4-24,euclidean,community,0.5695375544907181,0,0
+binary,2.0,1.0,2,UASE,default 4-24,euclidean,both,0.5924556927108475,0,0
+binary,2.0,1.0,2,UASE,default 4-24,cosine,hub,0.4770897387688292,0,0
+binary,2.0,1.0,2,UASE,default 4-24,cosine,community,0.7358608679816524,0,0
+binary,2.0,1.0,2,UASE,default 4-24,cosine,both,0.7363423212192263,0,0
+binary,2.0,1.0,2,UASE,default 4-24,radial,hub,0.8554574310424915,0,0
+binary,2.0,1.0,2,UASE,default 4-24,radial,community,0.5357504638113341,0,0
+binary,2.0,1.0,2,UASE,default 4-24,radial,both,0.87278118750431,0,0
+binary,2.0,1.0,2,UASE,default 4-24,euclidean + cosine (default),hub,0.5582959145302926,0,0
+binary,2.0,1.0,2,UASE,default 4-24,euclidean + cosine (default),community,0.7251932072980571,0,0
+binary,2.0,1.0,2,UASE,default 4-24,euclidean + cosine (default),both,0.752999793117716,0,0
+binary,2.0,1.0,2,UASE,default 4-24,radial + cosine,hub,0.8014526974717423,0,0
+binary,2.0,1.0,2,UASE,default 4-24,radial + cosine,community,0.7175673522348308,0,0
+binary,2.0,1.0,2,UASE,default 4-24,radial + cosine,both,0.9128646300255154,0,0
+binary,2.0,1.0,2,UASE,default 4-24,DeDi,hub,0.9625212900086266,0,0
+binary,2.0,1.0,2,UASE,default 4-24,DeDi,community,0.5520976792360487,0,0
+binary,2.0,1.0,2,UASE,default 4-24,DeDi,both,0.9416143714226605,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),euclidean,hub,0.5771030104625186,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),euclidean,community,0.6131073652101663,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),euclidean,both,0.6542169505551342,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),cosine,hub,0.4348028047512663,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),cosine,community,0.8004757623009595,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),cosine,both,0.8290255844424522,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),radial,hub,0.8880753832201552,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),radial,community,0.5213467032404193,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),radial,both,0.8849803461830219,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5032598597624367,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.7488760400186663,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.7890835114819668,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),radial + cosine,hub,0.7344831781282488,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),radial + cosine,community,0.7198664906270273,0,0
+binary,2.0,1.0,2,ULSE,d=4 (true rank),radial + cosine,both,0.9266498862147438,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,euclidean,hub,0.5582903846579221,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,euclidean,community,0.5740732309723534,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,euclidean,both,0.5892455692710847,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,cosine,hub,0.4514781348846469,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,cosine,community,0.7321959048020124,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,cosine,both,0.7421798496655403,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,radial,hub,0.9068520648543431,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,radial,community,0.5095607735121046,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,radial,both,0.9029584166609199,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,euclidean + cosine (default),hub,0.5076975823397996,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,euclidean + cosine (default),community,0.6978795570174939,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,euclidean + cosine (default),both,0.7226018895248604,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,radial + cosine,hub,0.8081631975933995,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,radial + cosine,community,0.6891667330609271,0,0
+binary,2.0,1.0,2,ULSE,default 4-24,radial + cosine,both,0.9288462864630026,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),euclidean,hub,0.6277709235063307,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),euclidean,community,0.6526721388263109,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),euclidean,both,0.708758226657988,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),cosine,hub,0.527481695724283,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),cosine,community,0.9074732897642361,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),cosine,both,0.9149851739350546,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),radial,hub,0.8979713603818615,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),radial,community,0.5260522383066045,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),radial,both,0.9123755454304381,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.6004737874681445,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),euclidean + cosine (default),community,0.8257533513260321,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),euclidean + cosine (default),both,0.8593512692558039,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),radial + cosine,hub,0.7926813235710529,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),radial + cosine,community,0.7808059911226106,0,0
+poisson,2.0,1.0,2,UASE,d=4 (true rank),radial + cosine,both,0.9616661845182132,0,0
+poisson,2.0,1.0,2,UASE,default 4-24,euclidean,hub,0.5526854698434529,4,1
+poisson,2.0,1.0,2,UASE,default 4-24,euclidean,community,0.5611519416501238,0,1
+poisson,2.0,1.0,2,UASE,default 4-24,euclidean,both,0.6189821846146428,4,1
+poisson,2.0,1.0,2,UASE,default 4-24,cosine,hub,0.5283564580720844,0,0
+poisson,2.0,1.0,2,UASE,default 4-24,cosine,community,0.7943144558695604,0,0
+poisson,2.0,1.0,2,UASE,default 4-24,cosine,both,0.8307387719678889,0,0
+poisson,2.0,1.0,2,UASE,default 4-24,radial,hub,0.8672788317624691,0,0
+poisson,2.0,1.0,2,UASE,default 4-24,radial,community,0.5071459639105124,0,0
+poisson,2.0,1.0,2,UASE,default 4-24,radial,both,0.8718208336346761,0,0
+poisson,2.0,1.0,2,UASE,default 4-24,euclidean + cosine (default),hub,0.5735230168682497,2,0
+poisson,2.0,1.0,2,UASE,default 4-24,euclidean + cosine (default),community,0.7574498695157584,0,0
+poisson,2.0,1.0,2,UASE,default 4-24,euclidean + cosine (default),both,0.815834357898797,2,0
+poisson,2.0,1.0,2,UASE,default 4-24,radial + cosine,hub,0.8320481574369969,0,0
+poisson,2.0,1.0,2,UASE,default 4-24,radial + cosine,community,0.736689492115183,0,0
+poisson,2.0,1.0,2,UASE,default 4-24,radial + cosine,both,0.9456468021503821,0,0
+poisson,2.0,1.0,2,UASE,default 4-24,DeDi,hub,0.9897910683224789,65,0
+poisson,2.0,1.0,2,UASE,default 4-24,DeDi,community,0.4972230276805032,0,0
+poisson,2.0,1.0,2,UASE,default 4-24,DeDi,both,0.9908331525276632,56,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),euclidean,hub,0.5615418065612232,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),euclidean,community,0.6093837128900587,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),euclidean,both,0.662634700224199,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),cosine,hub,0.4526869867723798,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),cosine,community,0.8862668123926571,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),cosine,both,0.9048359489886936,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),radial,hub,0.9580619716030905,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),radial,community,0.5084535944505164,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),radial,both,0.9558412285142596,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5104516403058129,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.7826768228760065,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.8353734239772426,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),radial + cosine,hub,0.7871091379798552,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),radial + cosine,community,0.7637761247295519,0,0
+poisson,2.0,1.0,2,ULSE,d=4 (true rank),radial + cosine,both,0.9687658204961308,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,euclidean,hub,0.5565131871688038,2,0
+poisson,2.0,1.0,2,ULSE,default 4-24,euclidean,community,0.5801279191666853,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,euclidean,both,0.6368277042501386,3,0
+poisson,2.0,1.0,2,ULSE,default 4-24,cosine,hub,0.5331625945552364,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,cosine,community,0.8550704837954185,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,cosine,both,0.8962567199440707,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,radial,hub,0.9640386715747745,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,radial,community,0.53201046104432,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,radial,both,0.9658337552132301,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,euclidean + cosine (default),hub,0.5526981109178432,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,euclidean + cosine (default),community,0.7439246760198961,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,euclidean + cosine (default),both,0.7986216581085316,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,radial + cosine,hub,0.8811941264511953,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,radial + cosine,community,0.783635937813664,0,0
+poisson,2.0,1.0,2,ULSE,default 4-24,radial + cosine,both,0.9818892987150744,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),euclidean,hub,0.6133016898750465,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),euclidean,community,0.5917794593058368,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),euclidean,both,0.6642874186888545,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),cosine,hub,0.5058473679695765,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),cosine,community,0.6496974433668454,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),cosine,both,0.6578551494465136,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),radial,hub,0.7830397735395876,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),radial,community,0.5436545999265812,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),radial,both,0.7694031476620776,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5842435593171875,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),euclidean + cosine (default),community,0.6664564756592892,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),euclidean + cosine (default),both,0.7246495969457095,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),radial + cosine,hub,0.7310210733994796,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),radial + cosine,community,0.6418493256125144,0,0
+binary,1.5,0.5,2,UASE,d=4 (true rank),radial + cosine,both,0.8075584350911411,0,0
+binary,1.5,0.5,2,UASE,default 4-24,euclidean,hub,0.5113087238727018,0,0
+binary,1.5,0.5,2,UASE,default 4-24,euclidean,community,0.5095651710540339,0,0
+binary,1.5,0.5,2,UASE,default 4-24,euclidean,both,0.5664961769496519,0,0
+binary,1.5,0.5,2,UASE,default 4-24,cosine,hub,0.48424141480570726,0,0
+binary,1.5,0.5,2,UASE,default 4-24,cosine,community,0.6115907018603385,0,0
+binary,1.5,0.5,2,UASE,default 4-24,cosine,both,0.6080958408117109,0,0
+binary,1.5,0.5,2,UASE,default 4-24,radial,hub,0.7676064392531381,0,0
+binary,1.5,0.5,2,UASE,default 4-24,radial,community,0.5136150484919535,0,0
+binary,1.5,0.5,2,UASE,default 4-24,radial,both,0.771841185197481,0,0
+binary,1.5,0.5,2,UASE,default 4-24,euclidean + cosine (default),hub,0.4979877333943328,0,0
+binary,1.5,0.5,2,UASE,default 4-24,euclidean + cosine (default),community,0.6065549989934516,0,0
+binary,1.5,0.5,2,UASE,default 4-24,euclidean + cosine (default),both,0.6420234674081068,0,0
+binary,1.5,0.5,2,UASE,default 4-24,radial + cosine,hub,0.7340126669144769,0,0
+binary,1.5,0.5,2,UASE,default 4-24,radial + cosine,community,0.6016199509751678,0,0
+binary,1.5,0.5,2,UASE,default 4-24,radial + cosine,both,0.8216368050296196,0,0
+binary,1.5,0.5,2,UASE,default 4-24,DeDi,hub,0.8728519143339147,0,0
+binary,1.5,0.5,2,UASE,default 4-24,DeDi,community,0.4979247338567385,0,0
+binary,1.5,0.5,2,UASE,default 4-24,DeDi,both,0.8772474037493905,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),euclidean,hub,0.550760586738341,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),euclidean,community,0.5645434414484825,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),euclidean,both,0.6316488395978794,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),cosine,hub,0.4974980699396677,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),cosine,community,0.6417042642130567,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),cosine,both,0.6798026745790495,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),radial,hub,0.7679495610899837,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),radial,community,0.6163510841119282,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),radial,both,0.7854890080818351,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5346660280788037,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.6354222174855234,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.6984718173235536,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),radial + cosine,hub,0.687959282875361,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),radial + cosine,community,0.6702369533553589,0,0
+binary,1.5,0.5,2,ULSE,d=4 (true rank),radial + cosine,both,0.8155443048480636,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,euclidean,hub,0.5130815200297373,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,euclidean,community,0.5267297831776143,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,euclidean,both,0.5678163483385034,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,cosine,hub,0.4899279444142624,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,cosine,community,0.6132278233685033,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,cosine,both,0.6287231945553953,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,radial,hub,0.7636962799874188,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,radial,community,0.5772940424171373,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,radial,both,0.7639460934338981,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,euclidean + cosine (default),hub,0.5035884825436765,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,euclidean + cosine (default),community,0.6138613568273592,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,euclidean + cosine (default),both,0.6565635082841403,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,radial + cosine,hub,0.7117454893775198,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,radial + cosine,community,0.6513878527360356,0,0
+binary,1.5,0.5,2,ULSE,default 4-24,radial + cosine,both,0.7977933166647646,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),euclidean,hub,0.5755709488345581,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),euclidean,community,0.6151494108686887,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),euclidean,both,0.5900030833533181,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),cosine,hub,0.5059480290957756,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),cosine,community,0.5275021280408584,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),cosine,both,0.5948199664257083,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),radial,hub,0.6566314328554257,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),radial,community,0.6076004659289458,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),radial,both,0.6143204631881873,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5456294377873332,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),euclidean + cosine (default),community,0.5955686349177904,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),euclidean + cosine (default),both,0.6285963890506697,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),radial + cosine,hub,0.6210454900308554,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),radial + cosine,community,0.5952858294879262,0,0
+binary,1.25,0.25,2,UASE,d=4 (true rank),radial + cosine,both,0.6474528075644935,0,0
+binary,1.25,0.25,2,UASE,default 4-24,euclidean,hub,0.5221471145863021,0,0
+binary,1.25,0.25,2,UASE,default 4-24,euclidean,community,0.5726501948837418,0,0
+binary,1.25,0.25,2,UASE,default 4-24,euclidean,both,0.5396656274624002,0,0
+binary,1.25,0.25,2,UASE,default 4-24,cosine,hub,0.5163539820815624,0,0
+binary,1.25,0.25,2,UASE,default 4-24,cosine,community,0.4844317010886609,0,0
+binary,1.25,0.25,2,UASE,default 4-24,cosine,both,0.5957483983692486,0,0
+binary,1.25,0.25,2,UASE,default 4-24,radial,hub,0.6050818473587033,0,0
+binary,1.25,0.25,2,UASE,default 4-24,radial,community,0.5836096053044219,0,0
+binary,1.25,0.25,2,UASE,default 4-24,radial,both,0.6047072527321936,0,0
+binary,1.25,0.25,2,UASE,default 4-24,euclidean + cosine (default),hub,0.5415370698521667,0,0
+binary,1.25,0.25,2,UASE,default 4-24,euclidean + cosine (default),community,0.5627800053761032,0,0
+binary,1.25,0.25,2,UASE,default 4-24,euclidean + cosine (default),both,0.629168522388571,0,0
+binary,1.25,0.25,2,UASE,default 4-24,radial + cosine,hub,0.6139945972069046,0,0
+binary,1.25,0.25,2,UASE,default 4-24,radial + cosine,community,0.5465256932933112,0,0
+binary,1.25,0.25,2,UASE,default 4-24,radial + cosine,both,0.6777724485251293,0,0
+binary,1.25,0.25,2,UASE,default 4-24,DeDi,hub,0.7370258615348393,0,0
+binary,1.25,0.25,2,UASE,default 4-24,DeDi,community,0.5068433313919627,0,0
+binary,1.25,0.25,2,UASE,default 4-24,DeDi,both,0.7828497036554867,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),euclidean,hub,0.5369273473029406,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),euclidean,community,0.5708861610142915,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),euclidean,both,0.6294631539278496,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),cosine,hub,0.5152046493760766,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),cosine,community,0.5086577662291116,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),cosine,both,0.6432286135187913,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),radial,hub,0.6273188019678063,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),radial,community,0.5646084404820573,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),radial,both,0.6237075610675255,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5293095329557987,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.5482225258724968,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.6745828908150331,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),radial + cosine,hub,0.601807333424206,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),radial + cosine,community,0.5528566148470051,0,0
+binary,1.25,0.25,2,ULSE,d=4 (true rank),radial + cosine,both,0.6881462194662373,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,euclidean,hub,0.5055545917545446,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,euclidean,community,0.5664340755342503,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,euclidean,both,0.5366096817294186,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,cosine,hub,0.4922985414936988,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,cosine,community,0.4817352493167869,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,cosine,both,0.606505875501045,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,radial,hub,0.5675813826689302,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,radial,community,0.5054489046189686,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,radial,both,0.6035081708862928,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,euclidean + cosine (default),hub,0.5037113223212184,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,euclidean + cosine (default),community,0.5451788674342547,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,euclidean + cosine (default),both,0.6132549933194011,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,radial + cosine,hub,0.5590651680937806,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,radial + cosine,community,0.4808168316831683,0,0
+binary,1.25,0.25,2,ULSE,default 4-24,radial + cosine,both,0.6612696563774024,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),euclidean,hub,0.6113118212009694,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),euclidean,community,0.7050332358763913,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),euclidean,both,0.6347912824180374,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),cosine,hub,0.5125213176555067,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),cosine,community,0.8162455914937133,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),cosine,both,0.798628624484009,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),radial,hub,0.8485043981689256,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),radial,community,0.5180863477246208,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),radial,both,0.8415264551260335,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5831837357508303,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),euclidean + cosine (default),community,0.8204967681879565,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),euclidean + cosine (default),both,0.7718566893765448,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),radial + cosine,hub,0.7672420563683691,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),radial + cosine,community,0.7371022511242511,0,0
+binary,2.0,1.0,3,UASE,d=4 (true rank),radial + cosine,both,0.8973915007339933,0,0
+binary,2.0,1.0,3,UASE,default 4-24,euclidean,hub,0.5492101247643838,0,0
+binary,2.0,1.0,3,UASE,default 4-24,euclidean,community,0.6329828379636306,0,0
+binary,2.0,1.0,3,UASE,default 4-24,euclidean,both,0.5301721433859048,0,0
+binary,2.0,1.0,3,UASE,default 4-24,cosine,hub,0.5343326451844538,0,0
+binary,2.0,1.0,3,UASE,default 4-24,cosine,community,0.7017686468343975,0,0
+binary,2.0,1.0,3,UASE,default 4-24,cosine,both,0.7246207701283547,0,0
+binary,2.0,1.0,3,UASE,default 4-24,radial,hub,0.8381148460640876,0,0
+binary,2.0,1.0,3,UASE,default 4-24,radial,community,0.49180902809644306,0,0
+binary,2.0,1.0,3,UASE,default 4-24,radial,both,0.8381482039121215,0,0
+binary,2.0,1.0,3,UASE,default 4-24,euclidean + cosine (default),hub,0.5808135490530473,0,0
+binary,2.0,1.0,3,UASE,default 4-24,euclidean + cosine (default),community,0.765516631048995,0,0
+binary,2.0,1.0,3,UASE,default 4-24,euclidean + cosine (default),both,0.6994391538374676,0,0
+binary,2.0,1.0,3,UASE,default 4-24,radial + cosine,hub,0.8292932636208599,0,0
+binary,2.0,1.0,3,UASE,default 4-24,radial + cosine,community,0.6723185137597839,0,0
+binary,2.0,1.0,3,UASE,default 4-24,radial + cosine,both,0.8912937102420296,0,0
+binary,2.0,1.0,3,UASE,default 4-24,DeDi,hub,0.9282773090386859,0,0
+binary,2.0,1.0,3,UASE,default 4-24,DeDi,community,0.5126650321870124,0,0
+binary,2.0,1.0,3,UASE,default 4-24,DeDi,both,0.918658486091768,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),euclidean,hub,0.5534119468629387,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),euclidean,community,0.674471962555557,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),euclidean,both,0.5904881996461776,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),cosine,hub,0.5001907369176914,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),cosine,community,0.8068254821496467,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),cosine,both,0.7939925471449543,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),radial,hub,0.8669834395476169,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),radial,community,0.4944606872681027,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),radial,both,0.8603907102796703,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5262487658199444,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.7932787487053086,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.7332404863176121,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),radial + cosine,hub,0.7564289561080693,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),radial + cosine,community,0.7042760872130374,0,0
+binary,2.0,1.0,3,ULSE,d=4 (true rank),radial + cosine,both,0.8936525263171102,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,euclidean,hub,0.5243049322322951,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,euclidean,community,0.6374405097478794,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,euclidean,both,0.5233780002760317,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,cosine,hub,0.4951053540974778,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,cosine,community,0.7124146159191326,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,cosine,both,0.7290278666516103,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,radial,hub,0.856260097836819,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,radial,community,0.47505670420725554,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,radial,both,0.84407347461136,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,euclidean + cosine (default),hub,0.5181620815007629,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,euclidean + cosine (default),community,0.7494460687268103,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,euclidean + cosine (default),both,0.6817292129333383,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,radial + cosine,hub,0.8026181446907817,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,radial + cosine,community,0.6639571014644763,0,0
+binary,2.0,1.0,3,ULSE,default 4-24,radial + cosine,both,0.8956913965947729,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),euclidean,hub,0.62017621579051,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),euclidean,community,0.694820008995486,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),euclidean,both,0.679533951796903,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),cosine,hub,0.4973235380980508,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),cosine,community,0.9265621528473964,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),cosine,both,0.9076184519880014,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),radial,hub,0.9166666666666666,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),radial,community,0.5606572123747541,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),radial,both,0.9270583602608202,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5679698267375468,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),euclidean + cosine (default),community,0.8543652492454088,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),euclidean + cosine (default),both,0.8471068876457848,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),radial + cosine,hub,0.7871720565071865,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),radial + cosine,community,0.81123568715217,0,0
+poisson,2.0,1.0,3,UASE,d=4 (true rank),radial + cosine,both,0.9714250141876006,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,euclidean,hub,0.576100733412089,2,0
+poisson,2.0,1.0,3,UASE,default 4-24,euclidean,community,0.6370944580219685,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,euclidean,both,0.6019798941431268,2,0
+poisson,2.0,1.0,3,UASE,default 4-24,cosine,hub,0.5333850167355779,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,cosine,community,0.825284360317985,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,cosine,both,0.8387825301414127,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,radial,hub,0.9142424689899586,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,radial,community,0.5516617263746566,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,radial,both,0.9307471364210185,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,euclidean + cosine (default),hub,0.6162199744044103,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,euclidean + cosine (default),community,0.8189495873456272,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,euclidean + cosine (default),both,0.8469302664952573,3,0
+poisson,2.0,1.0,3,UASE,default 4-24,radial + cosine,hub,0.8833493305768852,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,radial + cosine,community,0.789551688821212,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,radial + cosine,both,0.983455520424354,1,0
+poisson,2.0,1.0,3,UASE,default 4-24,DeDi,hub,0.985417897223863,55,0
+poisson,2.0,1.0,3,UASE,default 4-24,DeDi,community,0.5138183670483426,0,0
+poisson,2.0,1.0,3,UASE,default 4-24,DeDi,both,0.9904392944419351,62,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),euclidean,hub,0.5913565662531994,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),euclidean,community,0.6791375171374846,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),euclidean,both,0.6494967744924314,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),cosine,hub,0.4552015652687537,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),cosine,community,0.9210293870605895,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),cosine,both,0.9050994290214609,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),radial,hub,0.9724908938767474,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),radial,community,0.49244324986317106,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),radial,both,0.9754757189349456,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5325666962000394,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.8416442231097286,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.8319985407039366,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),radial + cosine,hub,0.8017141661744438,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),radial + cosine,community,0.7880154115434845,0,0
+poisson,2.0,1.0,3,ULSE,d=4 (true rank),radial + cosine,both,0.9775459504534242,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,euclidean,hub,0.5848561478637527,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,euclidean,community,0.645919246546763,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,euclidean,both,0.6116477305629872,2,0
+poisson,2.0,1.0,3,ULSE,default 4-24,cosine,hub,0.54646276333924,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,cosine,community,0.8717547158564407,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,cosine,both,0.8576346663887056,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,radial,hub,0.968374680055129,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,radial,community,0.5208250919869728,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,radial,both,0.9789762922298275,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,euclidean + cosine (default),hub,0.5833456389052963,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,euclidean + cosine (default),community,0.7929006107176338,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,euclidean + cosine (default),both,0.775838805693571,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,radial + cosine,hub,0.8912372022051585,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,radial + cosine,community,0.7896546492031409,0,0
+poisson,2.0,1.0,3,ULSE,default 4-24,radial + cosine,both,0.9726932119569623,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),euclidean,hub,0.6360108017716714,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),euclidean,community,0.6399529964747356,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),euclidean,both,0.7192938279894802,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),cosine,hub,0.5256090120220555,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),cosine,community,0.7008546095502617,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),cosine,both,0.703807845112193,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),radial,hub,0.7714905540992497,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),radial,community,0.5776092297831428,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),radial,both,0.7753483296961557,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.6115514553014553,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),euclidean + cosine (default),community,0.7268534344621301,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),euclidean + cosine (default),both,0.7784609143304796,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),radial + cosine,hub,0.7279925201120854,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),radial + cosine,community,0.6969260762739024,0,0
+binary,1.5,0.5,3,UASE,d=4 (true rank),radial + cosine,both,0.8261953723910246,0,0
+binary,1.5,0.5,3,UASE,default 4-24,euclidean,hub,0.5514327036066167,0,0
+binary,1.5,0.5,3,UASE,default 4-24,euclidean,community,0.5324030552291422,0,0
+binary,1.5,0.5,3,UASE,default 4-24,euclidean,both,0.5606849085109955,0,0
+binary,1.5,0.5,3,UASE,default 4-24,cosine,hub,0.5355181686703426,0,0
+binary,1.5,0.5,3,UASE,default 4-24,cosine,community,0.6246581561798953,0,0
+binary,1.5,0.5,3,UASE,default 4-24,cosine,both,0.5817455654412176,0,0
+binary,1.5,0.5,3,UASE,default 4-24,radial,hub,0.7521354967007141,0,0
+binary,1.5,0.5,3,UASE,default 4-24,radial,community,0.5600283089413525,0,0
+binary,1.5,0.5,3,UASE,default 4-24,radial,both,0.7678991102904147,0,0
+binary,1.5,0.5,3,UASE,default 4-24,euclidean + cosine (default),hub,0.5794483865136039,0,0
+binary,1.5,0.5,3,UASE,default 4-24,euclidean + cosine (default),community,0.6437853861766906,0,0
+binary,1.5,0.5,3,UASE,default 4-24,euclidean + cosine (default),both,0.6371915393654524,0,0
+binary,1.5,0.5,3,UASE,default 4-24,radial + cosine,hub,0.7725583024496068,0,0
+binary,1.5,0.5,3,UASE,default 4-24,radial + cosine,community,0.6610965708791796,0,0
+binary,1.5,0.5,3,UASE,default 4-24,radial + cosine,both,0.7852946113815679,0,0
+binary,1.5,0.5,3,UASE,default 4-24,DeDi,hub,0.888722543613848,0,0
+binary,1.5,0.5,3,UASE,default 4-24,DeDi,community,0.48481465655378697,0,0
+binary,1.5,0.5,3,UASE,default 4-24,DeDi,both,0.8952422919814225,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),euclidean,hub,0.551331013287535,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),euclidean,community,0.5890983869244739,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),euclidean,both,0.6393528621789492,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),cosine,hub,0.5051749073488204,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),cosine,community,0.6858081401559663,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),cosine,both,0.6620782272956186,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),radial,hub,0.7932240350718611,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),radial,community,0.5687373143894883,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),radial,both,0.7759078954731129,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5253802088041218,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.6763219741480611,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.6983101113535897,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),radial + cosine,hub,0.7096684895597939,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),radial + cosine,community,0.6774837090054482,0,0
+binary,1.5,0.5,3,ULSE,d=4 (true rank),radial + cosine,both,0.7896662190140451,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,euclidean,hub,0.5303573849769502,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,euclidean,community,0.5267012071359898,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,euclidean,both,0.5728344804431761,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,cosine,hub,0.5206459595046552,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,cosine,community,0.6068181818181818,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,cosine,both,0.6032223994180516,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,radial,hub,0.7560392750610142,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,radial,community,0.5498691379126162,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,radial,both,0.7687174752392144,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,euclidean + cosine (default),hub,0.5431873135677483,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,euclidean + cosine (default),community,0.6076994979168893,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,euclidean + cosine (default),both,0.6473616473616474,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,radial + cosine,hub,0.7237300009039139,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,radial + cosine,community,0.6226711889755367,0,0
+binary,1.5,0.5,3,ULSE,default 4-24,radial + cosine,both,0.7690497174192826,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),euclidean,hub,0.6098487343300621,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),euclidean,community,0.6082383160733172,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),euclidean,both,0.6963069963915953,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),cosine,hub,0.49082306966124395,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),cosine,community,0.610196775805758,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),cosine,both,0.5744844930680647,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),radial,hub,0.688889986607829,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),radial,community,0.5154526540906819,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),radial,both,0.6971932712173617,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5652292037146809,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),euclidean + cosine (default),community,0.6464399037623348,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),euclidean + cosine (default),both,0.6794735297333694,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),radial + cosine,hub,0.6351154800324925,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),radial + cosine,community,0.5923265571788882,0,0
+binary,1.25,0.25,3,UASE,d=4 (true rank),radial + cosine,both,0.6973170043910889,0,0
+binary,1.25,0.25,3,UASE,default 4-24,euclidean,hub,0.5627565918022349,0,0
+binary,1.25,0.25,3,UASE,default 4-24,euclidean,community,0.5335030277671234,0,0
+binary,1.25,0.25,3,UASE,default 4-24,euclidean,both,0.603858173007752,0,0
+binary,1.25,0.25,3,UASE,default 4-24,cosine,hub,0.44833036949219524,0,0
+binary,1.25,0.25,3,UASE,default 4-24,cosine,community,0.542650255122796,0,0
+binary,1.25,0.25,3,UASE,default 4-24,cosine,both,0.5411858817571261,0,0
+binary,1.25,0.25,3,UASE,default 4-24,radial,hub,0.6566719357175789,0,0
+binary,1.25,0.25,3,UASE,default 4-24,radial,community,0.5192242872252636,0,0
+binary,1.25,0.25,3,UASE,default 4-24,radial,both,0.642546371164991,0,0
+binary,1.25,0.25,3,UASE,default 4-24,euclidean + cosine (default),hub,0.5157906869525127,0,0
+binary,1.25,0.25,3,UASE,default 4-24,euclidean + cosine (default),community,0.5725065959993956,0,0
+binary,1.25,0.25,3,UASE,default 4-24,euclidean + cosine (default),both,0.6369496031905894,0,0
+binary,1.25,0.25,3,UASE,default 4-24,radial + cosine,hub,0.5949691540977848,0,0
+binary,1.25,0.25,3,UASE,default 4-24,radial + cosine,community,0.5543864848844102,0,0
+binary,1.25,0.25,3,UASE,default 4-24,radial + cosine,both,0.657008764912725,0,0
+binary,1.25,0.25,3,UASE,default 4-24,DeDi,hub,0.7611034270785308,0,0
+binary,1.25,0.25,3,UASE,default 4-24,DeDi,community,0.5399014377535246,0,0
+binary,1.25,0.25,3,UASE,default 4-24,DeDi,both,0.7696750133804479,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),euclidean,hub,0.5636292783595688,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),euclidean,community,0.5388960563478503,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),euclidean,both,0.6564246292321062,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),cosine,hub,0.46778743770445014,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),cosine,community,0.5500831037809315,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),cosine,both,0.6223145585027711,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),radial,hub,0.6461502996772707,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),radial,community,0.5508618385113382,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),radial,both,0.6680095073117673,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5195668401062592,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.5578065250996664,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.6784836643435523,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),radial + cosine,hub,0.5871067421897297,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),radial + cosine,community,0.5679155479619233,0,0
+binary,1.25,0.25,3,ULSE,d=4 (true rank),radial + cosine,both,0.7101449692393575,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,euclidean,hub,0.5666040966870842,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,euclidean,community,0.5295396166765461,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,euclidean,both,0.6009202295106497,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,cosine,hub,0.46437353180091767,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,cosine,community,0.5415693248253658,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,cosine,both,0.5590926617595433,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,radial,hub,0.6418197984588027,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,radial,community,0.556899938398596,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,radial,both,0.685781044077785,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,euclidean + cosine (default),hub,0.5340347757360205,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,euclidean + cosine (default),community,0.5452944663342515,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,euclidean + cosine (default),both,0.6308262498489304,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,radial + cosine,hub,0.5894805593975718,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,radial + cosine,community,0.5676714669270198,0,0
+binary,1.25,0.25,3,ULSE,default 4-24,radial + cosine,both,0.6882096673016385,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),euclidean,hub,0.6094727592267135,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),euclidean,community,0.6085206097545776,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),euclidean,both,0.6758327267993349,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),cosine,hub,0.44101347393087287,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),cosine,community,0.7933477919455558,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),cosine,both,0.7853343037877308,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),radial,hub,0.865278265963679,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),radial,community,0.4986351568634783,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),radial,both,0.8673199481635334,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5291739894551846,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),euclidean + cosine (default),community,0.7517699335651697,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),euclidean + cosine (default),both,0.7903345108969011,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),radial + cosine,hub,0.7297598125366139,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),radial + cosine,community,0.7108339877101796,0,0
+binary,2.0,1.0,4,UASE,d=4 (true rank),radial + cosine,both,0.9003479434059399,0,0
+binary,2.0,1.0,4,UASE,default 4-24,euclidean,hub,0.5651845342706503,0,0
+binary,2.0,1.0,4,UASE,default 4-24,euclidean,community,0.5405931770307495,0,0
+binary,2.0,1.0,4,UASE,default 4-24,euclidean,both,0.6349049960649258,0,0
+binary,2.0,1.0,4,UASE,default 4-24,cosine,hub,0.4346690099589924,0,0
+binary,2.0,1.0,4,UASE,default 4-24,cosine,community,0.6824558451432774,0,0
+binary,2.0,1.0,4,UASE,default 4-24,cosine,both,0.7144230826128893,0,0
+binary,2.0,1.0,4,UASE,default 4-24,radial,hub,0.8616198008201523,0,0
+binary,2.0,1.0,4,UASE,default 4-24,radial,community,0.4824471201186603,0,0
+binary,2.0,1.0,4,UASE,default 4-24,radial,both,0.892741119454652,0,0
+binary,2.0,1.0,4,UASE,default 4-24,euclidean + cosine (default),hub,0.5124399531341535,0,0
+binary,2.0,1.0,4,UASE,default 4-24,euclidean + cosine (default),community,0.6704184272519912,0,0
+binary,2.0,1.0,4,UASE,default 4-24,euclidean + cosine (default),both,0.7695170805891368,0,0
+binary,2.0,1.0,4,UASE,default 4-24,radial + cosine,hub,0.7694112478031634,0,0
+binary,2.0,1.0,4,UASE,default 4-24,radial + cosine,community,0.6342345037330641,0,0
+binary,2.0,1.0,4,UASE,default 4-24,radial + cosine,both,0.9207038161343961,0,0
+binary,2.0,1.0,4,UASE,default 4-24,DeDi,hub,0.9469859402460457,0,0
+binary,2.0,1.0,4,UASE,default 4-24,DeDi,community,0.5407396328011068,0,0
+binary,2.0,1.0,4,UASE,default 4-24,DeDi,both,0.9623090897256099,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),euclidean,hub,0.578705330990041,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),euclidean,community,0.598717421381296,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),euclidean,both,0.6659092388442125,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),cosine,hub,0.430597539543058,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),cosine,community,0.7981091625222799,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),cosine,both,0.7715289982425307,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),radial,hub,0.8993263034563562,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),radial,community,0.4964788293509828,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),radial,both,0.9082032983614706,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.49916813122437026,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.7396172207057299,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.7570668607575461,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),radial + cosine,hub,0.7361335676625659,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),radial + cosine,community,0.7138160764810729,0,0
+binary,2.0,1.0,4,ULSE,d=4 (true rank),radial + cosine,both,0.9039516429674602,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,euclidean,hub,0.5325278265963679,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,euclidean,community,0.5386144660908151,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,euclidean,both,0.6327421845875273,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,cosine,hub,0.3921558289396602,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,cosine,community,0.6880803699410437,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,cosine,both,0.7354624156030132,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,radial,hub,0.8789074399531341,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,radial,community,0.4865759264106495,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,radial,both,0.9106116821406803,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,euclidean + cosine (default),hub,0.4414030462800234,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,euclidean + cosine (default),community,0.6594030836729861,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,euclidean + cosine (default),both,0.7599871000573988,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,radial + cosine,hub,0.7507937902753369,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,radial + cosine,community,0.6543924266786324,0,0
+binary,2.0,1.0,4,ULSE,default 4-24,radial + cosine,both,0.9330001834395507,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),euclidean,hub,0.580501802148581,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),euclidean,community,0.6322450455494512,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),euclidean,both,0.6740708170602385,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),cosine,hub,0.49171828160175435,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),cosine,community,0.8924834657241838,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),cosine,both,0.89163282725086,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),radial,hub,0.8857531114765954,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),radial,community,0.5321062392833398,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),radial,both,0.8681271499883609,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5485355355705638,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),euclidean + cosine (default),community,0.8017024180284844,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),euclidean + cosine (default),both,0.8290613765098415,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),radial + cosine,hub,0.7583196276726039,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),radial + cosine,community,0.7696690811958334,0,0
+poisson,2.0,1.0,4,UASE,d=4 (true rank),radial + cosine,both,0.9345420686444404,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,euclidean,hub,0.550710944699117,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,euclidean,community,0.5813387222824883,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,euclidean,both,0.6173240565915733,2,0
+poisson,2.0,1.0,4,UASE,default 4-24,cosine,hub,0.5677409571800166,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,cosine,community,0.8300031493858697,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,cosine,both,0.8179680831803016,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,radial,hub,0.8977557709579965,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,radial,community,0.5168754592854393,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,radial,both,0.867721076998681,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,euclidean + cosine (default),hub,0.6133691430171117,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,euclidean + cosine (default),community,0.783488469748399,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,euclidean + cosine (default),both,0.8075420945089621,2,0
+poisson,2.0,1.0,4,UASE,default 4-24,radial + cosine,hub,0.8823733538626635,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,radial + cosine,community,0.7688350771599538,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,radial + cosine,both,0.9443757597703231,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,DeDi,hub,0.9786658268304347,55,0
+poisson,2.0,1.0,4,UASE,default 4-24,DeDi,community,0.5686012060981442,0,0
+poisson,2.0,1.0,4,UASE,default 4-24,DeDi,both,0.9739130434782609,55,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),euclidean,hub,0.5518248941456416,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),euclidean,community,0.6290315055230896,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),euclidean,both,0.6640819388045418,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),cosine,hub,0.46969590929768695,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),cosine,community,0.9117472092941876,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),cosine,both,0.8921190802576107,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),radial,hub,0.9637120761451516,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),radial,community,0.5066545356988721,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),radial,both,0.9482761296329825,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5188846508264222,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.813130606198458,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.8172490494788299,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),radial + cosine,hub,0.7976490417701881,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),radial + cosine,community,0.7807735824847488,0,0
+poisson,2.0,1.0,4,ULSE,d=4 (true rank),radial + cosine,both,0.9639241652225642,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,euclidean,hub,0.5450391340355297,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,euclidean,community,0.6006724522051533,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,euclidean,both,0.6327315521299434,2,0
+poisson,2.0,1.0,4,ULSE,default 4-24,cosine,hub,0.5060538195051965,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,cosine,community,0.8758442103789761,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,cosine,both,0.8655070739466674,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,radial,hub,0.9665231946437112,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,radial,community,0.5376643221238525,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,radial,both,0.9538809714714326,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,euclidean + cosine (default),hub,0.5333980707095449,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,euclidean + cosine (default),community,0.7755129416430463,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,euclidean + cosine (default),both,0.7732483252722241,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,radial + cosine,hub,0.8810144521818245,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,radial + cosine,community,0.7974799080845901,0,0
+poisson,2.0,1.0,4,ULSE,default 4-24,radial + cosine,both,0.9691720766624421,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),euclidean,hub,0.5895614801864801,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),euclidean,community,0.5671228413163897,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),euclidean,both,0.6731873389768127,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),cosine,hub,0.5189515345765345,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),cosine,community,0.6550367195528486,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),cosine,both,0.627039627039627,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),radial,hub,0.7556089743589743,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),radial,community,0.5149322004160714,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),radial,both,0.8003864556496135,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5648886703574204,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),euclidean + cosine (default),community,0.6497637666992506,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),euclidean + cosine (default),both,0.7091798552324868,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),radial + cosine,hub,0.7041873057498057,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),radial + cosine,community,0.624457979296689,0,0
+binary,1.5,0.5,4,UASE,d=4 (true rank),radial + cosine,both,0.7956416390626917,0,0
+binary,1.5,0.5,4,UASE,default 4-24,euclidean,hub,0.5587788947163947,0,0
+binary,1.5,0.5,4,UASE,default 4-24,euclidean,community,0.5227053412537284,0,0
+binary,1.5,0.5,4,UASE,default 4-24,euclidean,both,0.6041927370874739,0,0
+binary,1.5,0.5,4,UASE,default 4-24,cosine,hub,0.5341334013209014,0,0
+binary,1.5,0.5,4,UASE,default 4-24,cosine,community,0.6222053036569165,0,0
+binary,1.5,0.5,4,UASE,default 4-24,cosine,both,0.5575512207091154,0,0
+binary,1.5,0.5,4,UASE,default 4-24,radial,hub,0.7631392045454546,0,0
+binary,1.5,0.5,4,UASE,default 4-24,radial,community,0.5054515377096023,0,0
+binary,1.5,0.5,4,UASE,default 4-24,radial,both,0.8003251134830082,0,0
+binary,1.5,0.5,4,UASE,default 4-24,euclidean + cosine (default),hub,0.5867600281662781,0,0
+binary,1.5,0.5,4,UASE,default 4-24,euclidean + cosine (default),community,0.6209426773942903,0,0
+binary,1.5,0.5,4,UASE,default 4-24,euclidean + cosine (default),both,0.6594497607655503,0,0
+binary,1.5,0.5,4,UASE,default 4-24,radial + cosine,hub,0.7628569347319347,0,0
+binary,1.5,0.5,4,UASE,default 4-24,radial + cosine,community,0.6062861869313482,0,0
+binary,1.5,0.5,4,UASE,default 4-24,radial + cosine,both,0.8020825665562508,0,0
+binary,1.5,0.5,4,UASE,default 4-24,DeDi,hub,0.8718616452991453,0,0
+binary,1.5,0.5,4,UASE,default 4-24,DeDi,community,0.4874426648620197,0,0
+binary,1.5,0.5,4,UASE,default 4-24,DeDi,both,0.9113452337136547,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),euclidean,hub,0.5690377331002331,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),euclidean,community,0.5834899867157932,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),euclidean,both,0.6627775733038891,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),cosine,hub,0.5188240578865578,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),cosine,community,0.6764606361380555,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),cosine,both,0.6367684946632315,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),radial,hub,0.7498057498057498,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),radial,community,0.5663333082687921,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),radial,both,0.7782112624217887,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5476671765734266,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.6630761711406873,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.6932707643233958,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),radial + cosine,hub,0.6861584595959596,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),radial + cosine,community,0.6686060355415194,0,0
+binary,1.5,0.5,4,ULSE,d=4 (true rank),radial + cosine,both,0.7791221935958778,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,euclidean,hub,0.5488751699689199,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,euclidean,community,0.5256441587086749,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,euclidean,both,0.5833271991166727,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,cosine,hub,0.5388682498057498,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,cosine,community,0.6328546005965361,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,cosine,both,0.5403662127346338,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,radial,hub,0.735652802059052,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,radial,community,0.5177394290297516,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,radial,both,0.74896331738437,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,euclidean + cosine (default),hub,0.5559561965811965,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,euclidean + cosine (default),community,0.6209082136501491,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,euclidean + cosine (default),both,0.6080572935836094,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,radial + cosine,hub,0.7285930215617715,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,radial + cosine,community,0.6258365290623356,0,0
+binary,1.5,0.5,4,ULSE,default 4-24,radial + cosine,both,0.7300423260949577,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),euclidean,hub,0.5570263938778698,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),euclidean,community,0.5741061438925913,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),euclidean,both,0.578047598861503,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),cosine,hub,0.5255661408714665,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),cosine,community,0.6014058471566863,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),cosine,both,0.6067825349724459,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),radial,hub,0.6479400281118226,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),radial,community,0.5470107505959041,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),radial,both,0.6058438805789378,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),euclidean + cosine (default),hub,0.5521474308917694,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),euclidean + cosine (default),community,0.6154108089701805,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),euclidean + cosine (default),both,0.6201598740386363,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),radial + cosine,hub,0.6340808995783227,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),radial + cosine,community,0.6129566570997713,0,0
+binary,1.25,0.25,4,UASE,d=4 (true rank),radial + cosine,both,0.6590807242778417,0,0
+binary,1.25,0.25,4,UASE,default 4-24,euclidean,hub,0.511981883492113,0,0
+binary,1.25,0.25,4,UASE,default 4-24,euclidean,community,0.5155080994308509,0,0
+binary,1.25,0.25,4,UASE,default 4-24,euclidean,both,0.4975322473202931,0,0
+binary,1.25,0.25,4,UASE,default 4-24,cosine,hub,0.5216461033890364,0,0
+binary,1.25,0.25,4,UASE,default 4-24,cosine,community,0.6089993676120057,0,0
+binary,1.25,0.25,4,UASE,default 4-24,cosine,both,0.6032307878641071,0,0
+binary,1.25,0.25,4,UASE,default 4-24,radial,hub,0.6011463376542245,0,0
+binary,1.25,0.25,4,UASE,default 4-24,radial,community,0.50300870749623,0,0
+binary,1.25,0.25,4,UASE,default 4-24,radial,both,0.5858354024102223,0,0
+binary,1.25,0.25,4,UASE,default 4-24,euclidean + cosine (default),hub,0.5438919256598469,0,0
+binary,1.25,0.25,4,UASE,default 4-24,euclidean + cosine (default),community,0.6173663472296541,0,0
+binary,1.25,0.25,4,UASE,default 4-24,euclidean + cosine (default),both,0.5960334282080785,0,0
+binary,1.25,0.25,4,UASE,default 4-24,radial + cosine,hub,0.6065469311260346,0,0
+binary,1.25,0.25,4,UASE,default 4-24,radial + cosine,community,0.6013936858491025,0,0
+binary,1.25,0.25,4,UASE,default 4-24,radial + cosine,both,0.6628565372736632,0,0
+binary,1.25,0.25,4,UASE,default 4-24,DeDi,hub,0.7563954396376699,0,0
+binary,1.25,0.25,4,UASE,default 4-24,DeDi,community,0.49338668093593424,0,0
+binary,1.25,0.25,4,UASE,default 4-24,DeDi,both,0.7470205292799612,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),euclidean,hub,0.5373356239262845,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),euclidean,community,0.5285790728219099,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),euclidean,both,0.5261248713135106,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),cosine,hub,0.5200249882867406,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),cosine,community,0.5835044023933453,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),cosine,both,0.5827953733422152,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),radial,hub,0.6099765734811807,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),radial,community,0.5391740039889089,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),radial,both,0.5915702779628171,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),euclidean + cosine (default),hub,0.5352990785569265,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),euclidean + cosine (default),community,0.5662888553777302,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),euclidean + cosine (default),both,0.5669623932659117,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),radial + cosine,hub,0.5895267843198501,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),radial + cosine,community,0.5865690519044607,0,0
+binary,1.25,0.25,4,ULSE,d=4 (true rank),radial + cosine,both,0.6131593290135046,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,euclidean,hub,0.5267249726690614,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,euclidean,community,0.516875030403269,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,euclidean,both,0.4817840489311452,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,cosine,hub,0.5243448383570202,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,cosine,community,0.6114437904363477,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,cosine,both,0.57654575183189,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,radial,hub,0.5977666718725597,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,radial,community,0.4792746996157027,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,radial,both,0.5455731847635197,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,euclidean + cosine (default),hub,0.54941746056536,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,euclidean + cosine (default),community,0.5913897942306757,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,euclidean + cosine (default),both,0.5513020044813177,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,radial + cosine,hub,0.5948243011088552,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,radial + cosine,community,0.5813980639198326,0,0
+binary,1.25,0.25,4,ULSE,default 4-24,radial + cosine,both,0.5998849391388603,0,0
