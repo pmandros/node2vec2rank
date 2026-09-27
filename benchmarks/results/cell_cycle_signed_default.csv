@@ -1,0 +1,13 @@
+comparison,method,tested,cell_cycle_tested,called,cell_cycle_called,precision,auroc_cell_cycle,genes_q<0.1,power
+G1 -> S,hdWGCNA signed,534,64,140,53,0.37857142857142856,0.8955119680851064,0,10
+S -> G2,hdWGCNA signed,534,64,30,6,0.2,0.6046210106382979,0,10
+G2 -> M,hdWGCNA signed,534,64,46,23,0.5,0.7203125,0,10
+null: G1 halves,hdWGCNA signed,534,64,0,0,0.0,0.3861369680851064,0,10
+G1 -> S,unsigned |cor|^power,534,64,37,16,0.43243243243243246,0.7908577127659574,0,10
+S -> G2,unsigned |cor|^power,534,64,0,0,0.0,0.6796210106382978,0,10
+G2 -> M,unsigned |cor|^power,534,64,19,12,0.631578947368421,0.7440492021276596,0,10
+null: G1 halves,unsigned |cor|^power,534,64,0,0,0.0,0.5253656914893617,0,10
+G1 -> S,signed correlation,534,64,146,51,0.3493150684931507,0.841688829787234,0,1
+S -> G2,signed correlation,534,64,44,18,0.4090909090909091,0.7500997340425531,5,1
+G2 -> M,signed correlation,534,64,15,8,0.5333333333333333,0.6285904255319149,5,1
+null: G1 halves,signed correlation,534,64,9,0,0.0,0.42782579787234043,1,1
