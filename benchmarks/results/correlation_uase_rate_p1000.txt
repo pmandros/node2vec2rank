@@ -1,0 +1,20 @@
+hdWGCNA: gap at d=12 (ratio 1.21); ratios at 5,12,24: 1.05 1.21 1.04
+  n=  150 sqrt(logp/n)=0.215 | worst-gene err d5:0.403 d12:0.382 d24:0.415 | spearman(changed) d5:0.88 d12:0.95 d24:0.95 borda:0.93 | AUROC borda 0.989
+  n=  500 sqrt(logp/n)=0.118 | worst-gene err d5:0.263 d12:0.152 d24:0.270 | spearman(changed) d5:0.92 d12:0.98 d24:0.99 borda:0.97 | AUROC borda 0.999
+  n= 2000 sqrt(logp/n)=0.059 | worst-gene err d5:0.237 d12:0.087 d24:0.139 | spearman(changed) d5:0.95 d12:0.99 d24:1.00 borda:0.99 | AUROC borda 0.998
+  n= 8000 sqrt(logp/n)=0.029 | worst-gene err d5:0.066 d12:0.042 d24:0.058 | spearman(changed) d5:0.99 d12:1.00 d24:1.00 borda:1.00 | AUROC borda 0.997
+TOM: gap at d=6 (ratio 1.26); ratios at 5,12,24: 1.09 1.04 1.05
+  n=  150 sqrt(logp/n)=0.215 | worst-gene err d5:0.352 d6:0.354 d12:0.350 d24:0.356 | spearman(changed) d5:0.86 d6:0.90 d12:0.92 d24:0.94 borda:0.91 | AUROC borda 0.984
+  n=  500 sqrt(logp/n)=0.118 | worst-gene err d5:0.345 d6:0.185 d12:0.231 d24:0.230 | spearman(changed) d5:0.90 d6:0.97 d12:0.97 d24:0.98 borda:0.97 | AUROC borda 0.993
+  n= 2000 sqrt(logp/n)=0.059 | worst-gene err d5:0.100 d6:0.082 d12:0.236 d24:0.103 | spearman(changed) d5:0.97 d6:0.99 d12:0.99 d24:0.99 borda:0.99 | AUROC borda 0.998
+  n= 8000 sqrt(logp/n)=0.029 | worst-gene err d5:0.087 d6:0.042 d12:0.059 d24:0.050 | spearman(changed) d5:0.97 d6:1.00 d12:1.00 d24:1.00 borda:1.00 | AUROC borda 0.997
+abs10: gap at d=2 (ratio 1.21); ratios at 5,12,24: 1.12 1.11 1.01
+  n=  150 sqrt(logp/n)=0.215 | worst-gene err d2:0.874 d5:1.165 d12:1.224 d24:0.904 | spearman(changed) d2:0.85 d5:0.86 d12:0.92 d24:0.96 borda:0.85 | AUROC borda 0.958
+  n=  500 sqrt(logp/n)=0.118 | worst-gene err d2:0.482 d5:0.581 d12:0.668 d24:0.694 | spearman(changed) d2:0.95 d5:0.95 d12:0.97 d24:0.99 borda:0.93 | AUROC borda 0.967
+  n= 2000 sqrt(logp/n)=0.059 | worst-gene err d2:0.133 d5:0.152 d12:0.162 d24:0.444 | spearman(changed) d2:0.99 d5:0.99 d12:0.99 d24:1.00 borda:0.95 | AUROC borda 0.971
+  n= 8000 sqrt(logp/n)=0.029 | worst-gene err d2:0.062 d5:0.087 d12:0.084 d24:0.522 | spearman(changed) d2:1.00 d5:0.99 d12:1.00 d24:1.00 borda:0.95 | AUROC borda 0.974
+signed: gap at d=9 (ratio 17.41); ratios at 5,12,24: 2.50 1.00 1.00
+  n=  150 sqrt(logp/n)=0.215 | worst-gene err d5:0.430 d9:0.434 d12:0.792 d24:0.755 | spearman(changed) d5:0.91 d9:0.94 d12:0.94 d24:0.94 borda:0.88 | AUROC borda 0.988
+  n=  500 sqrt(logp/n)=0.118 | worst-gene err d5:0.229 d9:0.230 d12:0.741 d24:0.714 | spearman(changed) d5:0.97 d9:0.98 d12:0.98 d24:0.98 borda:0.93 | AUROC borda 0.996
+  n= 2000 sqrt(logp/n)=0.059 | worst-gene err d5:0.126 d9:0.124 d12:0.712 d24:0.687 | spearman(changed) d5:0.99 d9:1.00 d12:0.99 d24:0.99 borda:0.93 | AUROC borda 0.996
+  n= 8000 sqrt(logp/n)=0.029 | worst-gene err d5:0.057 d9:0.056 d12:0.519 d24:0.438 | spearman(changed) d5:1.00 d9:1.00 d12:1.00 d24:1.00 borda:0.91 | AUROC borda 0.992

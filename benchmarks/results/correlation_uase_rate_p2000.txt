@@ -1,0 +1,6 @@
+hdWGCNA: gap at d=6 (ratio 1.15); ratios at 5,12,24: 1.10 1.02 1.03
+  n=  500 sqrt(logp/n)=0.123 | worst-gene err d5:0.197 d6:0.191 d12:0.302 d24:0.285 | spearman(changed) d5:0.98 d6:0.99 d12:0.99 d24:0.99 borda:0.97 | AUROC borda 0.999
+  n= 2000 sqrt(logp/n)=0.062 | worst-gene err d5:0.117 d6:0.101 d12:0.127 d24:0.123 | spearman(changed) d5:0.99 d6:1.00 d12:1.00 d24:1.00 borda:0.99 | AUROC borda 1.000
+signed: gap at d=9 (ratio 35.13); ratios at 5,12,24: 2.81 1.00 1.00
+  n=  500 sqrt(logp/n)=0.123 | worst-gene err d5:0.235 d9:0.230 d12:0.779 d24:0.711 | spearman(changed) d5:0.98 d9:0.99 d12:0.98 d24:0.98 borda:0.94 | AUROC borda 0.991
+  n= 2000 sqrt(logp/n)=0.062 | worst-gene err d5:0.123 d9:0.123 d12:0.709 d24:0.686 | spearman(changed) d5:0.99 d9:1.00 d12:1.00 d24:1.00 borda:0.95 | AUROC borda 0.992

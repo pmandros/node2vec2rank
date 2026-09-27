@@ -1,0 +1,8 @@
+null seed 3 signed correlation {'called': 0, 'cell_cycle_called': 0, 'auroc_cell_cycle': np.float64(0.3188497340425532), 'genes_q<0.1': 2}
+    comparison              method  called  cell_cycle_called  genes_q<0.1
+0  null seed 1      hdWGCNA signed       0                  0            0
+1  null seed 1  signed correlation       0                  0            1
+2  null seed 2      hdWGCNA signed       0                  0            0
+3  null seed 2  signed correlation       0                  0            0
+4  null seed 3      hdWGCNA signed       0                  0            0
+5  null seed 3  signed correlation       0                  0            2
