@@ -1,0 +1,65 @@
+module-less genes: 293 changed: 100
+hdWGCNA: population position norm of module-less genes (median) 1.59e-02 vs module genes 9.53e-02; population elbow 6
+  n=  150 borda 4-24 euc+cos (default)     AUROC 0.989  spearman-to-pop 0.93  frac module-less in top100 0.000  elbow 5.3
+  n=  150 borda 4-24 euclidean             AUROC 0.875  spearman-to-pop 0.95  frac module-less in top100 0.000  elbow 5.3
+  n=  150 borda 4-24 cosine                AUROC 0.990  spearman-to-pop 0.86  frac module-less in top100 0.036  elbow 5.3
+  n=  150 borda up to elbow euc+cos        AUROC 0.935  spearman-to-pop 0.73  frac module-less in top100 0.008  elbow 5.3
+  n=  150 single dim at elbow, euclidean   AUROC 0.889  spearman-to-pop 0.88  frac module-less in top100 0.000  elbow 5.3
+  n=  500 borda 4-24 euc+cos (default)     AUROC 0.999  spearman-to-pop 0.97  frac module-less in top100 0.000  elbow 4.7
+  n=  500 borda 4-24 euclidean             AUROC 0.942  spearman-to-pop 0.98  frac module-less in top100 0.000  elbow 4.7
+  n=  500 borda 4-24 cosine                AUROC 1.000  spearman-to-pop 0.96  frac module-less in top100 0.002  elbow 4.7
+  n=  500 borda up to elbow euc+cos        AUROC 0.988  spearman-to-pop 0.84  frac module-less in top100 0.002  elbow 4.7
+  n=  500 single dim at elbow, euclidean   AUROC 0.962  spearman-to-pop 0.91  frac module-less in top100 0.000  elbow 4.7
+  n= 2000 borda 4-24 euc+cos (default)     AUROC 0.998  spearman-to-pop 0.99  frac module-less in top100 0.000  elbow 6.0
+  n= 2000 borda 4-24 euclidean             AUROC 0.961  spearman-to-pop 0.99  frac module-less in top100 0.000  elbow 6.0
+  n= 2000 borda 4-24 cosine                AUROC 1.000  spearman-to-pop 0.99  frac module-less in top100 0.000  elbow 6.0
+  n= 2000 borda up to elbow euc+cos        AUROC 0.997  spearman-to-pop 0.91  frac module-less in top100 0.000  elbow 6.0
+  n= 2000 single dim at elbow, euclidean   AUROC 0.988  spearman-to-pop 0.99  frac module-less in top100 0.000  elbow 6.0
+TOM: population position norm of module-less genes (median) 2.40e-02 vs module genes 9.62e-02; population elbow 4
+  n=  150 borda 4-24 euc+cos (default)     AUROC 0.981  spearman-to-pop 0.92  frac module-less in top100 0.000  elbow 2.7
+  n=  150 borda 4-24 euclidean             AUROC 0.876  spearman-to-pop 0.94  frac module-less in top100 0.000  elbow 2.7
+  n=  150 borda 4-24 cosine                AUROC 0.991  spearman-to-pop 0.86  frac module-less in top100 0.016  elbow 2.7
+  n=  150 borda up to elbow euc+cos        AUROC 0.843  spearman-to-pop 0.64  frac module-less in top100 0.025  elbow 2.7
+  n=  150 single dim at elbow, euclidean   AUROC 0.821  spearman-to-pop 0.70  frac module-less in top100 0.001  elbow 2.7
+  n=  500 borda 4-24 euc+cos (default)     AUROC 0.996  spearman-to-pop 0.97  frac module-less in top100 0.000  elbow 3.3
+  n=  500 borda 4-24 euclidean             AUROC 0.924  spearman-to-pop 0.98  frac module-less in top100 0.000  elbow 3.3
+  n=  500 borda 4-24 cosine                AUROC 1.000  spearman-to-pop 0.95  frac module-less in top100 0.000  elbow 3.3
+  n=  500 borda up to elbow euc+cos        AUROC 0.933  spearman-to-pop 0.82  frac module-less in top100 0.005  elbow 3.3
+  n=  500 single dim at elbow, euclidean   AUROC 0.927  spearman-to-pop 0.81  frac module-less in top100 0.000  elbow 3.3
+  n= 2000 borda 4-24 euc+cos (default)     AUROC 0.997  spearman-to-pop 0.99  frac module-less in top100 0.000  elbow 4.0
+  n= 2000 borda 4-24 euclidean             AUROC 0.942  spearman-to-pop 0.99  frac module-less in top100 0.000  elbow 4.0
+  n= 2000 borda 4-24 cosine                AUROC 1.000  spearman-to-pop 0.99  frac module-less in top100 0.000  elbow 4.0
+  n= 2000 borda up to elbow euc+cos        AUROC 0.996  spearman-to-pop 0.90  frac module-less in top100 0.000  elbow 4.0
+  n= 2000 single dim at elbow, euclidean   AUROC 0.988  spearman-to-pop 0.98  frac module-less in top100 0.000  elbow 4.0
+abs10: population position norm of module-less genes (median) 0.00e+00 vs module genes 2.51e-03; population elbow 4
+  n=  150 borda 4-24 euc+cos (default)     AUROC 0.943  spearman-to-pop 0.83  frac module-less in top100 0.000  elbow 4.0
+  n=  150 borda 4-24 euclidean             AUROC 0.728  spearman-to-pop 0.92  frac module-less in top100 0.000  elbow 4.0
+  n=  150 borda 4-24 cosine                AUROC 0.865  spearman-to-pop 0.64  frac module-less in top100 0.177  elbow 4.0
+  n=  150 borda up to elbow euc+cos        AUROC 0.837  spearman-to-pop 0.64  frac module-less in top100 0.000  elbow 4.0
+  n=  150 single dim at elbow, euclidean   AUROC 0.716  spearman-to-pop 0.84  frac module-less in top100 0.000  elbow 4.0
+  n=  500 borda 4-24 euc+cos (default)     AUROC 0.962  spearman-to-pop 0.92  frac module-less in top100 0.000  elbow 3.3
+  n=  500 borda 4-24 euclidean             AUROC 0.742  spearman-to-pop 0.98  frac module-less in top100 0.000  elbow 3.3
+  n=  500 borda 4-24 cosine                AUROC 0.867  spearman-to-pop 0.84  frac module-less in top100 0.215  elbow 3.3
+  n=  500 borda up to elbow euc+cos        AUROC 0.876  spearman-to-pop 0.84  frac module-less in top100 0.000  elbow 3.3
+  n=  500 single dim at elbow, euclidean   AUROC 0.715  spearman-to-pop 0.94  frac module-less in top100 0.000  elbow 3.3
+  n= 2000 borda 4-24 euc+cos (default)     AUROC 0.971  spearman-to-pop 0.95  frac module-less in top100 0.000  elbow 3.3
+  n= 2000 borda 4-24 euclidean             AUROC 0.769  spearman-to-pop 0.99  frac module-less in top100 0.000  elbow 3.3
+  n= 2000 borda 4-24 cosine                AUROC 0.873  spearman-to-pop 0.92  frac module-less in top100 0.207  elbow 3.3
+  n= 2000 borda up to elbow euc+cos        AUROC 0.894  spearman-to-pop 0.89  frac module-less in top100 0.000  elbow 3.3
+  n= 2000 single dim at elbow, euclidean   AUROC 0.733  spearman-to-pop 0.98  frac module-less in top100 0.000  elbow 3.3
+signed: population position norm of module-less genes (median) 0.00e+00 vs module genes 5.35e-01; population elbow 5
+  n=  150 borda 4-24 euc+cos (default)     AUROC 0.988  spearman-to-pop 0.88  frac module-less in top100 0.017  elbow 5.0
+  n=  150 borda 4-24 euclidean             AUROC 0.911  spearman-to-pop 0.94  frac module-less in top100 0.000  elbow 5.0
+  n=  150 borda 4-24 cosine                AUROC 0.865  spearman-to-pop 0.88  frac module-less in top100 0.215  elbow 5.0
+  n=  150 borda up to elbow euc+cos        AUROC 0.944  spearman-to-pop 0.59  frac module-less in top100 0.118  elbow 5.0
+  n=  150 single dim at elbow, euclidean   AUROC 0.997  spearman-to-pop 0.91  frac module-less in top100 0.003  elbow 5.0
+  n=  500 borda 4-24 euc+cos (default)     AUROC 0.996  spearman-to-pop 0.93  frac module-less in top100 0.000  elbow 5.0
+  n=  500 borda 4-24 euclidean             AUROC 0.928  spearman-to-pop 0.98  frac module-less in top100 0.000  elbow 5.0
+  n=  500 borda 4-24 cosine                AUROC 0.884  spearman-to-pop 0.95  frac module-less in top100 0.207  elbow 5.0
+  n=  500 borda up to elbow euc+cos        AUROC 0.966  spearman-to-pop 0.76  frac module-less in top100 0.107  elbow 5.0
+  n=  500 single dim at elbow, euclidean   AUROC 1.000  spearman-to-pop 0.98  frac module-less in top100 0.000  elbow 5.0
+  n= 2000 borda 4-24 euc+cos (default)     AUROC 0.997  spearman-to-pop 0.93  frac module-less in top100 0.000  elbow 5.0
+  n= 2000 borda 4-24 euclidean             AUROC 0.934  spearman-to-pop 1.00  frac module-less in top100 0.000  elbow 5.0
+  n= 2000 borda 4-24 cosine                AUROC 0.885  spearman-to-pop 0.97  frac module-less in top100 0.209  elbow 5.0
+  n= 2000 borda up to elbow euc+cos        AUROC 0.985  spearman-to-pop 0.88  frac module-less in top100 0.076  elbow 5.0
+  n= 2000 single dim at elbow, euclidean   AUROC 1.000  spearman-to-pop 0.99  frac module-less in top100 0.000  elbow 5.0
