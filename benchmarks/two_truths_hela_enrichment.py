@@ -64,12 +64,12 @@ def node_scores(group_a, group_b, build):
     return scores
 
 
-def set_tests(group_a, group_b, strata, build, members, num_permutations, rng):
-    observed = node_scores(group_a, group_b, build)
+def set_tests(group_a, group_b, strata, build, members, num_permutations, rng, scorer=node_scores):
+    observed = scorer(group_a, group_b, build)
     pooled = pd.concat([group_a, group_b], axis=0, ignore_index=True)
     size_a = len(group_a)
     orders = _stratified_orders(np.r_[strata[0], strata[1]], size_a, num_permutations, rng)
-    null = [node_scores(pooled.iloc[o[:size_a]], pooled.iloc[o[size_a:]], build) for o in orders]
+    null = [scorer(pooled.iloc[o[:size_a]], pooled.iloc[o[size_a:]], build) for o in orders]
     values = pooled.to_numpy(dtype=np.float64)
     spread = values.std(axis=0, ddof=1)
     scaled = (values - values.mean(axis=0)) / np.where(spread > 0, spread, 1.0)

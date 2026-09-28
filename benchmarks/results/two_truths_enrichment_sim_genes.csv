@@ -1,721 +1,865 @@
 scenario,samples,rep,ranking,truth,auroc,called,total
-"mixed (5% switch, 5% hub, 5% both)",150,0,"default (euclidean + cosine, 4-24)",switch,0.9822588235294117,29,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"default (euclidean + cosine, 4-24)",hub,0.9507294117647059,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"default (euclidean + cosine, 4-24)",both,0.9985411764705883,50,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"default (euclidean + cosine, 4-24)",none (false calls),,3,850
-"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, 4-24",switch,0.9984941176470589,50,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, 4-24",hub,0.7522117647058824,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, 4-24",both,0.9999294117647058,50,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, 4-24",none (false calls),,12,850
-"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, 4-24",switch,0.5311294117647058,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, 4-24",hub,0.9973882352941177,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, 4-24",both,0.9956,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,0,"euclidean, 4-24",switch,0.8512470588235294,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"euclidean, 4-24",hub,0.983035294117647,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"euclidean, 4-24",both,0.9871294117647059,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"euclidean, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,0,"radial + cosine, 4-24",switch,0.9667058823529412,8,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"radial + cosine, 4-24",hub,0.9726117647058824,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"radial + cosine, 4-24",both,0.9998588235294118,50,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"radial + cosine, 4-24",none (false calls),,2,850
-"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, d=8 (true rank)",switch,0.999835294117647,28,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, d=8 (true rank)",hub,0.9187529411764706,1,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, d=8 (true rank)",both,1.0,50,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, d=8 (true rank)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, d=8 (true rank)",switch,0.47538823529411767,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, d=8 (true rank)",hub,0.99,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, d=8 (true rank)",both,0.9901411764705882,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, d=8 (true rank)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,0,degree difference,switch,0.6140941176470588,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,degree difference,hub,0.9999764705882352,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,degree difference,both,0.9984705882352941,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,0,degree difference,none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,1,"default (euclidean + cosine, 4-24)",switch,0.9615529411764706,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"default (euclidean + cosine, 4-24)",hub,0.9206823529411765,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"default (euclidean + cosine, 4-24)",both,0.9963058823529412,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"default (euclidean + cosine, 4-24)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, 4-24",switch,0.9952470588235294,19,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, 4-24",hub,0.7283058823529411,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, 4-24",both,0.999035294117647,8,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, 4-24",switch,0.5286352941176471,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, 4-24",hub,0.9982117647058824,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, 4-24",both,0.9966352941176471,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,1,"euclidean, 4-24",switch,0.8035058823529412,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"euclidean, 4-24",hub,0.9767294117647058,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"euclidean, 4-24",both,0.9827529411764706,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"euclidean, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,1,"radial + cosine, 4-24",switch,0.9331294117647059,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"radial + cosine, 4-24",hub,0.9642117647058823,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"radial + cosine, 4-24",both,0.9993411764705883,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"radial + cosine, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, d=8 (true rank)",switch,0.9996705882352941,41,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, d=8 (true rank)",hub,0.9077647058823529,9,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, d=8 (true rank)",both,1.0,50,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, d=8 (true rank)",none (false calls),,1,850
-"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, d=8 (true rank)",switch,0.4852705882352941,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, d=8 (true rank)",hub,0.9848941176470588,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, d=8 (true rank)",both,0.9829176470588236,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, d=8 (true rank)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,1,degree difference,switch,0.6742823529411764,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,degree difference,hub,0.9995529411764705,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,degree difference,both,0.9995294117647059,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,1,degree difference,none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,2,"default (euclidean + cosine, 4-24)",switch,0.9852705882352941,28,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"default (euclidean + cosine, 4-24)",hub,0.9452,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"default (euclidean + cosine, 4-24)",both,0.9972941176470588,49,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"default (euclidean + cosine, 4-24)",none (false calls),,6,850
-"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, 4-24",switch,0.9965647058823529,49,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, 4-24",hub,0.7627529411764706,1,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, 4-24",both,0.9988470588235294,50,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, 4-24",none (false calls),,13,850
-"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, 4-24",switch,0.5427294117647059,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, 4-24",hub,0.9983529411764706,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, 4-24",both,0.9948470588235294,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,2,"euclidean, 4-24",switch,0.895364705882353,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"euclidean, 4-24",hub,0.9834117647058823,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"euclidean, 4-24",both,0.9849882352941176,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"euclidean, 4-24",none (false calls),,1,850
-"mixed (5% switch, 5% hub, 5% both)",150,2,"radial + cosine, 4-24",switch,0.9413176470588235,4,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"radial + cosine, 4-24",hub,0.9670823529411765,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"radial + cosine, 4-24",both,0.9998117647058824,45,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"radial + cosine, 4-24",none (false calls),,1,850
-"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, d=8 (true rank)",switch,0.9994352941176471,16,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, d=8 (true rank)",hub,0.8957176470588235,3,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, d=8 (true rank)",both,1.0,50,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, d=8 (true rank)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, d=8 (true rank)",switch,0.5266117647058823,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, d=8 (true rank)",hub,0.9786588235294118,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, d=8 (true rank)",both,0.9727529411764706,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, d=8 (true rank)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",150,2,degree difference,switch,0.5390117647058823,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,degree difference,hub,0.9999764705882352,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,degree difference,both,0.9968235294117647,0,50
-"mixed (5% switch, 5% hub, 5% both)",150,2,degree difference,none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,0,"default (euclidean + cosine, 4-24)",switch,0.9875058823529411,15,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"default (euclidean + cosine, 4-24)",hub,0.9210117647058823,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"default (euclidean + cosine, 4-24)",both,0.9988705882352941,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"default (euclidean + cosine, 4-24)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, 4-24",switch,0.9997882352941176,49,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, 4-24",hub,0.6325411764705883,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, 4-24",both,0.9999764705882352,50,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, 4-24",none (false calls),,1,850
-"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, 4-24",switch,0.5682823529411765,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, 4-24",hub,0.999835294117647,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, 4-24",both,0.9988235294117647,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,0,"euclidean, 4-24",switch,0.8773411764705882,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"euclidean, 4-24",hub,0.9885411764705883,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"euclidean, 4-24",both,0.9906823529411765,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"euclidean, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,0,"radial + cosine, 4-24",switch,0.9758117647058824,9,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"radial + cosine, 4-24",hub,0.9784705882352941,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"radial + cosine, 4-24",both,1.0,47,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"radial + cosine, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, d=8 (true rank)",switch,1.0,50,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, d=8 (true rank)",hub,0.9107058823529411,3,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, d=8 (true rank)",both,1.0,50,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, d=8 (true rank)",none (false calls),,1,850
-"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, d=8 (true rank)",switch,0.4989176470588235,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, d=8 (true rank)",hub,0.9925176470588235,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, d=8 (true rank)",both,0.9938588235294118,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, d=8 (true rank)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,0,degree difference,switch,0.6470588235294118,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,degree difference,hub,0.9999764705882352,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,degree difference,both,0.9997882352941176,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,0,degree difference,none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,1,"default (euclidean + cosine, 4-24)",switch,0.9670823529411765,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"default (euclidean + cosine, 4-24)",hub,0.9091058823529412,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"default (euclidean + cosine, 4-24)",both,0.9999058823529412,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"default (euclidean + cosine, 4-24)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, 4-24",switch,0.9976470588235294,31,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, 4-24",hub,0.6748,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, 4-24",both,0.9999529411764706,46,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, 4-24",switch,0.5768470588235294,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, 4-24",hub,1.0,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, 4-24",both,0.9994588235294117,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,1,"euclidean, 4-24",switch,0.8607058823529412,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"euclidean, 4-24",hub,0.9749882352941176,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"euclidean, 4-24",both,0.9821647058823529,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"euclidean, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,1,"radial + cosine, 4-24",switch,0.9223529411764706,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"radial + cosine, 4-24",hub,0.9755529411764706,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"radial + cosine, 4-24",both,1.0,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"radial + cosine, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, d=8 (true rank)",switch,1.0,50,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, d=8 (true rank)",hub,0.9475294117647058,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, d=8 (true rank)",both,1.0,50,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, d=8 (true rank)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, d=8 (true rank)",switch,0.5032,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, d=8 (true rank)",hub,0.9947294117647059,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, d=8 (true rank)",both,0.9947058823529412,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, d=8 (true rank)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,1,degree difference,switch,0.5209176470588235,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,degree difference,hub,0.9991058823529412,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,degree difference,both,0.9989176470588236,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,1,degree difference,none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,2,"default (euclidean + cosine, 4-24)",switch,0.9694588235294118,8,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"default (euclidean + cosine, 4-24)",hub,0.9359764705882353,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"default (euclidean + cosine, 4-24)",both,0.9996,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"default (euclidean + cosine, 4-24)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, 4-24",switch,0.9988941176470588,40,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, 4-24",hub,0.698635294117647,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, 4-24",both,1.0,50,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, 4-24",none (false calls),,2,850
-"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, 4-24",switch,0.6088705882352942,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, 4-24",hub,1.0,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, 4-24",both,0.9999529411764706,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,2,"euclidean, 4-24",switch,0.8242117647058823,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"euclidean, 4-24",hub,0.9841647058823529,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"euclidean, 4-24",both,0.9883764705882353,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"euclidean, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,2,"radial + cosine, 4-24",switch,0.926564705882353,12,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"radial + cosine, 4-24",hub,0.9762117647058823,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"radial + cosine, 4-24",both,1.0,50,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"radial + cosine, 4-24",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, d=8 (true rank)",switch,1.0,50,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, d=8 (true rank)",hub,0.9737411764705882,18,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, d=8 (true rank)",both,1.0,50,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, d=8 (true rank)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, d=8 (true rank)",switch,0.5466588235294118,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, d=8 (true rank)",hub,0.9889882352941176,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, d=8 (true rank)",both,0.9888,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, d=8 (true rank)",none (false calls),,0,850
-"mixed (5% switch, 5% hub, 5% both)",400,2,degree difference,switch,0.5571294117647059,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,degree difference,hub,0.9999294117647058,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,degree difference,both,0.9999764705882352,0,50
-"mixed (5% switch, 5% hub, 5% both)",400,2,degree difference,none (false calls),,0,850
-module switches only (10%),150,0,"default (euclidean + cosine, 4-24)",switch,0.9914888888888889,56,100
-module switches only (10%),150,0,"default (euclidean + cosine, 4-24)",none (false calls),,2,900
-module switches only (10%),150,0,"cosine, 4-24",switch,0.9991555555555556,96,100
-module switches only (10%),150,0,"cosine, 4-24",none (false calls),,3,900
-module switches only (10%),150,0,"radial, 4-24",switch,0.5462888888888889,0,100
-module switches only (10%),150,0,"radial, 4-24",none (false calls),,0,900
-module switches only (10%),150,0,"euclidean, 4-24",switch,0.8848222222222222,0,100
-module switches only (10%),150,0,"euclidean, 4-24",none (false calls),,0,900
-module switches only (10%),150,0,"radial + cosine, 4-24",switch,0.9290888888888889,23,100
-module switches only (10%),150,0,"radial + cosine, 4-24",none (false calls),,0,900
-module switches only (10%),150,0,"cosine, d=8 (true rank)",switch,0.9990777777777777,54,100
-module switches only (10%),150,0,"cosine, d=8 (true rank)",none (false calls),,0,900
-module switches only (10%),150,0,"radial, d=8 (true rank)",switch,0.5001111111111111,0,100
-module switches only (10%),150,0,"radial, d=8 (true rank)",none (false calls),,0,900
-module switches only (10%),150,0,degree difference,switch,0.5895555555555556,0,100
-module switches only (10%),150,0,degree difference,none (false calls),,0,900
-module switches only (10%),150,1,"default (euclidean + cosine, 4-24)",switch,0.9818111111111111,54,100
-module switches only (10%),150,1,"default (euclidean + cosine, 4-24)",none (false calls),,6,900
-module switches only (10%),150,1,"cosine, 4-24",switch,0.9983222222222222,91,100
-module switches only (10%),150,1,"cosine, 4-24",none (false calls),,6,900
-module switches only (10%),150,1,"radial, 4-24",switch,0.5791666666666667,0,100
-module switches only (10%),150,1,"radial, 4-24",none (false calls),,0,900
-module switches only (10%),150,1,"euclidean, 4-24",switch,0.8743,0,100
-module switches only (10%),150,1,"euclidean, 4-24",none (false calls),,0,900
-module switches only (10%),150,1,"radial + cosine, 4-24",switch,0.9465222222222223,21,100
-module switches only (10%),150,1,"radial + cosine, 4-24",none (false calls),,0,900
-module switches only (10%),150,1,"cosine, d=8 (true rank)",switch,0.9979777777777777,64,100
-module switches only (10%),150,1,"cosine, d=8 (true rank)",none (false calls),,0,900
-module switches only (10%),150,1,"radial, d=8 (true rank)",switch,0.5502666666666667,0,100
-module switches only (10%),150,1,"radial, d=8 (true rank)",none (false calls),,0,900
-module switches only (10%),150,1,degree difference,switch,0.6208,0,100
-module switches only (10%),150,1,degree difference,none (false calls),,0,900
-module switches only (10%),150,2,"default (euclidean + cosine, 4-24)",switch,0.9846333333333334,38,100
-module switches only (10%),150,2,"default (euclidean + cosine, 4-24)",none (false calls),,0,900
-module switches only (10%),150,2,"cosine, 4-24",switch,0.9988888888888889,68,100
-module switches only (10%),150,2,"cosine, 4-24",none (false calls),,0,900
-module switches only (10%),150,2,"radial, 4-24",switch,0.5492444444444444,0,100
-module switches only (10%),150,2,"radial, 4-24",none (false calls),,0,900
-module switches only (10%),150,2,"euclidean, 4-24",switch,0.8457555555555556,0,100
-module switches only (10%),150,2,"euclidean, 4-24",none (false calls),,0,900
-module switches only (10%),150,2,"radial + cosine, 4-24",switch,0.9329666666666667,16,100
-module switches only (10%),150,2,"radial + cosine, 4-24",none (false calls),,0,900
-module switches only (10%),150,2,"cosine, d=8 (true rank)",switch,0.9995555555555555,67,100
-module switches only (10%),150,2,"cosine, d=8 (true rank)",none (false calls),,0,900
-module switches only (10%),150,2,"radial, d=8 (true rank)",switch,0.4838,0,100
-module switches only (10%),150,2,"radial, d=8 (true rank)",none (false calls),,0,900
-module switches only (10%),150,2,degree difference,switch,0.5987222222222223,0,100
-module switches only (10%),150,2,degree difference,none (false calls),,0,900
-module switches only (10%),400,0,"default (euclidean + cosine, 4-24)",switch,0.9937555555555555,32,100
-module switches only (10%),400,0,"default (euclidean + cosine, 4-24)",none (false calls),,0,900
-module switches only (10%),400,0,"cosine, 4-24",switch,0.9999222222222223,94,100
-module switches only (10%),400,0,"cosine, 4-24",none (false calls),,0,900
-module switches only (10%),400,0,"radial, 4-24",switch,0.5304555555555556,0,100
-module switches only (10%),400,0,"radial, 4-24",none (false calls),,0,900
-module switches only (10%),400,0,"euclidean, 4-24",switch,0.8356222222222223,0,100
-module switches only (10%),400,0,"euclidean, 4-24",none (false calls),,0,900
-module switches only (10%),400,0,"radial + cosine, 4-24",switch,0.9266333333333333,6,100
-module switches only (10%),400,0,"radial + cosine, 4-24",none (false calls),,0,900
-module switches only (10%),400,0,"cosine, d=8 (true rank)",switch,1.0,100,100
-module switches only (10%),400,0,"cosine, d=8 (true rank)",none (false calls),,0,900
-module switches only (10%),400,0,"radial, d=8 (true rank)",switch,0.4812444444444444,0,100
-module switches only (10%),400,0,"radial, d=8 (true rank)",none (false calls),,0,900
-module switches only (10%),400,0,degree difference,switch,0.6068777777777777,0,100
-module switches only (10%),400,0,degree difference,none (false calls),,0,900
-module switches only (10%),400,1,"default (euclidean + cosine, 4-24)",switch,0.9813222222222222,42,100
-module switches only (10%),400,1,"default (euclidean + cosine, 4-24)",none (false calls),,0,900
-module switches only (10%),400,1,"cosine, 4-24",switch,0.9997444444444444,87,100
-module switches only (10%),400,1,"cosine, 4-24",none (false calls),,1,900
-module switches only (10%),400,1,"radial, 4-24",switch,0.5125333333333333,0,100
-module switches only (10%),400,1,"radial, 4-24",none (false calls),,0,900
-module switches only (10%),400,1,"euclidean, 4-24",switch,0.8557222222222223,0,100
-module switches only (10%),400,1,"euclidean, 4-24",none (false calls),,0,900
-module switches only (10%),400,1,"radial + cosine, 4-24",switch,0.9241333333333334,5,100
-module switches only (10%),400,1,"radial + cosine, 4-24",none (false calls),,0,900
-module switches only (10%),400,1,"cosine, d=8 (true rank)",switch,1.0,100,100
-module switches only (10%),400,1,"cosine, d=8 (true rank)",none (false calls),,0,900
-module switches only (10%),400,1,"radial, d=8 (true rank)",switch,0.47725555555555554,0,100
-module switches only (10%),400,1,"radial, d=8 (true rank)",none (false calls),,0,900
-module switches only (10%),400,1,degree difference,switch,0.5086444444444445,0,100
-module switches only (10%),400,1,degree difference,none (false calls),,0,900
-module switches only (10%),400,2,"default (euclidean + cosine, 4-24)",switch,0.9916333333333334,40,100
-module switches only (10%),400,2,"default (euclidean + cosine, 4-24)",none (false calls),,0,900
-module switches only (10%),400,2,"cosine, 4-24",switch,1.0,98,100
-module switches only (10%),400,2,"cosine, 4-24",none (false calls),,0,900
-module switches only (10%),400,2,"radial, 4-24",switch,0.5584888888888889,0,100
-module switches only (10%),400,2,"radial, 4-24",none (false calls),,0,900
-module switches only (10%),400,2,"euclidean, 4-24",switch,0.8656777777777778,0,100
-module switches only (10%),400,2,"euclidean, 4-24",none (false calls),,0,900
-module switches only (10%),400,2,"radial + cosine, 4-24",switch,0.9210444444444444,0,100
-module switches only (10%),400,2,"radial + cosine, 4-24",none (false calls),,0,900
-module switches only (10%),400,2,"cosine, d=8 (true rank)",switch,1.0,100,100
-module switches only (10%),400,2,"cosine, d=8 (true rank)",none (false calls),,0,900
-module switches only (10%),400,2,"radial, d=8 (true rank)",switch,0.48884444444444447,0,100
-module switches only (10%),400,2,"radial, d=8 (true rank)",none (false calls),,0,900
-module switches only (10%),400,2,degree difference,switch,0.6003666666666667,0,100
-module switches only (10%),400,2,degree difference,none (false calls),,0,900
-hub changes only (10%),150,0,"default (euclidean + cosine, 4-24)",hub,0.9623666666666667,0,100
-hub changes only (10%),150,0,"default (euclidean + cosine, 4-24)",none (false calls),,0,900
-hub changes only (10%),150,0,"cosine, 4-24",hub,0.8286111111111111,0,100
-hub changes only (10%),150,0,"cosine, 4-24",none (false calls),,0,900
-hub changes only (10%),150,0,"radial, 4-24",hub,0.9968444444444444,0,100
-hub changes only (10%),150,0,"radial, 4-24",none (false calls),,0,900
-hub changes only (10%),150,0,"euclidean, 4-24",hub,0.9837111111111111,0,100
-hub changes only (10%),150,0,"euclidean, 4-24",none (false calls),,0,900
-hub changes only (10%),150,0,"radial + cosine, 4-24",hub,0.9804333333333334,0,100
-hub changes only (10%),150,0,"radial + cosine, 4-24",none (false calls),,0,900
-hub changes only (10%),150,0,"cosine, d=8 (true rank)",hub,0.9557444444444444,0,100
-hub changes only (10%),150,0,"cosine, d=8 (true rank)",none (false calls),,0,900
-hub changes only (10%),150,0,"radial, d=8 (true rank)",hub,0.9937555555555555,0,100
-hub changes only (10%),150,0,"radial, d=8 (true rank)",none (false calls),,0,900
-hub changes only (10%),150,0,degree difference,hub,0.9995888888888889,0,100
-hub changes only (10%),150,0,degree difference,none (false calls),,0,900
-hub changes only (10%),150,1,"default (euclidean + cosine, 4-24)",hub,0.9419222222222222,0,100
-hub changes only (10%),150,1,"default (euclidean + cosine, 4-24)",none (false calls),,0,900
-hub changes only (10%),150,1,"cosine, 4-24",hub,0.7982333333333334,0,100
-hub changes only (10%),150,1,"cosine, 4-24",none (false calls),,0,900
-hub changes only (10%),150,1,"radial, 4-24",hub,0.9968222222222223,0,100
-hub changes only (10%),150,1,"radial, 4-24",none (false calls),,0,900
-hub changes only (10%),150,1,"euclidean, 4-24",hub,0.9811333333333333,0,100
-hub changes only (10%),150,1,"euclidean, 4-24",none (false calls),,0,900
-hub changes only (10%),150,1,"radial + cosine, 4-24",hub,0.9618555555555556,0,100
-hub changes only (10%),150,1,"radial + cosine, 4-24",none (false calls),,0,900
-hub changes only (10%),150,1,"cosine, d=8 (true rank)",hub,0.9362666666666667,0,100
-hub changes only (10%),150,1,"cosine, d=8 (true rank)",none (false calls),,0,900
-hub changes only (10%),150,1,"radial, d=8 (true rank)",hub,0.9878333333333333,0,100
-hub changes only (10%),150,1,"radial, d=8 (true rank)",none (false calls),,0,900
-hub changes only (10%),150,1,degree difference,hub,0.9971888888888889,0,100
-hub changes only (10%),150,1,degree difference,none (false calls),,0,900
-hub changes only (10%),150,2,"default (euclidean + cosine, 4-24)",hub,0.9661111111111111,0,100
-hub changes only (10%),150,2,"default (euclidean + cosine, 4-24)",none (false calls),,0,900
-hub changes only (10%),150,2,"cosine, 4-24",hub,0.8405222222222222,0,100
-hub changes only (10%),150,2,"cosine, 4-24",none (false calls),,0,900
-hub changes only (10%),150,2,"radial, 4-24",hub,0.9993111111111111,0,100
-hub changes only (10%),150,2,"radial, 4-24",none (false calls),,0,900
-hub changes only (10%),150,2,"euclidean, 4-24",hub,0.9874111111111111,0,100
-hub changes only (10%),150,2,"euclidean, 4-24",none (false calls),,0,900
-hub changes only (10%),150,2,"radial + cosine, 4-24",hub,0.9865555555555555,0,100
-hub changes only (10%),150,2,"radial + cosine, 4-24",none (false calls),,0,900
-hub changes only (10%),150,2,"cosine, d=8 (true rank)",hub,0.9498222222222222,0,100
-hub changes only (10%),150,2,"cosine, d=8 (true rank)",none (false calls),,0,900
-hub changes only (10%),150,2,"radial, d=8 (true rank)",hub,0.9971666666666666,0,100
-hub changes only (10%),150,2,"radial, d=8 (true rank)",none (false calls),,0,900
-hub changes only (10%),150,2,degree difference,hub,0.9992333333333333,0,100
-hub changes only (10%),150,2,degree difference,none (false calls),,0,900
-hub changes only (10%),400,0,"default (euclidean + cosine, 4-24)",hub,0.9621333333333333,0,100
-hub changes only (10%),400,0,"default (euclidean + cosine, 4-24)",none (false calls),,0,900
-hub changes only (10%),400,0,"cosine, 4-24",hub,0.8273,0,100
-hub changes only (10%),400,0,"cosine, 4-24",none (false calls),,0,900
-hub changes only (10%),400,0,"radial, 4-24",hub,0.9997777777777778,0,100
-hub changes only (10%),400,0,"radial, 4-24",none (false calls),,0,900
-hub changes only (10%),400,0,"euclidean, 4-24",hub,0.9862666666666666,0,100
-hub changes only (10%),400,0,"euclidean, 4-24",none (false calls),,0,900
-hub changes only (10%),400,0,"radial + cosine, 4-24",hub,0.9888,0,100
-hub changes only (10%),400,0,"radial + cosine, 4-24",none (false calls),,0,900
-hub changes only (10%),400,0,"cosine, d=8 (true rank)",hub,0.9969444444444444,0,100
-hub changes only (10%),400,0,"cosine, d=8 (true rank)",none (false calls),,0,900
-hub changes only (10%),400,0,"radial, d=8 (true rank)",hub,0.9986444444444444,0,100
-hub changes only (10%),400,0,"radial, d=8 (true rank)",none (false calls),,0,900
-hub changes only (10%),400,0,degree difference,hub,1.0,0,100
-hub changes only (10%),400,0,degree difference,none (false calls),,0,900
-hub changes only (10%),400,1,"default (euclidean + cosine, 4-24)",hub,0.9791,0,100
-hub changes only (10%),400,1,"default (euclidean + cosine, 4-24)",none (false calls),,0,900
-hub changes only (10%),400,1,"cosine, 4-24",hub,0.8277333333333333,0,100
-hub changes only (10%),400,1,"cosine, 4-24",none (false calls),,0,900
-hub changes only (10%),400,1,"radial, 4-24",hub,1.0,0,100
-hub changes only (10%),400,1,"radial, 4-24",none (false calls),,0,900
-hub changes only (10%),400,1,"euclidean, 4-24",hub,0.9902888888888889,0,100
-hub changes only (10%),400,1,"euclidean, 4-24",none (false calls),,0,900
-hub changes only (10%),400,1,"radial + cosine, 4-24",hub,0.9963888888888889,0,100
-hub changes only (10%),400,1,"radial + cosine, 4-24",none (false calls),,0,900
-hub changes only (10%),400,1,"cosine, d=8 (true rank)",hub,0.9949777777777777,0,100
-hub changes only (10%),400,1,"cosine, d=8 (true rank)",none (false calls),,0,900
-hub changes only (10%),400,1,"radial, d=8 (true rank)",hub,0.9980666666666667,0,100
-hub changes only (10%),400,1,"radial, d=8 (true rank)",none (false calls),,0,900
-hub changes only (10%),400,1,degree difference,hub,0.9998666666666667,0,100
-hub changes only (10%),400,1,degree difference,none (false calls),,0,900
-hub changes only (10%),400,2,"default (euclidean + cosine, 4-24)",hub,0.9719666666666666,0,100
-hub changes only (10%),400,2,"default (euclidean + cosine, 4-24)",none (false calls),,0,900
-hub changes only (10%),400,2,"cosine, 4-24",hub,0.8460666666666666,0,100
-hub changes only (10%),400,2,"cosine, 4-24",none (false calls),,0,900
-hub changes only (10%),400,2,"radial, 4-24",hub,0.9996,0,100
-hub changes only (10%),400,2,"radial, 4-24",none (false calls),,0,900
-hub changes only (10%),400,2,"euclidean, 4-24",hub,0.9891333333333333,0,100
-hub changes only (10%),400,2,"euclidean, 4-24",none (false calls),,0,900
-hub changes only (10%),400,2,"radial + cosine, 4-24",hub,0.9880111111111111,0,100
-hub changes only (10%),400,2,"radial + cosine, 4-24",none (false calls),,0,900
-hub changes only (10%),400,2,"cosine, d=8 (true rank)",hub,0.9973444444444445,0,100
-hub changes only (10%),400,2,"cosine, d=8 (true rank)",none (false calls),,0,900
-hub changes only (10%),400,2,"radial, d=8 (true rank)",hub,0.9951777777777778,0,100
-hub changes only (10%),400,2,"radial, d=8 (true rank)",none (false calls),,0,900
-hub changes only (10%),400,2,degree difference,hub,1.0,0,100
-hub changes only (10%),400,2,degree difference,none (false calls),,0,900
-one module strengthens,150,0,"default (euclidean + cosine, 4-24)",strengthen,0.9811520737327188,0,70
-one module strengthens,150,0,"default (euclidean + cosine, 4-24)",none (false calls),,0,930
-one module strengthens,150,0,"cosine, 4-24",strengthen,0.9658678955453149,0,70
-one module strengthens,150,0,"cosine, 4-24",none (false calls),,0,930
-one module strengthens,150,0,"radial, 4-24",strengthen,0.994147465437788,0,70
-one module strengthens,150,0,"radial, 4-24",none (false calls),,0,930
-one module strengthens,150,0,"euclidean, 4-24",strengthen,0.9825499231950845,0,70
-one module strengthens,150,0,"euclidean, 4-24",none (false calls),,0,930
-one module strengthens,150,0,"radial + cosine, 4-24",strengthen,0.9921351766513057,0,70
-one module strengthens,150,0,"radial + cosine, 4-24",none (false calls),,0,930
-one module strengthens,150,0,"cosine, d=8 (true rank)",strengthen,0.9612749615975422,0,70
-one module strengthens,150,0,"cosine, d=8 (true rank)",none (false calls),,0,930
-one module strengthens,150,0,"radial, d=8 (true rank)",strengthen,0.9819354838709677,0,70
-one module strengthens,150,0,"radial, d=8 (true rank)",none (false calls),,0,930
-one module strengthens,150,0,degree difference,strengthen,0.9769431643625192,0,70
-one module strengthens,150,0,degree difference,none (false calls),,0,930
-one module strengthens,150,1,"default (euclidean + cosine, 4-24)",strengthen,0.9827885536398467,0,72
-one module strengthens,150,1,"default (euclidean + cosine, 4-24)",none (false calls),,0,928
-one module strengthens,150,1,"cosine, 4-24",strengthen,0.9837763409961686,0,72
-one module strengthens,150,1,"cosine, 4-24",none (false calls),,0,928
-one module strengthens,150,1,"radial, 4-24",strengthen,0.9944324712643678,0,72
-one module strengthens,150,1,"radial, 4-24",none (false calls),,0,928
-one module strengthens,150,1,"euclidean, 4-24",strengthen,0.972027658045977,0,72
-one module strengthens,150,1,"euclidean, 4-24",none (false calls),,0,928
-one module strengthens,150,1,"radial + cosine, 4-24",strengthen,0.9958243534482759,0,72
-one module strengthens,150,1,"radial + cosine, 4-24",none (false calls),,0,928
-one module strengthens,150,1,"cosine, d=8 (true rank)",strengthen,0.9936841475095786,0,72
-one module strengthens,150,1,"cosine, d=8 (true rank)",none (false calls),,0,928
-one module strengthens,150,1,"radial, d=8 (true rank)",strengthen,0.9689445641762452,0,72
-one module strengthens,150,1,"radial, d=8 (true rank)",none (false calls),,0,928
-one module strengthens,150,1,degree difference,strengthen,0.9689894636015326,0,72
-one module strengthens,150,1,degree difference,none (false calls),,0,928
-one module strengthens,150,2,"default (euclidean + cosine, 4-24)",strengthen,0.9933373807188779,0,69
-one module strengthens,150,2,"default (euclidean + cosine, 4-24)",none (false calls),,0,931
-one module strengthens,150,2,"cosine, 4-24",strengthen,0.9803079126387397,0,69
-one module strengthens,150,2,"cosine, 4-24",none (false calls),,0,931
-one module strengthens,150,2,"radial, 4-24",strengthen,0.9998443313252074,0,69
-one module strengthens,150,2,"radial, 4-24",none (false calls),,0,931
-one module strengthens,150,2,"euclidean, 4-24",strengthen,0.9943336602375504,0,69
-one module strengthens,150,2,"euclidean, 4-24",none (false calls),,0,931
-one module strengthens,150,2,"radial + cosine, 4-24",strengthen,0.9987079499992216,0,69
-one module strengthens,150,2,"radial + cosine, 4-24",none (false calls),,0,931
-one module strengthens,150,2,"cosine, d=8 (true rank)",strengthen,0.9748128084185619,0,69
-one module strengthens,150,2,"cosine, d=8 (true rank)",none (false calls),,0,931
-one module strengthens,150,2,"radial, d=8 (true rank)",strengthen,0.9959993150578309,0,69
-one module strengthens,150,2,"radial, d=8 (true rank)",none (false calls),,0,931
-one module strengthens,150,2,degree difference,strengthen,0.9926680054172698,0,69
-one module strengthens,150,2,degree difference,none (false calls),,0,931
-one module strengthens,400,0,"default (euclidean + cosine, 4-24)",strengthen,0.9957141163117684,63,63
-one module strengthens,400,0,"default (euclidean + cosine, 4-24)",none (false calls),,9,937
-one module strengthens,400,0,"cosine, 4-24",strengthen,0.991936440175501,0,63
-one module strengthens,400,0,"cosine, 4-24",none (false calls),,0,937
-one module strengthens,400,0,"radial, 4-24",strengthen,1.0,0,63
-one module strengthens,400,0,"radial, 4-24",none (false calls),,0,937
-one module strengthens,400,0,"euclidean, 4-24",strengthen,0.9959004590808219,63,63
-one module strengthens,400,0,"euclidean, 4-24",none (false calls),,13,937
-one module strengthens,400,0,"radial + cosine, 4-24",strengthen,0.9996611949653572,62,63
-one module strengthens,400,0,"radial + cosine, 4-24",none (false calls),,1,937
-one module strengthens,400,0,"cosine, d=8 (true rank)",strengthen,0.9994748521963036,0,63
-one module strengthens,400,0,"cosine, d=8 (true rank)",none (false calls),,0,937
-one module strengthens,400,0,"radial, d=8 (true rank)",strengthen,0.995426132032322,0,63
-one module strengthens,400,0,"radial, d=8 (true rank)",none (false calls),,0,937
-one module strengthens,400,0,degree difference,strengthen,0.9987633616235537,0,63
-one module strengthens,400,0,degree difference,none (false calls),,0,937
-one module strengthens,400,1,"default (euclidean + cosine, 4-24)",strengthen,0.9938976621448893,0,79
-one module strengthens,400,1,"default (euclidean + cosine, 4-24)",none (false calls),,0,921
-one module strengthens,400,1,"cosine, 4-24",strengthen,0.9879327643315604,0,79
-one module strengthens,400,1,"cosine, 4-24",none (false calls),,0,921
-one module strengthens,400,1,"radial, 4-24",strengthen,0.999381519811982,0,79
-one module strengthens,400,1,"radial, 4-24",none (false calls),,0,921
-one module strengthens,400,1,"euclidean, 4-24",strengthen,0.9922621256476862,0,79
-one module strengthens,400,1,"euclidean, 4-24",none (false calls),,0,921
-one module strengthens,400,1,"radial + cosine, 4-24",strengthen,0.9977734713231353,0,79
-one module strengthens,400,1,"radial + cosine, 4-24",none (false calls),,0,921
-one module strengthens,400,1,"cosine, d=8 (true rank)",strengthen,0.9982132794568369,0,79
-one module strengthens,400,1,"cosine, d=8 (true rank)",none (false calls),,0,921
-one module strengthens,400,1,"radial, d=8 (true rank)",strengthen,0.9969488310724447,0,79
-one module strengthens,400,1,"radial, d=8 (true rank)",none (false calls),,0,921
-one module strengthens,400,1,degree difference,strengthen,0.9899256449373961,0,79
-one module strengthens,400,1,degree difference,none (false calls),,0,921
-one module strengthens,400,2,"default (euclidean + cosine, 4-24)",strengthen,0.9982868145363029,71,71
-one module strengthens,400,2,"default (euclidean + cosine, 4-24)",none (false calls),,6,929
-one module strengthens,400,2,"cosine, 4-24",strengthen,0.9926014645461575,0,71
-one module strengthens,400,2,"cosine, 4-24",none (false calls),,0,929
-one module strengthens,400,2,"radial, 4-24",strengthen,1.0,0,71
-one module strengthens,400,2,"radial, 4-24",none (false calls),,0,929
-one module strengthens,400,2,"euclidean, 4-24",strengthen,0.9985445504025228,71,71
-one module strengthens,400,2,"euclidean, 4-24",none (false calls),,11,929
-one module strengthens,400,2,"radial + cosine, 4-24",strengthen,1.0,71,71
-one module strengthens,400,2,"radial + cosine, 4-24",none (false calls),,1,929
-one module strengthens,400,2,"cosine, d=8 (true rank)",strengthen,0.9964523416061493,0,71
-one module strengthens,400,2,"cosine, d=8 (true rank)",none (false calls),,0,929
-one module strengthens,400,2,"radial, d=8 (true rank)",strengthen,0.9993329189344896,0,71
-one module strengthens,400,2,"radial, d=8 (true rank)",none (false calls),,0,929
-one module strengthens,400,2,degree difference,strengthen,0.9983474582695311,0,71
-one module strengthens,400,2,degree difference,none (false calls),,0,929
-mixed + one module strengthens,150,0,"default (euclidean + cosine, 4-24)",switch,0.9653742331288343,9,50
-mixed + one module strengthens,150,0,"default (euclidean + cosine, 4-24)",hub,0.943239263803681,0,50
-mixed + one module strengthens,150,0,"default (euclidean + cosine, 4-24)",strengthen,0.8280909418982317,0,85
-mixed + one module strengthens,150,0,"default (euclidean + cosine, 4-24)",none (false calls),,1,815
-mixed + one module strengthens,150,0,"cosine, 4-24",switch,0.995239263803681,29,50
-mixed + one module strengthens,150,0,"cosine, 4-24",hub,0.6927607361963191,0,50
-mixed + one module strengthens,150,0,"cosine, 4-24",strengthen,0.6088487910501624,0,85
-mixed + one module strengthens,150,0,"cosine, 4-24",none (false calls),,1,815
-mixed + one module strengthens,150,0,"radial, 4-24",switch,0.46483435582822086,0,50
-mixed + one module strengthens,150,0,"radial, 4-24",hub,0.9970061349693251,0,50
-mixed + one module strengthens,150,0,"radial, 4-24",strengthen,0.9652255503428365,0,85
-mixed + one module strengthens,150,0,"radial, 4-24",none (false calls),,0,815
-mixed + one module strengthens,150,0,"euclidean, 4-24",switch,0.8122208588957055,0,50
-mixed + one module strengthens,150,0,"euclidean, 4-24",hub,0.9928834355828221,0,50
-mixed + one module strengthens,150,0,"euclidean, 4-24",strengthen,0.9076723204619271,0,85
-mixed + one module strengthens,150,0,"euclidean, 4-24",none (false calls),,0,815
-mixed + one module strengthens,150,0,"radial + cosine, 4-24",switch,0.9225276073619632,0,50
-mixed + one module strengthens,150,0,"radial + cosine, 4-24",hub,0.9571042944785276,0,50
-mixed + one module strengthens,150,0,"radial + cosine, 4-24",strengthen,0.9185997834716709,0,85
-mixed + one module strengthens,150,0,"radial + cosine, 4-24",none (false calls),,0,815
-mixed + one module strengthens,150,0,"cosine, d=8 (true rank)",switch,0.9986748466257669,10,50
-mixed + one module strengthens,150,0,"cosine, d=8 (true rank)",hub,0.8998527607361964,0,50
-mixed + one module strengthens,150,0,"cosine, d=8 (true rank)",strengthen,0.8706459761818838,0,85
-mixed + one module strengthens,150,0,"cosine, d=8 (true rank)",none (false calls),,0,815
-mixed + one module strengthens,150,0,"radial, d=8 (true rank)",switch,0.42480981595092027,0,50
-mixed + one module strengthens,150,0,"radial, d=8 (true rank)",hub,0.9908220858895705,0,50
-mixed + one module strengthens,150,0,"radial, d=8 (true rank)",strengthen,0.936845904005774,0,85
-mixed + one module strengthens,150,0,"radial, d=8 (true rank)",none (false calls),,0,815
-mixed + one module strengthens,150,0,degree difference,switch,0.48787730061349693,0,50
-mixed + one module strengthens,150,0,degree difference,hub,0.9853742331288343,0,50
-mixed + one module strengthens,150,0,degree difference,strengthen,0.9893468062071454,0,85
-mixed + one module strengthens,150,0,degree difference,none (false calls),,0,815
-mixed + one module strengthens,150,1,"default (euclidean + cosine, 4-24)",switch,0.9869064748201439,0,50
-mixed + one module strengthens,150,1,"default (euclidean + cosine, 4-24)",hub,0.9242685851318945,0,50
-mixed + one module strengthens,150,1,"default (euclidean + cosine, 4-24)",strengthen,0.868541530412034,0,66
-mixed + one module strengthens,150,1,"default (euclidean + cosine, 4-24)",none (false calls),,0,834
-mixed + one module strengthens,150,1,"cosine, 4-24",switch,0.9998081534772182,50,50
-mixed + one module strengthens,150,1,"cosine, 4-24",hub,0.7298800959232614,0,50
-mixed + one module strengthens,150,1,"cosine, 4-24",strengthen,0.5989935324467699,0,66
-mixed + one module strengthens,150,1,"cosine, 4-24",none (false calls),,3,834
-mixed + one module strengthens,150,1,"radial, 4-24",switch,0.4851798561151079,0,50
-mixed + one module strengthens,150,1,"radial, 4-24",hub,0.9925419664268585,0,50
-mixed + one module strengthens,150,1,"radial, 4-24",strengthen,0.9805246711721531,0,66
-mixed + one module strengthens,150,1,"radial, 4-24",none (false calls),,0,834
-mixed + one module strengthens,150,1,"euclidean, 4-24",switch,0.8115347721822542,0,50
-mixed + one module strengthens,150,1,"euclidean, 4-24",hub,0.9745083932853718,0,50
-mixed + one module strengthens,150,1,"euclidean, 4-24",strengthen,0.9419736937722549,0,66
-mixed + one module strengthens,150,1,"euclidean, 4-24",none (false calls),,0,834
-mixed + one module strengthens,150,1,"radial + cosine, 4-24",switch,0.9556354916067147,0,50
-mixed + one module strengthens,150,1,"radial + cosine, 4-24",hub,0.9422541966426858,0,50
-mixed + one module strengthens,150,1,"radial + cosine, 4-24",strengthen,0.9252961267349756,0,66
-mixed + one module strengthens,150,1,"radial + cosine, 4-24",none (false calls),,0,834
-mixed + one module strengthens,150,1,"cosine, d=8 (true rank)",switch,0.9999520383693046,23,50
-mixed + one module strengthens,150,1,"cosine, d=8 (true rank)",hub,0.8413908872901679,0,50
-mixed + one module strengthens,150,1,"cosine, d=8 (true rank)",strengthen,0.8487573577501635,0,66
-mixed + one module strengthens,150,1,"cosine, d=8 (true rank)",none (false calls),,0,834
-mixed + one module strengthens,150,1,"radial, d=8 (true rank)",switch,0.4105275779376499,0,50
-mixed + one module strengthens,150,1,"radial, d=8 (true rank)",hub,0.9758273381294964,0,50
-mixed + one module strengthens,150,1,"radial, d=8 (true rank)",strengthen,0.94702419882276,0,66
-mixed + one module strengthens,150,1,"radial, d=8 (true rank)",none (false calls),,0,834
-mixed + one module strengthens,150,1,degree difference,switch,0.5795923261390887,0,50
-mixed + one module strengthens,150,1,degree difference,hub,0.9833812949640288,0,50
-mixed + one module strengthens,150,1,degree difference,strengthen,0.9860111910471623,0,66
-mixed + one module strengthens,150,1,degree difference,none (false calls),,0,834
-mixed + one module strengthens,150,2,"default (euclidean + cosine, 4-24)",switch,0.9773476702508961,0,50
-mixed + one module strengthens,150,2,"default (euclidean + cosine, 4-24)",hub,0.951063321385902,0,50
-mixed + one module strengthens,150,2,"default (euclidean + cosine, 4-24)",strengthen,0.9233657620754395,0,63
-mixed + one module strengthens,150,2,"default (euclidean + cosine, 4-24)",none (false calls),,0,837
-mixed + one module strengthens,150,2,"cosine, 4-24",switch,0.9979689366786141,18,50
-mixed + one module strengthens,150,2,"cosine, 4-24",hub,0.7281959378733572,0,50
-mixed + one module strengthens,150,2,"cosine, 4-24",strengthen,0.8527621323320248,0,63
-mixed + one module strengthens,150,2,"cosine, 4-24",none (false calls),,0,837
-mixed + one module strengthens,150,2,"radial, 4-24",switch,0.4654958183990442,0,50
-mixed + one module strengthens,150,2,"radial, 4-24",hub,0.9930465949820788,0,50
-mixed + one module strengthens,150,2,"radial, 4-24",strengthen,0.980391041322941,0,63
-mixed + one module strengthens,150,2,"radial, 4-24",none (false calls),,0,837
-mixed + one module strengthens,150,2,"euclidean, 4-24",switch,0.8248028673835125,0,50
-mixed + one module strengthens,150,2,"euclidean, 4-24",hub,0.9858303464755077,0,50
-mixed + one module strengthens,150,2,"euclidean, 4-24",strengthen,0.9285619464830934,0,63
-mixed + one module strengthens,150,2,"euclidean, 4-24",none (false calls),,0,837
-mixed + one module strengthens,150,2,"radial + cosine, 4-24",switch,0.9329271206690561,0,50
-mixed + one module strengthens,150,2,"radial + cosine, 4-24",hub,0.9553166069295101,0,50
-mixed + one module strengthens,150,2,"radial + cosine, 4-24",strengthen,0.9647835239233089,0,63
-mixed + one module strengthens,150,2,"radial + cosine, 4-24",none (false calls),,0,837
-mixed + one module strengthens,150,2,"cosine, d=8 (true rank)",switch,0.9983034647550777,14,50
-mixed + one module strengthens,150,2,"cosine, d=8 (true rank)",hub,0.880047789725209,0,50
-mixed + one module strengthens,150,2,"cosine, d=8 (true rank)",strengthen,0.9646128463332765,1,63
-mixed + one module strengthens,150,2,"cosine, d=8 (true rank)",none (false calls),,0,837
-mixed + one module strengthens,150,2,"radial, d=8 (true rank)",switch,0.42970131421744323,0,50
-mixed + one module strengthens,150,2,"radial, d=8 (true rank)",hub,0.9823178016726404,0,50
-mixed + one module strengthens,150,2,"radial, d=8 (true rank)",strengthen,0.947924370863439,0,63
-mixed + one module strengthens,150,2,"radial, d=8 (true rank)",none (false calls),,0,837
-mixed + one module strengthens,150,2,degree difference,switch,0.6008363201911588,0,50
-mixed + one module strengthens,150,2,degree difference,hub,0.9592114695340502,0,50
-mixed + one module strengthens,150,2,degree difference,strengthen,0.9785135878325842,0,63
-mixed + one module strengthens,150,2,degree difference,none (false calls),,0,837
-mixed + one module strengthens,400,0,"default (euclidean + cosine, 4-24)",switch,0.9924179829890644,27,50
-mixed + one module strengthens,400,0,"default (euclidean + cosine, 4-24)",hub,0.9560631834750911,0,50
-mixed + one module strengthens,400,0,"default (euclidean + cosine, 4-24)",strengthen,0.8570008363447003,0,77
-mixed + one module strengthens,400,0,"default (euclidean + cosine, 4-24)",none (false calls),,0,823
-mixed + one module strengthens,400,0,"cosine, 4-24",switch,0.9977399756986635,50,50
-mixed + one module strengthens,400,0,"cosine, 4-24",hub,0.6767436208991494,1,50
-mixed + one module strengthens,400,0,"cosine, 4-24",strengthen,0.6630951065944991,0,77
-mixed + one module strengthens,400,0,"cosine, 4-24",none (false calls),,25,823
-mixed + one module strengthens,400,0,"radial, 4-24",switch,0.5530255164034021,0,50
-mixed + one module strengthens,400,0,"radial, 4-24",hub,0.9978371810449574,0,50
-mixed + one module strengthens,400,0,"radial, 4-24",strengthen,0.9876126303829827,0,77
-mixed + one module strengthens,400,0,"radial, 4-24",none (false calls),,0,823
-mixed + one module strengthens,400,0,"euclidean, 4-24",switch,0.8660267314702309,0,50
-mixed + one module strengthens,400,0,"euclidean, 4-24",hub,0.9847873633049817,0,50
-mixed + one module strengthens,400,0,"euclidean, 4-24",strengthen,0.9199318300168847,0,77
-mixed + one module strengthens,400,0,"euclidean, 4-24",none (false calls),,0,823
-mixed + one module strengthens,400,0,"radial + cosine, 4-24",switch,0.9778128797083839,8,50
-mixed + one module strengthens,400,0,"radial + cosine, 4-24",hub,0.9686026731470231,0,50
-mixed + one module strengthens,400,0,"radial + cosine, 4-24",strengthen,0.9540799419292736,0,77
-mixed + one module strengthens,400,0,"radial + cosine, 4-24",none (false calls),,0,823
-mixed + one module strengthens,400,0,"cosine, d=8 (true rank)",switch,1.0,50,50
-mixed + one module strengthens,400,0,"cosine, d=8 (true rank)",hub,0.934678007290401,0,50
-mixed + one module strengthens,400,0,"cosine, d=8 (true rank)",strengthen,0.9401619037098988,0,77
-mixed + one module strengthens,400,0,"cosine, d=8 (true rank)",none (false calls),,0,823
-mixed + one module strengthens,400,0,"radial, d=8 (true rank)",switch,0.46668286755771565,0,50
-mixed + one module strengthens,400,0,"radial, d=8 (true rank)",hub,0.9879708383961118,0,50
-mixed + one module strengthens,400,0,"radial, d=8 (true rank)",strengthen,0.9625222893752663,0,77
-mixed + one module strengthens,400,0,"radial, d=8 (true rank)",none (false calls),,0,823
-mixed + one module strengthens,400,0,degree difference,switch,0.6626002430133657,0,50
-mixed + one module strengthens,400,0,degree difference,hub,0.9732199270959903,0,50
-mixed + one module strengthens,400,0,degree difference,strengthen,0.985403417967209,0,77
-mixed + one module strengthens,400,0,degree difference,none (false calls),,0,823
-mixed + one module strengthens,400,1,"default (euclidean + cosine, 4-24)",switch,0.9839663461538461,25,50
-mixed + one module strengthens,400,1,"default (euclidean + cosine, 4-24)",hub,0.9484615384615385,0,50
-mixed + one module strengthens,400,1,"default (euclidean + cosine, 4-24)",strengthen,0.8642533936651584,0,68
-mixed + one module strengthens,400,1,"default (euclidean + cosine, 4-24)",none (false calls),,0,832
-mixed + one module strengthens,400,1,"cosine, 4-24",switch,0.9997836538461539,50,50
-mixed + one module strengthens,400,1,"cosine, 4-24",hub,0.7191826923076923,0,50
-mixed + one module strengthens,400,1,"cosine, 4-24",strengthen,0.6264670531674208,0,68
-mixed + one module strengthens,400,1,"cosine, 4-24",none (false calls),,4,832
-mixed + one module strengthens,400,1,"radial, 4-24",switch,0.5506009615384615,0,50
-mixed + one module strengthens,400,1,"radial, 4-24",hub,0.9990625,0,50
-mixed + one module strengthens,400,1,"radial, 4-24",strengthen,0.986637443438914,0,68
-mixed + one module strengthens,400,1,"radial, 4-24",none (false calls),,0,832
-mixed + one module strengthens,400,1,"euclidean, 4-24",switch,0.8438461538461538,0,50
-mixed + one module strengthens,400,1,"euclidean, 4-24",hub,0.9902644230769231,0,50
-mixed + one module strengthens,400,1,"euclidean, 4-24",strengthen,0.9258873020361991,0,68
-mixed + one module strengthens,400,1,"euclidean, 4-24",none (false calls),,0,832
-mixed + one module strengthens,400,1,"radial + cosine, 4-24",switch,0.955985576923077,5,50
-mixed + one module strengthens,400,1,"radial + cosine, 4-24",hub,0.9684615384615385,0,50
-mixed + one module strengthens,400,1,"radial + cosine, 4-24",strengthen,0.9485117364253394,0,68
-mixed + one module strengthens,400,1,"radial + cosine, 4-24",none (false calls),,0,832
-mixed + one module strengthens,400,1,"cosine, d=8 (true rank)",switch,1.0,50,50
-mixed + one module strengthens,400,1,"cosine, d=8 (true rank)",hub,0.9617067307692307,0,50
-mixed + one module strengthens,400,1,"cosine, d=8 (true rank)",strengthen,0.9727623020361991,1,68
-mixed + one module strengthens,400,1,"cosine, d=8 (true rank)",none (false calls),,0,832
-mixed + one module strengthens,400,1,"radial, d=8 (true rank)",switch,0.43826923076923074,0,50
-mixed + one module strengthens,400,1,"radial, d=8 (true rank)",hub,0.9979086538461538,0,50
-mixed + one module strengthens,400,1,"radial, d=8 (true rank)",strengthen,0.9799915158371041,0,68
-mixed + one module strengthens,400,1,"radial, d=8 (true rank)",none (false calls),,0,832
-mixed + one module strengthens,400,1,degree difference,switch,0.5861298076923077,0,50
-mixed + one module strengthens,400,1,degree difference,hub,0.9690384615384615,0,50
-mixed + one module strengthens,400,1,degree difference,strengthen,0.9831907522624435,0,68
-mixed + one module strengthens,400,1,degree difference,none (false calls),,0,832
-mixed + one module strengthens,400,2,"default (euclidean + cosine, 4-24)",switch,0.9863056558363418,22,50
-mixed + one module strengthens,400,2,"default (euclidean + cosine, 4-24)",hub,0.9609145607701565,0,50
-mixed + one module strengthens,400,2,"default (euclidean + cosine, 4-24)",strengthen,0.7600585988594151,0,69
-mixed + one module strengthens,400,2,"default (euclidean + cosine, 4-24)",none (false calls),,0,831
-mixed + one module strengthens,400,2,"cosine, 4-24",switch,1.0,50,50
-mixed + one module strengthens,400,2,"cosine, 4-24",hub,0.7509506618531889,0,50
-mixed + one module strengthens,400,2,"cosine, 4-24",strengthen,0.5193323915659499,0,69
-mixed + one module strengthens,400,2,"cosine, 4-24",none (false calls),,0,831
-mixed + one module strengthens,400,2,"radial, 4-24",switch,0.533309265944645,0,50
-mixed + one module strengthens,400,2,"radial, 4-24",hub,0.9948495788206979,0,50
-mixed + one module strengthens,400,2,"radial, 4-24",strengthen,0.9790718359231937,0,69
-mixed + one module strengthens,400,2,"radial, 4-24",none (false calls),,0,831
-mixed + one module strengthens,400,2,"euclidean, 4-24",switch,0.8256317689530686,0,50
-mixed + one module strengthens,400,2,"euclidean, 4-24",hub,0.9943922984356197,0,50
-mixed + one module strengthens,400,2,"euclidean, 4-24",strengthen,0.8878773609585099,0,69
-mixed + one module strengthens,400,2,"euclidean, 4-24",none (false calls),,0,831
-mixed + one module strengthens,400,2,"radial + cosine, 4-24",switch,0.9567027677496992,7,50
-mixed + one module strengthens,400,2,"radial + cosine, 4-24",hub,0.9698916967509025,0,50
-mixed + one module strengthens,400,2,"radial + cosine, 4-24",strengthen,0.9134620415424057,0,69
-mixed + one module strengthens,400,2,"radial + cosine, 4-24",none (false calls),,0,831
-mixed + one module strengthens,400,2,"cosine, d=8 (true rank)",switch,1.0,50,50
-mixed + one module strengthens,400,2,"cosine, d=8 (true rank)",hub,0.9632972322503008,1,50
-mixed + one module strengthens,400,2,"cosine, d=8 (true rank)",strengthen,0.9503828110012382,0,69
-mixed + one module strengthens,400,2,"cosine, d=8 (true rank)",none (false calls),,0,831
-mixed + one module strengthens,400,2,"radial, d=8 (true rank)",switch,0.5048616125150421,0,50
-mixed + one module strengthens,400,2,"radial, d=8 (true rank)",hub,0.9916486161251504,0,50
-mixed + one module strengthens,400,2,"radial, d=8 (true rank)",strengthen,0.9501909694972008,0,69
-mixed + one module strengthens,400,2,"radial, d=8 (true rank)",none (false calls),,0,831
-mixed + one module strengthens,400,2,degree difference,switch,0.5646209386281589,0,50
-mixed + one module strengthens,400,2,degree difference,hub,0.99352587244284,0,50
-mixed + one module strengthens,400,2,degree difference,strengthen,0.9991977537103891,0,69
-mixed + one module strengthens,400,2,degree difference,none (false calls),,0,831
-null (nothing changes),150,0,"default (euclidean + cosine, 4-24)",none (false calls),,0,1000
-null (nothing changes),150,0,"cosine, 4-24",none (false calls),,0,1000
-null (nothing changes),150,0,"radial, 4-24",none (false calls),,0,1000
-null (nothing changes),150,0,"euclidean, 4-24",none (false calls),,0,1000
-null (nothing changes),150,0,"radial + cosine, 4-24",none (false calls),,0,1000
-null (nothing changes),150,0,"cosine, d=8 (true rank)",none (false calls),,0,1000
-null (nothing changes),150,0,"radial, d=8 (true rank)",none (false calls),,0,1000
-null (nothing changes),150,0,degree difference,none (false calls),,0,1000
-null (nothing changes),150,1,"default (euclidean + cosine, 4-24)",none (false calls),,0,1000
-null (nothing changes),150,1,"cosine, 4-24",none (false calls),,0,1000
-null (nothing changes),150,1,"radial, 4-24",none (false calls),,0,1000
-null (nothing changes),150,1,"euclidean, 4-24",none (false calls),,0,1000
-null (nothing changes),150,1,"radial + cosine, 4-24",none (false calls),,0,1000
-null (nothing changes),150,1,"cosine, d=8 (true rank)",none (false calls),,0,1000
-null (nothing changes),150,1,"radial, d=8 (true rank)",none (false calls),,0,1000
-null (nothing changes),150,1,degree difference,none (false calls),,0,1000
-null (nothing changes),150,2,"default (euclidean + cosine, 4-24)",none (false calls),,0,1000
-null (nothing changes),150,2,"cosine, 4-24",none (false calls),,0,1000
-null (nothing changes),150,2,"radial, 4-24",none (false calls),,0,1000
-null (nothing changes),150,2,"euclidean, 4-24",none (false calls),,0,1000
-null (nothing changes),150,2,"radial + cosine, 4-24",none (false calls),,0,1000
-null (nothing changes),150,2,"cosine, d=8 (true rank)",none (false calls),,0,1000
-null (nothing changes),150,2,"radial, d=8 (true rank)",none (false calls),,0,1000
-null (nothing changes),150,2,degree difference,none (false calls),,0,1000
-null (nothing changes),400,0,"default (euclidean + cosine, 4-24)",none (false calls),,0,1000
-null (nothing changes),400,0,"cosine, 4-24",none (false calls),,0,1000
-null (nothing changes),400,0,"radial, 4-24",none (false calls),,0,1000
-null (nothing changes),400,0,"euclidean, 4-24",none (false calls),,0,1000
-null (nothing changes),400,0,"radial + cosine, 4-24",none (false calls),,0,1000
-null (nothing changes),400,0,"cosine, d=8 (true rank)",none (false calls),,0,1000
-null (nothing changes),400,0,"radial, d=8 (true rank)",none (false calls),,0,1000
-null (nothing changes),400,0,degree difference,none (false calls),,0,1000
-null (nothing changes),400,1,"default (euclidean + cosine, 4-24)",none (false calls),,1,1000
-null (nothing changes),400,1,"cosine, 4-24",none (false calls),,1,1000
-null (nothing changes),400,1,"radial, 4-24",none (false calls),,0,1000
-null (nothing changes),400,1,"euclidean, 4-24",none (false calls),,1,1000
-null (nothing changes),400,1,"radial + cosine, 4-24",none (false calls),,1,1000
-null (nothing changes),400,1,"cosine, d=8 (true rank)",none (false calls),,0,1000
-null (nothing changes),400,1,"radial, d=8 (true rank)",none (false calls),,0,1000
-null (nothing changes),400,1,degree difference,none (false calls),,0,1000
-null (nothing changes),400,2,"default (euclidean + cosine, 4-24)",none (false calls),,0,1000
-null (nothing changes),400,2,"cosine, 4-24",none (false calls),,0,1000
-null (nothing changes),400,2,"radial, 4-24",none (false calls),,0,1000
-null (nothing changes),400,2,"euclidean, 4-24",none (false calls),,0,1000
-null (nothing changes),400,2,"radial + cosine, 4-24",none (false calls),,0,1000
-null (nothing changes),400,2,"cosine, d=8 (true rank)",none (false calls),,0,1000
-null (nothing changes),400,2,"radial, d=8 (true rank)",none (false calls),,0,1000
-null (nothing changes),400,2,degree difference,none (false calls),,0,1000
+"mixed (5% switch, 5% hub, 5% both)",150,0,"default (euclidean + cosine, 4-24)",switch,0.9822588235294117,29.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"default (euclidean + cosine, 4-24)",hub,0.9507294117647059,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"default (euclidean + cosine, 4-24)",both,0.9985411764705883,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"default (euclidean + cosine, 4-24)",both vs all others,0.9752,,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"default (euclidean + cosine, 4-24)",none (false calls),,3.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, 4-24",switch,0.9984941176470589,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, 4-24",hub,0.7522117647058824,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, 4-24",both,0.9999294117647058,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, 4-24",both vs all others,0.9732421052631579,,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, 4-24",none (false calls),,12.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, 4-24",switch,0.5311294117647058,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, 4-24",hub,0.9973882352941177,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, 4-24",both,0.9956,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, 4-24",both vs all others,0.9662105263157895,,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,0,"euclidean, 4-24",switch,0.8512470588235294,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"euclidean, 4-24",hub,0.983035294117647,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"euclidean, 4-24",both,0.9871294117647059,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"euclidean, 4-24",both vs all others,0.9625684210526316,,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"euclidean, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial + cosine, 4-24",switch,0.9667058823529412,8.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial + cosine, 4-24",hub,0.9726117647058824,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial + cosine, 4-24",both,0.9998588235294118,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial + cosine, 4-24",both vs all others,0.9978526315789473,,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial + cosine, 4-24",none (false calls),,2.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, d=8 (true rank)",switch,0.999835294117647,28.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, d=8 (true rank)",hub,0.9187529411764706,1.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, d=8 (true rank)",both,1.0,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, d=8 (true rank)",both vs all others,0.9830315789473684,,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"cosine, d=8 (true rank)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, d=8 (true rank)",switch,0.47538823529411767,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, d=8 (true rank)",hub,0.99,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, d=8 (true rank)",both,0.9901411764705882,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, d=8 (true rank)",both vs all others,0.9626526315789473,,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"radial, d=8 (true rank)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,0,degree difference,switch,0.6140941176470588,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,degree difference,hub,0.9999764705882352,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,degree difference,both,0.9984705882352941,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,degree difference,both vs all others,0.9661684210526316,,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,degree difference,none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,0,"overlap: min(cosine, radial)",switch,0.6638352941176471,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"overlap: min(cosine, radial)",hub,0.8696,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"overlap: min(cosine, radial)",both,0.9972705882352941,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"overlap: min(cosine, radial)",both vs all others,0.9963368421052632,,50
+"mixed (5% switch, 5% hub, 5% both)",150,0,"overlap: min(cosine, radial)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,1,"default (euclidean + cosine, 4-24)",switch,0.9615529411764706,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"default (euclidean + cosine, 4-24)",hub,0.9206823529411765,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"default (euclidean + cosine, 4-24)",both,0.9963058823529412,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"default (euclidean + cosine, 4-24)",both vs all others,0.9779368421052631,,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, 4-24",switch,0.9952470588235294,19.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, 4-24",hub,0.7283058823529411,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, 4-24",both,0.999035294117647,8.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, 4-24",both vs all others,0.9779368421052631,,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, 4-24",switch,0.5286352941176471,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, 4-24",hub,0.9982117647058824,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, 4-24",both,0.9966352941176471,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, 4-24",both vs all others,0.9663157894736842,,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,1,"euclidean, 4-24",switch,0.8035058823529412,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"euclidean, 4-24",hub,0.9767294117647058,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"euclidean, 4-24",both,0.9827529411764706,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"euclidean, 4-24",both vs all others,0.9663157894736842,,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"euclidean, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial + cosine, 4-24",switch,0.9331294117647059,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial + cosine, 4-24",hub,0.9642117647058823,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial + cosine, 4-24",both,0.9993411764705883,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial + cosine, 4-24",both vs all others,0.9979789473684211,,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial + cosine, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, d=8 (true rank)",switch,0.9996705882352941,41.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, d=8 (true rank)",hub,0.9077647058823529,9.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, d=8 (true rank)",both,1.0,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, d=8 (true rank)",both vs all others,0.9810526315789474,,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"cosine, d=8 (true rank)",none (false calls),,1.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, d=8 (true rank)",switch,0.4852705882352941,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, d=8 (true rank)",hub,0.9848941176470588,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, d=8 (true rank)",both,0.9829176470588236,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, d=8 (true rank)",both vs all others,0.9555368421052631,,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"radial, d=8 (true rank)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,1,degree difference,switch,0.6742823529411764,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,degree difference,hub,0.9995529411764705,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,degree difference,both,0.9995294117647059,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,degree difference,both vs all others,0.9710105263157894,,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,degree difference,none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,1,"overlap: min(cosine, radial)",switch,0.700635294117647,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"overlap: min(cosine, radial)",hub,0.8359529411764706,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"overlap: min(cosine, radial)",both,0.9984705882352941,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"overlap: min(cosine, radial)",both vs all others,0.9985894736842105,,50
+"mixed (5% switch, 5% hub, 5% both)",150,1,"overlap: min(cosine, radial)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,2,"default (euclidean + cosine, 4-24)",switch,0.9852705882352941,28.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"default (euclidean + cosine, 4-24)",hub,0.9452,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"default (euclidean + cosine, 4-24)",both,0.9972941176470588,49.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"default (euclidean + cosine, 4-24)",both vs all others,0.9782526315789474,,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"default (euclidean + cosine, 4-24)",none (false calls),,6.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, 4-24",switch,0.9965647058823529,49.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, 4-24",hub,0.7627529411764706,1.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, 4-24",both,0.9988470588235294,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, 4-24",both vs all others,0.9788842105263158,,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, 4-24",none (false calls),,13.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, 4-24",switch,0.5427294117647059,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, 4-24",hub,0.9983529411764706,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, 4-24",both,0.9948470588235294,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, 4-24",both vs all others,0.9661263157894737,,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,2,"euclidean, 4-24",switch,0.895364705882353,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"euclidean, 4-24",hub,0.9834117647058823,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"euclidean, 4-24",both,0.9849882352941176,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"euclidean, 4-24",both vs all others,0.9544,,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"euclidean, 4-24",none (false calls),,1.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial + cosine, 4-24",switch,0.9413176470588235,4.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial + cosine, 4-24",hub,0.9670823529411765,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial + cosine, 4-24",both,0.9998117647058824,45.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial + cosine, 4-24",both vs all others,0.9970947368421053,,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial + cosine, 4-24",none (false calls),,1.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, d=8 (true rank)",switch,0.9994352941176471,16.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, d=8 (true rank)",hub,0.8957176470588235,3.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, d=8 (true rank)",both,1.0,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, d=8 (true rank)",both vs all others,0.9873473684210526,,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"cosine, d=8 (true rank)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, d=8 (true rank)",switch,0.5266117647058823,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, d=8 (true rank)",hub,0.9786588235294118,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, d=8 (true rank)",both,0.9727529411764706,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, d=8 (true rank)",both vs all others,0.9412,,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"radial, d=8 (true rank)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,2,degree difference,switch,0.5390117647058823,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,degree difference,hub,0.9999764705882352,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,degree difference,both,0.9968235294117647,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,degree difference,both vs all others,0.9688631578947369,,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,degree difference,none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",150,2,"overlap: min(cosine, radial)",switch,0.664564705882353,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"overlap: min(cosine, radial)",hub,0.8654352941176471,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"overlap: min(cosine, radial)",both,0.9976941176470588,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"overlap: min(cosine, radial)",both vs all others,0.9926736842105263,,50
+"mixed (5% switch, 5% hub, 5% both)",150,2,"overlap: min(cosine, radial)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,0,"default (euclidean + cosine, 4-24)",switch,0.9875058823529411,15.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"default (euclidean + cosine, 4-24)",hub,0.9210117647058823,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"default (euclidean + cosine, 4-24)",both,0.9988705882352941,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"default (euclidean + cosine, 4-24)",both vs all others,0.9617473684210527,,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, 4-24",switch,0.9997882352941176,49.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, 4-24",hub,0.6325411764705883,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, 4-24",both,0.9999764705882352,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, 4-24",both vs all others,0.9617473684210527,,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, 4-24",none (false calls),,1.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, 4-24",switch,0.5682823529411765,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, 4-24",hub,0.999835294117647,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, 4-24",both,0.9988235294117647,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, 4-24",both vs all others,0.9664631578947368,,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,0,"euclidean, 4-24",switch,0.8773411764705882,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"euclidean, 4-24",hub,0.9885411764705883,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"euclidean, 4-24",both,0.9906823529411765,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"euclidean, 4-24",both vs all others,0.9556631578947369,,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"euclidean, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial + cosine, 4-24",switch,0.9758117647058824,9.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial + cosine, 4-24",hub,0.9784705882352941,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial + cosine, 4-24",both,1.0,47.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial + cosine, 4-24",both vs all others,0.9960842105263158,,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial + cosine, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, d=8 (true rank)",switch,1.0,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, d=8 (true rank)",hub,0.9107058823529411,3.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, d=8 (true rank)",both,1.0,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, d=8 (true rank)",both vs all others,0.9747368421052631,,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"cosine, d=8 (true rank)",none (false calls),,1.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, d=8 (true rank)",switch,0.4989176470588235,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, d=8 (true rank)",hub,0.9925176470588235,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, d=8 (true rank)",both,0.9938588235294118,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, d=8 (true rank)",both vs all others,0.9711368421052632,,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"radial, d=8 (true rank)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,0,degree difference,switch,0.6470588235294118,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,degree difference,hub,0.9999764705882352,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,degree difference,both,0.9997882352941176,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,degree difference,both vs all others,0.9695578947368421,,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,degree difference,none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,0,"overlap: min(cosine, radial)",switch,0.7035058823529412,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"overlap: min(cosine, radial)",hub,0.7807529411764705,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"overlap: min(cosine, radial)",both,0.9999529411764706,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"overlap: min(cosine, radial)",both vs all others,0.9999578947368422,,50
+"mixed (5% switch, 5% hub, 5% both)",400,0,"overlap: min(cosine, radial)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,1,"default (euclidean + cosine, 4-24)",switch,0.9670823529411765,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"default (euclidean + cosine, 4-24)",hub,0.9091058823529412,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"default (euclidean + cosine, 4-24)",both,0.9999058823529412,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"default (euclidean + cosine, 4-24)",both vs all others,0.9733894736842105,,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, 4-24",switch,0.9976470588235294,31.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, 4-24",hub,0.6748,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, 4-24",both,0.9999529411764706,46.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, 4-24",both vs all others,0.9725263157894737,,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, 4-24",switch,0.5768470588235294,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, 4-24",hub,1.0,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, 4-24",both,0.9994588235294117,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, 4-24",both vs all others,0.9716842105263158,,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,1,"euclidean, 4-24",switch,0.8607058823529412,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"euclidean, 4-24",hub,0.9749882352941176,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"euclidean, 4-24",both,0.9821647058823529,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"euclidean, 4-24",both vs all others,0.9551157894736843,,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"euclidean, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial + cosine, 4-24",switch,0.9223529411764706,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial + cosine, 4-24",hub,0.9755529411764706,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial + cosine, 4-24",both,1.0,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial + cosine, 4-24",both vs all others,0.9954947368421052,,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial + cosine, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, d=8 (true rank)",switch,1.0,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, d=8 (true rank)",hub,0.9475294117647058,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, d=8 (true rank)",both,1.0,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, d=8 (true rank)",both vs all others,0.9873684210526316,,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"cosine, d=8 (true rank)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, d=8 (true rank)",switch,0.5032,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, d=8 (true rank)",hub,0.9947294117647059,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, d=8 (true rank)",both,0.9947058823529412,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, d=8 (true rank)",both vs all others,0.9684,,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"radial, d=8 (true rank)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,1,degree difference,switch,0.5209176470588235,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,degree difference,hub,0.9991058823529412,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,degree difference,both,0.9989176470588236,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,degree difference,both vs all others,0.9719578947368421,,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,degree difference,none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,1,"overlap: min(cosine, radial)",switch,0.7096,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"overlap: min(cosine, radial)",hub,0.8105882352941176,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"overlap: min(cosine, radial)",both,1.0,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"overlap: min(cosine, radial)",both vs all others,1.0,,50
+"mixed (5% switch, 5% hub, 5% both)",400,1,"overlap: min(cosine, radial)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,2,"default (euclidean + cosine, 4-24)",switch,0.9694588235294118,8.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"default (euclidean + cosine, 4-24)",hub,0.9359764705882353,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"default (euclidean + cosine, 4-24)",both,0.9996,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"default (euclidean + cosine, 4-24)",both vs all others,0.9778315789473684,,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, 4-24",switch,0.9988941176470588,40.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, 4-24",hub,0.698635294117647,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, 4-24",both,1.0,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, 4-24",both vs all others,0.9782105263157894,,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, 4-24",none (false calls),,2.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, 4-24",switch,0.6088705882352942,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, 4-24",hub,1.0,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, 4-24",both,0.9999529411764706,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, 4-24",both vs all others,0.9769473684210527,,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,2,"euclidean, 4-24",switch,0.8242117647058823,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"euclidean, 4-24",hub,0.9841647058823529,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"euclidean, 4-24",both,0.9883764705882353,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"euclidean, 4-24",both vs all others,0.9607368421052631,,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"euclidean, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial + cosine, 4-24",switch,0.926564705882353,12.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial + cosine, 4-24",hub,0.9762117647058823,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial + cosine, 4-24",both,1.0,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial + cosine, 4-24",both vs all others,0.9933894736842105,,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial + cosine, 4-24",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, d=8 (true rank)",switch,1.0,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, d=8 (true rank)",hub,0.9737411764705882,18.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, d=8 (true rank)",both,1.0,50.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, d=8 (true rank)",both vs all others,0.9894736842105263,,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"cosine, d=8 (true rank)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, d=8 (true rank)",switch,0.5466588235294118,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, d=8 (true rank)",hub,0.9889882352941176,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, d=8 (true rank)",both,0.9888,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, d=8 (true rank)",both vs all others,0.9597052631578947,,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"radial, d=8 (true rank)",none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,2,degree difference,switch,0.5571294117647059,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,degree difference,hub,0.9999294117647058,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,degree difference,both,0.9999764705882352,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,degree difference,both vs all others,0.9771578947368421,,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,degree difference,none (false calls),,0.0,850
+"mixed (5% switch, 5% hub, 5% both)",400,2,"overlap: min(cosine, radial)",switch,0.7280235294117647,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"overlap: min(cosine, radial)",hub,0.8068941176470589,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"overlap: min(cosine, radial)",both,0.9999529411764706,0.0,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"overlap: min(cosine, radial)",both vs all others,0.9999368421052631,,50
+"mixed (5% switch, 5% hub, 5% both)",400,2,"overlap: min(cosine, radial)",none (false calls),,0.0,850
+module switches only (10%),150,0,"default (euclidean + cosine, 4-24)",switch,0.9914888888888889,56.0,100
+module switches only (10%),150,0,"default (euclidean + cosine, 4-24)",none (false calls),,2.0,900
+module switches only (10%),150,0,"cosine, 4-24",switch,0.9991555555555556,96.0,100
+module switches only (10%),150,0,"cosine, 4-24",none (false calls),,3.0,900
+module switches only (10%),150,0,"radial, 4-24",switch,0.5462888888888889,0.0,100
+module switches only (10%),150,0,"radial, 4-24",none (false calls),,0.0,900
+module switches only (10%),150,0,"euclidean, 4-24",switch,0.8848222222222222,0.0,100
+module switches only (10%),150,0,"euclidean, 4-24",none (false calls),,0.0,900
+module switches only (10%),150,0,"radial + cosine, 4-24",switch,0.9290888888888889,23.0,100
+module switches only (10%),150,0,"radial + cosine, 4-24",none (false calls),,0.0,900
+module switches only (10%),150,0,"cosine, d=8 (true rank)",switch,0.9990777777777777,54.0,100
+module switches only (10%),150,0,"cosine, d=8 (true rank)",none (false calls),,0.0,900
+module switches only (10%),150,0,"radial, d=8 (true rank)",switch,0.5001111111111111,0.0,100
+module switches only (10%),150,0,"radial, d=8 (true rank)",none (false calls),,0.0,900
+module switches only (10%),150,0,degree difference,switch,0.5895555555555556,0.0,100
+module switches only (10%),150,0,degree difference,none (false calls),,0.0,900
+module switches only (10%),150,0,"overlap: min(cosine, radial)",switch,0.6797222222222222,0.0,100
+module switches only (10%),150,0,"overlap: min(cosine, radial)",none (false calls),,0.0,900
+module switches only (10%),150,1,"default (euclidean + cosine, 4-24)",switch,0.9818111111111111,54.0,100
+module switches only (10%),150,1,"default (euclidean + cosine, 4-24)",none (false calls),,6.0,900
+module switches only (10%),150,1,"cosine, 4-24",switch,0.9983222222222222,91.0,100
+module switches only (10%),150,1,"cosine, 4-24",none (false calls),,6.0,900
+module switches only (10%),150,1,"radial, 4-24",switch,0.5791666666666667,0.0,100
+module switches only (10%),150,1,"radial, 4-24",none (false calls),,0.0,900
+module switches only (10%),150,1,"euclidean, 4-24",switch,0.8743,0.0,100
+module switches only (10%),150,1,"euclidean, 4-24",none (false calls),,0.0,900
+module switches only (10%),150,1,"radial + cosine, 4-24",switch,0.9465222222222223,21.0,100
+module switches only (10%),150,1,"radial + cosine, 4-24",none (false calls),,0.0,900
+module switches only (10%),150,1,"cosine, d=8 (true rank)",switch,0.9979777777777777,64.0,100
+module switches only (10%),150,1,"cosine, d=8 (true rank)",none (false calls),,0.0,900
+module switches only (10%),150,1,"radial, d=8 (true rank)",switch,0.5502666666666667,0.0,100
+module switches only (10%),150,1,"radial, d=8 (true rank)",none (false calls),,0.0,900
+module switches only (10%),150,1,degree difference,switch,0.6208,0.0,100
+module switches only (10%),150,1,degree difference,none (false calls),,0.0,900
+module switches only (10%),150,1,"overlap: min(cosine, radial)",switch,0.7219333333333333,0.0,100
+module switches only (10%),150,1,"overlap: min(cosine, radial)",none (false calls),,0.0,900
+module switches only (10%),150,2,"default (euclidean + cosine, 4-24)",switch,0.9846333333333334,38.0,100
+module switches only (10%),150,2,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,900
+module switches only (10%),150,2,"cosine, 4-24",switch,0.9988888888888889,68.0,100
+module switches only (10%),150,2,"cosine, 4-24",none (false calls),,0.0,900
+module switches only (10%),150,2,"radial, 4-24",switch,0.5492444444444444,0.0,100
+module switches only (10%),150,2,"radial, 4-24",none (false calls),,0.0,900
+module switches only (10%),150,2,"euclidean, 4-24",switch,0.8457555555555556,0.0,100
+module switches only (10%),150,2,"euclidean, 4-24",none (false calls),,0.0,900
+module switches only (10%),150,2,"radial + cosine, 4-24",switch,0.9329666666666667,16.0,100
+module switches only (10%),150,2,"radial + cosine, 4-24",none (false calls),,0.0,900
+module switches only (10%),150,2,"cosine, d=8 (true rank)",switch,0.9995555555555555,67.0,100
+module switches only (10%),150,2,"cosine, d=8 (true rank)",none (false calls),,0.0,900
+module switches only (10%),150,2,"radial, d=8 (true rank)",switch,0.4838,0.0,100
+module switches only (10%),150,2,"radial, d=8 (true rank)",none (false calls),,0.0,900
+module switches only (10%),150,2,degree difference,switch,0.5987222222222223,0.0,100
+module switches only (10%),150,2,degree difference,none (false calls),,0.0,900
+module switches only (10%),150,2,"overlap: min(cosine, radial)",switch,0.7165333333333334,0.0,100
+module switches only (10%),150,2,"overlap: min(cosine, radial)",none (false calls),,0.0,900
+module switches only (10%),400,0,"default (euclidean + cosine, 4-24)",switch,0.9937555555555555,32.0,100
+module switches only (10%),400,0,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,900
+module switches only (10%),400,0,"cosine, 4-24",switch,0.9999222222222223,94.0,100
+module switches only (10%),400,0,"cosine, 4-24",none (false calls),,0.0,900
+module switches only (10%),400,0,"radial, 4-24",switch,0.5304555555555556,0.0,100
+module switches only (10%),400,0,"radial, 4-24",none (false calls),,0.0,900
+module switches only (10%),400,0,"euclidean, 4-24",switch,0.8356222222222223,0.0,100
+module switches only (10%),400,0,"euclidean, 4-24",none (false calls),,0.0,900
+module switches only (10%),400,0,"radial + cosine, 4-24",switch,0.9266333333333333,6.0,100
+module switches only (10%),400,0,"radial + cosine, 4-24",none (false calls),,0.0,900
+module switches only (10%),400,0,"cosine, d=8 (true rank)",switch,1.0,100.0,100
+module switches only (10%),400,0,"cosine, d=8 (true rank)",none (false calls),,0.0,900
+module switches only (10%),400,0,"radial, d=8 (true rank)",switch,0.4812444444444444,0.0,100
+module switches only (10%),400,0,"radial, d=8 (true rank)",none (false calls),,0.0,900
+module switches only (10%),400,0,degree difference,switch,0.6068777777777777,0.0,100
+module switches only (10%),400,0,degree difference,none (false calls),,0.0,900
+module switches only (10%),400,0,"overlap: min(cosine, radial)",switch,0.6709666666666667,0.0,100
+module switches only (10%),400,0,"overlap: min(cosine, radial)",none (false calls),,0.0,900
+module switches only (10%),400,1,"default (euclidean + cosine, 4-24)",switch,0.9813222222222222,42.0,100
+module switches only (10%),400,1,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,900
+module switches only (10%),400,1,"cosine, 4-24",switch,0.9997444444444444,87.0,100
+module switches only (10%),400,1,"cosine, 4-24",none (false calls),,1.0,900
+module switches only (10%),400,1,"radial, 4-24",switch,0.5125333333333333,0.0,100
+module switches only (10%),400,1,"radial, 4-24",none (false calls),,0.0,900
+module switches only (10%),400,1,"euclidean, 4-24",switch,0.8557222222222223,0.0,100
+module switches only (10%),400,1,"euclidean, 4-24",none (false calls),,0.0,900
+module switches only (10%),400,1,"radial + cosine, 4-24",switch,0.9241333333333334,5.0,100
+module switches only (10%),400,1,"radial + cosine, 4-24",none (false calls),,0.0,900
+module switches only (10%),400,1,"cosine, d=8 (true rank)",switch,1.0,100.0,100
+module switches only (10%),400,1,"cosine, d=8 (true rank)",none (false calls),,0.0,900
+module switches only (10%),400,1,"radial, d=8 (true rank)",switch,0.47725555555555554,0.0,100
+module switches only (10%),400,1,"radial, d=8 (true rank)",none (false calls),,0.0,900
+module switches only (10%),400,1,degree difference,switch,0.5086444444444445,0.0,100
+module switches only (10%),400,1,degree difference,none (false calls),,0.0,900
+module switches only (10%),400,1,"overlap: min(cosine, radial)",switch,0.6649,0.0,100
+module switches only (10%),400,1,"overlap: min(cosine, radial)",none (false calls),,0.0,900
+module switches only (10%),400,2,"default (euclidean + cosine, 4-24)",switch,0.9916333333333334,40.0,100
+module switches only (10%),400,2,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,900
+module switches only (10%),400,2,"cosine, 4-24",switch,1.0,98.0,100
+module switches only (10%),400,2,"cosine, 4-24",none (false calls),,0.0,900
+module switches only (10%),400,2,"radial, 4-24",switch,0.5584888888888889,0.0,100
+module switches only (10%),400,2,"radial, 4-24",none (false calls),,0.0,900
+module switches only (10%),400,2,"euclidean, 4-24",switch,0.8656777777777778,0.0,100
+module switches only (10%),400,2,"euclidean, 4-24",none (false calls),,0.0,900
+module switches only (10%),400,2,"radial + cosine, 4-24",switch,0.9210444444444444,0.0,100
+module switches only (10%),400,2,"radial + cosine, 4-24",none (false calls),,0.0,900
+module switches only (10%),400,2,"cosine, d=8 (true rank)",switch,1.0,100.0,100
+module switches only (10%),400,2,"cosine, d=8 (true rank)",none (false calls),,0.0,900
+module switches only (10%),400,2,"radial, d=8 (true rank)",switch,0.48884444444444447,0.0,100
+module switches only (10%),400,2,"radial, d=8 (true rank)",none (false calls),,0.0,900
+module switches only (10%),400,2,degree difference,switch,0.6003666666666667,0.0,100
+module switches only (10%),400,2,degree difference,none (false calls),,0.0,900
+module switches only (10%),400,2,"overlap: min(cosine, radial)",switch,0.6912555555555555,0.0,100
+module switches only (10%),400,2,"overlap: min(cosine, radial)",none (false calls),,0.0,900
+hub changes only (10%),150,0,"default (euclidean + cosine, 4-24)",hub,0.9623666666666667,0.0,100
+hub changes only (10%),150,0,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,900
+hub changes only (10%),150,0,"cosine, 4-24",hub,0.8286111111111111,0.0,100
+hub changes only (10%),150,0,"cosine, 4-24",none (false calls),,0.0,900
+hub changes only (10%),150,0,"radial, 4-24",hub,0.9968444444444444,0.0,100
+hub changes only (10%),150,0,"radial, 4-24",none (false calls),,0.0,900
+hub changes only (10%),150,0,"euclidean, 4-24",hub,0.9837111111111111,0.0,100
+hub changes only (10%),150,0,"euclidean, 4-24",none (false calls),,0.0,900
+hub changes only (10%),150,0,"radial + cosine, 4-24",hub,0.9804333333333334,0.0,100
+hub changes only (10%),150,0,"radial + cosine, 4-24",none (false calls),,0.0,900
+hub changes only (10%),150,0,"cosine, d=8 (true rank)",hub,0.9557444444444444,0.0,100
+hub changes only (10%),150,0,"cosine, d=8 (true rank)",none (false calls),,0.0,900
+hub changes only (10%),150,0,"radial, d=8 (true rank)",hub,0.9937555555555555,0.0,100
+hub changes only (10%),150,0,"radial, d=8 (true rank)",none (false calls),,0.0,900
+hub changes only (10%),150,0,degree difference,hub,0.9995888888888889,0.0,100
+hub changes only (10%),150,0,degree difference,none (false calls),,0.0,900
+hub changes only (10%),150,0,"overlap: min(cosine, radial)",hub,0.9184777777777777,0.0,100
+hub changes only (10%),150,0,"overlap: min(cosine, radial)",none (false calls),,0.0,900
+hub changes only (10%),150,1,"default (euclidean + cosine, 4-24)",hub,0.9419222222222222,0.0,100
+hub changes only (10%),150,1,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,900
+hub changes only (10%),150,1,"cosine, 4-24",hub,0.7982333333333334,0.0,100
+hub changes only (10%),150,1,"cosine, 4-24",none (false calls),,0.0,900
+hub changes only (10%),150,1,"radial, 4-24",hub,0.9968222222222223,0.0,100
+hub changes only (10%),150,1,"radial, 4-24",none (false calls),,0.0,900
+hub changes only (10%),150,1,"euclidean, 4-24",hub,0.9811333333333333,0.0,100
+hub changes only (10%),150,1,"euclidean, 4-24",none (false calls),,0.0,900
+hub changes only (10%),150,1,"radial + cosine, 4-24",hub,0.9618555555555556,0.0,100
+hub changes only (10%),150,1,"radial + cosine, 4-24",none (false calls),,0.0,900
+hub changes only (10%),150,1,"cosine, d=8 (true rank)",hub,0.9362666666666667,0.0,100
+hub changes only (10%),150,1,"cosine, d=8 (true rank)",none (false calls),,0.0,900
+hub changes only (10%),150,1,"radial, d=8 (true rank)",hub,0.9878333333333333,0.0,100
+hub changes only (10%),150,1,"radial, d=8 (true rank)",none (false calls),,0.0,900
+hub changes only (10%),150,1,degree difference,hub,0.9971888888888889,0.0,100
+hub changes only (10%),150,1,degree difference,none (false calls),,0.0,900
+hub changes only (10%),150,1,"overlap: min(cosine, radial)",hub,0.8766,0.0,100
+hub changes only (10%),150,1,"overlap: min(cosine, radial)",none (false calls),,0.0,900
+hub changes only (10%),150,2,"default (euclidean + cosine, 4-24)",hub,0.9661111111111111,0.0,100
+hub changes only (10%),150,2,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,900
+hub changes only (10%),150,2,"cosine, 4-24",hub,0.8405222222222222,0.0,100
+hub changes only (10%),150,2,"cosine, 4-24",none (false calls),,0.0,900
+hub changes only (10%),150,2,"radial, 4-24",hub,0.9993111111111111,0.0,100
+hub changes only (10%),150,2,"radial, 4-24",none (false calls),,0.0,900
+hub changes only (10%),150,2,"euclidean, 4-24",hub,0.9874111111111111,0.0,100
+hub changes only (10%),150,2,"euclidean, 4-24",none (false calls),,0.0,900
+hub changes only (10%),150,2,"radial + cosine, 4-24",hub,0.9865555555555555,0.0,100
+hub changes only (10%),150,2,"radial + cosine, 4-24",none (false calls),,0.0,900
+hub changes only (10%),150,2,"cosine, d=8 (true rank)",hub,0.9498222222222222,0.0,100
+hub changes only (10%),150,2,"cosine, d=8 (true rank)",none (false calls),,0.0,900
+hub changes only (10%),150,2,"radial, d=8 (true rank)",hub,0.9971666666666666,0.0,100
+hub changes only (10%),150,2,"radial, d=8 (true rank)",none (false calls),,0.0,900
+hub changes only (10%),150,2,degree difference,hub,0.9992333333333333,0.0,100
+hub changes only (10%),150,2,degree difference,none (false calls),,0.0,900
+hub changes only (10%),150,2,"overlap: min(cosine, radial)",hub,0.9226444444444445,0.0,100
+hub changes only (10%),150,2,"overlap: min(cosine, radial)",none (false calls),,0.0,900
+hub changes only (10%),400,0,"default (euclidean + cosine, 4-24)",hub,0.9621333333333333,0.0,100
+hub changes only (10%),400,0,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,900
+hub changes only (10%),400,0,"cosine, 4-24",hub,0.8273,0.0,100
+hub changes only (10%),400,0,"cosine, 4-24",none (false calls),,0.0,900
+hub changes only (10%),400,0,"radial, 4-24",hub,0.9997777777777778,0.0,100
+hub changes only (10%),400,0,"radial, 4-24",none (false calls),,0.0,900
+hub changes only (10%),400,0,"euclidean, 4-24",hub,0.9862666666666666,0.0,100
+hub changes only (10%),400,0,"euclidean, 4-24",none (false calls),,0.0,900
+hub changes only (10%),400,0,"radial + cosine, 4-24",hub,0.9888,0.0,100
+hub changes only (10%),400,0,"radial + cosine, 4-24",none (false calls),,0.0,900
+hub changes only (10%),400,0,"cosine, d=8 (true rank)",hub,0.9969444444444444,0.0,100
+hub changes only (10%),400,0,"cosine, d=8 (true rank)",none (false calls),,0.0,900
+hub changes only (10%),400,0,"radial, d=8 (true rank)",hub,0.9986444444444444,0.0,100
+hub changes only (10%),400,0,"radial, d=8 (true rank)",none (false calls),,0.0,900
+hub changes only (10%),400,0,degree difference,hub,1.0,0.0,100
+hub changes only (10%),400,0,degree difference,none (false calls),,0.0,900
+hub changes only (10%),400,0,"overlap: min(cosine, radial)",hub,0.9176777777777778,0.0,100
+hub changes only (10%),400,0,"overlap: min(cosine, radial)",none (false calls),,0.0,900
+hub changes only (10%),400,1,"default (euclidean + cosine, 4-24)",hub,0.9791,0.0,100
+hub changes only (10%),400,1,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,900
+hub changes only (10%),400,1,"cosine, 4-24",hub,0.8277333333333333,0.0,100
+hub changes only (10%),400,1,"cosine, 4-24",none (false calls),,0.0,900
+hub changes only (10%),400,1,"radial, 4-24",hub,1.0,0.0,100
+hub changes only (10%),400,1,"radial, 4-24",none (false calls),,0.0,900
+hub changes only (10%),400,1,"euclidean, 4-24",hub,0.9902888888888889,0.0,100
+hub changes only (10%),400,1,"euclidean, 4-24",none (false calls),,0.0,900
+hub changes only (10%),400,1,"radial + cosine, 4-24",hub,0.9963888888888889,0.0,100
+hub changes only (10%),400,1,"radial + cosine, 4-24",none (false calls),,0.0,900
+hub changes only (10%),400,1,"cosine, d=8 (true rank)",hub,0.9949777777777777,0.0,100
+hub changes only (10%),400,1,"cosine, d=8 (true rank)",none (false calls),,0.0,900
+hub changes only (10%),400,1,"radial, d=8 (true rank)",hub,0.9980666666666667,0.0,100
+hub changes only (10%),400,1,"radial, d=8 (true rank)",none (false calls),,0.0,900
+hub changes only (10%),400,1,degree difference,hub,0.9998666666666667,0.0,100
+hub changes only (10%),400,1,degree difference,none (false calls),,0.0,900
+hub changes only (10%),400,1,"overlap: min(cosine, radial)",hub,0.9057111111111111,0.0,100
+hub changes only (10%),400,1,"overlap: min(cosine, radial)",none (false calls),,0.0,900
+hub changes only (10%),400,2,"default (euclidean + cosine, 4-24)",hub,0.9719666666666666,0.0,100
+hub changes only (10%),400,2,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,900
+hub changes only (10%),400,2,"cosine, 4-24",hub,0.8460666666666666,0.0,100
+hub changes only (10%),400,2,"cosine, 4-24",none (false calls),,0.0,900
+hub changes only (10%),400,2,"radial, 4-24",hub,0.9996,0.0,100
+hub changes only (10%),400,2,"radial, 4-24",none (false calls),,0.0,900
+hub changes only (10%),400,2,"euclidean, 4-24",hub,0.9891333333333333,0.0,100
+hub changes only (10%),400,2,"euclidean, 4-24",none (false calls),,0.0,900
+hub changes only (10%),400,2,"radial + cosine, 4-24",hub,0.9880111111111111,0.0,100
+hub changes only (10%),400,2,"radial + cosine, 4-24",none (false calls),,0.0,900
+hub changes only (10%),400,2,"cosine, d=8 (true rank)",hub,0.9973444444444445,0.0,100
+hub changes only (10%),400,2,"cosine, d=8 (true rank)",none (false calls),,0.0,900
+hub changes only (10%),400,2,"radial, d=8 (true rank)",hub,0.9951777777777778,0.0,100
+hub changes only (10%),400,2,"radial, d=8 (true rank)",none (false calls),,0.0,900
+hub changes only (10%),400,2,degree difference,hub,1.0,0.0,100
+hub changes only (10%),400,2,degree difference,none (false calls),,0.0,900
+hub changes only (10%),400,2,"overlap: min(cosine, radial)",hub,0.9153444444444444,0.0,100
+hub changes only (10%),400,2,"overlap: min(cosine, radial)",none (false calls),,0.0,900
+one module strengthens,150,0,"default (euclidean + cosine, 4-24)",strengthen,0.9811520737327188,0.0,70
+one module strengthens,150,0,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,930
+one module strengthens,150,0,"cosine, 4-24",strengthen,0.9658678955453149,0.0,70
+one module strengthens,150,0,"cosine, 4-24",none (false calls),,0.0,930
+one module strengthens,150,0,"radial, 4-24",strengthen,0.994147465437788,0.0,70
+one module strengthens,150,0,"radial, 4-24",none (false calls),,0.0,930
+one module strengthens,150,0,"euclidean, 4-24",strengthen,0.9825499231950845,0.0,70
+one module strengthens,150,0,"euclidean, 4-24",none (false calls),,0.0,930
+one module strengthens,150,0,"radial + cosine, 4-24",strengthen,0.9921351766513057,0.0,70
+one module strengthens,150,0,"radial + cosine, 4-24",none (false calls),,0.0,930
+one module strengthens,150,0,"cosine, d=8 (true rank)",strengthen,0.9612749615975422,0.0,70
+one module strengthens,150,0,"cosine, d=8 (true rank)",none (false calls),,0.0,930
+one module strengthens,150,0,"radial, d=8 (true rank)",strengthen,0.9819354838709677,0.0,70
+one module strengthens,150,0,"radial, d=8 (true rank)",none (false calls),,0.0,930
+one module strengthens,150,0,degree difference,strengthen,0.9769431643625192,0.0,70
+one module strengthens,150,0,degree difference,none (false calls),,0.0,930
+one module strengthens,150,0,"overlap: min(cosine, radial)",strengthen,0.9945468509984638,0.0,70
+one module strengthens,150,0,"overlap: min(cosine, radial)",none (false calls),,0.0,930
+one module strengthens,150,1,"default (euclidean + cosine, 4-24)",strengthen,0.9827885536398467,0.0,72
+one module strengthens,150,1,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,928
+one module strengthens,150,1,"cosine, 4-24",strengthen,0.9837763409961686,0.0,72
+one module strengthens,150,1,"cosine, 4-24",none (false calls),,0.0,928
+one module strengthens,150,1,"radial, 4-24",strengthen,0.9944324712643678,0.0,72
+one module strengthens,150,1,"radial, 4-24",none (false calls),,0.0,928
+one module strengthens,150,1,"euclidean, 4-24",strengthen,0.972027658045977,0.0,72
+one module strengthens,150,1,"euclidean, 4-24",none (false calls),,0.0,928
+one module strengthens,150,1,"radial + cosine, 4-24",strengthen,0.9958243534482759,0.0,72
+one module strengthens,150,1,"radial + cosine, 4-24",none (false calls),,0.0,928
+one module strengthens,150,1,"cosine, d=8 (true rank)",strengthen,0.9936841475095786,0.0,72
+one module strengthens,150,1,"cosine, d=8 (true rank)",none (false calls),,0.0,928
+one module strengthens,150,1,"radial, d=8 (true rank)",strengthen,0.9689445641762452,0.0,72
+one module strengthens,150,1,"radial, d=8 (true rank)",none (false calls),,0.0,928
+one module strengthens,150,1,degree difference,strengthen,0.9689894636015326,0.0,72
+one module strengthens,150,1,degree difference,none (false calls),,0.0,928
+one module strengthens,150,1,"overlap: min(cosine, radial)",strengthen,0.9959740181992337,0.0,72
+one module strengthens,150,1,"overlap: min(cosine, radial)",none (false calls),,0.0,928
+one module strengthens,150,2,"default (euclidean + cosine, 4-24)",strengthen,0.9933373807188779,0.0,69
+one module strengthens,150,2,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,931
+one module strengthens,150,2,"cosine, 4-24",strengthen,0.9803079126387397,0.0,69
+one module strengthens,150,2,"cosine, 4-24",none (false calls),,0.0,931
+one module strengthens,150,2,"radial, 4-24",strengthen,0.9998443313252074,0.0,69
+one module strengthens,150,2,"radial, 4-24",none (false calls),,0.0,931
+one module strengthens,150,2,"euclidean, 4-24",strengthen,0.9943336602375504,0.0,69
+one module strengthens,150,2,"euclidean, 4-24",none (false calls),,0.0,931
+one module strengthens,150,2,"radial + cosine, 4-24",strengthen,0.9987079499992216,0.0,69
+one module strengthens,150,2,"radial + cosine, 4-24",none (false calls),,0.0,931
+one module strengthens,150,2,"cosine, d=8 (true rank)",strengthen,0.9748128084185619,0.0,69
+one module strengthens,150,2,"cosine, d=8 (true rank)",none (false calls),,0.0,931
+one module strengthens,150,2,"radial, d=8 (true rank)",strengthen,0.9959993150578309,0.0,69
+one module strengthens,150,2,"radial, d=8 (true rank)",none (false calls),,0.0,931
+one module strengthens,150,2,degree difference,strengthen,0.9926680054172698,0.0,69
+one module strengthens,150,2,degree difference,none (false calls),,0.0,931
+one module strengthens,150,2,"overlap: min(cosine, radial)",strengthen,0.9982876445772817,0.0,69
+one module strengthens,150,2,"overlap: min(cosine, radial)",none (false calls),,0.0,931
+one module strengthens,400,0,"default (euclidean + cosine, 4-24)",strengthen,0.9957141163117684,63.0,63
+one module strengthens,400,0,"default (euclidean + cosine, 4-24)",none (false calls),,9.0,937
+one module strengthens,400,0,"cosine, 4-24",strengthen,0.991936440175501,0.0,63
+one module strengthens,400,0,"cosine, 4-24",none (false calls),,0.0,937
+one module strengthens,400,0,"radial, 4-24",strengthen,1.0,0.0,63
+one module strengthens,400,0,"radial, 4-24",none (false calls),,0.0,937
+one module strengthens,400,0,"euclidean, 4-24",strengthen,0.9959004590808219,63.0,63
+one module strengthens,400,0,"euclidean, 4-24",none (false calls),,13.0,937
+one module strengthens,400,0,"radial + cosine, 4-24",strengthen,0.9996611949653572,62.0,63
+one module strengthens,400,0,"radial + cosine, 4-24",none (false calls),,1.0,937
+one module strengthens,400,0,"cosine, d=8 (true rank)",strengthen,0.9994748521963036,0.0,63
+one module strengthens,400,0,"cosine, d=8 (true rank)",none (false calls),,0.0,937
+one module strengthens,400,0,"radial, d=8 (true rank)",strengthen,0.995426132032322,0.0,63
+one module strengthens,400,0,"radial, d=8 (true rank)",none (false calls),,0.0,937
+one module strengthens,400,0,degree difference,strengthen,0.9987633616235537,0.0,63
+one module strengthens,400,0,degree difference,none (false calls),,0.0,937
+one module strengthens,400,0,"overlap: min(cosine, radial)",strengthen,0.9991021666581965,0.0,63
+one module strengthens,400,0,"overlap: min(cosine, radial)",none (false calls),,0.0,937
+one module strengthens,400,1,"default (euclidean + cosine, 4-24)",strengthen,0.9938976621448893,0.0,79
+one module strengthens,400,1,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,921
+one module strengthens,400,1,"cosine, 4-24",strengthen,0.9879327643315604,0.0,79
+one module strengthens,400,1,"cosine, 4-24",none (false calls),,0.0,921
+one module strengthens,400,1,"radial, 4-24",strengthen,0.999381519811982,0.0,79
+one module strengthens,400,1,"radial, 4-24",none (false calls),,0.0,921
+one module strengthens,400,1,"euclidean, 4-24",strengthen,0.9922621256476862,0.0,79
+one module strengthens,400,1,"euclidean, 4-24",none (false calls),,0.0,921
+one module strengthens,400,1,"radial + cosine, 4-24",strengthen,0.9977734713231353,0.0,79
+one module strengthens,400,1,"radial + cosine, 4-24",none (false calls),,0.0,921
+one module strengthens,400,1,"cosine, d=8 (true rank)",strengthen,0.9982132794568369,0.0,79
+one module strengthens,400,1,"cosine, d=8 (true rank)",none (false calls),,0.0,921
+one module strengthens,400,1,"radial, d=8 (true rank)",strengthen,0.9969488310724447,0.0,79
+one module strengthens,400,1,"radial, d=8 (true rank)",none (false calls),,0.0,921
+one module strengthens,400,1,degree difference,strengthen,0.9899256449373961,0.0,79
+one module strengthens,400,1,degree difference,none (false calls),,0.0,921
+one module strengthens,400,1,"overlap: min(cosine, radial)",strengthen,0.998295743481906,0.0,79
+one module strengthens,400,1,"overlap: min(cosine, radial)",none (false calls),,0.0,921
+one module strengthens,400,2,"default (euclidean + cosine, 4-24)",strengthen,0.9982868145363029,71.0,71
+one module strengthens,400,2,"default (euclidean + cosine, 4-24)",none (false calls),,6.0,929
+one module strengthens,400,2,"cosine, 4-24",strengthen,0.9926014645461575,0.0,71
+one module strengthens,400,2,"cosine, 4-24",none (false calls),,0.0,929
+one module strengthens,400,2,"radial, 4-24",strengthen,1.0,0.0,71
+one module strengthens,400,2,"radial, 4-24",none (false calls),,0.0,929
+one module strengthens,400,2,"euclidean, 4-24",strengthen,0.9985445504025228,71.0,71
+one module strengthens,400,2,"euclidean, 4-24",none (false calls),,11.0,929
+one module strengthens,400,2,"radial + cosine, 4-24",strengthen,1.0,71.0,71
+one module strengthens,400,2,"radial + cosine, 4-24",none (false calls),,1.0,929
+one module strengthens,400,2,"cosine, d=8 (true rank)",strengthen,0.9964523416061493,0.0,71
+one module strengthens,400,2,"cosine, d=8 (true rank)",none (false calls),,0.0,929
+one module strengthens,400,2,"radial, d=8 (true rank)",strengthen,0.9993329189344896,0.0,71
+one module strengthens,400,2,"radial, d=8 (true rank)",none (false calls),,0.0,929
+one module strengthens,400,2,degree difference,strengthen,0.9983474582695311,0.0,71
+one module strengthens,400,2,degree difference,none (false calls),,0.0,929
+one module strengthens,400,2,"overlap: min(cosine, radial)",strengthen,0.9994845282675602,0.0,71
+one module strengthens,400,2,"overlap: min(cosine, radial)",none (false calls),,0.0,929
+mixed + one module strengthens,150,0,"default (euclidean + cosine, 4-24)",switch,0.9653742331288343,9.0,50
+mixed + one module strengthens,150,0,"default (euclidean + cosine, 4-24)",hub,0.943239263803681,0.0,50
+mixed + one module strengthens,150,0,"default (euclidean + cosine, 4-24)",strengthen,0.8280909418982317,0.0,85
+mixed + one module strengthens,150,0,"default (euclidean + cosine, 4-24)",none (false calls),,1.0,815
+mixed + one module strengthens,150,0,"cosine, 4-24",switch,0.995239263803681,29.0,50
+mixed + one module strengthens,150,0,"cosine, 4-24",hub,0.6927607361963191,0.0,50
+mixed + one module strengthens,150,0,"cosine, 4-24",strengthen,0.6088487910501624,0.0,85
+mixed + one module strengthens,150,0,"cosine, 4-24",none (false calls),,1.0,815
+mixed + one module strengthens,150,0,"radial, 4-24",switch,0.46483435582822086,0.0,50
+mixed + one module strengthens,150,0,"radial, 4-24",hub,0.9970061349693251,0.0,50
+mixed + one module strengthens,150,0,"radial, 4-24",strengthen,0.9652255503428365,0.0,85
+mixed + one module strengthens,150,0,"radial, 4-24",none (false calls),,0.0,815
+mixed + one module strengthens,150,0,"euclidean, 4-24",switch,0.8122208588957055,0.0,50
+mixed + one module strengthens,150,0,"euclidean, 4-24",hub,0.9928834355828221,0.0,50
+mixed + one module strengthens,150,0,"euclidean, 4-24",strengthen,0.9076723204619271,0.0,85
+mixed + one module strengthens,150,0,"euclidean, 4-24",none (false calls),,0.0,815
+mixed + one module strengthens,150,0,"radial + cosine, 4-24",switch,0.9225276073619632,0.0,50
+mixed + one module strengthens,150,0,"radial + cosine, 4-24",hub,0.9571042944785276,0.0,50
+mixed + one module strengthens,150,0,"radial + cosine, 4-24",strengthen,0.9185997834716709,0.0,85
+mixed + one module strengthens,150,0,"radial + cosine, 4-24",none (false calls),,0.0,815
+mixed + one module strengthens,150,0,"cosine, d=8 (true rank)",switch,0.9986748466257669,10.0,50
+mixed + one module strengthens,150,0,"cosine, d=8 (true rank)",hub,0.8998527607361964,0.0,50
+mixed + one module strengthens,150,0,"cosine, d=8 (true rank)",strengthen,0.8706459761818838,0.0,85
+mixed + one module strengthens,150,0,"cosine, d=8 (true rank)",none (false calls),,0.0,815
+mixed + one module strengthens,150,0,"radial, d=8 (true rank)",switch,0.42480981595092027,0.0,50
+mixed + one module strengthens,150,0,"radial, d=8 (true rank)",hub,0.9908220858895705,0.0,50
+mixed + one module strengthens,150,0,"radial, d=8 (true rank)",strengthen,0.936845904005774,0.0,85
+mixed + one module strengthens,150,0,"radial, d=8 (true rank)",none (false calls),,0.0,815
+mixed + one module strengthens,150,0,degree difference,switch,0.48787730061349693,0.0,50
+mixed + one module strengthens,150,0,degree difference,hub,0.9853742331288343,0.0,50
+mixed + one module strengthens,150,0,degree difference,strengthen,0.9893468062071454,0.0,85
+mixed + one module strengthens,150,0,degree difference,none (false calls),,0.0,815
+mixed + one module strengthens,150,0,"overlap: min(cosine, radial)",switch,0.6385766871165645,0.0,50
+mixed + one module strengthens,150,0,"overlap: min(cosine, radial)",hub,0.8307484662576687,0.0,50
+mixed + one module strengthens,150,0,"overlap: min(cosine, radial)",strengthen,0.8139011187297005,0.0,85
+mixed + one module strengthens,150,0,"overlap: min(cosine, radial)",none (false calls),,0.0,815
+mixed + one module strengthens,150,1,"default (euclidean + cosine, 4-24)",switch,0.9869064748201439,0.0,50
+mixed + one module strengthens,150,1,"default (euclidean + cosine, 4-24)",hub,0.9242685851318945,0.0,50
+mixed + one module strengthens,150,1,"default (euclidean + cosine, 4-24)",strengthen,0.868541530412034,0.0,66
+mixed + one module strengthens,150,1,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,834
+mixed + one module strengthens,150,1,"cosine, 4-24",switch,0.9998081534772182,50.0,50
+mixed + one module strengthens,150,1,"cosine, 4-24",hub,0.7298800959232614,0.0,50
+mixed + one module strengthens,150,1,"cosine, 4-24",strengthen,0.5989935324467699,0.0,66
+mixed + one module strengthens,150,1,"cosine, 4-24",none (false calls),,3.0,834
+mixed + one module strengthens,150,1,"radial, 4-24",switch,0.4851798561151079,0.0,50
+mixed + one module strengthens,150,1,"radial, 4-24",hub,0.9925419664268585,0.0,50
+mixed + one module strengthens,150,1,"radial, 4-24",strengthen,0.9805246711721531,0.0,66
+mixed + one module strengthens,150,1,"radial, 4-24",none (false calls),,0.0,834
+mixed + one module strengthens,150,1,"euclidean, 4-24",switch,0.8115347721822542,0.0,50
+mixed + one module strengthens,150,1,"euclidean, 4-24",hub,0.9745083932853718,0.0,50
+mixed + one module strengthens,150,1,"euclidean, 4-24",strengthen,0.9419736937722549,0.0,66
+mixed + one module strengthens,150,1,"euclidean, 4-24",none (false calls),,0.0,834
+mixed + one module strengthens,150,1,"radial + cosine, 4-24",switch,0.9556354916067147,0.0,50
+mixed + one module strengthens,150,1,"radial + cosine, 4-24",hub,0.9422541966426858,0.0,50
+mixed + one module strengthens,150,1,"radial + cosine, 4-24",strengthen,0.9252961267349756,0.0,66
+mixed + one module strengthens,150,1,"radial + cosine, 4-24",none (false calls),,0.0,834
+mixed + one module strengthens,150,1,"cosine, d=8 (true rank)",switch,0.9999520383693046,23.0,50
+mixed + one module strengthens,150,1,"cosine, d=8 (true rank)",hub,0.8413908872901679,0.0,50
+mixed + one module strengthens,150,1,"cosine, d=8 (true rank)",strengthen,0.8487573577501635,0.0,66
+mixed + one module strengthens,150,1,"cosine, d=8 (true rank)",none (false calls),,0.0,834
+mixed + one module strengthens,150,1,"radial, d=8 (true rank)",switch,0.4105275779376499,0.0,50
+mixed + one module strengthens,150,1,"radial, d=8 (true rank)",hub,0.9758273381294964,0.0,50
+mixed + one module strengthens,150,1,"radial, d=8 (true rank)",strengthen,0.94702419882276,0.0,66
+mixed + one module strengthens,150,1,"radial, d=8 (true rank)",none (false calls),,0.0,834
+mixed + one module strengthens,150,1,degree difference,switch,0.5795923261390887,0.0,50
+mixed + one module strengthens,150,1,degree difference,hub,0.9833812949640288,0.0,50
+mixed + one module strengthens,150,1,degree difference,strengthen,0.9860111910471623,0.0,66
+mixed + one module strengthens,150,1,degree difference,none (false calls),,0.0,834
+mixed + one module strengthens,150,1,"overlap: min(cosine, radial)",switch,0.6217985611510791,0.0,50
+mixed + one module strengthens,150,1,"overlap: min(cosine, radial)",hub,0.8325659472422062,0.0,50
+mixed + one module strengthens,150,1,"overlap: min(cosine, radial)",strengthen,0.7629532737446406,0.0,66
+mixed + one module strengthens,150,1,"overlap: min(cosine, radial)",none (false calls),,0.0,834
+mixed + one module strengthens,150,2,"default (euclidean + cosine, 4-24)",switch,0.9773476702508961,0.0,50
+mixed + one module strengthens,150,2,"default (euclidean + cosine, 4-24)",hub,0.951063321385902,0.0,50
+mixed + one module strengthens,150,2,"default (euclidean + cosine, 4-24)",strengthen,0.9233657620754395,0.0,63
+mixed + one module strengthens,150,2,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,837
+mixed + one module strengthens,150,2,"cosine, 4-24",switch,0.9979689366786141,18.0,50
+mixed + one module strengthens,150,2,"cosine, 4-24",hub,0.7281959378733572,0.0,50
+mixed + one module strengthens,150,2,"cosine, 4-24",strengthen,0.8527621323320248,0.0,63
+mixed + one module strengthens,150,2,"cosine, 4-24",none (false calls),,0.0,837
+mixed + one module strengthens,150,2,"radial, 4-24",switch,0.4654958183990442,0.0,50
+mixed + one module strengthens,150,2,"radial, 4-24",hub,0.9930465949820788,0.0,50
+mixed + one module strengthens,150,2,"radial, 4-24",strengthen,0.980391041322941,0.0,63
+mixed + one module strengthens,150,2,"radial, 4-24",none (false calls),,0.0,837
+mixed + one module strengthens,150,2,"euclidean, 4-24",switch,0.8248028673835125,0.0,50
+mixed + one module strengthens,150,2,"euclidean, 4-24",hub,0.9858303464755077,0.0,50
+mixed + one module strengthens,150,2,"euclidean, 4-24",strengthen,0.9285619464830934,0.0,63
+mixed + one module strengthens,150,2,"euclidean, 4-24",none (false calls),,0.0,837
+mixed + one module strengthens,150,2,"radial + cosine, 4-24",switch,0.9329271206690561,0.0,50
+mixed + one module strengthens,150,2,"radial + cosine, 4-24",hub,0.9553166069295101,0.0,50
+mixed + one module strengthens,150,2,"radial + cosine, 4-24",strengthen,0.9647835239233089,0.0,63
+mixed + one module strengthens,150,2,"radial + cosine, 4-24",none (false calls),,0.0,837
+mixed + one module strengthens,150,2,"cosine, d=8 (true rank)",switch,0.9983034647550777,14.0,50
+mixed + one module strengthens,150,2,"cosine, d=8 (true rank)",hub,0.880047789725209,0.0,50
+mixed + one module strengthens,150,2,"cosine, d=8 (true rank)",strengthen,0.9646128463332765,1.0,63
+mixed + one module strengthens,150,2,"cosine, d=8 (true rank)",none (false calls),,0.0,837
+mixed + one module strengthens,150,2,"radial, d=8 (true rank)",switch,0.42970131421744323,0.0,50
+mixed + one module strengthens,150,2,"radial, d=8 (true rank)",hub,0.9823178016726404,0.0,50
+mixed + one module strengthens,150,2,"radial, d=8 (true rank)",strengthen,0.947924370863439,0.0,63
+mixed + one module strengthens,150,2,"radial, d=8 (true rank)",none (false calls),,0.0,837
+mixed + one module strengthens,150,2,degree difference,switch,0.6008363201911588,0.0,50
+mixed + one module strengthens,150,2,degree difference,hub,0.9592114695340502,0.0,50
+mixed + one module strengthens,150,2,degree difference,strengthen,0.9785135878325842,0.0,63
+mixed + one module strengthens,150,2,degree difference,none (false calls),,0.0,837
+mixed + one module strengthens,150,2,"overlap: min(cosine, radial)",switch,0.5998566308243728,0.0,50
+mixed + one module strengthens,150,2,"overlap: min(cosine, radial)",hub,0.8473357228195938,0.0,50
+mixed + one module strengthens,150,2,"overlap: min(cosine, radial)",strengthen,0.94589520395972,0.0,63
+mixed + one module strengthens,150,2,"overlap: min(cosine, radial)",none (false calls),,0.0,837
+mixed + one module strengthens,400,0,"default (euclidean + cosine, 4-24)",switch,0.9924179829890644,27.0,50
+mixed + one module strengthens,400,0,"default (euclidean + cosine, 4-24)",hub,0.9560631834750911,0.0,50
+mixed + one module strengthens,400,0,"default (euclidean + cosine, 4-24)",strengthen,0.8570008363447003,0.0,77
+mixed + one module strengthens,400,0,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,823
+mixed + one module strengthens,400,0,"cosine, 4-24",switch,0.9977399756986635,50.0,50
+mixed + one module strengthens,400,0,"cosine, 4-24",hub,0.6767436208991494,1.0,50
+mixed + one module strengthens,400,0,"cosine, 4-24",strengthen,0.6630951065944991,0.0,77
+mixed + one module strengthens,400,0,"cosine, 4-24",none (false calls),,25.0,823
+mixed + one module strengthens,400,0,"radial, 4-24",switch,0.5530255164034021,0.0,50
+mixed + one module strengthens,400,0,"radial, 4-24",hub,0.9978371810449574,0.0,50
+mixed + one module strengthens,400,0,"radial, 4-24",strengthen,0.9876126303829827,0.0,77
+mixed + one module strengthens,400,0,"radial, 4-24",none (false calls),,0.0,823
+mixed + one module strengthens,400,0,"euclidean, 4-24",switch,0.8660267314702309,0.0,50
+mixed + one module strengthens,400,0,"euclidean, 4-24",hub,0.9847873633049817,0.0,50
+mixed + one module strengthens,400,0,"euclidean, 4-24",strengthen,0.9199318300168847,0.0,77
+mixed + one module strengthens,400,0,"euclidean, 4-24",none (false calls),,0.0,823
+mixed + one module strengthens,400,0,"radial + cosine, 4-24",switch,0.9778128797083839,8.0,50
+mixed + one module strengthens,400,0,"radial + cosine, 4-24",hub,0.9686026731470231,0.0,50
+mixed + one module strengthens,400,0,"radial + cosine, 4-24",strengthen,0.9540799419292736,0.0,77
+mixed + one module strengthens,400,0,"radial + cosine, 4-24",none (false calls),,0.0,823
+mixed + one module strengthens,400,0,"cosine, d=8 (true rank)",switch,1.0,50.0,50
+mixed + one module strengthens,400,0,"cosine, d=8 (true rank)",hub,0.934678007290401,0.0,50
+mixed + one module strengthens,400,0,"cosine, d=8 (true rank)",strengthen,0.9401619037098988,0.0,77
+mixed + one module strengthens,400,0,"cosine, d=8 (true rank)",none (false calls),,0.0,823
+mixed + one module strengthens,400,0,"radial, d=8 (true rank)",switch,0.46668286755771565,0.0,50
+mixed + one module strengthens,400,0,"radial, d=8 (true rank)",hub,0.9879708383961118,0.0,50
+mixed + one module strengthens,400,0,"radial, d=8 (true rank)",strengthen,0.9625222893752663,0.0,77
+mixed + one module strengthens,400,0,"radial, d=8 (true rank)",none (false calls),,0.0,823
+mixed + one module strengthens,400,0,degree difference,switch,0.6626002430133657,0.0,50
+mixed + one module strengthens,400,0,degree difference,hub,0.9732199270959903,0.0,50
+mixed + one module strengthens,400,0,degree difference,strengthen,0.985403417967209,0.0,77
+mixed + one module strengthens,400,0,degree difference,none (false calls),,0.0,823
+mixed + one module strengthens,400,0,"overlap: min(cosine, radial)",switch,0.6922235722964764,0.0,50
+mixed + one module strengthens,400,0,"overlap: min(cosine, radial)",hub,0.8139975698663426,0.0,50
+mixed + one module strengthens,400,0,"overlap: min(cosine, radial)",strengthen,0.834829811743542,0.0,77
+mixed + one module strengthens,400,0,"overlap: min(cosine, radial)",none (false calls),,0.0,823
+mixed + one module strengthens,400,1,"default (euclidean + cosine, 4-24)",switch,0.9839663461538461,25.0,50
+mixed + one module strengthens,400,1,"default (euclidean + cosine, 4-24)",hub,0.9484615384615385,0.0,50
+mixed + one module strengthens,400,1,"default (euclidean + cosine, 4-24)",strengthen,0.8642533936651584,0.0,68
+mixed + one module strengthens,400,1,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,832
+mixed + one module strengthens,400,1,"cosine, 4-24",switch,0.9997836538461539,50.0,50
+mixed + one module strengthens,400,1,"cosine, 4-24",hub,0.7191826923076923,0.0,50
+mixed + one module strengthens,400,1,"cosine, 4-24",strengthen,0.6264670531674208,0.0,68
+mixed + one module strengthens,400,1,"cosine, 4-24",none (false calls),,4.0,832
+mixed + one module strengthens,400,1,"radial, 4-24",switch,0.5506009615384615,0.0,50
+mixed + one module strengthens,400,1,"radial, 4-24",hub,0.9990625,0.0,50
+mixed + one module strengthens,400,1,"radial, 4-24",strengthen,0.986637443438914,0.0,68
+mixed + one module strengthens,400,1,"radial, 4-24",none (false calls),,0.0,832
+mixed + one module strengthens,400,1,"euclidean, 4-24",switch,0.8438461538461538,0.0,50
+mixed + one module strengthens,400,1,"euclidean, 4-24",hub,0.9902644230769231,0.0,50
+mixed + one module strengthens,400,1,"euclidean, 4-24",strengthen,0.9258873020361991,0.0,68
+mixed + one module strengthens,400,1,"euclidean, 4-24",none (false calls),,0.0,832
+mixed + one module strengthens,400,1,"radial + cosine, 4-24",switch,0.955985576923077,5.0,50
+mixed + one module strengthens,400,1,"radial + cosine, 4-24",hub,0.9684615384615385,0.0,50
+mixed + one module strengthens,400,1,"radial + cosine, 4-24",strengthen,0.9485117364253394,0.0,68
+mixed + one module strengthens,400,1,"radial + cosine, 4-24",none (false calls),,0.0,832
+mixed + one module strengthens,400,1,"cosine, d=8 (true rank)",switch,1.0,50.0,50
+mixed + one module strengthens,400,1,"cosine, d=8 (true rank)",hub,0.9617067307692307,0.0,50
+mixed + one module strengthens,400,1,"cosine, d=8 (true rank)",strengthen,0.9727623020361991,1.0,68
+mixed + one module strengthens,400,1,"cosine, d=8 (true rank)",none (false calls),,0.0,832
+mixed + one module strengthens,400,1,"radial, d=8 (true rank)",switch,0.43826923076923074,0.0,50
+mixed + one module strengthens,400,1,"radial, d=8 (true rank)",hub,0.9979086538461538,0.0,50
+mixed + one module strengthens,400,1,"radial, d=8 (true rank)",strengthen,0.9799915158371041,0.0,68
+mixed + one module strengthens,400,1,"radial, d=8 (true rank)",none (false calls),,0.0,832
+mixed + one module strengthens,400,1,degree difference,switch,0.5861298076923077,0.0,50
+mixed + one module strengthens,400,1,degree difference,hub,0.9690384615384615,0.0,50
+mixed + one module strengthens,400,1,degree difference,strengthen,0.9831907522624435,0.0,68
+mixed + one module strengthens,400,1,degree difference,none (false calls),,0.0,832
+mixed + one module strengthens,400,1,"overlap: min(cosine, radial)",switch,0.6846153846153846,0.0,50
+mixed + one module strengthens,400,1,"overlap: min(cosine, radial)",hub,0.8455048076923077,0.0,50
+mixed + one module strengthens,400,1,"overlap: min(cosine, radial)",strengthen,0.8028669400452488,0.0,68
+mixed + one module strengthens,400,1,"overlap: min(cosine, radial)",none (false calls),,0.0,832
+mixed + one module strengthens,400,2,"default (euclidean + cosine, 4-24)",switch,0.9863056558363418,22.0,50
+mixed + one module strengthens,400,2,"default (euclidean + cosine, 4-24)",hub,0.9609145607701565,0.0,50
+mixed + one module strengthens,400,2,"default (euclidean + cosine, 4-24)",strengthen,0.7600585988594151,0.0,69
+mixed + one module strengthens,400,2,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,831
+mixed + one module strengthens,400,2,"cosine, 4-24",switch,1.0,50.0,50
+mixed + one module strengthens,400,2,"cosine, 4-24",hub,0.7509506618531889,0.0,50
+mixed + one module strengthens,400,2,"cosine, 4-24",strengthen,0.5193323915659499,0.0,69
+mixed + one module strengthens,400,2,"cosine, 4-24",none (false calls),,0.0,831
+mixed + one module strengthens,400,2,"radial, 4-24",switch,0.533309265944645,0.0,50
+mixed + one module strengthens,400,2,"radial, 4-24",hub,0.9948495788206979,0.0,50
+mixed + one module strengthens,400,2,"radial, 4-24",strengthen,0.9790718359231937,0.0,69
+mixed + one module strengthens,400,2,"radial, 4-24",none (false calls),,0.0,831
+mixed + one module strengthens,400,2,"euclidean, 4-24",switch,0.8256317689530686,0.0,50
+mixed + one module strengthens,400,2,"euclidean, 4-24",hub,0.9943922984356197,0.0,50
+mixed + one module strengthens,400,2,"euclidean, 4-24",strengthen,0.8878773609585099,0.0,69
+mixed + one module strengthens,400,2,"euclidean, 4-24",none (false calls),,0.0,831
+mixed + one module strengthens,400,2,"radial + cosine, 4-24",switch,0.9567027677496992,7.0,50
+mixed + one module strengthens,400,2,"radial + cosine, 4-24",hub,0.9698916967509025,0.0,50
+mixed + one module strengthens,400,2,"radial + cosine, 4-24",strengthen,0.9134620415424057,0.0,69
+mixed + one module strengthens,400,2,"radial + cosine, 4-24",none (false calls),,0.0,831
+mixed + one module strengthens,400,2,"cosine, d=8 (true rank)",switch,1.0,50.0,50
+mixed + one module strengthens,400,2,"cosine, d=8 (true rank)",hub,0.9632972322503008,1.0,50
+mixed + one module strengthens,400,2,"cosine, d=8 (true rank)",strengthen,0.9503828110012382,0.0,69
+mixed + one module strengthens,400,2,"cosine, d=8 (true rank)",none (false calls),,0.0,831
+mixed + one module strengthens,400,2,"radial, d=8 (true rank)",switch,0.5048616125150421,0.0,50
+mixed + one module strengthens,400,2,"radial, d=8 (true rank)",hub,0.9916486161251504,0.0,50
+mixed + one module strengthens,400,2,"radial, d=8 (true rank)",strengthen,0.9501909694972008,0.0,69
+mixed + one module strengthens,400,2,"radial, d=8 (true rank)",none (false calls),,0.0,831
+mixed + one module strengthens,400,2,degree difference,switch,0.5646209386281589,0.0,50
+mixed + one module strengthens,400,2,degree difference,hub,0.99352587244284,0.0,50
+mixed + one module strengthens,400,2,degree difference,strengthen,0.9991977537103891,0.0,69
+mixed + one module strengthens,400,2,degree difference,none (false calls),,0.0,831
+mixed + one module strengthens,400,2,"overlap: min(cosine, radial)",switch,0.677424789410349,0.0,50
+mixed + one module strengthens,400,2,"overlap: min(cosine, radial)",hub,0.8647653429602888,0.0,50
+mixed + one module strengthens,400,2,"overlap: min(cosine, radial)",strengthen,0.7137375957027503,0.0,69
+mixed + one module strengthens,400,2,"overlap: min(cosine, radial)",none (false calls),,0.0,831
+null (nothing changes),150,0,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,1000
+null (nothing changes),150,0,"cosine, 4-24",none (false calls),,0.0,1000
+null (nothing changes),150,0,"radial, 4-24",none (false calls),,0.0,1000
+null (nothing changes),150,0,"euclidean, 4-24",none (false calls),,0.0,1000
+null (nothing changes),150,0,"radial + cosine, 4-24",none (false calls),,0.0,1000
+null (nothing changes),150,0,"cosine, d=8 (true rank)",none (false calls),,0.0,1000
+null (nothing changes),150,0,"radial, d=8 (true rank)",none (false calls),,0.0,1000
+null (nothing changes),150,0,degree difference,none (false calls),,0.0,1000
+null (nothing changes),150,0,"overlap: min(cosine, radial)",none (false calls),,0.0,1000
+null (nothing changes),150,1,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,1000
+null (nothing changes),150,1,"cosine, 4-24",none (false calls),,0.0,1000
+null (nothing changes),150,1,"radial, 4-24",none (false calls),,0.0,1000
+null (nothing changes),150,1,"euclidean, 4-24",none (false calls),,0.0,1000
+null (nothing changes),150,1,"radial + cosine, 4-24",none (false calls),,0.0,1000
+null (nothing changes),150,1,"cosine, d=8 (true rank)",none (false calls),,0.0,1000
+null (nothing changes),150,1,"radial, d=8 (true rank)",none (false calls),,0.0,1000
+null (nothing changes),150,1,degree difference,none (false calls),,0.0,1000
+null (nothing changes),150,1,"overlap: min(cosine, radial)",none (false calls),,0.0,1000
+null (nothing changes),150,2,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,1000
+null (nothing changes),150,2,"cosine, 4-24",none (false calls),,0.0,1000
+null (nothing changes),150,2,"radial, 4-24",none (false calls),,0.0,1000
+null (nothing changes),150,2,"euclidean, 4-24",none (false calls),,0.0,1000
+null (nothing changes),150,2,"radial + cosine, 4-24",none (false calls),,0.0,1000
+null (nothing changes),150,2,"cosine, d=8 (true rank)",none (false calls),,0.0,1000
+null (nothing changes),150,2,"radial, d=8 (true rank)",none (false calls),,0.0,1000
+null (nothing changes),150,2,degree difference,none (false calls),,0.0,1000
+null (nothing changes),150,2,"overlap: min(cosine, radial)",none (false calls),,0.0,1000
+null (nothing changes),400,0,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,1000
+null (nothing changes),400,0,"cosine, 4-24",none (false calls),,0.0,1000
+null (nothing changes),400,0,"radial, 4-24",none (false calls),,0.0,1000
+null (nothing changes),400,0,"euclidean, 4-24",none (false calls),,0.0,1000
+null (nothing changes),400,0,"radial + cosine, 4-24",none (false calls),,0.0,1000
+null (nothing changes),400,0,"cosine, d=8 (true rank)",none (false calls),,0.0,1000
+null (nothing changes),400,0,"radial, d=8 (true rank)",none (false calls),,0.0,1000
+null (nothing changes),400,0,degree difference,none (false calls),,0.0,1000
+null (nothing changes),400,0,"overlap: min(cosine, radial)",none (false calls),,0.0,1000
+null (nothing changes),400,1,"default (euclidean + cosine, 4-24)",none (false calls),,1.0,1000
+null (nothing changes),400,1,"cosine, 4-24",none (false calls),,1.0,1000
+null (nothing changes),400,1,"radial, 4-24",none (false calls),,0.0,1000
+null (nothing changes),400,1,"euclidean, 4-24",none (false calls),,1.0,1000
+null (nothing changes),400,1,"radial + cosine, 4-24",none (false calls),,1.0,1000
+null (nothing changes),400,1,"cosine, d=8 (true rank)",none (false calls),,0.0,1000
+null (nothing changes),400,1,"radial, d=8 (true rank)",none (false calls),,0.0,1000
+null (nothing changes),400,1,degree difference,none (false calls),,0.0,1000
+null (nothing changes),400,1,"overlap: min(cosine, radial)",none (false calls),,0.0,1000
+null (nothing changes),400,2,"default (euclidean + cosine, 4-24)",none (false calls),,0.0,1000
+null (nothing changes),400,2,"cosine, 4-24",none (false calls),,0.0,1000
+null (nothing changes),400,2,"radial, 4-24",none (false calls),,0.0,1000
+null (nothing changes),400,2,"euclidean, 4-24",none (false calls),,0.0,1000
+null (nothing changes),400,2,"radial + cosine, 4-24",none (false calls),,0.0,1000
+null (nothing changes),400,2,"cosine, d=8 (true rank)",none (false calls),,0.0,1000
+null (nothing changes),400,2,"radial, d=8 (true rank)",none (false calls),,0.0,1000
+null (nothing changes),400,2,degree difference,none (false calls),,0.0,1000
+null (nothing changes),400,2,"overlap: min(cosine, radial)",none (false calls),,0.0,1000

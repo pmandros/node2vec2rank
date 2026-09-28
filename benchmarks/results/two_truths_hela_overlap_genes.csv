@@ -1,0 +1,71 @@
+comparison,lists,shared,chance,cell_cycle,median_degree_percentile
+G1 -> S,euclidean & cosine,18.0,5.0,5.0,33.05
+G1 -> S,euclidean & default,68.0,5.0,24.0,44.3
+G1 -> S,cosine & default,42.0,5.0,6.0,35.475
+G1 -> S,euclidean & cosine & default,18.0,0.3,5.0,33.05
+G1 -> S,radial & cosine,10.0,5.0,4.0,52.099999999999994
+G1 -> S,radial & euclidean,75.0,5.0,30.0,60.95
+G1 -> S,radial & default,51.0,5.0,20.0,58.95
+G1 -> S,euclidean only (of the three),32.0,,11.0,79.375
+G1 -> S,cosine only (of the three),58.0,,5.0,70.725
+G1 -> S,default only (of the three),8.0,,0.0,54.150000000000006
+G1 -> S,Spearman euclidean vs cosine,0.48,,,
+G1 -> S,Spearman euclidean vs default,0.87,,,
+G1 -> S,Spearman cosine vs default,0.83,,,
+G1 -> S,Spearman radial vs cosine,0.13,,,
+S -> G2,euclidean & cosine,12.0,5.0,0.0,42.400000000000006
+S -> G2,euclidean & default,51.0,5.0,3.0,37.0
+S -> G2,cosine & default,40.0,5.0,3.0,41.625
+S -> G2,euclidean & cosine & default,12.0,0.3,0.0,42.400000000000006
+S -> G2,radial & cosine,8.0,5.0,0.0,32.349999999999994
+S -> G2,radial & euclidean,68.0,5.0,3.0,36.2
+S -> G2,radial & default,40.0,5.0,0.0,34.225
+S -> G2,euclidean only (of the three),49.0,,11.0,50.3
+S -> G2,cosine only (of the three),60.0,,5.0,56.95
+S -> G2,default only (of the three),21.0,,0.0,27.3
+S -> G2,Spearman euclidean vs cosine,0.24,,,
+S -> G2,Spearman euclidean vs default,0.8,,,
+S -> G2,Spearman cosine vs default,0.74,,,
+S -> G2,Spearman radial vs cosine,-0.03,,,
+G2 -> M,euclidean & cosine,10.0,5.0,1.0,32.375
+G2 -> M,euclidean & default,47.0,5.0,7.0,39.5
+G2 -> M,cosine & default,38.0,5.0,4.0,38.275000000000006
+G2 -> M,euclidean & cosine & default,10.0,0.3,1.0,32.375
+G2 -> M,radial & cosine,14.0,5.0,1.0,52.625
+G2 -> M,radial & euclidean,58.0,5.0,4.0,35.474999999999994
+G2 -> M,radial & default,45.0,5.0,3.0,29.299999999999997
+G2 -> M,euclidean only (of the three),53.0,,14.0,74.8
+G2 -> M,cosine only (of the three),62.0,,6.0,69.0
+G2 -> M,default only (of the three),25.0,,2.0,28.449999999999996
+G2 -> M,Spearman euclidean vs cosine,0.3,,,
+G2 -> M,Spearman euclidean vs default,0.83,,,
+G2 -> M,Spearman cosine vs default,0.75,,,
+G2 -> M,Spearman radial vs cosine,0.07,,,
+null: G1 halves (seed 0),euclidean & cosine,23.0,5.0,0.0,28.849999999999998
+null: G1 halves (seed 0),euclidean & default,51.0,5.0,2.0,35.8
+null: G1 halves (seed 0),cosine & default,57.0,5.0,2.0,29.15
+null: G1 halves (seed 0),euclidean & cosine & default,23.0,0.3,0.0,28.849999999999998
+null: G1 halves (seed 0),radial & cosine,8.0,5.0,0.0,52.1
+null: G1 halves (seed 0),radial & euclidean,57.0,5.0,1.0,41.699999999999996
+null: G1 halves (seed 0),radial & default,32.0,5.0,1.0,38.45
+null: G1 halves (seed 0),euclidean only (of the three),49.0,,7.0,52.05
+null: G1 halves (seed 0),cosine only (of the three),43.0,,0.0,57.99999999999999
+null: G1 halves (seed 0),default only (of the three),15.0,,1.0,25.4
+null: G1 halves (seed 0),Spearman euclidean vs cosine,0.33,,,
+null: G1 halves (seed 0),Spearman euclidean vs default,0.77,,,
+null: G1 halves (seed 0),Spearman cosine vs default,0.82,,,
+null: G1 halves (seed 0),Spearman radial vs cosine,0.12,,,
+null: G1 halves (seed 1),euclidean & cosine,29.0,5.0,0.0,27.150000000000002
+null: G1 halves (seed 1),euclidean & default,55.0,5.0,4.0,31.85
+null: G1 halves (seed 1),cosine & default,61.0,5.0,0.0,29.45
+null: G1 halves (seed 1),euclidean & cosine & default,29.0,0.3,0.0,27.150000000000002
+null: G1 halves (seed 1),radial & cosine,22.0,5.0,0.0,28.3
+null: G1 halves (seed 1),radial & euclidean,58.0,5.0,5.0,31.875
+null: G1 halves (seed 1),radial & default,43.0,5.0,3.0,30.2
+null: G1 halves (seed 1),euclidean only (of the three),45.0,,7.0,52.349999999999994
+null: G1 halves (seed 1),cosine only (of the three),39.0,,1.0,69.45
+null: G1 halves (seed 1),default only (of the three),13.0,,2.0,36.55
+null: G1 halves (seed 1),Spearman euclidean vs cosine,0.33,,,
+null: G1 halves (seed 1),Spearman euclidean vs default,0.77,,,
+null: G1 halves (seed 1),Spearman cosine vs default,0.82,,,
+null: G1 halves (seed 1),Spearman radial vs cosine,0.14,,,

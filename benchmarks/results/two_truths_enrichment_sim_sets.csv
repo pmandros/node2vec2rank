@@ -47,6 +47,12 @@ scenario,samples,rep,ranking,sets,called,total,auroc
 "mixed (5% switch, 5% hub, 5% both)",150,0,degree difference,null: random,0,20,
 "mixed (5% switch, 5% hub, 5% both)",150,0,degree difference,null: module,0,20,
 "mixed (5% switch, 5% hub, 5% both)",150,0,degree difference,null: hub-rich module,0,20,
+"mixed (5% switch, 5% hub, 5% both)",150,0,"overlap: min(cosine, radial)",switch,0,15,0.6766666666666666
+"mixed (5% switch, 5% hub, 5% both)",150,0,"overlap: min(cosine, radial)",hub,2,15,0.9188888888888889
+"mixed (5% switch, 5% hub, 5% both)",150,0,"overlap: min(cosine, radial)",both,15,15,1.0
+"mixed (5% switch, 5% hub, 5% both)",150,0,"overlap: min(cosine, radial)",null: random,0,20,
+"mixed (5% switch, 5% hub, 5% both)",150,0,"overlap: min(cosine, radial)",null: module,0,20,
+"mixed (5% switch, 5% hub, 5% both)",150,0,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 "mixed (5% switch, 5% hub, 5% both)",150,1,"default (euclidean + cosine, 4-24)",switch,3,15,0.8966666666666666
 "mixed (5% switch, 5% hub, 5% both)",150,1,"default (euclidean + cosine, 4-24)",hub,8,15,0.9633333333333334
 "mixed (5% switch, 5% hub, 5% both)",150,1,"default (euclidean + cosine, 4-24)",both,15,15,1.0
@@ -95,6 +101,12 @@ scenario,samples,rep,ranking,sets,called,total,auroc
 "mixed (5% switch, 5% hub, 5% both)",150,1,degree difference,null: random,0,20,
 "mixed (5% switch, 5% hub, 5% both)",150,1,degree difference,null: module,0,20,
 "mixed (5% switch, 5% hub, 5% both)",150,1,degree difference,null: hub-rich module,0,20,
+"mixed (5% switch, 5% hub, 5% both)",150,1,"overlap: min(cosine, radial)",switch,0,15,0.65
+"mixed (5% switch, 5% hub, 5% both)",150,1,"overlap: min(cosine, radial)",hub,5,15,0.9333333333333333
+"mixed (5% switch, 5% hub, 5% both)",150,1,"overlap: min(cosine, radial)",both,15,15,1.0
+"mixed (5% switch, 5% hub, 5% both)",150,1,"overlap: min(cosine, radial)",null: random,0,20,
+"mixed (5% switch, 5% hub, 5% both)",150,1,"overlap: min(cosine, radial)",null: module,0,20,
+"mixed (5% switch, 5% hub, 5% both)",150,1,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 "mixed (5% switch, 5% hub, 5% both)",150,2,"default (euclidean + cosine, 4-24)",switch,15,15,0.9533333333333334
 "mixed (5% switch, 5% hub, 5% both)",150,2,"default (euclidean + cosine, 4-24)",hub,12,15,0.95
 "mixed (5% switch, 5% hub, 5% both)",150,2,"default (euclidean + cosine, 4-24)",both,15,15,0.99
@@ -143,6 +155,12 @@ scenario,samples,rep,ranking,sets,called,total,auroc
 "mixed (5% switch, 5% hub, 5% both)",150,2,degree difference,null: random,0,20,
 "mixed (5% switch, 5% hub, 5% both)",150,2,degree difference,null: module,2,20,
 "mixed (5% switch, 5% hub, 5% both)",150,2,degree difference,null: hub-rich module,0,20,
+"mixed (5% switch, 5% hub, 5% both)",150,2,"overlap: min(cosine, radial)",switch,1,15,0.8555555555555555
+"mixed (5% switch, 5% hub, 5% both)",150,2,"overlap: min(cosine, radial)",hub,1,15,0.9388888888888889
+"mixed (5% switch, 5% hub, 5% both)",150,2,"overlap: min(cosine, radial)",both,14,15,0.9611111111111111
+"mixed (5% switch, 5% hub, 5% both)",150,2,"overlap: min(cosine, radial)",null: random,0,20,
+"mixed (5% switch, 5% hub, 5% both)",150,2,"overlap: min(cosine, radial)",null: module,3,20,
+"mixed (5% switch, 5% hub, 5% both)",150,2,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 "mixed (5% switch, 5% hub, 5% both)",400,0,"default (euclidean + cosine, 4-24)",switch,14,15,0.99
 "mixed (5% switch, 5% hub, 5% both)",400,0,"default (euclidean + cosine, 4-24)",hub,7,15,0.9077777777777778
 "mixed (5% switch, 5% hub, 5% both)",400,0,"default (euclidean + cosine, 4-24)",both,15,15,0.9944444444444445
@@ -191,6 +209,12 @@ scenario,samples,rep,ranking,sets,called,total,auroc
 "mixed (5% switch, 5% hub, 5% both)",400,0,degree difference,null: random,0,20,
 "mixed (5% switch, 5% hub, 5% both)",400,0,degree difference,null: module,0,20,
 "mixed (5% switch, 5% hub, 5% both)",400,0,degree difference,null: hub-rich module,0,20,
+"mixed (5% switch, 5% hub, 5% both)",400,0,"overlap: min(cosine, radial)",switch,0,15,0.8033333333333333
+"mixed (5% switch, 5% hub, 5% both)",400,0,"overlap: min(cosine, radial)",hub,0,15,0.8466666666666667
+"mixed (5% switch, 5% hub, 5% both)",400,0,"overlap: min(cosine, radial)",both,14,15,0.99
+"mixed (5% switch, 5% hub, 5% both)",400,0,"overlap: min(cosine, radial)",null: random,0,20,
+"mixed (5% switch, 5% hub, 5% both)",400,0,"overlap: min(cosine, radial)",null: module,4,20,
+"mixed (5% switch, 5% hub, 5% both)",400,0,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 "mixed (5% switch, 5% hub, 5% both)",400,1,"default (euclidean + cosine, 4-24)",switch,9,15,0.8777777777777778
 "mixed (5% switch, 5% hub, 5% both)",400,1,"default (euclidean + cosine, 4-24)",hub,8,15,0.8777777777777778
 "mixed (5% switch, 5% hub, 5% both)",400,1,"default (euclidean + cosine, 4-24)",both,13,15,0.9855555555555555
@@ -239,6 +263,12 @@ scenario,samples,rep,ranking,sets,called,total,auroc
 "mixed (5% switch, 5% hub, 5% both)",400,1,degree difference,null: random,0,20,
 "mixed (5% switch, 5% hub, 5% both)",400,1,degree difference,null: module,2,20,
 "mixed (5% switch, 5% hub, 5% both)",400,1,degree difference,null: hub-rich module,0,20,
+"mixed (5% switch, 5% hub, 5% both)",400,1,"overlap: min(cosine, radial)",switch,1,15,0.5911111111111111
+"mixed (5% switch, 5% hub, 5% both)",400,1,"overlap: min(cosine, radial)",hub,3,15,0.7977777777777778
+"mixed (5% switch, 5% hub, 5% both)",400,1,"overlap: min(cosine, radial)",both,15,15,0.9911111111111112
+"mixed (5% switch, 5% hub, 5% both)",400,1,"overlap: min(cosine, radial)",null: random,0,20,
+"mixed (5% switch, 5% hub, 5% both)",400,1,"overlap: min(cosine, radial)",null: module,2,20,
+"mixed (5% switch, 5% hub, 5% both)",400,1,"overlap: min(cosine, radial)",null: hub-rich module,3,20,
 "mixed (5% switch, 5% hub, 5% both)",400,2,"default (euclidean + cosine, 4-24)",switch,10,15,0.9755555555555555
 "mixed (5% switch, 5% hub, 5% both)",400,2,"default (euclidean + cosine, 4-24)",hub,5,15,0.9055555555555556
 "mixed (5% switch, 5% hub, 5% both)",400,2,"default (euclidean + cosine, 4-24)",both,14,15,1.0
@@ -287,6 +317,12 @@ scenario,samples,rep,ranking,sets,called,total,auroc
 "mixed (5% switch, 5% hub, 5% both)",400,2,degree difference,null: random,0,20,
 "mixed (5% switch, 5% hub, 5% both)",400,2,degree difference,null: module,0,20,
 "mixed (5% switch, 5% hub, 5% both)",400,2,degree difference,null: hub-rich module,0,20,
+"mixed (5% switch, 5% hub, 5% both)",400,2,"overlap: min(cosine, radial)",switch,1,15,0.7166666666666667
+"mixed (5% switch, 5% hub, 5% both)",400,2,"overlap: min(cosine, radial)",hub,3,15,0.82
+"mixed (5% switch, 5% hub, 5% both)",400,2,"overlap: min(cosine, radial)",both,14,15,1.0
+"mixed (5% switch, 5% hub, 5% both)",400,2,"overlap: min(cosine, radial)",null: random,0,20,
+"mixed (5% switch, 5% hub, 5% both)",400,2,"overlap: min(cosine, radial)",null: module,0,20,
+"mixed (5% switch, 5% hub, 5% both)",400,2,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 module switches only (10%),150,0,"default (euclidean + cosine, 4-24)",switch,15,15,1.0
 module switches only (10%),150,0,"default (euclidean + cosine, 4-24)",null: random,0,20,
 module switches only (10%),150,0,"default (euclidean + cosine, 4-24)",null: module,0,20,
@@ -319,6 +355,10 @@ module switches only (10%),150,0,degree difference,switch,0,15,0.785555555555555
 module switches only (10%),150,0,degree difference,null: random,0,20,
 module switches only (10%),150,0,degree difference,null: module,0,20,
 module switches only (10%),150,0,degree difference,null: hub-rich module,0,20,
+module switches only (10%),150,0,"overlap: min(cosine, radial)",switch,0,15,0.8233333333333334
+module switches only (10%),150,0,"overlap: min(cosine, radial)",null: random,0,20,
+module switches only (10%),150,0,"overlap: min(cosine, radial)",null: module,0,20,
+module switches only (10%),150,0,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 module switches only (10%),150,1,"default (euclidean + cosine, 4-24)",switch,15,15,1.0
 module switches only (10%),150,1,"default (euclidean + cosine, 4-24)",null: random,0,20,
 module switches only (10%),150,1,"default (euclidean + cosine, 4-24)",null: module,3,20,
@@ -351,6 +391,10 @@ module switches only (10%),150,1,degree difference,switch,0,15,0.718888888888888
 module switches only (10%),150,1,degree difference,null: random,0,20,
 module switches only (10%),150,1,degree difference,null: module,0,20,
 module switches only (10%),150,1,degree difference,null: hub-rich module,0,20,
+module switches only (10%),150,1,"overlap: min(cosine, radial)",switch,0,15,0.6177777777777778
+module switches only (10%),150,1,"overlap: min(cosine, radial)",null: random,0,20,
+module switches only (10%),150,1,"overlap: min(cosine, radial)",null: module,0,20,
+module switches only (10%),150,1,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 module switches only (10%),150,2,"default (euclidean + cosine, 4-24)",switch,13,15,0.95
 module switches only (10%),150,2,"default (euclidean + cosine, 4-24)",null: random,0,20,
 module switches only (10%),150,2,"default (euclidean + cosine, 4-24)",null: module,1,20,
@@ -383,6 +427,10 @@ module switches only (10%),150,2,degree difference,switch,1,15,0.808888888888888
 module switches only (10%),150,2,degree difference,null: random,0,20,
 module switches only (10%),150,2,degree difference,null: module,0,20,
 module switches only (10%),150,2,degree difference,null: hub-rich module,0,20,
+module switches only (10%),150,2,"overlap: min(cosine, radial)",switch,0,15,0.69
+module switches only (10%),150,2,"overlap: min(cosine, radial)",null: random,0,20,
+module switches only (10%),150,2,"overlap: min(cosine, radial)",null: module,1,20,
+module switches only (10%),150,2,"overlap: min(cosine, radial)",null: hub-rich module,2,20,
 module switches only (10%),400,0,"default (euclidean + cosine, 4-24)",switch,13,15,0.9022222222222223
 module switches only (10%),400,0,"default (euclidean + cosine, 4-24)",null: random,0,20,
 module switches only (10%),400,0,"default (euclidean + cosine, 4-24)",null: module,2,20,
@@ -415,6 +463,10 @@ module switches only (10%),400,0,degree difference,switch,7,15,0.877777777777777
 module switches only (10%),400,0,degree difference,null: random,0,20,
 module switches only (10%),400,0,degree difference,null: module,0,20,
 module switches only (10%),400,0,degree difference,null: hub-rich module,0,20,
+module switches only (10%),400,0,"overlap: min(cosine, radial)",switch,3,15,0.5777777777777777
+module switches only (10%),400,0,"overlap: min(cosine, radial)",null: random,0,20,
+module switches only (10%),400,0,"overlap: min(cosine, radial)",null: module,3,20,
+module switches only (10%),400,0,"overlap: min(cosine, radial)",null: hub-rich module,5,20,
 module switches only (10%),400,1,"default (euclidean + cosine, 4-24)",switch,11,15,0.97
 module switches only (10%),400,1,"default (euclidean + cosine, 4-24)",null: random,0,20,
 module switches only (10%),400,1,"default (euclidean + cosine, 4-24)",null: module,0,20,
@@ -447,6 +499,10 @@ module switches only (10%),400,1,degree difference,switch,0,15,0.721111111111111
 module switches only (10%),400,1,degree difference,null: random,0,20,
 module switches only (10%),400,1,degree difference,null: module,0,20,
 module switches only (10%),400,1,degree difference,null: hub-rich module,0,20,
+module switches only (10%),400,1,"overlap: min(cosine, radial)",switch,0,15,0.6044444444444445
+module switches only (10%),400,1,"overlap: min(cosine, radial)",null: random,0,20,
+module switches only (10%),400,1,"overlap: min(cosine, radial)",null: module,0,20,
+module switches only (10%),400,1,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 module switches only (10%),400,2,"default (euclidean + cosine, 4-24)",switch,12,15,0.9522222222222222
 module switches only (10%),400,2,"default (euclidean + cosine, 4-24)",null: random,0,20,
 module switches only (10%),400,2,"default (euclidean + cosine, 4-24)",null: module,0,20,
@@ -479,6 +535,10 @@ module switches only (10%),400,2,degree difference,switch,1,15,0.78
 module switches only (10%),400,2,degree difference,null: random,0,20,
 module switches only (10%),400,2,degree difference,null: module,0,20,
 module switches only (10%),400,2,degree difference,null: hub-rich module,0,20,
+module switches only (10%),400,2,"overlap: min(cosine, radial)",switch,1,15,0.3888888888888889
+module switches only (10%),400,2,"overlap: min(cosine, radial)",null: random,0,20,
+module switches only (10%),400,2,"overlap: min(cosine, radial)",null: module,1,20,
+module switches only (10%),400,2,"overlap: min(cosine, radial)",null: hub-rich module,5,20,
 hub changes only (10%),150,0,"default (euclidean + cosine, 4-24)",hub,15,15,1.0
 hub changes only (10%),150,0,"default (euclidean + cosine, 4-24)",null: random,0,20,
 hub changes only (10%),150,0,"default (euclidean + cosine, 4-24)",null: module,0,20,
@@ -511,6 +571,10 @@ hub changes only (10%),150,0,degree difference,hub,11,15,0.9988888888888889
 hub changes only (10%),150,0,degree difference,null: random,0,20,
 hub changes only (10%),150,0,degree difference,null: module,0,20,
 hub changes only (10%),150,0,degree difference,null: hub-rich module,0,20,
+hub changes only (10%),150,0,"overlap: min(cosine, radial)",hub,13,15,1.0
+hub changes only (10%),150,0,"overlap: min(cosine, radial)",null: random,0,20,
+hub changes only (10%),150,0,"overlap: min(cosine, radial)",null: module,0,20,
+hub changes only (10%),150,0,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 hub changes only (10%),150,1,"default (euclidean + cosine, 4-24)",hub,15,15,0.9988888888888889
 hub changes only (10%),150,1,"default (euclidean + cosine, 4-24)",null: random,0,20,
 hub changes only (10%),150,1,"default (euclidean + cosine, 4-24)",null: module,3,20,
@@ -543,6 +607,10 @@ hub changes only (10%),150,1,degree difference,hub,4,15,1.0
 hub changes only (10%),150,1,degree difference,null: random,0,20,
 hub changes only (10%),150,1,degree difference,null: module,0,20,
 hub changes only (10%),150,1,degree difference,null: hub-rich module,0,20,
+hub changes only (10%),150,1,"overlap: min(cosine, radial)",hub,14,15,0.9733333333333334
+hub changes only (10%),150,1,"overlap: min(cosine, radial)",null: random,1,20,
+hub changes only (10%),150,1,"overlap: min(cosine, radial)",null: module,3,20,
+hub changes only (10%),150,1,"overlap: min(cosine, radial)",null: hub-rich module,3,20,
 hub changes only (10%),150,2,"default (euclidean + cosine, 4-24)",hub,13,15,0.9966666666666667
 hub changes only (10%),150,2,"default (euclidean + cosine, 4-24)",null: random,0,20,
 hub changes only (10%),150,2,"default (euclidean + cosine, 4-24)",null: module,0,20,
@@ -575,6 +643,10 @@ hub changes only (10%),150,2,degree difference,hub,10,15,1.0
 hub changes only (10%),150,2,degree difference,null: random,0,20,
 hub changes only (10%),150,2,degree difference,null: module,0,20,
 hub changes only (10%),150,2,degree difference,null: hub-rich module,0,20,
+hub changes only (10%),150,2,"overlap: min(cosine, radial)",hub,12,15,0.9944444444444445
+hub changes only (10%),150,2,"overlap: min(cosine, radial)",null: random,0,20,
+hub changes only (10%),150,2,"overlap: min(cosine, radial)",null: module,0,20,
+hub changes only (10%),150,2,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 hub changes only (10%),400,0,"default (euclidean + cosine, 4-24)",hub,10,15,0.9811111111111112
 hub changes only (10%),400,0,"default (euclidean + cosine, 4-24)",null: random,0,20,
 hub changes only (10%),400,0,"default (euclidean + cosine, 4-24)",null: module,0,20,
@@ -607,6 +679,10 @@ hub changes only (10%),400,0,degree difference,hub,11,15,1.0
 hub changes only (10%),400,0,degree difference,null: random,0,20,
 hub changes only (10%),400,0,degree difference,null: module,0,20,
 hub changes only (10%),400,0,degree difference,null: hub-rich module,0,20,
+hub changes only (10%),400,0,"overlap: min(cosine, radial)",hub,10,15,0.9622222222222222
+hub changes only (10%),400,0,"overlap: min(cosine, radial)",null: random,0,20,
+hub changes only (10%),400,0,"overlap: min(cosine, radial)",null: module,0,20,
+hub changes only (10%),400,0,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 hub changes only (10%),400,1,"default (euclidean + cosine, 4-24)",hub,12,15,0.9744444444444444
 hub changes only (10%),400,1,"default (euclidean + cosine, 4-24)",null: random,0,20,
 hub changes only (10%),400,1,"default (euclidean + cosine, 4-24)",null: module,1,20,
@@ -639,6 +715,10 @@ hub changes only (10%),400,1,degree difference,hub,14,15,1.0
 hub changes only (10%),400,1,degree difference,null: random,0,20,
 hub changes only (10%),400,1,degree difference,null: module,0,20,
 hub changes only (10%),400,1,degree difference,null: hub-rich module,0,20,
+hub changes only (10%),400,1,"overlap: min(cosine, radial)",hub,14,15,0.9788888888888889
+hub changes only (10%),400,1,"overlap: min(cosine, radial)",null: random,0,20,
+hub changes only (10%),400,1,"overlap: min(cosine, radial)",null: module,1,20,
+hub changes only (10%),400,1,"overlap: min(cosine, radial)",null: hub-rich module,2,20,
 hub changes only (10%),400,2,"default (euclidean + cosine, 4-24)",hub,14,15,0.9888888888888889
 hub changes only (10%),400,2,"default (euclidean + cosine, 4-24)",null: random,0,20,
 hub changes only (10%),400,2,"default (euclidean + cosine, 4-24)",null: module,0,20,
@@ -671,6 +751,10 @@ hub changes only (10%),400,2,degree difference,hub,12,15,1.0
 hub changes only (10%),400,2,degree difference,null: random,0,20,
 hub changes only (10%),400,2,degree difference,null: module,0,20,
 hub changes only (10%),400,2,degree difference,null: hub-rich module,0,20,
+hub changes only (10%),400,2,"overlap: min(cosine, radial)",hub,14,15,0.9955555555555555
+hub changes only (10%),400,2,"overlap: min(cosine, radial)",null: random,0,20,
+hub changes only (10%),400,2,"overlap: min(cosine, radial)",null: module,0,20,
+hub changes only (10%),400,2,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 one module strengthens,150,0,"default (euclidean + cosine, 4-24)",strengthen,15,15,1.0
 one module strengthens,150,0,"default (euclidean + cosine, 4-24)",null: random,0,20,
 one module strengthens,150,0,"default (euclidean + cosine, 4-24)",null: module,0,20,
@@ -703,6 +787,10 @@ one module strengthens,150,0,degree difference,strengthen,0,15,1.0
 one module strengthens,150,0,degree difference,null: random,0,20,
 one module strengthens,150,0,degree difference,null: module,0,20,
 one module strengthens,150,0,degree difference,null: hub-rich module,0,20,
+one module strengthens,150,0,"overlap: min(cosine, radial)",strengthen,0,15,0.82
+one module strengthens,150,0,"overlap: min(cosine, radial)",null: random,0,20,
+one module strengthens,150,0,"overlap: min(cosine, radial)",null: module,0,20,
+one module strengthens,150,0,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 one module strengthens,150,1,"default (euclidean + cosine, 4-24)",strengthen,15,15,1.0
 one module strengthens,150,1,"default (euclidean + cosine, 4-24)",null: random,0,20,
 one module strengthens,150,1,"default (euclidean + cosine, 4-24)",null: module,0,20,
@@ -735,6 +823,10 @@ one module strengthens,150,1,degree difference,strengthen,0,15,1.0
 one module strengthens,150,1,degree difference,null: random,0,20,
 one module strengthens,150,1,degree difference,null: module,0,20,
 one module strengthens,150,1,degree difference,null: hub-rich module,0,20,
+one module strengthens,150,1,"overlap: min(cosine, radial)",strengthen,15,15,1.0
+one module strengthens,150,1,"overlap: min(cosine, radial)",null: random,0,20,
+one module strengthens,150,1,"overlap: min(cosine, radial)",null: module,0,20,
+one module strengthens,150,1,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 one module strengthens,150,2,"default (euclidean + cosine, 4-24)",strengthen,15,15,1.0
 one module strengthens,150,2,"default (euclidean + cosine, 4-24)",null: random,0,20,
 one module strengthens,150,2,"default (euclidean + cosine, 4-24)",null: module,2,20,
@@ -767,6 +859,10 @@ one module strengthens,150,2,degree difference,strengthen,0,15,1.0
 one module strengthens,150,2,degree difference,null: random,0,20,
 one module strengthens,150,2,degree difference,null: module,0,20,
 one module strengthens,150,2,degree difference,null: hub-rich module,0,20,
+one module strengthens,150,2,"overlap: min(cosine, radial)",strengthen,0,15,1.0
+one module strengthens,150,2,"overlap: min(cosine, radial)",null: random,0,20,
+one module strengthens,150,2,"overlap: min(cosine, radial)",null: module,0,20,
+one module strengthens,150,2,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 one module strengthens,400,0,"default (euclidean + cosine, 4-24)",strengthen,15,15,1.0
 one module strengthens,400,0,"default (euclidean + cosine, 4-24)",null: random,0,20,
 one module strengthens,400,0,"default (euclidean + cosine, 4-24)",null: module,0,20,
@@ -799,6 +895,10 @@ one module strengthens,400,0,degree difference,strengthen,15,15,1.0
 one module strengthens,400,0,degree difference,null: random,0,20,
 one module strengthens,400,0,degree difference,null: module,0,20,
 one module strengthens,400,0,degree difference,null: hub-rich module,0,20,
+one module strengthens,400,0,"overlap: min(cosine, radial)",strengthen,0,15,1.0
+one module strengthens,400,0,"overlap: min(cosine, radial)",null: random,0,20,
+one module strengthens,400,0,"overlap: min(cosine, radial)",null: module,0,20,
+one module strengthens,400,0,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 one module strengthens,400,1,"default (euclidean + cosine, 4-24)",strengthen,15,15,1.0
 one module strengthens,400,1,"default (euclidean + cosine, 4-24)",null: random,0,20,
 one module strengthens,400,1,"default (euclidean + cosine, 4-24)",null: module,0,20,
@@ -831,6 +931,10 @@ one module strengthens,400,1,degree difference,strengthen,0,15,1.0
 one module strengthens,400,1,degree difference,null: random,0,20,
 one module strengthens,400,1,degree difference,null: module,0,20,
 one module strengthens,400,1,degree difference,null: hub-rich module,0,20,
+one module strengthens,400,1,"overlap: min(cosine, radial)",strengthen,0,15,0.9411111111111111
+one module strengthens,400,1,"overlap: min(cosine, radial)",null: random,0,20,
+one module strengthens,400,1,"overlap: min(cosine, radial)",null: module,0,20,
+one module strengthens,400,1,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 one module strengthens,400,2,"default (euclidean + cosine, 4-24)",strengthen,15,15,1.0
 one module strengthens,400,2,"default (euclidean + cosine, 4-24)",null: random,0,20,
 one module strengthens,400,2,"default (euclidean + cosine, 4-24)",null: module,3,20,
@@ -863,6 +967,10 @@ one module strengthens,400,2,degree difference,strengthen,0,15,1.0
 one module strengthens,400,2,degree difference,null: random,0,20,
 one module strengthens,400,2,degree difference,null: module,0,20,
 one module strengthens,400,2,degree difference,null: hub-rich module,0,20,
+one module strengthens,400,2,"overlap: min(cosine, radial)",strengthen,0,15,0.9977777777777778
+one module strengthens,400,2,"overlap: min(cosine, radial)",null: random,0,20,
+one module strengthens,400,2,"overlap: min(cosine, radial)",null: module,0,20,
+one module strengthens,400,2,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 mixed + one module strengthens,150,0,"default (euclidean + cosine, 4-24)",switch,14,15,0.98
 mixed + one module strengthens,150,0,"default (euclidean + cosine, 4-24)",hub,12,15,0.9511111111111111
 mixed + one module strengthens,150,0,"default (euclidean + cosine, 4-24)",strengthen,0,15,0.7633333333333333
@@ -911,6 +1019,12 @@ mixed + one module strengthens,150,0,degree difference,strengthen,0,15,1.0
 mixed + one module strengthens,150,0,degree difference,null: random,0,20,
 mixed + one module strengthens,150,0,degree difference,null: module,0,20,
 mixed + one module strengthens,150,0,degree difference,null: hub-rich module,0,20,
+mixed + one module strengthens,150,0,"overlap: min(cosine, radial)",switch,0,15,0.5988888888888889
+mixed + one module strengthens,150,0,"overlap: min(cosine, radial)",hub,11,15,0.8533333333333334
+mixed + one module strengthens,150,0,"overlap: min(cosine, radial)",strengthen,0,15,0.5577777777777778
+mixed + one module strengthens,150,0,"overlap: min(cosine, radial)",null: random,0,20,
+mixed + one module strengthens,150,0,"overlap: min(cosine, radial)",null: module,0,20,
+mixed + one module strengthens,150,0,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 mixed + one module strengthens,150,1,"default (euclidean + cosine, 4-24)",switch,12,15,1.0
 mixed + one module strengthens,150,1,"default (euclidean + cosine, 4-24)",hub,12,15,0.9844444444444445
 mixed + one module strengthens,150,1,"default (euclidean + cosine, 4-24)",strengthen,0,15,0.6988888888888889
@@ -959,6 +1073,12 @@ mixed + one module strengthens,150,1,degree difference,strengthen,13,15,1.0
 mixed + one module strengthens,150,1,degree difference,null: random,0,20,
 mixed + one module strengthens,150,1,degree difference,null: module,0,20,
 mixed + one module strengthens,150,1,degree difference,null: hub-rich module,0,20,
+mixed + one module strengthens,150,1,"overlap: min(cosine, radial)",switch,0,15,0.65
+mixed + one module strengthens,150,1,"overlap: min(cosine, radial)",hub,4,15,0.9822222222222222
+mixed + one module strengthens,150,1,"overlap: min(cosine, radial)",strengthen,0,15,0.8555555555555555
+mixed + one module strengthens,150,1,"overlap: min(cosine, radial)",null: random,0,20,
+mixed + one module strengthens,150,1,"overlap: min(cosine, radial)",null: module,0,20,
+mixed + one module strengthens,150,1,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 mixed + one module strengthens,150,2,"default (euclidean + cosine, 4-24)",switch,14,15,0.9822222222222222
 mixed + one module strengthens,150,2,"default (euclidean + cosine, 4-24)",hub,11,15,0.9633333333333334
 mixed + one module strengthens,150,2,"default (euclidean + cosine, 4-24)",strengthen,0,15,0.8566666666666667
@@ -1007,6 +1127,12 @@ mixed + one module strengthens,150,2,degree difference,strengthen,15,15,1.0
 mixed + one module strengthens,150,2,degree difference,null: random,0,20,
 mixed + one module strengthens,150,2,degree difference,null: module,0,20,
 mixed + one module strengthens,150,2,degree difference,null: hub-rich module,0,20,
+mixed + one module strengthens,150,2,"overlap: min(cosine, radial)",switch,4,15,0.66
+mixed + one module strengthens,150,2,"overlap: min(cosine, radial)",hub,4,15,0.8677777777777778
+mixed + one module strengthens,150,2,"overlap: min(cosine, radial)",strengthen,1,15,0.9166666666666666
+mixed + one module strengthens,150,2,"overlap: min(cosine, radial)",null: random,0,20,
+mixed + one module strengthens,150,2,"overlap: min(cosine, radial)",null: module,2,20,
+mixed + one module strengthens,150,2,"overlap: min(cosine, radial)",null: hub-rich module,2,20,
 mixed + one module strengthens,400,0,"default (euclidean + cosine, 4-24)",switch,15,15,1.0
 mixed + one module strengthens,400,0,"default (euclidean + cosine, 4-24)",hub,6,15,0.8
 mixed + one module strengthens,400,0,"default (euclidean + cosine, 4-24)",strengthen,0,15,0.51
@@ -1055,6 +1181,12 @@ mixed + one module strengthens,400,0,degree difference,strengthen,0,15,1.0
 mixed + one module strengthens,400,0,degree difference,null: random,0,20,
 mixed + one module strengthens,400,0,degree difference,null: module,0,20,
 mixed + one module strengthens,400,0,degree difference,null: hub-rich module,0,20,
+mixed + one module strengthens,400,0,"overlap: min(cosine, radial)",switch,5,15,0.5844444444444444
+mixed + one module strengthens,400,0,"overlap: min(cosine, radial)",hub,4,15,0.7455555555555555
+mixed + one module strengthens,400,0,"overlap: min(cosine, radial)",strengthen,0,15,0.4077777777777778
+mixed + one module strengthens,400,0,"overlap: min(cosine, radial)",null: random,0,20,
+mixed + one module strengthens,400,0,"overlap: min(cosine, radial)",null: module,8,20,
+mixed + one module strengthens,400,0,"overlap: min(cosine, radial)",null: hub-rich module,9,20,
 mixed + one module strengthens,400,1,"default (euclidean + cosine, 4-24)",switch,15,15,1.0
 mixed + one module strengthens,400,1,"default (euclidean + cosine, 4-24)",hub,14,15,0.9944444444444445
 mixed + one module strengthens,400,1,"default (euclidean + cosine, 4-24)",strengthen,0,15,0.2777777777777778
@@ -1103,6 +1235,12 @@ mixed + one module strengthens,400,1,degree difference,strengthen,0,15,1.0
 mixed + one module strengthens,400,1,degree difference,null: random,0,20,
 mixed + one module strengthens,400,1,degree difference,null: module,0,20,
 mixed + one module strengthens,400,1,degree difference,null: hub-rich module,0,20,
+mixed + one module strengthens,400,1,"overlap: min(cosine, radial)",switch,1,15,0.7344444444444445
+mixed + one module strengthens,400,1,"overlap: min(cosine, radial)",hub,9,15,0.9766666666666667
+mixed + one module strengthens,400,1,"overlap: min(cosine, radial)",strengthen,0,15,0.6377777777777778
+mixed + one module strengthens,400,1,"overlap: min(cosine, radial)",null: random,0,20,
+mixed + one module strengthens,400,1,"overlap: min(cosine, radial)",null: module,0,20,
+mixed + one module strengthens,400,1,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 mixed + one module strengthens,400,2,"default (euclidean + cosine, 4-24)",switch,14,15,0.9888888888888889
 mixed + one module strengthens,400,2,"default (euclidean + cosine, 4-24)",hub,14,15,0.9877777777777778
 mixed + one module strengthens,400,2,"default (euclidean + cosine, 4-24)",strengthen,0,15,0.08333333333333333
@@ -1151,6 +1289,12 @@ mixed + one module strengthens,400,2,degree difference,strengthen,0,15,0.9511111
 mixed + one module strengthens,400,2,degree difference,null: random,0,20,
 mixed + one module strengthens,400,2,degree difference,null: module,0,20,
 mixed + one module strengthens,400,2,degree difference,null: hub-rich module,0,20,
+mixed + one module strengthens,400,2,"overlap: min(cosine, radial)",switch,1,15,0.5644444444444444
+mixed + one module strengthens,400,2,"overlap: min(cosine, radial)",hub,14,15,0.96
+mixed + one module strengthens,400,2,"overlap: min(cosine, radial)",strengthen,0,15,0.28555555555555556
+mixed + one module strengthens,400,2,"overlap: min(cosine, radial)",null: random,0,20,
+mixed + one module strengthens,400,2,"overlap: min(cosine, radial)",null: module,6,20,
+mixed + one module strengthens,400,2,"overlap: min(cosine, radial)",null: hub-rich module,4,20,
 null (nothing changes),150,0,"default (euclidean + cosine, 4-24)",null: random,0,20,
 null (nothing changes),150,0,"default (euclidean + cosine, 4-24)",null: module,0,20,
 null (nothing changes),150,0,"default (euclidean + cosine, 4-24)",null: hub-rich module,0,20,
@@ -1175,6 +1319,9 @@ null (nothing changes),150,0,"radial, d=8 (true rank)",null: hub-rich module,0,2
 null (nothing changes),150,0,degree difference,null: random,0,20,
 null (nothing changes),150,0,degree difference,null: module,0,20,
 null (nothing changes),150,0,degree difference,null: hub-rich module,0,20,
+null (nothing changes),150,0,"overlap: min(cosine, radial)",null: random,0,20,
+null (nothing changes),150,0,"overlap: min(cosine, radial)",null: module,0,20,
+null (nothing changes),150,0,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 null (nothing changes),150,1,"default (euclidean + cosine, 4-24)",null: random,0,20,
 null (nothing changes),150,1,"default (euclidean + cosine, 4-24)",null: module,0,20,
 null (nothing changes),150,1,"default (euclidean + cosine, 4-24)",null: hub-rich module,0,20,
@@ -1199,6 +1346,9 @@ null (nothing changes),150,1,"radial, d=8 (true rank)",null: hub-rich module,0,2
 null (nothing changes),150,1,degree difference,null: random,0,20,
 null (nothing changes),150,1,degree difference,null: module,0,20,
 null (nothing changes),150,1,degree difference,null: hub-rich module,0,20,
+null (nothing changes),150,1,"overlap: min(cosine, radial)",null: random,0,20,
+null (nothing changes),150,1,"overlap: min(cosine, radial)",null: module,0,20,
+null (nothing changes),150,1,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 null (nothing changes),150,2,"default (euclidean + cosine, 4-24)",null: random,0,20,
 null (nothing changes),150,2,"default (euclidean + cosine, 4-24)",null: module,0,20,
 null (nothing changes),150,2,"default (euclidean + cosine, 4-24)",null: hub-rich module,0,20,
@@ -1223,6 +1373,9 @@ null (nothing changes),150,2,"radial, d=8 (true rank)",null: hub-rich module,0,2
 null (nothing changes),150,2,degree difference,null: random,0,20,
 null (nothing changes),150,2,degree difference,null: module,0,20,
 null (nothing changes),150,2,degree difference,null: hub-rich module,0,20,
+null (nothing changes),150,2,"overlap: min(cosine, radial)",null: random,0,20,
+null (nothing changes),150,2,"overlap: min(cosine, radial)",null: module,0,20,
+null (nothing changes),150,2,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 null (nothing changes),400,0,"default (euclidean + cosine, 4-24)",null: random,0,20,
 null (nothing changes),400,0,"default (euclidean + cosine, 4-24)",null: module,0,20,
 null (nothing changes),400,0,"default (euclidean + cosine, 4-24)",null: hub-rich module,0,20,
@@ -1247,6 +1400,9 @@ null (nothing changes),400,0,"radial, d=8 (true rank)",null: hub-rich module,0,2
 null (nothing changes),400,0,degree difference,null: random,1,20,
 null (nothing changes),400,0,degree difference,null: module,0,20,
 null (nothing changes),400,0,degree difference,null: hub-rich module,0,20,
+null (nothing changes),400,0,"overlap: min(cosine, radial)",null: random,0,20,
+null (nothing changes),400,0,"overlap: min(cosine, radial)",null: module,0,20,
+null (nothing changes),400,0,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 null (nothing changes),400,1,"default (euclidean + cosine, 4-24)",null: random,0,20,
 null (nothing changes),400,1,"default (euclidean + cosine, 4-24)",null: module,0,20,
 null (nothing changes),400,1,"default (euclidean + cosine, 4-24)",null: hub-rich module,0,20,
@@ -1271,6 +1427,9 @@ null (nothing changes),400,1,"radial, d=8 (true rank)",null: hub-rich module,0,2
 null (nothing changes),400,1,degree difference,null: random,0,20,
 null (nothing changes),400,1,degree difference,null: module,0,20,
 null (nothing changes),400,1,degree difference,null: hub-rich module,0,20,
+null (nothing changes),400,1,"overlap: min(cosine, radial)",null: random,0,20,
+null (nothing changes),400,1,"overlap: min(cosine, radial)",null: module,0,20,
+null (nothing changes),400,1,"overlap: min(cosine, radial)",null: hub-rich module,0,20,
 null (nothing changes),400,2,"default (euclidean + cosine, 4-24)",null: random,0,20,
 null (nothing changes),400,2,"default (euclidean + cosine, 4-24)",null: module,0,20,
 null (nothing changes),400,2,"default (euclidean + cosine, 4-24)",null: hub-rich module,0,20,
@@ -1295,3 +1454,6 @@ null (nothing changes),400,2,"radial, d=8 (true rank)",null: hub-rich module,0,2
 null (nothing changes),400,2,degree difference,null: random,0,20,
 null (nothing changes),400,2,degree difference,null: module,0,20,
 null (nothing changes),400,2,degree difference,null: hub-rich module,0,20,
+null (nothing changes),400,2,"overlap: min(cosine, radial)",null: random,0,20,
+null (nothing changes),400,2,"overlap: min(cosine, radial)",null: module,0,20,
+null (nothing changes),400,2,"overlap: min(cosine, radial)",null: hub-rich module,0,20,

@@ -1,0 +1,81 @@
+comparison,lists,shared,cell_cycle
+G1 -> S,cosine (all called),146,53
+G1 -> S,radial (all called),72,33
+G1 -> S,euclidean (all called),111,43
+G1 -> S,default (all called),138,53
+G1 -> S,"overlap: min(cosine, radial) (all called)",135,55
+G1 -> S,degree difference (all called),78,38
+G1 -> S,euclidean & cosine,107,43
+G1 -> S,euclidean & default,108,43
+G1 -> S,cosine & default,136,53
+G1 -> S,euclidean & cosine & default,107,43
+G1 -> S,radial & cosine,72,33
+G1 -> S,radial & euclidean,71,33
+G1 -> S,radial & default,72,33
+G1 -> S,euclidean only (of the three),3,0
+G1 -> S,cosine only (of the three),10,0
+G1 -> S,default only (of the three),1,0
+S -> G2,cosine (all called),38,8
+S -> G2,radial (all called),0,0
+S -> G2,euclidean (all called),1,1
+S -> G2,default (all called),44,10
+S -> G2,"overlap: min(cosine, radial) (all called)",0,0
+S -> G2,degree difference (all called),3,2
+S -> G2,euclidean & cosine,1,1
+S -> G2,euclidean & default,1,1
+S -> G2,cosine & default,29,7
+S -> G2,euclidean & cosine & default,1,1
+S -> G2,radial & cosine,0,0
+S -> G2,radial & euclidean,0,0
+S -> G2,radial & default,0,0
+S -> G2,euclidean only (of the three),0,0
+S -> G2,cosine only (of the three),9,1
+S -> G2,default only (of the three),15,3
+G2 -> M,cosine (all called),29,16
+G2 -> M,radial (all called),0,0
+G2 -> M,euclidean (all called),41,26
+G2 -> M,default (all called),53,27
+G2 -> M,"overlap: min(cosine, radial) (all called)",23,15
+G2 -> M,degree difference (all called),1,1
+G2 -> M,euclidean & cosine,20,16
+G2 -> M,euclidean & default,38,26
+G2 -> M,cosine & default,27,16
+G2 -> M,euclidean & cosine & default,20,16
+G2 -> M,radial & cosine,0,0
+G2 -> M,radial & euclidean,0,0
+G2 -> M,radial & default,0,0
+G2 -> M,euclidean only (of the three),3,0
+G2 -> M,cosine only (of the three),2,0
+G2 -> M,default only (of the three),8,1
+null: G1 halves (seed 0),cosine (all called),0,0
+null: G1 halves (seed 0),radial (all called),0,0
+null: G1 halves (seed 0),euclidean (all called),0,0
+null: G1 halves (seed 0),default (all called),0,0
+null: G1 halves (seed 0),"overlap: min(cosine, radial) (all called)",0,0
+null: G1 halves (seed 0),degree difference (all called),0,0
+null: G1 halves (seed 0),euclidean & cosine,0,0
+null: G1 halves (seed 0),euclidean & default,0,0
+null: G1 halves (seed 0),cosine & default,0,0
+null: G1 halves (seed 0),euclidean & cosine & default,0,0
+null: G1 halves (seed 0),radial & cosine,0,0
+null: G1 halves (seed 0),radial & euclidean,0,0
+null: G1 halves (seed 0),radial & default,0,0
+null: G1 halves (seed 0),euclidean only (of the three),0,0
+null: G1 halves (seed 0),cosine only (of the three),0,0
+null: G1 halves (seed 0),default only (of the three),0,0
+null: G1 halves (seed 1),cosine (all called),0,0
+null: G1 halves (seed 1),radial (all called),0,0
+null: G1 halves (seed 1),euclidean (all called),0,0
+null: G1 halves (seed 1),default (all called),0,0
+null: G1 halves (seed 1),"overlap: min(cosine, radial) (all called)",0,0
+null: G1 halves (seed 1),degree difference (all called),0,0
+null: G1 halves (seed 1),euclidean & cosine,0,0
+null: G1 halves (seed 1),euclidean & default,0,0
+null: G1 halves (seed 1),cosine & default,0,0
+null: G1 halves (seed 1),euclidean & cosine & default,0,0
+null: G1 halves (seed 1),radial & cosine,0,0
+null: G1 halves (seed 1),radial & euclidean,0,0
+null: G1 halves (seed 1),radial & default,0,0
+null: G1 halves (seed 1),euclidean only (of the three),0,0
+null: G1 halves (seed 1),cosine only (of the three),0,0
+null: G1 halves (seed 1),default only (of the three),0,0

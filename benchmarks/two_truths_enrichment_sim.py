@@ -26,7 +26,9 @@ Needs node2vec2rank/fast_gene_sets.py from PR #5; run it from a checkout of that
 
     OMP_NUM_THREADS=1 python benchmarks/two_truths_enrichment_sim.py
 
-Results: results/two_truths_enrichment_sim_genes.csv and results/two_truths_enrichment_sim_sets.csv.
+Results: results/two_truths_enrichment_sim_genes.csv, _sets.csv, and _overlap.csv (which change kinds
+sit in the top 100 shared by the euclidean, cosine and default lists, and in the overlap ranking
+min(z_cosine, z_radial)).
 """
 
 import argparse
@@ -49,6 +51,7 @@ from node2vec2rank.simulate import coexpression_network  # noqa: E402
 
 RESULTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 DIMS = list(range(4, 25, 2))
+OVERLAP = "overlap: min(cosine, radial)"
 NUM_MODULES = 8
 KINDS = ("switch", "hub", "both", "strengthen")
 SCENARIOS = {  # fraction of genes per kind; "strengthen" is a whole module
@@ -162,7 +165,28 @@ def node_scores(data_a, data_b):
     dedi = np.abs(graphs[1].sum(axis=0) - graphs[0].sum(axis=0))
     z = norm.ppf((rankdata(dedi) - 0.5) / len(dedi))
     scores["degree difference"] = (z, benjamini_hochberg(norm.sf(z)))
+    # high only for genes that change on both axes (partners and strength)
+    z = np.minimum(scores["cosine, 4-24"][0], scores["radial, 4-24"][0])
+    scores[OVERLAP] = (z, benjamini_hochberg(norm.sf(z)))
     return scores
+
+
+def regions(scores, kind, top=100):
+    """Which change kinds sit in the top genes shared by the euclidean, cosine and default lists."""
+    names = {"euclidean": "euclidean, 4-24", "cosine": "cosine, 4-24", "radial": "radial, 4-24",
+             "default": "default (euclidean + cosine, 4-24)", "overlap": OVERLAP}
+    lists = {short: set(np.argsort(-scores[name][0])[:top]) for short, name in names.items()}
+    euc, cos, default = lists["euclidean"], lists["cosine"], lists["default"]
+    groups = {"euclidean & cosine": euc & cos, "euclidean & default": euc & default,
+              "cosine & default": cos & default, "euclidean & cosine & default": euc & cos & default,
+              "euclidean only (of the three)": euc - cos - default,
+              "cosine only (of the three)": cos - euc - default,
+              "default only (of the three)": default - euc - cos,
+              "radial & euclidean": lists["radial"] & euc, "radial & cosine": lists["radial"] & cos,
+              "overlap ranking top": lists["overlap"]}
+    return [dict(region=name, genes=len(members), **{k: int(np.sum(kind[list(members)] == k)) if members else 0
+                                                     for k in ("none",) + KINDS})
+            for name, members in groups.items()]
 
 
 def run(job):
@@ -183,12 +207,16 @@ def run(job):
 
     gene_rows, set_rows = [], []
     base = dict(scenario=scenario_name, samples=samples, rep=rep)
+    region_rows = [dict(base, **row) for row in regions(observed, kind)]
     for ranking, (z_obs, q_obs) in observed.items():
         for k in KINDS:
             if (kind == k).any():
                 keep = np.isin(kind, [k, "none"])
                 gene_rows.append(dict(base, ranking=ranking, truth=k, auroc=auroc(kind[keep] == k, z_obs[keep]),
                                       called=int(np.sum((q_obs < 0.1) & (kind == k))), total=int((kind == k).sum())))
+        if (kind == "both").any():  # genes changed on both axes against every other gene
+            gene_rows.append(dict(base, ranking=ranking, truth="both vs all others",
+                                  auroc=auroc(kind == "both", z_obs), called=np.nan, total=int((kind == "both").sum())))
         gene_rows.append(dict(base, ranking=ranking, truth="none (false calls)", auroc=np.nan,
                               called=int(np.sum((q_obs < 0.1) & (kind == "none"))), total=int((kind == "none").sum())))
         null_z = np.stack([n[ranking][0] for n in null])
@@ -205,7 +233,7 @@ def run(job):
                                  total=int(members.sum()),
                                  auroc=np.nan if label.startswith("null") else
                                  auroc(members[members | is_null], set_z[members | is_null])))
-    return gene_rows, set_rows
+    return gene_rows, set_rows, region_rows
 
 
 def main(argv=None):
@@ -217,14 +245,16 @@ def main(argv=None):
     args = parser.parse_args(argv)
     jobs = [(s, n, r, args.num_permutations) for s in SCENARIOS for n in args.samples for r in range(args.reps)]
     tic = time.time()
-    gene_rows, set_rows = [], []
+    gene_rows, set_rows, region_rows = [], [], []
     with ProcessPoolExecutor(args.workers) as pool:
-        for genes, sets in pool.map(run, jobs):
+        for genes, sets, found in pool.map(run, jobs):
             gene_rows += genes
+            region_rows += found
             set_rows += sets
             print(f"{len(set_rows)} set rows, {time.time() - tic:.0f}s", flush=True)
     genes, sets = pd.DataFrame(gene_rows), pd.DataFrame(set_rows)
     genes.to_csv(os.path.join(RESULTS, "two_truths_enrichment_sim_genes.csv"), index=False)
+    pd.DataFrame(region_rows).to_csv(os.path.join(RESULTS, "two_truths_enrichment_sim_overlap.csv"), index=False)
     sets.to_csv(os.path.join(RESULTS, "two_truths_enrichment_sim_sets.csv"), index=False)
     with pd.option_context("display.width", 250, "display.max_rows", 500, "display.max_columns", 30):
         print(genes.pivot_table(index=["samples", "scenario", "ranking"], columns="truth",
