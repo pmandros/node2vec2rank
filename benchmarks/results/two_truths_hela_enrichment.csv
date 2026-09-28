@@ -1,0 +1,46 @@
+comparison,embedding,ranking,called,cell_cycle_called,auroc_cell_cycle
+G1 -> S,UASE,community (cosine),146,53,0.8977393617021276
+G1 -> S,UASE,hub (radial),72,33,0.8776263297872341
+G1 -> S,UASE,euclidean,111,43,0.8647606382978723
+G1 -> S,UASE,default (euclidean + cosine),138,53,0.8932845744680851
+G1 -> S,ULSE,community (cosine),147,54,0.9006316489361702
+G1 -> S,ULSE,hub (radial),70,35,0.8964760638297873
+G1 -> S,ULSE,euclidean,114,46,0.8788231382978723
+G1 -> S,ULSE,default (euclidean + cosine),140,53,0.8944481382978723
+G1 -> S,-,degree difference,78,38,0.878623670212766
+S -> G2,UASE,community (cosine),49,10,0.5721409574468085
+S -> G2,UASE,hub (radial),0,0,0.5759308510638298
+S -> G2,UASE,euclidean,0,0,0.6383311170212767
+S -> G2,UASE,default (euclidean + cosine),31,8,0.6070811170212767
+S -> G2,ULSE,community (cosine),55,10,0.5636635638297872
+S -> G2,ULSE,hub (radial),0,0,0.5247672872340425
+S -> G2,ULSE,euclidean,0,0,0.6935172872340426
+S -> G2,ULSE,default (euclidean + cosine),40,7,0.6295212765957446
+S -> G2,-,degree difference,0,0,0.614029255319149
+G2 -> M,UASE,community (cosine),23,13,0.7035571808510638
+G2 -> M,UASE,hub (radial),0,0,0.7095079787234042
+G2 -> M,UASE,euclidean,40,25,0.7485039893617021
+G2 -> M,UASE,default (euclidean + cosine),46,26,0.7442819148936171
+G2 -> M,ULSE,community (cosine),30,16,0.660904255319149
+G2 -> M,ULSE,hub (radial),0,0,0.7205784574468085
+G2 -> M,ULSE,euclidean,33,23,0.7151928191489362
+G2 -> M,ULSE,default (euclidean + cosine),35,20,0.694281914893617
+G2 -> M,-,degree difference,0,0,0.6361702127659574
+null: G1 halves (seed 0),UASE,community (cosine),0,0,0.3855718085106383
+null: G1 halves (seed 0),UASE,hub (radial),0,0,0.45608377659574467
+null: G1 halves (seed 0),UASE,euclidean,0,0,0.41808510638297874
+null: G1 halves (seed 0),UASE,default (euclidean + cosine),0,0,0.3782912234042553
+null: G1 halves (seed 0),ULSE,community (cosine),0,0,0.3283909574468085
+null: G1 halves (seed 0),ULSE,hub (radial),0,0,0.43949468085106386
+null: G1 halves (seed 0),ULSE,euclidean,0,0,0.40116356382978724
+null: G1 halves (seed 0),ULSE,default (euclidean + cosine),0,0,0.3650598404255319
+null: G1 halves (seed 0),-,degree difference,0,0,0.5982380319148937
+null: G1 halves (seed 1),UASE,community (cosine),0,0,0.3931183510638298
+null: G1 halves (seed 1),UASE,hub (radial),0,0,0.34418218085106383
+null: G1 halves (seed 1),UASE,euclidean,0,0,0.3424534574468085
+null: G1 halves (seed 1),UASE,default (euclidean + cosine),0,0,0.32898936170212767
+null: G1 halves (seed 1),ULSE,community (cosine),0,0,0.44810505319148936
+null: G1 halves (seed 1),ULSE,hub (radial),0,0,0.29630984042553193
+null: G1 halves (seed 1),ULSE,euclidean,0,0,0.3824468085106383
+null: G1 halves (seed 1),ULSE,default (euclidean + cosine),0,0,0.3750332446808511
+null: G1 halves (seed 1),-,degree difference,0,0,0.5095744680851064
