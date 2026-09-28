@@ -1,0 +1,961 @@
+scenario,samples,rep,region,genes,none,switch,hub,both,strengthen
+"mixed (5% switch, 5% hub, 5% both)",150,0,euclidean & cosine,54,3,10,0,41,0
+"mixed (5% switch, 5% hub, 5% both)",150,0,euclidean & default,64,8,10,5,41,0
+"mixed (5% switch, 5% hub, 5% both)",150,0,cosine & default,89,4,35,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,0,euclidean & cosine & default,54,3,10,0,41,0
+"mixed (5% switch, 5% hub, 5% both)",150,0,euclidean only (of the three),36,7,0,29,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,0,cosine only (of the three),11,2,9,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,0,default only (of the three),1,1,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,0,radial & euclidean,79,5,0,34,40,0
+"mixed (5% switch, 5% hub, 5% both)",150,0,radial & cosine,49,2,0,0,47,0
+"mixed (5% switch, 5% hub, 5% both)",150,0,overlap ranking top,100,28,6,16,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,1,euclidean & cosine,50,4,3,0,43,0
+"mixed (5% switch, 5% hub, 5% both)",150,1,euclidean & default,63,13,3,4,43,0
+"mixed (5% switch, 5% hub, 5% both)",150,1,cosine & default,82,8,24,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,1,euclidean & cosine & default,50,4,3,0,43,0
+"mixed (5% switch, 5% hub, 5% both)",150,1,euclidean only (of the three),37,9,0,28,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,1,cosine only (of the three),18,0,18,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,1,default only (of the three),5,5,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,1,radial & euclidean,79,6,0,32,41,0
+"mixed (5% switch, 5% hub, 5% both)",150,1,radial & cosine,48,3,0,0,45,0
+"mixed (5% switch, 5% hub, 5% both)",150,1,overlap ranking top,100,32,4,14,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,2,euclidean & cosine,55,4,11,0,40,0
+"mixed (5% switch, 5% hub, 5% both)",150,2,euclidean & default,64,9,11,4,40,0
+"mixed (5% switch, 5% hub, 5% both)",150,2,cosine & default,89,4,35,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,2,euclidean & cosine & default,55,4,11,0,40,0
+"mixed (5% switch, 5% hub, 5% both)",150,2,euclidean only (of the three),36,6,0,30,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,2,cosine only (of the three),11,2,9,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,2,default only (of the three),2,2,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,2,radial & euclidean,74,3,2,34,35,0
+"mixed (5% switch, 5% hub, 5% both)",150,2,radial & cosine,46,1,2,0,43,0
+"mixed (5% switch, 5% hub, 5% both)",150,2,overlap ranking top,100,26,8,17,49,0
+"mixed (5% switch, 5% hub, 5% both)",150,3,euclidean & cosine,53,2,13,0,38,0
+"mixed (5% switch, 5% hub, 5% both)",150,3,euclidean & default,60,8,13,1,38,0
+"mixed (5% switch, 5% hub, 5% both)",150,3,cosine & default,92,4,38,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,3,euclidean & cosine & default,53,2,13,0,38,0
+"mixed (5% switch, 5% hub, 5% both)",150,3,euclidean only (of the three),40,11,0,29,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,3,cosine only (of the three),8,1,7,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,3,default only (of the three),1,1,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,3,radial & euclidean,80,13,0,30,37,0
+"mixed (5% switch, 5% hub, 5% both)",150,3,radial & cosine,42,1,0,0,41,0
+"mixed (5% switch, 5% hub, 5% both)",150,3,overlap ranking top,100,30,6,14,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,4,euclidean & cosine,48,1,9,0,38,0
+"mixed (5% switch, 5% hub, 5% both)",150,4,euclidean & default,61,8,9,6,38,0
+"mixed (5% switch, 5% hub, 5% both)",150,4,cosine & default,86,1,35,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,4,euclidean & cosine & default,48,1,9,0,38,0
+"mixed (5% switch, 5% hub, 5% both)",150,4,euclidean only (of the three),39,13,0,26,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,4,cosine only (of the three),14,1,13,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,4,default only (of the three),1,1,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,4,radial & euclidean,79,14,0,32,33,0
+"mixed (5% switch, 5% hub, 5% both)",150,4,radial & cosine,41,0,0,0,41,0
+"mixed (5% switch, 5% hub, 5% both)",150,4,overlap ranking top,100,36,4,11,49,0
+"mixed (5% switch, 5% hub, 5% both)",150,5,euclidean & cosine,52,1,8,0,43,0
+"mixed (5% switch, 5% hub, 5% both)",150,5,euclidean & default,65,7,8,7,43,0
+"mixed (5% switch, 5% hub, 5% both)",150,5,cosine & default,87,5,32,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,5,euclidean & cosine & default,52,1,8,0,43,0
+"mixed (5% switch, 5% hub, 5% both)",150,5,euclidean only (of the three),35,5,0,30,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,5,cosine only (of the three),13,0,13,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,5,default only (of the three),0,0,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,5,radial & euclidean,82,5,0,37,40,0
+"mixed (5% switch, 5% hub, 5% both)",150,5,radial & cosine,47,1,0,0,46,0
+"mixed (5% switch, 5% hub, 5% both)",150,5,overlap ranking top,100,31,4,15,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,6,euclidean & cosine,49,1,10,0,38,0
+"mixed (5% switch, 5% hub, 5% both)",150,6,euclidean & default,59,9,10,2,38,0
+"mixed (5% switch, 5% hub, 5% both)",150,6,cosine & default,90,4,36,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,6,euclidean & cosine & default,49,1,10,0,38,0
+"mixed (5% switch, 5% hub, 5% both)",150,6,euclidean only (of the three),41,10,0,31,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,6,cosine only (of the three),10,0,10,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,6,default only (of the three),0,0,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,6,radial & euclidean,78,7,0,33,38,0
+"mixed (5% switch, 5% hub, 5% both)",150,6,radial & cosine,44,0,0,0,44,0
+"mixed (5% switch, 5% hub, 5% both)",150,6,overlap ranking top,100,39,4,7,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,7,euclidean & cosine,55,4,11,0,40,0
+"mixed (5% switch, 5% hub, 5% both)",150,7,euclidean & default,69,13,11,5,40,0
+"mixed (5% switch, 5% hub, 5% both)",150,7,cosine & default,84,6,28,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",150,7,euclidean & cosine & default,55,4,11,0,40,0
+"mixed (5% switch, 5% hub, 5% both)",150,7,euclidean only (of the three),31,3,0,28,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,7,cosine only (of the three),16,2,14,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,7,default only (of the three),2,2,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",150,7,radial & euclidean,78,8,0,33,37,0
+"mixed (5% switch, 5% hub, 5% both)",150,7,radial & cosine,46,1,0,0,45,0
+"mixed (5% switch, 5% hub, 5% both)",150,7,overlap ranking top,100,34,5,11,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,0,euclidean & cosine,54,1,17,0,36,0
+"mixed (5% switch, 5% hub, 5% both)",400,0,euclidean & default,58,5,17,0,36,0
+"mixed (5% switch, 5% hub, 5% both)",400,0,cosine & default,91,1,40,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,0,euclidean & cosine & default,54,1,17,0,36,0
+"mixed (5% switch, 5% hub, 5% both)",400,0,euclidean only (of the three),42,8,0,34,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,0,cosine only (of the three),9,0,9,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,0,default only (of the three),5,5,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,0,radial & euclidean,72,2,0,34,36,0
+"mixed (5% switch, 5% hub, 5% both)",400,0,radial & cosine,47,0,0,0,47,0
+"mixed (5% switch, 5% hub, 5% both)",400,0,overlap ranking top,100,40,5,5,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,1,euclidean & cosine,58,3,16,0,39,0
+"mixed (5% switch, 5% hub, 5% both)",400,1,euclidean & default,67,12,16,0,39,0
+"mixed (5% switch, 5% hub, 5% both)",400,1,cosine & default,87,5,32,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,1,euclidean & cosine & default,58,3,16,0,39,0
+"mixed (5% switch, 5% hub, 5% both)",400,1,euclidean only (of the three),33,9,0,24,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,1,cosine only (of the three),13,0,13,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,1,default only (of the three),4,4,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,1,radial & euclidean,65,3,0,24,38,0
+"mixed (5% switch, 5% hub, 5% both)",400,1,radial & cosine,47,0,0,0,47,0
+"mixed (5% switch, 5% hub, 5% both)",400,1,overlap ranking top,100,32,8,10,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,2,euclidean & cosine,56,3,13,0,40,0
+"mixed (5% switch, 5% hub, 5% both)",400,2,euclidean & default,65,9,13,3,40,0
+"mixed (5% switch, 5% hub, 5% both)",400,2,cosine & default,85,3,32,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,2,euclidean & cosine & default,56,3,13,0,40,0
+"mixed (5% switch, 5% hub, 5% both)",400,2,euclidean only (of the three),35,6,0,29,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,2,cosine only (of the three),15,0,15,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,2,default only (of the three),6,6,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,2,radial & euclidean,72,1,0,32,39,0
+"mixed (5% switch, 5% hub, 5% both)",400,2,radial & cosine,49,0,0,0,49,0
+"mixed (5% switch, 5% hub, 5% both)",400,2,overlap ranking top,100,29,8,13,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,3,euclidean & cosine,48,1,8,0,39,0
+"mixed (5% switch, 5% hub, 5% both)",400,3,euclidean & default,59,10,8,2,39,0
+"mixed (5% switch, 5% hub, 5% both)",400,3,cosine & default,87,1,36,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,3,euclidean & cosine & default,48,1,8,0,39,0
+"mixed (5% switch, 5% hub, 5% both)",400,3,euclidean only (of the three),41,5,0,36,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,3,cosine only (of the three),13,1,12,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,3,default only (of the three),2,2,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,3,radial & euclidean,79,5,0,38,36,0
+"mixed (5% switch, 5% hub, 5% both)",400,3,radial & cosine,45,0,0,0,45,0
+"mixed (5% switch, 5% hub, 5% both)",400,3,overlap ranking top,100,32,7,11,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,4,euclidean & cosine,57,2,13,0,42,0
+"mixed (5% switch, 5% hub, 5% both)",400,4,euclidean & default,69,13,13,1,42,0
+"mixed (5% switch, 5% hub, 5% both)",400,4,cosine & default,84,3,31,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,4,euclidean & cosine & default,57,2,13,0,42,0
+"mixed (5% switch, 5% hub, 5% both)",400,4,euclidean only (of the three),31,4,0,27,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,4,cosine only (of the three),16,2,14,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,4,default only (of the three),4,4,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,4,radial & euclidean,78,8,0,28,42,0
+"mixed (5% switch, 5% hub, 5% both)",400,4,radial & cosine,45,0,0,0,45,0
+"mixed (5% switch, 5% hub, 5% both)",400,4,overlap ranking top,100,35,5,10,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,5,euclidean & cosine,59,3,11,0,45,0
+"mixed (5% switch, 5% hub, 5% both)",400,5,euclidean & default,67,8,11,3,45,0
+"mixed (5% switch, 5% hub, 5% both)",400,5,cosine & default,86,4,32,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,5,euclidean & cosine & default,59,3,11,0,45,0
+"mixed (5% switch, 5% hub, 5% both)",400,5,euclidean only (of the three),33,2,0,31,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,5,cosine only (of the three),14,1,13,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,5,default only (of the three),6,6,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,5,radial & euclidean,80,4,0,34,42,0
+"mixed (5% switch, 5% hub, 5% both)",400,5,radial & cosine,46,1,0,0,45,0
+"mixed (5% switch, 5% hub, 5% both)",400,5,overlap ranking top,100,36,5,9,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,6,euclidean & cosine,53,1,9,0,43,0
+"mixed (5% switch, 5% hub, 5% both)",400,6,euclidean & default,63,10,9,1,43,0
+"mixed (5% switch, 5% hub, 5% both)",400,6,cosine & default,84,1,33,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,6,euclidean & cosine & default,53,1,9,0,43,0
+"mixed (5% switch, 5% hub, 5% both)",400,6,euclidean only (of the three),37,4,0,33,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,6,cosine only (of the three),16,1,15,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,6,default only (of the three),6,6,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,6,radial & euclidean,78,1,0,34,43,0
+"mixed (5% switch, 5% hub, 5% both)",400,6,radial & cosine,48,1,0,0,47,0
+"mixed (5% switch, 5% hub, 5% both)",400,6,overlap ranking top,100,38,8,4,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,7,euclidean & cosine,57,2,14,0,41,0
+"mixed (5% switch, 5% hub, 5% both)",400,7,euclidean & default,69,13,14,1,41,0
+"mixed (5% switch, 5% hub, 5% both)",400,7,cosine & default,87,3,34,0,50,0
+"mixed (5% switch, 5% hub, 5% both)",400,7,euclidean & cosine & default,57,2,14,0,41,0
+"mixed (5% switch, 5% hub, 5% both)",400,7,euclidean only (of the three),31,3,0,28,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,7,cosine only (of the three),13,1,12,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,7,default only (of the three),1,1,0,0,0,0
+"mixed (5% switch, 5% hub, 5% both)",400,7,radial & euclidean,72,3,0,29,40,0
+"mixed (5% switch, 5% hub, 5% both)",400,7,radial & cosine,47,0,0,0,47,0
+"mixed (5% switch, 5% hub, 5% both)",400,7,overlap ranking top,100,39,4,7,50,0
+module switches only (10%),150,0,euclidean & cosine,69,3,66,0,0,0
+module switches only (10%),150,0,euclidean & default,79,13,66,0,0,0
+module switches only (10%),150,0,cosine & default,88,3,85,0,0,0
+module switches only (10%),150,0,euclidean & cosine & default,69,3,66,0,0,0
+module switches only (10%),150,0,euclidean only (of the three),21,21,0,0,0,0
+module switches only (10%),150,0,cosine only (of the three),12,0,12,0,0,0
+module switches only (10%),150,0,default only (of the three),2,1,1,0,0,0
+module switches only (10%),150,0,radial & euclidean,44,29,15,0,0,0
+module switches only (10%),150,0,radial & cosine,16,1,15,0,0,0
+module switches only (10%),150,0,overlap ranking top,100,69,31,0,0,0
+module switches only (10%),150,1,euclidean & cosine,58,3,55,0,0,0
+module switches only (10%),150,1,euclidean & default,77,22,55,0,0,0
+module switches only (10%),150,1,cosine & default,79,5,74,0,0,0
+module switches only (10%),150,1,euclidean & cosine & default,58,3,55,0,0,0
+module switches only (10%),150,1,euclidean only (of the three),23,23,0,0,0,0
+module switches only (10%),150,1,cosine only (of the three),21,1,20,0,0,0
+module switches only (10%),150,1,default only (of the three),2,2,0,0,0,0
+module switches only (10%),150,1,radial & euclidean,44,32,12,0,0,0
+module switches only (10%),150,1,radial & cosine,15,1,14,0,0,0
+module switches only (10%),150,1,overlap ranking top,100,68,32,0,0,0
+module switches only (10%),150,2,euclidean & cosine,58,5,53,0,0,0
+module switches only (10%),150,2,euclidean & default,75,22,53,0,0,0
+module switches only (10%),150,2,cosine & default,80,5,75,0,0,0
+module switches only (10%),150,2,euclidean & cosine & default,58,5,53,0,0,0
+module switches only (10%),150,2,euclidean only (of the three),25,25,0,0,0,0
+module switches only (10%),150,2,cosine only (of the three),20,0,20,0,0,0
+module switches only (10%),150,2,default only (of the three),3,2,1,0,0,0
+module switches only (10%),150,2,radial & euclidean,43,35,8,0,0,0
+module switches only (10%),150,2,radial & cosine,13,3,10,0,0,0
+module switches only (10%),150,2,overlap ranking top,100,70,30,0,0,0
+module switches only (10%),150,3,euclidean & cosine,58,3,55,0,0,0
+module switches only (10%),150,3,euclidean & default,73,18,55,0,0,0
+module switches only (10%),150,3,cosine & default,84,4,80,0,0,0
+module switches only (10%),150,3,euclidean & cosine & default,58,3,55,0,0,0
+module switches only (10%),150,3,euclidean only (of the three),27,27,0,0,0,0
+module switches only (10%),150,3,cosine only (of the three),16,0,16,0,0,0
+module switches only (10%),150,3,default only (of the three),1,1,0,0,0,0
+module switches only (10%),150,3,radial & euclidean,53,35,18,0,0,0
+module switches only (10%),150,3,radial & cosine,22,3,19,0,0,0
+module switches only (10%),150,3,overlap ranking top,100,69,31,0,0,0
+module switches only (10%),150,4,euclidean & cosine,56,2,54,0,0,0
+module switches only (10%),150,4,euclidean & default,71,17,54,0,0,0
+module switches only (10%),150,4,cosine & default,80,3,77,0,0,0
+module switches only (10%),150,4,euclidean & cosine & default,56,2,54,0,0,0
+module switches only (10%),150,4,euclidean only (of the three),29,29,0,0,0,0
+module switches only (10%),150,4,cosine only (of the three),20,1,19,0,0,0
+module switches only (10%),150,4,default only (of the three),5,5,0,0,0,0
+module switches only (10%),150,4,radial & euclidean,54,41,13,0,0,0
+module switches only (10%),150,4,radial & cosine,17,3,14,0,0,0
+module switches only (10%),150,4,overlap ranking top,100,73,27,0,0,0
+module switches only (10%),150,5,euclidean & cosine,47,1,46,0,0,0
+module switches only (10%),150,5,euclidean & default,72,26,46,0,0,0
+module switches only (10%),150,5,cosine & default,73,4,69,0,0,0
+module switches only (10%),150,5,euclidean & cosine & default,47,1,46,0,0,0
+module switches only (10%),150,5,euclidean only (of the three),28,28,0,0,0,0
+module switches only (10%),150,5,cosine only (of the three),27,0,27,0,0,0
+module switches only (10%),150,5,default only (of the three),2,2,0,0,0,0
+module switches only (10%),150,5,radial & euclidean,43,34,9,0,0,0
+module switches only (10%),150,5,radial & cosine,11,1,10,0,0,0
+module switches only (10%),150,5,overlap ranking top,100,67,33,0,0,0
+module switches only (10%),150,6,euclidean & cosine,63,1,62,0,0,0
+module switches only (10%),150,6,euclidean & default,78,16,62,0,0,0
+module switches only (10%),150,6,cosine & default,83,1,82,0,0,0
+module switches only (10%),150,6,euclidean & cosine & default,63,1,62,0,0,0
+module switches only (10%),150,6,euclidean only (of the three),22,22,0,0,0,0
+module switches only (10%),150,6,cosine only (of the three),17,2,15,0,0,0
+module switches only (10%),150,6,default only (of the three),2,1,1,0,0,0
+module switches only (10%),150,6,radial & euclidean,41,29,12,0,0,0
+module switches only (10%),150,6,radial & cosine,14,1,13,0,0,0
+module switches only (10%),150,6,overlap ranking top,100,71,29,0,0,0
+module switches only (10%),150,7,euclidean & cosine,56,4,52,0,0,0
+module switches only (10%),150,7,euclidean & default,69,17,52,0,0,0
+module switches only (10%),150,7,cosine & default,83,6,77,0,0,0
+module switches only (10%),150,7,euclidean & cosine & default,56,4,52,0,0,0
+module switches only (10%),150,7,euclidean only (of the three),31,31,0,0,0,0
+module switches only (10%),150,7,cosine only (of the three),17,1,16,0,0,0
+module switches only (10%),150,7,default only (of the three),4,4,0,0,0,0
+module switches only (10%),150,7,radial & euclidean,47,36,11,0,0,0
+module switches only (10%),150,7,radial & cosine,12,1,11,0,0,0
+module switches only (10%),150,7,overlap ranking top,100,75,25,0,0,0
+module switches only (10%),400,0,euclidean & cosine,51,1,50,0,0,0
+module switches only (10%),400,0,euclidean & default,63,13,50,0,0,0
+module switches only (10%),400,0,cosine & default,86,1,85,0,0,0
+module switches only (10%),400,0,euclidean & cosine & default,51,1,50,0,0,0
+module switches only (10%),400,0,euclidean only (of the three),37,37,0,0,0,0
+module switches only (10%),400,0,cosine only (of the three),14,0,14,0,0,0
+module switches only (10%),400,0,default only (of the three),2,2,0,0,0,0
+module switches only (10%),400,0,radial & euclidean,45,28,17,0,0,0
+module switches only (10%),400,0,radial & cosine,19,1,18,0,0,0
+module switches only (10%),400,0,overlap ranking top,100,70,30,0,0,0
+module switches only (10%),400,1,euclidean & cosine,56,0,56,0,0,0
+module switches only (10%),400,1,euclidean & default,79,23,56,0,0,0
+module switches only (10%),400,1,cosine & default,75,2,73,0,0,0
+module switches only (10%),400,1,euclidean & cosine & default,56,0,56,0,0,0
+module switches only (10%),400,1,euclidean only (of the three),21,21,0,0,0,0
+module switches only (10%),400,1,cosine only (of the three),25,0,25,0,0,0
+module switches only (10%),400,1,default only (of the three),2,2,0,0,0,0
+module switches only (10%),400,1,radial & euclidean,40,34,6,0,0,0
+module switches only (10%),400,1,radial & cosine,6,0,6,0,0,0
+module switches only (10%),400,1,overlap ranking top,100,79,21,0,0,0
+module switches only (10%),400,2,euclidean & cosine,55,0,55,0,0,0
+module switches only (10%),400,2,euclidean & default,70,15,55,0,0,0
+module switches only (10%),400,2,cosine & default,84,0,84,0,0,0
+module switches only (10%),400,2,euclidean & cosine & default,55,0,55,0,0,0
+module switches only (10%),400,2,euclidean only (of the three),30,30,0,0,0,0
+module switches only (10%),400,2,cosine only (of the three),16,0,16,0,0,0
+module switches only (10%),400,2,default only (of the three),1,1,0,0,0,0
+module switches only (10%),400,2,radial & euclidean,48,36,12,0,0,0
+module switches only (10%),400,2,radial & cosine,12,0,12,0,0,0
+module switches only (10%),400,2,overlap ranking top,100,71,29,0,0,0
+module switches only (10%),400,3,euclidean & cosine,61,0,61,0,0,0
+module switches only (10%),400,3,euclidean & default,79,18,61,0,0,0
+module switches only (10%),400,3,cosine & default,80,0,80,0,0,0
+module switches only (10%),400,3,euclidean & cosine & default,61,0,61,0,0,0
+module switches only (10%),400,3,euclidean only (of the three),21,21,0,0,0,0
+module switches only (10%),400,3,cosine only (of the three),20,0,20,0,0,0
+module switches only (10%),400,3,default only (of the three),2,2,0,0,0,0
+module switches only (10%),400,3,radial & euclidean,40,29,11,0,0,0
+module switches only (10%),400,3,radial & cosine,11,0,11,0,0,0
+module switches only (10%),400,3,overlap ranking top,100,66,34,0,0,0
+module switches only (10%),400,4,euclidean & cosine,59,1,58,0,0,0
+module switches only (10%),400,4,euclidean & default,80,22,58,0,0,0
+module switches only (10%),400,4,cosine & default,74,1,73,0,0,0
+module switches only (10%),400,4,euclidean & cosine & default,59,1,58,0,0,0
+module switches only (10%),400,4,euclidean only (of the three),20,20,0,0,0,0
+module switches only (10%),400,4,cosine only (of the three),26,0,26,0,0,0
+module switches only (10%),400,4,default only (of the three),5,5,0,0,0,0
+module switches only (10%),400,4,radial & euclidean,46,34,12,0,0,0
+module switches only (10%),400,4,radial & cosine,13,1,12,0,0,0
+module switches only (10%),400,4,overlap ranking top,100,69,31,0,0,0
+module switches only (10%),400,5,euclidean & cosine,64,0,64,0,0,0
+module switches only (10%),400,5,euclidean & default,76,12,64,0,0,0
+module switches only (10%),400,5,cosine & default,85,0,85,0,0,0
+module switches only (10%),400,5,euclidean & cosine & default,64,0,64,0,0,0
+module switches only (10%),400,5,euclidean only (of the three),24,24,0,0,0,0
+module switches only (10%),400,5,cosine only (of the three),15,0,15,0,0,0
+module switches only (10%),400,5,default only (of the three),3,3,0,0,0,0
+module switches only (10%),400,5,radial & euclidean,54,30,24,0,0,0
+module switches only (10%),400,5,radial & cosine,24,0,24,0,0,0
+module switches only (10%),400,5,overlap ranking top,100,62,38,0,0,0
+module switches only (10%),400,6,euclidean & cosine,58,0,58,0,0,0
+module switches only (10%),400,6,euclidean & default,69,11,58,0,0,0
+module switches only (10%),400,6,cosine & default,88,0,88,0,0,0
+module switches only (10%),400,6,euclidean & cosine & default,58,0,58,0,0,0
+module switches only (10%),400,6,euclidean only (of the three),31,31,0,0,0,0
+module switches only (10%),400,6,cosine only (of the three),12,0,12,0,0,0
+module switches only (10%),400,6,default only (of the three),1,1,0,0,0,0
+module switches only (10%),400,6,radial & euclidean,47,31,16,0,0,0
+module switches only (10%),400,6,radial & cosine,16,0,16,0,0,0
+module switches only (10%),400,6,overlap ranking top,100,65,35,0,0,0
+module switches only (10%),400,7,euclidean & cosine,56,0,56,0,0,0
+module switches only (10%),400,7,euclidean & default,71,15,56,0,0,0
+module switches only (10%),400,7,cosine & default,84,1,83,0,0,0
+module switches only (10%),400,7,euclidean & cosine & default,56,0,56,0,0,0
+module switches only (10%),400,7,euclidean only (of the three),29,29,0,0,0,0
+module switches only (10%),400,7,cosine only (of the three),16,0,16,0,0,0
+module switches only (10%),400,7,default only (of the three),1,0,1,0,0,0
+module switches only (10%),400,7,radial & euclidean,52,38,14,0,0,0
+module switches only (10%),400,7,radial & cosine,14,0,14,0,0,0
+module switches only (10%),400,7,overlap ranking top,100,69,31,0,0,0
+hub changes only (10%),150,0,euclidean & cosine,44,12,0,32,0,0
+hub changes only (10%),150,0,euclidean & default,81,16,0,65,0,0
+hub changes only (10%),150,0,cosine & default,61,25,0,36,0,0
+hub changes only (10%),150,0,euclidean & cosine & default,44,12,0,32,0,0
+hub changes only (10%),150,0,euclidean only (of the three),19,5,0,14,0,0
+hub changes only (10%),150,0,cosine only (of the three),39,39,0,0,0,0
+hub changes only (10%),150,0,default only (of the three),2,1,0,1,0,0
+hub changes only (10%),150,0,radial & euclidean,83,4,0,79,0,0
+hub changes only (10%),150,0,radial & cosine,38,3,0,35,0,0
+hub changes only (10%),150,0,overlap ranking top,100,36,0,64,0,0
+hub changes only (10%),150,1,euclidean & cosine,49,13,0,36,0,0
+hub changes only (10%),150,1,euclidean & default,72,18,0,54,0,0
+hub changes only (10%),150,1,cosine & default,74,32,0,42,0,0
+hub changes only (10%),150,1,euclidean & cosine & default,49,13,0,36,0,0
+hub changes only (10%),150,1,euclidean only (of the three),28,2,0,26,0,0
+hub changes only (10%),150,1,cosine only (of the three),26,24,0,2,0,0
+hub changes only (10%),150,1,default only (of the three),3,2,0,1,0,0
+hub changes only (10%),150,1,radial & euclidean,87,7,0,80,0,0
+hub changes only (10%),150,1,radial & cosine,41,2,0,39,0,0
+hub changes only (10%),150,1,overlap ranking top,100,41,0,59,0,0
+hub changes only (10%),150,2,euclidean & cosine,54,8,0,46,0,0
+hub changes only (10%),150,2,euclidean & default,72,12,0,60,0,0
+hub changes only (10%),150,2,cosine & default,78,30,0,48,0,0
+hub changes only (10%),150,2,euclidean & cosine & default,54,8,0,46,0,0
+hub changes only (10%),150,2,euclidean only (of the three),28,2,0,26,0,0
+hub changes only (10%),150,2,cosine only (of the three),22,22,0,0,0,0
+hub changes only (10%),150,2,default only (of the three),4,0,0,4,0,0
+hub changes only (10%),150,2,radial & euclidean,89,3,0,86,0,0
+hub changes only (10%),150,2,radial & cosine,48,1,0,47,0,0
+hub changes only (10%),150,2,overlap ranking top,100,36,0,64,0,0
+hub changes only (10%),150,3,euclidean & cosine,45,11,0,34,0,0
+hub changes only (10%),150,3,euclidean & default,75,19,0,56,0,0
+hub changes only (10%),150,3,cosine & default,64,27,0,37,0,0
+hub changes only (10%),150,3,euclidean & cosine & default,45,11,0,34,0,0
+hub changes only (10%),150,3,euclidean only (of the three),25,5,0,20,0,0
+hub changes only (10%),150,3,cosine only (of the three),36,36,0,0,0,0
+hub changes only (10%),150,3,default only (of the three),6,4,0,2,0,0
+hub changes only (10%),150,3,radial & euclidean,84,9,0,75,0,0
+hub changes only (10%),150,3,radial & cosine,40,4,0,36,0,0
+hub changes only (10%),150,3,overlap ranking top,100,45,0,55,0,0
+hub changes only (10%),150,4,euclidean & cosine,42,8,0,34,0,0
+hub changes only (10%),150,4,euclidean & default,76,14,0,62,0,0
+hub changes only (10%),150,4,cosine & default,64,23,0,41,0,0
+hub changes only (10%),150,4,euclidean & cosine & default,42,8,0,34,0,0
+hub changes only (10%),150,4,euclidean only (of the three),24,5,0,19,0,0
+hub changes only (10%),150,4,cosine only (of the three),36,36,0,0,0,0
+hub changes only (10%),150,4,default only (of the three),2,1,0,1,0,0
+hub changes only (10%),150,4,radial & euclidean,87,6,0,81,0,0
+hub changes only (10%),150,4,radial & cosine,41,3,0,38,0,0
+hub changes only (10%),150,4,overlap ranking top,100,33,0,67,0,0
+hub changes only (10%),150,5,euclidean & cosine,48,12,0,36,0,0
+hub changes only (10%),150,5,euclidean & default,76,25,0,51,0,0
+hub changes only (10%),150,5,cosine & default,69,31,0,38,0,0
+hub changes only (10%),150,5,euclidean & cosine & default,48,12,0,36,0,0
+hub changes only (10%),150,5,euclidean only (of the three),24,3,0,21,0,0
+hub changes only (10%),150,5,cosine only (of the three),31,31,0,0,0,0
+hub changes only (10%),150,5,default only (of the three),3,1,0,2,0,0
+hub changes only (10%),150,5,radial & euclidean,75,3,0,72,0,0
+hub changes only (10%),150,5,radial & cosine,39,1,0,38,0,0
+hub changes only (10%),150,5,overlap ranking top,100,40,0,60,0,0
+hub changes only (10%),150,6,euclidean & cosine,53,11,0,42,0,0
+hub changes only (10%),150,6,euclidean & default,82,19,0,63,0,0
+hub changes only (10%),150,6,cosine & default,68,26,0,42,0,0
+hub changes only (10%),150,6,euclidean & cosine & default,53,11,0,42,0,0
+hub changes only (10%),150,6,euclidean only (of the three),18,3,0,15,0,0
+hub changes only (10%),150,6,cosine only (of the three),32,31,0,1,0,0
+hub changes only (10%),150,6,default only (of the three),3,1,0,2,0,0
+hub changes only (10%),150,6,radial & euclidean,86,8,0,78,0,0
+hub changes only (10%),150,6,radial & cosine,47,5,0,42,0,0
+hub changes only (10%),150,6,overlap ranking top,100,42,0,58,0,0
+hub changes only (10%),150,7,euclidean & cosine,38,11,0,27,0,0
+hub changes only (10%),150,7,euclidean & default,75,12,0,63,0,0
+hub changes only (10%),150,7,cosine & default,61,29,0,32,0,0
+hub changes only (10%),150,7,euclidean & cosine & default,38,11,0,27,0,0
+hub changes only (10%),150,7,euclidean only (of the three),25,2,0,23,0,0
+hub changes only (10%),150,7,cosine only (of the three),39,39,0,0,0,0
+hub changes only (10%),150,7,default only (of the three),2,2,0,0,0,0
+hub changes only (10%),150,7,radial & euclidean,87,1,0,86,0,0
+hub changes only (10%),150,7,radial & cosine,30,0,0,30,0,0
+hub changes only (10%),150,7,overlap ranking top,100,45,0,55,0,0
+hub changes only (10%),400,0,euclidean & cosine,45,9,0,36,0,0
+hub changes only (10%),400,0,euclidean & default,84,14,0,70,0,0
+hub changes only (10%),400,0,cosine & default,56,19,0,37,0,0
+hub changes only (10%),400,0,euclidean & cosine & default,45,9,0,36,0,0
+hub changes only (10%),400,0,euclidean only (of the three),16,2,0,14,0,0
+hub changes only (10%),400,0,cosine only (of the three),44,44,0,0,0,0
+hub changes only (10%),400,0,default only (of the three),5,5,0,0,0,0
+hub changes only (10%),400,0,radial & euclidean,85,1,0,84,0,0
+hub changes only (10%),400,0,radial & cosine,37,0,0,37,0,0
+hub changes only (10%),400,0,overlap ranking top,100,32,0,68,0,0
+hub changes only (10%),400,1,euclidean & cosine,45,7,0,38,0,0
+hub changes only (10%),400,1,euclidean & default,79,13,0,66,0,0
+hub changes only (10%),400,1,cosine & default,63,14,0,49,0,0
+hub changes only (10%),400,1,euclidean & cosine & default,45,7,0,38,0,0
+hub changes only (10%),400,1,euclidean only (of the three),21,3,0,18,0,0
+hub changes only (10%),400,1,cosine only (of the three),37,37,0,0,0,0
+hub changes only (10%),400,1,default only (of the three),3,1,0,2,0,0
+hub changes only (10%),400,1,radial & euclidean,84,0,0,84,0,0
+hub changes only (10%),400,1,radial & cosine,49,0,0,49,0,0
+hub changes only (10%),400,1,overlap ranking top,100,30,0,70,0,0
+hub changes only (10%),400,2,euclidean & cosine,58,9,0,49,0,0
+hub changes only (10%),400,2,euclidean & default,87,13,0,74,0,0
+hub changes only (10%),400,2,cosine & default,66,14,0,52,0,0
+hub changes only (10%),400,2,euclidean & cosine & default,58,9,0,49,0,0
+hub changes only (10%),400,2,euclidean only (of the three),13,0,0,13,0,0
+hub changes only (10%),400,2,cosine only (of the three),34,34,0,0,0,0
+hub changes only (10%),400,2,default only (of the three),5,5,0,0,0,0
+hub changes only (10%),400,2,radial & euclidean,90,3,0,87,0,0
+hub changes only (10%),400,2,radial & cosine,55,3,0,52,0,0
+hub changes only (10%),400,2,overlap ranking top,100,29,0,71,0,0
+hub changes only (10%),400,3,euclidean & cosine,50,12,0,38,0,0
+hub changes only (10%),400,3,euclidean & default,73,15,0,58,0,0
+hub changes only (10%),400,3,cosine & default,70,28,0,42,0,0
+hub changes only (10%),400,3,euclidean & cosine & default,50,12,0,38,0,0
+hub changes only (10%),400,3,euclidean only (of the three),27,3,0,24,0,0
+hub changes only (10%),400,3,cosine only (of the three),30,30,0,0,0,0
+hub changes only (10%),400,3,default only (of the three),7,2,0,5,0,0
+hub changes only (10%),400,3,radial & euclidean,84,2,0,82,0,0
+hub changes only (10%),400,3,radial & cosine,43,2,0,41,0,0
+hub changes only (10%),400,3,overlap ranking top,100,35,0,65,0,0
+hub changes only (10%),400,4,euclidean & cosine,56,13,0,43,0,0
+hub changes only (10%),400,4,euclidean & default,82,17,0,65,0,0
+hub changes only (10%),400,4,cosine & default,70,22,0,48,0,0
+hub changes only (10%),400,4,euclidean & cosine & default,56,13,0,43,0,0
+hub changes only (10%),400,4,euclidean only (of the three),18,1,0,17,0,0
+hub changes only (10%),400,4,cosine only (of the three),30,30,0,0,0,0
+hub changes only (10%),400,4,default only (of the three),4,0,0,4,0,0
+hub changes only (10%),400,4,radial & euclidean,86,4,0,82,0,0
+hub changes only (10%),400,4,radial & cosine,49,1,0,48,0,0
+hub changes only (10%),400,4,overlap ranking top,100,32,0,68,0,0
+hub changes only (10%),400,5,euclidean & cosine,50,13,0,37,0,0
+hub changes only (10%),400,5,euclidean & default,84,16,0,68,0,0
+hub changes only (10%),400,5,cosine & default,62,25,0,37,0,0
+hub changes only (10%),400,5,euclidean & cosine & default,50,13,0,37,0,0
+hub changes only (10%),400,5,euclidean only (of the three),16,0,0,16,0,0
+hub changes only (10%),400,5,cosine only (of the three),38,38,0,0,0,0
+hub changes only (10%),400,5,default only (of the three),4,2,0,2,0,0
+hub changes only (10%),400,5,radial & euclidean,85,1,0,84,0,0
+hub changes only (10%),400,5,radial & cosine,37,0,0,37,0,0
+hub changes only (10%),400,5,overlap ranking top,100,41,0,59,0,0
+hub changes only (10%),400,6,euclidean & cosine,48,4,0,44,0,0
+hub changes only (10%),400,6,euclidean & default,83,7,0,76,0,0
+hub changes only (10%),400,6,cosine & default,61,16,0,45,0,0
+hub changes only (10%),400,6,euclidean & cosine & default,48,4,0,44,0,0
+hub changes only (10%),400,6,euclidean only (of the three),17,4,0,13,0,0
+hub changes only (10%),400,6,cosine only (of the three),39,39,0,0,0,0
+hub changes only (10%),400,6,default only (of the three),4,3,0,1,0,0
+hub changes only (10%),400,6,radial & euclidean,91,2,0,89,0,0
+hub changes only (10%),400,6,radial & cosine,46,1,0,45,0,0
+hub changes only (10%),400,6,overlap ranking top,100,30,0,70,0,0
+hub changes only (10%),400,7,euclidean & cosine,62,7,0,55,0,0
+hub changes only (10%),400,7,euclidean & default,83,12,0,71,0,0
+hub changes only (10%),400,7,cosine & default,77,12,0,65,0,0
+hub changes only (10%),400,7,euclidean & cosine & default,62,7,0,55,0,0
+hub changes only (10%),400,7,euclidean only (of the three),17,2,0,15,0,0
+hub changes only (10%),400,7,cosine only (of the three),23,23,0,0,0,0
+hub changes only (10%),400,7,default only (of the three),2,1,0,1,0,0
+hub changes only (10%),400,7,radial & euclidean,87,2,0,85,0,0
+hub changes only (10%),400,7,radial & cosine,64,0,0,64,0,0
+hub changes only (10%),400,7,overlap ranking top,100,20,0,80,0,0
+one module strengthens,150,0,euclidean & cosine,76,20,0,0,0,56
+one module strengthens,150,0,euclidean & default,96,27,0,0,0,69
+one module strengthens,150,0,cosine & default,80,24,0,0,0,56
+one module strengthens,150,0,euclidean & cosine & default,76,20,0,0,0,56
+one module strengthens,150,0,euclidean only (of the three),4,4,0,0,0,0
+one module strengthens,150,0,cosine only (of the three),20,20,0,0,0,0
+one module strengthens,150,0,default only (of the three),0,0,0,0,0,0
+one module strengthens,150,0,radial & euclidean,86,17,0,0,0,69
+one module strengthens,150,0,radial & cosine,66,10,0,0,0,56
+one module strengthens,150,0,overlap ranking top,100,31,0,0,0,69
+one module strengthens,150,1,euclidean & cosine,77,21,0,0,0,56
+one module strengthens,150,1,euclidean & default,87,27,0,0,0,60
+one module strengthens,150,1,cosine & default,90,26,0,0,0,64
+one module strengthens,150,1,euclidean & cosine & default,77,21,0,0,0,56
+one module strengthens,150,1,euclidean only (of the three),13,13,0,0,0,0
+one module strengthens,150,1,cosine only (of the three),10,6,0,0,0,4
+one module strengthens,150,1,default only (of the three),0,0,0,0,0,0
+one module strengthens,150,1,radial & euclidean,84,24,0,0,0,60
+one module strengthens,150,1,radial & cosine,77,10,0,0,0,67
+one module strengthens,150,1,overlap ranking top,100,28,0,0,0,72
+one module strengthens,150,2,euclidean & cosine,74,13,0,0,0,61
+one module strengthens,150,2,euclidean & default,91,22,0,0,0,69
+one module strengthens,150,2,cosine & default,83,22,0,0,0,61
+one module strengthens,150,2,euclidean & cosine & default,74,13,0,0,0,61
+one module strengthens,150,2,euclidean only (of the three),9,9,0,0,0,0
+one module strengthens,150,2,cosine only (of the three),17,17,0,0,0,0
+one module strengthens,150,2,default only (of the three),0,0,0,0,0,0
+one module strengthens,150,2,radial & euclidean,91,22,0,0,0,69
+one module strengthens,150,2,radial & cosine,70,9,0,0,0,61
+one module strengthens,150,2,overlap ranking top,100,31,0,0,0,69
+one module strengthens,150,3,euclidean & cosine,68,20,0,0,0,48
+one module strengthens,150,3,euclidean & default,91,27,0,0,0,64
+one module strengthens,150,3,cosine & default,75,26,0,0,0,49
+one module strengthens,150,3,euclidean & cosine & default,68,20,0,0,0,48
+one module strengthens,150,3,euclidean only (of the three),9,8,0,0,0,1
+one module strengthens,150,3,cosine only (of the three),25,25,0,0,0,0
+one module strengthens,150,3,default only (of the three),2,2,0,0,0,0
+one module strengthens,150,3,radial & euclidean,87,22,0,0,0,65
+one module strengthens,150,3,radial & cosine,58,9,0,0,0,49
+one module strengthens,150,3,overlap ranking top,100,31,0,0,0,69
+one module strengthens,150,4,euclidean & cosine,71,18,0,0,0,53
+one module strengthens,150,4,euclidean & default,86,31,0,0,0,55
+one module strengthens,150,4,cosine & default,81,28,0,0,0,53
+one module strengthens,150,4,euclidean & cosine & default,71,18,0,0,0,53
+one module strengthens,150,4,euclidean only (of the three),14,14,0,0,0,0
+one module strengthens,150,4,cosine only (of the three),19,19,0,0,0,0
+one module strengthens,150,4,default only (of the three),4,4,0,0,0,0
+one module strengthens,150,4,radial & euclidean,86,31,0,0,0,55
+one module strengthens,150,4,radial & cosine,66,13,0,0,0,53
+one module strengthens,150,4,overlap ranking top,100,45,0,0,0,55
+one module strengthens,150,5,euclidean & cosine,70,21,0,0,0,49
+one module strengthens,150,5,euclidean & default,86,32,0,0,0,54
+one module strengthens,150,5,cosine & default,84,35,0,0,0,49
+one module strengthens,150,5,euclidean & cosine & default,70,21,0,0,0,49
+one module strengthens,150,5,euclidean only (of the three),14,14,0,0,0,0
+one module strengthens,150,5,cosine only (of the three),16,16,0,0,0,0
+one module strengthens,150,5,default only (of the three),0,0,0,0,0,0
+one module strengthens,150,5,radial & euclidean,81,27,0,0,0,54
+one module strengthens,150,5,radial & cosine,62,13,0,0,0,49
+one module strengthens,150,5,overlap ranking top,100,46,0,0,0,54
+one module strengthens,150,6,euclidean & cosine,62,17,0,0,0,45
+one module strengthens,150,6,euclidean & default,89,29,0,0,0,60
+one module strengthens,150,6,cosine & default,71,26,0,0,0,45
+one module strengthens,150,6,euclidean & cosine & default,62,17,0,0,0,45
+one module strengthens,150,6,euclidean only (of the three),11,9,0,0,0,2
+one module strengthens,150,6,cosine only (of the three),29,29,0,0,0,0
+one module strengthens,150,6,default only (of the three),2,1,0,0,0,1
+one module strengthens,150,6,radial & euclidean,86,24,0,0,0,62
+one module strengthens,150,6,radial & cosine,50,5,0,0,0,45
+one module strengthens,150,6,overlap ranking top,100,35,0,0,0,65
+one module strengthens,150,7,euclidean & cosine,72,13,0,0,0,59
+one module strengthens,150,7,euclidean & default,93,22,0,0,0,71
+one module strengthens,150,7,cosine & default,78,19,0,0,0,59
+one module strengthens,150,7,euclidean & cosine & default,72,13,0,0,0,59
+one module strengthens,150,7,euclidean only (of the three),7,7,0,0,0,0
+one module strengthens,150,7,cosine only (of the three),22,22,0,0,0,0
+one module strengthens,150,7,default only (of the three),1,1,0,0,0,0
+one module strengthens,150,7,radial & euclidean,91,20,0,0,0,71
+one module strengthens,150,7,radial & cosine,68,9,0,0,0,59
+one module strengthens,150,7,overlap ranking top,100,29,0,0,0,71
+one module strengthens,400,0,euclidean & cosine,79,16,0,0,0,63
+one module strengthens,400,0,euclidean & default,94,31,0,0,0,63
+one module strengthens,400,0,cosine & default,85,22,0,0,0,63
+one module strengthens,400,0,euclidean & cosine & default,79,16,0,0,0,63
+one module strengthens,400,0,euclidean only (of the three),6,6,0,0,0,0
+one module strengthens,400,0,cosine only (of the three),15,15,0,0,0,0
+one module strengthens,400,0,default only (of the three),0,0,0,0,0,0
+one module strengthens,400,0,radial & euclidean,92,29,0,0,0,63
+one module strengthens,400,0,radial & cosine,76,13,0,0,0,63
+one module strengthens,400,0,overlap ranking top,100,37,0,0,0,63
+one module strengthens,400,1,euclidean & cosine,85,6,0,0,0,79
+one module strengthens,400,1,euclidean & default,95,16,0,0,0,79
+one module strengthens,400,1,cosine & default,90,11,0,0,0,79
+one module strengthens,400,1,euclidean & cosine & default,85,6,0,0,0,79
+one module strengthens,400,1,euclidean only (of the three),5,5,0,0,0,0
+one module strengthens,400,1,cosine only (of the three),10,10,0,0,0,0
+one module strengthens,400,1,default only (of the three),0,0,0,0,0,0
+one module strengthens,400,1,radial & euclidean,94,15,0,0,0,79
+one module strengthens,400,1,radial & cosine,84,5,0,0,0,79
+one module strengthens,400,1,overlap ranking top,100,21,0,0,0,79
+one module strengthens,400,2,euclidean & cosine,81,10,0,0,0,71
+one module strengthens,400,2,euclidean & default,92,21,0,0,0,71
+one module strengthens,400,2,cosine & default,87,16,0,0,0,71
+one module strengthens,400,2,euclidean & cosine & default,81,10,0,0,0,71
+one module strengthens,400,2,euclidean only (of the three),8,8,0,0,0,0
+one module strengthens,400,2,cosine only (of the three),13,13,0,0,0,0
+one module strengthens,400,2,default only (of the three),2,2,0,0,0,0
+one module strengthens,400,2,radial & euclidean,93,22,0,0,0,71
+one module strengthens,400,2,radial & cosine,78,7,0,0,0,71
+one module strengthens,400,2,overlap ranking top,100,29,0,0,0,71
+one module strengthens,400,3,euclidean & cosine,68,10,0,0,0,58
+one module strengthens,400,3,euclidean & default,88,30,0,0,0,58
+one module strengthens,400,3,cosine & default,79,21,0,0,0,58
+one module strengthens,400,3,euclidean & cosine & default,68,10,0,0,0,58
+one module strengthens,400,3,euclidean only (of the three),12,12,0,0,0,0
+one module strengthens,400,3,cosine only (of the three),21,21,0,0,0,0
+one module strengthens,400,3,default only (of the three),1,1,0,0,0,0
+one module strengthens,400,3,radial & euclidean,89,31,0,0,0,58
+one module strengthens,400,3,radial & cosine,65,7,0,0,0,58
+one module strengthens,400,3,overlap ranking top,100,42,0,0,0,58
+one module strengthens,400,4,euclidean & cosine,91,20,0,0,0,71
+one module strengthens,400,4,euclidean & default,98,27,0,0,0,71
+one module strengthens,400,4,cosine & default,93,22,0,0,0,71
+one module strengthens,400,4,euclidean & cosine & default,91,20,0,0,0,71
+one module strengthens,400,4,euclidean only (of the three),2,2,0,0,0,0
+one module strengthens,400,4,cosine only (of the three),7,7,0,0,0,0
+one module strengthens,400,4,default only (of the three),0,0,0,0,0,0
+one module strengthens,400,4,radial & euclidean,93,22,0,0,0,71
+one module strengthens,400,4,radial & cosine,85,14,0,0,0,71
+one module strengthens,400,4,overlap ranking top,100,29,0,0,0,71
+one module strengthens,400,5,euclidean & cosine,74,6,0,0,0,68
+one module strengthens,400,5,euclidean & default,86,18,0,0,0,68
+one module strengthens,400,5,cosine & default,87,19,0,0,0,68
+one module strengthens,400,5,euclidean & cosine & default,74,6,0,0,0,68
+one module strengthens,400,5,euclidean only (of the three),14,14,0,0,0,0
+one module strengthens,400,5,cosine only (of the three),13,13,0,0,0,0
+one module strengthens,400,5,default only (of the three),1,1,0,0,0,0
+one module strengthens,400,5,radial & euclidean,90,22,0,0,0,68
+one module strengthens,400,5,radial & cosine,73,5,0,0,0,68
+one module strengthens,400,5,overlap ranking top,100,32,0,0,0,68
+one module strengthens,400,6,euclidean & cosine,78,16,0,0,0,62
+one module strengthens,400,6,euclidean & default,89,27,0,0,0,62
+one module strengthens,400,6,cosine & default,87,25,0,0,0,62
+one module strengthens,400,6,euclidean & cosine & default,78,16,0,0,0,62
+one module strengthens,400,6,euclidean only (of the three),11,11,0,0,0,0
+one module strengthens,400,6,cosine only (of the three),13,13,0,0,0,0
+one module strengthens,400,6,default only (of the three),2,2,0,0,0,0
+one module strengthens,400,6,radial & euclidean,90,28,0,0,0,62
+one module strengthens,400,6,radial & cosine,74,12,0,0,0,62
+one module strengthens,400,6,overlap ranking top,100,38,0,0,0,62
+one module strengthens,400,7,euclidean & cosine,68,10,0,0,0,58
+one module strengthens,400,7,euclidean & default,90,32,0,0,0,58
+one module strengthens,400,7,cosine & default,78,20,0,0,0,58
+one module strengthens,400,7,euclidean & cosine & default,68,10,0,0,0,58
+one module strengthens,400,7,euclidean only (of the three),10,10,0,0,0,0
+one module strengthens,400,7,cosine only (of the three),22,22,0,0,0,0
+one module strengthens,400,7,default only (of the three),0,0,0,0,0,0
+one module strengthens,400,7,radial & euclidean,91,33,0,0,0,58
+one module strengthens,400,7,radial & cosine,66,8,0,0,0,58
+one module strengthens,400,7,overlap ranking top,100,42,0,0,0,58
+mixed + one module strengthens,150,0,euclidean & cosine,35,16,16,3,0,0
+mixed + one module strengthens,150,0,euclidean & default,71,23,16,32,0,0
+mixed + one module strengthens,150,0,cosine & default,63,25,35,3,0,0
+mixed + one module strengthens,150,0,euclidean & cosine & default,35,16,16,3,0,0
+mixed + one module strengthens,150,0,euclidean only (of the three),29,11,0,18,0,0
+mixed + one module strengthens,150,0,cosine only (of the three),37,22,14,0,0,1
+mixed + one module strengthens,150,0,default only (of the three),1,1,0,0,0,0
+mixed + one module strengthens,150,0,radial & euclidean,63,11,2,50,0,0
+mixed + one module strengthens,150,0,radial & cosine,9,4,2,3,0,0
+mixed + one module strengthens,150,0,overlap ranking top,100,49,8,29,0,14
+mixed + one module strengthens,150,1,euclidean & cosine,42,19,13,10,0,0
+mixed + one module strengthens,150,1,euclidean & default,63,27,13,23,0,0
+mixed + one module strengthens,150,1,cosine & default,78,23,45,10,0,0
+mixed + one module strengthens,150,1,euclidean & cosine & default,42,19,13,10,0,0
+mixed + one module strengthens,150,1,euclidean only (of the three),37,10,0,23,0,4
+mixed + one module strengthens,150,1,cosine only (of the three),22,16,5,0,0,1
+mixed + one module strengthens,150,1,default only (of the three),1,1,0,0,0,0
+mixed + one module strengthens,150,1,radial & euclidean,58,13,0,41,0,4
+mixed + one module strengthens,150,1,radial & cosine,20,9,0,10,0,1
+mixed + one module strengthens,150,1,overlap ranking top,100,54,9,28,0,9
+mixed + one module strengthens,150,2,euclidean & cosine,36,19,10,7,0,0
+mixed + one module strengthens,150,2,euclidean & default,66,29,10,27,0,0
+mixed + one module strengthens,150,2,cosine & default,70,24,38,7,0,1
+mixed + one module strengthens,150,2,euclidean & cosine & default,36,19,10,7,0,0
+mixed + one module strengthens,150,2,euclidean only (of the three),34,9,0,22,0,3
+mixed + one module strengthens,150,2,cosine only (of the three),30,15,12,0,0,3
+mixed + one module strengthens,150,2,default only (of the three),0,0,0,0,0,0
+mixed + one module strengthens,150,2,radial & euclidean,61,11,2,45,0,3
+mixed + one module strengthens,150,2,radial & cosine,18,5,2,7,0,4
+mixed + one module strengthens,150,2,overlap ranking top,100,40,6,20,0,34
+mixed + one module strengthens,150,3,euclidean & cosine,33,17,12,4,0,0
+mixed + one module strengthens,150,3,euclidean & default,62,23,12,26,0,1
+mixed + one module strengthens,150,3,cosine & default,70,23,43,4,0,0
+mixed + one module strengthens,150,3,euclidean & cosine & default,33,17,12,4,0,0
+mixed + one module strengthens,150,3,euclidean only (of the three),38,13,0,23,0,2
+mixed + one module strengthens,150,3,cosine only (of the three),30,22,7,0,0,1
+mixed + one module strengthens,150,3,default only (of the three),1,1,0,0,0,0
+mixed + one module strengthens,150,3,radial & euclidean,61,10,0,48,0,3
+mixed + one module strengthens,150,3,radial & cosine,10,5,0,4,0,1
+mixed + one module strengthens,150,3,overlap ranking top,100,55,8,22,0,15
+mixed + one module strengthens,150,4,euclidean & cosine,30,9,17,2,0,2
+mixed + one module strengthens,150,4,euclidean & default,63,18,17,26,0,2
+mixed + one module strengthens,150,4,cosine & default,67,17,44,2,0,4
+mixed + one module strengthens,150,4,euclidean & cosine & default,30,9,17,2,0,2
+mixed + one module strengthens,150,4,euclidean only (of the three),37,13,0,24,0,0
+mixed + one module strengthens,150,4,cosine only (of the three),33,18,6,0,0,9
+mixed + one module strengthens,150,4,default only (of the three),0,0,0,0,0,0
+mixed + one module strengthens,150,4,radial & euclidean,68,13,3,50,0,2
+mixed + one module strengthens,150,4,radial & cosine,16,4,3,2,0,7
+mixed + one module strengthens,150,4,overlap ranking top,100,37,8,15,0,40
+mixed + one module strengthens,150,5,euclidean & cosine,36,10,18,8,0,0
+mixed + one module strengthens,150,5,euclidean & default,71,22,18,31,0,0
+mixed + one module strengthens,150,5,cosine & default,64,16,40,8,0,0
+mixed + one module strengthens,150,5,euclidean & cosine & default,36,10,18,8,0,0
+mixed + one module strengthens,150,5,euclidean only (of the three),29,10,0,19,0,0
+mixed + one module strengthens,150,5,cosine only (of the three),36,23,10,0,0,3
+mixed + one module strengthens,150,5,default only (of the three),1,1,0,0,0,0
+mixed + one module strengthens,150,5,radial & euclidean,71,20,1,50,0,0
+mixed + one module strengthens,150,5,radial & cosine,12,2,1,8,0,1
+mixed + one module strengthens,150,5,overlap ranking top,100,41,3,23,0,33
+mixed + one module strengthens,150,6,euclidean & cosine,34,13,19,2,0,0
+mixed + one module strengthens,150,6,euclidean & default,75,19,19,37,0,0
+mixed + one module strengthens,150,6,cosine & default,59,20,37,2,0,0
+mixed + one module strengthens,150,6,euclidean & cosine & default,34,13,19,2,0,0
+mixed + one module strengthens,150,6,euclidean only (of the three),25,12,0,13,0,0
+mixed + one module strengthens,150,6,cosine only (of the three),41,27,13,0,0,1
+mixed + one module strengthens,150,6,default only (of the three),0,0,0,0,0,0
+mixed + one module strengthens,150,6,radial & euclidean,60,10,0,50,0,0
+mixed + one module strengthens,150,6,radial & cosine,7,4,0,2,0,1
+mixed + one module strengthens,150,6,overlap ranking top,100,61,7,21,0,11
+mixed + one module strengthens,150,7,euclidean & cosine,39,12,20,7,0,0
+mixed + one module strengthens,150,7,euclidean & default,62,19,20,23,0,0
+mixed + one module strengthens,150,7,cosine & default,77,22,48,7,0,0
+mixed + one module strengthens,150,7,euclidean & cosine & default,39,12,20,7,0,0
+mixed + one module strengthens,150,7,euclidean only (of the three),38,12,0,26,0,0
+mixed + one module strengthens,150,7,cosine only (of the three),23,21,2,0,0,0
+mixed + one module strengthens,150,7,default only (of the three),0,0,0,0,0,0
+mixed + one module strengthens,150,7,radial & euclidean,61,11,1,49,0,0
+mixed + one module strengthens,150,7,radial & cosine,12,4,1,7,0,0
+mixed + one module strengthens,150,7,overlap ranking top,100,57,9,23,0,11
+mixed + one module strengthens,400,0,euclidean & cosine,38,12,23,3,0,0
+mixed + one module strengthens,400,0,euclidean & default,73,24,23,26,0,0
+mixed + one module strengthens,400,0,cosine & default,63,14,45,4,0,0
+mixed + one module strengthens,400,0,euclidean & cosine & default,38,12,23,3,0,0
+mixed + one module strengthens,400,0,euclidean only (of the three),27,4,0,17,0,6
+mixed + one module strengthens,400,0,cosine only (of the three),37,32,5,0,0,0
+mixed + one module strengthens,400,0,default only (of the three),2,2,0,0,0,0
+mixed + one module strengthens,400,0,radial & euclidean,56,9,0,41,0,6
+mixed + one module strengthens,400,0,radial & cosine,8,4,0,4,0,0
+mixed + one module strengthens,400,0,overlap ranking top,100,62,10,19,0,9
+mixed + one module strengthens,400,1,euclidean & cosine,30,13,16,1,0,0
+mixed + one module strengthens,400,1,euclidean & default,71,25,16,30,0,0
+mixed + one module strengthens,400,1,cosine & default,58,17,40,1,0,0
+mixed + one module strengthens,400,1,euclidean & cosine & default,30,13,16,1,0,0
+mixed + one module strengthens,400,1,euclidean only (of the three),29,9,0,20,0,0
+mixed + one module strengthens,400,1,cosine only (of the three),42,32,10,0,0,0
+mixed + one module strengthens,400,1,default only (of the three),1,1,0,0,0,0
+mixed + one module strengthens,400,1,radial & euclidean,61,11,0,50,0,0
+mixed + one module strengthens,400,1,radial & cosine,6,5,0,1,0,0
+mixed + one module strengthens,400,1,overlap ranking top,100,65,7,24,0,4
+mixed + one module strengthens,400,2,euclidean & cosine,43,15,23,5,0,0
+mixed + one module strengthens,400,2,euclidean & default,82,21,23,38,0,0
+mixed + one module strengthens,400,2,cosine & default,61,17,39,5,0,0
+mixed + one module strengthens,400,2,euclidean & cosine & default,43,15,23,5,0,0
+mixed + one module strengthens,400,2,euclidean only (of the three),18,6,0,12,0,0
+mixed + one module strengthens,400,2,cosine only (of the three),39,28,11,0,0,0
+mixed + one module strengthens,400,2,default only (of the three),0,0,0,0,0,0
+mixed + one module strengthens,400,2,radial & euclidean,62,10,2,50,0,0
+mixed + one module strengthens,400,2,radial & cosine,15,8,2,5,0,0
+mixed + one module strengthens,400,2,overlap ranking top,100,62,11,27,0,0
+mixed + one module strengthens,400,3,euclidean & cosine,31,14,17,0,0,0
+mixed + one module strengthens,400,3,euclidean & default,70,25,17,28,0,0
+mixed + one module strengthens,400,3,cosine & default,61,20,41,0,0,0
+mixed + one module strengthens,400,3,euclidean & cosine & default,31,14,17,0,0,0
+mixed + one module strengthens,400,3,euclidean only (of the three),30,8,0,22,0,0
+mixed + one module strengthens,400,3,cosine only (of the three),39,30,9,0,0,0
+mixed + one module strengthens,400,3,default only (of the three),0,0,0,0,0,0
+mixed + one module strengthens,400,3,radial & euclidean,62,12,0,50,0,0
+mixed + one module strengthens,400,3,radial & cosine,4,4,0,0,0,0
+mixed + one module strengthens,400,3,overlap ranking top,100,70,9,17,0,4
+mixed + one module strengthens,400,4,euclidean & cosine,26,6,19,1,0,0
+mixed + one module strengthens,400,4,euclidean & default,64,24,19,21,0,0
+mixed + one module strengthens,400,4,cosine & default,57,17,39,1,0,0
+mixed + one module strengthens,400,4,euclidean & cosine & default,26,6,19,1,0,0
+mixed + one module strengthens,400,4,euclidean only (of the three),36,7,0,29,0,0
+mixed + one module strengthens,400,4,cosine only (of the three),43,32,11,0,0,0
+mixed + one module strengthens,400,4,default only (of the three),5,5,0,0,0,0
+mixed + one module strengthens,400,4,radial & euclidean,60,11,0,49,0,0
+mixed + one module strengthens,400,4,radial & cosine,3,2,0,1,0,0
+mixed + one module strengthens,400,4,overlap ranking top,100,65,8,20,0,7
+mixed + one module strengthens,400,5,euclidean & cosine,38,20,16,2,0,0
+mixed + one module strengthens,400,5,euclidean & default,75,28,16,31,0,0
+mixed + one module strengthens,400,5,cosine & default,63,22,39,2,0,0
+mixed + one module strengthens,400,5,euclidean & cosine & default,38,20,16,2,0,0
+mixed + one module strengthens,400,5,euclidean only (of the three),25,6,0,19,0,0
+mixed + one module strengthens,400,5,cosine only (of the three),37,26,11,0,0,0
+mixed + one module strengthens,400,5,default only (of the three),0,0,0,0,0,0
+mixed + one module strengthens,400,5,radial & euclidean,60,10,0,50,0,0
+mixed + one module strengthens,400,5,radial & cosine,9,7,0,2,0,0
+mixed + one module strengthens,400,5,overlap ranking top,100,68,8,23,0,1
+mixed + one module strengthens,400,6,euclidean & cosine,41,16,21,4,0,0
+mixed + one module strengthens,400,6,euclidean & default,73,21,21,31,0,0
+mixed + one module strengthens,400,6,cosine & default,68,19,45,4,0,0
+mixed + one module strengthens,400,6,euclidean & cosine & default,41,16,21,4,0,0
+mixed + one module strengthens,400,6,euclidean only (of the three),27,8,0,19,0,0
+mixed + one module strengthens,400,6,cosine only (of the three),32,27,5,0,0,0
+mixed + one module strengthens,400,6,default only (of the three),0,0,0,0,0,0
+mixed + one module strengthens,400,6,radial & euclidean,57,7,0,50,0,0
+mixed + one module strengthens,400,6,radial & cosine,10,6,0,4,0,0
+mixed + one module strengthens,400,6,overlap ranking top,100,63,10,26,0,1
+mixed + one module strengthens,400,7,euclidean & cosine,29,7,21,1,0,0
+mixed + one module strengthens,400,7,euclidean & default,69,21,21,27,0,0
+mixed + one module strengthens,400,7,cosine & default,54,10,43,1,0,0
+mixed + one module strengthens,400,7,euclidean & cosine & default,29,7,21,1,0,0
+mixed + one module strengthens,400,7,euclidean only (of the three),31,8,0,23,0,0
+mixed + one module strengthens,400,7,cosine only (of the three),46,39,7,0,0,0
+mixed + one module strengthens,400,7,default only (of the three),6,6,0,0,0,0
+mixed + one module strengthens,400,7,radial & euclidean,60,9,1,50,0,0
+mixed + one module strengthens,400,7,radial & cosine,3,1,1,1,0,0
+mixed + one module strengthens,400,7,overlap ranking top,100,62,12,23,0,3
+null (nothing changes),150,0,euclidean & cosine,39,39,0,0,0,0
+null (nothing changes),150,0,euclidean & default,69,69,0,0,0,0
+null (nothing changes),150,0,cosine & default,70,70,0,0,0,0
+null (nothing changes),150,0,euclidean & cosine & default,39,39,0,0,0,0
+null (nothing changes),150,0,euclidean only (of the three),31,31,0,0,0,0
+null (nothing changes),150,0,cosine only (of the three),30,30,0,0,0,0
+null (nothing changes),150,0,default only (of the three),0,0,0,0,0,0
+null (nothing changes),150,0,radial & euclidean,64,64,0,0,0,0
+null (nothing changes),150,0,radial & cosine,27,27,0,0,0,0
+null (nothing changes),150,0,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),150,1,euclidean & cosine,46,46,0,0,0,0
+null (nothing changes),150,1,euclidean & default,75,75,0,0,0,0
+null (nothing changes),150,1,cosine & default,67,67,0,0,0,0
+null (nothing changes),150,1,euclidean & cosine & default,46,46,0,0,0,0
+null (nothing changes),150,1,euclidean only (of the three),25,25,0,0,0,0
+null (nothing changes),150,1,cosine only (of the three),33,33,0,0,0,0
+null (nothing changes),150,1,default only (of the three),4,4,0,0,0,0
+null (nothing changes),150,1,radial & euclidean,68,68,0,0,0,0
+null (nothing changes),150,1,radial & cosine,34,34,0,0,0,0
+null (nothing changes),150,1,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),150,2,euclidean & cosine,47,47,0,0,0,0
+null (nothing changes),150,2,euclidean & default,69,69,0,0,0,0
+null (nothing changes),150,2,cosine & default,73,73,0,0,0,0
+null (nothing changes),150,2,euclidean & cosine & default,47,47,0,0,0,0
+null (nothing changes),150,2,euclidean only (of the three),31,31,0,0,0,0
+null (nothing changes),150,2,cosine only (of the three),27,27,0,0,0,0
+null (nothing changes),150,2,default only (of the three),5,5,0,0,0,0
+null (nothing changes),150,2,radial & euclidean,69,69,0,0,0,0
+null (nothing changes),150,2,radial & cosine,33,33,0,0,0,0
+null (nothing changes),150,2,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),150,3,euclidean & cosine,46,46,0,0,0,0
+null (nothing changes),150,3,euclidean & default,75,75,0,0,0,0
+null (nothing changes),150,3,cosine & default,68,68,0,0,0,0
+null (nothing changes),150,3,euclidean & cosine & default,46,46,0,0,0,0
+null (nothing changes),150,3,euclidean only (of the three),25,25,0,0,0,0
+null (nothing changes),150,3,cosine only (of the three),32,32,0,0,0,0
+null (nothing changes),150,3,default only (of the three),3,3,0,0,0,0
+null (nothing changes),150,3,radial & euclidean,69,69,0,0,0,0
+null (nothing changes),150,3,radial & cosine,33,33,0,0,0,0
+null (nothing changes),150,3,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),150,4,euclidean & cosine,43,43,0,0,0,0
+null (nothing changes),150,4,euclidean & default,67,67,0,0,0,0
+null (nothing changes),150,4,cosine & default,72,72,0,0,0,0
+null (nothing changes),150,4,euclidean & cosine & default,43,43,0,0,0,0
+null (nothing changes),150,4,euclidean only (of the three),33,33,0,0,0,0
+null (nothing changes),150,4,cosine only (of the three),28,28,0,0,0,0
+null (nothing changes),150,4,default only (of the three),4,4,0,0,0,0
+null (nothing changes),150,4,radial & euclidean,74,74,0,0,0,0
+null (nothing changes),150,4,radial & cosine,33,33,0,0,0,0
+null (nothing changes),150,4,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),150,5,euclidean & cosine,40,40,0,0,0,0
+null (nothing changes),150,5,euclidean & default,70,70,0,0,0,0
+null (nothing changes),150,5,cosine & default,69,69,0,0,0,0
+null (nothing changes),150,5,euclidean & cosine & default,40,40,0,0,0,0
+null (nothing changes),150,5,euclidean only (of the three),30,30,0,0,0,0
+null (nothing changes),150,5,cosine only (of the three),31,31,0,0,0,0
+null (nothing changes),150,5,default only (of the three),1,1,0,0,0,0
+null (nothing changes),150,5,radial & euclidean,74,74,0,0,0,0
+null (nothing changes),150,5,radial & cosine,35,35,0,0,0,0
+null (nothing changes),150,5,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),150,6,euclidean & cosine,41,41,0,0,0,0
+null (nothing changes),150,6,euclidean & default,70,70,0,0,0,0
+null (nothing changes),150,6,cosine & default,64,64,0,0,0,0
+null (nothing changes),150,6,euclidean & cosine & default,41,41,0,0,0,0
+null (nothing changes),150,6,euclidean only (of the three),30,30,0,0,0,0
+null (nothing changes),150,6,cosine only (of the three),36,36,0,0,0,0
+null (nothing changes),150,6,default only (of the three),7,7,0,0,0,0
+null (nothing changes),150,6,radial & euclidean,67,67,0,0,0,0
+null (nothing changes),150,6,radial & cosine,27,27,0,0,0,0
+null (nothing changes),150,6,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),150,7,euclidean & cosine,37,37,0,0,0,0
+null (nothing changes),150,7,euclidean & default,68,68,0,0,0,0
+null (nothing changes),150,7,cosine & default,65,65,0,0,0,0
+null (nothing changes),150,7,euclidean & cosine & default,37,37,0,0,0,0
+null (nothing changes),150,7,euclidean only (of the three),32,32,0,0,0,0
+null (nothing changes),150,7,cosine only (of the three),35,35,0,0,0,0
+null (nothing changes),150,7,default only (of the three),4,4,0,0,0,0
+null (nothing changes),150,7,radial & euclidean,66,66,0,0,0,0
+null (nothing changes),150,7,radial & cosine,26,26,0,0,0,0
+null (nothing changes),150,7,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),400,0,euclidean & cosine,29,29,0,0,0,0
+null (nothing changes),400,0,euclidean & default,72,72,0,0,0,0
+null (nothing changes),400,0,cosine & default,48,48,0,0,0,0
+null (nothing changes),400,0,euclidean & cosine & default,29,29,0,0,0,0
+null (nothing changes),400,0,euclidean only (of the three),28,28,0,0,0,0
+null (nothing changes),400,0,cosine only (of the three),52,52,0,0,0,0
+null (nothing changes),400,0,default only (of the three),9,9,0,0,0,0
+null (nothing changes),400,0,radial & euclidean,78,78,0,0,0,0
+null (nothing changes),400,0,radial & cosine,25,25,0,0,0,0
+null (nothing changes),400,0,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),400,1,euclidean & cosine,36,36,0,0,0,0
+null (nothing changes),400,1,euclidean & default,68,68,0,0,0,0
+null (nothing changes),400,1,cosine & default,62,62,0,0,0,0
+null (nothing changes),400,1,euclidean & cosine & default,36,36,0,0,0,0
+null (nothing changes),400,1,euclidean only (of the three),32,32,0,0,0,0
+null (nothing changes),400,1,cosine only (of the three),38,38,0,0,0,0
+null (nothing changes),400,1,default only (of the three),6,6,0,0,0,0
+null (nothing changes),400,1,radial & euclidean,70,70,0,0,0,0
+null (nothing changes),400,1,radial & cosine,27,27,0,0,0,0
+null (nothing changes),400,1,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),400,2,euclidean & cosine,40,40,0,0,0,0
+null (nothing changes),400,2,euclidean & default,71,71,0,0,0,0
+null (nothing changes),400,2,cosine & default,67,67,0,0,0,0
+null (nothing changes),400,2,euclidean & cosine & default,40,40,0,0,0,0
+null (nothing changes),400,2,euclidean only (of the three),29,29,0,0,0,0
+null (nothing changes),400,2,cosine only (of the three),33,33,0,0,0,0
+null (nothing changes),400,2,default only (of the three),2,2,0,0,0,0
+null (nothing changes),400,2,radial & euclidean,61,61,0,0,0,0
+null (nothing changes),400,2,radial & cosine,35,35,0,0,0,0
+null (nothing changes),400,2,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),400,3,euclidean & cosine,42,42,0,0,0,0
+null (nothing changes),400,3,euclidean & default,73,73,0,0,0,0
+null (nothing changes),400,3,cosine & default,62,62,0,0,0,0
+null (nothing changes),400,3,euclidean & cosine & default,42,42,0,0,0,0
+null (nothing changes),400,3,euclidean only (of the three),27,27,0,0,0,0
+null (nothing changes),400,3,cosine only (of the three),38,38,0,0,0,0
+null (nothing changes),400,3,default only (of the three),7,7,0,0,0,0
+null (nothing changes),400,3,radial & euclidean,73,73,0,0,0,0
+null (nothing changes),400,3,radial & cosine,35,35,0,0,0,0
+null (nothing changes),400,3,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),400,4,euclidean & cosine,36,36,0,0,0,0
+null (nothing changes),400,4,euclidean & default,75,75,0,0,0,0
+null (nothing changes),400,4,cosine & default,60,60,0,0,0,0
+null (nothing changes),400,4,euclidean & cosine & default,36,36,0,0,0,0
+null (nothing changes),400,4,euclidean only (of the three),25,25,0,0,0,0
+null (nothing changes),400,4,cosine only (of the three),40,40,0,0,0,0
+null (nothing changes),400,4,default only (of the three),1,1,0,0,0,0
+null (nothing changes),400,4,radial & euclidean,66,66,0,0,0,0
+null (nothing changes),400,4,radial & cosine,27,27,0,0,0,0
+null (nothing changes),400,4,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),400,5,euclidean & cosine,34,34,0,0,0,0
+null (nothing changes),400,5,euclidean & default,71,71,0,0,0,0
+null (nothing changes),400,5,cosine & default,56,56,0,0,0,0
+null (nothing changes),400,5,euclidean & cosine & default,34,34,0,0,0,0
+null (nothing changes),400,5,euclidean only (of the three),29,29,0,0,0,0
+null (nothing changes),400,5,cosine only (of the three),44,44,0,0,0,0
+null (nothing changes),400,5,default only (of the three),7,7,0,0,0,0
+null (nothing changes),400,5,radial & euclidean,61,61,0,0,0,0
+null (nothing changes),400,5,radial & cosine,21,21,0,0,0,0
+null (nothing changes),400,5,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),400,6,euclidean & cosine,48,48,0,0,0,0
+null (nothing changes),400,6,euclidean & default,78,78,0,0,0,0
+null (nothing changes),400,6,cosine & default,67,67,0,0,0,0
+null (nothing changes),400,6,euclidean & cosine & default,48,48,0,0,0,0
+null (nothing changes),400,6,euclidean only (of the three),22,22,0,0,0,0
+null (nothing changes),400,6,cosine only (of the three),33,33,0,0,0,0
+null (nothing changes),400,6,default only (of the three),3,3,0,0,0,0
+null (nothing changes),400,6,radial & euclidean,60,60,0,0,0,0
+null (nothing changes),400,6,radial & cosine,28,28,0,0,0,0
+null (nothing changes),400,6,overlap ranking top,100,100,0,0,0,0
+null (nothing changes),400,7,euclidean & cosine,35,35,0,0,0,0
+null (nothing changes),400,7,euclidean & default,69,69,0,0,0,0
+null (nothing changes),400,7,cosine & default,56,56,0,0,0,0
+null (nothing changes),400,7,euclidean & cosine & default,35,35,0,0,0,0
+null (nothing changes),400,7,euclidean only (of the three),31,31,0,0,0,0
+null (nothing changes),400,7,cosine only (of the three),44,44,0,0,0,0
+null (nothing changes),400,7,default only (of the three),10,10,0,0,0,0
+null (nothing changes),400,7,radial & euclidean,75,75,0,0,0,0
+null (nothing changes),400,7,radial & cosine,31,31,0,0,0,0
+null (nothing changes),400,7,overlap ranking top,100,100,0,0,0,0

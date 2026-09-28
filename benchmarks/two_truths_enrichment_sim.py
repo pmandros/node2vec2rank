@@ -168,6 +168,10 @@ def node_scores(data_a, data_b):
     # high only for genes that change on both axes (partners and strength)
     z = np.minimum(scores["cosine, 4-24"][0], scores["radial, 4-24"][0])
     scores[OVERLAP] = (z, benjamini_hochberg(norm.sf(z)))
+    # union-like and intersection-like combinations of euclidean and cosine, to compare with the default
+    for name, combine in (("max(euclidean, cosine)", np.maximum), ("min(euclidean, cosine)", np.minimum)):
+        z = combine(scores["euclidean, 4-24"][0], scores["cosine, 4-24"][0])
+        scores[name] = (z, benjamini_hochberg(norm.sf(z)))
     return scores
 
 
@@ -208,6 +212,7 @@ def run(job):
     gene_rows, set_rows = [], []
     base = dict(scenario=scenario_name, samples=samples, rep=rep)
     region_rows = [dict(base, **row) for row in regions(observed, kind)]
+    call_rows = []  # which sets each ranking calls, to compare the lists set by set
     for ranking, (z_obs, q_obs) in observed.items():
         for k in KINDS:
             if (kind == k).any():
@@ -226,6 +231,8 @@ def run(job):
         set_z = (statistic(z_obs) - null_mean) / np.sqrt(np.maximum(variance * (1 + 1 / num_permutations),
                                                                     np.finfo(float).tiny))
         called = benjamini_hochberg(norm.sf(set_z)) < 0.1
+        call_rows.append(dict(base, ranking=ranking, called="".join("1" if c else "0" for c in called),
+                              labels="|".join(set_labels)))
         is_null = np.char.startswith(set_labels.astype(str), "null")
         for label in pd.unique(set_labels):
             members = set_labels == label
@@ -233,7 +240,7 @@ def run(job):
                                  total=int(members.sum()),
                                  auroc=np.nan if label.startswith("null") else
                                  auroc(members[members | is_null], set_z[members | is_null])))
-    return gene_rows, set_rows, region_rows
+    return gene_rows, set_rows, region_rows, call_rows
 
 
 def main(argv=None):
@@ -242,20 +249,23 @@ def main(argv=None):
     parser.add_argument("--samples", type=int, nargs="+", default=[150, 400])
     parser.add_argument("--num-permutations", type=int, default=20)
     parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument("--suffix", default="", help="appended to the result file names")
     args = parser.parse_args(argv)
     jobs = [(s, n, r, args.num_permutations) for s in SCENARIOS for n in args.samples for r in range(args.reps)]
     tic = time.time()
-    gene_rows, set_rows, region_rows = [], [], []
+    gene_rows, set_rows, region_rows, call_rows = [], [], [], []
     with ProcessPoolExecutor(args.workers) as pool:
-        for genes, sets, found in pool.map(run, jobs):
+        for genes, sets, found, calls in pool.map(run, jobs):
+            call_rows += calls
             gene_rows += genes
             region_rows += found
             set_rows += sets
             print(f"{len(set_rows)} set rows, {time.time() - tic:.0f}s", flush=True)
     genes, sets = pd.DataFrame(gene_rows), pd.DataFrame(set_rows)
-    genes.to_csv(os.path.join(RESULTS, "two_truths_enrichment_sim_genes.csv"), index=False)
-    pd.DataFrame(region_rows).to_csv(os.path.join(RESULTS, "two_truths_enrichment_sim_overlap.csv"), index=False)
-    sets.to_csv(os.path.join(RESULTS, "two_truths_enrichment_sim_sets.csv"), index=False)
+    genes.to_csv(os.path.join(RESULTS, f"two_truths_enrichment_sim_genes{args.suffix}.csv"), index=False)
+    pd.DataFrame(region_rows).to_csv(os.path.join(RESULTS, f"two_truths_enrichment_sim_overlap{args.suffix}.csv"), index=False)
+    pd.DataFrame(call_rows).to_csv(os.path.join(RESULTS, f"two_truths_enrichment_sim_calls{args.suffix}.csv"), index=False)
+    sets.to_csv(os.path.join(RESULTS, f"two_truths_enrichment_sim_sets{args.suffix}.csv"), index=False)
     with pd.option_context("display.width", 250, "display.max_rows", 500, "display.max_columns", 30):
         print(genes.pivot_table(index=["samples", "scenario", "ranking"], columns="truth",
                                 values=["auroc", "called"], aggfunc="mean").round(2).to_string())

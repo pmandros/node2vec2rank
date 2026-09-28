@@ -1,0 +1,16 @@
+scenario,sets,total,default,euclidean,cosine,all_three,default_only,euclidean_or_cosine_not_default,union_max,intersection_min
+hub changes only (10%),hub,240,213,238,185,185,0,25,223,204
+hub changes only (10%),null,960,26,0,71,0,0,45,8,52
+"mixed (5% switch, 5% hub, 5% both)",both,240,236,239,223,222,0,4,239,226
+"mixed (5% switch, 5% hub, 5% both)",hub,240,154,232,38,38,0,78,186,85
+"mixed (5% switch, 5% hub, 5% both)",null,960,35,3,57,3,2,24,10,48
+"mixed (5% switch, 5% hub, 5% both)",switch,240,182,66,223,61,0,46,236,90
+mixed + one module strengthens,hub,240,170,220,107,106,0,51,192,125
+mixed + one module strengthens,null,960,52,6,132,6,2,82,32,93
+mixed + one module strengthens,strengthen,240,0,0,30,0,0,30,45,0
+mixed + one module strengthens,switch,240,225,37,240,37,0,15,240,108
+module switches only (10%),null,960,67,17,78,17,0,11,20,76
+module switches only (10%),switch,240,216,128,232,128,0,16,239,127
+null (nothing changes),null,960,0,6,0,0,0,6,3,0
+one module strengthens,null,960,34,48,31,18,0,27,45,31
+one module strengthens,strengthen,240,240,240,240,240,0,0,240,240
