@@ -6,4 +6,7 @@ notebooks/.ipynb_checkpoints
 .vscode/settings.json
 results/
 build/
-node2vec2rank.egg-info/
+node2vec2rank.egg-info/*.egg-info/
+.pytest_cache/
+dist/
+!benchmarks/results/
