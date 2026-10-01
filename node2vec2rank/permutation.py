@@ -6,6 +6,14 @@ between the two groups, rebuild both networks and re-run n2v2r. Every node then
 gets its own null distribution of distances, which accounts for its degree,
 its estimation noise and the network construction method, without assuming
 that most nodes do not change.
+
+The null hypothesis is that the two groups do not differ at all. The p-values
+are exact under it, but this is not a per-node test when some nodes do change:
+rewiring some genes moves every gene a little in the joint embedding, so genes
+whose own connections are unchanged are called as well (their partners
+changed, or the embedding shifted). Calls are evidence that the networks
+differ, and the smallest p-values point at where; they are not a list of
+changed nodes with a controlled false discovery rate.
 """
 
 import numpy as np
@@ -34,6 +42,11 @@ def permutation_test(expression_a, expression_b, build_network=coexpression_netw
                      **n2v2r_params):
     """Tests every node for a shift between two groups of samples by shuffling
     the sample labels.
+
+    The null is that the groups do not differ at all (see the module
+    docstring): under a real difference, unchanged nodes near the change are
+    called too, so the q-values do not control the false discovery rate among
+    nodes.
 
     For every embedding dimension and distance metric, a node's observed
     distance is ranked among its own distances over the permutations and

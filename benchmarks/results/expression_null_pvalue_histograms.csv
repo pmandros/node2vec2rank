@@ -1,44 +1,64 @@
 test,replicate,bin_start,count
-empirical null,0,0.0,24
-empirical null,0,0.05,43
-empirical null,0,0.1,55
-empirical null,0,0.15000000000000002,50
-empirical null,0,0.2,52
-empirical null,0,0.25,58
-empirical null,0,0.30000000000000004,63
-empirical null,0,0.35000000000000003,59
-empirical null,0,0.4,46
-empirical null,0,0.45,50
-empirical null,0,0.5,48
-empirical null,0,0.55,51
-empirical null,0,0.6000000000000001,51
-empirical null,0,0.65,42
-empirical null,0,0.7000000000000001,32
-empirical null,0,0.75,32
-empirical null,0,0.8,42
-empirical null,0,0.8500000000000001,54
-empirical null,0,0.9,40
-empirical null,0,0.9500000000000001,108
+empirical null,0,0.0,4
+empirical null,0,0.05,29
+empirical null,0,0.1,48
+empirical null,0,0.15000000000000002,57
+empirical null,0,0.2,62
+empirical null,0,0.25,67
+empirical null,0,0.30000000000000004,65
+empirical null,0,0.35000000000000003,65
+empirical null,0,0.4,44
+empirical null,0,0.45,59
+empirical null,0,0.5,46
+empirical null,0,0.55,52
+empirical null,0,0.6000000000000001,40
+empirical null,0,0.65,35
+empirical null,0,0.7000000000000001,27
+empirical null,0,0.75,34
+empirical null,0,0.8,43
+empirical null,0,0.8500000000000001,39
+empirical null,0,0.9,38
+empirical null,0,0.9500000000000001,146
+empirical null (mean),0,0.0,24
+empirical null (mean),0,0.05,43
+empirical null (mean),0,0.1,55
+empirical null (mean),0,0.15000000000000002,50
+empirical null (mean),0,0.2,52
+empirical null (mean),0,0.25,58
+empirical null (mean),0,0.30000000000000004,63
+empirical null (mean),0,0.35000000000000003,59
+empirical null (mean),0,0.4,46
+empirical null (mean),0,0.45,50
+empirical null (mean),0,0.5,48
+empirical null (mean),0,0.55,51
+empirical null (mean),0,0.6000000000000001,51
+empirical null (mean),0,0.65,42
+empirical null (mean),0,0.7000000000000001,32
+empirical null (mean),0,0.75,32
+empirical null (mean),0,0.8,42
+empirical null (mean),0,0.8500000000000001,54
+empirical null (mean),0,0.9,40
+empirical null (mean),0,0.9500000000000001,108
 empirical null (elbow),0,0.0,32
-empirical null (elbow),0,0.05,44
-empirical null (elbow),0,0.1,52
+empirical null (elbow),0,0.05,45
+empirical null (elbow),0,0.1,53
 empirical null (elbow),0,0.15000000000000002,52
-empirical null (elbow),0,0.2,57
-empirical null (elbow),0,0.25,55
-empirical null (elbow),0,0.30000000000000004,58
-empirical null (elbow),0,0.35000000000000003,54
-empirical null (elbow),0,0.4,53
-empirical null (elbow),0,0.45,43
-empirical null (elbow),0,0.5,45
-empirical null (elbow),0,0.55,46
-empirical null (elbow),0,0.6000000000000001,59
-empirical null (elbow),0,0.65,49
-empirical null (elbow),0,0.7000000000000001,38
-empirical null (elbow),0,0.75,46
-empirical null (elbow),0,0.8,42
-empirical null (elbow),0,0.8500000000000001,38
-empirical null (elbow),0,0.9,48
-empirical null (elbow),0,0.9500000000000001,89
+empirical null (elbow),0,0.2,54
+empirical null (elbow),0,0.25,60
+empirical null (elbow),0,0.30000000000000004,51
+empirical null (elbow),0,0.35000000000000003,58
+empirical null (elbow),0,0.4,55
+empirical null (elbow),0,0.45,40
+empirical null (elbow),0,0.5,46
+empirical null (elbow),0,0.55,49
+empirical null (elbow),0,0.6000000000000001,54
+empirical null (elbow),0,0.65,52
+empirical null (elbow),0,0.7000000000000001,35
+empirical null (elbow),0,0.75,49
+empirical null (elbow),0,0.8,39
+empirical null (elbow),0,0.8500000000000001,37
+empirical null (elbow),0,0.9,51
+empirical null (elbow),0,0.9500000000000001,88
 permutation,0,0.0,39
 permutation,0,0.05,51
 permutation,0,0.1,57
@@ -59,46 +79,66 @@ permutation,0,0.8,47
 permutation,0,0.8500000000000001,53
 permutation,0,0.9,50
 permutation,0,0.9500000000000001,50
-empirical null,1,0.0,30
-empirical null,1,0.05,39
-empirical null,1,0.1,48
-empirical null,1,0.15000000000000002,52
-empirical null,1,0.2,59
-empirical null,1,0.25,58
-empirical null,1,0.30000000000000004,57
-empirical null,1,0.35000000000000003,51
-empirical null,1,0.4,50
-empirical null,1,0.45,56
-empirical null,1,0.5,49
-empirical null,1,0.55,32
-empirical null,1,0.6000000000000001,50
-empirical null,1,0.65,45
-empirical null,1,0.7000000000000001,52
-empirical null,1,0.75,47
-empirical null,1,0.8,32
-empirical null,1,0.8500000000000001,33
-empirical null,1,0.9,62
-empirical null,1,0.9500000000000001,98
-empirical null (elbow),1,0.0,32
-empirical null (elbow),1,0.05,49
-empirical null (elbow),1,0.1,56
-empirical null (elbow),1,0.15000000000000002,58
-empirical null (elbow),1,0.2,60
-empirical null (elbow),1,0.25,60
-empirical null (elbow),1,0.30000000000000004,39
-empirical null (elbow),1,0.35000000000000003,58
-empirical null (elbow),1,0.4,48
-empirical null (elbow),1,0.45,40
-empirical null (elbow),1,0.5,42
-empirical null (elbow),1,0.55,58
-empirical null (elbow),1,0.6000000000000001,60
-empirical null (elbow),1,0.65,42
-empirical null (elbow),1,0.7000000000000001,53
-empirical null (elbow),1,0.75,40
-empirical null (elbow),1,0.8,45
-empirical null (elbow),1,0.8500000000000001,46
-empirical null (elbow),1,0.9,46
-empirical null (elbow),1,0.9500000000000001,68
+empirical null,1,0.0,7
+empirical null,1,0.05,30
+empirical null,1,0.1,37
+empirical null,1,0.15000000000000002,59
+empirical null,1,0.2,78
+empirical null,1,0.25,54
+empirical null,1,0.30000000000000004,62
+empirical null,1,0.35000000000000003,68
+empirical null,1,0.4,48
+empirical null,1,0.45,57
+empirical null,1,0.5,40
+empirical null,1,0.55,47
+empirical null,1,0.6000000000000001,43
+empirical null,1,0.65,40
+empirical null,1,0.7000000000000001,41
+empirical null,1,0.75,40
+empirical null,1,0.8,46
+empirical null,1,0.8500000000000001,39
+empirical null,1,0.9,45
+empirical null,1,0.9500000000000001,119
+empirical null (mean),1,0.0,30
+empirical null (mean),1,0.05,39
+empirical null (mean),1,0.1,48
+empirical null (mean),1,0.15000000000000002,52
+empirical null (mean),1,0.2,59
+empirical null (mean),1,0.25,58
+empirical null (mean),1,0.30000000000000004,57
+empirical null (mean),1,0.35000000000000003,51
+empirical null (mean),1,0.4,50
+empirical null (mean),1,0.45,56
+empirical null (mean),1,0.5,49
+empirical null (mean),1,0.55,32
+empirical null (mean),1,0.6000000000000001,50
+empirical null (mean),1,0.65,45
+empirical null (mean),1,0.7000000000000001,52
+empirical null (mean),1,0.75,47
+empirical null (mean),1,0.8,32
+empirical null (mean),1,0.8500000000000001,33
+empirical null (mean),1,0.9,62
+empirical null (mean),1,0.9500000000000001,98
+empirical null (elbow),1,0.0,31
+empirical null (elbow),1,0.05,42
+empirical null (elbow),1,0.1,54
+empirical null (elbow),1,0.15000000000000002,59
+empirical null (elbow),1,0.2,63
+empirical null (elbow),1,0.25,59
+empirical null (elbow),1,0.30000000000000004,42
+empirical null (elbow),1,0.35000000000000003,56
+empirical null (elbow),1,0.4,43
+empirical null (elbow),1,0.45,51
+empirical null (elbow),1,0.5,35
+empirical null (elbow),1,0.55,62
+empirical null (elbow),1,0.6000000000000001,55
+empirical null (elbow),1,0.65,46
+empirical null (elbow),1,0.7000000000000001,51
+empirical null (elbow),1,0.75,38
+empirical null (elbow),1,0.8,53
+empirical null (elbow),1,0.8500000000000001,43
+empirical null (elbow),1,0.9,47
+empirical null (elbow),1,0.9500000000000001,70
 permutation,1,0.0,44
 permutation,1,0.05,51
 permutation,1,0.1,51
@@ -119,46 +159,66 @@ permutation,1,0.8,54
 permutation,1,0.8500000000000001,46
 permutation,1,0.9,57
 permutation,1,0.9500000000000001,38
-empirical null,2,0.0,14
-empirical null,2,0.05,50
-empirical null,2,0.1,52
-empirical null,2,0.15000000000000002,48
-empirical null,2,0.2,62
-empirical null,2,0.25,65
-empirical null,2,0.30000000000000004,58
-empirical null,2,0.35000000000000003,58
-empirical null,2,0.4,44
-empirical null,2,0.45,49
-empirical null,2,0.5,57
-empirical null,2,0.55,56
-empirical null,2,0.6000000000000001,35
-empirical null,2,0.65,39
-empirical null,2,0.7000000000000001,39
-empirical null,2,0.75,35
-empirical null,2,0.8,45
-empirical null,2,0.8500000000000001,42
-empirical null,2,0.9,45
-empirical null,2,0.9500000000000001,107
-empirical null (elbow),2,0.0,28
-empirical null (elbow),2,0.05,42
-empirical null (elbow),2,0.1,52
+empirical null,2,0.0,7
+empirical null,2,0.05,41
+empirical null,2,0.1,50
+empirical null,2,0.15000000000000002,56
+empirical null,2,0.2,69
+empirical null,2,0.25,69
+empirical null,2,0.30000000000000004,64
+empirical null,2,0.35000000000000003,60
+empirical null,2,0.4,36
+empirical null,2,0.45,48
+empirical null,2,0.5,65
+empirical null,2,0.55,40
+empirical null,2,0.6000000000000001,36
+empirical null,2,0.65,37
+empirical null,2,0.7000000000000001,45
+empirical null,2,0.75,27
+empirical null,2,0.8,39
+empirical null,2,0.8500000000000001,41
+empirical null,2,0.9,54
+empirical null,2,0.9500000000000001,116
+empirical null (mean),2,0.0,14
+empirical null (mean),2,0.05,50
+empirical null (mean),2,0.1,52
+empirical null (mean),2,0.15000000000000002,48
+empirical null (mean),2,0.2,62
+empirical null (mean),2,0.25,65
+empirical null (mean),2,0.30000000000000004,58
+empirical null (mean),2,0.35000000000000003,58
+empirical null (mean),2,0.4,44
+empirical null (mean),2,0.45,49
+empirical null (mean),2,0.5,57
+empirical null (mean),2,0.55,56
+empirical null (mean),2,0.6000000000000001,35
+empirical null (mean),2,0.65,39
+empirical null (mean),2,0.7000000000000001,39
+empirical null (mean),2,0.75,35
+empirical null (mean),2,0.8,45
+empirical null (mean),2,0.8500000000000001,42
+empirical null (mean),2,0.9,45
+empirical null (mean),2,0.9500000000000001,107
+empirical null (elbow),2,0.0,31
+empirical null (elbow),2,0.05,41
+empirical null (elbow),2,0.1,53
 empirical null (elbow),2,0.15000000000000002,46
-empirical null (elbow),2,0.2,63
-empirical null (elbow),2,0.25,60
-empirical null (elbow),2,0.30000000000000004,43
-empirical null (elbow),2,0.35000000000000003,50
-empirical null (elbow),2,0.4,64
+empirical null (elbow),2,0.2,57
+empirical null (elbow),2,0.25,67
+empirical null (elbow),2,0.30000000000000004,39
+empirical null (elbow),2,0.35000000000000003,53
+empirical null (elbow),2,0.4,61
 empirical null (elbow),2,0.45,52
-empirical null (elbow),2,0.5,57
-empirical null (elbow),2,0.55,35
-empirical null (elbow),2,0.6000000000000001,59
-empirical null (elbow),2,0.65,43
-empirical null (elbow),2,0.7000000000000001,37
-empirical null (elbow),2,0.75,55
-empirical null (elbow),2,0.8,50
-empirical null (elbow),2,0.8500000000000001,43
-empirical null (elbow),2,0.9,45
-empirical null (elbow),2,0.9500000000000001,76
+empirical null (elbow),2,0.5,52
+empirical null (elbow),2,0.55,40
+empirical null (elbow),2,0.6000000000000001,54
+empirical null (elbow),2,0.65,44
+empirical null (elbow),2,0.7000000000000001,38
+empirical null (elbow),2,0.75,54
+empirical null (elbow),2,0.8,47
+empirical null (elbow),2,0.8500000000000001,47
+empirical null (elbow),2,0.9,42
+empirical null (elbow),2,0.9500000000000001,82
 permutation,2,0.0,61
 permutation,2,0.05,66
 permutation,2,0.1,54
@@ -179,46 +239,66 @@ permutation,2,0.8,37
 permutation,2,0.8500000000000001,45
 permutation,2,0.9,42
 permutation,2,0.9500000000000001,50
-empirical null,3,0.0,30
-empirical null,3,0.05,36
-empirical null,3,0.1,42
-empirical null,3,0.15000000000000002,64
-empirical null,3,0.2,65
-empirical null,3,0.25,53
-empirical null,3,0.30000000000000004,46
-empirical null,3,0.35000000000000003,62
-empirical null,3,0.4,53
-empirical null,3,0.45,49
-empirical null,3,0.5,51
-empirical null,3,0.55,41
-empirical null,3,0.6000000000000001,49
-empirical null,3,0.65,45
-empirical null,3,0.7000000000000001,51
-empirical null,3,0.75,40
-empirical null,3,0.8,49
-empirical null,3,0.8500000000000001,43
-empirical null,3,0.9,49
-empirical null,3,0.9500000000000001,82
-empirical null (elbow),3,0.0,38
-empirical null (elbow),3,0.05,46
+empirical null,3,0.0,16
+empirical null,3,0.05,40
+empirical null,3,0.1,37
+empirical null,3,0.15000000000000002,55
+empirical null,3,0.2,71
+empirical null,3,0.25,73
+empirical null,3,0.30000000000000004,47
+empirical null,3,0.35000000000000003,68
+empirical null,3,0.4,48
+empirical null,3,0.45,45
+empirical null,3,0.5,44
+empirical null,3,0.55,34
+empirical null,3,0.6000000000000001,48
+empirical null,3,0.65,48
+empirical null,3,0.7000000000000001,45
+empirical null,3,0.75,41
+empirical null,3,0.8,46
+empirical null,3,0.8500000000000001,40
+empirical null,3,0.9,40
+empirical null,3,0.9500000000000001,114
+empirical null (mean),3,0.0,30
+empirical null (mean),3,0.05,36
+empirical null (mean),3,0.1,42
+empirical null (mean),3,0.15000000000000002,64
+empirical null (mean),3,0.2,65
+empirical null (mean),3,0.25,53
+empirical null (mean),3,0.30000000000000004,46
+empirical null (mean),3,0.35000000000000003,62
+empirical null (mean),3,0.4,53
+empirical null (mean),3,0.45,49
+empirical null (mean),3,0.5,51
+empirical null (mean),3,0.55,41
+empirical null (mean),3,0.6000000000000001,49
+empirical null (mean),3,0.65,45
+empirical null (mean),3,0.7000000000000001,51
+empirical null (mean),3,0.75,40
+empirical null (mean),3,0.8,49
+empirical null (mean),3,0.8500000000000001,43
+empirical null (mean),3,0.9,49
+empirical null (mean),3,0.9500000000000001,82
+empirical null (elbow),3,0.0,36
+empirical null (elbow),3,0.05,47
 empirical null (elbow),3,0.1,57
-empirical null (elbow),3,0.15000000000000002,44
-empirical null (elbow),3,0.2,65
-empirical null (elbow),3,0.25,45
-empirical null (elbow),3,0.30000000000000004,51
-empirical null (elbow),3,0.35000000000000003,55
-empirical null (elbow),3,0.4,56
-empirical null (elbow),3,0.45,43
-empirical null (elbow),3,0.5,52
-empirical null (elbow),3,0.55,50
-empirical null (elbow),3,0.6000000000000001,49
-empirical null (elbow),3,0.65,40
-empirical null (elbow),3,0.7000000000000001,59
-empirical null (elbow),3,0.75,34
-empirical null (elbow),3,0.8,42
-empirical null (elbow),3,0.8500000000000001,45
-empirical null (elbow),3,0.9,42
-empirical null (elbow),3,0.9500000000000001,87
+empirical null (elbow),3,0.15000000000000002,49
+empirical null (elbow),3,0.2,59
+empirical null (elbow),3,0.25,46
+empirical null (elbow),3,0.30000000000000004,53
+empirical null (elbow),3,0.35000000000000003,54
+empirical null (elbow),3,0.4,54
+empirical null (elbow),3,0.45,45
+empirical null (elbow),3,0.5,55
+empirical null (elbow),3,0.55,52
+empirical null (elbow),3,0.6000000000000001,47
+empirical null (elbow),3,0.65,42
+empirical null (elbow),3,0.7000000000000001,52
+empirical null (elbow),3,0.75,37
+empirical null (elbow),3,0.8,41
+empirical null (elbow),3,0.8500000000000001,46
+empirical null (elbow),3,0.9,39
+empirical null (elbow),3,0.9500000000000001,89
 permutation,3,0.0,72
 permutation,3,0.05,63
 permutation,3,0.1,64
@@ -239,45 +319,65 @@ permutation,3,0.8,38
 permutation,3,0.8500000000000001,51
 permutation,3,0.9,25
 permutation,3,0.9500000000000001,23
-empirical null,4,0.0,27
-empirical null,4,0.05,53
-empirical null,4,0.1,44
-empirical null,4,0.15000000000000002,45
-empirical null,4,0.2,47
-empirical null,4,0.25,50
-empirical null,4,0.30000000000000004,59
-empirical null,4,0.35000000000000003,51
-empirical null,4,0.4,51
-empirical null,4,0.45,73
-empirical null,4,0.5,50
-empirical null,4,0.55,44
-empirical null,4,0.6000000000000001,39
-empirical null,4,0.65,40
-empirical null,4,0.7000000000000001,43
-empirical null,4,0.75,38
-empirical null,4,0.8,34
-empirical null,4,0.8500000000000001,43
-empirical null,4,0.9,41
-empirical null,4,0.9500000000000001,128
-empirical null (elbow),4,0.0,33
-empirical null (elbow),4,0.05,50
-empirical null (elbow),4,0.1,41
-empirical null (elbow),4,0.15000000000000002,64
-empirical null (elbow),4,0.2,55
+empirical null,4,0.0,13
+empirical null,4,0.05,37
+empirical null,4,0.1,42
+empirical null,4,0.15000000000000002,56
+empirical null,4,0.2,57
+empirical null,4,0.25,54
+empirical null,4,0.30000000000000004,56
+empirical null,4,0.35000000000000003,56
+empirical null,4,0.4,62
+empirical null,4,0.45,67
+empirical null,4,0.5,45
+empirical null,4,0.55,40
+empirical null,4,0.6000000000000001,46
+empirical null,4,0.65,32
+empirical null,4,0.7000000000000001,42
+empirical null,4,0.75,30
+empirical null,4,0.8,36
+empirical null,4,0.8500000000000001,39
+empirical null,4,0.9,27
+empirical null,4,0.9500000000000001,163
+empirical null (mean),4,0.0,27
+empirical null (mean),4,0.05,53
+empirical null (mean),4,0.1,44
+empirical null (mean),4,0.15000000000000002,45
+empirical null (mean),4,0.2,47
+empirical null (mean),4,0.25,50
+empirical null (mean),4,0.30000000000000004,59
+empirical null (mean),4,0.35000000000000003,51
+empirical null (mean),4,0.4,51
+empirical null (mean),4,0.45,73
+empirical null (mean),4,0.5,50
+empirical null (mean),4,0.55,44
+empirical null (mean),4,0.6000000000000001,39
+empirical null (mean),4,0.65,40
+empirical null (mean),4,0.7000000000000001,43
+empirical null (mean),4,0.75,38
+empirical null (mean),4,0.8,34
+empirical null (mean),4,0.8500000000000001,43
+empirical null (mean),4,0.9,41
+empirical null (mean),4,0.9500000000000001,128
+empirical null (elbow),4,0.0,36
+empirical null (elbow),4,0.05,49
+empirical null (elbow),4,0.1,45
+empirical null (elbow),4,0.15000000000000002,60
+empirical null (elbow),4,0.2,56
 empirical null (elbow),4,0.25,58
-empirical null (elbow),4,0.30000000000000004,43
-empirical null (elbow),4,0.35000000000000003,47
-empirical null (elbow),4,0.4,53
-empirical null (elbow),4,0.45,56
+empirical null (elbow),4,0.30000000000000004,41
+empirical null (elbow),4,0.35000000000000003,46
+empirical null (elbow),4,0.4,59
+empirical null (elbow),4,0.45,50
 empirical null (elbow),4,0.5,49
-empirical null (elbow),4,0.55,48
-empirical null (elbow),4,0.6000000000000001,42
-empirical null (elbow),4,0.65,47
-empirical null (elbow),4,0.7000000000000001,57
-empirical null (elbow),4,0.75,56
+empirical null (elbow),4,0.55,51
+empirical null (elbow),4,0.6000000000000001,41
+empirical null (elbow),4,0.65,46
+empirical null (elbow),4,0.7000000000000001,59
+empirical null (elbow),4,0.75,55
 empirical null (elbow),4,0.8,46
-empirical null (elbow),4,0.8500000000000001,42
-empirical null (elbow),4,0.9,40
+empirical null (elbow),4,0.8500000000000001,41
+empirical null (elbow),4,0.9,39
 empirical null (elbow),4,0.9500000000000001,73
 permutation,4,0.0,50
 permutation,4,0.05,41
@@ -299,46 +399,66 @@ permutation,4,0.8,61
 permutation,4,0.8500000000000001,50
 permutation,4,0.9,62
 permutation,4,0.9500000000000001,62
-empirical null,5,0.0,15
-empirical null,5,0.05,39
-empirical null,5,0.1,62
-empirical null,5,0.15000000000000002,64
-empirical null,5,0.2,52
-empirical null,5,0.25,54
-empirical null,5,0.30000000000000004,53
-empirical null,5,0.35000000000000003,50
-empirical null,5,0.4,57
-empirical null,5,0.45,54
-empirical null,5,0.5,48
-empirical null,5,0.55,54
-empirical null,5,0.6000000000000001,46
-empirical null,5,0.65,49
-empirical null,5,0.7000000000000001,35
-empirical null,5,0.75,55
-empirical null,5,0.8,39
-empirical null,5,0.8500000000000001,41
-empirical null,5,0.9,42
-empirical null,5,0.9500000000000001,91
-empirical null (elbow),5,0.0,30
-empirical null (elbow),5,0.05,35
-empirical null (elbow),5,0.1,48
-empirical null (elbow),5,0.15000000000000002,59
-empirical null (elbow),5,0.2,59
-empirical null (elbow),5,0.25,60
+empirical null,5,0.0,8
+empirical null,5,0.05,18
+empirical null,5,0.1,52
+empirical null,5,0.15000000000000002,67
+empirical null,5,0.2,71
+empirical null,5,0.25,65
+empirical null,5,0.30000000000000004,55
+empirical null,5,0.35000000000000003,55
+empirical null,5,0.4,58
+empirical null,5,0.45,51
+empirical null,5,0.5,46
+empirical null,5,0.55,48
+empirical null,5,0.6000000000000001,48
+empirical null,5,0.65,36
+empirical null,5,0.7000000000000001,38
+empirical null,5,0.75,40
+empirical null,5,0.8,33
+empirical null,5,0.8500000000000001,43
+empirical null,5,0.9,47
+empirical null,5,0.9500000000000001,121
+empirical null (mean),5,0.0,15
+empirical null (mean),5,0.05,39
+empirical null (mean),5,0.1,62
+empirical null (mean),5,0.15000000000000002,64
+empirical null (mean),5,0.2,52
+empirical null (mean),5,0.25,54
+empirical null (mean),5,0.30000000000000004,53
+empirical null (mean),5,0.35000000000000003,50
+empirical null (mean),5,0.4,57
+empirical null (mean),5,0.45,54
+empirical null (mean),5,0.5,48
+empirical null (mean),5,0.55,54
+empirical null (mean),5,0.6000000000000001,46
+empirical null (mean),5,0.65,49
+empirical null (mean),5,0.7000000000000001,35
+empirical null (mean),5,0.75,55
+empirical null (mean),5,0.8,39
+empirical null (mean),5,0.8500000000000001,41
+empirical null (mean),5,0.9,42
+empirical null (mean),5,0.9500000000000001,91
+empirical null (elbow),5,0.0,27
+empirical null (elbow),5,0.05,37
+empirical null (elbow),5,0.1,53
+empirical null (elbow),5,0.15000000000000002,54
+empirical null (elbow),5,0.2,57
+empirical null (elbow),5,0.25,61
 empirical null (elbow),5,0.30000000000000004,57
-empirical null (elbow),5,0.35000000000000003,44
-empirical null (elbow),5,0.4,64
-empirical null (elbow),5,0.45,44
-empirical null (elbow),5,0.5,63
-empirical null (elbow),5,0.55,52
-empirical null (elbow),5,0.6000000000000001,36
-empirical null (elbow),5,0.65,42
-empirical null (elbow),5,0.7000000000000001,38
-empirical null (elbow),5,0.75,47
-empirical null (elbow),5,0.8,41
-empirical null (elbow),5,0.8500000000000001,47
-empirical null (elbow),5,0.9,54
-empirical null (elbow),5,0.9500000000000001,80
+empirical null (elbow),5,0.35000000000000003,46
+empirical null (elbow),5,0.4,61
+empirical null (elbow),5,0.45,47
+empirical null (elbow),5,0.5,62
+empirical null (elbow),5,0.55,44
+empirical null (elbow),5,0.6000000000000001,38
+empirical null (elbow),5,0.65,47
+empirical null (elbow),5,0.7000000000000001,37
+empirical null (elbow),5,0.75,39
+empirical null (elbow),5,0.8,40
+empirical null (elbow),5,0.8500000000000001,53
+empirical null (elbow),5,0.9,51
+empirical null (elbow),5,0.9500000000000001,89
 permutation,5,0.0,41
 permutation,5,0.05,56
 permutation,5,0.1,48
@@ -359,46 +479,66 @@ permutation,5,0.8,45
 permutation,5,0.8500000000000001,54
 permutation,5,0.9,42
 permutation,5,0.9500000000000001,50
-empirical null,6,0.0,24
-empirical null,6,0.05,49
-empirical null,6,0.1,48
-empirical null,6,0.15000000000000002,56
-empirical null,6,0.2,58
-empirical null,6,0.25,48
-empirical null,6,0.30000000000000004,57
-empirical null,6,0.35000000000000003,59
-empirical null,6,0.4,53
-empirical null,6,0.45,48
-empirical null,6,0.5,56
-empirical null,6,0.55,43
-empirical null,6,0.6000000000000001,47
-empirical null,6,0.65,44
-empirical null,6,0.7000000000000001,45
-empirical null,6,0.75,35
-empirical null,6,0.8,34
-empirical null,6,0.8500000000000001,41
-empirical null,6,0.9,40
-empirical null,6,0.9500000000000001,115
-empirical null (elbow),6,0.0,32
-empirical null (elbow),6,0.05,54
-empirical null (elbow),6,0.1,52
+empirical null,6,0.0,13
+empirical null,6,0.05,27
+empirical null,6,0.1,47
+empirical null,6,0.15000000000000002,66
+empirical null,6,0.2,54
+empirical null,6,0.25,59
+empirical null,6,0.30000000000000004,58
+empirical null,6,0.35000000000000003,71
+empirical null,6,0.4,49
+empirical null,6,0.45,56
+empirical null,6,0.5,47
+empirical null,6,0.55,56
+empirical null,6,0.6000000000000001,33
+empirical null,6,0.65,43
+empirical null,6,0.7000000000000001,28
+empirical null,6,0.75,49
+empirical null,6,0.8,42
+empirical null,6,0.8500000000000001,24
+empirical null,6,0.9,44
+empirical null,6,0.9500000000000001,134
+empirical null (mean),6,0.0,24
+empirical null (mean),6,0.05,49
+empirical null (mean),6,0.1,48
+empirical null (mean),6,0.15000000000000002,56
+empirical null (mean),6,0.2,58
+empirical null (mean),6,0.25,48
+empirical null (mean),6,0.30000000000000004,57
+empirical null (mean),6,0.35000000000000003,59
+empirical null (mean),6,0.4,53
+empirical null (mean),6,0.45,48
+empirical null (mean),6,0.5,56
+empirical null (mean),6,0.55,43
+empirical null (mean),6,0.6000000000000001,47
+empirical null (mean),6,0.65,44
+empirical null (mean),6,0.7000000000000001,45
+empirical null (mean),6,0.75,35
+empirical null (mean),6,0.8,34
+empirical null (mean),6,0.8500000000000001,41
+empirical null (mean),6,0.9,40
+empirical null (mean),6,0.9500000000000001,115
+empirical null (elbow),6,0.0,25
+empirical null (elbow),6,0.05,51
+empirical null (elbow),6,0.1,56
 empirical null (elbow),6,0.15000000000000002,60
 empirical null (elbow),6,0.2,48
-empirical null (elbow),6,0.25,50
-empirical null (elbow),6,0.30000000000000004,55
-empirical null (elbow),6,0.35000000000000003,51
-empirical null (elbow),6,0.4,43
-empirical null (elbow),6,0.45,55
-empirical null (elbow),6,0.5,47
-empirical null (elbow),6,0.55,55
-empirical null (elbow),6,0.6000000000000001,47
-empirical null (elbow),6,0.65,60
-empirical null (elbow),6,0.7000000000000001,37
-empirical null (elbow),6,0.75,45
-empirical null (elbow),6,0.8,49
-empirical null (elbow),6,0.8500000000000001,47
+empirical null (elbow),6,0.25,56
+empirical null (elbow),6,0.30000000000000004,49
+empirical null (elbow),6,0.35000000000000003,48
+empirical null (elbow),6,0.4,48
+empirical null (elbow),6,0.45,59
+empirical null (elbow),6,0.5,49
+empirical null (elbow),6,0.55,45
+empirical null (elbow),6,0.6000000000000001,46
+empirical null (elbow),6,0.65,57
+empirical null (elbow),6,0.7000000000000001,43
+empirical null (elbow),6,0.75,50
+empirical null (elbow),6,0.8,47
+empirical null (elbow),6,0.8500000000000001,51
 empirical null (elbow),6,0.9,49
-empirical null (elbow),6,0.9500000000000001,64
+empirical null (elbow),6,0.9500000000000001,63
 permutation,6,0.0,53
 permutation,6,0.05,48
 permutation,6,0.1,55
@@ -419,46 +559,66 @@ permutation,6,0.8,58
 permutation,6,0.8500000000000001,50
 permutation,6,0.9,42
 permutation,6,0.9500000000000001,51
-empirical null,7,0.0,14
-empirical null,7,0.05,44
-empirical null,7,0.1,60
-empirical null,7,0.15000000000000002,70
-empirical null,7,0.2,63
-empirical null,7,0.25,49
-empirical null,7,0.30000000000000004,64
-empirical null,7,0.35000000000000003,55
-empirical null,7,0.4,47
-empirical null,7,0.45,34
-empirical null,7,0.5,51
+empirical null,7,0.0,3
+empirical null,7,0.05,19
+empirical null,7,0.1,43
+empirical null,7,0.15000000000000002,69
+empirical null,7,0.2,85
+empirical null,7,0.25,67
+empirical null,7,0.30000000000000004,67
+empirical null,7,0.35000000000000003,59
+empirical null,7,0.4,43
+empirical null,7,0.45,45
+empirical null,7,0.5,44
 empirical null,7,0.55,44
-empirical null,7,0.6000000000000001,46
-empirical null,7,0.65,56
-empirical null,7,0.7000000000000001,54
-empirical null,7,0.75,36
-empirical null,7,0.8,51
-empirical null,7,0.8500000000000001,21
-empirical null,7,0.9,43
-empirical null,7,0.9500000000000001,98
-empirical null (elbow),7,0.0,40
-empirical null (elbow),7,0.05,36
+empirical null,7,0.6000000000000001,47
+empirical null,7,0.65,48
+empirical null,7,0.7000000000000001,36
+empirical null,7,0.75,30
+empirical null,7,0.8,19
+empirical null,7,0.8500000000000001,31
+empirical null,7,0.9,35
+empirical null,7,0.9500000000000001,166
+empirical null (mean),7,0.0,14
+empirical null (mean),7,0.05,44
+empirical null (mean),7,0.1,60
+empirical null (mean),7,0.15000000000000002,70
+empirical null (mean),7,0.2,63
+empirical null (mean),7,0.25,49
+empirical null (mean),7,0.30000000000000004,64
+empirical null (mean),7,0.35000000000000003,55
+empirical null (mean),7,0.4,47
+empirical null (mean),7,0.45,34
+empirical null (mean),7,0.5,51
+empirical null (mean),7,0.55,44
+empirical null (mean),7,0.6000000000000001,46
+empirical null (mean),7,0.65,56
+empirical null (mean),7,0.7000000000000001,54
+empirical null (mean),7,0.75,36
+empirical null (mean),7,0.8,51
+empirical null (mean),7,0.8500000000000001,21
+empirical null (mean),7,0.9,43
+empirical null (mean),7,0.9500000000000001,98
+empirical null (elbow),7,0.0,38
+empirical null (elbow),7,0.05,35
 empirical null (elbow),7,0.1,53
-empirical null (elbow),7,0.15000000000000002,68
-empirical null (elbow),7,0.2,46
-empirical null (elbow),7,0.25,54
-empirical null (elbow),7,0.30000000000000004,57
-empirical null (elbow),7,0.35000000000000003,43
+empirical null (elbow),7,0.15000000000000002,67
+empirical null (elbow),7,0.2,47
+empirical null (elbow),7,0.25,50
+empirical null (elbow),7,0.30000000000000004,62
+empirical null (elbow),7,0.35000000000000003,46
 empirical null (elbow),7,0.4,41
-empirical null (elbow),7,0.45,62
-empirical null (elbow),7,0.5,58
-empirical null (elbow),7,0.55,46
-empirical null (elbow),7,0.6000000000000001,44
-empirical null (elbow),7,0.65,49
-empirical null (elbow),7,0.7000000000000001,46
+empirical null (elbow),7,0.45,61
+empirical null (elbow),7,0.5,55
+empirical null (elbow),7,0.55,44
+empirical null (elbow),7,0.6000000000000001,47
+empirical null (elbow),7,0.65,51
+empirical null (elbow),7,0.7000000000000001,43
 empirical null (elbow),7,0.75,46
-empirical null (elbow),7,0.8,40
-empirical null (elbow),7,0.8500000000000001,42
-empirical null (elbow),7,0.9,52
-empirical null (elbow),7,0.9500000000000001,77
+empirical null (elbow),7,0.8,44
+empirical null (elbow),7,0.8500000000000001,41
+empirical null (elbow),7,0.9,51
+empirical null (elbow),7,0.9500000000000001,78
 permutation,7,0.0,41
 permutation,7,0.05,55
 permutation,7,0.1,72
@@ -479,45 +639,65 @@ permutation,7,0.8,61
 permutation,7,0.8500000000000001,42
 permutation,7,0.9,46
 permutation,7,0.9500000000000001,51
-empirical null,8,0.0,22
-empirical null,8,0.05,52
-empirical null,8,0.1,49
-empirical null,8,0.15000000000000002,52
-empirical null,8,0.2,61
-empirical null,8,0.25,60
-empirical null,8,0.30000000000000004,37
-empirical null,8,0.35000000000000003,55
+empirical null,8,0.0,8
+empirical null,8,0.05,36
+empirical null,8,0.1,57
+empirical null,8,0.15000000000000002,55
+empirical null,8,0.2,53
+empirical null,8,0.25,85
+empirical null,8,0.30000000000000004,51
+empirical null,8,0.35000000000000003,58
 empirical null,8,0.4,52
-empirical null,8,0.45,60
-empirical null,8,0.5,52
-empirical null,8,0.55,55
-empirical null,8,0.6000000000000001,53
-empirical null,8,0.65,34
-empirical null,8,0.7000000000000001,42
-empirical null,8,0.75,45
-empirical null,8,0.8,38
+empirical null,8,0.45,45
+empirical null,8,0.5,48
+empirical null,8,0.55,49
+empirical null,8,0.6000000000000001,29
+empirical null,8,0.65,45
+empirical null,8,0.7000000000000001,38
+empirical null,8,0.75,28
+empirical null,8,0.8,34
 empirical null,8,0.8500000000000001,43
-empirical null,8,0.9,45
-empirical null,8,0.9500000000000001,93
-empirical null (elbow),8,0.0,51
-empirical null (elbow),8,0.05,35
-empirical null (elbow),8,0.1,58
-empirical null (elbow),8,0.15000000000000002,54
-empirical null (elbow),8,0.2,57
+empirical null,8,0.9,49
+empirical null,8,0.9500000000000001,137
+empirical null (mean),8,0.0,22
+empirical null (mean),8,0.05,52
+empirical null (mean),8,0.1,49
+empirical null (mean),8,0.15000000000000002,52
+empirical null (mean),8,0.2,61
+empirical null (mean),8,0.25,60
+empirical null (mean),8,0.30000000000000004,37
+empirical null (mean),8,0.35000000000000003,55
+empirical null (mean),8,0.4,52
+empirical null (mean),8,0.45,60
+empirical null (mean),8,0.5,52
+empirical null (mean),8,0.55,55
+empirical null (mean),8,0.6000000000000001,53
+empirical null (mean),8,0.65,34
+empirical null (mean),8,0.7000000000000001,42
+empirical null (mean),8,0.75,45
+empirical null (mean),8,0.8,38
+empirical null (mean),8,0.8500000000000001,43
+empirical null (mean),8,0.9,45
+empirical null (mean),8,0.9500000000000001,93
+empirical null (elbow),8,0.0,49
+empirical null (elbow),8,0.05,40
+empirical null (elbow),8,0.1,54
+empirical null (elbow),8,0.15000000000000002,51
+empirical null (elbow),8,0.2,58
 empirical null (elbow),8,0.25,61
-empirical null (elbow),8,0.30000000000000004,35
-empirical null (elbow),8,0.35000000000000003,72
-empirical null (elbow),8,0.4,35
-empirical null (elbow),8,0.45,42
-empirical null (elbow),8,0.5,62
+empirical null (elbow),8,0.30000000000000004,39
+empirical null (elbow),8,0.35000000000000003,66
+empirical null (elbow),8,0.4,34
+empirical null (elbow),8,0.45,48
+empirical null (elbow),8,0.5,58
 empirical null (elbow),8,0.55,48
-empirical null (elbow),8,0.6000000000000001,39
-empirical null (elbow),8,0.65,54
-empirical null (elbow),8,0.7000000000000001,52
-empirical null (elbow),8,0.75,50
-empirical null (elbow),8,0.8,31
-empirical null (elbow),8,0.8500000000000001,43
-empirical null (elbow),8,0.9,37
+empirical null (elbow),8,0.6000000000000001,44
+empirical null (elbow),8,0.65,47
+empirical null (elbow),8,0.7000000000000001,55
+empirical null (elbow),8,0.75,45
+empirical null (elbow),8,0.8,35
+empirical null (elbow),8,0.8500000000000001,46
+empirical null (elbow),8,0.9,38
 empirical null (elbow),8,0.9500000000000001,84
 permutation,8,0.0,51
 permutation,8,0.05,46
@@ -539,46 +719,66 @@ permutation,8,0.8,44
 permutation,8,0.8500000000000001,45
 permutation,8,0.9,61
 permutation,8,0.9500000000000001,49
-empirical null,9,0.0,16
-empirical null,9,0.05,60
-empirical null,9,0.1,53
+empirical null,9,0.0,4
+empirical null,9,0.05,33
+empirical null,9,0.1,63
 empirical null,9,0.15000000000000002,54
-empirical null,9,0.2,56
-empirical null,9,0.25,55
-empirical null,9,0.30000000000000004,47
-empirical null,9,0.35000000000000003,56
-empirical null,9,0.4,55
-empirical null,9,0.45,48
-empirical null,9,0.5,53
-empirical null,9,0.55,59
-empirical null,9,0.6000000000000001,37
-empirical null,9,0.65,44
-empirical null,9,0.7000000000000001,46
-empirical null,9,0.75,49
-empirical null,9,0.8,44
-empirical null,9,0.8500000000000001,41
-empirical null,9,0.9,52
-empirical null,9,0.9500000000000001,75
-empirical null (elbow),9,0.0,41
-empirical null (elbow),9,0.05,44
-empirical null (elbow),9,0.1,56
-empirical null (elbow),9,0.15000000000000002,45
-empirical null (elbow),9,0.2,62
-empirical null (elbow),9,0.25,50
-empirical null (elbow),9,0.30000000000000004,58
-empirical null (elbow),9,0.35000000000000003,57
-empirical null (elbow),9,0.4,54
-empirical null (elbow),9,0.45,33
-empirical null (elbow),9,0.5,52
-empirical null (elbow),9,0.55,60
-empirical null (elbow),9,0.6000000000000001,44
-empirical null (elbow),9,0.65,44
-empirical null (elbow),9,0.7000000000000001,48
-empirical null (elbow),9,0.75,44
-empirical null (elbow),9,0.8,32
-empirical null (elbow),9,0.8500000000000001,40
-empirical null (elbow),9,0.9,49
-empirical null (elbow),9,0.9500000000000001,87
+empirical null,9,0.2,64
+empirical null,9,0.25,66
+empirical null,9,0.30000000000000004,58
+empirical null,9,0.35000000000000003,54
+empirical null,9,0.4,51
+empirical null,9,0.45,53
+empirical null,9,0.5,49
+empirical null,9,0.55,53
+empirical null,9,0.6000000000000001,38
+empirical null,9,0.65,36
+empirical null,9,0.7000000000000001,42
+empirical null,9,0.75,35
+empirical null,9,0.8,36
+empirical null,9,0.8500000000000001,50
+empirical null,9,0.9,42
+empirical null,9,0.9500000000000001,119
+empirical null (mean),9,0.0,16
+empirical null (mean),9,0.05,60
+empirical null (mean),9,0.1,53
+empirical null (mean),9,0.15000000000000002,54
+empirical null (mean),9,0.2,56
+empirical null (mean),9,0.25,55
+empirical null (mean),9,0.30000000000000004,47
+empirical null (mean),9,0.35000000000000003,56
+empirical null (mean),9,0.4,55
+empirical null (mean),9,0.45,48
+empirical null (mean),9,0.5,53
+empirical null (mean),9,0.55,59
+empirical null (mean),9,0.6000000000000001,37
+empirical null (mean),9,0.65,44
+empirical null (mean),9,0.7000000000000001,46
+empirical null (mean),9,0.75,49
+empirical null (mean),9,0.8,44
+empirical null (mean),9,0.8500000000000001,41
+empirical null (mean),9,0.9,52
+empirical null (mean),9,0.9500000000000001,75
+empirical null (elbow),9,0.0,36
+empirical null (elbow),9,0.05,43
+empirical null (elbow),9,0.1,55
+empirical null (elbow),9,0.15000000000000002,51
+empirical null (elbow),9,0.2,61
+empirical null (elbow),9,0.25,47
+empirical null (elbow),9,0.30000000000000004,62
+empirical null (elbow),9,0.35000000000000003,53
+empirical null (elbow),9,0.4,58
+empirical null (elbow),9,0.45,34
+empirical null (elbow),9,0.5,56
+empirical null (elbow),9,0.55,56
+empirical null (elbow),9,0.6000000000000001,43
+empirical null (elbow),9,0.65,40
+empirical null (elbow),9,0.7000000000000001,51
+empirical null (elbow),9,0.75,42
+empirical null (elbow),9,0.8,35
+empirical null (elbow),9,0.8500000000000001,43
+empirical null (elbow),9,0.9,50
+empirical null (elbow),9,0.9500000000000001,84
 permutation,9,0.0,86
 permutation,9,0.05,61
 permutation,9,0.1,54

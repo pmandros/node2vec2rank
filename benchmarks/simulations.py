@@ -109,7 +109,7 @@ def distances(embeddings, dims, metrics):
                             for d in dims for m in metrics])
 
 
-TESTS = {"n2v2r degree-adjusted z": "default", "n2v2r degree-adjusted z (elbow)": "elbow"}
+TESTS = ("n2v2r degree-adjusted z", "n2v2r degree-adjusted z (mean)", "n2v2r degree-adjusted z (elbow)")
 
 
 def score_methods(graphs, seed=0):
@@ -122,7 +122,9 @@ def score_methods(graphs, seed=0):
 
     all_distances = distances(uase_embeddings, DEFAULT_DIMS, METRICS)
     elbow_distances = distances(uase_embeddings, [elbow], METRICS)
-    z_all, p_all, q_all = empirical_null_test(all_distances, degree)
+    column_dimensions = np.repeat(DEFAULT_DIMS, len(METRICS))
+    z_all, p_all, q_all = empirical_null_test(all_distances, degree, dimensions=column_dimensions)
+    z_mean, p_mean, q_mean = empirical_null_test(all_distances, degree, combine="mean")
     z_elbow, p_elbow, q_elbow = empirical_null_test(elbow_distances, degree)
 
     scores = {
@@ -133,9 +135,11 @@ def score_methods(graphs, seed=0):
         "n2v2r ULSE": borda_aggregate(distances(ulse_embeddings, DEFAULT_DIMS, METRICS)),
         "n2v2r elbow dimension": borda_aggregate(elbow_distances),
         "n2v2r degree-adjusted z": np.nan_to_num(z_all, nan=-np.inf),
+        "n2v2r degree-adjusted z (mean)": np.nan_to_num(z_mean, nan=-np.inf),
         "n2v2r degree-adjusted z (elbow)": np.nan_to_num(z_elbow, nan=-np.inf),
     }
     tests = {"n2v2r degree-adjusted z": (p_all, q_all),
+             "n2v2r degree-adjusted z (mean)": (p_mean, q_mean),
              "n2v2r degree-adjusted z (elbow)": (p_elbow, q_elbow)}
     return scores, degree, tests, elbow
 

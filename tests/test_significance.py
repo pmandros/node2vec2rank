@@ -4,8 +4,8 @@ import pytest
 
 from node2vec2rank import N2V2R, select_dimension, ulse
 from node2vec2rank.diagnostics import degree_bias, ranking_agreement, top_k_stability
-from node2vec2rank.significance import (benjamini_hochberg, covariate_adjusted_zscores,
-                                        empirical_null_test)
+from node2vec2rank.significance import (_covariate_position, benjamini_hochberg, cauchy_combination,
+                                        covariate_adjusted_zscores, empirical_null_test)
 
 
 def degree_corrected_sbm_pair(rng, num_nodes=600, frac_changed=0.1, change=True):
@@ -52,6 +52,71 @@ def test_empirical_null_is_calibrated_under_no_change():
     _, p, q = empirical_null_test(distances, rng.uniform(size=5000))
     assert 0.03 < np.mean(p < 0.05) < 0.07
     assert np.mean(q < 0.05) < 0.01
+
+
+def test_empirical_null_combinations_are_calibrated_under_no_change():
+    rng = np.random.default_rng(1)
+    # correlated columns, like nested dimensions and two metrics
+    shared = rng.normal(size=(5000, 1))
+    distances = np.exp(0.7 * shared + 0.7 * rng.normal(size=(5000, 12)))
+    covariate = rng.pareto(2.5, 5000) + 1
+    dimensions = np.repeat(np.arange(6), 2)
+    for combine in ("cauchy", "mean"):
+        _, p, q = empirical_null_test(distances, covariate, combine=combine, dimensions=dimensions)
+        assert 0.02 < np.mean(p < 0.05) < 0.08
+        assert np.mean(q < 0.1) < 0.002
+
+
+def test_cauchy_combination_keeps_signal_of_few_dimensions():
+    rng = np.random.default_rng(7)
+    num_nodes, num_dims = 2000, 10
+    changed = np.zeros(num_nodes, bool)
+    changed[:100] = True
+    log_distances = rng.normal(size=(num_nodes, num_dims))
+    log_distances[changed, :2] += 4  # the change only shows in the two leading dimensions
+    covariate = rng.uniform(1, 100, num_nodes)
+    power = {}
+    for combine in ("cauchy", "mean"):
+        _, _, q = empirical_null_test(np.exp(log_distances), covariate, combine=combine)
+        power[combine] = np.mean(q[changed] < 0.1)
+        assert np.mean(q[~changed] < 0.1) < 0.01
+    assert power["cauchy"] > 0.8
+    assert power["cauchy"] > power["mean"] + 0.3
+
+
+def test_cauchy_combination_properties():
+    rng = np.random.default_rng(8)
+    uniform = rng.uniform(size=(20000, 5))
+    combined = cauchy_combination(uniform)
+    assert 0.045 < np.mean(combined < 0.05) < 0.055
+    # one small p-value dominates the rest
+    assert cauchy_combination(np.array([[1e-10, 0.5, 0.9]]))[0] < 1e-9
+    # tail approximation keeps precision for tiny p-values
+    np.testing.assert_allclose(cauchy_combination(np.array([[1e-20, 1e-20]]))[0], 1e-20, rtol=1e-6)
+    out = cauchy_combination(np.array([[0.2, np.nan], [np.nan, np.nan]]))
+    np.testing.assert_allclose(out[0], 0.2)
+    assert np.isnan(out[1])
+
+
+def test_covariate_position_extends_hub_tail_in_log_scale():
+    rng = np.random.default_rng(9)
+    degree = rng.pareto(1.5, 1000) + 1
+    rank_position = _covariate_position(degree)
+    position = _covariate_position(degree, log_tail=0.95)
+    below = degree <= np.quantile(degree, 0.95)
+    np.testing.assert_allclose(position[below], rank_position[below])
+    order = np.argsort(degree)
+    assert np.all(np.diff(position[order]) >= 0)
+    # the largest hubs are spread out beyond the unit interval
+    assert position.max() > 1.2 > rank_position.max()
+
+
+def test_empirical_null_test_rejects_bad_arguments():
+    distances = np.ones((50, 4))
+    with pytest.raises(ValueError, match="combine"):
+        empirical_null_test(distances, np.arange(50), combine="max")
+    with pytest.raises(ValueError, match="dimensions"):
+        empirical_null_test(distances, np.arange(50), dimensions=[1, 2])
 
 
 def test_changed_group_sharing_a_degree_keeps_its_signal():
