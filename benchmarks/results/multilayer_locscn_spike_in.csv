@@ -1,0 +1,201 @@
+replicate,swaps,method,auroc
+0,degree-matched,DeDi,0.49102815063385535
+0,degree-matched,UASE Borda (default),0.6293810589112603
+0,degree-matched,UASE elbow,0.538101230425056
+0,degree-matched,UASE degree-adjusted z,0.7121551081282624
+0,degree-matched,OMNI Borda (default),0.6509950596569725
+0,degree-matched,OMNI elbow,0.5992962341536167
+0,degree-matched,OMNI degree-adjusted z,0.7062127143922446
+0,degree-matched,ASE+Procrustes Borda,0.6457401193139448
+0,degree-matched,raw rows Borda,0.5931091536167039
+0,degree-matched,raw rows degree-adjusted z,0.6874533929903057
+0,random,DeDi,0.832377889634601
+0,random,UASE Borda (default),0.8807443139448173
+0,random,UASE elbow,0.7106054250559284
+0,random,UASE degree-adjusted z,0.8266452274422073
+0,random,OMNI Borda (default),0.7877167225950783
+0,random,OMNI elbow,0.7777195190156599
+0,random,OMNI degree-adjusted z,0.7153709917971663
+0,random,ASE+Procrustes Borda,0.8782042319164802
+0,random,raw rows Borda,0.8351859619686801
+0,random,raw rows degree-adjusted z,0.8544696122296793
+1,degree-matched,DeDi,0.46854026845637586
+1,degree-matched,UASE Borda (default),0.665559750186428
+1,degree-matched,UASE elbow,0.5870851976137211
+1,degree-matched,UASE degree-adjusted z,0.7621877330350485
+1,degree-matched,OMNI Borda (default),0.7139378262490679
+1,degree-matched,OMNI elbow,0.6538613907531693
+1,degree-matched,OMNI degree-adjusted z,0.7538450782997763
+1,degree-matched,ASE+Procrustes Borda,0.6955513609246831
+1,degree-matched,raw rows Borda,0.5836712341536167
+1,degree-matched,raw rows degree-adjusted z,0.7104539522744221
+1,random,DeDi,0.7547073079791201
+1,random,UASE Borda (default),0.8457424496644296
+1,random,UASE elbow,0.6508435868754661
+1,random,UASE degree-adjusted z,0.8478048098434005
+1,random,OMNI Borda (default),0.8019784675615212
+1,random,OMNI elbow,0.777183538404176
+1,random,OMNI degree-adjusted z,0.7668251304996272
+1,random,ASE+Procrustes Borda,0.8705257270693513
+1,random,raw rows Borda,0.8001957494407159
+1,random,raw rows degree-adjusted z,0.8398117076808352
+2,degree-matched,DeDi,0.5373555182699478
+2,degree-matched,UASE Borda (default),0.6221802759134973
+2,degree-matched,UASE elbow,0.5126304996271439
+2,degree-matched,UASE degree-adjusted z,0.6716769202087994
+2,degree-matched,OMNI Borda (default),0.6433398583146905
+2,degree-matched,OMNI elbow,0.5323336129753915
+2,degree-matched,OMNI degree-adjusted z,0.6703020134228188
+2,degree-matched,ASE+Procrustes Borda,0.6302782438478747
+2,degree-matched,raw rows Borda,0.5652731170768084
+2,degree-matched,raw rows degree-adjusted z,0.6026519388516033
+2,random,DeDi,0.8032252050708426
+2,random,UASE Borda (default),0.8065576062639821
+2,random,UASE elbow,0.6519738068605518
+2,random,UASE degree-adjusted z,0.8406506338553319
+2,random,OMNI Borda (default),0.7946145600298284
+2,random,OMNI elbow,0.6969961782252051
+2,random,OMNI degree-adjusted z,0.7815296420581656
+2,random,ASE+Procrustes Borda,0.8360248881431768
+2,random,raw rows Borda,0.7390007457121551
+2,random,raw rows degree-adjusted z,0.8273909395973155
+3,degree-matched,DeDi,0.4471476510067114
+3,degree-matched,UASE Borda (default),0.6491890380313199
+3,degree-matched,UASE elbow,0.4754497576435496
+3,degree-matched,UASE degree-adjusted z,0.6238581282624907
+3,degree-matched,OMNI Borda (default),0.6490958240119314
+3,degree-matched,OMNI elbow,0.5314830350484713
+3,degree-matched,OMNI degree-adjusted z,0.6045162192393736
+3,degree-matched,ASE+Procrustes Borda,0.6619477069351231
+3,degree-matched,raw rows Borda,0.5626980797912006
+3,degree-matched,raw rows degree-adjusted z,0.5496131618195377
+3,random,DeDi,0.777451528709918
+3,random,UASE Borda (default),0.8051477442207308
+3,random,UASE elbow,0.6072776845637584
+3,random,UASE degree-adjusted z,0.7139261744966443
+3,random,OMNI Borda (default),0.7439760439970171
+3,random,OMNI elbow,0.6555159395973155
+3,random,OMNI degree-adjusted z,0.6540361670395227
+3,random,ASE+Procrustes Borda,0.8473270879940343
+3,random,raw rows Borda,0.7892431021625652
+3,random,raw rows degree-adjusted z,0.7902451528709918
+4,degree-matched,DeDi,0.45241424310216255
+4,degree-matched,UASE Borda (default),0.6875699105145414
+4,degree-matched,UASE elbow,0.5326482102908278
+4,degree-matched,UASE degree-adjusted z,0.6881758016405667
+4,degree-matched,OMNI Borda (default),0.720299683072334
+4,degree-matched,OMNI elbow,0.566484899328859
+4,degree-matched,OMNI degree-adjusted z,0.6931860551826995
+4,degree-matched,ASE+Procrustes Borda,0.72479725950783
+4,degree-matched,raw rows Borda,0.5998904735272185
+4,degree-matched,raw rows degree-adjusted z,0.6037938105891126
+4,random,DeDi,0.811964019388516
+4,random,UASE Borda (default),0.8878285794183445
+4,random,UASE elbow,0.6919043624161074
+4,random,UASE degree-adjusted z,0.8746970544369873
+4,random,OMNI Borda (default),0.7644015659955258
+4,random,OMNI elbow,0.786306860551827
+4,random,OMNI degree-adjusted z,0.7930648769574944
+4,random,ASE+Procrustes Borda,0.9006455070842655
+4,random,raw rows Borda,0.8394738068605518
+4,random,raw rows degree-adjusted z,0.8916620059656972
+5,degree-matched,DeDi,0.4679343773303505
+5,degree-matched,UASE Borda (default),0.7715440902311708
+5,degree-matched,UASE elbow,0.5545651565995525
+5,degree-matched,UASE degree-adjusted z,0.7930648769574944
+5,degree-matched,OMNI Borda (default),0.7793740678598061
+5,degree-matched,OMNI elbow,0.6476043997017151
+5,degree-matched,OMNI degree-adjusted z,0.7880313199105146
+5,degree-matched,ASE+Procrustes Borda,0.7827297725577927
+5,degree-matched,raw rows Borda,0.6522534489187174
+5,degree-matched,raw rows degree-adjusted z,0.674310216256525
+5,random,DeDi,0.8281599552572707
+5,random,UASE Borda (default),0.876631245339299
+5,random,UASE elbow,0.6613767710663684
+5,random,UASE degree-adjusted z,0.8770973154362416
+5,random,OMNI Borda (default),0.8231613534675615
+5,random,OMNI elbow,0.76797865398956
+5,random,OMNI degree-adjusted z,0.8057652870991797
+5,random,ASE+Procrustes Borda,0.8967305182699478
+5,random,raw rows Borda,0.8624277591349739
+5,random,raw rows degree-adjusted z,0.8924776286353467
+6,degree-matched,DeDi,0.5522231543624161
+6,degree-matched,UASE Borda (default),0.6982662192393736
+6,degree-matched,UASE elbow,0.5698755592841164
+6,degree-matched,UASE degree-adjusted z,0.6945842654735273
+6,degree-matched,OMNI Borda (default),0.6985109060402684
+6,degree-matched,OMNI elbow,0.6185682326621924
+6,degree-matched,OMNI degree-adjusted z,0.6839578672632364
+6,degree-matched,ASE+Procrustes Borda,0.7221989187173751
+6,degree-matched,raw rows Borda,0.6214928225205071
+6,degree-matched,raw rows degree-adjusted z,0.6324804250559284
+6,random,DeDi,0.8825969425801641
+6,random,UASE Borda (default),0.915909302759135
+6,random,UASE elbow,0.6597455257270693
+6,random,UASE degree-adjusted z,0.8971150260999254
+6,random,OMNI Borda (default),0.8156110178970917
+6,random,OMNI elbow,0.7602302386278896
+6,random,OMNI degree-adjusted z,0.7988208426547353
+6,random,ASE+Procrustes Borda,0.9268502982848621
+6,random,raw rows Borda,0.8626374906785981
+6,random,raw rows degree-adjusted z,0.889634601043997
+7,degree-matched,DeDi,0.472175615212528
+7,degree-matched,UASE Borda (default),0.6241377703206562
+7,degree-matched,UASE elbow,0.5625233035048471
+7,degree-matched,UASE degree-adjusted z,0.704488255033557
+7,degree-matched,OMNI Borda (default),0.648035514541387
+7,degree-matched,OMNI elbow,0.6094915175242357
+7,degree-matched,OMNI degree-adjusted z,0.6971243475018642
+7,degree-matched,ASE+Procrustes Borda,0.6634158277404921
+7,degree-matched,raw rows Borda,0.5663450782997763
+7,degree-matched,raw rows degree-adjusted z,0.6411260253542133
+7,random,DeDi,0.7589951528709918
+7,random,UASE Borda (default),0.8450200410141685
+7,random,UASE elbow,0.6390986204325131
+7,random,UASE degree-adjusted z,0.8200503355704698
+7,random,OMNI Borda (default),0.8037611856823266
+7,random,OMNI elbow,0.756583240119314
+7,random,OMNI degree-adjusted z,0.7783836689038032
+7,random,ASE+Procrustes Borda,0.8311894108873975
+7,random,raw rows Borda,0.7923075130499627
+7,random,raw rows degree-adjusted z,0.795511744966443
+8,degree-matched,DeDi,0.5307606263982103
+8,degree-matched,UASE Borda (default),0.6588949478001491
+8,degree-matched,UASE elbow,0.5815855704697986
+8,degree-matched,UASE degree-adjusted z,0.7837201715137957
+8,degree-matched,OMNI Borda (default),0.6778873042505593
+8,degree-matched,OMNI elbow,0.6233804064131245
+8,degree-matched,OMNI degree-adjusted z,0.7594612229679344
+8,degree-matched,ASE+Procrustes Borda,0.6444001677852349
+8,degree-matched,raw rows Borda,0.5766568791946308
+8,degree-matched,raw rows degree-adjusted z,0.7036260253542133
+8,random,DeDi,0.803295115585384
+8,random,UASE Borda (default),0.8665874347501864
+8,random,UASE elbow,0.6398559843400448
+8,random,UASE degree-adjusted z,0.865981543624161
+8,random,OMNI Borda (default),0.7860971290082028
+8,random,OMNI elbow,0.7637141126025354
+8,random,OMNI degree-adjusted z,0.7775680462341537
+8,random,ASE+Procrustes Borda,0.8770041014168531
+8,random,raw rows Borda,0.8026775727069351
+8,random,raw rows degree-adjusted z,0.8480611483967189
+9,degree-matched,DeDi,0.5368894481730052
+9,degree-matched,UASE Borda (default),0.7177479492915735
+9,degree-matched,UASE elbow,0.5470497762863534
+9,degree-matched,UASE degree-adjusted z,0.767174683072334
+9,degree-matched,OMNI Borda (default),0.7167925055928411
+9,degree-matched,OMNI elbow,0.6193022930648769
+9,degree-matched,OMNI degree-adjusted z,0.7380686055182699
+9,degree-matched,ASE+Procrustes Borda,0.7582261372110365
+9,degree-matched,raw rows Borda,0.6646043064876958
+9,degree-matched,raw rows degree-adjusted z,0.7181674123788218
+9,random,DeDi,0.8336362788963461
+9,random,UASE Borda (default),0.8476882923191648
+9,random,UASE elbow,0.6683561707680835
+9,random,UASE degree-adjusted z,0.8312127143922446
+9,random,OMNI Borda (default),0.736087807606264
+9,random,OMNI elbow,0.7977605331841909
+9,random,OMNI degree-adjusted z,0.7210803504847129
+9,random,ASE+Procrustes Borda,0.8593283929903057
+9,random,raw rows Borda,0.8190366331096197
+9,random,raw rows degree-adjusted z,0.837411446681581

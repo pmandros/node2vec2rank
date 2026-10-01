@@ -229,3 +229,131 @@ The simulations are small (1,000-node), two-graph settings with community-switch
 regulatory and co-expression networks have more gradual changes, larger size and no clean rank. The
 simulated-expression benchmark covers the sample-level null, but the locCSN networks come without
 their cells. The remaining check is the shuffled-label calibration on real per-cell or per-sample data.
+
+## Multi-network comparison: is UASE the right embedding?
+
+`benchmarks/multilayer.py` (about 20 minutes on 4 cores) asks whether the joint embedding that
+node2vec2rank uses, UASE, is the right choice for ranking which nodes change across several
+networks, compared with the alternatives a reviewer would raise. MASE and COSIE are left out: they
+estimate one shared subspace with a score matrix per network, which suits comparing whole networks
+rather than ranking nodes.
+
+- **UASE**: the default Borda (dimensions 4–24 × {euclidean, cosine}), the elbow dimension, and the
+  degree-adjusted z of `significance()`.
+- **OMNI**: the omnibus embedding of Levin et al. (2017), the adjacency spectral embedding of the
+  Kn × Kn matrix whose (s, t) block is (A_s + A_t)/2. It gives each node one position per network and
+  is compared exactly like UASE (same Borda, elbow and degree-adjusted z).
+- **ASE+Procrustes**: a separate embedding of every network, rotated onto the previous one with an
+  orthogonal Procrustes fit at each dimension (the "why embed jointly?" baseline).
+- **raw rows**: each node's adjacency rows compared directly, with no embedding (Borda of euclidean
+  and cosine, and the same degree-adjusted z). This is the "why embed at all?" baseline.
+- **DeDi**: absolute degree difference.
+
+Every method ranks nodes for each sequential comparison (network t−1 against t), as
+`comp_strategy="sequential"` does. Each is scored against the nodes that changed at that transition.
+All scenarios have 1,000 nodes and 10 replicates, and each has a no-change version.
+
+The degree-adjusted z and its p-values are from `significance()` as of main at d12ebda (spline trend,
+averaged dimensions). Rerun this benchmark if the combination rule changes.
+
+| Scenario | Networks |
+|---|---|
+| switch, K = 2, 4, 8 | degree-corrected SBM, 4 blocks (p_in 0.1, p_out 0.04); at every transition a fresh 5% of nodes switch block |
+| density, K = 4 | switch, plus a different overall density per network (×1, 1.5, 0.7, 1.2), as when conditions have different cell numbers |
+| cohesion, K = 4 | 8 blocks; at every transition one community becomes twice as cohesive or dissolves (×0.3), and no node changes block |
+| weighted, K = 4 | switch with Gaussian edge weights |
+| co-expression, K = 4 | \|cor\|^6 networks from 150 samples per condition (latent module model); 5% of genes switch module per transition |
+| co-expression, unequal n | the same, with 200, 60, 150 and 80 samples, so the networks differ in noise level |
+
+![Multi-network AUROC](results/multilayer_auroc.png)
+
+Mean AUROC over transitions and replicates (sd across replicates ≤ 0.12, mostly ≤ 0.03):
+
+| method | switch K=2 | switch K=4 | switch K=8 | density | cohesion | weighted | co-expr. | co-expr. unequal n |
+|---|---|---|---|---|---|---|---|---|
+| DeDi | 0.52 | 0.50 | 0.50 | 0.50 | **0.70** | 0.54 | 0.66 | 0.63 |
+| raw rows Borda | 0.61 | 0.62 | 0.62 | 0.63 | 0.53 | 0.84 | 0.99 | 0.98 |
+| raw rows degree-adjusted z | 0.64 | 0.64 | 0.63 | 0.65 | 0.49 | 0.90 | 0.99 | 0.96 |
+| ASE+Procrustes Borda | **0.88** | 0.85 | **0.84** | 0.83 | 0.62 | 0.99 | 0.99 | 0.98 |
+| OMNI Borda (default) | 0.86 | 0.85 | 0.82 | 0.85 | 0.62 | 0.99 | 0.90 | 0.89 |
+| OMNI degree-adjusted z | 0.87 | **0.86** | 0.83 | **0.86** | 0.63 | **1.00** | 0.97 | 0.94 |
+| UASE Borda (default) | 0.82 | 0.83 | 0.81 | 0.81 | 0.61 | 0.99 | 0.98 | 0.98 |
+| UASE degree-adjusted z | 0.83 | 0.83 | 0.81 | 0.82 | 0.62 | 0.99 | **1.00** | 0.98 |
+| UASE elbow | 0.77 | 0.72 | 0.69 | 0.68 | 0.65 | 0.86 | 0.99 | **0.99** |
+
+**1. The "OMNI lets unchanged nodes drift" argument is not supported.** On the expected (noise-free)
+networks, neither embedding moves a node whose connectivity profile is unchanged. In the cohesion
+scenario the unchanged communities have distance exactly 0 under both embeddings, at dimensions 4, 8
+and 24, and both rank the changed community perfectly. OMNI instead shrinks every change by about the
+same factor (the median distance of changed nodes is 0.084 against 0.120 for UASE at dimension 4).
+That shrinkage does not alter the ranking, and at full rank the two agree
+(`results/multilayer_population_drift.csv`). The paper should not rest the choice of UASE on
+stability.
+
+**2. On sparse binary graphs OMNI and separate embeddings rank slightly better than UASE.** In the
+switch and density scenarios, OMNI's default Borda beats UASE's by 0.02–0.04 AUROC. It does so in
+almost every paired comparison (UASE wins 0% of transitions at K = 2, 21% at K = 8).
+ASE+Procrustes is as good as OMNI or better. The gap does not grow with K. Differing network
+densities hurt none of the embeddings (UASE 0.81 with them, 0.83 without).
+
+**3. On co-expression networks, the paper's use case, UASE is clearly better than OMNI.** UASE's
+Borda beats OMNI's in every one of the 60 paired co-expression comparisons (0.98 against 0.90, and
+0.98 against 0.89 with unequal sample sizes). With the degree-adjusted test, UASE finds 63% of the
+switched genes at q < 0.1 and OMNI 12% (43% against 3% with unequal samples), with no false calls
+for either. The whole gap is in the cosine distances. On one replicate, euclidean AUROCs are equal
+(0.82 at dimension 4) but cosine AUROCs are 0.96 for UASE and 0.87 for OMNI at dimension 4, and
+0.93 and 0.75 at dimension 24. Beyond dimension 12, half of OMNI's leading eigenvalues on these
+networks are negative (noise), which ASE keeps as if they were signal. The mechanism below dimension
+12 is not established.
+
+**4. Raw rows are strong on dense co-expression networks, but give no valid test and fail on
+sparse graphs.** Comparing adjacency rows directly ranks as well as UASE on co-expression (0.99), and
+better on the demo network (recall 0.76 against 0.68). But on the sparse switch graphs it is barely
+better than chance (0.61–0.64), because single edges are too noisy. Its degree-adjusted test is
+invalid on co-expression nulls: 8–12% of unchanged genes have p < 0.05, with 9–47 false calls at
+q < 0.1 per comparison, since row distances of |cor|^6 networks are not a location-scale family in
+degree. The embedding therefore buys robustness to sparsity and a valid (if conservative) test.
+
+**5. Separate embeddings are fragile.** ASE+Procrustes is competitive in every simulation, but on
+the demo network it recovers 15% of the rewired community against 68% for UASE (AUROC 0.70 against
+0.97). Its raw rankings are also degree-biased (|Spearman| 0.23–0.40 with degree under no change). The
+likely cause is inferred, not tested: with 10 communities of similar strength, the top-d
+eigenvectors of the two networks span different subspaces, which no rotation can align. A joint
+embedding avoids this.
+
+**6. Cohesion changes are a degree signal.** When a whole community becomes more or less cohesive,
+DeDi is best (0.70) and every embedding is at 0.61–0.65. Distances in a joint embedding are not the
+right tool for changes that mostly scale a node's connections, and the paper should say so.
+
+**7. The degree adjustment works for OMNI too, and the test stays conservative.** With no change, the degree-adjusted z has
+|Spearman| ≤ 0.06 with degree and no false calls at q < 0.1 in any scenario, for both UASE and OMNI
+(1.1–3.6% of nodes at p < 0.05). The raw Borda rankings of both keep the same degree biases,
+including −0.45 in weighted graphs and +0.4 in co-expression.
+
+![Multi-network degree bias](results/multilayer_degree_bias.png)
+
+**8. OMNI costs K times more memory and is 2–13× slower.** The omnibus matrix has K²n² entries,
+against Kn² for UASE. For 20,000 genes and 4 dense co-expression networks that is 51 GB against 13 GB.
+Embedding time at dimension 24 on dense weighted networks
+(`results/multilayer_runtime.csv`):
+
+| nodes | K | UASE (s) | OMNI (s) |
+|---|---|---|---|
+| 1,000 | 2 | 0.3 | 0.5 |
+| 1,000 | 8 | 1.2 | 15.8 |
+| 2,000 | 4 | 3.5 | 18.4 |
+| 2,000 | 8 | 5.4 | 47.8 |
+| 4,000 | 4 | 20.9 | 62.2 |
+
+**Real networks.** On the demo pair, UASE and OMNI tie (recall 0.68 and 0.67). On the locCSN ASD
+network with 5% of genes' neighbourhoods swapped (10 replicates, see "Real single-cell networks"),
+the best rankings for degree-matched swaps are UASE's degree-adjusted z (AUROC 0.72) and OMNI's
+(0.71). For random swaps UASE's Borda reaches 0.86 against 0.79 for OMNI's, and ASE+Procrustes
+reaches 0.87 (`results/multilayer_locscn_spike_in.csv`). No real network with more than two
+conditions and a known answer is in the repository yet, so K > 2 is only simulated.
+
+**Summary for the paper.** UASE is a sound choice for co-expression networks. It matches or beats
+every alternative there, has a valid (conservative) test that is more powerful than OMNI's, and costs K times less
+memory. It is not the best embedding for sparse binary graphs, where OMNI and aligned separate
+embeddings rank 0.02–0.04 AUROC better. The stability argument against OMNI does not hold up in
+these simulations, so the case should rest on the co-expression accuracy, the test and the cost.
