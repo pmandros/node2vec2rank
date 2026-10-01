@@ -307,6 +307,15 @@ class N2V2R:
         pairs of dimensions are then averaged and the pairs combined with a
         Cauchy combination test, so a change visible in only a few dimensions
         is not diluted by the others; ``combine="mean"`` averages all of them.
+        Prefer the mean for co-expression networks built from bulk samples,
+        where a rewired gene shifts a little in many dimensions and the mean
+        calls up to twice as many of them; the Cauchy default is far more
+        powerful when the change sits in a few leading dimensions (binary,
+        sparse and single-cell networks). Both rank nodes equally well.
+
+        The test adjusts for degree, so a node that only becomes more or less
+        of a hub is rarely called; use :meth:`degree_difference_ranking` for
+        those.
 
         Args:
             dimensions: list of embedding dimensions to combine, or "elbow";

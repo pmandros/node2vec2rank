@@ -105,6 +105,14 @@ cosine distance unstable, and better than windows of three, which lost most of t
 Disjoint blocks of dimensions (1–4, 5–8, ...) were also tried; the noisy high blocks swamped the
 signal. These exploratory runs are not in the repository.
 
+Neither combination finds pure hub changes. In the mixed hub-and-community simulations of the
+two-truths analysis (4-block degree-corrected SBM, 2,000 nodes, 5% of nodes doubling or halving their
+degree parameter), both made no or almost no calls (at most 3% of the changed nodes) with the default
+distances or with the radial (norm) distance, while the same test on the degree difference called 65%
+of hub changes in Poisson-weighted graphs (0% in binary ones), with no false calls in either case.
+A node that only gains or loses connections within its community moves along its own direction, and
+the degree adjustment compares it with nodes of its new degree, which absorbs most of that move.
+
 ![Calibration](results/calibration.png)
 
 **Calibration of the significance test.** An independent review found that the test is conservative

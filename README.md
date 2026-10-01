@@ -181,7 +181,21 @@ model = N2V2R(loader.get_graphs(), loader.get_nodes(), config=loader.config)
 ```
 
 ### Significance and diagnostics
-`model.significance()` tests every node for a larger shift between the graphs than nodes of similar degree. Each distance is compared against a robust trend with degree (a degree-adjusted empirical null). The standardised distances of neighbouring pairs of dimensions are averaged, and the pairs are combined with a Cauchy combination test, so a change that shows in only a few dimensions is not diluted by the others. The result is one z-score per node, a one-sided p-value and a Benjamini-Hochberg q-value. Like other empirical-null methods, it assumes that most nodes do not change. The p-values are conservative (typically 0.5–3.5% of unchanged nodes have p < 0.05), so its calls can be trusted but it can miss real changes. `significance(combine="mean")` averages all dimensions instead, as the first version of the test did. It is somewhat more powerful when a change spreads over many dimensions, as in simulated co-expression networks, but misses most changes in binary networks (see `benchmarks/README.md`). The z-score is also a ranking free of degree bias. By default it combines the same dimensions and metrics as the ranking; `significance(dimensions="elbow")` uses only the dimension at the elbow of the singular values, which is much more powerful when that elbow captures the change and fails when it does not. `n2v2r --significance` writes the results as `<comparison>_significance.tsv`.
+`model.significance()` tests every node for a larger shift between the graphs than nodes of similar degree. Each distance is compared against a robust trend with degree (a degree-adjusted empirical null), and the results are combined into one z-score per node, a one-sided p-value and a Benjamini-Hochberg q-value. Like other empirical-null methods, it assumes that most nodes do not change. The p-values are conservative (typically 0.5–3.5% of unchanged nodes have p < 0.05), so its calls can be trusted but it can miss real changes.
+
+Which combination of dimensions to use (numbers from `benchmarks/README.md`, 10% of nodes changed, power at q < 0.1):
+
+| | `significance()` (default, `combine="cauchy"`) | `significance(combine="mean")` |
+|---|---|---|
+| How it combines | averages neighbouring pairs of dimensions, then a Cauchy combination test over the pairs | averages all dimensions |
+| Use it for | binary or sparse networks, single-cell networks, and anything else where the change may sit in a few leading dimensions | co-expression networks built from bulk samples (WGCNA-style `\|cor\|^6`), where a rewired gene shifts a little in many dimensions |
+| Binary SBMs | 0.45–0.87 | 0.00–0.02 |
+| Simulated co-expression | 0.12–0.18 | 0.24–0.26 |
+| Real locCSN spike-ins | 0.09–0.10 | 0.05 |
+
+Both are calibrated. Neither made a false call in the network simulations, and the Cauchy combination's occasional calls in the hardest co-expression null (one or two genes in 4 of 30 replicates) stay within what the FDR level allows. Their z-scores rank the nodes equally well (AUROC within 0.01), so the choice changes how many nodes pass the cutoff, not their order. If unsure, use the default.
+
+The z-score is also a ranking free of degree bias. Because it adjusts for degree, a node that only becomes more or less of a hub (its connections grow or shrink within its community) is rarely called; look at the degree difference (`degree_difference_ranking`) for those. By default the test combines the same dimensions and metrics as the ranking; `significance(dimensions="elbow")` uses only the dimension at the elbow of the singular values, which is much more powerful when that elbow captures the change and fails when it does not. `n2v2r --significance` writes the results as `<comparison>_significance.tsv`.
 
 `node2vec2rank.diagnostics` measures how much the rankings agree across dimensions and metrics (`ranking_agreement`), how strongly they follow node degree (`degree_bias`), and how often each node is in the top (`top_k_stability`). `node2vec2rank.plotting` draws these, together with the scree plot of the joint embedding (`plot_scree(model.singular_values, model.selected_dimension)`), after `pip install "node2vec2rank[plot]"`.
 
