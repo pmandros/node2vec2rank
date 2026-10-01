@@ -475,7 +475,7 @@ Given a ranking (node integer IDs) and the true community membership matrices, i
 #             column_data, index=ranking_pd.index.to_list())
 #         top_cutoff = ranking_pd[column_name].quantile(enrich_quantile_cutoff)
 
-#         ind_keep = np.where(column_data >= top_cutoff)[0]
+#         ind_keep = np.where(np.abs(column_data) >= top_cutoff)[0]
 #         top_genes = ranking_pd.iloc[ind_keep, :].index.to_list()
 
 #         enr = gseapy.enrichr(gene_list=top_genes,
@@ -507,6 +507,17 @@ Given a ranking (node integer IDs) and the true community membership matrices, i
 #     return aggregate_enr_pd
 
 def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, prerank_min_path_size=5, prerank_max_path_size=1500, prerank_num_perms=1000, prerank_weight=0, num_threads=4, seed=42):
+    """GSEA prerank (gseapy) of every column of a ranking, aggregated over columns.
+
+    Caution: the FDRs come from gseapy's gene permutations, which treat genes as
+    independent. In network rankings, genes of a co-expression module move
+    together, so co-expressed gene sets are called even when nothing differs
+    between the networks. Use the results to explore a ranking; for calibrated
+    gene-set calls use :func:`node2vec2rank.permutation.gene_set_test`. With
+    several ranking columns, ``padj`` is the average over the columns in which
+    the set passed the cutoff, which is not an FDR; ``stability`` is the
+    fraction of columns in which it passed.
+    """
     aggregate_count_dict = defaultdict(int)
     aggregate_padj_dict = defaultdict(list)
     aggregate_NES_dict = defaultdict(list)
@@ -576,6 +587,17 @@ def prerank_gseapy(ranking_pd, library_fn, one_sided=True, padj_cutoff=0.25, pre
 
 
 def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_quantile_cutoff=0.9, organism='human'):
+    """Over-representation (gseapy enrichr) of the top genes of every column of a ranking, aggregated over columns.
+
+    Caution: the FDRs come from gseapy's gene permutations, which treat genes as
+    independent. In network rankings, genes of a co-expression module move
+    together, so co-expressed gene sets are called even when nothing differs
+    between the networks. Use the results to explore a ranking; for calibrated
+    gene-set calls use :func:`node2vec2rank.permutation.gene_set_test`. With
+    several ranking columns, ``padj`` is the average over the columns in which
+    the set passed the cutoff, which is not an FDR; ``stability`` is the
+    fraction of columns in which it passed.
+    """
     aggregate_count_dict = defaultdict(int)
     aggregate_padj_dict = defaultdict(list)
     aggregate_overlap = defaultdict(list)
@@ -588,7 +610,7 @@ def enrichr_gseapy(ranking_pd, library_fn, background, padj_cutoff=0.1, enrich_q
             np.abs(column_data), index=ranking_pd.index.to_list())
         top_cutoff = column_pd[column_name].quantile(enrich_quantile_cutoff)
 
-        ind_keep = np.where(column_data >= top_cutoff)[0]
+        ind_keep = np.where(np.abs(column_data) >= top_cutoff)[0]
         top_genes = column_pd.iloc[ind_keep, :].index.to_list()
 
         enr = gseapy.enrichr(gene_list=top_genes,

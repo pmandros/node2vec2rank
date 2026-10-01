@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from node2vec2rank.permutation import permutation_test
+from node2vec2rank.permutation import gene_set_test, permutation_test
 from node2vec2rank.simulate import coexpression_network, simulate_expression
 
 
@@ -85,3 +85,82 @@ def test_permutation_test_is_calibrated_with_scale_dependent_networks():
     result = permutation_test(group_a, group_b, build_network=covariance_network,
                               num_permutations=20, random_state=1, seed=0, embed_dimensions=[4, 8])
     assert (result["pvalue"] < 0.05).mean() < 0.1
+
+
+def _module_and_random_sets(sim, rng, size=20):
+    genes = np.asarray(sim.expression[0].columns)
+    modules = sim.modules.condition_1.to_numpy()
+    sets = {}
+    for k in np.unique(modules[modules >= 0]):
+        members = np.flatnonzero(modules == k)
+        sets[f"module{k}"] = genes[rng.choice(members, min(size, len(members)), replace=False)]
+    sets.update({f"random{j}": genes[rng.choice(len(genes), size, replace=False)] for j in range(5)})
+    rewired = np.flatnonzero(sim.rewired.to_numpy())
+    sets["rewired"] = genes[rng.choice(rewired, min(size, len(rewired)), replace=False)]
+    return sets
+
+
+def test_gene_set_test_finds_rewired_set_and_returns_nodes():
+    sim = simulate_expression(num_genes=200, num_samples=80, frac_rewired=0.1, random_state=2)
+    sets = _module_and_random_sets(sim, np.random.default_rng(0))
+    sets["too small"] = list(sim.expression[0].columns[:3])
+    sets["unknown genes"] = [f"not a gene {i}" for i in range(10)]
+    result, nodes = gene_set_test(*sim.expression, sets, num_permutations=20, random_state=0, seed=0,
+                                  embed_dimensions=[4, 8], return_nodes=True)
+    assert list(result.columns) == ["size", "score", "nes", "pvalue", "qvalue", "leading_nodes"]
+    assert "too small" not in result.index and "unknown genes" not in result.index
+    # every set is compared with its own permutations: the smallest p-value is 1 / 21
+    assert result.loc["rewired", "pvalue"] == pytest.approx(1 / 21)
+    assert result["nes"].idxmax() == "rewired"
+    assert result["leading_nodes"]["rewired"][0] in set(sets["rewired"])
+    assert result["pvalue"].between(0, 1).all()
+    assert list(nodes.columns) == ["z", "pvalue", "qvalue", "borda_ranks"]
+
+
+def test_gene_set_test_does_not_call_coexpressed_sets_under_shuffled_labels():
+    # gene-permutation methods call module gene sets here; label permutations do not
+    sim = simulate_expression(num_genes=200, num_samples=80, random_state=3)
+    pooled = pd.concat(sim.expression)
+    order = np.random.default_rng(0).permutation(len(pooled))
+    sets = _module_and_random_sets(sim, np.random.default_rng(1))
+    result = gene_set_test(pooled.iloc[order[:80]], pooled.iloc[order[80:]], sets, num_permutations=20,
+                           random_state=1, seed=0, embed_dimensions=[4, 8])
+    assert (result["qvalue"] < 0.1).sum() == 0
+
+
+def test_permutation_test_with_strata_keeps_group_composition_and_degree_difference():
+    sim = simulate_expression(num_genes=100, num_samples=60, frac_rewired=0.1, random_state=4)
+    a, b = sim.expression
+    strata = (np.repeat(["x", "y"], 30), np.repeat(["x", "y"], 30))
+    result = permutation_test(a, b, num_permutations=10, strata=strata, random_state=0, seed=0,
+                              embed_dimensions=[4], ranking="degree_difference")
+    assert result["pvalue"].between(0, 1).all()
+    with pytest.raises(ValueError):
+        permutation_test(a, b, num_permutations=10, strata=(strata[0][:5], strata[1]))
+    with pytest.raises(ValueError):
+        permutation_test(a, b, num_permutations=10, ranking="nonsense")
+
+
+def test_stratified_orders_keep_counts_per_stratum():
+    from node2vec2rank.permutation import _stratified_orders
+    strata = np.array(list("xxxxyyyyyy"))
+    orders = _stratified_orders(strata, 5, 20, np.random.default_rng(0))
+    for order in orders:
+        assert sorted(order) == list(range(10))
+        first = strata[order[:5]]
+        assert (first == "x").sum() == (strata[:5] == "x").sum()
+
+
+def test_read_gmt(tmp_path):
+    from node2vec2rank.permutation import read_gmt
+    path = tmp_path / "sets.gmt"
+    path.write_text("A\turl\tg1\tg2\nB\tdesc\tg3\n")
+    assert read_gmt(str(path)) == {"A": ["g1", "g2"], "B": ["g3"]}
+
+
+def test_parallel_permutations_match_serial():
+    sim = simulate_expression(num_genes=60, num_samples=40, frac_rewired=0.1, random_state=5)
+    kwargs = dict(num_permutations=6, random_state=0, seed=0, embed_dimensions=[4])
+    serial = permutation_test(*sim.expression, n_jobs=1, **kwargs)
+    parallel = permutation_test(*sim.expression, n_jobs=2, **kwargs)
+    pd.testing.assert_frame_equal(serial, parallel)

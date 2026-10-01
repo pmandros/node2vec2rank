@@ -1,0 +1,9 @@
+comparison,method,tested,cell_cycle_tested,called,cell_cycle_called,precision,auroc_cell_cycle
+G1 -> S,"fast set test, n2v2r",534,64,98,40,0.40816326530612246,0.8505651595744681
+G1 -> S,"fast set test, DeDi",534,64,21,7,0.3333333333333333,0.8069148936170213
+S -> G2,"fast set test, n2v2r",534,64,19,13,0.6842105263157895,0.7737699468085106
+S -> G2,"fast set test, DeDi",534,64,14,10,0.7142857142857143,0.6625
+G2 -> M,"fast set test, n2v2r",534,64,117,37,0.3162393162393162,0.8232712765957447
+G2 -> M,"fast set test, DeDi",534,64,0,0,0.0,0.49155585106382976
+null: G1 halves,"fast set test, n2v2r",534,64,0,0,0.0,0.6899601063829788
+null: G1 halves,"fast set test, DeDi",534,64,0,0,0.0,0.48503989361702127

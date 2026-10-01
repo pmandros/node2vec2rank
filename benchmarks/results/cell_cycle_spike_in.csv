@@ -1,0 +1,25 @@
+fraction_shuffled,replicate,method,planted,negatives,recall,false_calls,auroc,median_rank_of_planted
+0.3,0,"GSEA prerank, n2v2r Borda",6,213,0.0,6,0.6643192488262911,61.0
+0.3,0,"GSEA prerank, absDeDi",6,213,0.0,1,0.6298904538341158,66.0
+0.3,0,"permutation set test, n2v2r",6,213,0.0,0,0.8028169014084507,17.5
+0.3,0,"permutation set test, DeDi",6,213,0.0,2,0.827073552425665,22.5
+0.3,1,"GSEA prerank, n2v2r Borda",6,254,0.3333333333333333,6,0.7053805774278216,59.0
+0.3,1,"GSEA prerank, absDeDi",6,254,0.3333333333333333,7,0.8884514435695539,20.0
+0.3,1,"permutation set test, n2v2r",6,254,0.16666666666666666,3,0.8077427821522309,12.0
+0.3,1,"permutation set test, DeDi",6,254,0.16666666666666666,6,0.8497375328083989,11.5
+0.3,2,"GSEA prerank, n2v2r Borda",8,222,0.0,3,0.6706081081081081,83.5
+0.3,2,"GSEA prerank, absDeDi",8,222,0.0,0,0.5422297297297297,86.0
+0.3,2,"permutation set test, n2v2r",8,222,0.0,1,0.8699324324324325,30.5
+0.3,2,"permutation set test, DeDi",8,222,0.0,0,0.7207207207207207,50.0
+0.6,0,"GSEA prerank, n2v2r Borda",8,144,0.375,3,0.7282986111111112,14.5
+0.6,0,"GSEA prerank, absDeDi",8,144,0.25,1,0.8541666666666666,15.5
+0.6,0,"permutation set test, n2v2r",8,144,0.75,1,0.9809027777777778,5.0
+0.6,0,"permutation set test, DeDi",8,144,0.5,0,0.9826388888888888,5.0
+0.6,1,"GSEA prerank, n2v2r Borda",8,205,0.375,13,0.7060975609756097,35.5
+0.6,1,"GSEA prerank, absDeDi",8,205,0.375,0,0.7652439024390244,31.5
+0.6,1,"permutation set test, n2v2r",8,205,0.5,1,0.8957317073170732,5.5
+0.6,1,"permutation set test, DeDi",8,205,0.625,2,0.9835365853658536,5.0
+0.6,2,"GSEA prerank, n2v2r Borda",8,142,0.0,2,0.5801056338028169,55.5
+0.6,2,"GSEA prerank, absDeDi",8,142,0.0,0,0.7438380281690141,29.0
+0.6,2,"permutation set test, n2v2r",8,142,0.0,0,0.960387323943662,4.5
+0.6,2,"permutation set test, DeDi",8,142,0.0,0,0.9823943661971831,6.5

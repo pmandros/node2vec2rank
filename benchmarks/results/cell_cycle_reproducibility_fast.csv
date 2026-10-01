@@ -1,0 +1,5 @@
+comparison,method,spearman_scores,called_half_1,called_half_2,called_both,jaccard_calls,top20_overlap
+G1 -> S,"fast set test, n2v2r",0.7164503350003693,139,136,117,0.740506329113924,13
+G1 -> S,"fast set test, DeDi",-0.0508193105278749,0,2,0,0.0,0
+G2 -> M,"fast set test, n2v2r",0.14590276962901838,7,0,0,0.0,2
+G2 -> M,"fast set test, DeDi",0.08903375883582731,0,0,0,,1

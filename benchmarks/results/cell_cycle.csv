@@ -1,0 +1,17 @@
+comparison,method,tested,cell_cycle_tested,called,cell_cycle_called,precision,auroc_cell_cycle
+G1 -> S,"GSEA prerank, n2v2r Borda",534,64,112,38,0.3392857142857143,0.830186170212766
+G1 -> S,"GSEA prerank, absDeDi",534,64,74,34,0.4594594594594595,0.8413563829787234
+G1 -> S,"permutation set test, n2v2r",534,64,146,59,0.4041095890410959,0.9049534574468086
+G1 -> S,"permutation set test, DeDi",534,64,72,31,0.4305555555555556,0.8680186170212766
+S -> G2,"GSEA prerank, n2v2r Borda",534,64,75,18,0.24,0.5418218085106383
+S -> G2,"GSEA prerank, absDeDi",534,64,32,22,0.6875,0.594248670212766
+S -> G2,"permutation set test, n2v2r",534,64,135,36,0.26666666666666666,0.7180518617021276
+S -> G2,"permutation set test, DeDi",534,64,38,16,0.42105263157894735,0.6507978723404255
+G2 -> M,"GSEA prerank, n2v2r Borda",534,64,153,27,0.17647058823529413,0.5690159574468086
+G2 -> M,"GSEA prerank, absDeDi",534,64,90,20,0.2222222222222222,0.6124335106382979
+G2 -> M,"permutation set test, n2v2r",534,64,104,34,0.3269230769230769,0.7402925531914893
+G2 -> M,"permutation set test, DeDi",534,64,0,0,0.0,0.6153257978723404
+null: G1 halves,"GSEA prerank, n2v2r Borda",534,64,23,11,0.4782608695652174,0.5197140957446809
+null: G1 halves,"GSEA prerank, absDeDi",534,64,12,8,0.6666666666666666,0.6647273936170213
+null: G1 halves,"permutation set test, n2v2r",534,64,0,0,0.0,0.47237367021276594
+null: G1 halves,"permutation set test, DeDi",534,64,0,0,0.0,0.5471077127659575
