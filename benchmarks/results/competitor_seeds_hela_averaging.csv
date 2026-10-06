@@ -1,0 +1,16 @@
+dataset,method,runs_averaged,spearman,top_overlap
+hela,n2v2r (default),1,1.0,1.0
+hela,n2v2r (default),2,1.0,1.0
+hela,n2v2r (default),5,1.0,1.0
+hela,node2vec + Procrustes,1,0.8276167699494941,0.58
+hela,node2vec + Procrustes,2,0.9057911716151016,0.73
+hela,node2vec + Procrustes,5,0.9600254261784732,0.81
+hela,DeepWalk + Procrustes,1,0.8385052853403365,0.58
+hela,DeepWalk + Procrustes,2,0.908976483858944,0.69
+hela,DeepWalk + Procrustes,5,0.9600785465659402,0.81
+hela,PLEX.I (50 trainings),1,0.7461093721560109,0.73
+hela,PLEX.I (50 trainings),2,0.8578847352941091,0.86
+hela,PLEX.I (1 training),1,0.09580543795135948,0.2
+hela,PLEX.I (1 training),2,0.13906636428165575,0.27
+hela,DeDi,1,1.0,1.0
+hela,DGCA-style,1,1.0,1.0

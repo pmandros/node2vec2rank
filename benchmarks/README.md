@@ -374,3 +374,13 @@ The simulations are small (1,000-node), two-graph settings with community-switch
 regulatory and co-expression networks have more gradual changes, larger size and no clean rank. The
 simulated-expression benchmark covers the sample-level null, but the locCSN networks come without
 their cells. The shuffled-label calibration on real per-cell data is covered by the HeLa null split above; per-sample (bulk) data remain untested.
+
+## Run-to-run variation of competitor rankings
+
+`benchmarks/competitor_seeds.py` ranks the same network pair many times with a new seed each time: n2v2r,
+node2vec and DeepWalk (separate embeddings + Procrustes), a Python port of PLEX.I, and the deterministic DeDi
+and a DGCA-style correlation-difference score. Mean share of the top 100 shared by two runs (block model /
+co-expression / HeLa G1 → S): n2v2r 1.00 / 1.00 / 1.00; node2vec 0.96 / 0.92 / 0.61; DeepWalk 0.94 / 0.92 /
+0.60; PLEX.I with its default 50 trainings 0.24 / 0.70 / 0.75. In these two simulations node2vec and DeepWalk
+rank the changed nodes better than n2v2r (AUROC 0.998-0.999 vs 0.963-0.975; one network pair each). Full
+numbers: `results/competitor_seeds_*.csv`.

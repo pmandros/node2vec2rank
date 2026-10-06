@@ -1,0 +1,21 @@
+dataset,method,runs_averaged,spearman,top_overlap
+coexpression,n2v2r (default),1,1.0,1.0
+coexpression,n2v2r (default),2,1.0,1.0
+coexpression,n2v2r (default),5,1.0,1.0
+coexpression,n2v2r (default),10,1.0,1.0
+coexpression,node2vec + Procrustes,1,0.7223151373204649,0.88
+coexpression,node2vec + Procrustes,2,0.8428655504584047,0.96
+coexpression,node2vec + Procrustes,5,0.9160231720666101,0.98
+coexpression,node2vec + Procrustes,10,0.9578248828659884,0.98
+coexpression,DeepWalk + Procrustes,1,0.7471059820703917,0.92
+coexpression,DeepWalk + Procrustes,2,0.8432183112844532,0.95
+coexpression,DeepWalk + Procrustes,5,0.9214473501683963,0.99
+coexpression,DeepWalk + Procrustes,10,0.9570306011672016,0.98
+coexpression,PLEX.I (50 trainings),1,0.9890359057531066,0.7
+coexpression,PLEX.I (50 trainings),2,0.9926624320082881,0.72
+coexpression,PLEX.I (50 trainings),5,0.9972570389568761,0.81
+coexpression,PLEX.I (1 training),1,0.800391058792232,0.43
+coexpression,PLEX.I (1 training),2,0.8548891753363663,0.41
+coexpression,PLEX.I (1 training),5,0.9304409684122428,0.44
+coexpression,DeDi,1,1.0,1.0
+coexpression,DGCA-style,1,1.0,1.0
