@@ -1,0 +1,421 @@
+scenario,replicate,variant,elbow,auroc,precision_at_k
+dcsbm,0,embedding: joint UASE (default),4,0.9610555555555556,0.72
+dcsbm,0,embedding: ULSE,4,0.9500722222222222,0.67
+dcsbm,0,embedding: OMNI,4,0.9852444444444445,0.77
+dcsbm,0,embedding: separate ASE + Procrustes,4,0.9944888888888889,0.88
+dcsbm,0,embedding: none (raw adjacency rows),4,0.8773166666666666,0.47
+dcsbm,0,distance: euclidean only,4,0.8025277777777777,0.31
+dcsbm,0,distance: cosine only,4,0.9659944444444445,0.72
+dcsbm,0,aggregation: median rank,4,0.9689555555555556,0.79
+dcsbm,0,dimension: elbow,4,0.9999888888888889,0.99
+dcsbm,0,DeDi,4,0.4956611111111111,0.12
+dcsbm,0,dimension: 4 only,4,0.9999888888888889,0.99
+dcsbm,0,dimension: 6 only,4,0.9629222222222222,0.68
+dcsbm,0,dimension: 8 only,4,0.9648111111111111,0.69
+dcsbm,0,dimension: 10 only,4,0.9550333333333333,0.67
+dcsbm,0,dimension: 12 only,4,0.9374722222222223,0.59
+dcsbm,0,dimension: 14 only,4,0.9170611111111111,0.55
+dcsbm,0,dimension: 16 only,4,0.8968111111111111,0.53
+dcsbm,0,dimension: 18 only,4,0.889,0.48
+dcsbm,0,dimension: 20 only,4,0.8711444444444445,0.45
+dcsbm,0,dimension: 22 only,4,0.8549166666666667,0.41
+dcsbm,0,dimension: 24 only,4,0.84765,0.41
+dcsbm,1,embedding: joint UASE (default),4,0.9840944444444445,0.8
+dcsbm,1,embedding: ULSE,4,0.9626111111111111,0.71
+dcsbm,1,embedding: OMNI,4,0.9975777777777778,0.93
+dcsbm,1,embedding: separate ASE + Procrustes,4,0.9975111111111111,0.91
+dcsbm,1,embedding: none (raw adjacency rows),4,0.9213777777777777,0.59
+dcsbm,1,distance: euclidean only,4,0.8624833333333334,0.36
+dcsbm,1,distance: cosine only,4,0.9921111111111112,0.89
+dcsbm,1,aggregation: median rank,4,0.9889833333333333,0.83
+dcsbm,1,dimension: elbow,4,1.0,1.0
+dcsbm,1,DeDi,4,0.5637888888888889,0.11
+dcsbm,1,dimension: 4 only,4,1.0,1.0
+dcsbm,1,dimension: 6 only,4,0.9912888888888889,0.82
+dcsbm,1,dimension: 8 only,4,0.9878555555555556,0.82
+dcsbm,1,dimension: 10 only,4,0.9673777777777778,0.75
+dcsbm,1,dimension: 12 only,4,0.9531611111111111,0.65
+dcsbm,1,dimension: 14 only,4,0.9465277777777777,0.65
+dcsbm,1,dimension: 16 only,4,0.9315,0.58
+dcsbm,1,dimension: 18 only,4,0.9322166666666667,0.59
+dcsbm,1,dimension: 20 only,4,0.9217444444444445,0.6
+dcsbm,1,dimension: 22 only,4,0.9113944444444444,0.56
+dcsbm,1,dimension: 24 only,4,0.9022388888888889,0.55
+dcsbm,2,embedding: joint UASE (default),4,0.9896666666666667,0.84
+dcsbm,2,embedding: ULSE,4,0.9638777777777778,0.68
+dcsbm,2,embedding: OMNI,4,0.9978777777777778,0.92
+dcsbm,2,embedding: separate ASE + Procrustes,4,0.9961388888888889,0.9
+dcsbm,2,embedding: none (raw adjacency rows),4,0.9388722222222222,0.66
+dcsbm,2,distance: euclidean only,4,0.9052888888888889,0.46
+dcsbm,2,distance: cosine only,4,0.9932888888888889,0.89
+dcsbm,2,aggregation: median rank,4,0.9905055555555555,0.88
+dcsbm,2,dimension: elbow,4,1.0,1.0
+dcsbm,2,DeDi,4,0.5048055555555555,0.09
+dcsbm,2,dimension: 4 only,4,1.0,1.0
+dcsbm,2,dimension: 6 only,4,0.9999111111111111,0.99
+dcsbm,2,dimension: 8 only,4,0.9920555555555556,0.83
+dcsbm,2,dimension: 10 only,4,0.98105,0.79
+dcsbm,2,dimension: 12 only,4,0.9717833333333333,0.75
+dcsbm,2,dimension: 14 only,4,0.9649444444444445,0.74
+dcsbm,2,dimension: 16 only,4,0.9572166666666667,0.7
+dcsbm,2,dimension: 18 only,4,0.9510777777777778,0.69
+dcsbm,2,dimension: 20 only,4,0.9394944444444444,0.62
+dcsbm,2,dimension: 22 only,4,0.9340333333333334,0.59
+dcsbm,2,dimension: 24 only,4,0.9227666666666666,0.59
+dcsbm,3,embedding: joint UASE (default),4,0.9577444444444444,0.71
+dcsbm,3,embedding: ULSE,4,0.9459111111111111,0.63
+dcsbm,3,embedding: OMNI,4,0.9859333333333333,0.82
+dcsbm,3,embedding: separate ASE + Procrustes,4,0.9933666666666666,0.89
+dcsbm,3,embedding: none (raw adjacency rows),4,0.8992055555555556,0.55
+dcsbm,3,distance: euclidean only,4,0.8170055555555555,0.29
+dcsbm,3,distance: cosine only,4,0.9759944444444445,0.77
+dcsbm,3,aggregation: median rank,4,0.9671388888888889,0.78
+dcsbm,3,dimension: elbow,4,0.9999833333333333,0.99
+dcsbm,3,DeDi,4,0.552,0.19
+dcsbm,3,dimension: 4 only,4,0.9999833333333333,0.99
+dcsbm,3,dimension: 6 only,4,0.9815888888888888,0.77
+dcsbm,3,dimension: 8 only,4,0.9742944444444445,0.75
+dcsbm,3,dimension: 10 only,4,0.9525888888888889,0.67
+dcsbm,3,dimension: 12 only,4,0.93055,0.6
+dcsbm,3,dimension: 14 only,4,0.9108833333333334,0.57
+dcsbm,3,dimension: 16 only,4,0.8981666666666667,0.51
+dcsbm,3,dimension: 18 only,4,0.8808444444444444,0.45
+dcsbm,3,dimension: 20 only,4,0.8663388888888889,0.42
+dcsbm,3,dimension: 22 only,4,0.8559833333333333,0.44
+dcsbm,3,dimension: 24 only,4,0.8445722222222222,0.41
+dcsbm,4,embedding: joint UASE (default),4,0.9609444444444445,0.67
+dcsbm,4,embedding: ULSE,4,0.9514,0.68
+dcsbm,4,embedding: OMNI,4,0.9690666666666666,0.68
+dcsbm,4,embedding: separate ASE + Procrustes,4,0.9963,0.94
+dcsbm,4,embedding: none (raw adjacency rows),4,0.9035166666666666,0.53
+dcsbm,4,distance: euclidean only,4,0.8323888888888888,0.34
+dcsbm,4,distance: cosine only,4,0.9669388888888889,0.73
+dcsbm,4,aggregation: median rank,4,0.9652777777777778,0.71
+dcsbm,4,dimension: elbow,4,1.0,1.0
+dcsbm,4,DeDi,4,0.46331666666666665,0.08
+dcsbm,4,dimension: 4 only,4,1.0,1.0
+dcsbm,4,dimension: 6 only,4,0.9667222222222223,0.72
+dcsbm,4,dimension: 8 only,4,0.9670277777777778,0.71
+dcsbm,4,dimension: 10 only,4,0.9471166666666667,0.6
+dcsbm,4,dimension: 12 only,4,0.9314722222222223,0.57
+dcsbm,4,dimension: 14 only,4,0.9165944444444445,0.55
+dcsbm,4,dimension: 16 only,4,0.9051388888888889,0.52
+dcsbm,4,dimension: 18 only,4,0.8934388888888889,0.52
+dcsbm,4,dimension: 20 only,4,0.8724055555555555,0.44
+dcsbm,4,dimension: 22 only,4,0.8687444444444444,0.46
+dcsbm,4,dimension: 24 only,4,0.8591111111111112,0.45
+dcsbm,5,embedding: joint UASE (default),4,0.9820333333333333,0.76
+dcsbm,5,embedding: ULSE,4,0.9523611111111111,0.63
+dcsbm,5,embedding: OMNI,4,0.9985666666666667,0.96
+dcsbm,5,embedding: separate ASE + Procrustes,4,0.9969222222222223,0.91
+dcsbm,5,embedding: none (raw adjacency rows),4,0.93175,0.64
+dcsbm,5,distance: euclidean only,4,0.8573166666666666,0.33
+dcsbm,5,distance: cosine only,4,0.9908333333333333,0.87
+dcsbm,5,aggregation: median rank,4,0.9853388888888889,0.83
+dcsbm,5,dimension: elbow,4,1.0,1.0
+dcsbm,5,DeDi,4,0.4979388888888889,0.13
+dcsbm,5,dimension: 4 only,4,1.0,1.0
+dcsbm,5,dimension: 6 only,4,0.9916055555555555,0.83
+dcsbm,5,dimension: 8 only,4,0.9824555555555555,0.77
+dcsbm,5,dimension: 10 only,4,0.9714166666666667,0.73
+dcsbm,5,dimension: 12 only,4,0.9596888888888889,0.69
+dcsbm,5,dimension: 14 only,4,0.9480388888888889,0.68
+dcsbm,5,dimension: 16 only,4,0.9339388888888889,0.62
+dcsbm,5,dimension: 18 only,4,0.9246666666666666,0.58
+dcsbm,5,dimension: 20 only,4,0.9112,0.54
+dcsbm,5,dimension: 22 only,4,0.8976888888888889,0.5
+dcsbm,5,dimension: 24 only,4,0.8878,0.51
+dcsbm,6,embedding: joint UASE (default),4,0.9651055555555555,0.73
+dcsbm,6,embedding: ULSE,4,0.9641222222222222,0.69
+dcsbm,6,embedding: OMNI,4,0.9878555555555556,0.82
+dcsbm,6,embedding: separate ASE + Procrustes,4,0.9961333333333333,0.92
+dcsbm,6,embedding: none (raw adjacency rows),4,0.9139388888888889,0.57
+dcsbm,6,distance: euclidean only,4,0.8284555555555555,0.34
+dcsbm,6,distance: cosine only,4,0.9847944444444444,0.77
+dcsbm,6,aggregation: median rank,4,0.9777055555555556,0.8
+dcsbm,6,dimension: elbow,4,1.0,1.0
+dcsbm,6,DeDi,4,0.5215055555555556,0.15
+dcsbm,6,dimension: 4 only,4,1.0,1.0
+dcsbm,6,dimension: 6 only,4,0.9852222222222222,0.83
+dcsbm,6,dimension: 8 only,4,0.9785111111111111,0.76
+dcsbm,6,dimension: 10 only,4,0.9567666666666667,0.67
+dcsbm,6,dimension: 12 only,4,0.9422444444444444,0.65
+dcsbm,6,dimension: 14 only,4,0.9289777777777778,0.59
+dcsbm,6,dimension: 16 only,4,0.9135444444444445,0.58
+dcsbm,6,dimension: 18 only,4,0.8996833333333333,0.56
+dcsbm,6,dimension: 20 only,4,0.8881388888888889,0.52
+dcsbm,6,dimension: 22 only,4,0.8762166666666666,0.5
+dcsbm,6,dimension: 24 only,4,0.8682,0.48
+dcsbm,7,embedding: joint UASE (default),4,0.9647777777777777,0.73
+dcsbm,7,embedding: ULSE,4,0.9405388888888889,0.64
+dcsbm,7,embedding: OMNI,4,0.9896611111111111,0.86
+dcsbm,7,embedding: separate ASE + Procrustes,4,0.9959055555555556,0.9
+dcsbm,7,embedding: none (raw adjacency rows),4,0.8878444444444444,0.57
+dcsbm,7,distance: euclidean only,4,0.8289388888888889,0.34
+dcsbm,7,distance: cosine only,4,0.9809277777777777,0.8
+dcsbm,7,aggregation: median rank,4,0.9736111111111111,0.82
+dcsbm,7,dimension: elbow,4,0.9999777777777777,0.99
+dcsbm,7,DeDi,4,0.5707944444444445,0.13
+dcsbm,7,dimension: 4 only,4,0.9999777777777777,0.99
+dcsbm,7,dimension: 6 only,4,0.9817222222222223,0.79
+dcsbm,7,dimension: 8 only,4,0.9642388888888889,0.72
+dcsbm,7,dimension: 10 only,4,0.9397777777777778,0.66
+dcsbm,7,dimension: 12 only,4,0.9302388888888888,0.59
+dcsbm,7,dimension: 14 only,4,0.9268222222222222,0.58
+dcsbm,7,dimension: 16 only,4,0.9086611111111111,0.54
+dcsbm,7,dimension: 18 only,4,0.9021833333333333,0.54
+dcsbm,7,dimension: 20 only,4,0.8888666666666667,0.51
+dcsbm,7,dimension: 22 only,4,0.8840055555555556,0.47
+dcsbm,7,dimension: 24 only,4,0.87935,0.44
+dcsbm,8,embedding: joint UASE (default),3,0.9732666666666666,0.77
+dcsbm,8,embedding: ULSE,3,0.9529333333333333,0.64
+dcsbm,8,embedding: OMNI,3,0.9962777777777778,0.91
+dcsbm,8,embedding: separate ASE + Procrustes,3,0.9931611111111112,0.87
+dcsbm,8,embedding: none (raw adjacency rows),3,0.9103277777777777,0.55
+dcsbm,8,distance: euclidean only,3,0.8287777777777777,0.32
+dcsbm,8,distance: cosine only,3,0.99055,0.85
+dcsbm,8,aggregation: median rank,3,0.9860722222222222,0.81
+dcsbm,8,dimension: elbow,3,0.9981555555555556,0.97
+dcsbm,8,DeDi,3,0.6060666666666666,0.22
+dcsbm,8,dimension: 4 only,3,1.0,1.0
+dcsbm,8,dimension: 6 only,3,0.9901555555555556,0.84
+dcsbm,8,dimension: 8 only,3,0.9741833333333333,0.74
+dcsbm,8,dimension: 10 only,3,0.9551777777777778,0.68
+dcsbm,8,dimension: 12 only,3,0.9365888888888889,0.63
+dcsbm,8,dimension: 14 only,3,0.9316277777777778,0.65
+dcsbm,8,dimension: 16 only,3,0.9213444444444444,0.61
+dcsbm,8,dimension: 18 only,3,0.9127055555555555,0.53
+dcsbm,8,dimension: 20 only,3,0.9093722222222222,0.54
+dcsbm,8,dimension: 22 only,3,0.9015944444444445,0.52
+dcsbm,8,dimension: 24 only,3,0.9004444444444445,0.52
+dcsbm,9,embedding: joint UASE (default),4,0.9737111111111111,0.78
+dcsbm,9,embedding: ULSE,4,0.9542111111111111,0.64
+dcsbm,9,embedding: OMNI,4,0.9902333333333333,0.9
+dcsbm,9,embedding: separate ASE + Procrustes,4,0.9952111111111112,0.91
+dcsbm,9,embedding: none (raw adjacency rows),4,0.9081222222222223,0.56
+dcsbm,9,distance: euclidean only,4,0.8672777777777778,0.43
+dcsbm,9,distance: cosine only,4,0.9831944444444445,0.83
+dcsbm,9,aggregation: median rank,4,0.9737222222222223,0.83
+dcsbm,9,dimension: elbow,4,0.9999888888888889,0.99
+dcsbm,9,DeDi,4,0.4724555555555556,0.1
+dcsbm,9,dimension: 4 only,4,0.9999888888888889,0.99
+dcsbm,9,dimension: 6 only,4,0.9971111111111111,0.92
+dcsbm,9,dimension: 8 only,4,0.988,0.85
+dcsbm,9,dimension: 10 only,4,0.9607555555555556,0.7
+dcsbm,9,dimension: 12 only,4,0.9491388888888889,0.66
+dcsbm,9,dimension: 14 only,4,0.9297944444444445,0.66
+dcsbm,9,dimension: 16 only,4,0.9161277777777778,0.6
+dcsbm,9,dimension: 18 only,4,0.9104833333333333,0.56
+dcsbm,9,dimension: 20 only,4,0.8929055555555555,0.55
+dcsbm,9,dimension: 22 only,4,0.8750277777777777,0.53
+dcsbm,9,dimension: 24 only,4,0.8657222222222222,0.51
+coexpression,0,embedding: joint UASE (default),5,0.9643222222222222,0.79
+coexpression,0,embedding: ULSE,5,0.9681833333333333,0.8
+coexpression,0,embedding: OMNI,5,0.7951888888888888,0.33
+coexpression,0,embedding: separate ASE + Procrustes,5,0.9821166666666666,0.82
+coexpression,0,embedding: none (raw adjacency rows),5,0.9659666666666666,0.76
+coexpression,0,distance: euclidean only,5,0.7183944444444444,0.25
+coexpression,0,distance: cosine only,5,0.9208722222222222,0.42
+coexpression,0,aggregation: median rank,5,0.9179555555555555,0.68
+coexpression,0,dimension: elbow,5,0.9840777777777778,0.83
+coexpression,0,DeDi,5,0.6769444444444445,0.17
+coexpression,0,dimension: 4 only,5,0.9241111111111111,0.75
+coexpression,0,dimension: 6 only,5,0.9537555555555556,0.66
+coexpression,0,dimension: 8 only,5,0.9508777777777778,0.66
+coexpression,0,dimension: 10 only,5,0.9446611111111111,0.68
+coexpression,0,dimension: 12 only,5,0.9478777777777778,0.7
+coexpression,0,dimension: 14 only,5,0.94855,0.71
+coexpression,0,dimension: 16 only,5,0.9521166666666666,0.73
+coexpression,0,dimension: 18 only,5,0.9545111111111111,0.74
+coexpression,0,dimension: 20 only,5,0.9546666666666667,0.76
+coexpression,0,dimension: 22 only,5,0.9550388888888889,0.73
+coexpression,0,dimension: 24 only,5,0.9599944444444445,0.73
+coexpression,1,embedding: joint UASE (default),5,0.9547166666666667,0.65
+coexpression,1,embedding: ULSE,5,0.9605555555555556,0.68
+coexpression,1,embedding: OMNI,5,0.74845,0.28
+coexpression,1,embedding: separate ASE + Procrustes,5,0.9819722222222222,0.74
+coexpression,1,embedding: none (raw adjacency rows),5,0.9521,0.66
+coexpression,1,distance: euclidean only,5,0.6871,0.2
+coexpression,1,distance: cosine only,5,0.9173833333333333,0.44
+coexpression,1,aggregation: median rank,5,0.8892444444444444,0.55
+coexpression,1,dimension: elbow,5,0.9815277777777778,0.77
+coexpression,1,DeDi,5,0.6555444444444445,0.16
+coexpression,1,dimension: 4 only,5,0.891,0.65
+coexpression,1,dimension: 6 only,5,0.9495833333333333,0.6
+coexpression,1,dimension: 8 only,5,0.9400166666666666,0.55
+coexpression,1,dimension: 10 only,5,0.9315111111111111,0.57
+coexpression,1,dimension: 12 only,5,0.9348888888888889,0.58
+coexpression,1,dimension: 14 only,5,0.9396111111111111,0.61
+coexpression,1,dimension: 16 only,5,0.9433333333333334,0.61
+coexpression,1,dimension: 18 only,5,0.9441555555555555,0.63
+coexpression,1,dimension: 20 only,5,0.9449555555555555,0.65
+coexpression,1,dimension: 22 only,5,0.9507333333333333,0.67
+coexpression,1,dimension: 24 only,5,0.9541055555555555,0.69
+coexpression,2,embedding: joint UASE (default),5,0.9685888888888889,0.72
+coexpression,2,embedding: ULSE,5,0.9684777777777778,0.72
+coexpression,2,embedding: OMNI,5,0.7809722222222222,0.25
+coexpression,2,embedding: separate ASE + Procrustes,5,0.9879833333333333,0.86
+coexpression,2,embedding: none (raw adjacency rows),5,0.9587388888888889,0.73
+coexpression,2,distance: euclidean only,5,0.7102888888888889,0.21
+coexpression,2,distance: cosine only,5,0.9242166666666667,0.45
+coexpression,2,aggregation: median rank,5,0.9391833333333334,0.66
+coexpression,2,dimension: elbow,5,0.9918333333333333,0.88
+coexpression,2,DeDi,5,0.6536666666666666,0.12
+coexpression,2,dimension: 4 only,5,0.9646555555555556,0.82
+coexpression,2,dimension: 6 only,5,0.9629611111111112,0.66
+coexpression,2,dimension: 8 only,5,0.9555333333333333,0.65
+coexpression,2,dimension: 10 only,5,0.9517222222222222,0.66
+coexpression,2,dimension: 12 only,5,0.9536055555555556,0.67
+coexpression,2,dimension: 14 only,5,0.9559944444444445,0.68
+coexpression,2,dimension: 16 only,5,0.9588222222222222,0.69
+coexpression,2,dimension: 18 only,5,0.9593777777777778,0.7
+coexpression,2,dimension: 20 only,5,0.9628055555555556,0.7
+coexpression,2,dimension: 22 only,5,0.9630444444444445,0.72
+coexpression,2,dimension: 24 only,5,0.9617277777777777,0.73
+coexpression,3,embedding: joint UASE (default),5,0.9743833333333334,0.76
+coexpression,3,embedding: ULSE,5,0.9779611111111111,0.74
+coexpression,3,embedding: OMNI,5,0.8012333333333334,0.3
+coexpression,3,embedding: separate ASE + Procrustes,5,0.9922277777777778,0.88
+coexpression,3,embedding: none (raw adjacency rows),5,0.9630111111111112,0.71
+coexpression,3,distance: euclidean only,5,0.7533055555555556,0.24
+coexpression,3,distance: cosine only,5,0.9092944444444444,0.42
+coexpression,3,aggregation: median rank,5,0.9483444444444444,0.68
+coexpression,3,dimension: elbow,5,0.9941388888888889,0.86
+coexpression,3,DeDi,5,0.7441222222222222,0.22
+coexpression,3,dimension: 4 only,5,0.9614722222222222,0.77
+coexpression,3,dimension: 6 only,5,0.9770888888888889,0.73
+coexpression,3,dimension: 8 only,5,0.9661833333333333,0.7
+coexpression,3,dimension: 10 only,5,0.9661277777777778,0.7
+coexpression,3,dimension: 12 only,5,0.9678722222222222,0.71
+coexpression,3,dimension: 14 only,5,0.9670055555555556,0.73
+coexpression,3,dimension: 16 only,5,0.9673111111111111,0.74
+coexpression,3,dimension: 18 only,5,0.96755,0.74
+coexpression,3,dimension: 20 only,5,0.9637666666666667,0.76
+coexpression,3,dimension: 22 only,5,0.9672555555555555,0.75
+coexpression,3,dimension: 24 only,5,0.9682722222222222,0.77
+coexpression,4,embedding: joint UASE (default),5,0.9597111111111111,0.69
+coexpression,4,embedding: ULSE,5,0.9641777777777778,0.73
+coexpression,4,embedding: OMNI,5,0.7760055555555555,0.31
+coexpression,4,embedding: separate ASE + Procrustes,5,0.98395,0.79
+coexpression,4,embedding: none (raw adjacency rows),5,0.9598888888888889,0.73
+coexpression,4,distance: euclidean only,5,0.7258888888888889,0.28
+coexpression,4,distance: cosine only,5,0.9142611111111111,0.37
+coexpression,4,aggregation: median rank,5,0.91545,0.6
+coexpression,4,dimension: elbow,5,0.9834388888888889,0.77
+coexpression,4,DeDi,5,0.6398555555555555,0.08
+coexpression,4,dimension: 4 only,5,0.9205611111111112,0.65
+coexpression,4,dimension: 6 only,5,0.9570555555555555,0.68
+coexpression,4,dimension: 8 only,5,0.9412111111111111,0.61
+coexpression,4,dimension: 10 only,5,0.9439833333333333,0.63
+coexpression,4,dimension: 12 only,5,0.9482666666666667,0.66
+coexpression,4,dimension: 14 only,5,0.9500777777777778,0.68
+coexpression,4,dimension: 16 only,5,0.9517444444444444,0.68
+coexpression,4,dimension: 18 only,5,0.9529388888888889,0.71
+coexpression,4,dimension: 20 only,5,0.9538277777777778,0.73
+coexpression,4,dimension: 22 only,5,0.9537555555555556,0.75
+coexpression,4,dimension: 24 only,5,0.9570888888888889,0.77
+coexpression,5,embedding: joint UASE (default),5,0.9816944444444444,0.76
+coexpression,5,embedding: ULSE,5,0.9830111111111111,0.8
+coexpression,5,embedding: OMNI,5,0.7732111111111111,0.3
+coexpression,5,embedding: separate ASE + Procrustes,5,0.9901222222222222,0.81
+coexpression,5,embedding: none (raw adjacency rows),5,0.9754833333333334,0.76
+coexpression,5,distance: euclidean only,5,0.7062833333333334,0.2
+coexpression,5,distance: cosine only,5,0.9331,0.47
+coexpression,5,aggregation: median rank,5,0.9440611111111111,0.67
+coexpression,5,dimension: elbow,5,0.99425,0.87
+coexpression,5,DeDi,5,0.6671,0.14
+coexpression,5,dimension: 4 only,5,0.9727833333333333,0.85
+coexpression,5,dimension: 6 only,5,0.9704666666666667,0.68
+coexpression,5,dimension: 8 only,5,0.9559611111111112,0.63
+coexpression,5,dimension: 10 only,5,0.9614388888888888,0.66
+coexpression,5,dimension: 12 only,5,0.9660944444444445,0.69
+coexpression,5,dimension: 14 only,5,0.9708222222222223,0.72
+coexpression,5,dimension: 16 only,5,0.9728833333333333,0.71
+coexpression,5,dimension: 18 only,5,0.9769,0.74
+coexpression,5,dimension: 20 only,5,0.9758444444444444,0.75
+coexpression,5,dimension: 22 only,5,0.97545,0.75
+coexpression,5,dimension: 24 only,5,0.9749833333333333,0.76
+coexpression,6,embedding: joint UASE (default),5,0.9637111111111111,0.76
+coexpression,6,embedding: ULSE,5,0.9665277777777778,0.74
+coexpression,6,embedding: OMNI,5,0.7948611111111111,0.4
+coexpression,6,embedding: separate ASE + Procrustes,5,0.9939333333333333,0.86
+coexpression,6,embedding: none (raw adjacency rows),5,0.9560666666666666,0.7
+coexpression,6,distance: euclidean only,5,0.7118555555555556,0.24
+coexpression,6,distance: cosine only,5,0.9185222222222222,0.44
+coexpression,6,aggregation: median rank,5,0.9334333333333333,0.66
+coexpression,6,dimension: elbow,5,0.9850388888888889,0.77
+coexpression,6,DeDi,5,0.6630333333333334,0.13
+coexpression,6,dimension: 4 only,5,0.9046166666666666,0.75
+coexpression,6,dimension: 6 only,5,0.9651166666666666,0.65
+coexpression,6,dimension: 8 only,5,0.9521222222222222,0.65
+coexpression,6,dimension: 10 only,5,0.9465722222222223,0.69
+coexpression,6,dimension: 12 only,5,0.9477833333333333,0.71
+coexpression,6,dimension: 14 only,5,0.9499277777777778,0.73
+coexpression,6,dimension: 16 only,5,0.9543333333333334,0.73
+coexpression,6,dimension: 18 only,5,0.9556277777777777,0.74
+coexpression,6,dimension: 20 only,5,0.9538944444444445,0.74
+coexpression,6,dimension: 22 only,5,0.9548222222222222,0.74
+coexpression,6,dimension: 24 only,5,0.9573833333333334,0.74
+coexpression,7,embedding: joint UASE (default),5,0.9546611111111111,0.72
+coexpression,7,embedding: ULSE,5,0.9639277777777778,0.74
+coexpression,7,embedding: OMNI,5,0.7495055555555555,0.3
+coexpression,7,embedding: separate ASE + Procrustes,5,0.9782333333333333,0.77
+coexpression,7,embedding: none (raw adjacency rows),5,0.9646277777777778,0.77
+coexpression,7,distance: euclidean only,5,0.7012444444444444,0.25
+coexpression,7,distance: cosine only,5,0.9408944444444445,0.53
+coexpression,7,aggregation: median rank,5,0.89895,0.58
+coexpression,7,dimension: elbow,5,0.97875,0.77
+coexpression,7,DeDi,5,0.6488111111111111,0.13
+coexpression,7,dimension: 4 only,5,0.8429,0.61
+coexpression,7,dimension: 6 only,5,0.9555388888888889,0.63
+coexpression,7,dimension: 8 only,5,0.9453277777777778,0.62
+coexpression,7,dimension: 10 only,5,0.9403222222222222,0.67
+coexpression,7,dimension: 12 only,5,0.9412166666666667,0.69
+coexpression,7,dimension: 14 only,5,0.9441555555555555,0.71
+coexpression,7,dimension: 16 only,5,0.9458888888888889,0.72
+coexpression,7,dimension: 18 only,5,0.9467611111111112,0.73
+coexpression,7,dimension: 20 only,5,0.946,0.72
+coexpression,7,dimension: 22 only,5,0.9439055555555556,0.74
+coexpression,7,dimension: 24 only,5,0.9448555555555556,0.74
+coexpression,8,embedding: joint UASE (default),5,0.9504611111111111,0.73
+coexpression,8,embedding: ULSE,5,0.9523444444444444,0.71
+coexpression,8,embedding: OMNI,5,0.7577222222222222,0.32
+coexpression,8,embedding: separate ASE + Procrustes,5,0.9797222222222223,0.8
+coexpression,8,embedding: none (raw adjacency rows),5,0.9490888888888889,0.7
+coexpression,8,distance: euclidean only,5,0.6924944444444444,0.27
+coexpression,8,distance: cosine only,5,0.9158388888888889,0.48
+coexpression,8,aggregation: median rank,5,0.8856055555555555,0.65
+coexpression,8,dimension: elbow,5,0.9820722222222222,0.77
+coexpression,8,DeDi,5,0.6314,0.12
+coexpression,8,dimension: 4 only,5,0.9100888888888888,0.75
+coexpression,8,dimension: 6 only,5,0.9563333333333334,0.65
+coexpression,8,dimension: 8 only,5,0.9399,0.63
+coexpression,8,dimension: 10 only,5,0.9342222222222222,0.63
+coexpression,8,dimension: 12 only,5,0.9364222222222223,0.66
+coexpression,8,dimension: 14 only,5,0.9371777777777778,0.67
+coexpression,8,dimension: 16 only,5,0.9381944444444444,0.7
+coexpression,8,dimension: 18 only,5,0.93955,0.7
+coexpression,8,dimension: 20 only,5,0.9407666666666666,0.72
+coexpression,8,dimension: 22 only,5,0.9420833333333334,0.74
+coexpression,8,dimension: 24 only,5,0.9432277777777778,0.74
+coexpression,9,embedding: joint UASE (default),5,0.9628333333333333,0.74
+coexpression,9,embedding: ULSE,5,0.9614777777777778,0.74
+coexpression,9,embedding: OMNI,5,0.7991,0.35
+coexpression,9,embedding: separate ASE + Procrustes,5,0.9834611111111111,0.77
+coexpression,9,embedding: none (raw adjacency rows),5,0.9622611111111111,0.77
+coexpression,9,distance: euclidean only,5,0.6909166666666666,0.18
+coexpression,9,distance: cosine only,5,0.9316111111111111,0.46
+coexpression,9,aggregation: median rank,5,0.9340555555555555,0.67
+coexpression,9,dimension: elbow,5,0.9854388888888889,0.82
+coexpression,9,DeDi,5,0.6276777777777778,0.06
+coexpression,9,dimension: 4 only,5,0.97675,0.87
+coexpression,9,dimension: 6 only,5,0.9625888888888889,0.64
+coexpression,9,dimension: 8 only,5,0.9510055555555555,0.66
+coexpression,9,dimension: 10 only,5,0.9382222222222222,0.62
+coexpression,9,dimension: 12 only,5,0.9410111111111111,0.64
+coexpression,9,dimension: 14 only,5,0.94525,0.65
+coexpression,9,dimension: 16 only,5,0.9481888888888889,0.67
+coexpression,9,dimension: 18 only,5,0.9518444444444445,0.71
+coexpression,9,dimension: 20 only,5,0.9528111111111112,0.71
+coexpression,9,dimension: 22 only,5,0.9521722222222222,0.71
+coexpression,9,dimension: 24 only,5,0.9541222222222222,0.73

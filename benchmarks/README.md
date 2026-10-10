@@ -384,3 +384,14 @@ co-expression / HeLa G1 → S): n2v2r 1.00 / 1.00 / 1.00; node2vec 0.96 / 0.92 /
 0.60; PLEX.I with its default 50 trainings 0.24 / 0.70 / 0.75. In these two simulations node2vec and DeepWalk
 rank the changed nodes better than n2v2r (AUROC 0.998-0.999 vs 0.963-0.975; one network pair each). Full
 numbers: `results/competitor_seeds_*.csv`.
+
+## Revision runs (split/merge, ablation, HeLa sensitivity, runtime)
+
+- `revision_sims.py --part splitmerge`: community split and merge (and switch) in the degree-corrected block model
+  and the co-expression simulation; `revision_splitmerge.csv`.
+- `revision_sims.py --part ablation`: one component of n2v2r varied at a time (embedding, dimension, distance,
+  aggregation) on the `simulations.py` settings; `revision_ablation.csv`.
+- `revision_hela.py --part dimensions --revelio-dir ...`: HeLa singular values, single-dimension rankings and the
+  fast set test per dimension choice, next to the null split; `revision_hela_{spectrum,rankings,set_test}.csv`.
+- `revision_hela.py --part grid --revelio-dir ...`: metacell size x soft power; `revision_hela_grid.csv`.
+- `runtime.py`: runtime and peak memory of n2v2r and DeDi up to 20,000 nodes; `runtime.csv`.
