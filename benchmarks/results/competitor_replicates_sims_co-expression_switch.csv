@@ -1,0 +1,71 @@
+setting,replicate,method,auroc,precision_at_k,seconds
+co-expression switch,0,n2v2r (default),0.9728277777777776,0.81,0.1552254749999519
+co-expression switch,0,n2v2r at the number of communities (oracle),0.9943611111111113,0.89,0.0345472039998639
+co-expression switch,0,node2vec + Procrustes,0.9974888888888888,0.94,22.72774526400008
+co-expression switch,0,DeepWalk + Procrustes,0.9980888888888888,0.95,22.11056211999994
+co-expression switch,0,PLEX.I (50 trainings),0.7979833333333334,0.42,78.27294091500016
+co-expression switch,0,DeDi,0.6563111111111111,0.12,0.0033579619998818
+co-expression switch,0,DGCA-style,0.9885222222222222,0.9,0.0519009590000223
+co-expression switch,1,n2v2r (default),0.9662333333333334,0.71,0.1825746970000636
+co-expression switch,1,n2v2r at the number of communities (oracle),0.9931111111111112,0.87,0.0370770710001124
+co-expression switch,1,node2vec + Procrustes,0.9981277777777776,0.93,21.10518803900004
+co-expression switch,1,DeepWalk + Procrustes,0.9985111111111112,0.95,21.830707570999948
+co-expression switch,1,PLEX.I (50 trainings),0.7227055555555556,0.36,90.27440067399992
+co-expression switch,1,DeDi,0.6487555555555555,0.15,0.003666080999892
+co-expression switch,1,DGCA-style,0.9810444444444444,0.85,0.0531845020000218
+co-expression switch,2,n2v2r (default),0.9614944444444444,0.73,0.2107560179999836
+co-expression switch,2,n2v2r at the number of communities (oracle),0.9860111111111112,0.82,0.0370496049999928
+co-expression switch,2,node2vec + Procrustes,0.9974444444444444,0.94,21.983910465000008
+co-expression switch,2,DeepWalk + Procrustes,0.9968166666666668,0.92,22.89823258099977
+co-expression switch,2,PLEX.I (50 trainings),0.7668111111111111,0.43,82.23028789499995
+co-expression switch,2,DeDi,0.6881,0.17,0.003673721000041
+co-expression switch,2,DGCA-style,0.9778111111111112,0.9,0.056664567000098
+co-expression switch,3,n2v2r (default),0.9690277777777778,0.73,0.1830319440000494
+co-expression switch,3,n2v2r at the number of communities (oracle),0.9857111111111112,0.82,0.0383155339998211
+co-expression switch,3,node2vec + Procrustes,0.9980277777777776,0.96,21.86436526400007
+co-expression switch,3,DeepWalk + Procrustes,0.9955833333333334,0.9,23.056714203999945
+co-expression switch,3,PLEX.I (50 trainings),0.7880555555555555,0.48,83.90046050299998
+co-expression switch,3,DeDi,0.7001333333333334,0.19,0.003660616000161
+co-expression switch,3,DGCA-style,0.9849111111111112,0.89,0.0514926340001693
+co-expression switch,4,n2v2r (default),0.9624222222222222,0.71,0.2054298160001053
+co-expression switch,4,n2v2r at the number of communities (oracle),0.9806555555555556,0.75,0.0828256719996716
+co-expression switch,4,node2vec + Procrustes,0.9969444444444444,0.93,40.27249259099972
+co-expression switch,4,DeepWalk + Procrustes,0.9983722222222222,0.95,34.65525754500004
+co-expression switch,4,PLEX.I (50 trainings),0.7231777777777778,0.35,83.55716925000024
+co-expression switch,4,DeDi,0.6104888888888889,0.12,0.0039858600002844
+co-expression switch,4,DGCA-style,0.9813888888888888,0.87,0.0771078009997836
+co-expression switch,5,n2v2r (default),0.9572388888888888,0.75,0.2976634490000833
+co-expression switch,5,n2v2r at the number of communities (oracle),0.9831055555555556,0.78,0.0435079939998104
+co-expression switch,5,node2vec + Procrustes,0.9991722222222222,0.97,37.70574581799974
+co-expression switch,5,DeepWalk + Procrustes,0.9968333333333332,0.91,29.28491659999964
+co-expression switch,5,PLEX.I (50 trainings),0.7382055555555556,0.37,86.44938404300001
+co-expression switch,5,DeDi,0.6187111111111111,0.11,0.0042742299997371
+co-expression switch,5,DGCA-style,0.9965333333333334,0.89,0.0850406109998402
+co-expression switch,6,n2v2r (default),0.9498444444444444,0.69,0.4302342349997161
+co-expression switch,6,n2v2r at the number of communities (oracle),0.9826666666666668,0.77,0.0594603240001561
+co-expression switch,6,node2vec + Procrustes,0.9976722222222222,0.93,35.885431377999794
+co-expression switch,6,DeepWalk + Procrustes,0.9976333333333334,0.95,34.362171408999984
+co-expression switch,6,PLEX.I (50 trainings),0.7331722222222222,0.4,97.3034151339998
+co-expression switch,6,DeDi,0.6372666666666666,0.18,0.0038332609997269
+co-expression switch,6,DGCA-style,0.9864555555555556,0.9,0.0530588309998165
+co-expression switch,7,n2v2r (default),0.9654777777777778,0.76,0.1604253340001378
+co-expression switch,7,n2v2r at the number of communities (oracle),0.9878,0.85,0.0374755520001599
+co-expression switch,7,node2vec + Procrustes,0.9970055555555556,0.92,31.60419728299985
+co-expression switch,7,DeepWalk + Procrustes,0.9953388888888888,0.89,29.896154494000257
+co-expression switch,7,PLEX.I (50 trainings),0.7732333333333333,0.38,83.25339595300011
+co-expression switch,7,DeDi,0.6694333333333333,0.08,0.0032847309998942
+co-expression switch,7,DGCA-style,0.9913666666666666,0.9,0.0521936630002528
+co-expression switch,8,n2v2r (default),0.9755666666666668,0.76,0.1499909809999735
+co-expression switch,8,n2v2r at the number of communities (oracle),0.9920388888888888,0.87,0.040258783000354
+co-expression switch,8,node2vec + Procrustes,0.9975166666666668,0.92,33.856120766000004
+co-expression switch,8,DeepWalk + Procrustes,0.9985833333333334,0.94,29.445857423000238
+co-expression switch,8,PLEX.I (50 trainings),0.7693722222222222,0.38,105.44517074500028
+co-expression switch,8,DeDi,0.6937666666666666,0.16,0.0036609490002774
+co-expression switch,8,DGCA-style,0.9922777777777778,0.91,0.0767907640001794
+co-expression switch,9,n2v2r (default),0.9611611111111111,0.72,0.1553023100000246
+co-expression switch,9,n2v2r at the number of communities (oracle),0.9852833333333333,0.8,0.03818311399982122
+co-expression switch,9,node2vec + Procrustes,0.99615,0.93,31.40742086299997
+co-expression switch,9,DeepWalk + Procrustes,0.9979777777777777,0.94,32.26831835499979
+co-expression switch,9,PLEX.I (50 trainings),0.7311722222222222,0.32,86.36797604799995
+co-expression switch,9,DeDi,0.6746111111111112,0.15,0.003411838999909378
+co-expression switch,9,DGCA-style,0.9854222222222222,0.92,0.05091239300008965
