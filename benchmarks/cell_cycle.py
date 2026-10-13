@@ -74,7 +74,15 @@ PHASE_MERGES = {
     "later": {"M.G1": "G1", "G1.S": "S", "S": "S", "G2": "G2", "G2.M": "M"},
     # every transition goes to the phase it leaves
     "earlier": {"M.G1": "M", "G1.S": "G1", "S": "S", "G2": "G2", "G2.M": "G2"},
+    # the paper's script: M = M/G1 + G2/M, G1 = G1/S
+    "paper": {"M.G1": "M", "G1.S": "G1", "S": "S", "G2": "G2", "G2.M": "M"},
 }
+# The paper's hdWGCNA networks (scripts/single_cell_cell_cycle/cs_cc_Revelio_Seurat_hdWGCNA.R in the authors'
+# scripts): variable genes, metacells with k = 20 and at most 10 shared cells per phase, signed network with soft
+# power 6, topological overlap (TOM, rounded to 4 digits), and only genes that vary in the metacells of every phase.
+# The paper's networks have 2,420 genes (from Seurat's 3,000 SCTransform variable genes); here they are the 2,420
+# most variable genes among those that vary in every phase's metacells.
+PAPER_NETWORK = dict(num_genes=2420, candidates=4000, k=20, max_shared=10, power=6)
 PHASES = PHASE_MERGES["default"]
 COMPARISONS = [("G1", "S"), ("S", "G2"), ("G2", "M")]
 CELL_CYCLE = re.compile(
@@ -129,6 +137,26 @@ def assign_phases(counts, genes, cells, markers, min_marker_cor=0.2, min_highest
         outlier[rows] = (highest < min_highest) | ((gap > 1) & (second > max_second))
     return pd.DataFrame({"cell": cells, "batch": batch, "revelio_phase": phase,
                          "phase": pd.Series(phase).map(merge).to_numpy(), "outlier": outlier})
+
+
+def topological_overlap(adjacency):
+    """WGCNA's topological overlap of a non-negative adjacency matrix:
+    (sum_u a_iu a_uj + a_ij) / (min(k_i, k_j) + 1 - a_ij), with 1 on the diagonal."""
+    a = np.array(adjacency, dtype=np.float64)
+    np.fill_diagonal(a, 0)
+    degree = a.sum(axis=0)
+    tom = (a @ a + a) / (np.minimum.outer(degree, degree) + 1 - a)
+    np.fill_diagonal(tom, 1)
+    return tom
+
+
+def tom_network(expression, k=20, max_shared=10, num_pcs=30, power=6, random_state=0):
+    """The paper's network: metacells, signed soft-thresholded correlation, TOM."""
+    aggregated = metacells(expression, k=k, max_shared=max_shared, num_pcs=num_pcs, random_state=random_state)
+    tom = np.round(topological_overlap(coexpression_network(np.asarray(aggregated), power=power, signed=True)), 4)
+    if isinstance(expression, pd.DataFrame):
+        return pd.DataFrame(tom, index=expression.columns, columns=expression.columns)
+    return tom
 
 
 def scale_free_fit(network, num_bins=10):
@@ -242,9 +270,15 @@ def random_halves(strata, rng):
     return half
 
 
-def prepare(revelio_dir, num_genes=2000, merge="default"):
+def prepare(revelio_dir, num_genes=2000, merge="default", setting="default"):
     """Phases, expression of the most variable genes standardised within phase
-    and batch, and the network builder."""
+    and batch, and the network builder. setting "default" is this benchmark's
+    pipeline (signed correlation network, metacells k = 25, power picked by the
+    scale-free fit); "paper" is the paper's (PAPER_NETWORK: TOM, k = 20,
+    power 6, phases merged as in the paper's script)."""
+    paper = setting == "paper"
+    if paper:
+        merge, num_genes = "paper", PAPER_NETWORK["candidates"]
     counts, genes, cells, markers = read_revelio(revelio_dir)
     cells_table = assign_phases(counts, genes, cells, markers, merge=PHASE_MERGES[merge])
     print(pd.crosstab([cells_table.batch, cells_table.outlier], cells_table.revelio_phase), flush=True)
@@ -252,7 +286,7 @@ def prepare(revelio_dir, num_genes=2000, merge="default"):
     counts, cells_table = counts[keep], cells_table[keep].reset_index(drop=True)
 
     logged = normalize_log1p(counts)
-    selected = highly_variable_genes(logged, counts, num_genes=num_genes, min_detected=0.05)
+    selected = highly_variable_genes(logged, counts, num_genes=num_genes, min_detected=0.0 if paper else 0.05)
     expression = pd.DataFrame(logged[:, selected].toarray(), columns=genes[selected])
     del logged, counts
 
@@ -262,10 +296,30 @@ def prepare(revelio_dir, num_genes=2000, merge="default"):
                for phase in ("G1", "S", "G2", "M")}
     groups = {phase: _standardize_within(expression[cells_table["phase"].eq(phase).to_numpy()], batches[phase])
               for phase in batches}
+    if paper:
+        k, max_shared = PAPER_NETWORK["k"], PAPER_NETWORK["max_shared"]
+        aggregated = {phase: metacells(group, k=k, max_shared=max_shared) for phase, group in groups.items()}
+        varying = np.logical_and.reduce([np.asarray(a).std(axis=0) > 0 for a in aggregated.values()])
+        chosen = np.flatnonzero(varying)[:PAPER_NETWORK["num_genes"]]  # columns are most variable first
+        groups = {phase: group.iloc[:, chosen] for phase, group in groups.items()}
+        print(f"paper setting: {sum(len(a) for a in aggregated.values())} metacells "
+              f"({ {p: len(a) for p, a in aggregated.items()} }) from {len(cells_table)} cells; "
+              f"{varying.sum()} of {len(varying)} candidate genes vary in every phase, kept {len(chosen)}",
+              flush=True)
+        build = functools.partial(tom_network, k=k, max_shared=max_shared, power=PAPER_NETWORK["power"])
+        return cells_table, groups, batches, build
     power, fits = pick_power(list(groups.values()))
     print(f"signed soft power {power}; scale-free fits {fits}", flush=True)
     build = functools.partial(metacell_network, power=power, signed=True)
     return cells_table, groups, batches, build
+
+
+def expressions_and_networks(build, *groups):
+    """Metacell expression (for expression-based methods) and networks of each
+    group with the builder from prepare."""
+    k, max_shared = build.keywords.get("k", 25), build.keywords.get("max_shared", 10)
+    return ([np.asarray(metacells(g, k=k, max_shared=max_shared)) for g in groups],
+            [np.asarray(build(g)) for g in groups])
 
 
 def main(argv=None):
@@ -279,10 +333,12 @@ def main(argv=None):
     parser.add_argument("--suffix", default="", help="appended to the result file names")
     parser.add_argument("--phase-merge", choices=list(PHASE_MERGES), default="default",
                         help="how Revelio's five phases are merged into four")
+    parser.add_argument("--setting", choices=["default", "paper"], default="default",
+                        help="'paper': the paper's networks (TOM, k = 20, power 6, 2,420 genes; see prepare)")
     args = parser.parse_args(argv)
     os.makedirs(RESULTS_DIR, exist_ok=True)
 
-    cells_table, groups, batches, build = prepare(args.revelio_dir, args.num_genes, args.phase_merge)
+    cells_table, groups, batches, build = prepare(args.revelio_dir, args.num_genes, args.phase_merge, args.setting)
 
     gene_sets = read_gmt(REACTOME)
     names = pd.Index(list(gene_sets))

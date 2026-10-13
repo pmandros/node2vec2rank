@@ -51,16 +51,13 @@ sys.path.insert(0, HERE)
 
 import cell_cycle as cc  # noqa: E402
 import competitor_seeds as cs  # noqa: E402
-from node2vec2rank.simulate import coexpression_network  # noqa: E402
-from node2vec2rank.singlecell import metacells  # noqa: E402
 
 TOP_K = 100
 NUM_PLANTED = 100
 
 
-def networks(group_a, group_b, power):
-    expressions = [np.asarray(metacells(g)) for g in (group_a, group_b)]
-    graphs = [np.asarray(coexpression_network(e, power=power, signed=True)) for e in expressions]
+def networks(group_a, group_b, build):
+    expressions, graphs = cc.expressions_and_networks(build, group_a, group_b)
     return graphs, expressions
 
 
@@ -111,9 +108,9 @@ def plant(group, strata, candidates, rng, kind):
     return changed, labels
 
 
-def part_planted(groups, batches, power, replicates):
+def part_planted(groups, batches, build, replicates):
     g1, strata = groups["G1"], batches["G1"]
-    full_graph = np.asarray(coexpression_network(np.asarray(metacells(g1)), power=power, signed=True))
+    full_graph = np.asarray(build(g1))
     degree = full_graph.sum(axis=0)
     candidates = np.flatnonzero(degree > np.median(degree))
     rows = []
@@ -122,7 +119,7 @@ def part_planted(groups, batches, power, replicates):
             rng = np.random.default_rng(100 * replicate + (kind == "partner"))
             half = cc.random_halves(strata, rng)
             group_b, labels = plant(g1[~half], strata[~half], candidates, rng, kind)
-            graphs, expressions = networks(g1[half], group_b, power)
+            graphs, expressions = networks(g1[half], group_b, build)
             delta = (graphs[1].sum(axis=0) - graphs[0].sum(axis=0)) / graphs[0].sum(axis=0)
             for name, (score, seconds) in all_methods(graphs, expressions, replicate).items():
                 rows.append(dict(kind=kind, replicate=replicate, method=name, auroc=cs.auroc(labels, score),
@@ -141,12 +138,12 @@ def subsample(group, strata, rng, fraction=0.8):
     return group[keep]
 
 
-def part_subsample(groups, batches, power, replicates):
+def part_subsample(groups, batches, build, replicates):
     scores = {}
     for replicate in range(replicates):
         rng = np.random.default_rng(500 + replicate)
         graphs, expressions = networks(subsample(groups["G1"], batches["G1"], rng),
-                                       subsample(groups["S"], batches["S"], rng), power)
+                                       subsample(groups["S"], batches["S"], rng), build)
         for name, (score, seconds) in all_methods(graphs, expressions, replicate).items():
             scores.setdefault(name, []).append(score)
             print(replicate, name, round(seconds, 1), flush=True)
@@ -160,14 +157,14 @@ def part_subsample(groups, batches, power, replicates):
     return pd.DataFrame(rows)
 
 
-def part_null(groups, batches, power, replicates):
-    real_graphs, real_expressions = networks(groups["G1"], groups["S"], power)
+def part_null(groups, batches, build, replicates):
+    real_graphs, real_expressions = networks(groups["G1"], groups["S"], build)
     real = {name: score for name, (score, _) in all_methods(real_graphs, real_expressions, 0).items()}
     rows = []
     for replicate in range(replicates):
         rng = np.random.default_rng(900 + replicate)
         half = cc.random_halves(batches["G1"], rng)
-        graphs, expressions = networks(groups["G1"][half], groups["G1"][~half], power)
+        graphs, expressions = networks(groups["G1"][half], groups["G1"][~half], build)
         degree = (graphs[0].sum(axis=0) + graphs[1].sum(axis=0)) / 2
         for name, (score, seconds) in all_methods(graphs, expressions, replicate + 1).items():
             rows.append(dict(replicate=replicate, method=name, spearman_with_degree=spearmanr(score, degree)[0],
@@ -181,14 +178,15 @@ def main(argv=None):
     parser.add_argument("--part", choices=["planted", "subsample", "null"], required=True)
     parser.add_argument("--revelio-dir", required=True)
     parser.add_argument("--replicates", type=int)
+    parser.add_argument("--setting", choices=["paper", "default"], default="paper",
+                        help="networks as in the paper (TOM) or this benchmark's default (see cell_cycle.prepare)")
     args = parser.parse_args(argv)
-    cells_table, groups, batches, build = cc.prepare(args.revelio_dir)
-    power = build.keywords["power"]
+    cells_table, groups, batches, build = cc.prepare(args.revelio_dir, setting=args.setting)
     replicates = args.replicates or {"planted": 3, "subsample": 5, "null": 3}[args.part]
     result = {"planted": part_planted, "subsample": part_subsample, "null": part_null}[args.part](
-        groups, batches, power, replicates)
+        groups, batches, build, replicates)
     os.makedirs(cs.RESULTS_DIR, exist_ok=True)
-    result.to_csv(os.path.join(cs.RESULTS_DIR, f"competitor_hela_{args.part}.csv"), index=False)
+    result.to_csv(os.path.join(cs.RESULTS_DIR, f"competitor_hela_{args.part}{'' if args.setting == 'paper' else '_benchmark-setting'}.csv"), index=False)
     print(result.round(3).to_string(), flush=True)
 
 

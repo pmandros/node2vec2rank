@@ -1,5 +1,9 @@
-"""HeLa sensitivity runs for the revision (hdWGCNA pipeline of
-benchmarks/cell_cycle.py, G1 -> S, always next to a G1-vs-G1 null split).
+"""HeLa sensitivity runs for the revision (G1 -> S, always next to a G1-vs-G1
+null split). Networks as in the paper by default (cell_cycle.prepare with
+setting "paper": metacells k = 20, signed soft power 6, TOM, 2,420 genes);
+--setting default uses benchmarks/cell_cycle.py's own pipeline (k = 25,
+signed correlation network, power by scale-free fit) and writes
+revision_hela_*_benchmark-setting.csv.
 
 Parts:
 
@@ -9,10 +13,10 @@ Parts:
    dimensions 4..24, euclidean and cosine) and its cell-cycle gene AUROC; and
    the calibrated fast set test (Reactome) with single dimensions against the
    default, for G1 -> S and the null split.
-2. grid: metacell size k in {10, 25, 50} x signed soft power in {6, 8, 10, 12}.
-   For each, the default ranking's agreement with the paper's setting (k = 25,
-   power picked by scale-free fit, 10), cell-cycle gene AUROC, and the fast set
-   test for G1 -> S and the null split.
+2. grid: metacell size k x signed soft power around the setting's own (paper:
+   k in {10, 20, 30} x power in {4, 5, 6, 8, 10, 12}). For each, the default
+   ranking's agreement with the setting's own (paper: k = 20, power 6),
+   cell-cycle gene AUROC, and the fast set test for G1 -> S and the null split.
 
 The null split is the one of benchmarks/cell_cycle.py (random halves of the G1
 cells within batch, seed 0).
@@ -40,7 +44,6 @@ from node2vec2rank.embedding import embed, select_dimension  # noqa: E402
 from node2vec2rank.fast_gene_sets import fast_gene_set_test  # noqa: E402
 from node2vec2rank.model_utils import borda_aggregate, compute_pairwise_distances  # noqa: E402
 from node2vec2rank.permutation import read_gmt  # noqa: E402
-from node2vec2rank.singlecell import metacell_network  # noqa: E402
 
 TOP_K = 100
 SPECTRUM_SIZE = 60
@@ -68,8 +71,8 @@ def set_test(comparisons, build, gene_sets, is_cell_cycle, dims):
     return rows
 
 
-def setup(revelio_dir):
-    cells_table, groups, batches, build = cc.prepare(revelio_dir)
+def setup(revelio_dir, setting):
+    cells_table, groups, batches, build = cc.prepare(revelio_dir, setting=setting)
     gene_sets = read_gmt(cc.REACTOME)
     names = pd.Index(list(gene_sets))
     is_cell_cycle = pd.Series(np.asarray(names.str.contains(cc.CELL_CYCLE)), index=names)
@@ -83,8 +86,8 @@ def setup(revelio_dir):
     return comparisons, build, gene_sets, is_cell_cycle, gene_labels
 
 
-def part_dimensions(revelio_dir):
-    comparisons, build, gene_sets, is_cell_cycle, gene_labels = setup(revelio_dir)
+def part_dimensions(revelio_dir, setting):
+    comparisons, build, gene_sets, is_cell_cycle, gene_labels = setup(revelio_dir, setting)
     rankings, spectra = [], []
     for label, (group_a, group_b, _) in comparisons.items():
         graphs = [np.asarray(build(g)) for g in (group_a, group_b)]
@@ -111,15 +114,19 @@ def part_dimensions(revelio_dir):
     return {"spectrum": pd.concat(spectra), "rankings": pd.DataFrame(rankings), "set_test": pd.DataFrame(tests)}
 
 
-def part_grid(revelio_dir):
-    comparisons, paper_build, gene_sets, is_cell_cycle, gene_labels = setup(revelio_dir)
-    paper_power = paper_build.keywords["power"]
+GRIDS = {"paper": ((10, 20, 30), (4, 5, 6, 8, 10, 12)), "default": ((10, 25, 50), (6, 8, 10, 12))}
+
+
+def part_grid(revelio_dir, setting):
+    comparisons, own_build, gene_sets, is_cell_cycle, gene_labels = setup(revelio_dir, setting)
+    own = (own_build.keywords.get("k", 25), own_build.keywords["power"])
     group_a, group_b, _ = comparisons["G1 -> S"]
     reference = None
     rows = []
-    settings = [(25, paper_power)] + [(k, p) for k in (10, 25, 50) for p in (6, 8, 10, 12) if (k, p) != (25, paper_power)]
+    ks, powers = GRIDS[setting]
+    settings = [own] + [(k, p) for k in ks for p in powers if (k, p) != own]
     for k, power in settings:
-        build = functools.partial(metacell_network, k=k, power=power, signed=True)
+        build = functools.partial(own_build.func, **{**own_build.keywords, "k": k, "power": power})
         graphs = [np.asarray(build(g)) for g in (group_a, group_b)]
         score = cs.n2v2r(graphs, 42)
         if reference is None:
@@ -140,11 +147,13 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--part", choices=["dimensions", "grid"], required=True)
     parser.add_argument("--revelio-dir", required=True)
+    parser.add_argument("--setting", choices=["paper", "default"], default="paper")
     args = parser.parse_args(argv)
-    results = {"dimensions": part_dimensions, "grid": part_grid}[args.part](args.revelio_dir)
+    results = {"dimensions": part_dimensions, "grid": part_grid}[args.part](args.revelio_dir, args.setting)
+    suffix = "" if args.setting == "paper" else "_benchmark-setting"
     os.makedirs(cs.RESULTS_DIR, exist_ok=True)
     for name, table in results.items():
-        table.to_csv(os.path.join(cs.RESULTS_DIR, f"revision_hela_{name}.csv"), index=False)
+        table.to_csv(os.path.join(cs.RESULTS_DIR, f"revision_hela_{name}{suffix}.csv"), index=False)
         with pd.option_context("display.width", 200, "display.max_columns", 30, "display.max_rows", 200):
             print(table.round(3).to_string(), flush=True)
 

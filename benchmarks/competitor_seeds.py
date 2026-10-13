@@ -109,12 +109,8 @@ def load(dataset, revelio_dir=None):
     if dataset == "hela":
         import cell_cycle as cc
         from node2vec2rank.permutation import read_gmt
-        from node2vec2rank.simulate import coexpression_network
-        from node2vec2rank.singlecell import metacells
-        cells_table, groups, batches, build = cc.prepare(revelio_dir)
-        power = build.keywords["power"]
-        expressions = [metacells(groups[phase]) for phase in ("G1", "S")]
-        graphs = [np.asarray(coexpression_network(e, power=power, signed=True)) for e in expressions]
+        cells_table, groups, batches, build = cc.prepare(revelio_dir, setting="paper")
+        expressions, graphs = cc.expressions_and_networks(build, groups["G1"], groups["S"])
         genes = groups["G1"].columns
         reactome = read_gmt(cc.REACTOME)
         cell_cycle = set().union(*(m for name, m in reactome.items() if cc.CELL_CYCLE.search(name)))

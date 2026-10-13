@@ -133,18 +133,16 @@ def part_sims(settings, replicates, max_new):
     return 0
 
 
-def part_planted(revelio_dir, kind, replicates, max_new):
+def part_planted(revelio_dir, kind, replicates, max_new, setting="paper"):
     import cell_cycle as cc
     import competitor_hela as ch
-    from node2vec2rank.simulate import coexpression_network
-    from node2vec2rank.singlecell import metacells
-    cells_table, groups, batches, build = cc.prepare(revelio_dir)
-    power = build.keywords["power"]
+    cells_table, groups, batches, build = cc.prepare(revelio_dir, setting=setting)
     g1, strata = groups["G1"], batches["G1"]
-    full_graph = np.asarray(coexpression_network(np.asarray(metacells(g1)), power=power, signed=True))
+    full_graph = np.asarray(build(g1))
     degree = full_graph.sum(axis=0)
     candidates = np.flatnonzero(degree > np.median(degree))
-    path = os.path.join(cs.RESULTS_DIR, f"competitor_replicates_planted_{kind}.csv")
+    suffix = "" if setting == "paper" else "_benchmark-setting"
+    path = os.path.join(cs.RESULTS_DIR, f"competitor_replicates_planted_{kind}{suffix}.csv")
     done = 0
     for replicate in range(replicates):
         table = _existing(path)
@@ -156,7 +154,7 @@ def part_planted(revelio_dir, kind, replicates, max_new):
         rng = np.random.default_rng(100 * replicate + (kind == "partner"))
         half = cc.random_halves(strata, rng)
         group_b, labels = ch.plant(g1[~half], strata[~half], candidates, rng, kind)
-        graphs, expressions = ch.networks(g1[half], group_b, power)
+        graphs, expressions = ch.networks(g1[half], group_b, build)
         rows = []
         for name, (score, seconds) in ch.all_methods(graphs, expressions, replicate).items():
             rows.append(dict(setting=f"HeLa planted {kind}", replicate=replicate, method=name,
@@ -190,7 +188,7 @@ def paired_summary(table):
 
 def summarise():
     files = sorted(glob.glob(os.path.join(cs.RESULTS_DIR, "competitor_replicates_*.csv")))
-    files = [f for f in files if not f.endswith("_summary.csv")]
+    files = [f for f in files if not f.endswith("_summary.csv") and "_benchmark-setting" not in f]
     table = pd.concat([pd.read_csv(f) for f in files])
     summary = paired_summary(table)
     summary.to_csv(os.path.join(cs.RESULTS_DIR, "competitor_replicates_summary.csv"), index=False)
@@ -205,6 +203,8 @@ def main(argv=None):
     parser.add_argument("--kind", choices=["loss", "partner"])
     parser.add_argument("--replicates", type=int, default=NUM_REPLICATES)
     parser.add_argument("--revelio-dir")
+    parser.add_argument("--setting", choices=["paper", "default"], default="paper",
+                        help="HeLa networks as in the paper (TOM) or this benchmark's default (see cell_cycle.prepare)")
     parser.add_argument("--summarise", action="store_true")
     parser.add_argument("--max-new", type=int, default=-1,
                         help="stop after this many new replicates and exit with status 3 if more remain")
@@ -214,7 +214,7 @@ def main(argv=None):
     if args.part == "sims":
         remaining = part_sims(args.settings, args.replicates, args.max_new)
     elif args.part == "planted":
-        remaining = part_planted(args.revelio_dir, args.kind, args.replicates, args.max_new)
+        remaining = part_planted(args.revelio_dir, args.kind, args.replicates, args.max_new, args.setting)
     if args.summarise:
         summarise()
     sys.exit(3 if remaining else 0)
