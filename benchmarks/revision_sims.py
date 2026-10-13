@@ -24,11 +24,15 @@ Parts:
    - distance: euclidean, cosine, both;
    - aggregation of the 22 rankings: Borda (= mean rank), median rank;
    - DeDi.
+3. ablation8: the same variants on the eight-community settings of part 1
+   (split, merge, switch; same networks), so that every variant is also tested
+   on changes other than a 10% switch.
 
 Run from the repository root:
 
     OMP_NUM_THREADS=1 python benchmarks/revision_sims.py --part splitmerge
     OMP_NUM_THREADS=1 python benchmarks/revision_sims.py --part ablation
+    OMP_NUM_THREADS=1 python benchmarks/revision_sims.py --part ablation8
 """
 
 import argparse
@@ -237,15 +241,33 @@ def part_ablation(replicates):
     return pd.DataFrame(rows)
 
 
+def part_ablation8(replicates):
+    rows = []
+    for setting, simulate in (("block model", sbm_pair), ("co-expression", coexpression_pair)):
+        for kind in ("split", "merge", "switch"):
+            for replicate in range(replicates):
+                rng = np.random.default_rng(1000 * replicate + {"split": 1, "merge": 2, "switch": 3}[kind])
+                graphs, changed, _ = simulate(rng, kind)
+                scores, elbow = ablation_scores(graphs, replicate)
+                for name, score in scores.items():
+                    rows.append(dict(setting=setting, change=kind, replicate=replicate, variant=name, elbow=elbow,
+                                     **metrics(changed, score)))
+                print(setting, kind, replicate, elbow,
+                      {k: round(sims.auroc(changed, v), 3) for k, v in scores.items()}, flush=True)
+    return pd.DataFrame(rows)
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--part", choices=["splitmerge", "ablation"], required=True)
+    parser.add_argument("--part", choices=["splitmerge", "ablation", "ablation8"], required=True)
     parser.add_argument("--replicates", type=int, default=NUM_REPLICATES)
     args = parser.parse_args(argv)
-    result = {"splitmerge": part_splitmerge, "ablation": part_ablation}[args.part](args.replicates)
+    result = {"splitmerge": part_splitmerge, "ablation": part_ablation,
+              "ablation8": part_ablation8}[args.part](args.replicates)
     os.makedirs(cs.RESULTS_DIR, exist_ok=True)
     result.to_csv(os.path.join(cs.RESULTS_DIR, f"revision_{args.part}.csv"), index=False)
-    keys = ["setting", "change", "method"] if args.part == "splitmerge" else ["scenario", "variant"]
+    keys = {"splitmerge": ["setting", "change", "method"], "ablation": ["scenario", "variant"],
+            "ablation8": ["setting", "change", "variant"]}[args.part]
     summary = result.groupby(keys, sort=False)[["auroc", "precision_at_k"]].agg(["mean", "std"]).round(3)
     with pd.option_context("display.width", 200, "display.max_rows", 200):
         print(summary, flush=True)

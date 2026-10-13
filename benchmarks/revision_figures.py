@@ -45,7 +45,7 @@ def violins(table, methods, value, pair, title, ylabel, path, yrange=(0, 1), ang
     """One violin per method; table has columns method, value and pair. Tick
     labels are tilted when they would not fit side by side."""
     if angle is None:
-        angle = 0 if sum(len(m) for m in methods) <= 40 else -35
+        angle = 0 if sum(len(m) for m in methods) <= 30 else -35
     wide = table.pivot_table(index=pair, columns="method", values=value)
     fig = go.Figure()
     for i, method in enumerate(methods):
@@ -94,19 +94,33 @@ def split_merge():
                 os.path.join(OUT, f"splitmerge_{setting.replace(' ', '_')}_{change}_auroc.pdf"), yrange=(0.4, 1))
 
 
+ABLATION_LABELS = {
+    "embedding: joint UASE (default)": "n2v2r_b", "embedding: ULSE": "ULSE", "embedding: OMNI": "OMNI",
+    "embedding: separate ASE + Procrustes": "ASE+Procr.", "embedding: none (raw adjacency rows)": "raw rows",
+    "distance: euclidean only": "eucl only", "distance: cosine only": "cos only",
+    "aggregation: median rank": "median rank", "dimension: elbow": "elbow", "DeDi": "DeDi",
+    **{f"dimension: {d} only": f"dim {d}" for d in (4, 8, 16, 24)},
+}
+
+
 def ablation():
     table = pd.read_csv(os.path.join(RESULTS, "revision_ablation.csv"))
-    short = {"embedding: joint UASE (default)": "n2v2r_b", "embedding: ULSE": "ULSE", "embedding: OMNI": "OMNI",
-             "embedding: separate ASE + Procrustes": "ASE+Procr.", "embedding: none (raw adjacency rows)": "raw rows",
-             "distance: euclidean only": "eucl only", "distance: cosine only": "cos only",
-             "aggregation: median rank": "median rank", "dimension: elbow": "elbow", "DeDi": "DeDi"}
-    for d in (4, 8, 16, 24):
-        short[f"dimension: {d} only"] = f"dim {d}"
-    table = table[table.variant.isin(short)].assign(method=lambda t: t.variant.map(short))
+    table = table[table.variant.isin(ABLATION_LABELS)].assign(method=lambda t: t.variant.map(ABLATION_LABELS))
     for scenario, block in table.groupby("scenario"):
         title = {"dcsbm": "block model", "coexpression": "co-expression"}[scenario] + ", 10% switch"
-        violins(block, list(short.values()), "auroc", "replicate", title, "AUROC",
+        violins(block, list(ABLATION_LABELS.values()), "auroc", "replicate", title, "AUROC",
                 os.path.join(OUT, f"ablation_{scenario}_auroc.pdf"), yrange=(0.4, 1), angle=-45)
+
+
+def ablation8():
+    """The same variants on the 8-community split, merge and switch settings."""
+    table = pd.read_csv(os.path.join(RESULTS, "revision_ablation8.csv"))
+    table = table[table.variant.isin(ABLATION_LABELS)].assign(method=lambda t: t.variant.map(ABLATION_LABELS))
+    for (setting, change), block in table.groupby(["setting", "change"]):
+        lo = min(0.4, np.floor(block.auroc.min() * 10) / 10)
+        violins(block, list(ABLATION_LABELS.values()), "auroc", "replicate", f"{setting}, community {change}",
+                "AUROC", os.path.join(OUT, f"ablation8_{setting.replace(' ', '_')}_{change}_auroc.pdf"),
+                yrange=(lo, 1), angle=-45)
 
 
 def hela_dimensions():
@@ -158,7 +172,7 @@ def hela_dimensions():
 
 def hela_grid():
     grid = pd.read_csv(os.path.join(RESULTS, "revision_hela_grid.csv"))
-    for value, title, scale in (("top100_shared_with_paper", "top-100 overlap with k=25, power 10", "Greens"),
+    for value, title, scale in (("top100_shared_with_paper", "top 100 shared with reference", "Greens"),
                                 ("G1_S_called", "G1 → S sets called", "Greens"),
                                 ("null_called", "null split sets called", "Reds")):
         wide = grid.pivot(index="metacell_k", columns="soft_power", values=value).sort_index(ascending=False)
@@ -194,7 +208,7 @@ def runtime():
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    for make in (paper_sims, competitor_replicates, split_merge, ablation, hela_dimensions, hela_grid, runtime):
+    for make in (paper_sims, competitor_replicates, split_merge, ablation, ablation8, hela_dimensions, hela_grid, runtime):
         make()
         print(make.__name__, "done", flush=True)
 
