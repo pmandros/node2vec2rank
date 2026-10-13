@@ -335,6 +335,7 @@ def main(argv=None):
                         help="how Revelio's five phases are merged into four")
     parser.add_argument("--comparisons", nargs="+", default=[f"{a}-{b}" for a, b in COMPARISONS],
                         help="phase pairs to compare, e.g. G1-S G2-M")
+    parser.add_argument("--skip-null", action="store_true", help="skip the null split of the G1 cells")
     parser.add_argument("--setting", choices=["default", "paper"], default="default",
                         help="'paper': the paper's networks (TOM, k = 20, power 6, 2,420 genes; see prepare)")
     args = parser.parse_args(argv)
@@ -354,13 +355,14 @@ def main(argv=None):
         records += r
         tops += t
 
-    # null control: random halves of the G1 cells, within batch
-    half = random_halves(batches["G1"], np.random.default_rng(0))
-    r, t = run_comparison("null: G1 halves", groups["G1"][half], groups["G1"][~half],
-                          (batches["G1"][half], batches["G1"][~half]), gene_sets, is_cell_cycle, build,
-                          args.num_permutations, args.n_jobs, args.top_sets, args.methods)
-    records += r
-    tops += t
+    if not args.skip_null:
+        # null control: random halves of the G1 cells, within batch
+        half = random_halves(batches["G1"], np.random.default_rng(0))
+        r, t = run_comparison("null: G1 halves", groups["G1"][half], groups["G1"][~half],
+                              (batches["G1"][half], batches["G1"][~half]), gene_sets, is_cell_cycle, build,
+                              args.num_permutations, args.n_jobs, args.top_sets, args.methods)
+        records += r
+        tops += t
 
     summary = pd.DataFrame(records)
     summary.to_csv(os.path.join(RESULTS_DIR, f"cell_cycle{args.suffix}.csv"), index=False)
