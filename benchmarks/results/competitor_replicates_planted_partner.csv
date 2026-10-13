@@ -1,0 +1,19 @@
+replicate,setting,method,auroc,precision_at_k,seconds
+0,HeLa planted partner,n2v2r (default),0.5871551724137931,0.06,1.710177131999444
+0,HeLa planted partner,node2vec + Procrustes,0.5030064655172414,0.02,207.707086597
+0,HeLa planted partner,DeepWalk + Procrustes,0.4981637931034482,0.02,196.67984731399883
+0,HeLa planted partner,PLEX.I (50 trainings),0.3559094827586206,0.0,603.7669698610007
+0,HeLa planted partner,DGCA-style,0.6114655172413793,0.02,0.7695439710005303
+0,HeLa planted partner,DeDi,0.5829568965517241,0.08,0.023152519001087
+1,HeLa planted partner,n2v2r (default),0.5645,0.02,1.0454222219996154
+1,HeLa planted partner,node2vec + Procrustes,0.5103125,0.01,198.67234995599935
+1,HeLa planted partner,DeepWalk + Procrustes,0.4878318965517241,0.01,190.5875602280012
+1,HeLa planted partner,PLEX.I (50 trainings),0.3407931034482758,0.0,610.0661298550003
+1,HeLa planted partner,DGCA-style,0.6364568965517241,0.0,0.3355158109989133
+1,HeLa planted partner,DeDi,0.6128318965517241,0.11,0.020263602000341
+2,HeLa planted partner,n2v2r (default),0.539885775862069,0.02,0.46561609899981704
+2,HeLa planted partner,node2vec + Procrustes,0.42216594827586207,0.01,137.50529199899938
+2,HeLa planted partner,DeepWalk + Procrustes,0.4677995689655172,0.01,132.71226845800084
+2,HeLa planted partner,PLEX.I (50 trainings),0.35661422413793104,0.0,598.3062676790014
+2,HeLa planted partner,DGCA-style,0.558676724137931,0.02,0.31482271300046705
+2,HeLa planted partner,DeDi,0.5286724137931035,0.07,0.024648962000355823

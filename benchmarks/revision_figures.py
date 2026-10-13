@@ -55,7 +55,7 @@ def violins(table, methods, value, pair, title, ylabel, path, yrange=(0, 1), ang
     for _, row in wide[methods].iterrows():  # the same pair joined across methods, over the violins
         fig.add_trace(go.Scatter(x=methods, y=row.to_numpy(), mode="lines", showlegend=False, hoverinfo="skip",
                                  line=dict(color="rgba(60,60,60,0.7)", width=0.8, dash="dash")))
-    fig.update_layout(template="plotly", width=WIDTH, height=HEIGHT, font=FONT, title=title,
+    fig.update_layout(template="plotly", width=WIDTH, height=HEIGHT, font=FONT, title=dict(text=title, font_size=33),
                       margin=dict(l=90, r=20, t=60, b=70 if angle == 0 else 140))
     fig.update_yaxes(title=ylabel, range=[yrange[0] - 0.05, yrange[1] + 0.05])
     fig.update_xaxes(tickangle=angle, tickfont=dict(size=30 if len(methods) <= 3 else 24))
@@ -63,7 +63,7 @@ def violins(table, methods, value, pair, title, ylabel, path, yrange=(0, 1), ang
 
 
 def paper_sims():
-    for path in sorted(glob.glob(os.path.join(RESULTS, "paper_sims_*.csv"))):
+    for path in sorted(glob.glob(os.path.join(RESULTS, "paper_sims_*-com.csv"))):
         table = pd.read_csv(path)
         regime, n, m = table.regime.iloc[0], int(table.nodes.iloc[0]), int(table.communities.iloc[0])
         label = "deg-naive" if regime == "naive" else "random"
@@ -122,7 +122,7 @@ def hela_dimensions():
     fig.update_layout(template="plotly", width=WIDTH, height=HEIGHT, font=FONT, title="HeLa, singular values",
                       legend=dict(x=0.45, y=0.95), margin=dict(l=90, r=20, t=60, b=80))
     fig.update_xaxes(title="dimension")
-    fig.update_yaxes(title="singular value")
+    fig.update_yaxes(title="singular value", type="log")
     fig.write_image(os.path.join(OUT, "hela_spectrum.pdf"))
 
     rankings = pd.read_csv(os.path.join(RESULTS, "revision_hela_rankings.csv"))
@@ -148,8 +148,9 @@ def hela_dimensions():
                              y=block.cell_cycle_called, name=comparison + " (cell cycle)",
                              marker_color=EXTRA_COLOURS[i]))
     fig.update_layout(template="plotly", width=WIDTH, height=HEIGHT, font=dict(size=24, family="DejaVu Sans"), barmode="group",
-                      title="HeLa, Reactome sets called (q ≤ 0.1)", legend=dict(x=0.02, y=0.98, font=dict(size=18)),
-                      margin=dict(l=90, r=20, t=60, b=110))
+                      title="HeLa, Reactome sets called (q ≤ 0.1)",
+                      legend=dict(orientation="h", x=0, y=-0.3, yanchor="top", font=dict(size=16)),
+                      margin=dict(l=90, r=20, t=60, b=170))
     fig.update_yaxes(title="sets called")
     fig.update_xaxes(tickangle=-30)
     fig.write_image(os.path.join(OUT, "hela_dimensions_set_test.pdf"))
