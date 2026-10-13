@@ -1,0 +1,5 @@
+comparison,method,tested,cell_cycle_tested,called,cell_cycle_called,precision,auroc_cell_cycle
+G2 -> M,"permutation set test, n2v2r",433,52,0,0,0.0,0.7220371492025035
+G2 -> M,"permutation set test, DeDi",433,52,0,0,0.0,0.7520694528568544
+null: G1 halves,"permutation set test, n2v2r",433,52,0,0,0.0,0.49470018170805574
+null: G1 halves,"permutation set test, DeDi",433,52,0,0,0.0,0.5346254795073693
