@@ -333,6 +333,8 @@ def main(argv=None):
     parser.add_argument("--suffix", default="", help="appended to the result file names")
     parser.add_argument("--phase-merge", choices=list(PHASE_MERGES), default="default",
                         help="how Revelio's five phases are merged into four")
+    parser.add_argument("--comparisons", nargs="+", default=[f"{a}-{b}" for a, b in COMPARISONS],
+                        help="phase pairs to compare, e.g. G1-S G2-M")
     parser.add_argument("--setting", choices=["default", "paper"], default="default",
                         help="'paper': the paper's networks (TOM, k = 20, power 6, 2,420 genes; see prepare)")
     args = parser.parse_args(argv)
@@ -345,7 +347,7 @@ def main(argv=None):
     is_cell_cycle = pd.Series(np.asarray(names.str.contains(CELL_CYCLE)), index=names)
 
     records, tops = [], []
-    for a, b in COMPARISONS:
+    for a, b in (c.split("-") for c in args.comparisons):
         r, t = run_comparison(f"{a} -> {b}", groups[a], groups[b], (batches[a], batches[b]), gene_sets,
                               is_cell_cycle, build, args.num_permutations, args.n_jobs, args.top_sets,
                               args.methods)
