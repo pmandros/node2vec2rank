@@ -1,9 +1,12 @@
 """HeLa sensitivity runs for the revision (G1 -> S, always next to a G1-vs-G1
-null split). Networks as in the paper by default (cell_cycle.prepare with
-setting "paper": metacells k = 20, signed soft power 6, TOM, 2,420 genes);
---setting default uses benchmarks/cell_cycle.py's own pipeline (k = 25,
-signed correlation network, power by scale-free fit) and writes
-revision_hela_*_benchmark-setting.csv.
+null split). Two network settings (cell_cycle.prepare): "paper" (the paper's
+networks: metacells k = 20, signed soft power 6, TOM, 2,420 genes) and
+"default" (benchmarks/cell_cycle.py's pipeline: k = 25, signed correlation
+network, power by scale-free fit, 10). As decided for the revision
+(2026-10-13), the dimension check runs on the paper's networks and the grid on
+the correlation networks: on TOM networks the fast set test is not calibrated
+(see /mnt/project-files/revision/paper-setting-results.md). The other setting
+writes revision_hela_*_paper-setting.csv or *_benchmark-setting.csv.
 
 Parts:
 
@@ -147,10 +150,13 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--part", choices=["dimensions", "grid"], required=True)
     parser.add_argument("--revelio-dir", required=True)
-    parser.add_argument("--setting", choices=["paper", "default"], default="paper")
+    parser.add_argument("--setting", choices=["paper", "default"],
+                        help="network setting; by default paper for dimensions and default for grid")
     args = parser.parse_args(argv)
-    results = {"dimensions": part_dimensions, "grid": part_grid}[args.part](args.revelio_dir, args.setting)
-    suffix = "" if args.setting == "paper" else "_benchmark-setting"
+    own = {"dimensions": "paper", "grid": "default"}[args.part]
+    setting = args.setting or own
+    results = {"dimensions": part_dimensions, "grid": part_grid}[args.part](args.revelio_dir, setting)
+    suffix = "" if setting == own else {"paper": "_paper-setting", "default": "_benchmark-setting"}[setting]
     os.makedirs(cs.RESULTS_DIR, exist_ok=True)
     for name, table in results.items():
         table.to_csv(os.path.join(cs.RESULTS_DIR, f"revision_hela_{name}{suffix}.csv"), index=False)

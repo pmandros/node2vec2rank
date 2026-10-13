@@ -178,15 +178,16 @@ def main(argv=None):
     parser.add_argument("--part", choices=["planted", "subsample", "null"], required=True)
     parser.add_argument("--revelio-dir", required=True)
     parser.add_argument("--replicates", type=int)
-    parser.add_argument("--setting", choices=["paper", "default"], default="paper",
-                        help="networks as in the paper (TOM) or this benchmark's default (see cell_cycle.prepare)")
+    parser.add_argument("--setting", choices=["paper", "default"], default="default",
+                        help="this benchmark's correlation networks (used in the revision) or the paper's TOM "
+                             "networks (see cell_cycle.prepare)")
     args = parser.parse_args(argv)
     cells_table, groups, batches, build = cc.prepare(args.revelio_dir, setting=args.setting)
     replicates = args.replicates or {"planted": 3, "subsample": 5, "null": 3}[args.part]
     result = {"planted": part_planted, "subsample": part_subsample, "null": part_null}[args.part](
         groups, batches, build, replicates)
     os.makedirs(cs.RESULTS_DIR, exist_ok=True)
-    result.to_csv(os.path.join(cs.RESULTS_DIR, f"competitor_hela_{args.part}{'' if args.setting == 'paper' else '_benchmark-setting'}.csv"), index=False)
+    result.to_csv(os.path.join(cs.RESULTS_DIR, f"competitor_hela_{args.part}{'_paper-setting' if args.setting == 'paper' else ''}.csv"), index=False)
     print(result.round(3).to_string(), flush=True)
 
 

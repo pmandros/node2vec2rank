@@ -74,7 +74,7 @@ def paper_sims():
 
 def competitor_replicates():
     files = [f for f in glob.glob(os.path.join(RESULTS, "competitor_replicates_*.csv"))
-             if "summary" not in f and "_benchmark-setting" not in f]
+             if "summary" not in f and "_paper-setting" not in f]
     table = pd.concat([pd.read_csv(f) for f in files])
     table = table[table.method.isin(NAMES)].assign(method=lambda t: t.method.map(NAMES))
     for setting, block in table.groupby("setting"):

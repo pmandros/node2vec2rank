@@ -133,7 +133,7 @@ def part_sims(settings, replicates, max_new):
     return 0
 
 
-def part_planted(revelio_dir, kind, replicates, max_new, setting="paper"):
+def part_planted(revelio_dir, kind, replicates, max_new, setting="default"):
     import cell_cycle as cc
     import competitor_hela as ch
     cells_table, groups, batches, build = cc.prepare(revelio_dir, setting=setting)
@@ -141,7 +141,7 @@ def part_planted(revelio_dir, kind, replicates, max_new, setting="paper"):
     full_graph = np.asarray(build(g1))
     degree = full_graph.sum(axis=0)
     candidates = np.flatnonzero(degree > np.median(degree))
-    suffix = "" if setting == "paper" else "_benchmark-setting"
+    suffix = "_paper-setting" if setting == "paper" else ""
     path = os.path.join(cs.RESULTS_DIR, f"competitor_replicates_planted_{kind}{suffix}.csv")
     done = 0
     for replicate in range(replicates):
@@ -188,7 +188,7 @@ def paired_summary(table):
 
 def summarise():
     files = sorted(glob.glob(os.path.join(cs.RESULTS_DIR, "competitor_replicates_*.csv")))
-    files = [f for f in files if not f.endswith("_summary.csv") and "_benchmark-setting" not in f]
+    files = [f for f in files if not f.endswith("_summary.csv") and "_paper-setting" not in f]
     table = pd.concat([pd.read_csv(f) for f in files])
     summary = paired_summary(table)
     summary.to_csv(os.path.join(cs.RESULTS_DIR, "competitor_replicates_summary.csv"), index=False)
@@ -203,8 +203,9 @@ def main(argv=None):
     parser.add_argument("--kind", choices=["loss", "partner"])
     parser.add_argument("--replicates", type=int, default=NUM_REPLICATES)
     parser.add_argument("--revelio-dir")
-    parser.add_argument("--setting", choices=["paper", "default"], default="paper",
-                        help="HeLa networks as in the paper (TOM) or this benchmark's default (see cell_cycle.prepare)")
+    parser.add_argument("--setting", choices=["paper", "default"], default="default",
+                        help="HeLa networks: this benchmark's correlation networks (used in the revision) or the "
+                             "paper's TOM networks (see cell_cycle.prepare)")
     parser.add_argument("--summarise", action="store_true")
     parser.add_argument("--max-new", type=int, default=-1,
                         help="stop after this many new replicates and exit with status 3 if more remain")

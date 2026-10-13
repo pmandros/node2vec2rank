@@ -109,7 +109,7 @@ def load(dataset, revelio_dir=None):
     if dataset == "hela":
         import cell_cycle as cc
         from node2vec2rank.permutation import read_gmt
-        cells_table, groups, batches, build = cc.prepare(revelio_dir, setting="paper")
+        cells_table, groups, batches, build = cc.prepare(revelio_dir)
         expressions, graphs = cc.expressions_and_networks(build, groups["G1"], groups["S"])
         genes = groups["G1"].columns
         reactome = read_gmt(cc.REACTOME)
