@@ -270,13 +270,15 @@ def random_halves(strata, rng):
     return half
 
 
-def prepare(revelio_dir, num_genes=2000, merge="default", setting="default", paper_power=None):
+def prepare(revelio_dir, num_genes=2000, merge="default", setting="default", paper_power=None, paper_genes=None):
     """Phases, expression of the most variable genes standardised within phase
     and batch, and the network builder. setting "default" is this benchmark's
     pipeline (signed correlation network, metacells k = 25, power picked by the
     scale-free fit); "paper" is the paper's (PAPER_NETWORK: TOM, k = 20,
     power 6, phases merged as in the paper's script); paper_power overrides
-    its soft power."""
+    its soft power, and paper_genes (gene names, e.g. the genes of the paper's
+    own networks, written as Seurat writes them, with "-" for "_") replaces its
+    gene selection."""
     paper = setting == "paper"
     if paper:
         merge, num_genes = "paper", PAPER_NETWORK["candidates"]
@@ -287,7 +289,14 @@ def prepare(revelio_dir, num_genes=2000, merge="default", setting="default", pap
     counts, cells_table = counts[keep], cells_table[keep].reset_index(drop=True)
 
     logged = normalize_log1p(counts)
-    selected = highly_variable_genes(logged, counts, num_genes=num_genes, min_detected=0.0 if paper else 0.05)
+    if paper and paper_genes is not None:
+        index = {g.replace("_", "-"): i for i, g in enumerate(genes)}
+        missing = [g for g in paper_genes if g not in index]
+        if missing:
+            raise ValueError(f"{len(missing)} genes not in the data, e.g. {missing[:5]}")
+        selected = np.array([index[g] for g in paper_genes])
+    else:
+        selected = highly_variable_genes(logged, counts, num_genes=num_genes, min_detected=0.0 if paper else 0.05)
     expression = pd.DataFrame(logged[:, selected].toarray(), columns=genes[selected])
     del logged, counts
 
@@ -301,7 +310,9 @@ def prepare(revelio_dir, num_genes=2000, merge="default", setting="default", pap
         k, max_shared = PAPER_NETWORK["k"], PAPER_NETWORK["max_shared"]
         aggregated = {phase: metacells(group, k=k, max_shared=max_shared) for phase, group in groups.items()}
         varying = np.logical_and.reduce([np.asarray(a).std(axis=0) > 0 for a in aggregated.values()])
-        chosen = np.flatnonzero(varying)[:PAPER_NETWORK["num_genes"]]  # columns are most variable first
+        chosen = np.flatnonzero(varying)
+        if paper_genes is None:
+            chosen = chosen[:PAPER_NETWORK["num_genes"]]  # columns are most variable first
         groups = {phase: group.iloc[:, chosen] for phase, group in groups.items()}
         print(f"paper setting: {sum(len(a) for a in aggregated.values())} metacells "
               f"({ {p: len(a) for p, a in aggregated.items()} }) from {len(cells_table)} cells; "
@@ -315,6 +326,14 @@ def prepare(revelio_dir, num_genes=2000, merge="default", setting="default", pap
     print(f"signed soft power {power}; scale-free fits {fits}", flush=True)
     build = functools.partial(metacell_network, power=power, signed=True)
     return cells_table, groups, batches, build
+
+
+def read_genes(path):
+    """Gene names, one per line; None for no file."""
+    if path is None:
+        return None
+    with open(path, encoding="utf-8") as f:
+        return [line.strip() for line in f if line.strip()]
 
 
 def expressions_and_networks(build, *groups):
@@ -343,11 +362,13 @@ def main(argv=None):
                         help="'paper': the paper's networks (TOM, k = 20, power 6, 2,420 genes; see prepare)")
     parser.add_argument("--paper-power", type=int, default=None,
                         help="soft power for --setting paper (default: PAPER_NETWORK's)")
+    parser.add_argument("--paper-genes", default=None,
+                        help="for --setting paper: file with one gene per line to use instead of the gene selection")
     args = parser.parse_args(argv)
     os.makedirs(RESULTS_DIR, exist_ok=True)
 
     cells_table, groups, batches, build = prepare(args.revelio_dir, args.num_genes, args.phase_merge, args.setting,
-                                                  args.paper_power)
+                                                  args.paper_power, read_genes(args.paper_genes))
 
     gene_sets = read_gmt(REACTOME)
     names = pd.Index(list(gene_sets))

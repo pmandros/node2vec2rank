@@ -74,8 +74,9 @@ def set_test(comparisons, build, gene_sets, is_cell_cycle, dims):
     return rows
 
 
-def setup(revelio_dir, setting, paper_power=None):
-    cells_table, groups, batches, build = cc.prepare(revelio_dir, setting=setting, paper_power=paper_power)
+def setup(revelio_dir, setting, paper_power=None, paper_genes=None):
+    cells_table, groups, batches, build = cc.prepare(revelio_dir, setting=setting, paper_power=paper_power,
+                                                     paper_genes=paper_genes)
     gene_sets = read_gmt(cc.REACTOME)
     names = pd.Index(list(gene_sets))
     is_cell_cycle = pd.Series(np.asarray(names.str.contains(cc.CELL_CYCLE)), index=names)
@@ -89,8 +90,8 @@ def setup(revelio_dir, setting, paper_power=None):
     return comparisons, build, gene_sets, is_cell_cycle, gene_labels
 
 
-def part_dimensions(revelio_dir, setting, paper_power=None):
-    comparisons, build, gene_sets, is_cell_cycle, gene_labels = setup(revelio_dir, setting, paper_power)
+def part_dimensions(revelio_dir, setting, paper_power=None, paper_genes=None):
+    comparisons, build, gene_sets, is_cell_cycle, gene_labels = setup(revelio_dir, setting, paper_power, paper_genes)
     rankings, spectra = [], []
     for label, (group_a, group_b, _) in comparisons.items():
         graphs = [np.asarray(build(g)) for g in (group_a, group_b)]
@@ -154,17 +155,22 @@ def main(argv=None):
                         help="network setting; by default paper for dimensions and default for grid")
     parser.add_argument("--paper-power", type=int, default=None,
                         help="dimensions part with the paper setting only: its soft power (default 6)")
+    parser.add_argument("--paper-genes", default=None,
+                        help="dimensions part with the paper setting only: file with the genes to use")
+    parser.add_argument("--suffix", default=None, help="file-name suffix instead of the automatic one")
     args = parser.parse_args(argv)
     own = {"dimensions": "paper", "grid": "default"}[args.part]
     setting = args.setting or own
-    if args.paper_power is not None:
-        assert args.part == "dimensions" and setting == "paper", "--paper-power is for the dimensions part"
-        results = part_dimensions(args.revelio_dir, setting, args.paper_power)
+    if args.paper_power is not None or args.paper_genes is not None:
+        assert args.part == "dimensions" and setting == "paper", "--paper-power/--paper-genes: dimensions part only"
+        results = part_dimensions(args.revelio_dir, setting, args.paper_power, cc.read_genes(args.paper_genes))
     else:
         results = {"dimensions": part_dimensions, "grid": part_grid}[args.part](args.revelio_dir, setting)
     suffix = "" if setting == own else {"paper": "_paper-setting", "default": "_benchmark-setting"}[setting]
     if args.paper_power is not None:
         suffix += f"_power{args.paper_power}"
+    if args.suffix is not None:
+        suffix = args.suffix
     os.makedirs(cs.RESULTS_DIR, exist_ok=True)
     for name, table in results.items():
         table.to_csv(os.path.join(cs.RESULTS_DIR, f"revision_hela_{name}{suffix}.csv"), index=False)

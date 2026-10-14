@@ -1,0 +1,5 @@
+rebuilt power,same genes,comparison,paper genes,rebuilt genes,shared genes,spearman,top 100 shared
+6,True,G1 -> S,2420,2420,2418,0.4069963146596146,37
+6,True,G2 -> M,2420,2420,2418,0.4493070375778482,42
+5,True,G1 -> S,2420,2420,2418,0.3906475455627588,34
+5,True,G2 -> M,2420,2420,2418,0.4519475633653074,41
