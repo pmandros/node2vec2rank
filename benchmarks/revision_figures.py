@@ -123,8 +123,9 @@ def ablation8():
                 yrange=(lo, 1), angle=-45)
 
 
-def hela_dimensions():
-    spectrum = pd.read_csv(os.path.join(RESULTS, "revision_hela_spectrum.csv"))
+def hela_dimensions(suffix=""):
+    """suffix "" is the dimension check on the rebuilt networks; "_original" on the paper's networks."""
+    spectrum = pd.read_csv(os.path.join(RESULTS, f"revision_hela_spectrum{suffix}.csv"))
     fig = go.Figure()
     for i, (comparison, block) in enumerate(spectrum.groupby("comparison", sort=False)):
         fig.add_trace(go.Scatter(x=block.dimension, y=block.singular_value, mode="lines+markers", name=comparison,
@@ -137,9 +138,9 @@ def hela_dimensions():
                       legend=dict(x=0.45, y=0.95), margin=dict(l=90, r=20, t=60, b=80))
     fig.update_xaxes(title="dimension")
     fig.update_yaxes(title="singular value", type="log")
-    fig.write_image(os.path.join(OUT, "hela_spectrum.pdf"))
+    fig.write_image(os.path.join(OUT, f"hela_spectrum{suffix}.pdf"))
 
-    rankings = pd.read_csv(os.path.join(RESULTS, "revision_hela_rankings.csv"))
+    rankings = pd.read_csv(os.path.join(RESULTS, f"revision_hela_rankings{suffix}.csv"))
     rankings = rankings[rankings.ranking.str.endswith(" only")]
     fig = go.Figure()
     for i, (comparison, block) in enumerate(rankings.groupby("comparison", sort=False)):
@@ -151,7 +152,9 @@ def hela_dimensions():
                       margin=dict(l=90, r=20, t=60, b=80))
     fig.update_xaxes(title="dimension")
     fig.update_yaxes(title="top-100 overlap with n2v2r_b", range=[0, 1.03])
-    fig.write_image(os.path.join(OUT, "hela_dimensions_overlap.pdf"))
+    fig.write_image(os.path.join(OUT, f"hela_dimensions_overlap{suffix}.pdf"))
+    if suffix:
+        return
 
     tests = pd.read_csv(os.path.join(RESULTS, "revision_hela_set_test.csv"))
     fig = go.Figure()
@@ -168,6 +171,10 @@ def hela_dimensions():
     fig.update_yaxes(title="sets called")
     fig.update_xaxes(tickangle=-30)
     fig.write_image(os.path.join(OUT, "hela_dimensions_set_test.pdf"))
+
+
+def hela_dimensions_original():
+    hela_dimensions("_original")
 
 
 def hela_grid():
@@ -208,7 +215,8 @@ def runtime():
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    for make in (paper_sims, competitor_replicates, split_merge, ablation, ablation8, hela_dimensions, hela_grid, runtime):
+    for make in (paper_sims, competitor_replicates, split_merge, ablation, ablation8, hela_dimensions,
+                 hela_dimensions_original, hela_grid, runtime):
         make()
         print(make.__name__, "done", flush=True)
 

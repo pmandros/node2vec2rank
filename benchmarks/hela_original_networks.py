@@ -10,7 +10,9 @@ we report, over the genes in both gene sets, the Spearman correlation of the
 two rankings and the overlap of their top 100 genes, and we write the
 rankings of the paper's networks. On the paper's networks we also count the
 Revelio phase-marker genes (Whitfield et al. 2002) among the top 20 genes of
-n2v2r and of DeDi.
+n2v2r and of DeDi. With --dimensions, the dimension check of
+revision_hela.py runs on the paper's networks instead (joint UASE of the four
+networks; G1 -> S and G2 -> M).
 
     OMP_NUM_THREADS=1 python benchmarks/hela_original_networks.py \
         --networks-dir /mnt/project-files/revision/hdWGCNA_metacells --revelio-dir path/to/Revelio/data
@@ -48,6 +50,31 @@ def rank(networks, genes, dedi=False):
     return ranks
 
 
+def dimensions(original, genes):
+    """Singular values of the joint embedding of the four networks, its elbow, and for G1 -> S and G2 -> M
+    each single dimension's ranking against the default (Borda over 4..24, Euclidean and cosine)."""
+    import revision_hela as rh
+    from node2vec2rank.embedding import embed, select_dimension
+    graphs = [original[p].loc[genes, genes].to_numpy() for p in PHASES]
+    embeddings, singular_values = embed(graphs, rh.SPECTRUM_SIZE, "uase", random_state=42, return_singular_values=True)
+    elbow = select_dimension(singular_values, min_dimension=2)
+    spectrum = pd.DataFrame({"comparison": "G1, S, G2 and M", "dimension": np.arange(1, rh.SPECTRUM_SIZE + 1),
+                             "singular_value": np.sort(singular_values)[::-1], "elbow": elbow})
+    rankings = []
+    for label, (a, b) in {"G1 -> S": (0, 1), "G2 -> M": (2, 3)}.items():
+        pair = [embeddings[a], embeddings[b]]
+        default = rh.borda(pair, cc.DIMENSIONS)
+        for name, dims in [("default (Borda 4-24)", cc.DIMENSIONS), (f"elbow ({elbow})", [elbow])] + \
+                [(f"{d} only", [d]) for d in range(2, 25, 2)]:
+            score = rh.borda(pair, dims)
+            rankings.append(dict(comparison=label, ranking=name, spearman_with_default=spearmanr(score, default)[0],
+                                 top100_shared_with_default=len(rh.top(score) & rh.top(default))))
+            print(rankings[-1], flush=True)
+    os.makedirs(cc.RESULTS_DIR, exist_ok=True)
+    spectrum.to_csv(os.path.join(cc.RESULTS_DIR, "revision_hela_spectrum_original.csv"), index=False)
+    pd.DataFrame(rankings).to_csv(os.path.join(cc.RESULTS_DIR, "revision_hela_rankings_original.csv"), index=False)
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--networks-dir", required=True, help="folder with G1.txt, S.txt, G2.txt and M.txt")
@@ -56,11 +83,15 @@ def main(argv=None):
     parser.add_argument("--same-genes", action="store_true",
                         help="rebuild the networks on the genes of the paper's networks")
     parser.add_argument("--suffix", default="", help="appended to the agreement file name")
+    parser.add_argument("--dimensions", action="store_true", help="only the dimension check on the paper's networks")
     args = parser.parse_args(argv)
 
     original = {p: pd.read_csv(os.path.join(args.networks_dir, f"{p}.txt"), sep=" ", index_col=0) for p in PHASES}
     genes = [g for g in original["G1"].index if all(g in original[p].index for p in PHASES)]
     print(f"paper's networks: {len(genes)} genes in all four phases", flush=True)
+    if args.dimensions:
+        dimensions(original, genes)
+        return
     paper_ranks, paper_dedi = rank(original, genes, dedi=True)
 
     _, _, _, markers = cc.read_revelio(args.revelio_dir)
