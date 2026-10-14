@@ -270,12 +270,13 @@ def random_halves(strata, rng):
     return half
 
 
-def prepare(revelio_dir, num_genes=2000, merge="default", setting="default"):
+def prepare(revelio_dir, num_genes=2000, merge="default", setting="default", paper_power=None):
     """Phases, expression of the most variable genes standardised within phase
     and batch, and the network builder. setting "default" is this benchmark's
     pipeline (signed correlation network, metacells k = 25, power picked by the
     scale-free fit); "paper" is the paper's (PAPER_NETWORK: TOM, k = 20,
-    power 6, phases merged as in the paper's script)."""
+    power 6, phases merged as in the paper's script); paper_power overrides
+    its soft power."""
     paper = setting == "paper"
     if paper:
         merge, num_genes = "paper", PAPER_NETWORK["candidates"]
@@ -306,7 +307,9 @@ def prepare(revelio_dir, num_genes=2000, merge="default", setting="default"):
               f"({ {p: len(a) for p, a in aggregated.items()} }) from {len(cells_table)} cells; "
               f"{varying.sum()} of {len(varying)} candidate genes vary in every phase, kept {len(chosen)}",
               flush=True)
-        build = functools.partial(tom_network, k=k, max_shared=max_shared, power=PAPER_NETWORK["power"])
+        power = PAPER_NETWORK["power"] if paper_power is None else paper_power
+        print(f"paper setting: signed soft power {power} with topological overlap", flush=True)
+        build = functools.partial(tom_network, k=k, max_shared=max_shared, power=power)
         return cells_table, groups, batches, build
     power, fits = pick_power(list(groups.values()))
     print(f"signed soft power {power}; scale-free fits {fits}", flush=True)
@@ -338,10 +341,13 @@ def main(argv=None):
     parser.add_argument("--skip-null", action="store_true", help="skip the null split of the G1 cells")
     parser.add_argument("--setting", choices=["default", "paper"], default="default",
                         help="'paper': the paper's networks (TOM, k = 20, power 6, 2,420 genes; see prepare)")
+    parser.add_argument("--paper-power", type=int, default=None,
+                        help="soft power for --setting paper (default: PAPER_NETWORK's)")
     args = parser.parse_args(argv)
     os.makedirs(RESULTS_DIR, exist_ok=True)
 
-    cells_table, groups, batches, build = prepare(args.revelio_dir, args.num_genes, args.phase_merge, args.setting)
+    cells_table, groups, batches, build = prepare(args.revelio_dir, args.num_genes, args.phase_merge, args.setting,
+                                                  args.paper_power)
 
     gene_sets = read_gmt(REACTOME)
     names = pd.Index(list(gene_sets))

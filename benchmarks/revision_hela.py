@@ -74,8 +74,8 @@ def set_test(comparisons, build, gene_sets, is_cell_cycle, dims):
     return rows
 
 
-def setup(revelio_dir, setting):
-    cells_table, groups, batches, build = cc.prepare(revelio_dir, setting=setting)
+def setup(revelio_dir, setting, paper_power=None):
+    cells_table, groups, batches, build = cc.prepare(revelio_dir, setting=setting, paper_power=paper_power)
     gene_sets = read_gmt(cc.REACTOME)
     names = pd.Index(list(gene_sets))
     is_cell_cycle = pd.Series(np.asarray(names.str.contains(cc.CELL_CYCLE)), index=names)
@@ -89,8 +89,8 @@ def setup(revelio_dir, setting):
     return comparisons, build, gene_sets, is_cell_cycle, gene_labels
 
 
-def part_dimensions(revelio_dir, setting):
-    comparisons, build, gene_sets, is_cell_cycle, gene_labels = setup(revelio_dir, setting)
+def part_dimensions(revelio_dir, setting, paper_power=None):
+    comparisons, build, gene_sets, is_cell_cycle, gene_labels = setup(revelio_dir, setting, paper_power)
     rankings, spectra = [], []
     for label, (group_a, group_b, _) in comparisons.items():
         graphs = [np.asarray(build(g)) for g in (group_a, group_b)]
@@ -152,11 +152,19 @@ def main(argv=None):
     parser.add_argument("--revelio-dir", required=True)
     parser.add_argument("--setting", choices=["paper", "default"],
                         help="network setting; by default paper for dimensions and default for grid")
+    parser.add_argument("--paper-power", type=int, default=None,
+                        help="dimensions part with the paper setting only: its soft power (default 6)")
     args = parser.parse_args(argv)
     own = {"dimensions": "paper", "grid": "default"}[args.part]
     setting = args.setting or own
-    results = {"dimensions": part_dimensions, "grid": part_grid}[args.part](args.revelio_dir, setting)
+    if args.paper_power is not None:
+        assert args.part == "dimensions" and setting == "paper", "--paper-power is for the dimensions part"
+        results = part_dimensions(args.revelio_dir, setting, args.paper_power)
+    else:
+        results = {"dimensions": part_dimensions, "grid": part_grid}[args.part](args.revelio_dir, setting)
     suffix = "" if setting == own else {"paper": "_paper-setting", "default": "_benchmark-setting"}[setting]
+    if args.paper_power is not None:
+        suffix += f"_power{args.paper_power}"
     os.makedirs(cs.RESULTS_DIR, exist_ok=True)
     for name, table in results.items():
         table.to_csv(os.path.join(cs.RESULTS_DIR, f"revision_hela_{name}{suffix}.csv"), index=False)
