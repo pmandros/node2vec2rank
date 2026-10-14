@@ -8,7 +8,9 @@ Borda), as in the paper. The networks rebuilt by cell_cycle.prepare (setting
 "paper", soft power 6 or 5) are ranked the same way. For G1 -> S and G2 -> M
 we report, over the genes in both gene sets, the Spearman correlation of the
 two rankings and the overlap of their top 100 genes, and we write the
-rankings of the paper's networks.
+rankings of the paper's networks. On the paper's networks we also count the
+Revelio phase-marker genes (Whitfield et al. 2002) among the top 20 genes of
+n2v2r and of DeDi.
 
     OMP_NUM_THREADS=1 python benchmarks/hela_original_networks.py \
         --networks-dir /mnt/project-files/revision/hdWGCNA_metacells --revelio-dir path/to/Revelio/data
@@ -32,13 +34,18 @@ from node2vec2rank.model import N2V2R  # noqa: E402
 PHASES = ("G1", "S", "G2", "M")
 TRANSITIONS = {"1": "G1 -> S", "3": "G2 -> M"}  # keys of the sequential comparisons
 TOP_K = 100
+TOP_MARKERS = 20
 
 
-def rank(networks, genes):
+def rank(networks, genes, dedi=False):
     model = N2V2R([networks[p].loc[genes, genes].to_numpy() for p in PHASES], nodes=genes, seed=0, verbose=0)
     model.fit_transform_rank()
     borda = model.aggregate_transform()
-    return {label: borda[key]["borda_ranks"] for key, label in TRANSITIONS.items()}
+    ranks = {label: borda[key]["borda_ranks"] for key, label in TRANSITIONS.items()}
+    if dedi:
+        degree = model.degree_difference_ranking()
+        return ranks, {label: degree[key]["absDeDi"] for key, label in TRANSITIONS.items()}
+    return ranks
 
 
 def main(argv=None):
@@ -54,7 +61,22 @@ def main(argv=None):
     original = {p: pd.read_csv(os.path.join(args.networks_dir, f"{p}.txt"), sep=" ", index_col=0) for p in PHASES}
     genes = [g for g in original["G1"].index if all(g in original[p].index for p in PHASES)]
     print(f"paper's networks: {len(genes)} genes in all four phases", flush=True)
-    paper_ranks = rank(original, genes)
+    paper_ranks, paper_dedi = rank(original, genes, dedi=True)
+
+    _, _, _, markers = cc.read_revelio(args.revelio_dir)
+    marker_genes = set().union(*(set(markers[c].dropna().astype(str)) for c in markers.columns)) - {""}
+    in_markers = [g for g in genes if g in marker_genes]
+    marker_records = []
+    for label in TRANSITIONS.values():
+        for method, score in (("n2v2r", paper_ranks[label]), ("DeDi", paper_dedi[label])):
+            top = list(score.sort_values(ascending=False).index[:TOP_MARKERS])
+            marker_records.append({"comparison": label, "method": method, f"markers in top {TOP_MARKERS}":
+                                   sum(g in marker_genes for g in top), "markers among genes": len(in_markers),
+                                   "genes": len(genes), "expected by chance": TOP_MARKERS * len(in_markers) / len(genes),
+                                   "top genes": " ".join(top)})
+            print(marker_records[-1], flush=True)
+    os.makedirs(cc.RESULTS_DIR, exist_ok=True)
+    pd.DataFrame(marker_records).to_csv(os.path.join(cc.RESULTS_DIR, "hela_original_networks_markers.csv"), index=False)
 
     rankings = pd.DataFrame({f"{label} borda": r for label, r in paper_ranks.items()})
     for label, r in paper_ranks.items():
