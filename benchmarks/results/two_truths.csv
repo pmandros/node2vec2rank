@@ -1,0 +1,801 @@
+scenario,change,rep,embedding,dims,metric,auroc
+4-block SBM,affinity,0,DeDi (degree difference),default 4-24,both,0.4913194444444444
+4-block SBM,affinity,0,UASE,d=2,euclidean,0.8769583333333333
+4-block SBM,affinity,0,UASE,d=2,cosine,0.978425
+4-block SBM,affinity,0,UASE,d=2,both,0.9576
+4-block SBM,affinity,0,UASE,true rank,euclidean,0.6563638888888889
+4-block SBM,affinity,0,UASE,true rank,cosine,0.8423083333333333
+4-block SBM,affinity,0,UASE,true rank,both,0.7931138888888889
+4-block SBM,affinity,0,UASE,default 4-24,euclidean,0.5958694444444445
+4-block SBM,affinity,0,UASE,default 4-24,cosine,0.7299069444444445
+4-block SBM,affinity,0,UASE,default 4-24,both,0.7145597222222222
+4-block SBM,affinity,0,ULSE,d=2,euclidean,0.9237055555555556
+4-block SBM,affinity,0,ULSE,d=2,cosine,0.9798111111111111
+4-block SBM,affinity,0,ULSE,d=2,both,0.9685
+4-block SBM,affinity,0,ULSE,true rank,euclidean,0.6669138888888889
+4-block SBM,affinity,0,ULSE,true rank,cosine,0.8475305555555556
+4-block SBM,affinity,0,ULSE,true rank,both,0.7995472222222222
+4-block SBM,affinity,0,ULSE,default 4-24,euclidean,0.6024986111111111
+4-block SBM,affinity,0,ULSE,default 4-24,cosine,0.7306486111111111
+4-block SBM,affinity,0,ULSE,default 4-24,both,0.7213930555555556
+4-block SBM,affinity,0,UASE + ULSE,default 4-24,both,0.7206
+"4-block SBM, degree-corrected",affinity,0,DeDi (degree difference),default 4-24,both,0.5557125540002594
+"4-block SBM, degree-corrected",affinity,0,UASE,d=2,euclidean,0.8874275423771089
+"4-block SBM, degree-corrected",affinity,0,UASE,d=2,cosine,0.9644595983278627
+"4-block SBM, degree-corrected",affinity,0,UASE,d=2,both,0.944481996587882
+"4-block SBM, degree-corrected",affinity,0,UASE,true rank,euclidean,0.6898514431662859
+"4-block SBM, degree-corrected",affinity,0,UASE,true rank,cosine,0.8103431074218556
+"4-block SBM, degree-corrected",affinity,0,UASE,true rank,both,0.8241699174905968
+"4-block SBM, degree-corrected",affinity,0,UASE,default 4-24,euclidean,0.628486945156688
+"4-block SBM, degree-corrected",affinity,0,UASE,default 4-24,cosine,0.7182159212219772
+"4-block SBM, degree-corrected",affinity,0,UASE,default 4-24,both,0.7740731410441879
+"4-block SBM, degree-corrected",affinity,0,ULSE,d=2,euclidean,0.922586325587892
+"4-block SBM, degree-corrected",affinity,0,ULSE,d=2,cosine,0.9793252586525127
+"4-block SBM, degree-corrected",affinity,0,ULSE,d=2,both,0.9634382077401203
+"4-block SBM, degree-corrected",affinity,0,ULSE,true rank,euclidean,0.7009682633117499
+"4-block SBM, degree-corrected",affinity,0,ULSE,true rank,cosine,0.8220635332382197
+"4-block SBM, degree-corrected",affinity,0,ULSE,true rank,both,0.8236785525436242
+"4-block SBM, degree-corrected",affinity,0,ULSE,default 4-24,euclidean,0.6260101665153496
+"4-block SBM, degree-corrected",affinity,0,ULSE,default 4-24,cosine,0.682886282686993
+"4-block SBM, degree-corrected",affinity,0,ULSE,default 4-24,both,0.7337338248645628
+"4-block SBM, degree-corrected",affinity,0,UASE + ULSE,default 4-24,both,0.7672863186040247
+co-expression ((1+cor)/2)^10,module switch,0,DeDi (degree difference),default 4-24,both,0.5937222222222223
+co-expression ((1+cor)/2)^10,module switch,0,UASE,d=2,euclidean,0.7967333333333333
+co-expression ((1+cor)/2)^10,module switch,0,UASE,d=2,cosine,0.8342111111111111
+co-expression ((1+cor)/2)^10,module switch,0,UASE,d=2,both,0.8781277777777777
+co-expression ((1+cor)/2)^10,module switch,0,UASE,true rank,euclidean,0.8996666666666666
+co-expression ((1+cor)/2)^10,module switch,0,UASE,true rank,cosine,0.9998888888888889
+co-expression ((1+cor)/2)^10,module switch,0,UASE,true rank,both,0.9998222222222222
+co-expression ((1+cor)/2)^10,module switch,0,UASE,default 4-24,euclidean,0.7781555555555556
+co-expression ((1+cor)/2)^10,module switch,0,UASE,default 4-24,cosine,0.9810055555555556
+co-expression ((1+cor)/2)^10,module switch,0,UASE,default 4-24,both,0.9093833333333333
+co-expression ((1+cor)/2)^10,module switch,0,ULSE,d=2,euclidean,0.8103333333333333
+co-expression ((1+cor)/2)^10,module switch,0,ULSE,d=2,cosine,0.8440111111111112
+co-expression ((1+cor)/2)^10,module switch,0,ULSE,d=2,both,0.8675055555555555
+co-expression ((1+cor)/2)^10,module switch,0,ULSE,true rank,euclidean,0.9619777777777778
+co-expression ((1+cor)/2)^10,module switch,0,ULSE,true rank,cosine,0.9999555555555556
+co-expression ((1+cor)/2)^10,module switch,0,ULSE,true rank,both,0.9997222222222222
+co-expression ((1+cor)/2)^10,module switch,0,ULSE,default 4-24,euclidean,0.8208277777777778
+co-expression ((1+cor)/2)^10,module switch,0,ULSE,default 4-24,cosine,0.9951833333333333
+co-expression ((1+cor)/2)^10,module switch,0,ULSE,default 4-24,both,0.9484388888888889
+co-expression ((1+cor)/2)^10,module switch,0,UASE + ULSE,default 4-24,both,0.9298111111111111
+co-expression |cor|^6,module switch,0,DeDi (degree difference),default 4-24,both,0.6372666666666666
+co-expression |cor|^6,module switch,0,UASE,d=2,euclidean,0.7095333333333333
+co-expression |cor|^6,module switch,0,UASE,d=2,cosine,0.8248888888888889
+co-expression |cor|^6,module switch,0,UASE,d=2,both,0.8973111111111111
+co-expression |cor|^6,module switch,0,UASE,true rank,euclidean,0.7611444444444444
+co-expression |cor|^6,module switch,0,UASE,true rank,cosine,0.9974555555555555
+co-expression |cor|^6,module switch,0,UASE,true rank,both,0.9876222222222222
+co-expression |cor|^6,module switch,0,UASE,default 4-24,euclidean,0.7219777777777778
+co-expression |cor|^6,module switch,0,UASE,default 4-24,cosine,0.9581444444444445
+co-expression |cor|^6,module switch,0,UASE,default 4-24,both,0.9683111111111111
+co-expression |cor|^6,module switch,0,ULSE,d=2,euclidean,0.7262333333333333
+co-expression |cor|^6,module switch,0,ULSE,d=2,cosine,0.901
+co-expression |cor|^6,module switch,0,ULSE,d=2,both,0.9328944444444445
+co-expression |cor|^6,module switch,0,ULSE,true rank,euclidean,0.7720444444444444
+co-expression |cor|^6,module switch,0,ULSE,true rank,cosine,0.9997555555555555
+co-expression |cor|^6,module switch,0,ULSE,true rank,both,0.9907611111111111
+co-expression |cor|^6,module switch,0,ULSE,default 4-24,euclidean,0.7247277777777777
+co-expression |cor|^6,module switch,0,ULSE,default 4-24,cosine,0.9652277777777778
+co-expression |cor|^6,module switch,0,ULSE,default 4-24,both,0.9696055555555556
+co-expression |cor|^6,module switch,0,UASE + ULSE,default 4-24,both,0.97125
+4-block SBM,core-periphery,0,DeDi (degree difference),default 4-24,both,1.0
+4-block SBM,core-periphery,0,UASE,d=2,euclidean,1.0
+4-block SBM,core-periphery,0,UASE,d=2,cosine,0.5802389007070592
+4-block SBM,core-periphery,0,UASE,d=2,both,0.8610717417392756
+4-block SBM,core-periphery,0,UASE,true rank,euclidean,0.8808039652536962
+4-block SBM,core-periphery,0,UASE,true rank,cosine,0.5041154607276166
+4-block SBM,core-periphery,0,UASE,true rank,both,0.7181485592576011
+4-block SBM,core-periphery,0,UASE,default 4-24,euclidean,0.6637163921701604
+4-block SBM,core-periphery,0,UASE,default 4-24,cosine,0.5306003777693593
+4-block SBM,core-periphery,0,UASE,default 4-24,both,0.664140256808988
+4-block SBM,core-periphery,0,ULSE,d=2,euclidean,1.0
+4-block SBM,core-periphery,0,ULSE,d=2,cosine,0.5742783042235462
+4-block SBM,core-periphery,0,ULSE,d=2,both,0.8398043334861012
+4-block SBM,core-periphery,0,ULSE,true rank,euclidean,0.7791559265548547
+4-block SBM,core-periphery,0,ULSE,true rank,cosine,0.49085909414828377
+4-block SBM,core-periphery,0,ULSE,true rank,both,0.643933834729879
+4-block SBM,core-periphery,0,ULSE,default 4-24,euclidean,0.628486617798606
+4-block SBM,core-periphery,0,ULSE,default 4-24,cosine,0.5199229626018931
+4-block SBM,core-periphery,0,ULSE,default 4-24,both,0.6231710903123088
+4-block SBM,core-periphery,0,UASE + ULSE,default 4-24,both,0.6467194201531741
+"4-block SBM, degree-corrected",core-periphery,0,DeDi (degree difference),default 4-24,both,1.0
+"4-block SBM, degree-corrected",core-periphery,0,UASE,d=2,euclidean,0.9999947237347516
+"4-block SBM, degree-corrected",core-periphery,0,UASE,d=2,cosine,0.6057917563631758
+"4-block SBM, degree-corrected",core-periphery,0,UASE,d=2,both,0.8760301907897514
+"4-block SBM, degree-corrected",core-periphery,0,UASE,true rank,euclidean,0.8329059558482124
+"4-block SBM, degree-corrected",core-periphery,0,UASE,true rank,cosine,0.5430305812333798
+"4-block SBM, degree-corrected",core-periphery,0,UASE,true rank,both,0.7414854269553839
+"4-block SBM, degree-corrected",core-periphery,0,UASE,default 4-24,euclidean,0.6886528639567768
+"4-block SBM, degree-corrected",core-periphery,0,UASE,default 4-24,cosine,0.5884618631547845
+"4-block SBM, degree-corrected",core-periphery,0,UASE,default 4-24,both,0.7417993647376641
+"4-block SBM, degree-corrected",core-periphery,0,ULSE,d=2,euclidean,1.0
+"4-block SBM, degree-corrected",core-periphery,0,ULSE,d=2,cosine,0.5869053649065046
+"4-block SBM, degree-corrected",core-periphery,0,ULSE,d=2,both,0.8492162107973492
+"4-block SBM, degree-corrected",core-periphery,0,ULSE,true rank,euclidean,0.7694799712971171
+"4-block SBM, degree-corrected",core-periphery,0,ULSE,true rank,cosine,0.4936526529061669
+"4-block SBM, degree-corrected",core-periphery,0,ULSE,true rank,both,0.6496348824448103
+"4-block SBM, degree-corrected",core-periphery,0,ULSE,default 4-24,euclidean,0.647892395846524
+"4-block SBM, degree-corrected",core-periphery,0,ULSE,default 4-24,cosine,0.5624696614748217
+"4-block SBM, degree-corrected",core-periphery,0,ULSE,default 4-24,both,0.6743818855261492
+"4-block SBM, degree-corrected",core-periphery,0,UASE + ULSE,default 4-24,both,0.7207365138660251
+co-expression ((1+cor)/2)^10,hub status,0,DeDi (degree difference),default 4-24,both,1.0
+co-expression ((1+cor)/2)^10,hub status,0,UASE,d=2,euclidean,0.9768666666666667
+co-expression ((1+cor)/2)^10,hub status,0,UASE,d=2,cosine,0.5327111111111111
+co-expression ((1+cor)/2)^10,hub status,0,UASE,d=2,both,0.9094055555555556
+co-expression ((1+cor)/2)^10,hub status,0,UASE,true rank,euclidean,1.0
+co-expression ((1+cor)/2)^10,hub status,0,UASE,true rank,cosine,0.5279777777777778
+co-expression ((1+cor)/2)^10,hub status,0,UASE,true rank,both,0.9464555555555556
+co-expression ((1+cor)/2)^10,hub status,0,UASE,default 4-24,euclidean,0.8907166666666667
+co-expression ((1+cor)/2)^10,hub status,0,UASE,default 4-24,cosine,0.9364388888888889
+co-expression ((1+cor)/2)^10,hub status,0,UASE,default 4-24,both,0.9281166666666667
+co-expression ((1+cor)/2)^10,hub status,0,ULSE,d=2,euclidean,0.9974222222222222
+co-expression ((1+cor)/2)^10,hub status,0,ULSE,d=2,cosine,0.6692555555555556
+co-expression ((1+cor)/2)^10,hub status,0,ULSE,d=2,both,0.9418722222222222
+co-expression ((1+cor)/2)^10,hub status,0,ULSE,true rank,euclidean,1.0
+co-expression ((1+cor)/2)^10,hub status,0,ULSE,true rank,cosine,0.5769555555555556
+co-expression ((1+cor)/2)^10,hub status,0,ULSE,true rank,both,0.9407388888888889
+co-expression ((1+cor)/2)^10,hub status,0,ULSE,default 4-24,euclidean,0.8802722222222222
+co-expression ((1+cor)/2)^10,hub status,0,ULSE,default 4-24,cosine,0.9577777777777777
+co-expression ((1+cor)/2)^10,hub status,0,ULSE,default 4-24,both,0.9333166666666667
+co-expression ((1+cor)/2)^10,hub status,0,UASE + ULSE,default 4-24,both,0.9309666666666667
+co-expression |cor|^6,hub status,0,DeDi (degree difference),default 4-24,both,0.997
+co-expression |cor|^6,hub status,0,UASE,d=2,euclidean,0.7972333333333333
+co-expression |cor|^6,hub status,0,UASE,d=2,cosine,0.43756666666666666
+co-expression |cor|^6,hub status,0,UASE,d=2,both,0.7943444444444444
+co-expression |cor|^6,hub status,0,UASE,true rank,euclidean,0.9976666666666667
+co-expression |cor|^6,hub status,0,UASE,true rank,cosine,0.4173222222222222
+co-expression |cor|^6,hub status,0,UASE,true rank,both,0.9539944444444445
+co-expression |cor|^6,hub status,0,UASE,default 4-24,euclidean,0.8948277777777778
+co-expression |cor|^6,hub status,0,UASE,default 4-24,cosine,0.3401666666666667
+co-expression |cor|^6,hub status,0,UASE,default 4-24,both,0.7544777777777778
+co-expression |cor|^6,hub status,0,ULSE,d=2,euclidean,0.8246333333333333
+co-expression |cor|^6,hub status,0,ULSE,d=2,cosine,0.429
+co-expression |cor|^6,hub status,0,ULSE,d=2,both,0.8193833333333334
+co-expression |cor|^6,hub status,0,ULSE,true rank,euclidean,0.9999111111111111
+co-expression |cor|^6,hub status,0,ULSE,true rank,cosine,0.4250555555555556
+co-expression |cor|^6,hub status,0,ULSE,true rank,both,0.9555555555555556
+co-expression |cor|^6,hub status,0,ULSE,default 4-24,euclidean,0.8540611111111112
+co-expression |cor|^6,hub status,0,ULSE,default 4-24,cosine,0.33915
+co-expression |cor|^6,hub status,0,ULSE,default 4-24,both,0.7205944444444444
+co-expression |cor|^6,hub status,0,UASE + ULSE,default 4-24,both,0.7460611111111111
+4-block SBM,affinity,1,DeDi (degree difference),default 4-24,both,0.47618156795847244
+4-block SBM,affinity,1,UASE,d=2,euclidean,0.8648522778411529
+4-block SBM,affinity,1,UASE,d=2,cosine,0.9805862837646911
+4-block SBM,affinity,1,UASE,d=2,both,0.9543306715785287
+4-block SBM,affinity,1,UASE,true rank,euclidean,0.6306161107680714
+4-block SBM,affinity,1,UASE,true rank,cosine,0.8419168820839134
+4-block SBM,affinity,1,UASE,true rank,both,0.7812934977132631
+4-block SBM,affinity,1,UASE,default 4-24,euclidean,0.5705120825527729
+4-block SBM,affinity,1,UASE,default 4-24,cosine,0.7297385689317747
+4-block SBM,affinity,1,UASE,default 4-24,both,0.7056454144906908
+4-block SBM,affinity,1,ULSE,d=2,euclidean,0.9144802252200396
+4-block SBM,affinity,1,ULSE,d=2,cosine,0.9841393601322854
+4-block SBM,affinity,1,ULSE,d=2,both,0.9675029565363
+4-block SBM,affinity,1,ULSE,true rank,euclidean,0.6433475316846501
+4-block SBM,affinity,1,ULSE,true rank,cosine,0.8482302644660966
+4-block SBM,affinity,1,ULSE,true rank,both,0.7914543018911366
+4-block SBM,affinity,1,ULSE,default 4-24,euclidean,0.5721525677386945
+4-block SBM,affinity,1,ULSE,default 4-24,cosine,0.7299766616780567
+4-block SBM,affinity,1,ULSE,default 4-24,both,0.7113125451329656
+4-block SBM,affinity,1,UASE + ULSE,default 4-24,both,0.7109724126382769
+"4-block SBM, degree-corrected",affinity,1,DeDi (degree difference),default 4-24,both,0.47094136406207393
+"4-block SBM, degree-corrected",affinity,1,UASE,d=2,euclidean,0.8649334329172149
+"4-block SBM, degree-corrected",affinity,1,UASE,d=2,cosine,0.9701218717027659
+"4-block SBM, degree-corrected",affinity,1,UASE,d=2,both,0.9439648018399308
+"4-block SBM, degree-corrected",affinity,1,UASE,true rank,euclidean,0.6567912650709535
+"4-block SBM, degree-corrected",affinity,1,UASE,true rank,cosine,0.8356984505222226
+"4-block SBM, degree-corrected",affinity,1,UASE,true rank,both,0.816095837630852
+"4-block SBM, degree-corrected",affinity,1,UASE,default 4-24,euclidean,0.5811075150264964
+"4-block SBM, degree-corrected",affinity,1,UASE,default 4-24,cosine,0.7287006081729914
+"4-block SBM, degree-corrected",affinity,1,UASE,default 4-24,both,0.7474451992270394
+"4-block SBM, degree-corrected",affinity,1,ULSE,d=2,euclidean,0.911130277056585
+"4-block SBM, degree-corrected",affinity,1,ULSE,d=2,cosine,0.983210039003687
+"4-block SBM, degree-corrected",affinity,1,ULSE,d=2,both,0.9649100188498062
+"4-block SBM, degree-corrected",affinity,1,ULSE,true rank,euclidean,0.6764472264703442
+"4-block SBM, degree-corrected",affinity,1,ULSE,true rank,cosine,0.8586501641948525
+"4-block SBM, degree-corrected",affinity,1,ULSE,true rank,both,0.8286282913065642
+"4-block SBM, degree-corrected",affinity,1,ULSE,default 4-24,euclidean,0.5919046602885562
+"4-block SBM, degree-corrected",affinity,1,ULSE,default 4-24,cosine,0.7465145641426895
+"4-block SBM, degree-corrected",affinity,1,ULSE,default 4-24,both,0.7537032755983925
+"4-block SBM, degree-corrected",affinity,1,UASE + ULSE,default 4-24,both,0.765765966022928
+co-expression ((1+cor)/2)^10,module switch,1,DeDi (degree difference),default 4-24,both,0.5402333333333333
+co-expression ((1+cor)/2)^10,module switch,1,UASE,d=2,euclidean,0.7941555555555555
+co-expression ((1+cor)/2)^10,module switch,1,UASE,d=2,cosine,0.8000777777777778
+co-expression ((1+cor)/2)^10,module switch,1,UASE,d=2,both,0.8847444444444444
+co-expression ((1+cor)/2)^10,module switch,1,UASE,true rank,euclidean,0.8586222222222222
+co-expression ((1+cor)/2)^10,module switch,1,UASE,true rank,cosine,0.9999444444444444
+co-expression ((1+cor)/2)^10,module switch,1,UASE,true rank,both,0.9996333333333334
+co-expression ((1+cor)/2)^10,module switch,1,UASE,default 4-24,euclidean,0.7801444444444444
+co-expression ((1+cor)/2)^10,module switch,1,UASE,default 4-24,cosine,0.9870666666666666
+co-expression ((1+cor)/2)^10,module switch,1,UASE,default 4-24,both,0.9080722222222222
+co-expression ((1+cor)/2)^10,module switch,1,ULSE,d=2,euclidean,0.7583888888888889
+co-expression ((1+cor)/2)^10,module switch,1,ULSE,d=2,cosine,0.7409777777777777
+co-expression ((1+cor)/2)^10,module switch,1,ULSE,d=2,both,0.79965
+co-expression ((1+cor)/2)^10,module switch,1,ULSE,true rank,euclidean,0.9118777777777778
+co-expression ((1+cor)/2)^10,module switch,1,ULSE,true rank,cosine,1.0
+co-expression ((1+cor)/2)^10,module switch,1,ULSE,true rank,both,0.9992444444444445
+co-expression ((1+cor)/2)^10,module switch,1,ULSE,default 4-24,euclidean,0.8231388888888889
+co-expression ((1+cor)/2)^10,module switch,1,ULSE,default 4-24,cosine,0.9993444444444445
+co-expression ((1+cor)/2)^10,module switch,1,ULSE,default 4-24,both,0.9455
+co-expression ((1+cor)/2)^10,module switch,1,UASE + ULSE,default 4-24,both,0.9270611111111111
+co-expression |cor|^6,module switch,1,DeDi (degree difference),default 4-24,both,0.588
+co-expression |cor|^6,module switch,1,UASE,d=2,euclidean,0.6794777777777777
+co-expression |cor|^6,module switch,1,UASE,d=2,cosine,0.8319666666666666
+co-expression |cor|^6,module switch,1,UASE,d=2,both,0.8906777777777778
+co-expression |cor|^6,module switch,1,UASE,true rank,euclidean,0.6925555555555556
+co-expression |cor|^6,module switch,1,UASE,true rank,cosine,0.9956777777777778
+co-expression |cor|^6,module switch,1,UASE,true rank,both,0.98285
+co-expression |cor|^6,module switch,1,UASE,default 4-24,euclidean,0.6502277777777777
+co-expression |cor|^6,module switch,1,UASE,default 4-24,cosine,0.9624055555555555
+co-expression |cor|^6,module switch,1,UASE,default 4-24,both,0.9553166666666667
+co-expression |cor|^6,module switch,1,ULSE,d=2,euclidean,0.6883111111111111
+co-expression |cor|^6,module switch,1,ULSE,d=2,cosine,0.8414222222222222
+co-expression |cor|^6,module switch,1,ULSE,d=2,both,0.8720444444444444
+co-expression |cor|^6,module switch,1,ULSE,true rank,euclidean,0.7087555555555556
+co-expression |cor|^6,module switch,1,ULSE,true rank,cosine,0.9981
+co-expression |cor|^6,module switch,1,ULSE,true rank,both,0.9849944444444444
+co-expression |cor|^6,module switch,1,ULSE,default 4-24,euclidean,0.6508388888888889
+co-expression |cor|^6,module switch,1,ULSE,default 4-24,cosine,0.96575
+co-expression |cor|^6,module switch,1,ULSE,default 4-24,both,0.9571777777777778
+co-expression |cor|^6,module switch,1,UASE + ULSE,default 4-24,both,0.9587111111111111
+4-block SBM,core-periphery,1,DeDi (degree difference),default 4-24,both,1.0
+4-block SBM,core-periphery,1,UASE,d=2,euclidean,1.0
+4-block SBM,core-periphery,1,UASE,d=2,cosine,0.5876264058437232
+4-block SBM,core-periphery,1,UASE,d=2,both,0.8607947413929359
+4-block SBM,core-periphery,1,UASE,true rank,euclidean,0.8976542670398021
+4-block SBM,core-periphery,1,UASE,true rank,cosine,0.5228793414964469
+4-block SBM,core-periphery,1,UASE,true rank,both,0.7417384890492174
+4-block SBM,core-periphery,1,UASE,default 4-24,euclidean,0.6521875222750108
+4-block SBM,core-periphery,1,UASE,default 4-24,cosine,0.5414710339633868
+4-block SBM,core-periphery,1,UASE,default 4-24,both,0.6655494296047677
+4-block SBM,core-periphery,1,ULSE,d=2,euclidean,1.0
+4-block SBM,core-periphery,1,ULSE,d=2,cosine,0.5736586182210363
+4-block SBM,core-periphery,1,ULSE,d=2,both,0.8373653039783556
+4-block SBM,core-periphery,1,ULSE,true rank,euclidean,0.80665445608685
+4-block SBM,core-periphery,1,ULSE,true rank,cosine,0.5003052644954148
+4-block SBM,core-periphery,1,ULSE,true rank,both,0.6667394962670956
+4-block SBM,core-periphery,1,ULSE,default 4-24,euclidean,0.6237049502434369
+4-block SBM,core-periphery,1,ULSE,default 4-24,cosine,0.5354974571622488
+4-block SBM,core-periphery,1,ULSE,default 4-24,both,0.6353483889162646
+4-block SBM,core-periphery,1,UASE + ULSE,default 4-24,both,0.6540222083794329
+"4-block SBM, degree-corrected",core-periphery,1,DeDi (degree difference),default 4-24,both,1.0
+"4-block SBM, degree-corrected",core-periphery,1,UASE,d=2,euclidean,1.0
+"4-block SBM, degree-corrected",core-periphery,1,UASE,d=2,cosine,0.61888622121389
+"4-block SBM, degree-corrected",core-periphery,1,UASE,d=2,both,0.880088161763896
+"4-block SBM, degree-corrected",core-periphery,1,UASE,true rank,euclidean,0.8539411226995892
+"4-block SBM, degree-corrected",core-periphery,1,UASE,true rank,cosine,0.5503171841099571
+"4-block SBM, degree-corrected",core-periphery,1,UASE,true rank,both,0.7640378748664632
+"4-block SBM, degree-corrected",core-periphery,1,UASE,default 4-24,euclidean,0.719805559532594
+"4-block SBM, degree-corrected",core-periphery,1,UASE,default 4-24,cosine,0.550132710712673
+"4-block SBM, degree-corrected",core-periphery,1,UASE,default 4-24,both,0.7334896309430721
+"4-block SBM, degree-corrected",core-periphery,1,ULSE,d=2,euclidean,1.0
+"4-block SBM, degree-corrected",core-periphery,1,ULSE,d=2,cosine,0.6061878434784524
+"4-block SBM, degree-corrected",core-periphery,1,ULSE,d=2,both,0.8572120838335224
+"4-block SBM, degree-corrected",core-periphery,1,ULSE,true rank,euclidean,0.7742183283956872
+"4-block SBM, degree-corrected",core-periphery,1,ULSE,true rank,cosine,0.4745702045176709
+"4-block SBM, degree-corrected",core-periphery,1,ULSE,true rank,both,0.6367236973975484
+"4-block SBM, degree-corrected",core-periphery,1,ULSE,default 4-24,euclidean,0.6718975429244816
+"4-block SBM, degree-corrected",core-periphery,1,ULSE,default 4-24,cosine,0.537627066377383
+"4-block SBM, degree-corrected",core-periphery,1,ULSE,default 4-24,both,0.67071085584643
+"4-block SBM, degree-corrected",core-periphery,1,UASE + ULSE,default 4-24,both,0.7193182193636494
+co-expression ((1+cor)/2)^10,hub status,1,DeDi (degree difference),default 4-24,both,0.996
+co-expression ((1+cor)/2)^10,hub status,1,UASE,d=2,euclidean,0.9457
+co-expression ((1+cor)/2)^10,hub status,1,UASE,d=2,cosine,0.6066777777777778
+co-expression ((1+cor)/2)^10,hub status,1,UASE,d=2,both,0.9034
+co-expression ((1+cor)/2)^10,hub status,1,UASE,true rank,euclidean,0.9978111111111111
+co-expression ((1+cor)/2)^10,hub status,1,UASE,true rank,cosine,0.6258777777777778
+co-expression ((1+cor)/2)^10,hub status,1,UASE,true rank,both,0.9715888888888888
+co-expression ((1+cor)/2)^10,hub status,1,UASE,default 4-24,euclidean,0.8982
+co-expression ((1+cor)/2)^10,hub status,1,UASE,default 4-24,cosine,0.9441
+co-expression ((1+cor)/2)^10,hub status,1,UASE,default 4-24,both,0.9345444444444444
+co-expression ((1+cor)/2)^10,hub status,1,ULSE,d=2,euclidean,0.9749666666666666
+co-expression ((1+cor)/2)^10,hub status,1,ULSE,d=2,cosine,0.7235666666666667
+co-expression ((1+cor)/2)^10,hub status,1,ULSE,d=2,both,0.9554444444444444
+co-expression ((1+cor)/2)^10,hub status,1,ULSE,true rank,euclidean,0.9995111111111111
+co-expression ((1+cor)/2)^10,hub status,1,ULSE,true rank,cosine,0.6721444444444444
+co-expression ((1+cor)/2)^10,hub status,1,ULSE,true rank,both,0.9697666666666667
+co-expression ((1+cor)/2)^10,hub status,1,ULSE,default 4-24,euclidean,0.8543055555555555
+co-expression ((1+cor)/2)^10,hub status,1,ULSE,default 4-24,cosine,0.9712777777777778
+co-expression ((1+cor)/2)^10,hub status,1,ULSE,default 4-24,both,0.9302444444444444
+co-expression ((1+cor)/2)^10,hub status,1,UASE + ULSE,default 4-24,both,0.9330444444444445
+co-expression |cor|^6,hub status,1,DeDi (degree difference),default 4-24,both,0.9997333333333334
+co-expression |cor|^6,hub status,1,UASE,d=2,euclidean,0.7645888888888889
+co-expression |cor|^6,hub status,1,UASE,d=2,cosine,0.42146666666666666
+co-expression |cor|^6,hub status,1,UASE,d=2,both,0.7575222222222222
+co-expression |cor|^6,hub status,1,UASE,true rank,euclidean,0.9995
+co-expression |cor|^6,hub status,1,UASE,true rank,cosine,0.4386333333333333
+co-expression |cor|^6,hub status,1,UASE,true rank,both,0.9471722222222222
+co-expression |cor|^6,hub status,1,UASE,default 4-24,euclidean,0.8942277777777777
+co-expression |cor|^6,hub status,1,UASE,default 4-24,cosine,0.39350555555555555
+co-expression |cor|^6,hub status,1,UASE,default 4-24,both,0.8018333333333333
+co-expression |cor|^6,hub status,1,ULSE,d=2,euclidean,0.8057444444444445
+co-expression |cor|^6,hub status,1,ULSE,d=2,cosine,0.4204777777777778
+co-expression |cor|^6,hub status,1,ULSE,d=2,both,0.8004666666666667
+co-expression |cor|^6,hub status,1,ULSE,true rank,euclidean,1.0
+co-expression |cor|^6,hub status,1,ULSE,true rank,cosine,0.4440777777777778
+co-expression |cor|^6,hub status,1,ULSE,true rank,both,0.9417222222222222
+co-expression |cor|^6,hub status,1,ULSE,default 4-24,euclidean,0.8795722222222222
+co-expression |cor|^6,hub status,1,ULSE,default 4-24,cosine,0.3824444444444444
+co-expression |cor|^6,hub status,1,ULSE,default 4-24,both,0.7436
+co-expression |cor|^6,hub status,1,UASE + ULSE,default 4-24,both,0.7808166666666667
+4-block SBM,affinity,2,DeDi (degree difference),default 4-24,both,0.532159954542226
+4-block SBM,affinity,2,UASE,d=2,euclidean,0.9120051139995738
+4-block SBM,affinity,2,UASE,d=2,cosine,0.9879423254492506
+4-block SBM,affinity,2,UASE,d=2,both,0.9756758292492365
+4-block SBM,affinity,2,UASE,true rank,euclidean,0.6994445628240642
+4-block SBM,affinity,2,UASE,true rank,cosine,0.8457390439661908
+4-block SBM,affinity,2,UASE,true rank,both,0.8233141558349315
+4-block SBM,affinity,2,UASE,default 4-24,euclidean,0.6534015199943177
+4-block SBM,affinity,2,UASE,default 4-24,cosine,0.7486597059450245
+4-block SBM,affinity,2,UASE,default 4-24,both,0.7785609773421408
+4-block SBM,affinity,2,ULSE,d=2,euclidean,0.9503771574685702
+4-block SBM,affinity,2,ULSE,d=2,cosine,0.9900333830527737
+4-block SBM,affinity,2,ULSE,d=2,both,0.9833212586121174
+4-block SBM,affinity,2,ULSE,true rank,euclidean,0.70809858654734
+4-block SBM,affinity,2,ULSE,true rank,cosine,0.8466794516656012
+4-block SBM,affinity,2,ULSE,true rank,both,0.8270985155195681
+4-block SBM,affinity,2,ULSE,default 4-24,euclidean,0.6635172952624476
+4-block SBM,affinity,2,ULSE,default 4-24,cosine,0.7557624831309042
+4-block SBM,affinity,2,ULSE,default 4-24,both,0.7938731443994602
+4-block SBM,affinity,2,UASE + ULSE,default 4-24,both,0.789494992542084
+"4-block SBM, degree-corrected",affinity,2,DeDi (degree difference),default 4-24,both,0.48907531259086945
+"4-block SBM, degree-corrected",affinity,2,UASE,d=2,euclidean,0.8805205001453911
+"4-block SBM, degree-corrected",affinity,2,UASE,d=2,cosine,0.9738499563826694
+"4-block SBM, degree-corrected",affinity,2,UASE,d=2,both,0.9540331491712707
+"4-block SBM, degree-corrected",affinity,2,UASE,true rank,euclidean,0.6664902587961616
+"4-block SBM, degree-corrected",affinity,2,UASE,true rank,cosine,0.8068886304158186
+"4-block SBM, degree-corrected",affinity,2,UASE,true rank,both,0.8062038383250945
+"4-block SBM, degree-corrected",affinity,2,UASE,default 4-24,euclidean,0.5969700494329747
+"4-block SBM, degree-corrected",affinity,2,UASE,default 4-24,cosine,0.7017025298051759
+"4-block SBM, degree-corrected",affinity,2,UASE,default 4-24,both,0.735729863332364
+"4-block SBM, degree-corrected",affinity,2,ULSE,d=2,euclidean,0.920529223611515
+"4-block SBM, degree-corrected",affinity,2,ULSE,d=2,cosine,0.9840796743239314
+"4-block SBM, degree-corrected",affinity,2,ULSE,d=2,both,0.9688863041581856
+"4-block SBM, degree-corrected",affinity,2,ULSE,true rank,euclidean,0.6717214306484444
+"4-block SBM, degree-corrected",affinity,2,ULSE,true rank,cosine,0.8266269264321023
+"4-block SBM, degree-corrected",affinity,2,ULSE,true rank,both,0.8037031113695842
+"4-block SBM, degree-corrected",affinity,2,ULSE,default 4-24,euclidean,0.6070660075603374
+"4-block SBM, degree-corrected",affinity,2,ULSE,default 4-24,cosine,0.7130488514102937
+"4-block SBM, degree-corrected",affinity,2,ULSE,default 4-24,both,0.7333207327711544
+"4-block SBM, degree-corrected",affinity,2,UASE + ULSE,default 4-24,both,0.7475835998836872
+co-expression ((1+cor)/2)^10,module switch,2,DeDi (degree difference),default 4-24,both,0.6071444444444445
+co-expression ((1+cor)/2)^10,module switch,2,UASE,d=2,euclidean,0.8179666666666666
+co-expression ((1+cor)/2)^10,module switch,2,UASE,d=2,cosine,0.9099444444444444
+co-expression ((1+cor)/2)^10,module switch,2,UASE,d=2,both,0.92625
+co-expression ((1+cor)/2)^10,module switch,2,UASE,true rank,euclidean,0.8528111111111111
+co-expression ((1+cor)/2)^10,module switch,2,UASE,true rank,cosine,0.9996666666666667
+co-expression ((1+cor)/2)^10,module switch,2,UASE,true rank,both,0.9992555555555556
+co-expression ((1+cor)/2)^10,module switch,2,UASE,default 4-24,euclidean,0.7644722222222222
+co-expression ((1+cor)/2)^10,module switch,2,UASE,default 4-24,cosine,0.9685
+co-expression ((1+cor)/2)^10,module switch,2,UASE,default 4-24,both,0.8900777777777777
+co-expression ((1+cor)/2)^10,module switch,2,ULSE,d=2,euclidean,0.8519333333333333
+co-expression ((1+cor)/2)^10,module switch,2,ULSE,d=2,cosine,0.9425111111111111
+co-expression ((1+cor)/2)^10,module switch,2,ULSE,d=2,both,0.9432611111111111
+co-expression ((1+cor)/2)^10,module switch,2,ULSE,true rank,euclidean,0.9002222222222223
+co-expression ((1+cor)/2)^10,module switch,2,ULSE,true rank,cosine,0.9998444444444444
+co-expression ((1+cor)/2)^10,module switch,2,ULSE,true rank,both,0.99865
+co-expression ((1+cor)/2)^10,module switch,2,ULSE,default 4-24,euclidean,0.8049277777777778
+co-expression ((1+cor)/2)^10,module switch,2,ULSE,default 4-24,cosine,0.9908
+co-expression ((1+cor)/2)^10,module switch,2,ULSE,default 4-24,both,0.9368444444444445
+co-expression ((1+cor)/2)^10,module switch,2,UASE + ULSE,default 4-24,both,0.9144611111111111
+co-expression |cor|^6,module switch,2,DeDi (degree difference),default 4-24,both,0.5613
+co-expression |cor|^6,module switch,2,UASE,d=2,euclidean,0.6871
+co-expression |cor|^6,module switch,2,UASE,d=2,cosine,0.7963444444444444
+co-expression |cor|^6,module switch,2,UASE,d=2,both,0.8353666666666667
+co-expression |cor|^6,module switch,2,UASE,true rank,euclidean,0.7123
+co-expression |cor|^6,module switch,2,UASE,true rank,cosine,0.9971666666666666
+co-expression |cor|^6,module switch,2,UASE,true rank,both,0.9858166666666667
+co-expression |cor|^6,module switch,2,UASE,default 4-24,euclidean,0.6746277777777778
+co-expression |cor|^6,module switch,2,UASE,default 4-24,cosine,0.9695611111111111
+co-expression |cor|^6,module switch,2,UASE,default 4-24,both,0.9617222222222223
+co-expression |cor|^6,module switch,2,ULSE,d=2,euclidean,0.7199555555555556
+co-expression |cor|^6,module switch,2,ULSE,d=2,cosine,0.9397888888888889
+co-expression |cor|^6,module switch,2,ULSE,d=2,both,0.9759
+co-expression |cor|^6,module switch,2,ULSE,true rank,euclidean,0.7256444444444444
+co-expression |cor|^6,module switch,2,ULSE,true rank,cosine,0.9994666666666666
+co-expression |cor|^6,module switch,2,ULSE,true rank,both,0.9801611111111111
+co-expression |cor|^6,module switch,2,ULSE,default 4-24,euclidean,0.6753777777777777
+co-expression |cor|^6,module switch,2,ULSE,default 4-24,cosine,0.971
+co-expression |cor|^6,module switch,2,ULSE,default 4-24,both,0.9623388888888889
+co-expression |cor|^6,module switch,2,UASE + ULSE,default 4-24,both,0.9632777777777778
+4-block SBM,core-periphery,2,DeDi (degree difference),default 4-24,both,1.0
+4-block SBM,core-periphery,2,UASE,d=2,euclidean,1.0
+4-block SBM,core-periphery,2,UASE,d=2,cosine,0.5673476366414743
+4-block SBM,core-periphery,2,UASE,d=2,both,0.851330015307799
+4-block SBM,core-periphery,2,UASE,true rank,euclidean,0.8639422524638076
+4-block SBM,core-periphery,2,UASE,true rank,cosine,0.47654006342184074
+4-block SBM,core-periphery,2,UASE,true rank,both,0.6942126902454858
+4-block SBM,core-periphery,2,UASE,default 4-24,euclidean,0.6704669012259596
+4-block SBM,core-periphery,2,UASE,default 4-24,cosine,0.5218196244379794
+4-block SBM,core-periphery,2,UASE,default 4-24,both,0.6646416559138061
+4-block SBM,core-periphery,2,ULSE,d=2,euclidean,1.0
+4-block SBM,core-periphery,2,ULSE,d=2,cosine,0.5620794028622645
+4-block SBM,core-periphery,2,ULSE,d=2,both,0.8343111089738966
+4-block SBM,core-periphery,2,ULSE,true rank,euclidean,0.772995760300706
+4-block SBM,core-periphery,2,ULSE,true rank,cosine,0.4594450188208453
+4-block SBM,core-periphery,2,ULSE,true rank,both,0.6231903803974684
+4-block SBM,core-periphery,2,ULSE,default 4-24,euclidean,0.6318995295456549
+4-block SBM,core-periphery,2,ULSE,default 4-24,cosine,0.5053056350332203
+4-block SBM,core-periphery,2,ULSE,default 4-24,both,0.6193781240065291
+4-block SBM,core-periphery,2,UASE + ULSE,default 4-24,both,0.645030041221525
+"4-block SBM, degree-corrected",core-periphery,2,DeDi (degree difference),default 4-24,both,1.0
+"4-block SBM, degree-corrected",core-periphery,2,UASE,d=2,euclidean,1.0
+"4-block SBM, degree-corrected",core-periphery,2,UASE,d=2,cosine,0.6228930042083353
+"4-block SBM, degree-corrected",core-periphery,2,UASE,d=2,both,0.8842227023847233
+"4-block SBM, degree-corrected",core-periphery,2,UASE,true rank,euclidean,0.8634214217837911
+"4-block SBM, degree-corrected",core-periphery,2,UASE,true rank,cosine,0.551608670075569
+"4-block SBM, degree-corrected",core-periphery,2,UASE,true rank,both,0.7668983890673786
+"4-block SBM, degree-corrected",core-periphery,2,UASE,default 4-24,euclidean,0.718438899950224
+"4-block SBM, degree-corrected",core-periphery,2,UASE,default 4-24,cosine,0.5818914317389927
+"4-block SBM, degree-corrected",core-periphery,2,UASE,default 4-24,both,0.7701225168559663
+"4-block SBM, degree-corrected",core-periphery,2,ULSE,d=2,euclidean,1.0
+"4-block SBM, degree-corrected",core-periphery,2,ULSE,d=2,cosine,0.6223358523010091
+"4-block SBM, degree-corrected",core-periphery,2,ULSE,d=2,both,0.867399260147518
+"4-block SBM, degree-corrected",core-periphery,2,ULSE,true rank,euclidean,0.8061196207973211
+"4-block SBM, degree-corrected",core-periphery,2,ULSE,true rank,cosine,0.5232787682700575
+"4-block SBM, degree-corrected",core-periphery,2,ULSE,true rank,both,0.6920208493596995
+"4-block SBM, degree-corrected",core-periphery,2,ULSE,default 4-24,euclidean,0.6685045137789041
+"4-block SBM, degree-corrected",core-periphery,2,ULSE,default 4-24,cosine,0.5612400447984072
+"4-block SBM, degree-corrected",core-periphery,2,ULSE,default 4-24,both,0.6883710801393729
+"4-block SBM, degree-corrected",core-periphery,2,UASE + ULSE,default 4-24,both,0.7466896126521562
+co-expression ((1+cor)/2)^10,hub status,2,DeDi (degree difference),default 4-24,both,0.9987888888888888
+co-expression ((1+cor)/2)^10,hub status,2,UASE,d=2,euclidean,0.9328111111111111
+co-expression ((1+cor)/2)^10,hub status,2,UASE,d=2,cosine,0.5852222222222222
+co-expression ((1+cor)/2)^10,hub status,2,UASE,d=2,both,0.9007222222222222
+co-expression ((1+cor)/2)^10,hub status,2,UASE,true rank,euclidean,0.9994777777777778
+co-expression ((1+cor)/2)^10,hub status,2,UASE,true rank,cosine,0.5977222222222223
+co-expression ((1+cor)/2)^10,hub status,2,UASE,true rank,both,0.9610222222222222
+co-expression ((1+cor)/2)^10,hub status,2,UASE,default 4-24,euclidean,0.8976888888888889
+co-expression ((1+cor)/2)^10,hub status,2,UASE,default 4-24,cosine,0.9421055555555555
+co-expression ((1+cor)/2)^10,hub status,2,UASE,default 4-24,both,0.9321777777777778
+co-expression ((1+cor)/2)^10,hub status,2,ULSE,d=2,euclidean,0.9683555555555555
+co-expression ((1+cor)/2)^10,hub status,2,ULSE,d=2,cosine,0.6629555555555555
+co-expression ((1+cor)/2)^10,hub status,2,ULSE,d=2,both,0.9245611111111111
+co-expression ((1+cor)/2)^10,hub status,2,ULSE,true rank,euclidean,0.9999
+co-expression ((1+cor)/2)^10,hub status,2,ULSE,true rank,cosine,0.6507777777777778
+co-expression ((1+cor)/2)^10,hub status,2,ULSE,true rank,both,0.9603611111111111
+co-expression ((1+cor)/2)^10,hub status,2,ULSE,default 4-24,euclidean,0.8701055555555556
+co-expression ((1+cor)/2)^10,hub status,2,ULSE,default 4-24,cosine,0.9674611111111111
+co-expression ((1+cor)/2)^10,hub status,2,ULSE,default 4-24,both,0.9383611111111111
+co-expression ((1+cor)/2)^10,hub status,2,UASE + ULSE,default 4-24,both,0.9355666666666667
+co-expression |cor|^6,hub status,2,DeDi (degree difference),default 4-24,both,0.9950333333333333
+co-expression |cor|^6,hub status,2,UASE,d=2,euclidean,0.7584
+co-expression |cor|^6,hub status,2,UASE,d=2,cosine,0.4338222222222222
+co-expression |cor|^6,hub status,2,UASE,d=2,both,0.7636277777777778
+co-expression |cor|^6,hub status,2,UASE,true rank,euclidean,0.9950444444444444
+co-expression |cor|^6,hub status,2,UASE,true rank,cosine,0.4201888888888889
+co-expression |cor|^6,hub status,2,UASE,true rank,both,0.9375277777777777
+co-expression |cor|^6,hub status,2,UASE,default 4-24,euclidean,0.8930722222222223
+co-expression |cor|^6,hub status,2,UASE,default 4-24,cosine,0.3786
+co-expression |cor|^6,hub status,2,UASE,default 4-24,both,0.7790277777777778
+co-expression |cor|^6,hub status,2,ULSE,d=2,euclidean,0.8073777777777777
+co-expression |cor|^6,hub status,2,ULSE,d=2,cosine,0.43804444444444446
+co-expression |cor|^6,hub status,2,ULSE,d=2,both,0.823
+co-expression |cor|^6,hub status,2,ULSE,true rank,euclidean,0.9998333333333334
+co-expression |cor|^6,hub status,2,ULSE,true rank,cosine,0.4271888888888889
+co-expression |cor|^6,hub status,2,ULSE,true rank,both,0.9405833333333333
+co-expression |cor|^6,hub status,2,ULSE,default 4-24,euclidean,0.8608055555555556
+co-expression |cor|^6,hub status,2,ULSE,default 4-24,cosine,0.39576666666666666
+co-expression |cor|^6,hub status,2,ULSE,default 4-24,both,0.7633722222222222
+co-expression |cor|^6,hub status,2,UASE + ULSE,default 4-24,both,0.7796111111111111
+4-block SBM,affinity,3,DeDi (degree difference),default 4-24,both,0.500337680975898
+4-block SBM,affinity,3,UASE,d=2,euclidean,0.8814396817356802
+4-block SBM,affinity,3,UASE,d=2,cosine,0.9817942467603732
+4-block SBM,affinity,3,UASE,d=2,both,0.9594017770461357
+4-block SBM,affinity,3,UASE,true rank,euclidean,0.6714918112363345
+4-block SBM,affinity,3,UASE,true rank,cosine,0.8253846397366088
+4-block SBM,affinity,3,UASE,true rank,both,0.7894334874002786
+4-block SBM,affinity,3,UASE,default 4-24,euclidean,0.6213303575197332
+4-block SBM,affinity,3,UASE,default 4-24,cosine,0.7217139420032924
+4-block SBM,affinity,3,UASE,default 4-24,both,0.7292431725127686
+4-block SBM,affinity,3,ULSE,d=2,euclidean,0.9227000759782196
+4-block SBM,affinity,3,ULSE,d=2,cosine,0.9840102781647039
+4-block SBM,affinity,3,ULSE,d=2,both,0.9703223270440252
+4-block SBM,affinity,3,ULSE,true rank,euclidean,0.6761296483896838
+4-block SBM,affinity,3,ULSE,true rank,cosine,0.8300462200835761
+4-block SBM,affinity,3,ULSE,true rank,both,0.7927891920982651
+4-block SBM,affinity,3,ULSE,default 4-24,euclidean,0.6238141593854206
+4-block SBM,affinity,3,ULSE,default 4-24,cosine,0.7246963509349542
+4-block SBM,affinity,3,ULSE,default 4-24,both,0.7326529589295513
+4-block SBM,affinity,3,UASE + ULSE,default 4-24,both,0.7328983052636022
+"4-block SBM, degree-corrected",affinity,3,DeDi (degree difference),default 4-24,both,0.5003491950757576
+"4-block SBM, degree-corrected",affinity,3,UASE,d=2,euclidean,0.8573224431818182
+"4-block SBM, degree-corrected",affinity,3,UASE,d=2,cosine,0.9683380681818182
+"4-block SBM, degree-corrected",affinity,3,UASE,d=2,both,0.9394839015151515
+"4-block SBM, degree-corrected",affinity,3,UASE,true rank,euclidean,0.6298058712121212
+"4-block SBM, degree-corrected",affinity,3,UASE,true rank,cosine,0.813548768939394
+"4-block SBM, degree-corrected",affinity,3,UASE,true rank,both,0.7857398200757576
+"4-block SBM, degree-corrected",affinity,3,UASE,default 4-24,euclidean,0.5793442234848485
+"4-block SBM, degree-corrected",affinity,3,UASE,default 4-24,cosine,0.7275793087121212
+"4-block SBM, degree-corrected",affinity,3,UASE,default 4-24,both,0.7412476325757575
+"4-block SBM, degree-corrected",affinity,3,ULSE,d=2,euclidean,0.9045833333333333
+"4-block SBM, degree-corrected",affinity,3,ULSE,d=2,cosine,0.976077178030303
+"4-block SBM, degree-corrected",affinity,3,ULSE,d=2,both,0.9574372632575757
+"4-block SBM, degree-corrected",affinity,3,ULSE,true rank,euclidean,0.6453716856060606
+"4-block SBM, degree-corrected",affinity,3,ULSE,true rank,cosine,0.819140625
+"4-block SBM, degree-corrected",affinity,3,ULSE,true rank,both,0.7893974905303031
+"4-block SBM, degree-corrected",affinity,3,ULSE,default 4-24,euclidean,0.5917116477272727
+"4-block SBM, degree-corrected",affinity,3,ULSE,default 4-24,cosine,0.7326136363636364
+"4-block SBM, degree-corrected",affinity,3,ULSE,default 4-24,both,0.7415376420454546
+"4-block SBM, degree-corrected",affinity,3,UASE + ULSE,default 4-24,both,0.7535215435606061
+co-expression ((1+cor)/2)^10,module switch,3,DeDi (degree difference),default 4-24,both,0.5895222222222222
+co-expression ((1+cor)/2)^10,module switch,3,UASE,d=2,euclidean,0.7999
+co-expression ((1+cor)/2)^10,module switch,3,UASE,d=2,cosine,0.7665444444444445
+co-expression ((1+cor)/2)^10,module switch,3,UASE,d=2,both,0.8280555555555555
+co-expression ((1+cor)/2)^10,module switch,3,UASE,true rank,euclidean,0.8913111111111112
+co-expression ((1+cor)/2)^10,module switch,3,UASE,true rank,cosine,0.9998111111111111
+co-expression ((1+cor)/2)^10,module switch,3,UASE,true rank,both,0.9994722222222222
+co-expression ((1+cor)/2)^10,module switch,3,UASE,default 4-24,euclidean,0.75095
+co-expression ((1+cor)/2)^10,module switch,3,UASE,default 4-24,cosine,0.9828555555555556
+co-expression ((1+cor)/2)^10,module switch,3,UASE,default 4-24,both,0.90055
+co-expression ((1+cor)/2)^10,module switch,3,ULSE,d=2,euclidean,0.8089666666666666
+co-expression ((1+cor)/2)^10,module switch,3,ULSE,d=2,cosine,0.8552555555555555
+co-expression ((1+cor)/2)^10,module switch,3,ULSE,d=2,both,0.8740222222222223
+co-expression ((1+cor)/2)^10,module switch,3,ULSE,true rank,euclidean,0.9509
+co-expression ((1+cor)/2)^10,module switch,3,ULSE,true rank,cosine,0.9998777777777778
+co-expression ((1+cor)/2)^10,module switch,3,ULSE,true rank,both,0.9994111111111111
+co-expression ((1+cor)/2)^10,module switch,3,ULSE,default 4-24,euclidean,0.8010333333333334
+co-expression ((1+cor)/2)^10,module switch,3,ULSE,default 4-24,cosine,0.9981444444444444
+co-expression ((1+cor)/2)^10,module switch,3,ULSE,default 4-24,both,0.9431888888888889
+co-expression ((1+cor)/2)^10,module switch,3,UASE + ULSE,default 4-24,both,0.9229611111111111
+co-expression |cor|^6,module switch,3,DeDi (degree difference),default 4-24,both,0.6020444444444445
+co-expression |cor|^6,module switch,3,UASE,d=2,euclidean,0.7059888888888889
+co-expression |cor|^6,module switch,3,UASE,d=2,cosine,0.8074555555555556
+co-expression |cor|^6,module switch,3,UASE,d=2,both,0.8897888888888889
+co-expression |cor|^6,module switch,3,UASE,true rank,euclidean,0.7255777777777778
+co-expression |cor|^6,module switch,3,UASE,true rank,cosine,0.9964
+co-expression |cor|^6,module switch,3,UASE,true rank,both,0.9850833333333333
+co-expression |cor|^6,module switch,3,UASE,default 4-24,euclidean,0.6884222222222223
+co-expression |cor|^6,module switch,3,UASE,default 4-24,cosine,0.972
+co-expression |cor|^6,module switch,3,UASE,default 4-24,both,0.9641
+co-expression |cor|^6,module switch,3,ULSE,d=2,euclidean,0.7129222222222222
+co-expression |cor|^6,module switch,3,ULSE,d=2,cosine,0.8618
+co-expression |cor|^6,module switch,3,ULSE,d=2,both,0.9176944444444445
+co-expression |cor|^6,module switch,3,ULSE,true rank,euclidean,0.7358
+co-expression |cor|^6,module switch,3,ULSE,true rank,cosine,0.9992888888888889
+co-expression |cor|^6,module switch,3,ULSE,true rank,both,0.9848722222222223
+co-expression |cor|^6,module switch,3,ULSE,default 4-24,euclidean,0.68845
+co-expression |cor|^6,module switch,3,ULSE,default 4-24,cosine,0.9591444444444445
+co-expression |cor|^6,module switch,3,ULSE,default 4-24,both,0.9633555555555555
+co-expression |cor|^6,module switch,3,UASE + ULSE,default 4-24,both,0.9666722222222223
+4-block SBM,core-periphery,3,DeDi (degree difference),default 4-24,both,1.0
+4-block SBM,core-periphery,3,UASE,d=2,euclidean,1.0
+4-block SBM,core-periphery,3,UASE,d=2,cosine,0.5908191708124185
+4-block SBM,core-periphery,3,UASE,d=2,both,0.861224501184434
+4-block SBM,core-periphery,3,UASE,true rank,euclidean,0.8887803816416898
+4-block SBM,core-periphery,3,UASE,true rank,cosine,0.5367035064271942
+4-block SBM,core-periphery,3,UASE,true rank,both,0.7434535252609522
+4-block SBM,core-periphery,3,UASE,default 4-24,euclidean,0.6606198678009704
+4-block SBM,core-periphery,3,UASE,default 4-24,cosine,0.5508846285843432
+4-block SBM,core-periphery,3,UASE,default 4-24,both,0.6801414066445498
+4-block SBM,core-periphery,3,ULSE,d=2,euclidean,1.0
+4-block SBM,core-periphery,3,ULSE,d=2,cosine,0.5943933995351549
+4-block SBM,core-periphery,3,ULSE,d=2,both,0.8484691642554806
+4-block SBM,core-periphery,3,ULSE,true rank,euclidean,0.7832360023325958
+4-block SBM,core-periphery,3,ULSE,true rank,cosine,0.4879784820828183
+4-block SBM,core-periphery,3,ULSE,true rank,both,0.6438327115868069
+4-block SBM,core-periphery,3,ULSE,default 4-24,euclidean,0.6290572797357136
+4-block SBM,core-periphery,3,ULSE,default 4-24,cosine,0.5456083861841132
+4-block SBM,core-periphery,3,ULSE,default 4-24,both,0.6448399688615203
+4-block SBM,core-periphery,3,UASE + ULSE,default 4-24,both,0.6665615696472368
+"4-block SBM, degree-corrected",core-periphery,3,DeDi (degree difference),default 4-24,both,1.0
+"4-block SBM, degree-corrected",core-periphery,3,UASE,d=2,euclidean,1.0
+"4-block SBM, degree-corrected",core-periphery,3,UASE,d=2,cosine,0.5670796383773851
+"4-block SBM, degree-corrected",core-periphery,3,UASE,d=2,both,0.8509277988135029
+"4-block SBM, degree-corrected",core-periphery,3,UASE,true rank,euclidean,0.8495942229183883
+"4-block SBM, degree-corrected",core-periphery,3,UASE,true rank,cosine,0.5690191048236904
+"4-block SBM, degree-corrected",core-periphery,3,UASE,true rank,both,0.7713480062654942
+"4-block SBM, degree-corrected",core-periphery,3,UASE,default 4-24,euclidean,0.7137159437092219
+"4-block SBM, degree-corrected",core-periphery,3,UASE,default 4-24,cosine,0.5772903587858755
+"4-block SBM, degree-corrected",core-periphery,3,UASE,default 4-24,both,0.7542828599267382
+"4-block SBM, degree-corrected",core-periphery,3,ULSE,d=2,euclidean,1.0
+"4-block SBM, degree-corrected",core-periphery,3,ULSE,d=2,cosine,0.5471792942685529
+"4-block SBM, degree-corrected",core-periphery,3,ULSE,d=2,both,0.8221888528472231
+"4-block SBM, degree-corrected",core-periphery,3,ULSE,true rank,euclidean,0.8056155107981104
+"4-block SBM, degree-corrected",core-periphery,3,ULSE,true rank,cosine,0.5259870003330085
+"4-block SBM, degree-corrected",core-periphery,3,ULSE,true rank,both,0.6995414965650785
+"4-block SBM, degree-corrected",core-periphery,3,ULSE,default 4-24,euclidean,0.6684298646998607
+"4-block SBM, degree-corrected",core-periphery,3,ULSE,default 4-24,cosine,0.5549864946533628
+"4-block SBM, degree-corrected",core-periphery,3,ULSE,default 4-24,both,0.683382873493753
+"4-block SBM, degree-corrected",core-periphery,3,UASE + ULSE,default 4-24,both,0.7362479803648294
+co-expression ((1+cor)/2)^10,hub status,3,DeDi (degree difference),default 4-24,both,0.9990444444444444
+co-expression ((1+cor)/2)^10,hub status,3,UASE,d=2,euclidean,0.9320444444444445
+co-expression ((1+cor)/2)^10,hub status,3,UASE,d=2,cosine,0.5258
+co-expression ((1+cor)/2)^10,hub status,3,UASE,d=2,both,0.8837611111111111
+co-expression ((1+cor)/2)^10,hub status,3,UASE,true rank,euclidean,0.9969
+co-expression ((1+cor)/2)^10,hub status,3,UASE,true rank,cosine,0.5762333333333334
+co-expression ((1+cor)/2)^10,hub status,3,UASE,true rank,both,0.9496
+co-expression ((1+cor)/2)^10,hub status,3,UASE,default 4-24,euclidean,0.8757888888888888
+co-expression ((1+cor)/2)^10,hub status,3,UASE,default 4-24,cosine,0.9523
+co-expression ((1+cor)/2)^10,hub status,3,UASE,default 4-24,both,0.9271333333333334
+co-expression ((1+cor)/2)^10,hub status,3,ULSE,d=2,euclidean,0.9870666666666666
+co-expression ((1+cor)/2)^10,hub status,3,ULSE,d=2,cosine,0.6049
+co-expression ((1+cor)/2)^10,hub status,3,ULSE,d=2,both,0.9134722222222222
+co-expression ((1+cor)/2)^10,hub status,3,ULSE,true rank,euclidean,0.9996777777777778
+co-expression ((1+cor)/2)^10,hub status,3,ULSE,true rank,cosine,0.6250444444444444
+co-expression ((1+cor)/2)^10,hub status,3,ULSE,true rank,both,0.94775
+co-expression ((1+cor)/2)^10,hub status,3,ULSE,default 4-24,euclidean,0.8576333333333334
+co-expression ((1+cor)/2)^10,hub status,3,ULSE,default 4-24,cosine,0.9790833333333333
+co-expression ((1+cor)/2)^10,hub status,3,ULSE,default 4-24,both,0.9358944444444445
+co-expression ((1+cor)/2)^10,hub status,3,UASE + ULSE,default 4-24,both,0.9331
+co-expression |cor|^6,hub status,3,DeDi (degree difference),default 4-24,both,0.9956222222222222
+co-expression |cor|^6,hub status,3,UASE,d=2,euclidean,0.7205111111111111
+co-expression |cor|^6,hub status,3,UASE,d=2,cosine,0.46732222222222225
+co-expression |cor|^6,hub status,3,UASE,d=2,both,0.7484111111111111
+co-expression |cor|^6,hub status,3,UASE,true rank,euclidean,0.9980333333333333
+co-expression |cor|^6,hub status,3,UASE,true rank,cosine,0.4386333333333333
+co-expression |cor|^6,hub status,3,UASE,true rank,both,0.9544555555555555
+co-expression |cor|^6,hub status,3,UASE,default 4-24,euclidean,0.8898333333333334
+co-expression |cor|^6,hub status,3,UASE,default 4-24,cosine,0.3437
+co-expression |cor|^6,hub status,3,UASE,default 4-24,both,0.7500166666666667
+co-expression |cor|^6,hub status,3,ULSE,d=2,euclidean,0.7743444444444444
+co-expression |cor|^6,hub status,3,ULSE,d=2,cosine,0.4741
+co-expression |cor|^6,hub status,3,ULSE,d=2,both,0.8187722222222222
+co-expression |cor|^6,hub status,3,ULSE,true rank,euclidean,0.9999333333333333
+co-expression |cor|^6,hub status,3,ULSE,true rank,cosine,0.4426
+co-expression |cor|^6,hub status,3,ULSE,true rank,both,0.9557
+co-expression |cor|^6,hub status,3,ULSE,default 4-24,euclidean,0.8522277777777778
+co-expression |cor|^6,hub status,3,ULSE,default 4-24,cosine,0.3526611111111111
+co-expression |cor|^6,hub status,3,ULSE,default 4-24,both,0.7438222222222223
+co-expression |cor|^6,hub status,3,UASE + ULSE,default 4-24,both,0.7580277777777777
+4-block SBM,affinity,4,DeDi (degree difference),default 4-24,both,0.5459164615779951
+4-block SBM,affinity,4,UASE,d=2,euclidean,0.8691476876859375
+4-block SBM,affinity,4,UASE,d=2,cosine,0.9685359980290295
+4-block SBM,affinity,4,UASE,d=2,both,0.9471122896902874
+4-block SBM,affinity,4,UASE,true rank,euclidean,0.6653906574935294
+4-block SBM,affinity,4,UASE,true rank,cosine,0.8150307699236249
+4-block SBM,affinity,4,UASE,true rank,both,0.7796844327763929
+4-block SBM,affinity,4,UASE,default 4-24,euclidean,0.6147587018085774
+4-block SBM,affinity,4,UASE,default 4-24,cosine,0.7265649214923214
+4-block SBM,affinity,4,UASE,default 4-24,both,0.7301174369964951
+4-block SBM,affinity,4,ULSE,d=2,euclidean,0.9135634035270837
+4-block SBM,affinity,4,ULSE,d=2,cosine,0.9734130905295394
+4-block SBM,affinity,4,ULSE,d=2,both,0.9586824697532843
+4-block SBM,affinity,4,ULSE,true rank,euclidean,0.6773039029985775
+4-block SBM,affinity,4,ULSE,true rank,cosine,0.8243822835177586
+4-block SBM,affinity,4,ULSE,true rank,both,0.7909764516701592
+4-block SBM,affinity,4,ULSE,default 4-24,euclidean,0.6177045610484292
+4-block SBM,affinity,4,ULSE,default 4-24,cosine,0.715859690207932
+4-block SBM,affinity,4,ULSE,default 4-24,both,0.7255648658600876
+4-block SBM,affinity,4,UASE + ULSE,default 4-24,both,0.7301359810744439
+"4-block SBM, degree-corrected",affinity,4,DeDi (degree difference),default 4-24,both,0.45418791427918376
+"4-block SBM, degree-corrected",affinity,4,UASE,d=2,euclidean,0.8632612687878812
+"4-block SBM, degree-corrected",affinity,4,UASE,d=2,cosine,0.9698684552755819
+"4-block SBM, degree-corrected",affinity,4,UASE,d=2,both,0.9458675199865486
+"4-block SBM, degree-corrected",affinity,4,UASE,true rank,euclidean,0.6240610985442594
+"4-block SBM, degree-corrected",affinity,4,UASE,true rank,cosine,0.823096384687532
+"4-block SBM, degree-corrected",affinity,4,UASE,true rank,both,0.7847101260801144
+"4-block SBM, degree-corrected",affinity,4,UASE,default 4-24,euclidean,0.5465135524957242
+"4-block SBM, degree-corrected",affinity,4,UASE,default 4-24,cosine,0.7134035325551519
+"4-block SBM, degree-corrected",affinity,4,UASE,default 4-24,both,0.708484069873447
+"4-block SBM, degree-corrected",affinity,4,ULSE,d=2,euclidean,0.9098207975703503
+"4-block SBM, degree-corrected",affinity,4,ULSE,d=2,cosine,0.9787116656289162
+"4-block SBM, degree-corrected",affinity,4,ULSE,d=2,both,0.9616794218022179
+"4-block SBM, degree-corrected",affinity,4,ULSE,true rank,euclidean,0.6231389455929759
+"4-block SBM, degree-corrected",affinity,4,ULSE,true rank,cosine,0.8132522048913514
+"4-block SBM, degree-corrected",affinity,4,ULSE,true rank,both,0.7667084394071949
+"4-block SBM, degree-corrected",affinity,4,ULSE,default 4-24,euclidean,0.5604929708825608
+"4-block SBM, degree-corrected",affinity,4,ULSE,default 4-24,cosine,0.7298026172329631
+"4-block SBM, degree-corrected",affinity,4,ULSE,default 4-24,both,0.7028789037151467
+"4-block SBM, degree-corrected",affinity,4,UASE + ULSE,default 4-24,both,0.7160268081159968
+co-expression ((1+cor)/2)^10,module switch,4,DeDi (degree difference),default 4-24,both,0.5943444444444445
+co-expression ((1+cor)/2)^10,module switch,4,UASE,d=2,euclidean,0.7899777777777778
+co-expression ((1+cor)/2)^10,module switch,4,UASE,d=2,cosine,0.8141333333333334
+co-expression ((1+cor)/2)^10,module switch,4,UASE,d=2,both,0.8829666666666667
+co-expression ((1+cor)/2)^10,module switch,4,UASE,true rank,euclidean,0.8559777777777777
+co-expression ((1+cor)/2)^10,module switch,4,UASE,true rank,cosine,0.9997666666666667
+co-expression ((1+cor)/2)^10,module switch,4,UASE,true rank,both,0.9992277777777778
+co-expression ((1+cor)/2)^10,module switch,4,UASE,default 4-24,euclidean,0.7437166666666667
+co-expression ((1+cor)/2)^10,module switch,4,UASE,default 4-24,cosine,0.9660055555555556
+co-expression ((1+cor)/2)^10,module switch,4,UASE,default 4-24,both,0.8809111111111111
+co-expression ((1+cor)/2)^10,module switch,4,ULSE,d=2,euclidean,0.7737111111111111
+co-expression ((1+cor)/2)^10,module switch,4,ULSE,d=2,cosine,0.8420666666666666
+co-expression ((1+cor)/2)^10,module switch,4,ULSE,d=2,both,0.8703944444444445
+co-expression ((1+cor)/2)^10,module switch,4,ULSE,true rank,euclidean,0.9233
+co-expression ((1+cor)/2)^10,module switch,4,ULSE,true rank,cosine,0.9998111111111111
+co-expression ((1+cor)/2)^10,module switch,4,ULSE,true rank,both,0.9989611111111111
+co-expression ((1+cor)/2)^10,module switch,4,ULSE,default 4-24,euclidean,0.7965722222222222
+co-expression ((1+cor)/2)^10,module switch,4,ULSE,default 4-24,cosine,0.9934777777777778
+co-expression ((1+cor)/2)^10,module switch,4,ULSE,default 4-24,both,0.9391777777777778
+co-expression ((1+cor)/2)^10,module switch,4,UASE + ULSE,default 4-24,both,0.9110833333333334
+co-expression |cor|^6,module switch,4,DeDi (degree difference),default 4-24,both,0.5785777777777777
+co-expression |cor|^6,module switch,4,UASE,d=2,euclidean,0.6819777777777778
+co-expression |cor|^6,module switch,4,UASE,d=2,cosine,0.8532333333333333
+co-expression |cor|^6,module switch,4,UASE,d=2,both,0.8904611111111111
+co-expression |cor|^6,module switch,4,UASE,true rank,euclidean,0.6881
+co-expression |cor|^6,module switch,4,UASE,true rank,cosine,0.9937666666666667
+co-expression |cor|^6,module switch,4,UASE,true rank,both,0.9833388888888889
+co-expression |cor|^6,module switch,4,UASE,default 4-24,euclidean,0.6469222222222222
+co-expression |cor|^6,module switch,4,UASE,default 4-24,cosine,0.9617055555555556
+co-expression |cor|^6,module switch,4,UASE,default 4-24,both,0.9475888888888889
+co-expression |cor|^6,module switch,4,ULSE,d=2,euclidean,0.6817555555555556
+co-expression |cor|^6,module switch,4,ULSE,d=2,cosine,0.9242
+co-expression |cor|^6,module switch,4,ULSE,d=2,both,0.9349333333333333
+co-expression |cor|^6,module switch,4,ULSE,true rank,euclidean,0.7013333333333334
+co-expression |cor|^6,module switch,4,ULSE,true rank,cosine,0.9978666666666667
+co-expression |cor|^6,module switch,4,ULSE,true rank,both,0.9840333333333333
+co-expression |cor|^6,module switch,4,ULSE,default 4-24,euclidean,0.6504166666666666
+co-expression |cor|^6,module switch,4,ULSE,default 4-24,cosine,0.9629388888888889
+co-expression |cor|^6,module switch,4,ULSE,default 4-24,both,0.95065
+co-expression |cor|^6,module switch,4,UASE + ULSE,default 4-24,both,0.9521888888888889
+4-block SBM,core-periphery,4,DeDi (degree difference),default 4-24,both,1.0
+4-block SBM,core-periphery,4,UASE,d=2,euclidean,1.0
+4-block SBM,core-periphery,4,UASE,d=2,cosine,0.6078943480646659
+4-block SBM,core-periphery,4,UASE,d=2,both,0.8717801591321599
+4-block SBM,core-periphery,4,UASE,true rank,euclidean,0.8505023004516483
+4-block SBM,core-periphery,4,UASE,true rank,cosine,0.48684890886834664
+4-block SBM,core-periphery,4,UASE,true rank,both,0.6914004790848846
+4-block SBM,core-periphery,4,UASE,default 4-24,euclidean,0.6381260288717234
+4-block SBM,core-periphery,4,UASE,default 4-24,cosine,0.5131154763412267
+4-block SBM,core-periphery,4,UASE,default 4-24,both,0.6441581191169643
+4-block SBM,core-periphery,4,ULSE,d=2,euclidean,1.0
+4-block SBM,core-periphery,4,ULSE,d=2,cosine,0.6059078341986408
+4-block SBM,core-periphery,4,ULSE,d=2,both,0.8538936199400616
+4-block SBM,core-periphery,4,ULSE,true rank,euclidean,0.762781752564265
+4-block SBM,core-periphery,4,ULSE,true rank,cosine,0.46783852517833774
+4-block SBM,core-periphery,4,ULSE,true rank,both,0.6227681397999241
+4-block SBM,core-periphery,4,ULSE,default 4-24,euclidean,0.6062415579756025
+4-block SBM,core-periphery,4,ULSE,default 4-24,cosine,0.49254727533662573
+4-block SBM,core-periphery,4,ULSE,default 4-24,both,0.5975238487189228
+4-block SBM,core-periphery,4,UASE + ULSE,default 4-24,both,0.6240634629184079
+"4-block SBM, degree-corrected",core-periphery,4,DeDi (degree difference),default 4-24,both,1.0
+"4-block SBM, degree-corrected",core-periphery,4,UASE,d=2,euclidean,1.0
+"4-block SBM, degree-corrected",core-periphery,4,UASE,d=2,cosine,0.5389058813766286
+"4-block SBM, degree-corrected",core-periphery,4,UASE,d=2,both,0.8381287714431365
+"4-block SBM, degree-corrected",core-periphery,4,UASE,true rank,euclidean,0.8359385188083129
+"4-block SBM, degree-corrected",core-periphery,4,UASE,true rank,cosine,0.5333339260945336
+"4-block SBM, degree-corrected",core-periphery,4,UASE,true rank,both,0.7336546099038541
+"4-block SBM, degree-corrected",core-periphery,4,UASE,default 4-24,euclidean,0.6995412028310275
+"4-block SBM, degree-corrected",core-periphery,4,UASE,default 4-24,cosine,0.5322936301881424
+"4-block SBM, degree-corrected",core-periphery,4,UASE,default 4-24,both,0.7093943758817323
+"4-block SBM, degree-corrected",core-periphery,4,ULSE,d=2,euclidean,1.0
+"4-block SBM, degree-corrected",core-periphery,4,ULSE,d=2,cosine,0.5343119820749013
+"4-block SBM, degree-corrected",core-periphery,4,ULSE,d=2,both,0.8223657692262095
+"4-block SBM, degree-corrected",core-periphery,4,ULSE,true rank,euclidean,0.7941043971025833
+"4-block SBM, degree-corrected",core-periphery,4,ULSE,true rank,cosine,0.5139565624592477
+"4-block SBM, degree-corrected",core-periphery,4,ULSE,true rank,both,0.6854764614527391
+"4-block SBM, degree-corrected",core-periphery,4,ULSE,default 4-24,euclidean,0.6573306777631563
+"4-block SBM, degree-corrected",core-periphery,4,ULSE,default 4-24,cosine,0.5297017818401679
+"4-block SBM, degree-corrected",core-periphery,4,ULSE,default 4-24,both,0.6652158836291212
+"4-block SBM, degree-corrected",core-periphery,4,UASE + ULSE,default 4-24,both,0.7018174058398834
+co-expression ((1+cor)/2)^10,hub status,4,DeDi (degree difference),default 4-24,both,0.9992555555555556
+co-expression ((1+cor)/2)^10,hub status,4,UASE,d=2,euclidean,0.9387777777777778
+co-expression ((1+cor)/2)^10,hub status,4,UASE,d=2,cosine,0.5489888888888889
+co-expression ((1+cor)/2)^10,hub status,4,UASE,d=2,both,0.8868222222222222
+co-expression ((1+cor)/2)^10,hub status,4,UASE,true rank,euclidean,0.9992222222222222
+co-expression ((1+cor)/2)^10,hub status,4,UASE,true rank,cosine,0.5836333333333333
+co-expression ((1+cor)/2)^10,hub status,4,UASE,true rank,both,0.9546611111111111
+co-expression ((1+cor)/2)^10,hub status,4,UASE,default 4-24,euclidean,0.8885611111111111
+co-expression ((1+cor)/2)^10,hub status,4,UASE,default 4-24,cosine,0.9640333333333333
+co-expression ((1+cor)/2)^10,hub status,4,UASE,default 4-24,both,0.9403
+co-expression ((1+cor)/2)^10,hub status,4,ULSE,d=2,euclidean,0.9954333333333333
+co-expression ((1+cor)/2)^10,hub status,4,ULSE,d=2,cosine,0.6540777777777778
+co-expression ((1+cor)/2)^10,hub status,4,ULSE,d=2,both,0.9373222222222222
+co-expression ((1+cor)/2)^10,hub status,4,ULSE,true rank,euclidean,0.9998222222222222
+co-expression ((1+cor)/2)^10,hub status,4,ULSE,true rank,cosine,0.6395444444444445
+co-expression ((1+cor)/2)^10,hub status,4,ULSE,true rank,both,0.9528333333333333
+co-expression ((1+cor)/2)^10,hub status,4,ULSE,default 4-24,euclidean,0.8678777777777777
+co-expression ((1+cor)/2)^10,hub status,4,ULSE,default 4-24,cosine,0.9781555555555556
+co-expression ((1+cor)/2)^10,hub status,4,ULSE,default 4-24,both,0.9463777777777778
+co-expression ((1+cor)/2)^10,hub status,4,UASE + ULSE,default 4-24,both,0.9460388888888889
+co-expression |cor|^6,hub status,4,DeDi (degree difference),default 4-24,both,0.9976
+co-expression |cor|^6,hub status,4,UASE,d=2,euclidean,0.7446666666666667
+co-expression |cor|^6,hub status,4,UASE,d=2,cosine,0.4957888888888889
+co-expression |cor|^6,hub status,4,UASE,d=2,both,0.8308611111111112
+co-expression |cor|^6,hub status,4,UASE,true rank,euclidean,0.9975
+co-expression |cor|^6,hub status,4,UASE,true rank,cosine,0.4672222222222222
+co-expression |cor|^6,hub status,4,UASE,true rank,both,0.9614
+co-expression |cor|^6,hub status,4,UASE,default 4-24,euclidean,0.8812722222222222
+co-expression |cor|^6,hub status,4,UASE,default 4-24,cosine,0.37477777777777777
+co-expression |cor|^6,hub status,4,UASE,default 4-24,both,0.7719388888888888
+co-expression |cor|^6,hub status,4,ULSE,d=2,euclidean,0.8080666666666667
+co-expression |cor|^6,hub status,4,ULSE,d=2,cosine,0.4840888888888889
+co-expression |cor|^6,hub status,4,ULSE,d=2,both,0.8965833333333333
+co-expression |cor|^6,hub status,4,ULSE,true rank,euclidean,0.9997555555555555
+co-expression |cor|^6,hub status,4,ULSE,true rank,cosine,0.4703333333333333
+co-expression |cor|^6,hub status,4,ULSE,true rank,both,0.9601444444444445
+co-expression |cor|^6,hub status,4,ULSE,default 4-24,euclidean,0.8414666666666667
+co-expression |cor|^6,hub status,4,ULSE,default 4-24,cosine,0.38676666666666665
+co-expression |cor|^6,hub status,4,ULSE,default 4-24,both,0.7434
+co-expression |cor|^6,hub status,4,UASE + ULSE,default 4-24,both,0.7676444444444445
