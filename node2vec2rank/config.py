@@ -5,7 +5,8 @@ import json
 import warnings
 
 COMPARISON_STRATEGIES = ("sequential", "one_vs_before", "one_vs_rest")
-DISTANCE_METRICS = ("euclidean", "cosine", "correlation")
+DISTANCE_METRICS = ("euclidean", "cosine", "radial", "correlation")
+ALIGNMENTS = (None, "robust")
 EMBEDDING_METHODS = ("uase", "ulse")
 # largest dimension considered when embed_dimensions is "auto"
 AUTO_MAX_DIMENSION = 50
@@ -29,6 +30,9 @@ DEFAULT_CONFIG = {
     "embed_dimensions": [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24],
     "embedding_method": "uase",
     "distance_metrics": ["euclidean", "cosine"],
+    # null (the paper's method), or "robust" to map the reference embedding
+    # onto the target with a robust linear fit before measuring distances
+    "align": None,
     "comp_strategy": "sequential",
     "seed": None,
     "verbose": 1,
@@ -106,6 +110,12 @@ def _validate(config: dict):
                       "depends on the arbitrary sign of every singular vector, so two valid embeddings "
                       "of the same graphs can give different distances. Prefer euclidean and cosine.",
                       UserWarning, stacklevel=2)
+
+    align = config["align"]
+    if isinstance(align, str):
+        align = config["align"] = None if align.casefold() in ("none", "null", "") else align.casefold()
+    if align not in ALIGNMENTS:
+        raise ValueError(f'align must be null or "robust", got {align!r}')
 
     method = config["embedding_method"] = config["embedding_method"].casefold()
     if method not in EMBEDDING_METHODS:

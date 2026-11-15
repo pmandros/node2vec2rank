@@ -7,10 +7,12 @@ import numpy as np
 import pandas as pd
 from scipy import sparse
 
+from node2vec2rank.alignment import robust_linear_alignment
 from node2vec2rank.config import AUTO_MAX_DIMENSION, resolve_config
 from node2vec2rank.embedding import embed, select_dimension
 from node2vec2rank.model_utils import borda_aggregate, compute_pairwise_distances, signed_transform_single
 from node2vec2rank.significance import empirical_null_test
+from node2vec2rank.wald import VARIANCES, is_binary, node_covariances, wald_test
 
 
 class N2V2R:
@@ -63,6 +65,7 @@ class N2V2R:
                 f"Largest embedding dimension ({self.max_embed_dim}) must be smaller "
                 f"than the number of nodes ({num_nodes})")
         self.distance_metrics = self.config['distance_metrics']
+        self.align = self.config['align']
         self.embedding_method = self.config['embedding_method']
         self.comp_strategy = self.config['comp_strategy']
         self.seed = self.config['seed']
@@ -70,8 +73,10 @@ class N2V2R:
 
         self.node_embeddings = None
         self.singular_values = None
+        self.left_singular_vectors = None
         self.selected_dimension = None
         self.pairwise_significance = None
+        self.pairwise_wald = None
         self.pairwise_ranks = None
         self.pairwise_signed_ranks = None
         self.pairwise_aggregate_ranks = None
@@ -112,9 +117,14 @@ class N2V2R:
                 for i in range(self.num_graphs)]
 
     def __fit(self):
-        self.node_embeddings, self.singular_values = embed(
-            self.graphs, self.max_embed_dim, method=self.embedding_method,
-            random_state=self.seed, return_singular_values=True)
+        if self.embedding_method == "uase":
+            self.node_embeddings, self.singular_values, self.left_singular_vectors = embed(
+                self.graphs, self.max_embed_dim, method=self.embedding_method,
+                random_state=self.seed, return_left=True)
+        else:
+            self.node_embeddings, self.singular_values = embed(
+                self.graphs, self.max_embed_dim, method=self.embedding_method,
+                random_state=self.seed, return_singular_values=True)
         # at least 2 dimensions so that angle-based distances are meaningful
         self.selected_dimension = select_dimension(
             self.singular_values, min_dimension=min(2, self.max_embed_dim))
@@ -151,6 +161,9 @@ class N2V2R:
             for dim in dimensions:
                 embed_one = np.mean(self.node_embeddings[reference, :, :dim], axis=0)
                 embed_two = self.node_embeddings[target, :, :dim]
+                if self.align == "robust":
+                    # remove the movement shared by the majority of the nodes
+                    embed_one = embed_one @ robust_linear_alignment(embed_one, embed_two)
 
                 # go over all provided choices for distance metrics
                 for distance_metric in distance_metrics:
@@ -362,6 +375,96 @@ class N2V2R:
                     self.save_dir, k + "_significance.tsv"), sep='\t', index=True)
 
         return self.pairwise_significance
+
+    def wald_test(self, dimension="elbow", variance="auto", align=True, genomic_control=True):
+        """
+        Tests every node for a change of its embedding position with a
+        chi-square (Wald) statistic: the difference of the node's two
+        positions, measured in units of its own estimation noise (see
+        :mod:`node2vec2rank.wald`).
+
+        This is the test that follows from the model of the paper's theorem.
+        It is meant for networks whose edges are observed independently
+        (binary or count graphs, weights measured per edge); there it finds
+        far more changed nodes than :meth:`significance`, also when many
+        nodes change. For networks inferred from samples (co-expression, TOM,
+        PANDA) the entries are dependent and the p-values are not valid; the
+        returned inflation is then far above 1. Use :meth:`significance` for
+        those.
+
+        Args:
+            dimension: the embedding dimension of the test, or "elbow"
+                (default) for the elbow of the singular values. It should not
+                exceed the rank of the signal: beyond it the test calls nodes
+                when nothing changed.
+            variance: "bernoulli" (binary graphs), "robust" (any weights), or
+                "auto" to choose by whether all graphs are binary.
+            align: whether to first map the reference embedding onto the
+                target with a robust linear fit, which removes the movement a
+                node inherits from changes of other nodes. Without it the
+                test is for any change of a node's expected edges, including
+                edges to nodes that changed themselves.
+            genomic_control: whether to scale the statistics down to the
+                chi-square median when their median is larger. Assumes that
+                most nodes do not change.
+
+        Returns:
+            dict: one DataFrame per comparison with columns ``statistic``,
+            ``pvalue``, ``qvalue`` (Benjamini-Hochberg) and ``distance`` (the
+            size of the change after alignment), indexed by node. The
+            inflation and the dimension are in ``DataFrame.attrs``.
+        """
+        if self.node_embeddings is None:
+            raise ValueError("No n2v2r embeddings found, run fit_transform_rank first")
+        if self.left_singular_vectors is None:
+            raise ValueError("The Wald test needs the 'uase' embedding")
+        if variance not in VARIANCES:
+            raise ValueError(f"variance must be one of {VARIANCES}, got {variance!r}")
+        if isinstance(dimension, str):
+            if dimension.casefold() != "elbow":
+                raise ValueError(f'dimension must be an integer or "elbow", got {dimension!r}')
+            dimension = self.selected_dimension
+        dimension = int(dimension)
+        if not 1 <= dimension <= self.max_embed_dim:
+            raise ValueError(f"Dimensions up to {self.max_embed_dim} were embedded, got {dimension}")
+        if variance == "auto":
+            variance = "bernoulli" if all(is_binary(graph) for graph in self.graphs) else "robust"
+
+        self.__log(f"\nWald test with dimension {dimension} and {variance} variance ...")
+        left = self.left_singular_vectors[:, :dimension]
+        singular_values = self.singular_values[:dimension]
+        embeddings = self.node_embeddings[:, :, :dimension]
+        covariances = {}
+
+        def covariance(index):
+            if index not in covariances:
+                covariances[index] = node_covariances(self.graphs[index], left, singular_values,
+                                                      embeddings[index], variance)
+            return covariances[index]
+
+        self.pairwise_wald = {}
+        for key, reference, target in self.comparisons():
+            # the reference is the mean of independent graphs
+            reference_cov = sum(covariance(i) for i in reference) / len(reference) ** 2
+            result = wald_test(np.mean(embeddings[reference], axis=0), embeddings[target],
+                               reference_cov, covariance(target), align=align,
+                               genomic_control=genomic_control)
+            inflation = result.pop("inflation")
+            frame = pd.DataFrame(result, index=self.node_names)
+            frame.attrs.update(inflation=inflation, dimension=dimension, variance=variance)
+            self.pairwise_wald[key] = frame
+            self.__log(f"\tComparison {key}: {int(np.sum(frame['qvalue'] < 0.05))} nodes with q < 0.05, "
+                       f"inflation {inflation:.2f}", level=1)
+            if inflation > 3:
+                self.__log(f"\tComparison {key}: the statistics are {inflation:.1f} times larger than the model "
+                           "allows. The edges are probably not independent (e.g., a network inferred from "
+                           "samples) or the dimension is above the rank; prefer significance().", level=0)
+
+        if self.save_dir:
+            for k, frame in self.pairwise_wald.items():
+                frame.to_csv(os.path.join(self.save_dir, k + "_wald.tsv"), sep='\t', index=True)
+
+        return self.pairwise_wald
 
     def degree_difference_ranking(self):
         """
