@@ -1,0 +1,13 @@
+comparison,align,genes_called,cell_cycle_genes_in_top_100,pathways_called,cell_cycle_pathways_called
+G1 -> S,none,0,22,131,50
+G1 -> S,robust,0,3,0,0
+S -> G2,none,0,1,44,10
+S -> G2,robust,0,4,0,0
+G2 -> M,none,0,12,31,20
+G2 -> M,robust,0,14,0,0
+null: G1 halves 0,none,0,3,0,0
+null: G1 halves 0,robust,0,10,0,0
+null: G1 halves 1,none,0,6,0,0
+null: G1 halves 1,robust,0,6,0,0
+null: G1 halves 2,none,0,1,0,0
+null: G1 halves 2,robust,0,10,0,0

@@ -444,3 +444,124 @@ numbers: `results/competitor_seeds_*.csv`.
   fast set test per dimension choice, next to the null split; `revision_hela_{spectrum,rankings,set_test}.csv`.
 - `revision_hela.py --part grid --revelio-dir ...`: metacell size x soft power; `revision_hela_grid.csv`.
 - `runtime.py`: runtime and peak memory of n2v2r and DeDi up to 20,000 nodes; `runtime.csv`.
+
+## Alignment, the radial metric and the chi-square test
+
+`alignment_wald.py` (10 replicates per setting, about 15 minutes on 4 cores; `alignment_wald.csv`,
+`alignment_wald_summary.csv`, `alignment_wald_dimension.csv`) and `alignment_hela.py --revelio-dir ...`
+(`alignment_hela.csv`). "Default" is the paper's Borda over dimensions 4–24 with Euclidean and cosine distances;
+"test" is `significance()`; "chi-square" is `wald_test()` at the elbow dimension. Calls are at q < 0.1.
+
+### Single nodes change (truth: the nodes whose own position changed)
+
+AUROC:
+
+| scenario | changed | default | default, aligned | test | test, aligned | chi-square | chi-square, aligned | DeDi |
+|---|---|---|---|---|---|---|---|---|
+| binary block model, heavy-tailed degrees | 10% | 0.97 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.50 |
+| | 30% | 0.83 | 1.00 | 0.83 | 1.00 | 0.98 | 1.00 | 0.52 |
+| binary block model | 10% | 0.97 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.52 |
+| | 30% | 0.83 | 1.00 | 0.83 | 1.00 | 1.00 | 1.00 | 0.51 |
+| weighted block model | 10% | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.58 |
+| | 30% | 0.96 | 1.00 | 0.99 | 1.00 | 1.00 | 1.00 | 0.56 |
+| co-expression \|cor\|^6 | 10% | 0.96 | 0.99 | 0.99 | 1.00 | | | 0.67 |
+| | 30% | 0.78 | 0.84 | 0.74 | 0.79 | | | 0.70 |
+| co-expression ((1+cor)/2)^10 | 10% | 0.89 | 1.00 | 0.99 | 1.00 | | | 0.60 |
+| | 30% | 0.80 | 0.93 | 0.78 | 0.84 | | | 0.68 |
+| mixed changes: hub status | 5% | 0.55 | 0.66 | 0.56 | 0.66 | 0.96 | 0.97 | 0.95 |
+| mixed changes: community | 5% | 0.71 | 0.87 | 0.72 | 0.88 | 0.90 | 0.91 | 0.49 |
+| mixed changes: both | 5% | 0.73 | 0.89 | 0.74 | 0.89 | 0.98 | 0.98 | 0.95 |
+
+Changed nodes called / unchanged nodes called (1,000 nodes; 2,000 in the mixed design):
+
+| scenario | changed | test | test, aligned | chi-square | chi-square, aligned |
+|---|---|---|---|---|---|
+| binary block model, heavy-tailed degrees | none | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0.1 |
+| | 100 | 72 / 0 | 99 / 0.1 | 100 / 4.4 | 100 / 4.8 |
+| | 300 | 0 / 0 | 260 / 0 | 129 / 2.0 | 299 / 2.9 |
+| binary block model | none | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0.3 |
+| | 100 | 82 / 0 | 100 / 0 | 100 / 2.9 | 100 / 4.2 |
+| | 300 | 0 / 0 | 297 / 0 | 154 / 0 | 300 / 1.8 |
+| weighted block model | none | 0 / 0 | 0 / 0 | 0 / 0.1 | 0 / 0.2 |
+| | 100 | 100 / 0.4 | 100 / 0.3 | 100 / 12.5 | 100 / 6.5 |
+| | 300 | 19 / 0 | 300 / 0.6 | 299 / 7.1 | 300 / 4.7 |
+| co-expression \|cor\|^6 | none | 0 / 0.5 | 0 / 0.4 | | |
+| | 100 | 14 / 0 | 72 / 0.8 | | |
+| | 300 | 0 / 0.1 | 0 / 0 | | |
+| co-expression ((1+cor)/2)^10 | none | 0 / 0 | 0 / 0 | | |
+| | 100 | 74 / 3.3 | 73 / 0.7 | | |
+| | 300 | 0.1 / 0 | 0 / 1.6 | | |
+| mixed: hub / community / both (about 100 each) | | 0 / 0 | 0.3 / 0 | 69, 54, 82 / 5.5 | 71, 56, 85 / 6.2 |
+
+- Alignment never lowered the AUROC when single nodes change, and the gain grows with the share of changed nodes.
+  Without it `significance()` calls nothing at 30% in the binary models: every node has moved, so no node
+  stands out from nodes of its degree.
+- The chi-square test keeps its level without change (3.6–5.1% of nodes with p < 0.05, at most 0.3 calls per
+  1,000 nodes) and finds nearly every changed node at an observed false discovery share of 1–6% (11% without
+  alignment in the weighted model at 10%).
+- It is the only node2vec2rank ranking that finds both kinds of change in the mixed design. The radial-only Borda
+  has 0.87 on hub changes and 0.48 on community changes; the cosine-only Borda 0.49 and 0.73 (0.88 aligned).
+- With 30% of genes switching module no test makes calls in co-expression networks, aligned or not.
+- For co-expression networks the chi-square test is not reported: its inflation (median statistic over the
+  chi-square median) is 6–80 there, against 0.9–1.5 in the block models after alignment.
+
+### Whole communities change (truth: every node of the affected communities)
+
+AUROC:
+
+| scenario | default | default, aligned | test | test, aligned | chi-square | chi-square, aligned | DeDi |
+|---|---|---|---|---|---|---|---|
+| block model, 8 communities: one splits | 0.76 | 0.74 | 0.77 | 0.75 | 0.58 | 0.55 | 0.65 |
+| block model: two merge | 0.94 | 0.64 | 0.90 | 0.58 | 0.90 | 0.68 | 0.86 |
+| co-expression: one module splits | 0.87 | 0.83 | 0.91 | 0.86 | | | 0.68 |
+| co-expression: two modules merge | 0.92 | 0.77 | 0.94 | 0.75 | | | 0.76 |
+| paper's design, degree-naive (500 nodes, 6 communities) | 0.96 | 0.93 | 0.88 | 0.92 | 0.93 | 0.93 | 0.77 |
+| paper's design, random | 0.97 | 0.99 | 0.90 | 0.94 | 0.94 | 0.92 | 0.82 |
+| ((1+cor)/2)^10: one module weakens | 0.89 | 0.34 | 0.96 | 0.26 | | | 0.87 |
+| \|cor\|^6: one module weakens | 0.40 | 0.17 | 0.34 | 0.14 | | | 0.77 |
+
+- Alignment removes changes that a linear map of the embedding explains: a merge and a module changing strength.
+  The nodes of those communities did not change relative to their community, which is what alignment keeps.
+  Splits and the paper's design (one row of the block matrix re-drawn) are barely affected.
+- The chi-square test misses the split because the elbow is 2 with 8 communities.
+- In these designs nodes outside the affected communities change their edges to them, so calls outside are not
+  false; counts are in `alignment_wald_summary.csv`.
+
+### HeLa cell cycle (2,000 genes, hdWGCNA-style signed networks, fast gene-set test with 20 label shuffles)
+
+| comparison | pathways called at FDR 0.1 (cell-cycle): default | aligned | cell-cycle genes in the top 100: default | aligned |
+|---|---|---|---|---|
+| G1 → S | 131 (50) | 0 | 22 | 3 |
+| S → G2 | 44 (10) | 0 | 1 | 4 |
+| G2 → M | 31 (20) | 0 | 12 | 14 |
+| G1 vs G1, three random splits | 0, 0, 0 | 0, 0, 0 | 3, 6, 1 | 10, 6, 10 |
+
+`significance()` called no single gene in any comparison, with or without alignment. On these cells the pathway
+signal is a change shared by groups of genes, and alignment removes it. This is why alignment is an option and
+not the default.
+
+### The dimension of the chi-square test
+
+No change, 4 communities, nodes with p < 0.05 (target 5%), without / with genomic control:
+
+| scenario | d = 2 | 3 | 4 | 6 | 8 | 16 | 24 |
+|---|---|---|---|---|---|---|---|
+| binary block model | 7.2 / 6.8 | 7.2 / 6.3 | 6.0 / 4.8 | 27 / 8.3 | 43 / 7.1 | 69 / 6.4 | 80 / 7.2 |
+| binary, heavy-tailed degrees | 4.7 / 4.7 | 4.9 / 4.8 | 4.7 / 4.6 | 23 / 11 | 36 / 12 | 55 / 16 | 64 / 19 |
+| weighted | 1.7 / 1.7 | 3.1 / 3.1 | 4.6 / 4.6 | 8.3 / 7.1 | 18 / 8.7 | 63 / 12 | 85 / 13 |
+
+Up to the rank (4) the test is valid. Beyond it, the singular vectors are fitted to the noise they are multiplied
+with, and the statistic is inflated for every node; genomic control only partly repairs that (46–141 false calls
+per 1,000 nodes with heavy-tailed degrees). Two things were tried to lift this limit and dropped: a dimension rule
+that counts singular values above the noise level (it admits weak dimensions, which are inflated too: 16–75 false
+calls in the weighted model), and combining dimensions 4–24 with the Cauchy combination (75–85% of unchanged nodes
+with p < 0.05).
+
+### Also tried and not included
+
+A chi-square test for networks built from samples, with each gene's covariance from a jackknife over the samples
+(30 blocks, projection held fixed). It kept its level without change (0.1–1.5% at p < 0.05 up to the population
+rank), but with 10% of genes rewired it called 110–350 unchanged genes: their partners moved, and 150 samples are
+enough to detect that. With alignment this was cured only for the signed network at exactly its rank (AUROC 0.99,
+4 false calls); at other dimensions and for |cor|^6 it ranked worse (0.68–0.78) than the degree-adjusted test
+(0.99). A test of "this gene's edges changed at all" is not a ranking of rewired genes.

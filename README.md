@@ -214,6 +214,41 @@ For single-cell data, `node2vec2rank.singlecell` keeps the counts sparse (`norma
 
 The config also accepts `"embed_dimensions": "auto"` to use only the elbow dimension, and `"embedding_method": "ulse"` for the regularised unfolded Laplacian embedding. See [the benchmarks](benchmarks/README.md) (simulations and the locCSN single-cell networks) for when these choices help and when they hurt. On the single-cell networks and the demo network the elbow was too low, so the defaults are unchanged from the paper.
 
+### Which nodes changed: alignment, hub changes and a chi-square test
+Three additions answer questions the default ranking does not. None changes the default, which is the paper's method. The numbers are from `benchmarks/alignment_wald.py` (10 replicates) and `benchmarks/alignment_hela.py`; see [the benchmarks](benchmarks/README.md#alignment-the-radial-metric-and-the-chi-square-test).
+
+**Robust alignment (`align="robust"`).** In the joint embedding a node also moves when *other* nodes change: its position is its latent position times a matrix that depends on the whole graph (spill-over, see `node2vec2rank/alignment.py`). The default ranking therefore measures "this node's connections changed", including connections to partners that changed. With alignment, the first embedding is mapped onto the second by a linear map fitted on the half of the nodes that moved least, so what the majority shares is removed and the ranking measures "this node changed relative to the rest". If fewer than half of the nodes changed, the distance of an unchanged node is exactly zero in the noise-free case.
+
+| | default | `align="robust"` |
+|---|---|---|
+| Block models, 30% of nodes switch community: AUROC | 0.83 | 1.00 |
+| same: changed nodes called by `significance()` (of 300) | 0 | 260–297, no false calls |
+| Co-expression, 10% of genes switch module: AUROC | 0.89–0.96 | 0.99–1.00 |
+| Co-expression, 30% switch: AUROC | 0.78–0.80 | 0.84–0.93 |
+| Two communities merge: AUROC | 0.92–0.94 | 0.64–0.77 |
+| One co-expression module weakens (signed network): AUROC | 0.89 | 0.34 |
+| HeLa cell cycle, Reactome pathways called (G1→S, S→G2, G2→M) | 131, 44, 31 | 0, 0, 0 |
+
+Alignment is the better tool when single nodes rewire, most of all when many do. It removes changes that whole communities share (a merge, a module becoming stronger or weaker), because a linear map explains those. On the HeLa cell-cycle data the signal is of that shared kind: with alignment no pathway is called in any transition (and none in the null splits either way). So keep the default for "what changed between the conditions" and use alignment for "which nodes rewired on their own". It needs most nodes to be unchanged.
+
+**The radial metric (`distance_metrics=["radial"]`).** The squared Euclidean distance splits exactly into `(|x| - |y|)^2 + 2 |x| |y| (1 - cos(x, y))`. The first part, the radial distance, is the change of a node's hub status; the second is the cosine distance (a change of partners) weighted by the norms. A radial-only ranking finds hub changes (AUROC 0.87 where the default has 0.55 and cosine 0.49) and is blind to community changes (0.48). Use it without alignment.
+
+**A chi-square test per node (`model.wald_test()`).** A node's position in the joint embedding is a weighted sum of its own edges, with weights shared by all nodes. If the edges are independent (the model of the paper's theorem), the difference of a node's two positions is asymptotically normal with a covariance that can be estimated from the fit, so the difference divided by its own noise follows a chi-square distribution when the node does not change (`node2vec2rank/wald.py`; the same construction as Zheng 2025, arXiv:2502.01947, and Du & Tang 2023, for a joint embedding and weighted graphs). It aligns by default.
+
+| Binary and weighted block models | `significance()` | `wald_test()` |
+|---|---|---|
+| Nothing changes: nodes with p < 0.05 | 1.4–2.1% | 3.9–5.1% |
+| Nothing changes: false calls at q < 0.1 (of 1,000) | 0 | 0.1–0.3 |
+| 10% switch community: changed nodes called (of 100) | 72–100 | 100, with 4–7 false |
+| 30% switch: called (of 300) | 0–19 | 299–300, with 2–5 false |
+| Hub, community and combined changes mixed (of about 100 each) | 0 | 71, 56 and 85, with 6 false |
+
+Limits, all of which the benchmarks show:
+- It is for networks whose edges are measured independently (binary or count graphs). In networks inferred from samples (co-expression, TOM, PANDA) the entries are dependent, the variances are far too small, and the reported inflation is 6–80 instead of 1; the method prints a warning. Use `significance()` there.
+- The dimension must not exceed the rank of the signal. The default is the elbow of the singular values, which was valid in every simulation. At 8 to 24 dimensions for 4 communities, 36–85% of unchanged nodes have p < 0.05.
+- The elbow can be too low. With 8 communities it was 2, and a community split was then not found (AUROC 0.58 against 0.76 for the default ranking). Pass `dimension=` if you know better.
+- With alignment it has the same blind spot as above: changes shared by whole communities.
+
 ### Running in a Jupyter Notebook Environment
 You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided. Check the demo notebook for general usage.  
 
