@@ -20,11 +20,14 @@ change, and what the majority shares is not a difference.
 
 A change of how whole communities connect is a linear map too. If every node
 keeps its latent position and only ``L_k`` changes (a module gets stronger or
-weaker, two communities merge), then ``Y_2 = Y_1 G`` holds for *all* nodes, so
-``G`` absorbs the change and no node moves after alignment. This cannot be
-avoided: in the embedding, "my community changed how it connects" and "the
-nodes around me changed" are the same linear move. The total move of a node
-and its move after alignment therefore answer two questions:
+weaker, two communities merge), then ``Y_2 = Y_1 G`` holds for *all* nodes: a
+linear map explains the change entirely, and the alignment removes it
+whenever the fit includes those nodes (in the benchmarks a weakening module
+and a merge are removed; a large change of one community is trimmed from the
+fit and stays). This cannot be avoided: in the embedding, "my community
+changed how it connects" and "the nodes around me changed" are the same linear
+move. The total move of a node and its move after alignment therefore answer
+two questions:
 
 - total move: did the connections of this node change? It is zero in the
   population exactly when the node's row of ``P`` is the same in both graphs.

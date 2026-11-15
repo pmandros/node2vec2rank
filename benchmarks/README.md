@@ -11,6 +11,10 @@ python benchmarks/simulations.py   # 20 replicates per setting -> results/*.csv
 python benchmarks/figures.py       # -> results/*.png
 ```
 
+Every section except the last one ("Total and own move, ...") is about the total move of a node alone
+(`align=None`, the method of the paper); the scripts behind them set it or use the distances directly. The last
+section compares it with the own move and with the default, which uses both.
+
 ## Setup
 
 Every setting uses two graphs on 1,000 nodes. The "changed" nodes are 10% or 30% of the nodes, which
@@ -445,63 +449,91 @@ numbers: `results/competitor_seeds_*.csv`.
 - `revision_hela.py --part grid --revelio-dir ...`: metacell size x soft power; `revision_hela_grid.csv`.
 - `runtime.py`: runtime and peak memory of n2v2r and DeDi up to 20,000 nodes; `runtime.csv`.
 
-## Alignment, the radial metric and the chi-square test
+## Total and own move, the radial metric and the chi-square test
 
-`alignment_wald.py` (10 replicates per setting, about 15 minutes on 4 cores; `alignment_wald.csv`,
+`alignment_wald.py` (10 replicates per setting, about 25 minutes on 4 cores; `alignment_wald.csv`,
 `alignment_wald_summary.csv`, `alignment_wald_dimension.csv`) and `alignment_hela.py --revelio-dir ...`
-(`alignment_hela.csv`). "Default" is the paper's Borda over dimensions 4–24 with Euclidean and cosine distances;
-"test" is `significance()`; "chi-square" is `wald_test()` at the elbow dimension. Calls are at q < 0.1.
+(`alignment_hela.csv`). All rankings are Borda over dimensions 4–24 with Euclidean and cosine distances:
+"total" is the total move of a node (`align=None`, the method of the paper), "own" its move after robust alignment
+(`align="robust"`), and "default" the larger of the two Borda scores (`align="both"`). "Test" is `significance()`:
+the default takes twice the smaller p-value of the tests of the total and of the own move. "Chi-square" is
+`wald_test()` at the elbow dimension. Calls are at q < 0.1.
 
 ### Single nodes change (truth: the nodes whose own position changed)
 
 AUROC:
 
-| scenario | changed | default | default, aligned | test | test, aligned | chi-square | chi-square, aligned | DeDi |
-|---|---|---|---|---|---|---|---|---|
-| binary block model, heavy-tailed degrees | 10% | 0.97 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.50 |
-| | 30% | 0.83 | 1.00 | 0.83 | 1.00 | 0.98 | 1.00 | 0.52 |
-| binary block model | 10% | 0.97 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.52 |
-| | 30% | 0.83 | 1.00 | 0.83 | 1.00 | 1.00 | 1.00 | 0.51 |
-| weighted block model | 10% | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.58 |
-| | 30% | 0.96 | 1.00 | 0.99 | 1.00 | 1.00 | 1.00 | 0.56 |
-| co-expression \|cor\|^6 | 10% | 0.96 | 0.99 | 0.99 | 1.00 | | | 0.67 |
-| | 30% | 0.78 | 0.84 | 0.74 | 0.79 | | | 0.70 |
-| co-expression ((1+cor)/2)^10 | 10% | 0.89 | 1.00 | 0.99 | 1.00 | | | 0.60 |
-| | 30% | 0.80 | 0.93 | 0.78 | 0.84 | | | 0.68 |
-| mixed changes: hub status | 5% | 0.55 | 0.66 | 0.56 | 0.66 | 0.96 | 0.97 | 0.95 |
-| mixed changes: community | 5% | 0.71 | 0.87 | 0.72 | 0.88 | 0.90 | 0.91 | 0.49 |
-| mixed changes: both | 5% | 0.73 | 0.89 | 0.74 | 0.89 | 0.98 | 0.98 | 0.95 |
+| scenario | changed | default | total | own | test | test, total | test, own | chi-square, not aligned | chi-square | DeDi |
+|---|---|---|---|---|---|---|---|---|---|---|
+| binary block model, heavy-tailed degrees | 10% | 1.00 | 0.97 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.50 |
+|  | 30% | 0.98 | 0.83 | 1.00 | 1.00 | 0.83 | 1.00 | 0.98 | 1.00 | 0.52 |
+| binary block model | 10% | 1.00 | 0.97 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.52 |
+|  | 30% | 0.97 | 0.83 | 1.00 | 1.00 | 0.83 | 1.00 | 1.00 | 1.00 | 0.51 |
+| weighted block model | 10% | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.58 |
+|  | 30% | 1.00 | 0.96 | 1.00 | 1.00 | 0.99 | 1.00 | 1.00 | 1.00 | 0.56 |
+| co-expression \|cor\|^6 | 10% | 0.98 | 0.96 | 0.99 | 1.00 | 0.99 | 1.00 |  |  | 0.67 |
+|  | 30% | 0.84 | 0.78 | 0.84 | 0.81 | 0.73 | 0.79 |  |  | 0.70 |
+| co-expression ((1+cor)/2)^10 | 10% | 0.97 | 0.89 | 0.99 | 1.00 | 0.99 | 1.00 |  |  | 0.60 |
+|  | 30% | 0.86 | 0.80 | 0.93 | 0.84 | 0.78 | 0.84 |  |  | 0.68 |
+| mixed changes: hub status | 5% | 0.59 | 0.55 | 0.67 | 0.63 | 0.56 | 0.66 | 0.96 | 0.97 | 0.95 |
+| mixed changes: community | 5% | 0.81 | 0.71 | 0.87 | 0.85 | 0.72 | 0.88 | 0.90 | 0.91 | 0.49 |
+| mixed changes: both | 5% | 0.83 | 0.73 | 0.89 | 0.88 | 0.74 | 0.89 | 0.98 | 0.98 | 0.95 |
+
+Share of changed nodes among the top k, k being the number of changed nodes:
+
+| scenario | changed | default | total | own | test | test, total | test, own |
+|---|---|---|---|---|---|---|---|
+| binary block model, heavy-tailed degrees | 10% | 0.92 | 0.78 | 0.93 | 1.00 | 0.98 | 1.00 |
+|  | 30% | 0.89 | 0.64 | 0.96 | 0.99 | 0.65 | 1.00 |
+| binary block model | 10% | 0.94 | 0.72 | 0.99 | 1.00 | 1.00 | 1.00 |
+|  | 30% | 0.85 | 0.62 | 1.00 | 1.00 | 0.63 | 1.00 |
+| weighted block model | 10% | 0.97 | 0.97 | 0.97 | 1.00 | 1.00 | 1.00 |
+|  | 30% | 0.97 | 0.84 | 0.97 | 1.00 | 0.95 | 1.00 |
+| co-expression \|cor\|^6 | 10% | 0.80 | 0.74 | 0.87 | 0.94 | 0.85 | 0.95 |
+|  | 30% | 0.65 | 0.58 | 0.67 | 0.60 | 0.53 | 0.62 |
+| co-expression ((1+cor)/2)^10 | 10% | 0.75 | 0.54 | 0.90 | 0.91 | 0.89 | 0.94 |
+|  | 30% | 0.63 | 0.54 | 0.79 | 0.63 | 0.54 | 0.70 |
+| mixed changes: hub status | 5% | 0.11 | 0.08 | 0.15 | 0.13 | 0.08 | 0.14 |
+| mixed changes: community | 5% | 0.47 | 0.28 | 0.56 | 0.54 | 0.23 | 0.56 |
+| mixed changes: both | 5% | 0.52 | 0.30 | 0.62 | 0.59 | 0.28 | 0.63 |
 
 Changed nodes called / unchanged nodes called (1,000 nodes; 2,000 in the mixed design):
 
-| scenario | changed | test | test, aligned | chi-square | chi-square, aligned |
-|---|---|---|---|---|---|
-| binary block model, heavy-tailed degrees | none | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0.1 |
-| | 100 | 72 / 0 | 99 / 0.1 | 100 / 4.4 | 100 / 4.8 |
-| | 300 | 0 / 0 | 260 / 0 | 129 / 2.0 | 299 / 2.9 |
-| binary block model | none | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0.3 |
-| | 100 | 82 / 0 | 100 / 0 | 100 / 2.9 | 100 / 4.2 |
-| | 300 | 0 / 0 | 297 / 0 | 154 / 0 | 300 / 1.8 |
-| weighted block model | none | 0 / 0 | 0 / 0 | 0 / 0.1 | 0 / 0.2 |
-| | 100 | 100 / 0.4 | 100 / 0.3 | 100 / 12.5 | 100 / 6.5 |
-| | 300 | 19 / 0 | 300 / 0.6 | 299 / 7.1 | 300 / 4.7 |
-| co-expression \|cor\|^6 | none | 0 / 0.5 | 0 / 0.4 | | |
-| | 100 | 14 / 0 | 72 / 0.8 | | |
-| | 300 | 0 / 0.1 | 0 / 0 | | |
-| co-expression ((1+cor)/2)^10 | none | 0 / 0 | 0 / 0 | | |
-| | 100 | 74 / 3.3 | 73 / 0.7 | | |
-| | 300 | 0.1 / 0 | 0 / 1.6 | | |
-| mixed: hub / community / both (about 100 each) | | 0 / 0 | 0.3 / 0 | 69, 54, 82 / 5.5 | 71, 56, 85 / 6.2 |
+| scenario | changed | test | test, total | test, own | chi-square, not aligned | chi-square |
+|---|---|---|---|---|---|---|
+| binary block model, heavy-tailed degrees | none | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0.1 |
+|  | 100 | 96.8 / 0 | 72.1 / 0 | 99 / 0.1 | 99.8 / 4.4 | 100 / 4.8 |
+|  | 300 | 83.5 / 0 | 0 / 0 | 259.9 / 0 | 128.9 / 2 | 298.5 / 2.9 |
+| binary block model | none | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0.3 |
+|  | 100 | 100 / 0 | 82.4 / 0 | 100 / 0 | 100 / 2.9 | 100 / 4.2 |
+|  | 300 | 231.9 / 0.1 | 0 / 0 | 297.1 / 0 | 153.6 / 0 | 300 / 1.8 |
+| weighted block model | none | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0.1 | 0 / 0.2 |
+|  | 100 | 99.9 / 0.2 | 99.9 / 0.4 | 99.9 / 0.3 | 100 / 12.5 | 100 / 6.5 |
+|  | 300 | 300 / 0.1 | 19.3 / 0 | 300 / 0.6 | 299.3 / 7.1 | 300 / 4.7 |
+| co-expression \|cor\|^6 | none | 0 / 0.4 | 0 / 0.5 | 0 / 0.4 |  |  |
+|  | 100 | 52.9 / 0.3 | 13.8 / 0 | 72 / 0.8 |  |  |
+|  | 300 | 0 / 0.1 | 0 / 0.1 | 0 / 0 |  |  |
+| co-expression ((1+cor)/2)^10 | none | 0 / 0 | 0 / 0 | 0 / 0 |  |  |
+|  | 100 | 72.6 / 0.7 | 74.2 / 3.3 | 72.7 / 0.7 |  |  |
+|  | 300 | 0.1 / 1.3 | 0.1 / 0 | 0 / 1.6 |  |  |
+| mixed: hub, community, both (about 100 each) | | 0, 0, 0.3 / 0 | 0, 0, 0 / 0 | 0, 0, 0.3 / 0 | 69.4, 54.3, 82 / 5.5 | 71.2, 55.7, 85.4 / 6.2 |
 
-- Alignment never lowered the AUROC when single nodes change, and the gain grows with the share of changed nodes.
-  Without it `significance()` calls nothing at 30% in the binary models: every node has moved, so no node
-  stands out from nodes of its degree.
+- The own move never ranks worse than the total move when single nodes change, and the gain grows with the share
+  of changed nodes. With the total move alone `significance()` calls nothing at 30% in the binary models: every
+  node has moved, so no node stands out from nodes of its degree.
+- The default keeps most of that gain: its AUROC is within 0.03 of the own move in the block models and within
+  0.07 everywhere. Its top is less clean (the top of the total-move ranking enters too), and at 30% its test calls
+  84–300 of 300 in the block models where the own move alone calls 260–300, because the p-value is doubled. It
+  made at most 1.3 false calls per 1,000 nodes.
+- Without any change, 0.8–2.5% of nodes have p < 0.05 with the default test (1.4–2.4% total, 1.7–3.8% own), and it
+  made at most 0.4 calls per 1,000 nodes.
 - The chi-square test keeps its level without change (3.6–5.1% of nodes with p < 0.05, at most 0.3 calls per
   1,000 nodes) and finds nearly every changed node at an observed false discovery share of 1–6% (11% without
   alignment in the weighted model at 10%).
 - It is the only node2vec2rank ranking that finds both kinds of change in the mixed design. The radial-only Borda
-  has 0.87 on hub changes and 0.48 on community changes; the cosine-only Borda 0.49 and 0.73 (0.88 aligned).
-- With 30% of genes switching module no test makes calls in co-expression networks, aligned or not.
+  of the total move has 0.87 on hub changes and 0.48 on community changes; the cosine-only Borda 0.49 and 0.73
+  (0.89 for the own move).
+- With 30% of genes switching module no test makes calls in co-expression networks.
 - For co-expression networks the chi-square test is not reported: its inflation (median statistic over the
   chi-square median) is 6–79 there, against 0.9–1.5 in the block models after alignment.
 
@@ -509,36 +541,105 @@ Changed nodes called / unchanged nodes called (1,000 nodes; 2,000 in the mixed d
 
 AUROC:
 
-| scenario | default | default, aligned | test | test, aligned | chi-square | chi-square, aligned | DeDi |
-|---|---|---|---|---|---|---|---|
-| block model, 8 communities: one splits | 0.76 | 0.74 | 0.77 | 0.75 | 0.58 | 0.55 | 0.65 |
-| block model: two merge | 0.94 | 0.64 | 0.90 | 0.58 | 0.90 | 0.68 | 0.86 |
-| co-expression: one module splits | 0.87 | 0.83 | 0.91 | 0.86 | | | 0.68 |
-| co-expression: two modules merge | 0.92 | 0.77 | 0.94 | 0.75 | | | 0.76 |
-| paper's design, degree-naive (500 nodes, 6 communities) | 0.96 | 0.93 | 0.88 | 0.92 | 0.93 | 0.93 | 0.77 |
-| paper's design, random | 0.97 | 0.99 | 0.90 | 0.94 | 0.94 | 0.92 | 0.82 |
-| ((1+cor)/2)^10: one module weakens | 0.89 | 0.34 | 0.96 | 0.26 | | | 0.87 |
-| \|cor\|^6: one module weakens | 0.40 | 0.17 | 0.34 | 0.14 | | | 0.77 |
+| scenario | default | total | own | test | test, total | test, own | chi-square, not aligned | chi-square | DeDi |
+|---|---|---|---|---|---|---|---|---|---|
+| block model, 8 communities: one splits | 0.78 | 0.76 | 0.74 | 0.80 | 0.77 | 0.75 | 0.58 | 0.55 | 0.65 |
+| block model: two merge | 0.89 | 0.94 | 0.64 | 0.83 | 0.90 | 0.58 | 0.90 | 0.68 | 0.86 |
+| co-expression: one module splits | 0.90 | 0.87 | 0.83 | 0.94 | 0.91 | 0.86 |  |  | 0.69 |
+| co-expression: two modules merge | 0.90 | 0.92 | 0.77 | 0.90 | 0.94 | 0.75 |  |  | 0.76 |
+| paper's design, degree-naive (500 nodes, 6 communities) | 0.94 | 0.95 | 0.93 | 0.91 | 0.88 | 0.92 | 0.93 | 0.93 | 0.77 |
+| paper's design, random | 0.98 | 0.97 | 0.99 | 0.91 | 0.90 | 0.94 | 0.94 | 0.93 | 0.82 |
+| ((1+cor)/2)^10: one module weakens | 0.84 | 0.89 | 0.34 | 0.92 | 0.95 | 0.26 |  |  | 0.87 |
+| \|cor\|^6: one module weakens | 0.37 | 0.40 | 0.17 | 0.31 | 0.34 | 0.14 |  |  | 0.77 |
 
-- Alignment removes changes that a linear map of the embedding explains: a merge and a module changing strength.
-  The nodes of those communities did not change relative to their community, which is what alignment keeps.
-  Splits and the paper's design (one row of the block matrix re-drawn) are barely affected.
+Share of nodes of the affected communities among the top k:
+
+| scenario | default | total | own | test | test, total | test, own |
+|---|---|---|---|---|---|---|
+| block model, 8 communities: one splits | 0.37 | 0.39 | 0.31 | 0.43 | 0.43 | 0.35 |
+| block model: two merge | 0.69 | 0.79 | 0.38 | 0.56 | 0.70 | 0.33 |
+| co-expression: one module splits | 0.59 | 0.55 | 0.49 | 0.63 | 0.55 | 0.63 |
+| co-expression: two modules merge | 0.65 | 0.69 | 0.45 | 0.58 | 0.73 | 0.40 |
+| paper's design, degree-naive (500 nodes, 6 communities) | 0.74 | 0.77 | 0.73 | 0.61 | 0.52 | 0.62 |
+| paper's design, random | 0.87 | 0.78 | 0.93 | 0.64 | 0.61 | 0.68 |
+| ((1+cor)/2)^10: one module weakens | 0.57 | 0.64 | 0.01 | 0.68 | 0.79 | 0.01 |
+| \|cor\|^6: one module weakens | 0.07 | 0.09 | 0.02 | 0.15 | 0.20 | 0.01 |
+
+Nodes of the affected communities called / other nodes called by `significance()`:
+
+| scenario | nodes in the affected communities | test | test, total | test, own |
+|---|---|---|---|---|
+| block model, 8 communities: one splits | 123.2 | 0 / 0 | 0 / 0 | 0 / 0 |
+| block model: two merge | 248.4 | 0 / 0 | 0 / 0 | 0 / 0 |
+| co-expression: one module splits | 90.8 | 1.4 / 0.2 | 0 / 0.2 | 2.7 / 0.1 |
+| co-expression: two modules merge | 172 | 0 / 0.1 | 0 / 0.2 | 0 / 0.2 |
+| paper's design, degree-naive (500 nodes, 6 communities) | 52.2 | 5.2 / 1.6 | 1.6 / 0.5 | 6 / 1.5 |
+| paper's design, random | 65.5 | 14.2 / 3.3 | 11.6 / 1.2 | 14.2 / 3.5 |
+| ((1+cor)/2)^10: one module weakens | 145.7 | 7.3 / 0.5 | 13.4 / 0.4 | 0 / 0.5 |
+| \|cor\|^6: one module weakens | 145.1 | 0.2 / 1.1 | 0.2 / 0 | 0 / 1.2 |
+
+- A change of how whole communities connect, with every node keeping its place, is one linear map of the embedding.
+  The alignment removes it when the fit includes those nodes: a merge and a module changing strength are lost with
+  the own move alone (AUROC 0.64–0.77 and 0.17–0.34). Splits and the paper's design (one row of the block matrix
+  re-drawn, a change large enough to be trimmed from the fit) are barely affected.
+- The default stays within 0.05 of the total move in every setting (0.89–0.90 for the merges, 0.84 for the
+  weakening module) and is above it for the splits. Its top is less clean than that of the total move for merges
+  and the weakening module (0.57–0.69 against 0.64–0.79).
 - The chi-square test misses the split because the elbow is 2 with 8 communities.
 - In these designs nodes outside the affected communities change their edges to them, so calls outside are not
-  false; counts are in `alignment_wald_summary.csv`.
+  false.
+
+### The share of a node's move that is its own
+
+Median `own_share` (`significance()`, default) of changed and of unchanged nodes:
+
+| scenario | changed | `own_share` of changed nodes | of unchanged nodes |
+|---|---|---|---|
+| binary block model, heavy-tailed degrees | none | | 0.54 |
+| | 10% | 0.75 | 0.41 |
+| | 30% | 0.65 | 0.28 |
+| binary block model | none | | 0.53 |
+| | 10% | 0.72 | 0.39 |
+| | 30% | 0.65 | 0.27 |
+| weighted block model | none | | 0.60 |
+| | 10% | 0.77 | 0.21 |
+| | 30% | 0.68 | 0.10 |
+| co-expression \|cor\|^6 | none | | 0.50 |
+| | 10% | 0.70 | 0.41 |
+| | 30% | 0.54 | 0.45 |
+| co-expression ((1+cor)/2)^10 | none | | 0.40 |
+| | 10% | 0.72 | 0.28 |
+| | 30% | 0.57 | 0.40 |
+| block model, 8 communities: one splits | | 0.47 | 0.62 |
+| block model: two merge | | 0.42 | 0.61 |
+| co-expression: one module splits | | 0.47 | 0.68 |
+| co-expression: two modules merge | | 0.32 | 0.74 |
+| paper's design, degree-naive (500 nodes, 6 communities) | | 0.87 | 0.59 |
+| paper's design, random | | 0.90 | 0.38 |
+| ((1+cor)/2)^10: one module weakens | | 0.00 | 0.48 |
+| \|cor\|^6: one module weakens | | 0.00 | 0.47 |
+
+Noise alone gives about one half (0.40–0.60): in the dimensions beyond the signal the two embeddings are unrelated
+noise, of which the alignment removes half. Nodes that rewired on their own are above that (0.54–0.77), nodes of a
+weakening module at 0.00 and of merging communities at 0.32–0.42. Unchanged nodes drop below one half when many
+others change (0.10–0.45): their move is the shared one. In the paper's design the nodes of the re-drawn community
+are at 0.87–0.90, so that change counts as their own. The share describes a node with a large z; it is not a test.
 
 ### HeLa cell cycle (2,000 genes, hdWGCNA-style signed networks, fast gene-set test with 20 label shuffles)
 
-| comparison | pathways called at FDR 0.1 (cell-cycle): default | aligned | cell-cycle genes in the top 100: default | aligned |
-|---|---|---|---|---|
-| G1 → S | 131 (50) | 0 | 22 | 3 |
-| S → G2 | 44 (10) | 0 | 1 | 4 |
-| G2 → M | 31 (20) | 0 | 12 | 14 |
-| G1 vs G1, three random splits | 0, 0, 0 | 0, 0, 0 | 3, 6, 1 | 10, 6, 10 |
+| comparison | pathways called at FDR 0.1 (cell-cycle): default | total | own | cell-cycle genes in the top 100: default | total | own |
+|---|---|---|---|---|---|---|
+| G1 → S | 123 (49) | 131 (50) | 0 | 22 | 22 | 3 |
+| S → G2 | 29 (5) | 44 (10) | 0 | 5 | 1 | 4 |
+| G2 → M | 18 (15) | 31 (20) | 0 | 12 | 12 | 14 |
+| G1 vs G1, random split 0 | 0 | 0 | 0 | 6 | 3 | 10 |
+| G1 vs G1, random split 1 | 0 | 0 | 0 | 6 | 6 | 6 |
+| G1 vs G1, random split 2 | 0 | 0 | 0 | 4 | 1 | 10 |
 
-`significance()` called no single gene in any comparison, with or without alignment. On these cells the pathway
-signal is a change shared by groups of genes, and alignment removes it. This is why alignment is an option and
-not the default.
+`significance()` called no single gene in any comparison. On these cells the pathway signal is a change shared by
+groups of genes: the own move alone finds no pathway, and the default, which tests every pathway on both moves
+and doubles the smaller p-value, keeps 123, 29 and 18 of the 131, 44 and 31 pathways of the total move. No method
+calls a pathway in the random splits. This is why the own move is half of the default and not all of it.
 
 ### The dimension of the chi-square test
 
@@ -565,3 +666,11 @@ rank), but with 10% of genes rewired it called 150–350 unchanged genes: their 
 enough to detect that. With alignment this was cured only for the signed network at exactly its rank (AUROC 0.99,
 4 false calls); at other dimensions and for |cor|^6 it ranked worse (0.67–0.96) than the degree-adjusted test
 (0.99). A test of "this gene's edges changed at all" is not a ranking of rewired genes.
+
+Other ways to combine the total and the own move. A Cauchy combination of the two p-values is pulled up by a
+p-value near 1 in the test without signal, and called fewer nodes than twice the smaller p-value. The larger of
+two standardised log distances (median and MAD per column) instead of the larger Borda score was better in some
+settings and worse in others (AUROC 0.75 against 0.82 for the weakening module in 3 replicates). The radial
+distance as a third component found more hub changes (AUROC 0.83–0.87 against 0.61) but lowered the merges and
+co-expression at 30%, and its own test made no calls. For gene sets, the mean of the larger z-score of each gene
+kept 90 of the 131 HeLa pathways in G1 → S; testing each set on both z-scores keeps 123.

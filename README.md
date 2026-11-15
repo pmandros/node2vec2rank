@@ -98,7 +98,7 @@ To run the node2vec2rank algorithm in command line, run the following command wi
    ```sh
    n2v2r --config configs/config_demo_adj_CLI.json
    ```
-`python -m node2vec2rank --config ...` works too. `--save_dir` and `--seed` override the config file, `--signed` also writes the rankings signed by the degree difference, `--significance` writes per-node p- and q-values, `--align` turns on robust alignment, and `--wald` writes the chi-square test per node. Any parameter left out of the config file takes its default value.
+`python -m node2vec2rank --config ...` works too. `--save_dir` and `--seed` override the config file, `--signed` also writes the rankings signed by the degree difference, `--significance` writes per-node p- and q-values, `--align both|robust|none` overrides `align` (`none` is the method of the paper, see [below](#what-the-default-measures-total-move-and-own-move)), and `--wald` writes the chi-square test per node. Any parameter left out of the config file takes its default value.
 The configuration file template is as follows
    ```json
 {
@@ -120,7 +120,7 @@ The configuration file template is as follows
     "fitting_ranking": {
         "embed_dimensions": [4,6,8,10,12,14,16,18,20,22,24],
         "distance_metrics": ["euclidean","cosine"],
-        "align": null,
+        "align": "both",
         "comp_strategy": "sequential",
         "seed": null,
         "verbose": 1
@@ -154,7 +154,7 @@ fitting_ranking:
                         A list of all the embedding dimensions to use in n2v2r 
   --distance_metrics [DISTANCE_METRICS ...]
                         A list of all the distance metrics to use in n2v2r ("euclidean", "cosine", "radial" and/or "correlation"; radial is the change of a node's norm, i.e. of its hub status; correlation depends on the arbitrary signs of the singular vectors and is not recommended)
-  --align ALIGN         null (default, the paper's method) or "robust": map the first embedding onto the second with a robust linear fit before measuring distances, so that only nodes that changed relative to the majority rank high (see "Which nodes changed" below)
+  --align ALIGN         "both" (default): rank and test every node on its total move between the embeddings and on its own move, after the move shared by the majority of the nodes is removed with a robust linear fit; null: the total move only (the method of the paper); "robust": the own move only (see "What the default measures" below)
   --comp_strategy COMP_STRATEGY
                         How to compare more than two graphs: "sequential" (default), "one_vs_before" or "one_vs_rest"
   --embedding_method EMBEDDING_METHOD
@@ -169,13 +169,13 @@ from node2vec2rank import N2V2R
 
 model = N2V2R([graph_control, graph_case], nodes=gene_names, seed=42)
 rankings = model.fit_transform_rank()          # one DataFrame per comparison, one column per dimension/metric
-borda = model.aggregate_transform()            # aggregated Borda ranking per comparison
+borda = model.aggregate_transform()            # aggregated Borda ranking per comparison (borda_ranks, borda_total, borda_own)
 degree_difference = model.degree_difference_ranking()
 signed = model.signed_ranks_transform()        # rankings signed by the degree difference
-significance = model.significance()            # per-node z, p- and q-values (see below)
+significance = model.significance()            # per-node z, p- and q-values, and the share of the move that is the node's own
 wald = model.wald_test()                       # chi-square test per node, for networks with independent edges
 
-aligned = N2V2R([graph_control, graph_case], nodes=gene_names, seed=42, align="robust")  # see "Which nodes changed"
+paper = N2V2R([graph_control, graph_case], nodes=gene_names, seed=42, align=None)  # the method exactly as in the paper
 ```
 To load graphs from files with the same options as the command line, use `DataLoader`:
 ```python
@@ -185,8 +185,39 @@ loader = DataLoader("configs/config_demo_adj_CLI.json")
 model = N2V2R(loader.get_graphs(), loader.get_nodes(), config=loader.config)
 ```
 
+### What the default measures: total move and own move
+A node can move between the two embeddings for two reasons, and by default (`align="both"`) node2vec2rank ranks and tests every node on both.
+
+- **Total move** (the method of the paper, `align=null`): the distance between the node's two positions. It answers "did the connections of this node change?". That includes a change the node shares with its whole community (a module becomes stronger or weaker, two communities merge). It also includes the smaller change of a node whose partners changed: in a joint embedding a node's position is its latent position times a matrix that depends on the whole graph, so when many nodes change, every node moves (spill-over).
+- **Own move** (`align="robust"`): the distance after the first embedding is mapped onto the second with a linear map fitted on the half of the nodes that moved least (robust alignment, `node2vec2rank/alignment.py`). The move that the majority shares is removed, and what is left answers "did this node change its position relative to the others?". If fewer than half of the nodes changed, the own move of an unchanged node is exactly zero without noise.
+
+Neither replaces the other. When a whole community changes how it connects and its nodes keep their place in it, the embedding of *all* nodes changes by one linear map, which is exactly what alignment removes (in the benchmarks a weakening module and a merge of two communities are lost); the total move keeps it. When many single nodes rewire, the total move of every node is large and the changed ones no longer stand out; the own move finds them. So the default uses both:
+
+- `aggregate_transform()` returns `borda_total` (the ranking of the paper), `borda_own`, and `borda_ranks`, the larger of the two.
+- `significance()` tests every node on both moves and reports twice the smaller p-value (valid whatever the dependence between the two tests), the larger z-score, the two z-scores (`z_total`, `z_own`) and `own_share`, the share of the node's squared move that is its own. For a node with a large z, a share near 0 says it moved with its module and a share near 1 that it rewired on its own (about one half is what noise alone gives).
+- `fast_gene_set_test` tests every gene set on both z-scores in the same way.
+
+Simulations with 10 replicates (`benchmarks/alignment_wald.py`) and the HeLa cell-cycle data (`benchmarks/alignment_hela.py`); the full tables are in [the benchmarks](benchmarks/README.md#total-and-own-move-the-radial-metric-and-the-chi-square-test):
+
+| | total move only (the paper) | own move only | default |
+|---|---|---|---|
+| Binary block models, 30% of nodes switch community: AUROC of the Borda ranking | 0.83 | 1.00 | 0.97–0.98 |
+| same: changed nodes called by `significance()` (of 300) | 0 | 260–297 | 84–232, 0.1 false calls |
+| Co-expression, 10% of genes switch module: AUROC | 0.89–0.96 | 0.99 | 0.97–0.98 |
+| same: changed genes called (of 100) | 14–74 | 72–73 | 53–73 |
+| Co-expression, 30% switch: AUROC | 0.78–0.80 | 0.84–0.93 | 0.84–0.86 |
+| Two communities merge: AUROC | 0.92–0.94 | 0.64–0.77 | 0.89–0.90 |
+| One co-expression module weakens (signed network): AUROC | 0.89 | 0.34 | 0.84 |
+| Nothing changes: nodes with p < 0.05 | 1.4–2.4% | 1.7–3.8% | 0.8–2.5% |
+| HeLa cell cycle, Reactome pathways called (G1→S, S→G2, G2→M) | 131, 44, 31 | 0, 0, 0 | 123, 29, 18 |
+| HeLa, three random splits of the G1 cells: pathways called | 0, 0, 0 | 0, 0, 0 | 0, 0, 0 |
+
+Over the 21 simulated settings with a change, the default Borda ranking has a higher AUROC than the ranking of the paper in 15 (by up to 0.16) and a lower one in 5 (by at most 0.05). It is never more than 0.07 below the better of the two single rankings, and up to 0.50 above the worse one.
+
+What it costs to ask two questions at once: the p-value doubles, and the larger of two Borda scores lets the top nodes of a ranking without signal in. When only one kind of change is present, the single ranking for it is sharper than the default: among the top k nodes (k being the number of changed ones) its share of changed nodes is up to 0.16 lower than that of the better single ranking, and with 30% of the nodes changed the test of the own move alone calls more of them (260 against 84 of 300 with heavy-tailed degrees). If you know which question you are asking, read `borda_total` or `borda_own` (`z_total` or `z_own`), or set `align`. `align=null` gives the method exactly as in the paper; the configs of the paper's notebooks set it. Both moves assume that most nodes did not change. A node that only becomes more or less of a hub is found by neither (see the next section). The permutation tests (`permutation_test`, `gene_set_test`) test "the groups do not differ at all" and keep using the total move.
+
 ### Significance and diagnostics
-`model.significance()` tests every node for a larger shift between the graphs than nodes of similar degree. Each distance is compared against a robust trend with degree (a degree-adjusted empirical null), and the results are combined into one z-score per node, a one-sided p-value and a Benjamini-Hochberg q-value. Like other empirical-null methods, it assumes that most nodes do not change. The p-values are conservative (typically 0.5–3.5% of unchanged nodes have p < 0.05), so its calls can be trusted but it can miss real changes.
+`model.significance()` tests every node for a larger shift between the graphs than nodes of similar degree. Each distance is compared against a robust trend with degree (a degree-adjusted empirical null), and the results are combined into one z-score per node, a one-sided p-value and a Benjamini-Hochberg q-value. Like other empirical-null methods, it assumes that most nodes do not change. By default it does this for the total and for the own move of every node and combines the two (see above); the numbers in this section are for the test of the total move alone. The p-values are conservative (typically 0.5–3.5% of unchanged nodes have p < 0.05), so its calls can be trusted but it can miss real changes.
 
 Which combination of dimensions to use (numbers from `benchmarks/README.md`, 10% of nodes changed, power at q < 0.1):
 
@@ -214,40 +245,26 @@ For single-cell data, `node2vec2rank.singlecell` keeps the counts sparse (`norma
 
 The config also accepts `"embed_dimensions": "auto"` to use only the elbow dimension, and `"embedding_method": "ulse"` for the regularised unfolded Laplacian embedding. See [the benchmarks](benchmarks/README.md) (simulations and the locCSN single-cell networks) for when these choices help and when they hurt. On the single-cell networks and the demo network the elbow was too low, so the defaults are unchanged from the paper.
 
-### Which nodes changed: alignment, hub changes and a chi-square test
-Three additions answer questions the default ranking does not. None changes the default, which is the paper's method. The numbers are from `benchmarks/alignment_wald.py` (10 replicates) and `benchmarks/alignment_hela.py`; see [the benchmarks](benchmarks/README.md#alignment-the-radial-metric-and-the-chi-square-test).
+### Hub changes and a chi-square test
+The numbers are from `benchmarks/alignment_wald.py` (10 replicates); see [the benchmarks](benchmarks/README.md#total-and-own-move-the-radial-metric-and-the-chi-square-test).
 
-**Robust alignment (`align="robust"`).** In the joint embedding a node also moves when *other* nodes change: its position is its latent position times a matrix that depends on the whole graph (spill-over, see `node2vec2rank/alignment.py`). The default ranking therefore measures "this node's connections changed", including connections to partners that changed. With alignment, the first embedding is mapped onto the second by a linear map fitted on the half of the nodes that moved least, so what the majority shares is removed and the ranking measures "this node changed relative to the rest". If fewer than half of the nodes changed, the distance of an unchanged node is exactly zero in the noise-free case.
+**The radial metric (`distance_metrics=["radial"]`).** The squared Euclidean distance splits exactly into `(|x| - |y|)^2 + 2 |x| |y| (1 - cos(x, y))`. The first part, the radial distance, is the change of a node's hub status; the second is the cosine distance (a change of partners) weighted by the norms. A radial-only ranking of the total move finds hub changes (AUROC 0.87 where the default has 0.59, the ranking of the paper 0.55 and cosine alone 0.49) and is blind to community changes (0.48). Use it with `align=null`: a hub change is a change of the total move.
 
-| | default | `align="robust"` |
+**A chi-square test per node (`model.wald_test()`).** A node's position in the joint embedding is a weighted sum of its own edges, with weights shared by all nodes. If the edges are independent (the model of the paper's theorem), the difference of a node's two positions is asymptotically normal with a covariance that can be estimated from the fit, so the difference divided by its own noise follows a chi-square distribution when the node does not change (`node2vec2rank/wald.py`; the same construction as Zheng 2025, arXiv:2502.01947, and Du & Tang 2023, for a joint embedding and weighted graphs). It aligns by default, so it tests the own move; `wald_test(align=False)` tests the total move.
+
+| Binary and weighted block models | `significance()` (default) | `wald_test()` |
 |---|---|---|
-| Block models, 30% of nodes switch community: AUROC | 0.83 | 1.00 |
-| same: changed nodes called by `significance()` (of 300) | 0 | 260–297, no false calls |
-| Co-expression, 10% of genes switch module: AUROC | 0.89–0.96 | 0.99–1.00 |
-| Co-expression, 30% switch: AUROC | 0.78–0.80 | 0.84–0.93 |
-| Two communities merge: AUROC | 0.92–0.94 | 0.64–0.77 |
-| One co-expression module weakens (signed network): AUROC | 0.89 | 0.34 |
-| HeLa cell cycle, Reactome pathways called (G1→S, S→G2, G2→M) | 131, 44, 31 | 0, 0, 0 |
-
-Alignment is the better tool when single nodes rewire, most of all when many do. It removes changes that whole communities share (a merge, a module becoming stronger or weaker), because a linear map explains those. On the HeLa cell-cycle data the signal is of that shared kind: with alignment no pathway is called in any transition (and none in the null splits either way). So keep the default for "what changed between the conditions" and use alignment for "which nodes rewired on their own". It needs most nodes to be unchanged.
-
-**The radial metric (`distance_metrics=["radial"]`).** The squared Euclidean distance splits exactly into `(|x| - |y|)^2 + 2 |x| |y| (1 - cos(x, y))`. The first part, the radial distance, is the change of a node's hub status; the second is the cosine distance (a change of partners) weighted by the norms. A radial-only ranking finds hub changes (AUROC 0.87 where the default has 0.55 and cosine 0.49) and is blind to community changes (0.48). Use it without alignment.
-
-**A chi-square test per node (`model.wald_test()`).** A node's position in the joint embedding is a weighted sum of its own edges, with weights shared by all nodes. If the edges are independent (the model of the paper's theorem), the difference of a node's two positions is asymptotically normal with a covariance that can be estimated from the fit, so the difference divided by its own noise follows a chi-square distribution when the node does not change (`node2vec2rank/wald.py`; the same construction as Zheng 2025, arXiv:2502.01947, and Du & Tang 2023, for a joint embedding and weighted graphs). It aligns by default.
-
-| Binary and weighted block models | `significance()` | `wald_test()` |
-|---|---|---|
-| Nothing changes: nodes with p < 0.05 | 1.4–2.1% | 3.9–5.1% |
+| Nothing changes: nodes with p < 0.05 | 0.8–2.2% | 3.9–5.1% |
 | Nothing changes: false calls at q < 0.1 (of 1,000) | 0 | 0.1–0.3 |
-| 10% switch community: changed nodes called (of 100) | 72–100 | 100, with 4–7 false |
-| 30% switch: called (of 300) | 0–19 | 299–300, with 2–5 false |
+| 10% switch community: changed nodes called (of 100) | 97–100 | 100, with 4–7 false |
+| 30% switch: called (of 300) | 84–300 | 299–300, with 2–5 false |
 | Hub, community and combined changes mixed (of about 100 each) | 0 | 71, 56 and 85, with 6 false |
 
 Limits, all of which the benchmarks show:
 - It is for networks whose edges are measured independently (binary or count graphs). In networks inferred from samples (co-expression, TOM, PANDA) the entries are dependent, the variances are far too small, and the reported inflation is 6–79 instead of 1; the method prints a warning. Use `significance()` there.
 - The dimension must not exceed the rank of the signal. The default is the elbow of the singular values, which was valid in every simulation. At 16 to 24 dimensions for 4 communities, 55–85% of unchanged nodes have p < 0.05.
 - The elbow can be too low. With 8 communities it was 2, and a community split was then not found (AUROC 0.58 against 0.76 for the default ranking). Pass `dimension=` if you know better.
-- With alignment it has the same blind spot as above: changes shared by whole communities.
+- With alignment it does not find changes shared by whole communities, like every test of the own move.
 
 ### Running in a Jupyter Notebook Environment
 You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided. Check the demo notebook for general usage.  
