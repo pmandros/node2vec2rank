@@ -98,7 +98,9 @@ def test_cli_writes_outputs(tmp_path):
     config_path = tmp_path / "config.json"
     config_path.write_text(json.dumps(config))
 
-    model = run(["--config", str(config_path), "--save_dir", str(tmp_path / "out"), "--signed"])
+    model = run(["--config", str(config_path), "--save_dir", str(tmp_path / "out"), "--signed", "--align",
+                 "--wald"])
+    assert model.align == "robust"
     written = set(os.listdir(model.save_dir))
     assert {"config.json", "1.tsv", "1_agg.tsv", "1_degDif.tsv", "1_signed.tsv",
-            "1_agg_signed.tsv"} <= written
+            "1_agg_signed.tsv", "1_wald.tsv"} <= written

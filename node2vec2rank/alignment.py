@@ -42,7 +42,7 @@ def _trimmed_fit(source, target, start, num_kept, max_iterations):
     return transform, residuals, np.sort(residuals ** 2)[:num_kept].sum()
 
 
-def robust_linear_alignment(source, target, keep=0.5, max_iterations=50, reweight=True):
+def robust_linear_alignment(source, target, keep=0.5, max_iterations=50, reweight=False):
     """Fits a ``d x d`` matrix ``G`` with ``source @ G ~= target`` on the
     majority of the rows, by least trimmed squares.
 
@@ -51,16 +51,19 @@ def robust_linear_alignment(source, target, keep=0.5, max_iterations=50, reweigh
     with the smallest residuals and recomputing the residuals (concentration
     steps, as in FAST-LTS of Rousseeuw & Van Driessen, 2006), and the start
     with the smaller trimmed loss is kept. With ``reweight``, ``G`` is then
-    fitted once more on every row that is not an outlier of that fit, so that
-    when nothing changed nearly all rows are used and the rows that happened
-    to be in the trimmed half are not fitted better than the others.
+    fitted once more on every row that is not an outlier of that fit (the
+    usual reweighting step of least trimmed squares). It is off by default:
+    in co-expression networks the residuals of unchanged genes vary so much
+    with their connectivity that changed genes are not outliers of the
+    trimmed fit, the refit takes them back in, and the spill-over returns
+    (benchmarks/alignment_wald.py).
 
     Args:
         source, target: arrays of shape (n, d), the same nodes in the same order.
         keep: fraction of rows the trimmed fit uses, in (0.5, 1]; 0.5 tolerates
             the most changed rows (just under half).
         max_iterations: maximum number of concentration steps per start.
-        reweight: whether to refit on all rows that are not outliers.
+        reweight: whether to refit on all rows that are not outliers of the trimmed fit.
 
     Returns:
         np.ndarray of shape (d, d).

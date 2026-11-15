@@ -98,7 +98,7 @@ To run the node2vec2rank algorithm in command line, run the following command wi
    ```sh
    n2v2r --config configs/config_demo_adj_CLI.json
    ```
-`python -m node2vec2rank --config ...` works too. `--save_dir` and `--seed` override the config file, `--signed` also writes the rankings signed by the degree difference, and `--significance` writes per-node p- and q-values. Any parameter left out of the config file takes its default value.
+`python -m node2vec2rank --config ...` works too. `--save_dir` and `--seed` override the config file, `--signed` also writes the rankings signed by the degree difference, `--significance` writes per-node p- and q-values, `--align` turns on robust alignment, and `--wald` writes the chi-square test per node. Any parameter left out of the config file takes its default value.
 The configuration file template is as follows
    ```json
 {
@@ -120,6 +120,7 @@ The configuration file template is as follows
     "fitting_ranking": {
         "embed_dimensions": [4,6,8,10,12,14,16,18,20,22,24],
         "distance_metrics": ["euclidean","cosine"],
+        "align": null,
         "comp_strategy": "sequential",
         "seed": null,
         "verbose": 1
@@ -152,7 +153,8 @@ fitting_ranking:
   --embed_dimensions [EMBED_DIMENSIONS ...]
                         A list of all the embedding dimensions to use in n2v2r 
   --distance_metrics [DISTANCE_METRICS ...]
-                        A list of all the distance metrics to use in n2v2r ("euclidean", "cosine" and/or "correlation"; correlation depends on the arbitrary signs of the singular vectors and is not recommended)
+                        A list of all the distance metrics to use in n2v2r ("euclidean", "cosine", "radial" and/or "correlation"; radial is the change of a node's norm, i.e. of its hub status; correlation depends on the arbitrary signs of the singular vectors and is not recommended)
+  --align ALIGN         null (default, the paper's method) or "robust": map the first embedding onto the second with a robust linear fit before measuring distances, so that only nodes that changed relative to the majority rank high (see "Which nodes changed" below)
   --comp_strategy COMP_STRATEGY
                         How to compare more than two graphs: "sequential" (default), "one_vs_before" or "one_vs_rest"
   --embedding_method EMBEDDING_METHOD
@@ -171,6 +173,9 @@ borda = model.aggregate_transform()            # aggregated Borda ranking per co
 degree_difference = model.degree_difference_ranking()
 signed = model.signed_ranks_transform()        # rankings signed by the degree difference
 significance = model.significance()            # per-node z, p- and q-values (see below)
+wald = model.wald_test()                       # chi-square test per node, for networks with independent edges
+
+aligned = N2V2R([graph_control, graph_case], nodes=gene_names, seed=42, align="robust")  # see "Which nodes changed"
 ```
 To load graphs from files with the same options as the command line, use `DataLoader`:
 ```python
