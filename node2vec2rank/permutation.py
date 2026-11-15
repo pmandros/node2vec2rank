@@ -13,6 +13,14 @@ in the null. Gene-permutation methods (GSEA prerank, over-representation
 tests) treat genes as independent, which does not hold for network rankings:
 genes of a co-expression module move together, so co-expressed sets come out
 "enriched" even when nothing differs between the conditions.
+
+The null hypothesis is that the two groups do not differ at all. The p-values
+are exact under it, but this is not a per-node test when some nodes do change:
+rewiring some genes moves every gene a little in the joint embedding, so genes
+whose own connections are unchanged are called as well (their partners
+changed, or the embedding shifted). Calls are evidence that the networks
+differ, and the smallest p-values point at where; they are not a list of
+changed nodes with a controlled false discovery rate.
 """
 
 import multiprocessing
