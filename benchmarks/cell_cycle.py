@@ -92,7 +92,7 @@ CELL_CYCLE = re.compile(
     r"POLO_LIKE|PLK1|AURKA|E2F|RB1|ORC|MCM|UNWINDING_OF_DNA|LAGGING_STRAND|LEADING_STRAND|"
     r"NUCLEAR_ENVELOPE_BREAKDOWN|CHROMOSOME_MAINTENANCE|TELOMERE")
 DIMENSIONS = list(range(4, 25, 2))
-PAPER_PARAMS = dict(embed_dimensions=DIMENSIONS, distance_metrics=["euclidean", "cosine"], seed=42)
+PAPER_PARAMS = dict(embed_dimensions=DIMENSIONS, distance_metrics=["euclidean", "cosine"], align=None, seed=42)
 
 
 def read_revelio(directory):

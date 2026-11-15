@@ -2,6 +2,7 @@ from datetime import datetime
 import json
 import os
 import time
+import warnings
 
 import numpy as np
 import pandas as pd
@@ -11,8 +12,11 @@ from node2vec2rank.alignment import robust_linear_alignment
 from node2vec2rank.config import AUTO_MAX_DIMENSION, resolve_config
 from node2vec2rank.embedding import embed, select_dimension
 from node2vec2rank.model_utils import borda_aggregate, compute_pairwise_distances, signed_transform_single
-from node2vec2rank.significance import empirical_null_test
+from node2vec2rank.significance import benjamini_hochberg, empirical_null_test
 from node2vec2rank.wald import VARIANCES, is_binary, node_covariances, wald_test
+
+
+ALIGNED_SUFFIX = "_aligned"
 
 
 class N2V2R:
@@ -77,6 +81,7 @@ class N2V2R:
         self.selected_dimension = None
         self.pairwise_significance = None
         self.pairwise_wald = None
+        self.pairwise_own_share = None
         self.pairwise_ranks = None
         self.pairwise_signed_ranks = None
         self.pairwise_aggregate_ranks = None
@@ -153,17 +158,27 @@ class N2V2R:
         degrees = [np.asarray(abs(self.graphs[i]).sum(axis=0)).ravel() for i in indices]
         return pd.Series(np.mean(degrees, axis=0), index=self.node_names, name="degree")
 
-    def __distances(self, dimensions, distance_metrics):
-        pairwise_distances = {}
+    def __distances(self, dimensions, distance_metrics, align=None):
+        """Distances of every node for every dimension and metric, per
+        comparison: of the total move (``align=None``) or of the node's own
+        move after robust alignment (``align="robust"``). With alignment, also
+        returns per comparison the share of every node's squared move that is
+        its own (the median over the dimensions)."""
+        pairwise_distances, pairwise_own_share = {}, {}
         for key, reference, target in self.comparisons():
-            columns = {}
+            columns, shares = {}, []
             # go over all provided choices for number of latent dimensions
             for dim in dimensions:
                 embed_one = np.mean(self.node_embeddings[reference, :, :dim], axis=0)
                 embed_two = self.node_embeddings[target, :, :dim]
-                if self.align == "robust":
+                if align == "robust":
                     # remove the movement shared by the majority of the nodes
-                    embed_one = embed_one @ robust_linear_alignment(embed_one, embed_two)
+                    mapped = embed_one @ robust_linear_alignment(embed_one, embed_two)
+                    own = np.sum((mapped - embed_two) ** 2, axis=1)
+                    shared = np.sum((mapped - embed_one) ** 2, axis=1)
+                    with np.errstate(invalid="ignore", divide="ignore"):
+                        shares.append(own / (own + shared))
+                    embed_one = mapped
 
                 # go over all provided choices for distance metrics
                 for distance_metric in distance_metrics:
@@ -173,12 +188,24 @@ class N2V2R:
                     columns[f"dim-{dim}_distance-{distance_metric}"] = compute_pairwise_distances(
                         embed_one, embed_two, distance_metric)
             pairwise_distances[key] = pd.DataFrame(columns, index=self.node_names)
+            if shares:
+                with np.errstate(invalid="ignore"), warnings.catch_warnings():
+                    warnings.simplefilter("ignore", RuntimeWarning)
+                    pairwise_own_share[key] = np.nanmedian(np.column_stack(shares), axis=1)
+        if align == "robust":
+            return pairwise_distances, pairwise_own_share
         return pairwise_distances
 
     def fit_transform_rank(self):
         """
         Computes the differential ranks of nodes for the graphs, for every
         combination of embedding dimension and distance metric.
+
+        With ``align="both"`` (the default) there are two columns per
+        combination: the distance of the node's total move between the graphs,
+        and, with the suffix ``_aligned``, of its own move, after the move
+        shared by the majority of the nodes is removed (see
+        :mod:`node2vec2rank.alignment`).
 
         Returns:
             dict: one DataFrame per comparison (keyed as in :meth:`comparisons`)
@@ -193,7 +220,16 @@ class N2V2R:
         self.__fit()
         self.__log(f"\tMulti-layer embedding in {round(time.time() - tic_uase, 2)} seconds", level=1)
 
-        self.pairwise_ranks = self.__distances(self.embed_dimensions, self.distance_metrics)
+        if self.align == "both":
+            total = self.__distances(self.embed_dimensions, self.distance_metrics)
+            own, self.pairwise_own_share = self.__distances(self.embed_dimensions, self.distance_metrics, "robust")
+            self.pairwise_ranks = {key: pd.concat([total[key], own[key].add_suffix(ALIGNED_SUFFIX)], axis=1)
+                                   for key in total}
+        elif self.align == "robust":
+            self.pairwise_ranks, self.pairwise_own_share = self.__distances(
+                self.embed_dimensions, self.distance_metrics, "robust")
+        else:
+            self.pairwise_ranks = self.__distances(self.embed_dimensions, self.distance_metrics)
 
         num_rankings = sum(len(ranks.columns) for ranks in self.pairwise_ranks.values())
         self.__log(
@@ -217,7 +253,10 @@ class N2V2R:
 
         Returns:
             dict: one DataFrame per comparison with a ``borda_ranks`` column
-            (higher is more differential), indexed by node.
+            (higher is more differential), indexed by node. With
+            ``align="both"`` it is the larger of the Borda scores of the total
+            and of the own move, which are returned too (``borda_total``, the
+            paper's ranking, and ``borda_own``).
         """
         if not self.pairwise_ranks:
             raise ValueError("No n2v2r rankings found, run fit_transform_rank first")
@@ -228,10 +267,20 @@ class N2V2R:
         start_time = time.time()
         self.__log("\nRank aggregation with Borda ...")
 
-        self.pairwise_aggregate_ranks = {
-            key: pd.DataFrame({'borda_ranks': borda_aggregate(ranks.to_numpy())},
-                              index=ranks.index)
-            for key, ranks in self.pairwise_ranks.items()}
+        self.pairwise_aggregate_ranks = {}
+        for key, ranks in self.pairwise_ranks.items():
+            if self.align == "both":
+                aligned = ranks.columns.str.endswith(ALIGNED_SUFFIX)
+                total = borda_aggregate(ranks.loc[:, ~aligned].to_numpy())
+                own = borda_aggregate(ranks.loc[:, aligned].to_numpy())
+                # a node ranks high if either its total or its own move does;
+                # a sum of the two would average a signal with a ranking that
+                # does not carry it
+                frame = pd.DataFrame({'borda_ranks': np.maximum(total, own), 'borda_total': total,
+                                      'borda_own': own}, index=ranks.index)
+            else:
+                frame = pd.DataFrame({'borda_ranks': borda_aggregate(ranks.to_numpy())}, index=ranks.index)
+            self.pairwise_aggregate_ranks[key] = frame
 
         self.__log(f"\tFinished aggregation in {round(time.time() - start_time, 2)} seconds", level=1)
 
@@ -330,6 +379,15 @@ class N2V2R:
         of a hub is rarely called; use :meth:`degree_difference_ranking` for
         those.
 
+        With ``align="both"`` (the default) every node is tested twice: on its
+        total move between the embeddings, and on its own move after the move
+        shared by the majority of the nodes is removed. The total move finds
+        changes that whole communities share (a module becoming stronger or
+        weaker, two communities merging); the own move finds nodes that
+        rewired on their own, also when so many did that every node moved.
+        The p-value is twice the smaller of the two, which is valid whatever
+        the dependence between the tests, and ``z`` is the larger z-score.
+
         Args:
             dimensions: list of embedding dimensions to combine, or "elbow";
                 defaults to the configured dimensions.
@@ -341,7 +399,15 @@ class N2V2R:
         Returns:
             dict: one DataFrame per comparison with columns ``z`` (larger is
             more differential), ``pvalue`` (one-sided), ``qvalue``
-            (Benjamini-Hochberg) and ``degree``, indexed by node.
+            (Benjamini-Hochberg) and ``degree``, indexed by node. With
+            ``align="both"`` also ``z_total`` and ``z_own`` (the two tests)
+            and ``own_share``: the share of the node's squared move that is
+            its own, between 0 (it moved with the majority, e.g. with its
+            module) and 1 (it moved on its own), as the median over the
+            dimensions. The share says which kind of change a node with a
+            large z shows. For a node that moved by noise only it is about
+            one half: in the dimensions beyond the signal the two embeddings
+            are unrelated noise, of which the alignment removes half.
         """
         if self.node_embeddings is None:
             raise ValueError("No n2v2r embeddings found, run fit_transform_rank first")
@@ -358,15 +424,38 @@ class N2V2R:
         distance_metrics = self.distance_metrics if distance_metrics is None else list(distance_metrics)
 
         self.__log(f"\nSignificance with dimensions {dimensions} and distance metrics {distance_metrics} ...")
-        self.pairwise_significance = {}
-        for key, distances in self.__distances(dimensions, distance_metrics).items():
-            degree = self.degrees(key)
+
+        def test(distances, degree):
             column_dimensions = [int(column.split("_")[0][len("dim-"):]) for column in distances.columns]
-            z, pvalues, qvalues = empirical_null_test(distances.to_numpy(), degree.to_numpy(), combine=combine,
-                                                      dimensions=column_dimensions)
-            self.pairwise_significance[key] = pd.DataFrame(
-                {"z": z, "pvalue": pvalues, "qvalue": qvalues, "degree": degree.to_numpy()},
-                index=self.node_names)
+            return empirical_null_test(distances.to_numpy(), degree.to_numpy(), combine=combine,
+                                       dimensions=column_dimensions)
+
+        total = own = own_share = None
+        if self.align in (None, "both"):
+            total = self.__distances(dimensions, distance_metrics)
+        if self.align in ("robust", "both"):
+            own, own_share = self.__distances(dimensions, distance_metrics, "robust")
+        self.pairwise_significance = {}
+        for key in (total or own):
+            degree = self.degrees(key)
+            if self.align == "both":
+                z_total, p_total, _ = test(total[key], degree)
+                z_own, p_own, _ = test(own[key], degree)
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore", RuntimeWarning)
+                    z = np.fmax(z_total, z_own)
+                    # the smaller of two p-values, doubled: valid whatever
+                    # the dependence between the two tests
+                    pvalues = np.minimum(1.0, 2 * np.fmin(p_total, p_own))
+                qvalues = benjamini_hochberg(pvalues)
+                columns = {"z": z, "pvalue": pvalues, "qvalue": qvalues, "degree": degree.to_numpy(),
+                           "z_total": z_total, "z_own": z_own, "own_share": own_share[key]}
+            else:
+                z, pvalues, qvalues = test((total or own)[key], degree)
+                columns = {"z": z, "pvalue": pvalues, "qvalue": qvalues, "degree": degree.to_numpy()}
+                if own_share is not None:
+                    columns["own_share"] = own_share[key]
+            self.pairwise_significance[key] = pd.DataFrame(columns, index=self.node_names)
             self.__log(f"\tComparison {key}: {int(np.sum(qvalues < 0.05))} nodes with q < 0.05", level=1)
 
         if self.save_dir:

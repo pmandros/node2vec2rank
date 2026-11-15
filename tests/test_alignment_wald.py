@@ -70,7 +70,9 @@ def test_align_option_ranks_changed_nodes_better_when_many_change():
         return changed[np.argsort(-borda)[:changed.sum()]].mean()
 
     assert top_precision(align="robust") > 0.95
-    assert top_precision(align="robust") > top_precision() + 0.1
+    assert top_precision(align="robust") > top_precision(align=None) + 0.1
+    # the default ranks on the total and on the own move, and keeps the gain
+    assert top_precision() > 0.9
     with pytest.raises(ValueError):
         N2V2R(graphs, align="procrustes", verbose=-1)
 

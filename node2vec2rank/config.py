@@ -6,7 +6,7 @@ import warnings
 
 COMPARISON_STRATEGIES = ("sequential", "one_vs_before", "one_vs_rest")
 DISTANCE_METRICS = ("euclidean", "cosine", "radial", "correlation")
-ALIGNMENTS = (None, "robust")
+ALIGNMENTS = (None, "robust", "both")
 EMBEDDING_METHODS = ("uase", "ulse")
 # largest dimension considered when embed_dimensions is "auto"
 AUTO_MAX_DIMENSION = 50
@@ -30,9 +30,11 @@ DEFAULT_CONFIG = {
     "embed_dimensions": [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24],
     "embedding_method": "uase",
     "distance_metrics": ["euclidean", "cosine"],
-    # null (the paper's method), or "robust" to map the reference embedding
-    # onto the target with a robust linear fit before measuring distances
-    "align": None,
+    # "both" (default): every node is ranked and tested on its total move
+    # between the embeddings and on its own move, after the move shared by
+    # the majority of the nodes is removed with a robust linear fit.
+    # null: the total move only (the paper's method). "robust": the own move only
+    "align": "both",
     "comp_strategy": "sequential",
     "seed": None,
     "verbose": 1,
@@ -115,7 +117,7 @@ def _validate(config: dict):
     if isinstance(align, str):
         align = config["align"] = None if align.casefold() in ("none", "null", "") else align.casefold()
     if align not in ALIGNMENTS:
-        raise ValueError(f'align must be null or "robust", got {align!r}')
+        raise ValueError(f'align must be "both", "robust" or null, got {align!r}')
 
     method = config["embedding_method"] = config["embedding_method"].casefold()
     if method not in EMBEDDING_METHODS:

@@ -146,7 +146,8 @@ def test_auto_dimension_selects_true_rank():
     model = N2V2R(graphs, embed_dimensions="auto", seed=0, verbose=-1)
     ranks = model.fit_transform_rank()["1"]
     assert model.selected_dimension == 4
-    assert list(ranks.columns) == ["dim-4_distance-euclidean", "dim-4_distance-cosine"]
+    assert list(ranks.columns) == ["dim-4_distance-euclidean", "dim-4_distance-cosine",
+                                   "dim-4_distance-euclidean_aligned", "dim-4_distance-cosine_aligned"]
 
 
 def test_significance_detects_planted_change_and_controls_fdr():
@@ -155,7 +156,7 @@ def test_significance_detects_planted_change_and_controls_fdr():
     model = N2V2R(graphs, seed=0, verbose=-1)
     model.fit_transform_rank()
     result = model.significance(dimensions="elbow")["1"]
-    assert list(result.columns) == ["z", "pvalue", "qvalue", "degree"]
+    assert list(result.columns) == ["z", "pvalue", "qvalue", "degree", "z_total", "z_own", "own_share"]
     called = result["qvalue"].to_numpy() < 0.1
     assert called[changed].mean() > 0.8
     false_discovery_proportion = (called & ~changed).sum() / max(called.sum(), 1)

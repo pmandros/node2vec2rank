@@ -50,7 +50,7 @@ def auroc(labels, scores):
 
 def run_tests(expression_a, expression_b, num_permutations, seed):
     networks = [coexpression_network(expression_a), coexpression_network(expression_b)]
-    model = N2V2R(networks, seed=seed, verbose=-1)
+    model = N2V2R(networks, seed=seed, align=None, verbose=-1)
     model.fit_transform_rank()
     borda = model.aggregate_transform()["1"]["borda_ranks"]
     results = {"empirical null": model.significance()["1"],

@@ -56,6 +56,9 @@ RANKINGS = ("n2v2r", "degree_difference")
 def _distances(network_a, network_b, nodes, params):
     params = dict(params)
     ranking = params.pop("ranking", "n2v2r")
+    # the permutations test "the groups do not differ at all"; the total move
+    # is the statistic for that, and alignment would be refitted per permutation
+    params.setdefault("align", None)
     model = N2V2R([network_a, network_b], nodes=nodes, **params)
     if ranking == "degree_difference":
         return model.degree_difference_ranking()["1"][["absDeDi"]]

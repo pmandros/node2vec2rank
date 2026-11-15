@@ -1,12 +1,16 @@
 """Robust alignment on real cells: the HeLa cell-cycle data of cell_cycle.py.
 
 For the three phase transitions and three random splits of the G1 cells (where
-nothing differs), with and without ``align="robust"``:
+nothing differs), with the default (``align="both"``: total and own move), the
+total move only (``align=None``, the paper's method) and the own move only
+(``align="robust"``):
 
 - gene level: genes called by ``significance()`` at q < 0.1, and Reactome
   cell-cycle genes among the 100 top-ranked genes of the degree-adjusted z;
 - pathway level: Reactome pathways called at FDR 0.1 by the fast gene-set
-  test (20 label shuffles within batch), all and cell-cycle pathways.
+  test (20 label shuffles within batch), all and cell-cycle pathways. The
+  default tests every pathway on the total and on the own move of its genes;
+  the two halves are the same run read one test at a time.
 
     OMP_NUM_THREADS=4 python benchmarks/alignment_hela.py --revelio-dir path/to/Revelio/data
 
@@ -19,6 +23,7 @@ import sys
 
 import numpy as np
 import pandas as pd
+from scipy.stats import norm
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
@@ -28,6 +33,10 @@ import cell_cycle as cc  # noqa: E402
 from node2vec2rank import N2V2R  # noqa: E402
 from node2vec2rank.fast_gene_sets import fast_gene_set_test  # noqa: E402
 from node2vec2rank.permutation import read_gmt  # noqa: E402
+from node2vec2rank.significance import benjamini_hochberg  # noqa: E402
+
+MODES = {"both": "default (total and own move)", None: "total move only (the paper's method)",
+         "robust": "own move only"}
 
 
 def main():
@@ -52,17 +61,19 @@ def main():
 
     rows = []
     for label, group_a, group_b, strata in comparisons:
-        for align in (None, "robust"):
+        # one run of the gene-set test gives the default and its two halves
+        sets = fast_gene_set_test(group_a, group_b, gene_sets, build_network=build,
+                                  num_permutations=args.num_permutations, strata=strata, random_state=0, seed=42)
+        set_qvalues = {"both": sets["qvalue"], None: benjamini_hochberg(norm.sf(sets["z_total"])),
+                       "robust": benjamini_hochberg(norm.sf(sets["z_own"]))}
+        for align, name in MODES.items():
             model = N2V2R([np.asarray(build(group_a)), np.asarray(build(group_b))], nodes=list(genes),
                           align=align, seed=42, verbose=-1)
             model.fit_transform_rank()
             test = model.significance()["1"]
             top = np.argsort(-np.nan_to_num(test["z"].to_numpy(), nan=-np.inf))[:100]
-            sets = fast_gene_set_test(group_a, group_b, gene_sets, build_network=build,
-                                      num_permutations=args.num_permutations, strata=strata, random_state=0,
-                                      align=align, seed=42)
-            called = sets.index[sets["qvalue"] < 0.1]
-            rows.append(dict(comparison=label, align=align or "none",
+            called = sets.index[np.asarray(set_qvalues[align]) < 0.1]
+            rows.append(dict(comparison=label, method=name,
                              genes_called=int((test["qvalue"] < 0.1).sum()),
                              cell_cycle_genes_in_top_100=int(cell_cycle_genes[top].sum()),
                              pathways_called=len(called),

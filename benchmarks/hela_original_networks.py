@@ -40,7 +40,7 @@ TOP_MARKERS = 20
 
 
 def rank(networks, genes, dedi=False):
-    model = N2V2R([networks[p].loc[genes, genes].to_numpy() for p in PHASES], nodes=genes, seed=0, verbose=0)
+    model = N2V2R([networks[p].loc[genes, genes].to_numpy() for p in PHASES], nodes=genes, seed=0, align=None, verbose=0)
     model.fit_transform_rank()
     borda = model.aggregate_transform()
     ranks = {label: borda[key]["borda_ranks"] for key, label in TRANSITIONS.items()}

@@ -1,13 +1,19 @@
-comparison,align,genes_called,cell_cycle_genes_in_top_100,pathways_called,cell_cycle_pathways_called
-G1 -> S,none,0,22,131,50
-G1 -> S,robust,0,3,0,0
-S -> G2,none,0,1,44,10
-S -> G2,robust,0,4,0,0
-G2 -> M,none,0,12,31,20
-G2 -> M,robust,0,14,0,0
-null: G1 halves 0,none,0,3,0,0
-null: G1 halves 0,robust,0,10,0,0
-null: G1 halves 1,none,0,6,0,0
-null: G1 halves 1,robust,0,6,0,0
-null: G1 halves 2,none,0,1,0,0
-null: G1 halves 2,robust,0,10,0,0
+comparison,method,genes_called,cell_cycle_genes_in_top_100,pathways_called,cell_cycle_pathways_called
+G1 -> S,default (total and own move),0,22,123,49
+G1 -> S,total move only (the paper's method),0,22,131,50
+G1 -> S,own move only,0,3,0,0
+S -> G2,default (total and own move),0,5,29,5
+S -> G2,total move only (the paper's method),0,1,44,10
+S -> G2,own move only,0,4,0,0
+G2 -> M,default (total and own move),0,12,18,15
+G2 -> M,total move only (the paper's method),0,12,31,20
+G2 -> M,own move only,0,14,0,0
+null: G1 halves 0,default (total and own move),0,6,0,0
+null: G1 halves 0,total move only (the paper's method),0,3,0,0
+null: G1 halves 0,own move only,0,10,0,0
+null: G1 halves 1,default (total and own move),0,6,0,0
+null: G1 halves 1,total move only (the paper's method),0,6,0,0
+null: G1 halves 1,own move only,0,6,0,0
+null: G1 halves 2,default (total and own move),0,4,0,0
+null: G1 halves 2,total move only (the paper's method),0,1,0,0
+null: G1 halves 2,own move only,0,10,0,0

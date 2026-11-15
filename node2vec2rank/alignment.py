@@ -18,10 +18,24 @@ unchanged node. This is the same assumption, and the same idea, as
 between-sample normalisation in differential expression: most nodes do not
 change, and what the majority shares is not a difference.
 
-A change shared by most nodes through a linear map, such as every community
-getting denser or one large module getting stronger, is absorbed by ``G`` as
-well. Alignment therefore ranks the nodes that changed relative to the rest,
-not every node whose connections changed.
+A change of how whole communities connect is a linear map too. If every node
+keeps its latent position and only ``L_k`` changes (a module gets stronger or
+weaker, two communities merge), then ``Y_2 = Y_1 G`` holds for *all* nodes, so
+``G`` absorbs the change and no node moves after alignment. This cannot be
+avoided: in the embedding, "my community changed how it connects" and "the
+nodes around me changed" are the same linear move. The total move of a node
+and its move after alignment therefore answer two questions:
+
+- total move: did the connections of this node change? It is zero in the
+  population exactly when the node's row of ``P`` is the same in both graphs.
+  It includes changes a node shares with its community, and the (smaller)
+  change of a node whose partners changed.
+- own move (after alignment): did this node change its position relative to
+  the others? It is zero when the node's latent position is the same.
+
+:class:`node2vec2rank.N2V2R` uses both by default (``align="both"``): a node is
+ranked and tested on each, and the share of its move that is its own says
+which kind of change it shows.
 """
 
 import numpy as np

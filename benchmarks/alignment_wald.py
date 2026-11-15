@@ -1,8 +1,9 @@
-"""Robust alignment (``align="robust"``), the radial metric and the chi-square
-test per node (``N2V2R.wald_test``) against the paper's default.
+"""The default (total and own move, ``align="both"``), its two halves, the
+radial metric and the chi-square test per node (``N2V2R.wald_test``).
 
-Two kinds of change are simulated, because alignment answers one question and
-gives up the other (see node2vec2rank/alignment.py):
+Two kinds of change are simulated, because the total move of a node and its
+own move after robust alignment answer two questions (see
+node2vec2rank/alignment.py):
 
 node-level     some nodes change their own position (switch community or
                module, change hub status); the truth is those nodes.
@@ -18,16 +19,17 @@ community-level  a whole community changes how it connects, and no node
                co-expression module weakens. The truth is every node of the
                affected communities.
 
-Methods: the paper's default Borda and the degree-adjusted test
-(``significance()``), each with and without alignment; the chi-square test at
-the elbow dimension with and without alignment (not for co-expression, whose
-entries are dependent; its inflation is still recorded); a radial-only and a
-cosine-only Borda; DeDi.
+Methods: Borda and the degree-adjusted test (``significance()``) with the
+default, with the total move only (``align=None``, the paper's method) and
+with the own move only (``align="robust"``); the chi-square test at the elbow
+dimension without and with alignment (not for co-expression, whose entries are
+dependent; its inflation is still recorded); a radial-only and a cosine-only
+Borda; DeDi. ``own_share`` is recorded for changed and unchanged nodes.
 
 A last part runs the chi-square test without any change at dimensions up to
 24, to show that it is only valid up to the rank of the signal.
 
-    OMP_NUM_THREADS=1 python benchmarks/alignment_wald.py            # about 15 minutes on 4 cores
+    OMP_NUM_THREADS=1 python benchmarks/alignment_wald.py            # about 25 minutes on 4 cores
 
 Results: results/alignment_wald.csv (one row per graph pair, method and truth),
 results/alignment_wald_summary.csv and results/alignment_wald_dimension.csv.
@@ -147,17 +149,21 @@ def auroc(labels, scores):
     return sims.auroc(labels, np.nan_to_num(scores, nan=-np.inf))
 
 
+TAGS = {"both": "", None: ", total move", "robust": ", own move"}
+
+
 def methods(graphs, seed, dependent_edges):
     """{method: (score, pvalues or None)} and extra columns."""
     out, extra = {}, {}
-    dedi = None
-    for align in (None, "robust"):
-        tag = ", aligned" if align else ""
+    for align, tag in TAGS.items():
         model = N2V2R(graphs, seed=seed, align=align, verbose=-1)
         model.fit_transform_rank()
         out["Borda" + tag] = (model.aggregate_transform()["1"]["borda_ranks"].to_numpy(), None)
         test = model.significance()["1"]
         out["degree-adjusted test" + tag] = (test["z"].to_numpy(), test["pvalue"].to_numpy())
+        if align == "both":
+            extra["own_share"] = test["own_share"].to_numpy()
+            continue
         for metric in ("radial", "cosine"):
             single = N2V2R(graphs, seed=seed, align=align, distance_metrics=[metric], verbose=-1)
             single.fit_transform_rank()
@@ -167,9 +173,7 @@ def methods(graphs, seed, dependent_edges):
         extra["inflation" + tag] = wald.attrs["inflation"]
         if not dependent_edges:
             out["chi-square test" + tag] = (wald["statistic"].to_numpy(), wald["pvalue"].to_numpy())
-        if dedi is None:
-            dedi = model.degree_difference_ranking()["1"]["absDeDi"].to_numpy()
-    out["DeDi"] = (dedi, None)
+    out["DeDi"] = (model.degree_difference_ranking()["1"]["absDeDi"].to_numpy(), None)
     return out, extra
 
 
@@ -179,10 +183,14 @@ def run_one(task):
     rng = np.random.default_rng([replicate, index])
     graphs, truths, dependent_edges = simulate(rng, frac)
     scores, extra = methods(graphs, replicate, dependent_edges)
+    own_share = extra.pop("own_share")
     rows = []
     for truth, labels in truths.items():
         keep = ~np.isnan(labels.astype(float))
         positive = labels.astype(float) == 1
+        # the share of the move that is the node's own, for changed and unchanged nodes
+        extra["own_share_changed"] = np.nanmedian(own_share[positive]) if positive.any() else np.nan
+        extra["own_share_unchanged"] = np.nanmedian(own_share[keep & ~positive])
         for method, (score, pvalues) in scores.items():
             row = dict(kind=kind, scenario=scenario, frac_changed=frac, replicate=replicate, truth=truth,
                        method=method, **extra)
@@ -233,7 +241,8 @@ def main():
     results.to_csv(os.path.join(RESULTS, "alignment_wald.csv"), index=False)
     summary = (results.groupby(["kind", "scenario", "frac_changed", "truth", "method"], sort=False, dropna=False)
                [["auroc", "precision_at_k", "frac_p_below_0.05", "true_calls", "false_calls", "num_changed",
-                 "elbow", "inflation", "inflation, aligned"]].mean().round(3).reset_index())
+                 "own_share_changed", "own_share_unchanged", "elbow", "inflation, total move",
+                 "inflation, own move"]].mean().round(3).reset_index())
     summary.to_csv(os.path.join(RESULTS, "alignment_wald_summary.csv"), index=False)
     dimension = (pd.DataFrame(dimension_rows).groupby(["scenario", "dimension", "genomic_control"])
                  [["inflation", "frac_p_below_05", "calls"]].mean().round(3).reset_index())
