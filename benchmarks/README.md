@@ -503,7 +503,7 @@ Changed nodes called / unchanged nodes called (1,000 nodes; 2,000 in the mixed d
   has 0.87 on hub changes and 0.48 on community changes; the cosine-only Borda 0.49 and 0.73 (0.88 aligned).
 - With 30% of genes switching module no test makes calls in co-expression networks, aligned or not.
 - For co-expression networks the chi-square test is not reported: its inflation (median statistic over the
-  chi-square median) is 6–80 there, against 0.9–1.5 in the block models after alignment.
+  chi-square median) is 6–79 there, against 0.9–1.5 in the block models after alignment.
 
 ### Whole communities change (truth: every node of the affected communities)
 
@@ -560,8 +560,8 @@ with p < 0.05).
 ### Also tried and not included
 
 A chi-square test for networks built from samples, with each gene's covariance from a jackknife over the samples
-(30 blocks, projection held fixed). It kept its level without change (0.1–1.5% at p < 0.05 up to the population
-rank), but with 10% of genes rewired it called 110–350 unchanged genes: their partners moved, and 150 samples are
+(30 blocks, projection held fixed). It kept its level without change (0.1–1.6% at p < 0.05 up to the population
+rank), but with 10% of genes rewired it called 150–350 unchanged genes: their partners moved, and 150 samples are
 enough to detect that. With alignment this was cured only for the signed network at exactly its rank (AUROC 0.99,
-4 false calls); at other dimensions and for |cor|^6 it ranked worse (0.68–0.78) than the degree-adjusted test
+4 false calls); at other dimensions and for |cor|^6 it ranked worse (0.67–0.96) than the degree-adjusted test
 (0.99). A test of "this gene's edges changed at all" is not a ranking of rewired genes.

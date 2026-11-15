@@ -244,8 +244,8 @@ Alignment is the better tool when single nodes rewire, most of all when many do.
 | Hub, community and combined changes mixed (of about 100 each) | 0 | 71, 56 and 85, with 6 false |
 
 Limits, all of which the benchmarks show:
-- It is for networks whose edges are measured independently (binary or count graphs). In networks inferred from samples (co-expression, TOM, PANDA) the entries are dependent, the variances are far too small, and the reported inflation is 6–80 instead of 1; the method prints a warning. Use `significance()` there.
-- The dimension must not exceed the rank of the signal. The default is the elbow of the singular values, which was valid in every simulation. At 8 to 24 dimensions for 4 communities, 36–85% of unchanged nodes have p < 0.05.
+- It is for networks whose edges are measured independently (binary or count graphs). In networks inferred from samples (co-expression, TOM, PANDA) the entries are dependent, the variances are far too small, and the reported inflation is 6–79 instead of 1; the method prints a warning. Use `significance()` there.
+- The dimension must not exceed the rank of the signal. The default is the elbow of the singular values, which was valid in every simulation. At 16 to 24 dimensions for 4 communities, 55–85% of unchanged nodes have p < 0.05.
 - The elbow can be too low. With 8 communities it was 2, and a community split was then not found (AUROC 0.58 against 0.76 for the default ranking). Pass `dimension=` if you know better.
 - With alignment it has the same blind spot as above: changes shared by whole communities.
 
