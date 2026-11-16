@@ -98,7 +98,7 @@ To run the node2vec2rank algorithm in command line, run the following command wi
    ```sh
    n2v2r --config configs/config_demo_adj_CLI.json
    ```
-`python -m node2vec2rank --config ...` works too. `--save_dir` and `--seed` override the config file, `--signed` also writes the rankings signed by the degree difference, `--significance` writes per-node p- and q-values, `--align both|robust|none` overrides `align` (`none` is the method of the paper, see [below](#what-the-default-measures-total-move-and-own-move)), and `--wald` writes the chi-square test per node. Any parameter left out of the config file takes its default value.
+`python -m node2vec2rank --config ...` works too. `--save_dir` and `--seed` override the config file, `--signed` also writes the rankings signed by the degree difference, `--significance` writes per-node p- and q-values, `--align both|robust|none` overrides `align` (`none` is the method of the paper, see [below](#what-the-default-measures-total-move-and-own-move)), `--wald` writes the chi-square test per node, and `--modules` writes which modules changed and how (see [below](#which-module-changed)). Any parameter left out of the config file takes its default value.
 The configuration file template is as follows
    ```json
 {
@@ -174,6 +174,7 @@ degree_difference = model.degree_difference_ranking()
 signed = model.signed_ranks_transform()        # rankings signed by the degree difference
 significance = model.significance()            # per-node z, p- and q-values, and the share of the move that is the node's own
 wald = model.wald_test()                       # chi-square test per node, for networks with independent edges
+modules = model.module_changes()               # which modules changed and how; model.pairwise_modules has the module of every node
 
 paper = N2V2R([graph_control, graph_case], nodes=gene_names, seed=42, align=None)  # the method exactly as in the paper
 ```
@@ -265,6 +266,39 @@ Limits, all of which the benchmarks show:
 - The dimension must not exceed the rank of the signal. The default is the elbow of the singular values, which was valid in every simulation. At 16 to 24 dimensions for 4 communities, 55–85% of unchanged nodes have p < 0.05.
 - The elbow can be too low. With 8 communities it was 2, and a community split was then not found (AUROC 0.58 against 0.76 for the default ranking). Pass `dimension=` if you know better.
 - With alignment it does not find changes shared by whole communities, like every test of the own move.
+
+### Which module changed
+The rankings are per node. When a whole module changes (it weakens, two modules merge, one splits), every one of its nodes moves a little, and the question becomes which module that is and what happened to it. `model.module_changes()` answers it from the two networks:
+```python
+modules = model.module_changes()["1"]     # one row per module, the most changed first
+nodes = model.pairwise_modules["1"]       # the module of every node (0: none), with its fit and membership
+```
+1. **Modules.** The nodes are embedded with the *average* of the two graphs and grouped by direction (spherical k-means), which puts nodes with the same pattern of connections together whatever their degree. The number of modules is chosen by the silhouette. Because the two graphs can be swapped without changing their average, the modules carry no information about the sign of any difference between them, so comparing the graphs within the modules afterwards is not biased by having found the modules in the same data. Nodes that fit no module are left out (module 0). You can pass your own modules instead (`modules=`: WGCNA modules, pathways, cell types).
+2. **Changes.** For every module, the mean edge weight within it and to every other module is compared between the graphs. The table gives `change` (the largest change in words: `weaker`, `stronger`, `merges with 3`, `splits from 3`, `connects more to 3`, `connects less to 3`), `move` (the size of the change relative to the size of the module's connections), `rotation` (the angle in degrees between the module's connections before and after: a change of partners, whatever the strength), `strength_change` (log2 ratio of the mean weight within the module) and the partner module whose connection changed most.
+
+On simulations (`benchmarks/modules.py`, 20 replicates, one module or pair of modules changed):
+
+| | block models (binary, weighted, 12 communities) | co-expression (signed and unsigned) |
+|---|---|---|
+| Modules found, agreement with the truth (adjusted Rand index) | 0.94–1.00 | 0.99–1.00 |
+| The changed modules have the largest `move` | 100% | 90–100% |
+| Their change is described correctly | 89–100% | 98–100% |
+| `rotation` of unchanged modules (largest) | 4° | 5° |
+| `rotation` of merging or splitting modules (smallest) | 9–29° | 35–38° |
+
+Two limits show in the same benchmark. With weak structure (300 nodes, or a sparse graph) the modules are recovered poorly (0.52–0.71) and so is the report. And modules are found in the average graph, so the two halves of a block-model community that splits are returned as one module that became `weaker` (the co-expression splits are found as two modules).
+
+**How large is large?** That depends on the kind of network.
+
+- *Edges measured independently (binary or count graphs).* `model.module_changes(test=True)` adds a chi-square test per module: the difference of the two graphs over the node pairs of a block has mean zero when the block did not change, and independent entries. Without any change, 3–9% of the modules have p < 0.05 (6% over all block models, also with twice as many modules as there are). In the three larger models every changed module is called, and 5% of the unchanged modules next to it have p < 0.05.
+- *Networks inferred from samples (co-expression, TOM, PANDA).* Two networks alone cannot say. The entries of such a network all come from the same samples, the entries of a block move together, and how much depends on the number of samples, which the networks do not contain. The chi-square test calls 100% of the unchanged co-expression modules (its statistics are 100 to 2,200 times too large; it prints a warning), and the other things tried without the samples failed as well (see [the benchmarks](benchmarks/README.md#which-module-changed)). Between two draws of 150 samples from the same population, the strength of an unchanged module differs by up to 0.9 (signed) and 1.7 (`|cor|^6`) log2 units, so do not read a `strength_change` of that size as a change. `rotation` is the robust column there.
+- *With the samples*, `module_permutation_test` gives the p-value:
+```python
+from node2vec2rank import module_permutation_test
+
+modules, nodes = module_permutation_test(expression_control, expression_case, build_network=..., strata=...)
+```
+It finds the modules in the network of all samples together, which is the same however the samples are labelled, and compares every module's `move` (and its `rotation` and `strength_change`) with what shuffled labels give. Whole samples are shuffled, so the noise that the genes of a module share is in the null.
 
 ### Running in a Jupyter Notebook Environment
 You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided. Check the demo notebook for general usage.  

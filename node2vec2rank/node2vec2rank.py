@@ -28,6 +28,8 @@ def build_parser():
                              'only (the method of the paper), "robust" on the own move only')
     parser.add_argument("--wald", action="store_true",
                         help="Also write the chi-square test per node (for networks with independent edges)")
+    parser.add_argument("--modules", action="store_true",
+                        help="Also write which modules changed and how, and the module of every node")
     parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     return parser
 
@@ -59,6 +61,8 @@ def run(argv=None):
         model.significance()
     if args.wald:
         model.wald_test()
+    if args.modules:
+        model.module_changes()
 
     if model.save_dir:
         print(f"\nResults written to {model.save_dir}")

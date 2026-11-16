@@ -12,6 +12,7 @@ from node2vec2rank.alignment import robust_linear_alignment
 from node2vec2rank.config import AUTO_MAX_DIMENSION, resolve_config
 from node2vec2rank.embedding import embed, select_dimension
 from node2vec2rank.model_utils import borda_aggregate, compute_pairwise_distances, signed_transform_single
+from node2vec2rank.modules import detect_modules, module_changes
 from node2vec2rank.significance import benjamini_hochberg, empirical_null_test
 from node2vec2rank.wald import VARIANCES, is_binary, node_covariances, wald_test
 
@@ -82,6 +83,8 @@ class N2V2R:
         self.pairwise_significance = None
         self.pairwise_wald = None
         self.pairwise_own_share = None
+        self.pairwise_modules = None
+        self.pairwise_module_changes = None
         self.pairwise_ranks = None
         self.pairwise_signed_ranks = None
         self.pairwise_aggregate_ranks = None
@@ -554,6 +557,83 @@ class N2V2R:
                 frame.to_csv(os.path.join(self.save_dir, k + "_wald.tsv"), sep='\t', index=True)
 
         return self.pairwise_wald
+
+    def module_changes(self, modules=None, num_modules=None, test=False, max_modules=20):
+        """Says which modules changed between the graphs of every comparison,
+        and how (see :mod:`node2vec2rank.modules`).
+
+        The nodes are grouped into modules from the average of the compared
+        graphs, and for every module the mean edge weights within it and to
+        every other module are compared between the graphs. It works on the
+        graphs directly and does not need :meth:`fit_transform_rank`.
+
+        Args:
+            modules: your own modules, as one label per node (a sequence in
+                node order, or a Series indexed by node); nodes labelled 0,
+                -1, None or NaN are in no module. By default the modules are
+                detected.
+            num_modules: the number of modules to detect; by default it is
+                chosen from the data.
+            test: whether to add a chi-square test per module. It is only
+                valid for graphs with independent edges (binary or count
+                graphs), not for networks inferred from samples such as
+                co-expression networks; a warning says when the data do not
+                fit. With the samples behind such networks, use
+                :func:`node2vec2rank.permutation.module_permutation_test`.
+            max_modules: the largest number of modules considered.
+
+        Returns:
+            dict: one DataFrame per comparison, indexed by module and sorted
+            by how much the module changed, with columns ``size``, ``change``
+            (the largest change in words), ``move`` (the change of the
+            module's connections relative to their size), ``rotation`` (the
+            angle in degrees between the module's connections before and
+            after: a change of partners), ``strength_change`` (log2 ratio of
+            the mean edge weight within the module), ``within_before``,
+            ``within_after``, ``partner`` (the other module whose connection
+            to this one changed most), ``partner_before`` and
+            ``partner_after``; with ``test`` also ``statistic``, ``pvalue``
+            and ``qvalue``. The module of every node is in
+            ``pairwise_modules`` (columns ``module``, and for detected modules
+            ``fit`` and ``membership``; module 0 is unassigned).
+        """
+        if modules is not None:
+            if isinstance(modules, pd.Series) and not modules.index.equals(pd.RangeIndex(len(modules))):
+                modules = modules.reindex(self.node_names)
+            if len(modules) != len(self.node_names):
+                raise ValueError("modules must give one label per node")
+            given = pd.DataFrame({"module": np.asarray(modules, dtype=object)}, index=self.node_names)
+
+        self.__log("\nModule changes ...")
+        self.pairwise_modules, self.pairwise_module_changes = {}, {}
+        for key, reference, target in self.comparisons():
+            reference_graph = self.graphs[reference[0]]
+            for index in reference[1:]:
+                reference_graph = reference_graph + self.graphs[index]
+            reference_graph = reference_graph / len(reference)
+            target_graph = self.graphs[target]
+            if modules is None:
+                nodes = detect_modules([reference_graph, target_graph], num_modules=num_modules,
+                                       max_modules=max_modules, random_state=self.seed)
+                nodes.index = self.node_names
+            else:
+                nodes = given
+            with warnings.catch_warnings(record=True) as caught:
+                warnings.simplefilter("always")
+                changes = module_changes(reference_graph, target_graph, nodes["module"], test=test)
+            for warning in caught:
+                self.__log(f"\tComparison {key}: {warning.message}", level=0)
+            self.pairwise_modules[key], self.pairwise_module_changes[key] = nodes, changes
+            top = changes.index[0]
+            self.__log(f"\tComparison {key}: {len(changes)} modules; module {top} changed most "
+                       f"({changes.loc[top, 'change']}, move {changes.loc[top, 'move']:.2f})", level=1)
+
+        if self.save_dir:
+            for k in self.pairwise_modules:
+                self.pairwise_module_changes[k].to_csv(os.path.join(self.save_dir, k + "_modules.tsv"), sep='\t')
+                self.pairwise_modules[k].to_csv(os.path.join(self.save_dir, k + "_module_nodes.tsv"), sep='\t')
+
+        return self.pairwise_module_changes
 
     def degree_difference_ranking(self):
         """
