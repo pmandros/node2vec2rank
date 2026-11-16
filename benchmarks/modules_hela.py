@@ -12,8 +12,9 @@ cell-cycle pathways and its most over-represented Reactome pathway
 (hypergeometric test among the genes of the networks).
 
     OMP_NUM_THREADS=4 python benchmarks/modules_hela.py --revelio-dir path/to/Revelio/data
+    ... --num-modules 6 --null-splits 0 --output modules_hela_6.csv     # the transitions with six modules
 
-Results: results/modules_hela.csv.
+Results: results/modules_hela.csv, results/modules_hela_6.csv.
 """
 
 import argparse
@@ -49,6 +50,9 @@ def main():
     parser.add_argument("--null-splits", type=int, default=3)
     parser.add_argument("--num-permutations", type=int, default=199)
     parser.add_argument("--jobs", type=int, default=1)
+    parser.add_argument("--num-modules", type=int, default=None,
+                        help="number of modules instead of the number chosen from the data")
+    parser.add_argument("--output", default="modules_hela.csv")
     args = parser.parse_args()
 
     _, groups, batches, build = cc.prepare(args.revelio_dir)
@@ -71,7 +75,7 @@ def main():
     for label, group_a, group_b, strata in comparisons:
         changes, nodes = module_permutation_test(group_a, group_b, build_network=build, strata=strata,
                                                  num_permutations=args.num_permutations, random_state=0,
-                                                 n_jobs=args.jobs)
+                                                 num_modules=args.num_modules, n_jobs=args.jobs)
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
             # what two networks alone would give; the test standardises within the groups, as here
@@ -90,7 +94,7 @@ def main():
         tables.append(changes.reset_index())
         print(tables[-1].drop(columns=["comparison", "within_before", "within_after", "partner_before",
                                        "partner_after"]).round(3).to_string(index=False), flush=True)
-    pd.concat(tables).to_csv(os.path.join(cc.RESULTS_DIR, "modules_hela.csv"), index=False)
+    pd.concat(tables).to_csv(os.path.join(cc.RESULTS_DIR, args.output), index=False)
 
 
 if __name__ == "__main__":

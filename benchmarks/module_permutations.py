@@ -22,7 +22,7 @@ two networks     modules found in the average of the networks of the two groups
                  samples) and passed in. These depend on the labels, so the
                  test is not exact by construction; this measures by how much.
 
-Recorded: the share of unchanged and changed modules with p < 0.05 and with
+Recorded: the share of unchanged and changed modules with p <= 0.05 and with
 q < 0.1, for the main test (``move``) and for the rotation and strength tests.
 
     OMP_NUM_THREADS=1 python benchmarks/module_permutations.py     # about 20 minutes on 4 cores
@@ -89,6 +89,10 @@ def run_one(task, num_permutations):
 
 
 def summarise(results):
+    def share(values, threshold=0.05):
+        # with 99 permutations the p-values are multiples of 0.01: "at most 0.05" has level 5%
+        return (values <= threshold).mean() if len(values) else np.nan
+
     rows = []
     for (network, change, mode), group in results.groupby(["network", "change", "modules"], sort=False):
         replicates = group.groupby("replicate")
@@ -96,16 +100,16 @@ def summarise(results):
         row = dict(network=network, change=change, modules=mode,
                    num_found=" ".join(str(n) for n in sorted(replicates["num_found"].first().unique())),
                    unchanged_modules=len(unchanged),
-                   unchanged_p_below_05=(unchanged["pvalue"] < 0.05).mean(),
+                   unchanged_p_at_most_05=share(unchanged["pvalue"]),
                    unchanged_called=(unchanged["qvalue"] < 0.1).mean(),
-                   unchanged_rotation_p_below_05=(unchanged["pvalue_rotation"] < 0.05).mean(),
-                   unchanged_strength_p_below_05=(unchanged["pvalue_strength"] < 0.05).mean())
+                   unchanged_rotation_p_at_most_05=share(unchanged["pvalue_rotation"]),
+                   unchanged_strength_p_at_most_05=share(unchanged["pvalue_strength"]))
         if change != "none":
             row.update(changed_modules_found=replicates["changed_modules_found"].first().mean(),
-                       changed_p_below_05=(changed["pvalue"] < 0.05).mean() if len(changed) else np.nan,
+                       changed_p_at_most_05=share(changed["pvalue"]),
                        changed_called=(changed["qvalue"] < 0.1).mean() if len(changed) else np.nan,
-                       changed_rotation_p_below_05=(changed["pvalue_rotation"] < 0.05).mean() if len(changed) else np.nan,
-                       changed_strength_p_below_05=(changed["pvalue_strength"] < 0.05).mean() if len(changed) else np.nan)
+                       changed_rotation_p_at_most_05=share(changed["pvalue_rotation"]),
+                       changed_strength_p_at_most_05=share(changed["pvalue_strength"]))
         rows.append(row)
     return pd.DataFrame(rows)
 
@@ -118,8 +122,8 @@ def main():
     args = parser.parse_args()
     tasks = [(index, replicate) for index in range(len(SETTINGS)) for replicate in range(args.replicates)]
     with ProcessPoolExecutor(args.jobs) as pool:
-        results = pd.DataFrame([row for rows in pool.map(functools.partial(run_one, num_permutations=args.num_permutations),
-                                                         tasks, chunksize=1) for row in rows])
+        run = functools.partial(run_one, num_permutations=args.num_permutations)
+        results = pd.DataFrame([row for rows in pool.map(run, tasks, chunksize=1) for row in rows])
     results.to_csv(os.path.join(RESULTS, "module_permutations.csv"), index=False)
     summary = summarise(results).round(3)
     summary.to_csv(os.path.join(RESULTS, "module_permutations_summary.csv"), index=False)
