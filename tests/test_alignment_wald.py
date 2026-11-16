@@ -58,6 +58,14 @@ def test_population_distance_of_unchanged_nodes_is_zero_after_alignment():
     assert raw[~changed].max() > 1e-3
     assert aligned[~changed].max() < 1e-8
     assert aligned[changed].min() > 1e-3
+    # in any basis: more than half of the nodes fit exactly, and whichever of
+    # them the trimmed fit keeps must determine the whole map
+    for seed in range(20):
+        rotation = np.linalg.qr(np.random.default_rng(seed).standard_normal((4, 4)))[0]
+        source, target = one @ rotation, two @ rotation
+        moved = np.linalg.norm(source @ robust_linear_alignment(source, target) - target, axis=1)
+        assert moved[~changed].max() < 1e-8
+        assert moved[changed].min() > 1e-3
 
 
 def test_align_option_ranks_changed_nodes_better_when_many_change():

@@ -46,11 +46,20 @@ import numpy as np
 MAD_TO_SD = 1.4826
 
 
+# residuals below this fraction of the typical row norm count as zero
+EXACT_FIT = 1e-9
+
+
 def _trimmed_fit(source, target, start, num_kept, max_iterations):
+    # Rows that fit exactly are all kept. Without noise more than num_kept rows
+    # can have a residual of zero up to rounding; an arbitrary num_kept of them
+    # may not span the space (e.g. all nodes of three of four communities),
+    # which leaves the map undetermined for the rows that were left out.
+    floor = EXACT_FIT * np.sqrt(np.mean(np.sum(target ** 2, axis=1)))
     transform, kept = start, None
     for _ in range(max_iterations):
         residuals = np.linalg.norm(source @ transform - target, axis=1)
-        new_kept = np.sort(np.argpartition(residuals, num_kept - 1)[:num_kept])
+        new_kept = np.flatnonzero(residuals <= max(np.partition(residuals, num_kept - 1)[num_kept - 1], floor))
         if kept is not None and np.array_equal(new_kept, kept):
             break
         kept = new_kept
