@@ -13,8 +13,9 @@ cell-cycle pathways and its most over-represented Reactome pathway
 
     OMP_NUM_THREADS=4 python benchmarks/modules_hela.py --revelio-dir path/to/Revelio/data
     ... --num-modules 6 --null-splits 0 --output modules_hela_6.csv     # the transitions with six modules
+    ... --skip-transitions --null-splits 40 --num-permutations 99 --jobs 4 --output modules_hela_null.csv
 
-Results: results/modules_hela.csv, results/modules_hela_6.csv.
+Results: results/modules_hela.csv, results/modules_hela_6.csv, results/modules_hela_null.csv (40 random splits).
 """
 
 import argparse
@@ -53,6 +54,7 @@ def main():
     parser.add_argument("--num-modules", type=int, default=None,
                         help="number of modules instead of the number chosen from the data")
     parser.add_argument("--output", default="modules_hela.csv")
+    parser.add_argument("--skip-transitions", action="store_true", help="only the random splits of the G1 cells")
     args = parser.parse_args()
 
     _, groups, batches, build = cc.prepare(args.revelio_dir)
@@ -65,7 +67,8 @@ def main():
         memberships[genes.get_indexer(members), column] = True
     cell_cycle = memberships[:, [bool(cc.CELL_CYCLE.search(name)) for name in set_names]].any(axis=1)
 
-    comparisons = [(f"{a} -> {b}", groups[a], groups[b], (batches[a], batches[b])) for a, b in cc.COMPARISONS]
+    comparisons = [] if args.skip_transitions else [
+        (f"{a} -> {b}", groups[a], groups[b], (batches[a], batches[b])) for a, b in cc.COMPARISONS]
     for split in range(args.null_splits):
         half = cc.random_halves(batches["G1"], np.random.default_rng(split))
         comparisons.append((f"null: G1 halves {split}", groups["G1"][half], groups["G1"][~half],
