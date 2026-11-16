@@ -11,9 +11,9 @@ python benchmarks/simulations.py   # 20 replicates per setting -> results/*.csv
 python benchmarks/figures.py       # -> results/*.png
 ```
 
-Every section except the last one ("Total and own move, ...") is about the total move of a node alone
-(`align=None`, the method of the paper); the scripts behind them set it or use the distances directly. The last
-section compares it with the own move and with the default, which uses both.
+Every section before "Total and own move, ..." is about the total move of a node alone (`align=None`, the method
+of the paper); the scripts behind them set it or use the distances directly. That section compares it with the own
+move and with the default, which uses both. The last section, "Which module changed", is about whole modules.
 
 ## Setup
 
@@ -674,3 +674,251 @@ settings and worse in others (AUROC 0.75 against 0.82 for the weakening module i
 distance as a third component found more hub changes (AUROC 0.83–0.87 against 0.61) but lowered the merges and
 co-expression at 30%, and its own test made no calls. For gene sets, the mean of the larger z-score of each gene
 kept 90 of the 131 HeLa pathways in G1 → S; testing each set on both z-scores keeps 123.
+
+## Which module changed
+
+`modules.py` (20 replicates per setting, about 5 minutes on 4 cores; `modules.csv`, `modules_summary.csv`),
+`module_permutations.py` (20 replicates, 99 label shuffles, about 20 minutes; `module_permutations.csv`,
+`module_permutations_summary.csv`) and `modules_hela.py --revelio-dir ...` (`modules_hela.csv`, `modules_hela_6.csv`,
+`modules_hela_null.csv`). The rankings and tests above are per node. Here the unit is a module: the nodes are grouped
+from the average of the two graphs (`detect_modules`), every module's mean edge weights within it and to every other
+module are compared between the graphs (`module_changes`, `N2V2R.module_changes`), and the question is which module
+changed, how, and whether a p-value can be put on it.
+
+Two graphs with known modules are simulated with one change of a whole module, or none: a module weakens (its
+edges are 0.6 times as likely; in co-expression its genes load 0.6 times as strongly on its factor), strengthens,
+two modules merge, one splits in two halves, or two connect more to each other without merging ("reconnects").
+Block models: binary with heavy-tailed degrees (1,000 nodes, 6 communities), the same with weights, with 12
+communities and 2,000 nodes, a small one (300 nodes, 4 communities, weak structure) and a sparse one.
+Co-expression: a factor model with 150 samples per condition (1,000 genes, 5 modules, 30% of the genes in no
+module), as ((1 + cor) / 2)^10 and as |cor|^6.
+
+### Finding the modules and describing the change
+
+Modules as found by the method (number chosen by the silhouette). ARI: adjusted Rand index against the true
+modules. "Changed first": the changed modules have the largest `move`. "Described exactly": `weaker`, `stronger`,
+`merges with`, `splits from`, `connects more to`; "incl. lumped" also counts `stronger` for two merging modules
+found as one and `weaker` for the two halves of a splitting module found as one. Rotation in degrees, strength in
+log2 units.
+
+| model | change | true modules | found | ARI | changed first | described exactly | described, incl. lumped | rotation, unchanged (max) | rotation, changed (min) | \|strength\|, unchanged (max) | strength, changed (median) |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| binary block model | none | 6 | 6, 7 | 1.00 | – | – | – | 2.9 | – | 0.09 | – |
+|  | weakens | 6 | 6, 7 | 1.00 | 100% | 100% | 100% | 3.8 | 9.3 | 0.10 | -0.72 |
+|  | strengthens | 6 | 6, 7 | 1.00 | 100% | 95% | 95% | 3.4 | 4.3 | 0.10 | 0.54 |
+|  | merge | 6 | 6, 7 | 0.99 | 100% | 100% | 100% | 1.5 | 28.5 | 0.10 | 0.01 |
+|  | split | 7 | 6, 7 | 0.94 | 100% | 0% | 100% | 3.2 | 10.0 | 0.17 | -0.79 |
+|  | reconnects | 6 | 6 | 1.00 | 100% | 100% | 100% | 2.2 | 13.3 | 0.10 | 0.00 |
+| weighted block model | none | 6 | 6, 7, 8 | 1.00 | – | – | – | 2.1 | – | 0.13 | – |
+|  | weakens | 6 | 6, 7 | 0.99 | 100% | 95% | 95% | 3.9 | 7.0 | 0.28 | -0.72 |
+|  | strengthens | 6 | 6, 7 | 1.00 | 100% | 91% | 91% | 3.8 | 4.6 | 0.38 | 0.55 |
+|  | merge | 6 | 5, 6, 7 | 0.95 | 100% | 87% | 100% | 4.1 | 8.5 | 0.25 | 0.02 |
+|  | split | 7 | 6, 7 | 0.94 | 100% | 0% | 100% | 3.1 | 10.8 | 0.14 | -0.79 |
+|  | reconnects | 6 | 6, 7, 8 | 0.99 | 100% | 89% | 89% | 4.2 | 13.4 | 0.31 | 0.00 |
+| binary, 12 communities | none | 12 | 12, 13 | 1.00 | – | – | – | 2.8 | – | 0.09 | – |
+|  | weakens | 12 | 12, 13 | 1.00 | 100% | 100% | 100% | 2.7 | 10.6 | 0.09 | -0.70 |
+|  | merge | 12 | 11, 12 | 0.98 | 100% | 86% | 100% | 2.3 | 11.3 | 0.10 | 0.03 |
+| binary, small | none | 4 | 3, 4, 5, 6, 7, 8 | 0.71 | – | – | – | 19.2 | – | 2.00 | – |
+|  | weakens | 4 | 3, 4, 5, 6, 7, 8 | 0.57 | 83% | 77% | 77% | 15.7 | 0.9 | 2.00 | -0.63 |
+|  | merge | 4 | 3, 4, 5, 6 | 0.58 | 100% | 56% | 100% | 13.8 | 3.3 | 0.35 | 0.61 |
+| binary, sparse | none | 6 | 5, 6, 7, 8, 9, 10, 12 | 0.61 | – | – | – | 14.9 | – | 1.13 | – |
+|  | weakens | 6 | 5, 6, 7, 8, 9 | 0.55 | 100% | 64% | 64% | 11.4 | 5.1 | 1.58 | -0.61 |
+|  | merge | 6 | 4, 5, 6, 7, 8, 9 | 0.52 | 100% | 43% | 100% | 7.9 | 6.3 | 1.58 | 0.72 |
+| co-expression ((1+cor)/2)^10 | none | 5 | 5 | 1.00 | – | – | – | 3.7 | – | 0.92 | – |
+|  | weakens | 5 | 5 | 1.00 | 100% | 100% | 100% | 2.8 | 20.0 | 0.79 | -2.85 |
+|  | strengthens | 5 | 5 | 1.00 | 100% | 100% | 100% | 4.8 | 18.8 | 0.78 | 3.16 |
+|  | merge | 5 | 5 | 1.00 | 100% | 98% | 98% | 4.5 | 38.0 | 0.83 | -0.03 |
+|  | split | 6 | 6 | 1.00 | 100% | 98% | 98% | 3.5 | 34.8 | 0.92 | 0.10 |
+| co-expression \|cor\|^6 | none | 5 | 5 | 1.00 | – | – | – | 0.2 | – | 1.74 | – |
+|  | weakens | 5 | 5 | 1.00 | 100% | 100% | 100% | 0.1 | 1.1 | 1.40 | -7.07 |
+|  | strengthens | 5 | 5 | 1.00 | 100% | 100% | 100% | 0.1 | 1.1 | 1.45 | 7.05 |
+|  | merge | 5 | 5 | 0.99 | 90% | 98% | 98% | 0.1 | 37.6 | 1.29 | 0.02 |
+|  | split | 6 | 6 | 1.00 | 100% | 100% | 100% | 0.1 | 36.2 | 1.09 | -0.12 |
+
+- With clear structure the modules are recovered (ARI 0.94–1.00), the changed ones are ranked first and the
+  description is right in 89–100% of the cases.
+- `rotation` separates a change of partners from noise: at most 5° for unchanged modules, 9–38° for merging and
+  splitting ones. `strength_change` does the same for the block models (unchanged at most 0.4, weakened −0.7).
+- In co-expression networks `strength_change` is noisy: between two draws of 150 samples an *unchanged* module
+  differs by up to 0.9 (signed) and 1.7 (|cor|^6) log2 units. The soft power turns a small difference of the
+  correlations into a large one of the weights. The rotation of an unchanged module stays below 5° (signed) and
+  0.2° (|cor|^6).
+- Modules are found in the average graph. The two halves of a block-model community that splits still connect
+  to each other half as strongly on average, and are returned as one module that became `weaker` ("described
+  exactly" 0%, "incl. lumped" 100%). The co-expression splits are found as two modules.
+- With weak structure (the small and the sparse model) the modules are recovered poorly (ARI 0.52–0.71), their
+  number varies from 3 to 12, and the report is unreliable (largest rotation of an unchanged module 19°).
+- When single nodes switch module instead ("switch" in `modules_summary.csv`), no module changes as a whole;
+  every module loses and gains members, the rotations stay small (median 2°) and the chi-square test below
+  calls most modules (78–84%), correctly. That is a question for the node rankings.
+
+### A p-value from the two networks alone
+
+`module_changes(test=True)`: for every pair of modules, the mean of the entrywise difference of the two graphs
+over the block divided by its standard error, squared and summed over the blocks of a module (chi-square). Share
+of modules with p < 0.05, and the inflation (median squared block statistic over its expectation; 1 if valid):
+
+| model | no change: p < 0.05, modules found | true number | twice as many | unchanged modules next to a changed one: p < 0.05 | changed modules: p < 0.05 | called (q < 0.1) | inflation without change (median) |
+|---|---|---|---|---|---|---|---|
+| binary block model | 7.4% | 7.5% | 9.1% | 3.4% | 100% | 100% | 0.9 |
+| weighted block model | 8.8% | 7.5% | 5.6% | 4.0% | 100% | 100% | 0.9 |
+| binary, 12 communities | 3.3% | 3.3% | 5.2% | 7.8% | 100% | 100% | 0.9 |
+| binary, small | 8.7% | 8.8% | 6.2% | 8.8% | 91% | 86% | 1.1 |
+| binary, sparse | 6.7% | 9.2% | 6.5% | 10.0% | 98% | 98% | 1.1 |
+| co-expression ((1+cor)/2)^10 | 100.0% | 100.0% | 100.0% | 100.0% | 100% | 100% | 1763.0 |
+| co-expression \|cor\|^6 | 100.0% | 100.0% | 100.0% | 100.0% | 100% | 100% | 180.5 |
+
+- With independent edges the test holds its level approximately: 3–9% per model without change, 6.3% over all
+  742 modules (1.9% at p < 0.01), the same with twice as many modules as there are, so choosing the modules on the
+  same data does not bias it. In the three larger models it calls every changed module, and 3–8% of the unchanged
+  ones next to it have p < 0.05. In the small and the sparse model, where modules are recovered poorly, unchanged modules next
+  to a changed one contain some of its nodes and 9–10% have p < 0.05.
+- For co-expression networks it is not a test: every unchanged module has p < 0.05, and the statistics are 100 to
+  2,200 times too large. All entries of such a network come from the same samples; the entries of a block move
+  together, and their mean varies with the number of samples, not with the number of node pairs. The method
+  warns when the inflation is above 3 and significantly so.
+
+Other ways to get a p-value without the samples were tried on the same co-expression simulations and dropped
+(exploratory runs with 10 replicates, not in the repository):
+
+- genomic control (dividing all block statistics by their median over the block pairs): 14–32% of unchanged
+  modules with p < 0.05. With five modules there are 15 block pairs, some of them changed, and the noise of a
+  block depends on how strongly its genes are co-expressed, so one factor does not fit all blocks;
+- a Hotelling test on the difference of the embedding positions of a module's nodes, with the nodes as
+  replicates: 90–100%. The nodes of a module share their noise, so they are not replicates.
+
+The reason is the same in both: the noise of a module's mean is set by the number of samples, and two networks
+do not contain it. On the HeLa data below the inflation is 120 to 19,000.
+
+### A p-value from the samples
+
+`module_permutation_test`: modules are found in the network of all samples (the same however the samples are
+labelled), and every module's `move`, `rotation` and `strength_change` between the two groups are compared with
+99 shuffles of the sample labels. "Weakens slightly": loadings 0.85 times as strong. "Twice as many": the same
+with twice the true number of modules. "Two networks": modules found in the average of the networks of the two
+groups, as without samples, and passed in; these depend on the labels, so the test is not exact by construction.
+p ≤ 0.05 has level 5% with 99 shuffles; "called" is q < 0.1.
+
+| network | change | modules from | found | unchanged: p ≤ 0.05 | unchanged: called | changed modules found | changed: p ≤ 0.05 | changed: called | changed: rotation p ≤ 0.05 | changed: strength p ≤ 0.05 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| co-expression ((1+cor)/2)^10 | none | all samples | 5 | 6.0% | 4.0% | – | – | – | – | – |
+|  |  | twice as many | 6, 7, 8, 9 | 6.5% | 2.9% | – | – | – | – | – |
+|  |  | two networks | 5 | 6.0% | 4.0% | – | – | – | – | – |
+|  | weakens | all samples | 5 | 3.8% | 0.0% | 100% | 100% | 100% | 100% | 100% |
+|  |  | twice as many | 6, 7, 8 | 7.8% | 1.7% | 100% | 100% | 100% | 100% | 100% |
+|  |  | two networks | 5 | 5.0% | 0.0% | 100% | 100% | 100% | 100% | 100% |
+|  | weakens slightly | all samples | 5 | 5.0% | 6.2% | 100% | 100% | 95% | 95% | 100% |
+|  |  | twice as many | 6, 7, 8, 9 | 5.7% | 3.3% | 100% | 100% | 95% | 100% | 100% |
+|  |  | two networks | 5 | 5.0% | 6.2% | 100% | 100% | 95% | 95% | 100% |
+|  | merge | all samples | 5 | 3.3% | 5.0% | 100% | 100% | 100% | 100% | 8% |
+|  |  | twice as many | 6, 7 | 14.9% | 14.9% | 100% | 100% | 100% | 100% | 4% |
+|  |  | two networks | 5 | 3.3% | 5.0% | 100% | 100% | 100% | 100% | 8% |
+|  | split | all samples | 6 | 3.7% | 3.7% | 95% | 100% | 100% | 100% | 5% |
+|  |  | twice as many | 7, 8, 9 | 5.1% | 4.2% | 100% | 100% | 100% | 100% | 10% |
+|  |  | two networks | 6 | 1.2% | 1.2% | 100% | 100% | 100% | 100% | 8% |
+| co-expression \|cor\|^6 | none | all samples | 5 | 6.0% | 0.0% | – | – | – | – | – |
+|  |  | twice as many | 6, 7, 8, 9 | 5.9% | 0.0% | – | – | – | – | – |
+|  |  | two networks | 5 | 6.0% | 0.0% | – | – | – | – | – |
+|  | weakens | all samples | 4, 5 | 3.8% | 3.8% | 65% | 100% | 100% | 100% | 100% |
+|  |  | twice as many | 6, 7, 8, 9 | 4.7% | 3.9% | 80% | 100% | 100% | 100% | 100% |
+|  |  | two networks | 5 | 3.8% | 3.8% | 100% | 100% | 100% | 100% | 100% |
+|  | weakens slightly | all samples | 5 | 7.5% | 3.8% | 100% | 95% | 90% | 55% | 95% |
+|  |  | twice as many | 6, 7, 8, 9, 10 | 6.8% | 3.8% | 100% | 95% | 85% | 55% | 95% |
+|  |  | two networks | 5 | 7.5% | 3.8% | 100% | 95% | 90% | 55% | 95% |
+|  | merge | all samples | 5 | 6.7% | 6.7% | 100% | 98% | 92% | 100% | 8% |
+|  |  | twice as many | 7, 8, 9, 10 | 4.1% | 4.1% | 100% | 96% | 91% | 100% | 6% |
+|  |  | two networks | 5 | 6.7% | 6.7% | 100% | 98% | 98% | 100% | 10% |
+|  | split | all samples | 6 | 6.2% | 6.2% | 100% | 95% | 82% | 100% | 5% |
+|  |  | twice as many | 7, 8, 9, 10, 11 | 5.0% | 2.8% | 100% | 96% | 67% | 100% | 4% |
+|  |  | two networks | 5, 6 | 6.2% | 6.2% | 100% | 95% | 85% | 100% | 8% |
+
+- Level: over all settings 5.2% of the 802 unchanged modules have p ≤ 0.05 (6.0% of the 200 without any change;
+  6.4% with twice as many modules), and a module is called in 5% of the replicates without change.
+- Power: in every setting 95–100% of the changed modules have p ≤ 0.05 and 83–100% are called (67–100% with
+  twice as many modules), also when the module only weakens slightly. The two extra p-values say what kind of change it is: a merge or a split is a rotation without a
+  change of strength (4–10% for strength), a weakening is both.
+- The null hypothesis is that the groups do not differ at all, so a module next to a changed one can be called
+  for the change of its neighbour: with twice as many modules, 15% of the fragments counted as unchanged next to
+  a merge in the signed network.
+- A module that is strong in one group only can be too weak in the network of all samples to be found: the
+  weakened module of the |cor|^6 network was found in 65% of the replicates (and called whenever it was found).
+  Modules from the average of the two group networks (`N2V2R.module_changes`, then `modules=`) found it in every
+  replicate, and the test kept its level with them in these simulations (5.1% of 800 unchanged modules).
+
+### Modules on the HeLa cell cycle
+
+2,000 genes, metacell networks ((1 + cor) / 2)^10, 199 shuffles within batch. "Chi-square p" is what the two
+networks alone would give. The last columns name the module: the share of its genes in Reactome cell-cycle
+pathways and its most over-represented Reactome pathway (genes of the pathway in the module, of those in the
+network).
+
+| comparison | module | genes | change | move | rotation | strength | p | q | p rotation | p strength | chi-square p | cell-cycle genes | top Reactome pathway |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| G1 -> S | 6 | 46 | weaker | 1.36 | 38.4 | -2.81 | 0.005 | 0.010 | 0.005 | 0.005 | < 1e-300 | 46% | Cell cycle mitotic (18 of 112) |
+|  | 4 | 302 | weaker | 0.77 | 34.2 | -1.64 | 0.005 | 0.010 | 0.005 | 0.005 | < 1e-300 | 18% | Dna strand elongation (10 of 10) |
+|  | 5 | 93 | weaker | 0.83 | 27.5 | -1.41 | 0.005 | 0.010 | 0.005 | 0.005 | < 1e-300 | 27% | Separation of sister chromatids (15 of 39) |
+|  | 2 | 484 | merges with 1 | 0.44 | 24.6 | -0.34 | 0.245 | 0.367 | 0.005 | 0.475 | < 1e-300 | 3% | Rrna processing (11 of 15) |
+|  | 3 | 358 | weaker | 0.21 | 9.9 | -0.40 | 0.705 | 0.780 | 0.605 | 0.270 | < 1e-300 | 7% | Metabolism of rna (27 of 72) |
+|  | 1 | 717 | merges with 2 | 0.22 | 12.5 | -0.06 | 0.780 | 0.780 | 0.115 | 0.880 | < 1e-300 | 4% | Transport of small molecules (47 of 75) |
+| S -> G2 | 2 | 267 | connects more to 1 | 0.45 | 5.0 | 0.54 | 0.090 | 0.120 | 0.605 | 0.215 | < 1e-300 | 22% | M phase (43 of 72) |
+|  | 1 | 1191 | stronger | 0.36 | 5.7 | 0.44 | 0.120 | 0.120 | 0.120 | 0.205 | < 1e-300 | 6% | Extracellular matrix organization (33 of 40) |
+| G2 -> M | 2 | 398 | stronger | 0.42 | 3.1 | 0.68 | 0.180 | 0.225 | 0.535 | 0.145 | < 1e-300 | 18% | M phase (44 of 72) |
+|  | 1 | 954 | stronger | 0.36 | 0.2 | 0.53 | 0.225 | 0.225 | 0.945 | 0.210 | < 1e-300 | 7% | Transport of small molecules (51 of 75) |
+| null: G1 halves 0 | 5 | 91 | weaker | 0.48 | 4.6 | -0.81 | 0.055 | 0.330 | 0.720 | 0.025 | < 1e-300 | 22% | Kinesins (10 of 17) |
+|  | 6 | 47 | weaker | 0.25 | 5.5 | -0.31 | 0.305 | 0.900 | 0.170 | 0.370 | < 1e-300 | 45% | Cell cycle mitotic (18 of 112) |
+|  | 4 | 235 | connects less to 2 | 0.13 | 7.0 | 0.14 | 0.685 | 0.900 | 0.180 | 0.670 | < 1e-300 | 22% | Dna replication (16 of 23) |
+|  | 2 | 419 | connects less to 5 | 0.14 | 4.9 | -0.13 | 0.720 | 0.900 | 0.695 | 0.725 | < 1e-300 | 6% | Metabolism of rna (31 of 72) |
+|  | 1 | 887 | weaker | 0.10 | 3.0 | -0.14 | 0.765 | 0.900 | 0.820 | 0.580 | < 1e-300 | 4% | Interferon alpha beta signaling (11 of 11) |
+|  | 3 | 320 | connects less to 5 | 0.08 | 4.8 | 0.11 | 0.900 | 0.900 | 0.655 | 0.695 | 1e-286 | 4% | Rrna processing (8 of 15) |
+| null: G1 halves 1 | 1 | 922 | weaker | 0.37 | 5.9 | -0.63 | 0.015 | 0.090 | 0.140 | 0.010 | < 1e-300 | 5% | Interferon alpha beta signaling (11 of 11) |
+|  | 2 | 447 | weaker | 0.36 | 6.3 | -0.53 | 0.060 | 0.180 | 0.360 | 0.115 | < 1e-300 | 4% | Metabolism of rna (35 of 72) |
+|  | 4 | 201 | connects less to 1 | 0.18 | 7.3 | -0.07 | 0.400 | 0.660 | 0.115 | 0.825 | < 1e-300 | 24% | Dna strand elongation (10 of 10) |
+|  | 6 | 38 | weaker | 0.22 | 3.9 | -0.31 | 0.440 | 0.660 | 0.515 | 0.400 | < 1e-300 | 50% | Cell cycle mitotic (16 of 112) |
+|  | 5 | 92 | connects less to 6 | 0.15 | 6.3 | -0.02 | 0.725 | 0.870 | 0.440 | 0.970 | < 1e-300 | 23% | Kinesins (9 of 17) |
+|  | 3 | 299 | connects less to 2 | 0.08 | 4.8 | 0.10 | 0.885 | 0.885 | 0.640 | 0.700 | 3e-123 | 5% | Rrna processing (6 of 15) |
+| null: G1 halves 2 | 6 | 40 | weaker | 0.57 | 2.8 | -0.82 | 0.025 | 0.075 | 0.720 | 0.025 | < 1e-300 | 50% | Cell cycle mitotic (17 of 112) |
+|  | 3 | 312 | connects less to 6 | 0.42 | 10.2 | -0.60 | 0.025 | 0.075 | 0.100 | 0.040 | < 1e-300 | 5% | Rrna processing (7 of 15) |
+|  | 1 | 953 | weaker | 0.33 | 7.6 | -0.59 | 0.050 | 0.100 | 0.020 | 0.010 | < 1e-300 | 4% | Transport of small molecules (55 of 75) |
+|  | 5 | 88 | connects less to 6 | 0.49 | 7.7 | -0.51 | 0.070 | 0.105 | 0.325 | 0.130 | < 1e-300 | 23% | Kinesins (10 of 17) |
+|  | 2 | 402 | connects less to 6 | 0.27 | 10.8 | -0.21 | 0.165 | 0.198 | 0.030 | 0.540 | < 1e-300 | 5% | Metabolism of rna (32 of 72) |
+|  | 4 | 205 | weaker | 0.14 | 4.2 | -0.18 | 0.610 | 0.610 | 0.595 | 0.575 | < 1e-300 | 24% | Dna repair (24 of 52) |
+
+- G1 → S: six modules. The three with cell-cycle genes (DNA strand elongation with all 10 of its genes,
+  mitotic cell cycle, separation of sister chromatids) get the smallest possible p-value (0.005, q = 0.01); all
+  three are weaker in S, with rotations of 28–38°. The other three (RNA metabolism, rRNA processing, transport)
+  are not called (p = 0.25–0.78).
+- S → G2 and G2 → M: only two modules are found and neither is called (q = 0.12 and 0.23). With six modules
+  the result is the same (second table). The pathway test calls 29 and 18 pathways in these two transitions. A
+  module is a coarser unit than a pathway, and most of the difference here is that all modules are somewhat
+  stronger (strength +0.4 to +0.7), which random halves of one phase show as well (up to 1.0).
+- Random splits of the G1 cells: over 40 splits (99 shuffles, `modules_hela_null.csv`), 13 of 239 modules
+  (5.4%) have p ≤ 0.05 (5.4% for the rotation and 5.4% for the strength), and a module is called at q < 0.1 in
+  4 of the 40 splits, which is what a false discovery rate of 0.1 allows when nothing differs. The three splits in the table are within that: their small p-values come together
+  within a split, because the modules of one split share its cells. The chi-square test from the two networks
+  gives p < 0.05 for 100% of these modules (inflation 123 to 2,460).
+- Unchanged modules of real data move too: in the random splits `move` goes up to 0.66, `rotation` up to
+  16° and `strength_change` up to 1.0. Without a p-value, compare a module with numbers of that size, not
+  with zero.
+
+The transitions with six modules (`--num-modules 6`):
+
+| comparison | module | genes | change | move | rotation | strength | p | q | cell-cycle genes | top Reactome pathway |
+|---|---|---|---|---|---|---|---|---|---|---|
+| G1 -> S | 4 | 243 | weaker | 0.90 | 37.8 | -1.96 | 0.005 | 0.010 | 21% | Dna strand elongation (10 of 10) |
+|  | 6 | 45 | weaker | 1.38 | 39.3 | -2.88 | 0.005 | 0.010 | 47% | Cell cycle mitotic (18 of 112) |
+|  | 5 | 90 | weaker | 0.85 | 27.9 | -1.44 | 0.005 | 0.010 | 28% | Separation of sister chromatids (15 of 39) |
+|  | 2 | 516 | merges with 1 | 0.41 | 23.0 | -0.28 | 0.345 | 0.517 | 3% | Rrna processing (11 of 15) |
+|  | 1 | 691 | merges with 2 | 0.24 | 13.4 | -0.10 | 0.675 | 0.730 | 4% | Transport of small molecules (47 of 75) |
+|  | 3 | 375 | weaker | 0.19 | 9.3 | -0.36 | 0.730 | 0.730 | 7% | Chromatin modifying enzymes (16 of 29) |
+| S -> G2 | 2 | 349 | connects more to 5 | 0.46 | 8.4 | 0.56 | 0.055 | 0.172 | 4% | Rrna processing (12 of 15) |
+|  | 4 | 257 | merges with 1 | 0.48 | 5.3 | 0.55 | 0.060 | 0.172 | 4% | Ecm proteoglycans (9 of 12) |
+|  | 1 | 866 | stronger | 0.43 | 2.4 | 0.57 | 0.095 | 0.172 | 8% | Synthesis of dna (15 of 19) |
+|  | 6 | 87 | merges with 5 | 0.48 | 4.8 | 0.63 | 0.115 | 0.172 | 24% | M phase (14 of 72) |
+|  | 5 | 90 | merges with 6 | 0.48 | 11.4 | 0.41 | 0.160 | 0.192 | 41% | Cell cycle mitotic (34 of 112) |
+|  | 3 | 323 | connects more to 5 | 0.34 | 14.4 | -0.10 | 0.260 | 0.260 | 5% | Diseases of signal transduction by growth factor receptors and second messengers (17 of 54) |
+| G2 -> M | 2 | 450 | connects more to 6 | 0.55 | 14.9 | 0.72 | 0.035 | 0.195 | 8% | Transcriptional regulation of granulopoiesis (6 of 9) |
+|  | 5 | 124 | stronger | 0.63 | 12.7 | 1.17 | 0.065 | 0.195 | 19% | Signaling by rho gtpases miro gtpases and rhobtb3 (23 of 109) |
+|  | 1 | 502 | merges with 5 | 0.34 | 9.6 | 0.38 | 0.205 | 0.323 | 7% | Deactivation of the beta catenin transactivating complex (5 of 6) |
+|  | 3 | 379 | connects more to 5 | 0.36 | 10.7 | 0.47 | 0.215 | 0.323 | 6% | Rrna processing (12 of 15) |
+|  | 6 | 105 | connects more to 2 | 0.37 | 13.4 | 0.34 | 0.315 | 0.378 | 32% | Cell cycle (33 of 135) |
+|  | 4 | 274 | weaker | 0.10 | 5.8 | -0.19 | 0.945 | 0.945 | 4% | Transport of small molecules (23 of 75) |

@@ -300,6 +300,18 @@ modules, nodes = module_permutation_test(expression_control, expression_case, bu
 ```
 It finds the modules in the network of all samples together, which is the same however the samples are labelled, and compares every module's `move` (and its `rotation` and `strength_change`) with what shuffled labels give. Whole samples are shuffled, so the noise that the genes of a module share is in the null.
 
+| `module_permutation_test` | unchanged modules with p ≤ 0.05 (level 5%) | changed modules with p ≤ 0.05 | called at q < 0.1 |
+|---|---|---|---|
+| Simulated co-expression, 20 replicates (`benchmarks/module_permutations.py`) | 5.2% of 802 | 95–100% | 83–100% |
+| HeLa, G1 → S (`benchmarks/modules_hela.py`) | | | the three cell-cycle modules of six (q = 0.01) |
+| HeLa, S → G2 and G2 → M | | | none |
+| HeLa, 40 random splits of the G1 cells | 5.4% of 239 | | a module in 4 of 40 splits |
+| The chi-square test on the same random splits, from the two networks alone | 100% | | every module |
+
+In G1 → S the three called modules are the ones with the cell-cycle genes (DNA strand elongation, mitotic cell cycle, separation of sister chromatids), all `weaker` in S with rotations of 28–38°; the modules of RNA metabolism, rRNA processing and transport are not called (p = 0.25–0.78). In S → G2 and G2 → M no module is called, with the two modules found there or with six, where the pathway test calls 29 and 18 pathways: a module is a coarser unit than a pathway, and most of what differs there is that all modules are somewhat stronger, which random halves of one phase show as well.
+
+Three things to know about the test. Its null hypothesis is that the groups do not differ at all, as for `permutation_test`, so a module next to a changed one can be called for its neighbour's change. A module that is strong in one group only can be too weak in the network of all samples to be found (the weakened module of the `|cor|^6` simulation was found in 65% of the replicates); passing the modules of `model.module_changes()` as `modules=` found it every time and kept the level in the simulations (5.1%), although those modules depend on the labels and the test is then not exact by construction. And modules must not come from one group alone (e.g. WGCNA modules of the controls): they are tighter there than in the other group by construction.
+
 ### Running in a Jupyter Notebook Environment
 You can also run the code in jupyter notebook. Details about setting up your own workflow in jupyter notebook can be found in the notebooks provided. Check the demo notebook for general usage.  
 
