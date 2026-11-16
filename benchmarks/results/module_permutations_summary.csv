@@ -1,0 +1,31 @@
+network,change,modules,num_found,unchanged_modules,unchanged_p_at_most_05,unchanged_called,unchanged_rotation_p_at_most_05,unchanged_strength_p_at_most_05,changed_modules_found,changed_p_at_most_05,changed_called,changed_rotation_p_at_most_05,changed_strength_p_at_most_05
+co-expression ((1+cor)/2)^10,none,all samples,5,100,0.06,0.04,0.1,0.06,,,,,
+co-expression ((1+cor)/2)^10,none,twice as many,6 7 8 9,139,0.065,0.029,0.101,0.065,,,,,
+co-expression ((1+cor)/2)^10,none,two networks,5,100,0.06,0.04,0.1,0.06,,,,,
+co-expression ((1+cor)/2)^10,weakens,all samples,5,80,0.038,0.0,0.025,0.05,1.0,1.0,1.0,1.0,1.0
+co-expression ((1+cor)/2)^10,weakens,twice as many,6 7 8,115,0.078,0.017,0.061,0.052,1.0,1.0,1.0,1.0,1.0
+co-expression ((1+cor)/2)^10,weakens,two networks,5,80,0.05,0.0,0.038,0.05,1.0,1.0,1.0,1.0,1.0
+co-expression ((1+cor)/2)^10,weakens slightly,all samples,5,80,0.05,0.062,0.05,0.05,1.0,1.0,0.95,0.95,1.0
+co-expression ((1+cor)/2)^10,weakens slightly,twice as many,6 7 8 9,122,0.057,0.033,0.082,0.049,1.0,1.0,0.95,1.0,1.0
+co-expression ((1+cor)/2)^10,weakens slightly,two networks,5,80,0.05,0.062,0.05,0.05,1.0,1.0,0.95,0.95,1.0
+co-expression ((1+cor)/2)^10,merge,all samples,5,60,0.033,0.05,0.033,0.033,1.0,1.0,1.0,1.0,0.075
+co-expression ((1+cor)/2)^10,merge,twice as many,6 7,87,0.149,0.149,0.149,0.08,1.0,1.0,1.0,1.0,0.045
+co-expression ((1+cor)/2)^10,merge,two networks,5,60,0.033,0.05,0.033,0.033,1.0,1.0,1.0,1.0,0.075
+co-expression ((1+cor)/2)^10,split,all samples,6,82,0.037,0.037,0.061,0.012,0.95,1.0,1.0,1.0,0.053
+co-expression ((1+cor)/2)^10,split,twice as many,7 8 9,118,0.051,0.042,0.085,0.025,1.0,1.0,1.0,1.0,0.1
+co-expression ((1+cor)/2)^10,split,two networks,6,80,0.012,0.012,0.025,0.012,1.0,1.0,1.0,1.0,0.075
+co-expression |cor|^6,none,all samples,5,100,0.06,0.0,0.04,0.06,,,,,
+co-expression |cor|^6,none,twice as many,6 7 8 9,153,0.059,0.0,0.026,0.078,,,,,
+co-expression |cor|^6,none,two networks,5,100,0.06,0.0,0.04,0.06,,,,,
+co-expression |cor|^6,weakens,all samples,4 5,80,0.038,0.038,0.012,0.038,0.65,1.0,1.0,1.0,1.0
+co-expression |cor|^6,weakens,twice as many,6 7 8 9,129,0.047,0.039,0.07,0.062,0.8,1.0,1.0,1.0,1.0
+co-expression |cor|^6,weakens,two networks,5,80,0.038,0.038,0.012,0.038,1.0,1.0,1.0,1.0,1.0
+co-expression |cor|^6,weakens slightly,all samples,5,80,0.075,0.038,0.075,0.075,1.0,0.95,0.9,0.55,0.95
+co-expression |cor|^6,weakens slightly,twice as many,6 7 8 9 10,133,0.068,0.038,0.06,0.068,1.0,0.95,0.85,0.55,0.95
+co-expression |cor|^6,weakens slightly,two networks,5,80,0.075,0.038,0.075,0.075,1.0,0.95,0.9,0.55,0.95
+co-expression |cor|^6,merge,all samples,5,60,0.067,0.067,0.083,0.067,1.0,0.975,0.925,1.0,0.075
+co-expression |cor|^6,merge,twice as many,7 8 9 10,98,0.041,0.041,0.061,0.051,1.0,0.964,0.909,1.0,0.055
+co-expression |cor|^6,merge,two networks,5,60,0.067,0.067,0.083,0.067,1.0,0.975,0.975,1.0,0.1
+co-expression |cor|^6,split,all samples,6,80,0.062,0.062,0.062,0.062,1.0,0.95,0.825,1.0,0.05
+co-expression |cor|^6,split,twice as many,7 8 9 10 11,141,0.05,0.028,0.064,0.064,1.0,0.957,0.674,1.0,0.043
+co-expression |cor|^6,split,two networks,5 6,80,0.062,0.062,0.062,0.062,1.0,0.949,0.846,1.0,0.077

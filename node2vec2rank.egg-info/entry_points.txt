@@ -1,0 +1,2 @@
+[console_scripts]
+n2v2r = node2vec2rank.node2vec2rank:main

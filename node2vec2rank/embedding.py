@@ -21,7 +21,7 @@ from scipy.stats import norm
 EMBEDDING_METHODS = ("uase", "ulse")
 
 
-def uase(graphs, d, random_state=None, return_singular_values=False):
+def uase(graphs, d, random_state=None, return_singular_values=False, return_left=False):
     """Computes the unfolded adjacency spectral embedding of a list of graphs.
 
     Args:
@@ -31,14 +31,17 @@ def uase(graphs, d, random_state=None, return_singular_values=False):
         random_state: seed or numpy Generator for the SVD starting vector,
             making the result reproducible.
         return_singular_values: whether to also return the singular values.
+        return_left: whether to also return the left singular vectors, an
+            (n, d) array shared by all graphs (implies the singular values).
 
     Returns:
         np.ndarray of shape (K, n, d) with the per-graph node embeddings, with
         dimensions ordered by decreasing singular value. If
-        ``return_singular_values`` is True, a tuple ``(embeddings, singular_values)``.
+        ``return_singular_values`` is True, a tuple ``(embeddings, singular_values)``;
+        if ``return_left`` is True, ``(embeddings, singular_values, left)``.
     """
     unfolded, num_graphs, n = _unfold(graphs, d)
-    return _right_embedding(unfolded, num_graphs, n, d, random_state, return_singular_values)
+    return _right_embedding(unfolded, num_graphs, n, d, random_state, return_singular_values, return_left)
 
 
 def ulse(graphs, d, regularisation=None, random_state=None, return_singular_values=False):
@@ -76,12 +79,17 @@ def ulse(graphs, d, regularisation=None, random_state=None, return_singular_valu
     return _right_embedding(normalised, num_graphs, n, d, random_state, return_singular_values)
 
 
-def embed(graphs, d, method="uase", random_state=None, return_singular_values=False):
-    """Embeds graphs jointly with the given method ('uase' or 'ulse')."""
+def embed(graphs, d, method="uase", random_state=None, return_singular_values=False, return_left=False):
+    """Embeds graphs jointly with the given method ('uase' or 'ulse').
+
+    ``return_left`` (the left singular vectors) is only available for 'uase'.
+    """
     method = method.casefold()
     if method == "uase":
         return uase(graphs, d, random_state=random_state,
-                    return_singular_values=return_singular_values)
+                    return_singular_values=return_singular_values, return_left=return_left)
+    if return_left:
+        raise ValueError("The left singular vectors are only returned for the 'uase' embedding")
     if method == "ulse":
         return ulse(graphs, d, random_state=random_state,
                     return_singular_values=return_singular_values)
@@ -155,29 +163,32 @@ def _dense_top_right_singular(unfolded, d):
     left = left[:, top]
     with np.errstate(invalid="ignore", divide="ignore"):
         vt = (matrix.T @ left / np.where(singular_values > 0, singular_values, np.inf)).T
-    return singular_values, vt
+    return left, singular_values, vt
 
 
-def _right_embedding(unfolded, num_graphs, n, d, random_state, return_singular_values):
+def _right_embedding(unfolded, num_graphs, n, d, random_state, return_singular_values, return_left=False):
     rng = np.random.default_rng(random_state)
     v0 = rng.standard_normal(min(unfolded.shape))
     try:
-        _, singular_values, vt = svds(unfolded, k=d, v0=v0, maxiter=ARPACK_MAXITER)
+        left, singular_values, vt = svds(unfolded, k=d, v0=v0, maxiter=ARPACK_MAXITER)
     except ArpackNoConvergence:
         # near-degenerate spectra (e.g., a network built from a handful of
         # samples, whose rank is below d) can stall ARPACK; the exact SVD from
         # the smaller Gram matrix gives the same embedding up to sign
-        singular_values, vt = _dense_top_right_singular(unfolded, d)
+        left, singular_values, vt = _dense_top_right_singular(unfolded, d)
 
     # svds does not guarantee an order; sort by decreasing singular value so
     # that embeddings[..., :k] is always the top-k embedding
     order = np.argsort(singular_values)[::-1]
     singular_values = singular_values[order]
     vt = vt[order, :]
+    left = left[:, order]
 
     right_embedding = vt.T * np.sqrt(singular_values)
     embeddings = right_embedding.reshape(num_graphs, n, d)
 
+    if return_left:
+        return embeddings, singular_values, left
     if return_singular_values:
         return embeddings, singular_values
     return embeddings

@@ -21,9 +21,15 @@ def test_fast_gene_set_test_calls_rewired_set_but_not_modules():
     sim = simulate_expression(num_genes=400, num_samples=(80, 80), random_state=0)
     sets = _module_and_rewired_sets(sim, rng)
     result = fast_gene_set_test(*sim.expression, sets, num_permutations=5, random_state=0, seed=0)
-    assert list(result.columns) == ["size", "score", "z", "pvalue", "qvalue", "leading_nodes"]
+    assert list(result.columns) == ["size", "score", "z", "pvalue", "qvalue", "leading_nodes", "z_total", "z_own"]
     assert result.pvalue.is_monotonic_increasing
     assert result.loc["rewired", "pvalue"] < 0.01
+    # every set is tested on the total and on the own move of its nodes
+    np.testing.assert_array_equal(result["z"], np.maximum(result["z_total"], result["z_own"]))
+    total = fast_gene_set_test(*sim.expression, sets, num_permutations=5, random_state=0, seed=0, align=None)
+    assert list(total.columns) == ["size", "score", "z", "pvalue", "qvalue", "leading_nodes"]
+    np.testing.assert_allclose(total["z"], result["z_total"][total.index])
+    assert (result["pvalue"][total.index] <= 2 * total["pvalue"] + 1e-12).all()
 
 
 def test_fast_gene_set_test_makes_no_call_under_a_shuffled_null():

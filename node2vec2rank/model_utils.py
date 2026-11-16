@@ -62,7 +62,16 @@ def compute_pairwise_distances(mat1, mat2, distance='cosine'):
     Args:
         mat1: first embedding matrix (n_nodes, d_dimensions)
         mat2: second embedding matrix (n_nodes, d_dimensions)
-        distance: 'cosine', 'euclidean' or 'correlation'. Defaults to 'cosine'.
+        distance: 'cosine', 'euclidean', 'radial' or 'correlation'. Defaults
+            to 'cosine'. The squared Euclidean distance splits exactly into a
+            radial and an angular part,
+            ``|x - y|^2 = (|x| - |y|)^2 + 2 |x| |y| (1 - cos(x, y))``.
+            'radial' is the first, ``| |x| - |y| |``: how much the node's
+            weight in the leading structure changed (it became more or less
+            of a hub). 'cosine' is the second without its weight: how much
+            the direction changed (different partners). Euclidean distance
+            mixes the two and weighs the change of direction by the norms,
+            so it favours hubs.
 
     Raises:
         NotImplementedError: for an unsupported distance
@@ -81,13 +90,15 @@ def compute_pairwise_distances(mat1, mat2, distance='cosine'):
     distance = distance.casefold()
     if distance == "euclidean":
         return np.linalg.norm(mat1 - mat2, axis=1)
+    if distance == "radial":
+        return np.abs(np.linalg.norm(mat1, axis=1) - np.linalg.norm(mat2, axis=1))
 
     if distance == "correlation":
         mat1 = mat1 - mat1.mean(axis=1, keepdims=True)
         mat2 = mat2 - mat2.mean(axis=1, keepdims=True)
     elif distance != "cosine":
         raise NotImplementedError(
-            f"Unsupported metric '{distance}'. Available: cosine, euclidean, correlation")
+            f"Unsupported metric '{distance}'. Available: cosine, euclidean, radial, correlation")
 
     norms = np.linalg.norm(mat1, axis=1) * np.linalg.norm(mat2, axis=1)
     with np.errstate(invalid="ignore", divide="ignore"):

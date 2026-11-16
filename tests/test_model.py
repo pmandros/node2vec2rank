@@ -15,11 +15,49 @@ def test_planted_change_is_ranked_first(two_sbm_graphs):
     graphs, memberships = two_sbm_graphs
     model = N2V2R(graphs, seed=0, embed_dimensions=[4, 6], verbose=-1)
     model.fit_transform_rank()
-    borda = model.aggregate_transform()["1"]["borda_ranks"].to_numpy()
+    borda = model.aggregate_transform()["1"]
 
-    top = np.argsort(-borda)[:100]
-    # the 100 changed nodes of block 1 should dominate the top of the ranking
-    assert np.mean(memberships[top] == 1) > 0.9
+    def block_one_in_top(scores):
+        return np.mean(memberships[np.argsort(-scores.to_numpy())[:100]] == 1)
+
+    # the 100 changed nodes of block 1 dominate the top of the ranking of the total move
+    assert block_one_in_top(borda["borda_total"]) > 0.9
+    # the block moved as a whole, so its nodes did not move on their own; the
+    # default ranking takes the larger of the two and keeps most of the block
+    assert block_one_in_top(borda["borda_own"]) < 0.5
+    assert block_one_in_top(borda["borda_ranks"]) > 0.7
+
+
+def test_default_reports_total_and_own_move(two_sbm_graphs):
+    graphs, memberships = two_sbm_graphs
+    model = N2V2R(graphs, seed=0, embed_dimensions=[4, 6], verbose=-1)
+    assert model.align == "both"
+    ranks = model.fit_transform_rank()["1"]
+    borda = model.aggregate_transform()["1"]
+    test = model.significance()["1"]
+
+    columns = [f"dim-{dim}_distance-{metric}" for dim in (4, 6) for metric in ("euclidean", "cosine")]
+    assert list(ranks.columns) == columns + [column + "_aligned" for column in columns]
+    assert list(borda.columns) == ["borda_ranks", "borda_total", "borda_own"]
+    np.testing.assert_array_equal(borda["borda_ranks"], np.maximum(borda["borda_total"], borda["borda_own"]))
+    assert list(test.columns) == ["z", "pvalue", "qvalue", "degree", "z_total", "z_own", "own_share"]
+    np.testing.assert_array_equal(test["z"], np.fmax(test["z_total"], test["z_own"]))
+    assert test["own_share"].between(0, 1).all()
+    # block 1 moved with its community, the untouched blocks 0 and 3 only by noise of their own
+    assert test["own_share"][memberships == 1].median() < 0.2
+    assert test["own_share"][np.isin(memberships, [0, 3])].median() > 0.5
+
+    # the two halves are the paper's method and the aligned method
+    for align, suffix, part in ((None, "", "total"), ("robust", "_aligned", "own")):
+        single = N2V2R(graphs, seed=0, embed_dimensions=[4, 6], align=align, verbose=-1)
+        single_ranks = single.fit_transform_rank()["1"]
+        pd.testing.assert_frame_equal(single_ranks.add_suffix(suffix), ranks[[c + suffix for c in columns]])
+        np.testing.assert_array_equal(single.aggregate_transform()["1"]["borda_ranks"], borda[f"borda_{part}"])
+        single_test = single.significance()["1"]
+        np.testing.assert_allclose(single_test["z"], test[f"z_{part}"])
+        # twice the smaller of the two p-values
+        assert (test["pvalue"] <= 2 * single_test["pvalue"] + 1e-12).all()
+    assert list(single_test.columns) == ["z", "pvalue", "qvalue", "degree", "own_share"]
 
 
 def test_reproducible_with_seed(two_sbm_graphs):
@@ -98,7 +136,9 @@ def test_cli_writes_outputs(tmp_path):
     config_path = tmp_path / "config.json"
     config_path.write_text(json.dumps(config))
 
-    model = run(["--config", str(config_path), "--save_dir", str(tmp_path / "out"), "--signed"])
+    model = run(["--config", str(config_path), "--save_dir", str(tmp_path / "out"), "--signed", "--align",
+                 "none", "--wald", "--modules"])
+    assert model.align is None
     written = set(os.listdir(model.save_dir))
     assert {"config.json", "1.tsv", "1_agg.tsv", "1_degDif.tsv", "1_signed.tsv",
-            "1_agg_signed.tsv"} <= written
+            "1_agg_signed.tsv", "1_wald.tsv", "1_modules.tsv", "1_module_nodes.tsv"} <= written

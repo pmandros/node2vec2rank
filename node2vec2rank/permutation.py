@@ -13,6 +13,19 @@ in the null. Gene-permutation methods (GSEA prerank, over-representation
 tests) treat genes as independent, which does not hold for network rankings:
 genes of a co-expression module move together, so co-expressed sets come out
 "enriched" even when nothing differs between the conditions.
+
+They test modules as well (:func:`module_permutation_test`): which module of
+the network changed how it connects, with a p-value per module. Two networks
+alone cannot give that p-value when they are inferred from samples (see
+node2vec2rank/modules.py); the samples can.
+
+The null hypothesis is that the two groups do not differ at all. The p-values
+are exact under it, but this is not a per-node test when some nodes do change:
+rewiring some genes moves every gene a little in the joint embedding, so genes
+whose own connections are unchanged are called as well (their partners
+changed, or the embedding shifted). Calls are evidence that the networks
+differ, and the smallest p-values point at where; they are not a list of
+changed nodes with a controlled false discovery rate.
 """
 
 import multiprocessing
@@ -20,10 +33,12 @@ from concurrent.futures import ProcessPoolExecutor
 
 import numpy as np
 import pandas as pd
+from scipy import sparse
 from scipy.stats import norm, rankdata
 
 from node2vec2rank.model import N2V2R
 from node2vec2rank.model_utils import borda_aggregate
+from node2vec2rank.modules import detect_modules, module_changes
 from node2vec2rank.significance import benjamini_hochberg
 from node2vec2rank.simulate import coexpression_network
 
@@ -48,6 +63,9 @@ RANKINGS = ("n2v2r", "degree_difference")
 def _distances(network_a, network_b, nodes, params):
     params = dict(params)
     ranking = params.pop("ranking", "n2v2r")
+    # the permutations test "the groups do not differ at all"; the total move
+    # is the statistic for that, and alignment would be refitted per permutation
+    params.setdefault("align", None)
     model = N2V2R([network_a, network_b], nodes=nodes, **params)
     if ranking == "degree_difference":
         return model.degree_difference_ranking()["1"][["absDeDi"]]
@@ -83,14 +101,40 @@ def _stratified_orders(strata, size_a, num_permutations, rng):
     return orders
 
 
-def _node_scores(expression_a, expression_b, build_network, num_permutations,
-                 standardize_within_groups, strata, random_state, n_jobs, n2v2r_params):
-    """Observed n2v2r distances and, for the observed data (row 0) and every
-    permutation, a per-node normal score (larger is more differential)."""
+def _prepare(expression_a, expression_b, num_permutations, standardize_within_groups, strata, rng):
+    """The two groups (standardised if asked), their pooled samples and the
+    permutations of the pooled samples (first group first)."""
     if list(expression_a.columns) != list(expression_b.columns):
         raise ValueError("Both expression tables must have the same columns (nodes) in the same order")
     if num_permutations < 3:
         raise ValueError("At least 3 permutations are needed")
+    size_a = len(expression_a)
+    if strata is not None:
+        strata_a, strata_b = (np.asarray(s) for s in strata)
+        if len(strata_a) != len(expression_a) or len(strata_b) != len(expression_b):
+            raise ValueError("strata must give one label per sample of each group")
+    else:
+        strata_a = np.zeros(len(expression_a))
+        strata_b = np.zeros(len(expression_b))
+    pooled_strata = np.r_[strata_a, strata_b]
+
+    if standardize_within_groups:
+        # z-score within every group (and stratum, e.g. batch), so that mean or
+        # scale differences do not become co-expression in the shuffled groups
+        expression_a = _standardize_within(expression_a, strata_a)
+        expression_b = _standardize_within(expression_b, strata_b)
+    pooled = pd.concat([expression_a, expression_b], axis=0, ignore_index=True)
+    if strata is None:
+        orders = [rng.permutation(len(pooled)) for _ in range(num_permutations)]
+    else:
+        orders = _stratified_orders(pooled_strata, size_a, num_permutations, rng)
+    return expression_a, expression_b, pooled, orders
+
+
+def _node_scores(expression_a, expression_b, build_network, num_permutations,
+                 standardize_within_groups, strata, random_state, n_jobs, n2v2r_params):
+    """Observed n2v2r distances and, for the observed data (row 0) and every
+    permutation, a per-node normal score (larger is more differential)."""
     rng = np.random.default_rng(random_state)
     params = {"verbose": -1, **n2v2r_params}
     if params.get("ranking", "n2v2r") not in RANKINGS:
@@ -98,28 +142,9 @@ def _node_scores(expression_a, expression_b, build_network, num_permutations,
     nodes = list(expression_a.columns)
     size_a = len(expression_a)
 
-    if strata is not None:
-        strata_a, strata_b = (np.asarray(s) for s in strata)
-        if len(strata_a) != len(expression_a) or len(strata_b) != len(expression_b):
-            raise ValueError("strata must give one label per sample of each group")
-        pooled_strata = np.r_[strata_a, strata_b]
-    else:
-        strata_a = np.zeros(len(expression_a))
-        strata_b = np.zeros(len(expression_b))
-        pooled_strata = np.r_[strata_a, strata_b]
-
-    if standardize_within_groups:
-        # z-score within every group (and stratum, e.g. batch), so that mean or
-        # scale differences do not become co-expression in the shuffled groups
-        expression_a = _standardize_within(expression_a, strata_a)
-        expression_b = _standardize_within(expression_b, strata_b)
+    expression_a, expression_b, pooled, orders = _prepare(expression_a, expression_b, num_permutations,
+                                                          standardize_within_groups, strata, rng)
     observed = _distances(build_network(expression_a), build_network(expression_b), nodes, params)
-
-    pooled = pd.concat([expression_a, expression_b], axis=0, ignore_index=True)
-    if strata is None:
-        orders = [rng.permutation(len(pooled)) for _ in range(num_permutations)]
-    else:
-        orders = _stratified_orders(pooled_strata, size_a, num_permutations, rng)
     if n_jobs == 1:
         _init_worker(pooled, size_a, build_network, nodes, params)
         null = [_permuted_distances(order) for order in orders]
@@ -318,3 +343,115 @@ def gene_set_test(expression_a, expression_b, gene_sets, build_network=coexpress
     if return_nodes:
         return sets, _node_table(observed, combined_all)
     return sets
+
+
+MODULE_STATISTICS = ("move", "rotation", "strength_change")
+
+
+def _dense(network):
+    return network if sparse.issparse(network) else np.asarray(network, dtype=np.float64)
+
+
+def _module_statistics(network_a, network_b, labels, names):
+    table = module_changes(_dense(network_a), _dense(network_b), labels).reindex(names)
+    return table, np.column_stack([table["move"], table["rotation"], table["strength_change"].abs()])
+
+
+def _init_module_worker(pooled, size_a, build_network, labels, names):
+    _WORKER.update(pooled=pooled, size_a=size_a, build_network=build_network, labels=labels, names=names)
+
+
+def _permuted_module_statistics(order):
+    w = _WORKER
+    group_a = w["pooled"].iloc[order[:w["size_a"]]]
+    group_b = w["pooled"].iloc[order[w["size_a"]:]]
+    return _module_statistics(w["build_network"](group_a), w["build_network"](group_b), w["labels"], w["names"])[1]
+
+
+def module_permutation_test(expression_a, expression_b, modules=None, build_network=coexpression_network,
+                            num_permutations=200, num_modules=None, max_modules=20,
+                            standardize_within_groups=True, strata=None, random_state=None, n_jobs=1):
+    """Tests which modules changed how they connect between two groups of
+    samples, by shuffling the sample labels.
+
+    The modules are found in the network of all samples together
+    (:func:`node2vec2rank.modules.detect_modules`), which is the same network
+    however the samples are labelled, so choosing the modules does not bias
+    the test. The change of every module between the networks of the two
+    groups (:func:`node2vec2rank.modules.module_changes`) is then compared
+    with its changes between the networks of shuffled groups. Whole samples
+    are shuffled, so the noise that the genes of a module share, which is
+    what a test on two networks alone cannot know, is in the null.
+
+    As for :func:`permutation_test`, the null hypothesis is that the groups do
+    not differ at all, and a module can be called because the module it
+    connects to changed.
+
+    Args:
+        expression_a, expression_b, build_network, standardize_within_groups,
+        strata, random_state, n_jobs: as in :func:`permutation_test`.
+        modules: one label per node (a sequence, or a Series indexed by node),
+            e.g. known modules or pathways; nodes labelled 0, -1, None or NaN
+            are in no module. They must not come from one of the two groups
+            alone, or from a comparison of the groups: modules found in one
+            group are tighter there than in the other by construction. By
+            default, modules are detected in the network of all samples.
+        num_permutations: number of label permutations; the smallest possible
+            p-value is 1 / (num_permutations + 1).
+        num_modules, max_modules: as in :func:`node2vec2rank.modules.detect_modules`.
+
+    Returns:
+        (changes, nodes). ``changes`` is the table of
+        :func:`node2vec2rank.modules.module_changes` (the first group is the
+        reference), sorted by p-value, with ``pvalue`` (the fraction of
+        permutations in which the module's ``move`` is at least as large,
+        counting the observed one), ``qvalue`` (Benjamini-Hochberg), ``z``
+        (the ``move`` standardised by its permutations, for ranking modules
+        with the same p-value), and ``pvalue_rotation`` and
+        ``pvalue_strength``, the same test for the rotation of the module's
+        connection profile and for the size of its change of strength, which
+        say what kind of change it is. ``nodes`` has one row per node with its
+        ``module`` (and ``fit`` and ``membership`` for detected modules).
+    """
+    rng = np.random.default_rng(random_state)
+    node_names = pd.Index(expression_a.columns)
+    size_a = len(expression_a)
+    expression_a, expression_b, pooled, orders = _prepare(expression_a, expression_b, num_permutations,
+                                                          standardize_within_groups, strata, rng)
+    if modules is None:
+        nodes = detect_modules([_dense(build_network(pooled))], num_modules=num_modules, max_modules=max_modules,
+                               random_state=rng)
+        nodes.index = node_names
+    else:
+        if isinstance(modules, pd.Series):
+            modules = modules.reindex(node_names)
+        elif len(modules) != len(node_names):
+            raise ValueError("modules must give one label per node")
+        nodes = pd.DataFrame({"module": pd.Series(list(modules), dtype=object).to_numpy()}, index=node_names)
+    labels = nodes["module"].to_numpy()
+    in_module = pd.notna(labels) & ~np.isin(labels, [0, -1])
+    names = sorted(pd.unique(labels[in_module]), key=lambda name: (str(type(name)), name))
+
+    changes, observed = _module_statistics(build_network(expression_a), build_network(expression_b), labels, names)
+    if n_jobs == 1:
+        _init_module_worker(pooled, size_a, build_network, labels, names)
+        null = [_permuted_module_statistics(order) for order in orders]
+    else:
+        with ProcessPoolExecutor(max_workers=n_jobs, mp_context=multiprocessing.get_context("spawn"),
+                                 initializer=_init_module_worker,
+                                 initargs=(pooled, size_a, build_network, labels, names)) as executor:
+            null = list(executor.map(_permuted_module_statistics, orders))
+    null = np.stack(null)  # (B, modules, statistics)
+
+    with np.errstate(invalid="ignore", divide="ignore"):
+        # a statistic that is undefined in a permutation (e.g. the strength of
+        # a module without any weight) does not count as exceeding
+        exceed = (null >= observed[None]).sum(axis=0)
+        pvalues = np.where(np.isfinite(observed), (1 + exceed) / (1 + len(null)), np.nan)
+        spread = np.nanstd(null[:, :, 0], axis=0, ddof=1)
+        z = (observed[:, 0] - np.nanmean(null[:, :, 0], axis=0)) / np.where(spread > 0, spread, np.nan)
+    changes["z"], changes["pvalue"] = z, pvalues[:, 0]
+    changes["qvalue"] = benjamini_hochberg(pvalues[:, 0])
+    changes["pvalue_rotation"], changes["pvalue_strength"] = pvalues[:, 1], pvalues[:, 2]
+    order = np.lexsort((-np.nan_to_num(z, nan=-np.inf), np.nan_to_num(pvalues[:, 0], nan=np.inf)))
+    return changes.iloc[order], nodes

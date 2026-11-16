@@ -47,9 +47,12 @@ def _node_zscores(expression_a, expression_b, build_network, params):
         # z-scores they are not degree-adjusted, but the null mean and the
         # correlation model are learnt from the permutations either way
         dedi = model.degree_difference_ranking()["1"]["absDeDi"].to_numpy(dtype=np.float64)
-        return norm.ppf((rankdata(dedi) - 0.5) / len(dedi))
+        return norm.ppf((rankdata(dedi) - 0.5) / len(dedi))[None, :]
     model.fit_transform_rank()
-    return np.nan_to_num(model.significance()["1"]["z"].to_numpy(dtype=np.float64))
+    test = model.significance()["1"]
+    # with align="both" a node has two z-scores, of its total and of its own move
+    columns = ["z_total", "z_own"] if model.align == "both" else ["z"]
+    return np.nan_to_num(test[columns].to_numpy(dtype=np.float64)).T
 
 
 def _pair_correlations(scaled, first, second, chunk=50000):
@@ -146,7 +149,12 @@ def fast_gene_set_test(expression_a, expression_b, gene_sets, build_network=coex
         pd.DataFrame indexed by set, sorted by p-value, with columns ``size``,
         ``score`` (mean z in the set minus the mean over all nodes), ``z``
         (score minus its null mean, divided by its null standard deviation), ``pvalue`` (one-sided),
-        ``qvalue`` (Benjamini-Hochberg) and ``leading_nodes``.
+        ``qvalue`` (Benjamini-Hochberg) and ``leading_nodes``. With
+        ``align="both"`` (the default of :class:`N2V2R`) every set is tested
+        twice, on the z-scores of the total and of the own move of its nodes
+        (see :meth:`N2V2R.significance`); ``z_total`` and ``z_own`` are the
+        two results, ``z``, ``score`` and ``leading_nodes`` are those of the
+        larger one, and the p-value is twice the smaller of the two.
     """
     if list(expression_a.columns) != list(expression_b.columns):
         raise ValueError("Both expression tables must have the same columns (nodes) in the same order")
@@ -194,20 +202,36 @@ def fast_gene_set_test(expression_a, expression_b, gene_sets, build_network=coex
     values = pooled.to_numpy(dtype=np.float64)
     spread = values.std(axis=0, ddof=1)
     scaled = (values - values.mean(axis=0)) / np.where(spread > 0, spread, 1.0)
-    centres, correlations = _correlation_model(null_z, scaled, num_pairs, bins, rng)
-    variance = _quadratic_forms(scaled, members.values(), centres, correlations, null_z.std(axis=0, ddof=1))
 
     def statistic(z):
         return np.array([z[index].mean() - z.mean() for index in members.values()])
 
-    score = statistic(observed)
-    null_mean = np.mean([statistic(z) for z in null_z], axis=0)
-    z = (score - null_mean) / np.sqrt(np.maximum(variance * (1 + 1 / num_permutations), np.finfo(float).tiny))
-    pvalues = norm.sf(z)
+    # one test per kind of z-score: one, or the total and the own move
+    scores, zs, pvalues = [], [], []
+    for component in range(len(observed)):
+        component_null = null_z[:, component]
+        centres, correlations = _correlation_model(component_null, scaled, num_pairs, bins, rng)
+        variance = _quadratic_forms(scaled, members.values(), centres, correlations,
+                                    component_null.std(axis=0, ddof=1))
+        scores.append(statistic(observed[component]))
+        null_mean = np.mean([statistic(z) for z in component_null], axis=0)
+        zs.append((scores[-1] - null_mean)
+                  / np.sqrt(np.maximum(variance * (1 + 1 / num_permutations), np.finfo(float).tiny)))
+        pvalues.append(norm.sf(zs[-1]))
+
+    # the component with the larger z per set; with two tests the p-value is
+    # twice the smaller one, which is valid whatever their dependence
+    best = np.argmax(zs, axis=0)
+    sets = np.arange(len(members))
+    pvalue = np.minimum(1.0, len(observed) * np.min(pvalues, axis=0))
     leading = []
-    for index in members.values():
-        order = index[np.argsort(-observed[index])]
-        leading.append([nodes[i] for i in order if observed[i] > 0])
-    return pd.DataFrame({"size": [len(index) for index in members.values()], "score": score, "z": z,
-                         "pvalue": pvalues, "qvalue": benjamini_hochberg(pvalues), "leading_nodes": leading},
-                        index=pd.Index(list(members), name="gene_set")).sort_values("pvalue")
+    for component, index in zip(best, members.values()):
+        z = observed[component]
+        order = index[np.argsort(-z[index])]
+        leading.append([nodes[i] for i in order if z[i] > 0])
+    columns = {"size": [len(index) for index in members.values()], "score": np.array(scores)[best, sets],
+               "z": np.array(zs)[best, sets], "pvalue": pvalue, "qvalue": benjamini_hochberg(pvalue),
+               "leading_nodes": leading}
+    if len(observed) == 2:
+        columns.update(z_total=zs[0], z_own=zs[1])
+    return pd.DataFrame(columns, index=pd.Index(list(members), name="gene_set")).sort_values("pvalue")

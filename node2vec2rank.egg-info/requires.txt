@@ -1,0 +1,17 @@
+numpy>=1.22
+pandas>=1.5
+scipy>=1.9
+networkx>=2.8
+
+[enrichment]
+gseapy>=0.12
+plotly>=5
+kaleido
+joblib
+
+[plot]
+matplotlib>=3.5
+
+[test]
+pytest>=7
+matplotlib>=3.5

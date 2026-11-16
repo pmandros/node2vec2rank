@@ -50,7 +50,7 @@ def test_dense_fallback_matches_arpack():
     unfolded = rng.random((30, 60))
     _, s, vt = svds(unfolded, k=5, v0=rng.standard_normal(30))
     order = np.argsort(s)[::-1]
-    dense_s, dense_vt = _dense_top_right_singular(unfolded, 5)
+    _, dense_s, dense_vt = _dense_top_right_singular(unfolded, 5)
     np.testing.assert_allclose(dense_s, s[order], rtol=1e-8)
     np.testing.assert_allclose(np.abs(dense_vt), np.abs(vt[order]), atol=1e-8)
 

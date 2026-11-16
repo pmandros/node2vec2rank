@@ -67,7 +67,8 @@ def set_test(comparisons, build, gene_sets, is_cell_cycle, dims):
         begin = time.perf_counter()
         result = fast_gene_set_test(group_a, group_b, gene_sets, build_network=build, num_permutations=10,
                                     min_size=5, max_size=500, strata=strata, random_state=0, ranking="n2v2r",
-                                    embed_dimensions=dims, distance_metrics=["euclidean", "cosine"], seed=42)
+                                    embed_dimensions=dims, distance_metrics=["euclidean", "cosine"], align=None,
+                                    seed=42)
         result = result.drop(columns="score").rename(columns={"z": "score"})
         rows.append({**cc.summarise("fast set test, n2v2r", label, result, is_cell_cycle),
                      "seconds": time.perf_counter() - begin})
